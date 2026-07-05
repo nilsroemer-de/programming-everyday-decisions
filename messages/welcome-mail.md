@@ -2,7 +2,7 @@ Dear Students,
 
 Welcome to the course "Programming: Everyday Decision-Making Algorithms" this winter semester. Over the upcoming weeks, we will explore everyday algorithms together and learn the fundamentals of Python programming. All course materials, including lectures and tutorials, are available on our course website:
 
-https://beyondsimulations.github.io/Programming-Everyday-Decisions/
+https://courses.nilsroemer.com
 
 Important Information:
 - Our first session is this Wednesday

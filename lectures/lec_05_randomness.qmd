@@ -2,7 +2,7 @@
 title: "Lecture V - Randomness"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 author: "Dr. Tobias Vlćek"
-institute: "Kühne Logistics University Hamburg - Winter 2024"
+institute: "Kühne Logistics University Hamburg"
 format:
   revealjs:
     footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_05_randomness.qmd)"

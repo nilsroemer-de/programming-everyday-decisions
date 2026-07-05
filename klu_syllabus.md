@@ -2,13 +2,10 @@
 
 ## Course Information
 
-**Semester:** 1+3, 2025  
+**Semester:** 1+3  
 **Form of Examination:** Pass/fail with 75% required attendance, 2 assignments and a final presentation
 
-### Instructors
-
-- **Dr. Tobias Vlćek**  
-  Email: vlcek@beyondsimulations.com
+### Instructor
 
 - **Dr. Nils Roemer**  
   Email: nils.roemer@planningio.com
@@ -96,7 +93,7 @@ All assignments are due by the end of the quarter (earlier submissions are highl
 
 ### Lecture Slides
 
-Access the lecture materials here: [https://beyondsimulations.github.io/Programming-Everyday-Decisions/](https://beyondsimulations.github.io/Programming-Everyday-Decisions/)
+Access the lecture materials here: [https://courses.nilsroemer.com](https://courses.nilsroemer.com)
 
 ### Required Literature
 
