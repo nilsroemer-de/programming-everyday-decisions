@@ -12,13 +12,12 @@ project:
 
 website:
   title: "Programming: Everyday Decision-Making Algorithms"
-  repo-url: https://github.com/beyondsimulations/Programming-Everyday-Decisions
+  repo-url: https://github.com/nilsroemer-de/programming-everyday-decisions
   repo-actions: [edit, source, issue]
-  site-url: https://beyondsimulations.github.io/Programming-Everyday-Decisions
+  site-url: https://courses.nilsroemer.com
   bread-crumbs: true
   sidebar:
     style: floating
-    logo: https://images.beyondsimulations.com/logo/midjourney-everyday-algorithms.jpeg
     collapse-level: 1
     search: true
     contents:
@@ -93,16 +92,16 @@ website:
       - text: "Cheatsheet"
         href: general/cheatsheet.qmd
   page-footer:
-    center: "Programming: Everyday Decision-Making Algorithms</br>Tobias Vlćek and Nils Roemer</br>CC BY-NC-SA 4.0"
+    center: "Programming: Everyday Decision-Making Algorithms</br>Nils Roemer and Tobias Vlćek</br>CC BY-NC-SA 4.0"
     left:
       - icon: github
-        href: https://github.com/beyondsimulations/Applied-Optimization
+        href: https://github.com/nilsroemer-de/programming-everyday-decisions
       - icon: linkedin
-        href: https://linkedin.com/in/tobiasvlcek
+        href: https://www.linkedin.com/in/nroemer/
       - icon: envelope
-        href: mailto:vlcek@beyondsimulations.com
+        href: mailto:nils.roemer@planningio.com
       - icon: skip-backward
-        href: https://tobiasvlcek.com/lectures/
+        href: https://nilsroemer.com
       - icon: shield-check
         href: general/privacy.qmd
       - icon: file-text
@@ -126,18 +125,6 @@ format:
       url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     include-in-header:
       - general/header.html
-    include-after-body:
-      text: |
-        <script defer src="https://oshu.eu/widget.js"></script>
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            ChatWidget.init({
-              tenant: "platform",
-              agent: "programming-everyday",
-              layoutMode: "sidebar",
-            });
-          });
-        </script>
 
   hugo-md: default
 

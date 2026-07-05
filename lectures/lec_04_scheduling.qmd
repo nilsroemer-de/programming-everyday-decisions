@@ -2,7 +2,7 @@
 title: "Lecture IV - Scheduling"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 author: "Dr. Tobias Vlćek"
-institute: "Kühne Logistics University Hamburg - Winter 2024"
+institute: "Kühne Logistics University Hamburg"
 format:
   revealjs:
     footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_04_scheduling.qmd)"
@@ -36,7 +36,7 @@ format:
 
 ## A Simple Scheduling Problem
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-washdry.svg)
+![](../images/atlb/atlb_schedule-washdry.svg)
 
 ## Washing Machine & Dryer
 
@@ -153,7 +153,7 @@ Task  Washing  Drying  Schedule
 
 **Optimal Solution: [B A D C]{.highlight}**
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-johnson-optimal.svg)
+![](../images/atlb/atlb_schedule-johnson-optimal.svg)
 
 <!--
 ```{mermaid}
@@ -186,7 +186,7 @@ gantt
 ## Suboptimal Solution
 **Suboptimal Solution: [C D A B]{.highlight}**
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-johnson-suboptimal.svg)
+![](../images/atlb/atlb_schedule-johnson-suboptimal.svg)
 
 <!--
 ```{mermaid}
@@ -310,7 +310,7 @@ mindmap
 
 ## Single Machine Scheduling
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-human.svg)
+![](../images/atlb/atlb_schedule-human.svg)
 
 [Question:]{.question} **What is different from before?**
 
@@ -385,7 +385,7 @@ Task  Duration  Deadline
 
 ## EDD Schedule
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-edd.svg)
+![](../images/atlb/atlb_schedule-edd.svg)
 
 <!--
 ```{mermaid}
@@ -423,7 +423,7 @@ gantt
 
 ::: {.column width="50%"}
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-human.svg)
+![](../images/atlb/atlb_schedule-human.svg)
 
 :::
 
@@ -479,7 +479,7 @@ Task  Duration  Schedule
 
 **Optimal sequence:**
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-spt-1.svg)
+![](../images/atlb/atlb_schedule-spt-1.svg)
 
 <!--
 ```{mermaid}
@@ -506,7 +506,7 @@ gantt
 
 [Total waiting time:]{.highlight} 340 minutes
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-spt-2.svg)
+![](../images/atlb/atlb_schedule-spt-2.svg)
 
 . . .
 
@@ -734,7 +734,7 @@ Task  Duration  Priority
   E    30min     2
 ```
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-inheritance.svg)
+![](../images/atlb/atlb_schedule-inheritance.svg)
 
 [**Challenge:**
 High-priority tasks depend on low-priority tasks.]{.fragment}
@@ -885,7 +885,7 @@ Note, how all tasks become tasks without successors at some point.
 
 ## Lawler's Solution
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-edd-inheritance.svg)
+![](../images/atlb/atlb_schedule-edd-inheritance.svg)
 
 :::{.callout-note}
 ## Predecessor Tasks
@@ -961,7 +961,7 @@ If a new task has the same deadline as the current task, you can choose either. 
 
 ## EDD Solution for Real-time
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-edd-breaks.svg)
+![](../images/atlb/atlb_schedule-edd-breaks.svg)
 
 . . .
 
@@ -996,7 +996,7 @@ If a new task has the same duration as the current task, you can choose either. 
 
 ## SPT Solution for Real-time {auto-animate=true}
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-spt-breaks.svg)
+![](../images/atlb/atlb_schedule-spt-breaks.svg)
 
 . . .
 
@@ -1004,7 +1004,7 @@ If a new task has the same duration as the current task, you can choose either. 
 
 ## SPT Solution for Real-time {auto-animate=true}
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-spt-breaks-wait.svg)
+![](../images/atlb/atlb_schedule-spt-breaks-wait.svg)
 
 [Total waiting time:]{.highlight} 260 minutes
 

@@ -230,7 +230,7 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 ::: {.column width="50%"}
-![](https://images.beyondsimulations.com/alg/Desk-1.png)
+![](../images/alg/Desk-1.png)
 :::
 :::
 :::
@@ -341,7 +341,7 @@ Today's lecture will explain why that matters more than you think...
 
 :::{.fragment}
 ::: {style="text-align: center;"}
-![](https://images.beyondsimulations.com/alg/Bed.png){width="30%"}
+![](../images/alg/Bed.png){width="30%"}
 
 **Mathematically optimal**
 :::
