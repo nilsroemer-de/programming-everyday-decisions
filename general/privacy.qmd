@@ -19,9 +19,11 @@ This website is a purely informational course website. It does not use web analy
 
 ## 2. Hosting
 
-This website is hosted by STRATO AG, Otto-Ostrowski-Straße 7, 10249 Berlin, Germany, on servers located in Germany. When you visit this website, the hosting provider technically requires certain data to deliver the pages to your device. This includes your IP address, the date and time of your request, the pages accessed, and general browser and operating system information. This data is processed transiently in server logs to deliver the website and to ensure its security and stability; it is not merged with other data sources or used to identify individual visitors.
+This website is hosted on GitHub Pages, a service provided by GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When you visit this website, GitHub technically requires certain connection data to deliver the pages to your device. This includes your IP address, the date and time of your request, the pages accessed, and general browser and operating system information. This data is processed transiently in server logs to deliver the website and to ensure its security and stability; it is not merged with other data sources by us or used to identify individual visitors.
 
-**Legal basis:** Art. 6(1)(f) GDPR (legitimate interest in providing and securing this website). A data processing agreement pursuant to Art. 28 GDPR is in place with the hosting provider.
+Because GitHub, Inc. is based in the USA, your data may be transferred to a third country. GitHub is certified under the EU-US Data Privacy Framework, which the European Commission has recognised as providing an adequate level of data protection (adequacy decision of 10 July 2023). This forms the basis for the transfer.
+
+**Legal basis:** Art. 6(1)(f) GDPR (legitimate interest in providing and securing this website).
 
 ## 3. Cookies and tracking
 
