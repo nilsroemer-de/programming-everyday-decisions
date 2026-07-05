@@ -9,6 +9,8 @@ project:
     - general/*.qmd
     - lectures/*.qmd
     - tutorials/*.qmd
+  resources:
+    - CNAME
 
 website:
   title: "Programming: Everyday Decision-Making Algorithms"
