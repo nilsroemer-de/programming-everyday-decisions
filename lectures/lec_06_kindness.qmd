@@ -1,0 +1,216 @@
+---
+title: "Lecture VI - Computational Kindness"
+subtitle: "Programming with Python"
+author: "Dr. Tobias Vlćek"
+institute: "Kühne Logistics University Hamburg - Fall 2024"
+format:
+  revealjs:
+    footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_06_kindness.qmd)"
+    output-file: lec_06_presentation.html
+---
+
+# [Key Concepts]{.flow} {.title}
+
+## Topics from the Lecture
+
+- **Optimal Stopping**: How to decide [when to stop looking]{.highlight} for better options.
+- **Explore/Exploit Tradeoff**: [Balancing]{.highlight} between trying new things and sticking with known options.
+- **Caching**: Storing and reusing information by [sticking to a task]{.highlight} to improve performance.
+- **Scheduling**: Efficiently managing [tasks and time.]{.highlight}
+- **Randomness**: Understanding and working with [uncertainty]{.highlight}.
+
+# [Computational Kindness]{.flow} {.title}
+
+
+## [Computational Kindness]{.invert-font} {background-color="#000000" background-image="https://images.unsplash.com/photo-1549925245-f20a1bac6454?q=80&w=2304&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" background-size="cover" background-position="center"}
+
+. . .
+
+[[Question:]{.highlight} **An idea what that is?**]{.invert-font}
+
+. . .
+
+::: {.invert-font}
+
+- Idea of introducing [empathy in algorithms]{.highlight}
+- **Consider human cognitive load and limitations**
+- Making choices that **reduce mental burden** for others
+- Creating systems that are **easy to understand and interact**
+:::
+
+::: {.footer}
+:::
+
+
+## Scheduling Meetings
+
+- [Propose specific times!]{.highlight}
+- Don't ask "when are you free?"
+- **Reduces** cognitive load for others
+- **Transforms** an open-ended problem
+
+. . .
+
+::: {.callout-important}
+**Now a simple yes/no decision!**
+:::
+
+## Communication
+
+- [Be explicit rather than implicit]{.highlight}
+- Provide **clear** options instead
+- **Avoid** open-ended questions
+- State your **preferences**
+
+. . .
+
+::: {.callout-important}
+**Avoid** deferring → "I'm fine with [whatever]{.highlight}"!
+:::
+
+## The Cost of Flexibility
+
+- "I'm free whenever" [seems helpful]{.highlight}
+- [But it is not!]{.highlight}
+
+. . .
+
+- Forces others to **consider all possibilities**
+- **Increases** cognitive load
+- Makes decision-making **more complex**
+
+## Principles
+
+1. **Reduce Options**: Fewer choices lead to [better decisions]{.highlight}
+2. **Be Explicit**: Clear constraints [help]{.highlight} others decide
+3. **Consider Cognitive Load**: Design interactions minimizing [mental effort]{.highlight} for others
+4. **Make Decisions**: [Taking responsibility]{.highlight} can be kind
+
+## Reflection
+
+[Think about it:]{.highlight} **How could you apply computational kindness in these scenarios?**
+
+- Planning a **group dinner** with friends
+- Asking your professor for **thesis feedback**
+- Coordinating a **team project** at work
+
+# [How to continue?]{.flow} {.title}
+
+## [How to continue learning?]{.invert-font} {background-color="#000000" background-image="https://images.unsplash.com/photo-1547190027-9156686aa2f0?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" background-size="cover" background-position="center"}
+
+::: {.invert-font}
+
+- We have covered **a lot of topics**
+- But there are **many more** to explore!
+
+:::
+
+## Bayes' Rule
+
+- Fundamental theorem in probability theory
+- Updates probability of hypothesis based on [new evidence]{.highlight}
+- Used in **statistics, machine learning, and decision-making**
+
+. . .
+
+::: {.callout-important}
+Helps make **informed predictions and decisions** under uncertainty in the real world!
+:::
+
+## Overfitting
+
+- Occurs when a model [learns the training data too well]{.highlight}
+- **Captures noise and outliers** rather than pattern
+- Results in **poor generalization to new data**
+
+. . .
+
+::: {.callout-important}
+Several ways to counter overfitting, e.g. cross-validation.
+:::
+
+## Game Theory
+
+- Strategic interactions among [rational decision-makers]{.highlight}
+- Analyzes situations with **multiple agents** and their strategies
+
+. . .
+
+::: {.callout-important}
+**Many applications** in economics, politics, and biology!
+:::
+
+## Networking
+
+- Study of **information exchange** over networks
+- Includes [understanding protocols and data transmission]{.highlight}
+- Optimizes **network resources**
+
+. . .
+
+::: {.callout-important}
+**Important** in computer networks, the internet and social life!
+:::
+
+## Relaxation
+
+- Simplifies [complex problems]{.highlight} to make them more tractable
+- Involves **relaxing certain constraints**
+- Provides insights or **approximate** solutions
+
+## Continue programming?
+
+- The best way to continue learning is to [keep programming in the future]{.highlight}
+- Potentially, you will continue to do so during your studies
+- Coding in your Thesis is another great way to improve
+- Try to find a way to apply programming in your work
+- **There are many interesting topics to explore!**
+
+## Advent of Code
+
+- [Advent of Code](https://adventofcode.com/) is a fun way to keep programming
+- Here you can solve programming puzzles during Advent
+- It is **completely free** and ad-free and starts each year at 01.12.
+
+<center>
+<iframe src="https://giphy.com/embed/F1Gh6u8YEG3FctxYWc" width="280" height="280" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+</center>
+
+## That's it for the Lecture Series!
+
+- We now have covered the basics of Python
+- I hope you enjoyed the lecture and found it helpful
+- If you have questions or feedback, [please let me know!]{.highlight}
+- I wish you all the best for your studies and your career!
+
+## {background-color="#000000"}
+
+<center>
+<iframe src="https://giphy.com/embed/YVg3fCdaBpLEc" width="480" height="355" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+</center>
+
+# [Q&A]{.flow}
+
+# [Literature]{.flow} {.title}
+
+## Interesting literature to start
+
+- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^4]
+
+[^4]: The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.
+
+
+## Books on Programming
+
+- Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. [Here](https://greenteapress.com/wp/think-python-3rd-edition/)
+- Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.
+
+. . .
+
+::: {.callout-note}
+Think Python is a great book to start with. It's available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.
+:::
+
+## More Literature
+
+For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.

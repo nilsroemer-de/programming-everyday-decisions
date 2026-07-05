@@ -1,0 +1,968 @@
+---
+title: "Lecture V - Randomness"
+subtitle: "Programming: Everyday Decision-Making Algorithms"
+author: "Dr. Tobias Vlćek"
+institute: "Kühne Logistics University Hamburg - Winter 2024"
+format:
+  revealjs:
+    footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_05_randomness.qmd)"
+    output-file: lec_05_presentation.html
+---
+
+# [Welcome!]{.flow} {.title}
+
+## Today's Topic: Randomness & Probabilistic Algorithms
+
+**Topic:** Understanding how randomness powers algorithms and decision-making in computer science and everyday life
+
+. . .
+
+**Why this matters:** Randomness isn't just about gambling. It's a powerful tool that makes computers faster, cryptography secure, and helps us solve problems. Today we'll learn how embracing uncertainty can lead to better solutions.
+
+## Today's Agenda
+
+:::{.incremental}
+1. **Understanding Randomness** - From casinos to algorithms
+2. **Randomness in Daily Life** - Where we encounter it without realizing
+3. **Computer Science Applications** - Monte Carlo, simulated annealing, cryptography
+4. **Decision Making** - Using randomness to solve hard problems
+:::
+
+# [Understanding Randomness]{.flow} {.title}
+
+## Randomness
+
+[Question:]{.question} **What comes to your mind when you think of randomness?**
+
+. . .
+
+## [Casino]{.invert-font} {background-image="https://images.unsplash.com/photo-1517232115160-ff93364542dd?q=80&w=3473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+::: footer
+:::
+
+## [Lottery]{.invert-font} {background-image="https://images.unsplash.com/photo-1593453917923-c3f751aab514?q=80&w=3536&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+::: footer
+:::
+
+## [Shuffling cards]{.invert-font} {background-image="https://images.unsplash.com/photo-1691213426024-ab6eb6f33d64?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+::: footer
+:::
+
+## [Algorithms]{.invert-font} {background-image="https://images.unsplash.com/photo-1717501220725-83f151c447e7?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+::: footer
+:::
+
+## [Cryptography]{.invert-font} {background-image="https://images.unsplash.com/photo-1640161704729-cbe966a08476?q=80&w=3544&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+::: footer
+:::
+
+## [Genetic mutations]{.invert-font} {background-image="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=3552&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+::: footer
+:::
+
+
+## Why Randomness Matters
+
+[Question:]{.question} **What's the opposite of randomness?**
+
+. . .
+
+:::{.incremental}
+- **Determinism** - same input, same output
+- **Predictability** - knowing the outcome in advance
+- **Consistency** - reliable patterns
+:::
+
+. . .
+
+- [Boredom?]{.highlight}
+
+## Discovery by Randomness
+
+[Question:]{.question} **How would you test if a pair of dice is fair?**
+
+. . .
+
+- Send the dice **to a lab** to [check weight and balance]{.highlight}
+
+. . .
+
+- Roll the dice **many times**
+- Check if the outcomes are **uniformly distributed**
+- Compare **observed** frequencies to **expected** frequencies
+
+## Dice Rolls
+
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import pathlib
+
+DIR = pathlib.Path(".").resolve()
+
+# Setup the figure
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8), dpi=150)
+plt.style.use('fivethirtyeight')
+
+# Setup first subplot for rolling history
+ax1.set_xlim(0, 200)
+ax1.set_ylim(0.5, 6.5)
+ax1.set_title('Dice Roll History')
+ax1.set_xlabel('Roll Number')
+ax1.set_ylabel('Roll Value')
+ax1.grid(True, alpha=0.3)
+
+# Setup second subplot for distribution
+x = np.arange(1, 7)
+expected_prob = [1/6] * 6  # Fair die probabilities
+biased_prob = [0.1, 0.1, 0.1, 0.1, 0.1, 0.5]  # Biased die probabilities
+ax2.set_xlim(0.5, 6.5)
+ax2.set_ylim(0, 0.6)
+ax2.set_title('Distribution of Outcomes')
+ax2.set_xlabel('Roll Value')
+ax2.set_ylabel('Probability')
+ax2.grid(True, alpha=0.3)
+
+# Plot expected probability lines
+ax2.plot(x, expected_prob, 'g--', label='Fair Die (Expected)', alpha=0.7)
+ax2.plot(x, biased_prob, 'r--', label='Biased Die (Expected)', alpha=0.7)
+ax2.legend()
+
+# Initialize data
+fair_rolls = []
+biased_rolls = []
+fair_line, = ax1.plot([], [], 'g-', alpha=0.5, label='Fair Die')
+biased_line, = ax1.plot([], [], 'r-', alpha=0.5, label='Biased Die')
+fair_scatter = ax1.scatter([], [], c='green', alpha=0.6)
+biased_scatter = ax1.scatter([], [], c='red', alpha=0.6)
+fair_bars = ax2.bar(x - 0.2, np.zeros_like(x), width=0.4, alpha=0.5, color='green', label='Fair Die (Observed)')
+biased_bars = ax2.bar(x + 0.2, np.zeros_like(x), width=0.4, alpha=0.5, color='red', label='Biased Die (Observed)')
+
+ax1.legend()
+ax2.legend()
+
+def biased_roll():
+    # Returns 6 with 50% probability, others equally likely
+    return np.random.choice(range(1, 7), p=biased_prob)
+
+def update(frame):
+    # Generate new rolls
+    fair_roll = np.random.randint(1, 7)
+    unfair_roll = biased_roll()
+
+    fair_rolls.append(fair_roll)
+    biased_rolls.append(unfair_roll)
+
+    # Update rolling history
+    fair_line.set_data(range(len(fair_rolls)), fair_rolls)
+    biased_line.set_data(range(len(biased_rolls)), biased_rolls)
+    fair_scatter.set_offsets(np.c_[range(len(fair_rolls)), fair_rolls])
+    biased_scatter.set_offsets(np.c_[range(len(biased_rolls)), biased_rolls])
+
+    # Update distributions
+    if fair_rolls:
+        fair_counts = np.bincount(fair_rolls)[1:]
+        fair_probs = fair_counts / len(fair_rolls)
+        biased_counts = np.bincount(biased_rolls)[1:]
+        biased_probs = biased_counts / len(biased_rolls)
+
+        for bar, prob in zip(fair_bars, fair_probs):
+            bar.set_height(prob)
+        for bar, prob in zip(biased_bars, biased_probs):
+            bar.set_height(prob)
+
+    return (fair_line, biased_line, fair_scatter, biased_scatter, *fair_bars, *biased_bars)
+
+# Create and save animation
+anim = FuncAnimation(fig, update, frames=200, interval=50, blit=True)
+anim.save(DIR / '../animations/dice_fairness.gif', writer='pillow')
+plt.close()
+```
+
+![](../animations/dice_fairness.gif)
+
+## Using Randomness
+
+Randomness is a [fundamental aspect of the world]{.highlight}
+
+. . .
+
+:::{.incremental}
+- **Testing:** Generate random inputs to find bugs
+- **Optimization:** Escape local optima in complex problems
+- **Simulation:** Model complex systems with uncertainty
+- **Security:** Make systems unpredictable to attackers
+- **Fairness:** Eliminate bias in selection processes
+:::
+
+. . .
+
+::: {.callout-important}
+Randomness is not just about **generating random numbers**!
+:::
+
+# [Randomness in Daily Life]{.flow} {.title}
+
+## Randomness and Everyday Life
+
+[Question:]{.question} **Where do you encounter randomness in daily life?**
+
+## Social Life
+
+:::{.incremental}
+- **Dating apps:** Randomized matching within preferences
+- **Random encounters** that lead to friendships
+- **Career opportunities** from unexpected connections
+- **Breaking ties** through coin tosses
+- **Netflix recommendations:** Controlled randomness for discovery
+:::
+
+## Entertainment Industry
+
+:::{.incremental}
+- **Pokémon:** "Random" encounters weighted by rarity
+- **Loot systems:** Rare items have controlled drop rates
+- **Chess AI:** Introduces randomness to feel more human-like
+- **Spotify shuffle:** Deliberately less random to feel natural
+- **TikTok:** Controlled randomization for content discovery
+:::
+
+## Cryptography & Security
+
+:::{.incremental}
+- **Cryptocurrency mining:** Solving cryptographic puzzles through guessing
+- **Password generators:** Balance randomness and memorability
+- **`correct-horse-battery-staple`** is more secure than **`Tr0ub4dor&3`**
+- **Modern encryption** relies on random number generation
+- **Two-factor authentication** uses random codes
+:::
+
+## Data Science & Research
+
+:::{.incremental}
+- **Weather forecasting:** Uses randomness to model uncertainty
+- **Stock algorithms:** Add randomness to avoid predictable patterns
+- **Self-driving cars:** Random elements for natural-feeling behavior
+- **Random sampling:** Ensures unbiased research results
+- **A/B testing:** Random assignment to treatment groups
+:::
+
+. . .
+
+::: {.callout-note}
+Randomness is [everywhere]{.highlight} around us!
+:::
+
+# [Randomness and Computer Science]{.flow} {.title}
+
+## Randomness in Algorithms
+
+**Why do computer scientists love randomness?**
+
+:::{.incremental}
+- **Efficiency:** Often faster than deterministic approaches
+- **Simplicity:** Can solve complex problems with simple code
+- **Robustness:** Avoids worst-case scenarios
+- **Approximation:** "Good enough" solutions in reasonable time
+:::
+
+. . .
+
+::: {.callout-important}
+**Key Trade-off:** Perfect vs. "Good Enough" solutions
+:::
+
+## Types of Randomness
+
+[Question:]{.question} **Difference between true and pseudo-randomness?**
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+[True Randomness]{.highlight}
+
+- Physical phenomena
+- Atmospheric noise
+- Radioactive decay
+- Quantum effects
+:::
+
+::: {.column width="50%"}
+[Pseudo-randomness]{.highlight}
+
+- Deterministic algorithms
+- Seed-based generation
+- Repeatable sequences
+- Good enough for most uses
+:::
+:::
+
+## Limits of Computation
+
+[Question:]{.question} **How many possible combinations exist in a shuffled deck of cards?**
+
+```{python}
+#| echo: true
+#| eval: true
+#| output-location: fragment
+import math
+print(math.factorial(52))
+```
+
+. . .
+
+::: {.callout-important}
+Computing and evaluating all possible combinations is not feasible!
+:::
+
+
+## Computational Limits
+
+[Question:]{.question} **Anybody ever heard of "Monte Carlo methods"?**
+
+. . .
+
+- Developed in the **1940s for nuclear weapons research**
+- Nuclear fission chain reactions **were too complex**
+- Helped to [evaluate the probabilities of different outcomes]{.highlight}
+- Named after **Monaco's famous casino**
+
+. . .
+
+[Question:]{.question} **How could we estimate π?**
+
+## Estimating π
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import pathlib
+
+DIR = pathlib.Path(".").resolve()
+
+# Setup
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8), dpi=150)
+
+# Draw circle and square boundaries
+circle = plt.Circle((0, 0), 1, fill=False, color='black')
+ax1.add_artist(circle)
+ax1.set_xlim(-1.1, 1.1)
+ax1.set_ylim(-1.1, 1.1)
+ax1.set_aspect('equal')
+ax1.grid(True)
+ax1.set_title('Monte Carlo Simulation')
+
+# Setup pi estimation plot
+ax2.set_xlim(0, 200)  # Reduced number of frames
+ax2.set_ylim(2.8, 3.4)
+ax2.axhline(y=np.pi, color='r', linestyle='--', label='π')
+ax2.grid(True)
+ax2.set_title('π Estimation')
+ax2.legend()
+
+# Pre-allocate points and create scatter plots once
+points_per_frame = 10  # Process multiple points per frame
+scatter_inside = ax1.scatter([], [], c='blue', alpha=0.6, s=20)
+scatter_outside = ax1.scatter([], [], c='red', alpha=0.6, s=20)
+line_estimate, = ax2.plot([], [], 'g-', alpha=0.5)
+
+# Initialize arrays
+inside_points = np.empty((0, 2))
+outside_points = np.empty((0, 2))
+estimates = np.empty(0)
+
+def update(frame):
+    global inside_points, outside_points, estimates
+
+    # Generate batch of points
+    points = np.random.uniform(-1, 1, (points_per_frame, 2))
+    distances = np.sum(points**2, axis=1)
+
+    # Split into inside/outside points
+    new_inside = points[distances <= 1]
+    new_outside = points[distances > 1]
+
+    # Update arrays
+    inside_points = np.vstack([inside_points, new_inside])
+    outside_points = np.vstack([outside_points, new_outside])
+
+    # Update scatter plots
+    scatter_inside.set_offsets(inside_points)
+    scatter_outside.set_offsets(outside_points)
+
+    # Calculate and update pi estimation
+    total_points = len(inside_points) + len(outside_points)
+    if total_points > 0:
+        pi_estimate = 4 * len(inside_points) / total_points
+        estimates = np.append(estimates, pi_estimate)
+        line_estimate.set_data(range(len(estimates)), estimates)
+
+    return scatter_inside, scatter_outside, line_estimate
+
+# Create and save animation
+anim = FuncAnimation(fig, update, frames=200, interval=50, blit=True)
+anim.save(DIR / "../animations/pi.gif", writer="pillow")
+plt.close()
+```
+
+![](../animations/pi.gif)
+
+
+# [Decision Making]{.flow} {.title}
+
+## Travel Itinerary
+
+[Question:]{.question} **How and in which order would you visit 10 cities by plane with minimal total distance?**
+
+```{python}
+#| echo: true
+#| eval: true
+#| output-location: fragment
+import math
+print(math.factorial(10))
+```
+
+. . .
+
+[Question:]{.question} **What could be a strategy?**
+
+## Brute Force
+
+- Try [every possibility]{.highlight}
+- Total possible routes: 10! = **3,628,800**
+- **Guaranteed** to find best solution
+- If each check takes 1ms: **1 hour** to check all routes
+
+. . .
+
+[Question:]{.question} **What could be the problem with this approach?**
+
+## Time and Space Requirements
+
+:::{.incremental}
+- For 20 cities: 20! = **2.4 quintillion** routes
+- Would take **77 billion years** at 1ms per check!
+- **Time complexity** grows [factorially]{.highlight}
+- **Memory requirements** increase with problem size
+:::
+
+. . .
+
+::: {.callout-important}
+**Not feasible for real-world problems!**
+:::
+
+## Greedy Algorithm
+
+- **Example:** Always picking shortest next flight
+- Make **locally optimal** choices at each step
+- [Never backtracks or reconsiders past decisions]{.highlight}
+- Fast execution & simple to implement
+- Can perform **poorly on complex problems**
+
+## Hill Climbing
+
+- [Iteratively improve solution]{.highlight} by making small changes
+- Like **climbing in fog**, can only see immediate surroundings
+- Don't know if **higher peaks** exist elsewhere
+- Can get stuck in **local optima**
+- No guarantee of finding **global best optima**
+
+. . .
+
+[Question:]{.question} **How would you escape a local optimum?**
+
+## Simulated Annealing (SA)
+
+- Make random changes and **accept improvements**
+- Sometimes accept **worse solutions**
+- Gradually become **more selective**
+
+. . .
+
+[Question:]{.question} **Why accept worse solutions sometimes?**
+
+. . .
+
+- Randomness helps to escape **local optima**
+- Balances [exploration vs. exploitation]{.highlight}
+
+## SA Animation
+
+```{python}
+#| echo: false
+# Setup the figure with two subplots: main visualization and temperature
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(18, 8), height_ratios=[3, 1], dpi=150)
+plt.subplots_adjust(hspace=0.3)
+
+# Generate the objective function (parabola)
+x = np.linspace(0, 10, 200)
+y = -((x-5)**2)  # Parabola with maximum at x=5
+ax1.plot(x, y, 'k-', alpha=0.3, label='Objective Function')
+
+# Initialize starting position (random x between 0 and 10)
+current_x = np.random.uniform(0, 10)
+current_y = -((current_x-5)**2)
+point, = ax1.plot([current_x], [current_y], 'ro', markersize=10,
+                  label='Current Position')
+
+# Animation parameters
+initial_temp = 10.0
+temperature = initial_temp
+cooling_rate = 0.995
+path_x = [current_x]
+path_y = [current_y]
+temperatures = [temperature]
+
+# Plot search path
+line, = ax1.plot(path_x, path_y, 'r-', alpha=0.5, label='Search Path')
+
+# Temperature plot
+temp_line, = ax2.plot(temperatures, 'b-', alpha=0.5, label='Temperature')
+
+def update(frame):
+    global current_x, current_y, temperature
+
+    # Propose new solution (larger steps when temperature is high)
+    new_x = current_x + np.random.normal(0, temperature)
+    new_x = np.clip(new_x, 0, 10)  # Keep within bounds
+    new_y = -((new_x-5)**2)
+
+    # Acceptance probability (higher temp = more likely to accept worse solutions)
+    if new_y > current_y:  # Always accept better solutions
+        acceptance = True
+    else:
+        prob = np.exp((new_y - current_y) / temperature)
+        acceptance = np.random.random() < prob
+
+    # Update position if accepted
+    if acceptance:
+        current_x = new_x
+        current_y = new_y
+
+    # Cool down system
+    temperature *= cooling_rate
+
+    # Update visualization
+    path_x.append(current_x)
+    path_y.append(current_y)
+    temperatures.append(temperature)
+
+    line.set_data(path_x, path_y)
+    point.set_data([current_x], [current_y])
+    temp_line.set_data(range(len(temperatures)), temperatures)
+
+    # Update progress text
+    progress = frame / 200 * 100
+    ax1.set_title(f'Simulated Annealing Progress: {progress:.1f}%\n'
+                  f'Current Temperature: {temperature:.2f}')
+
+    return line, point, temp_line
+
+# Setup axis limits and labels
+ax1.set_xlim(0, 10)
+ax1.set_ylim(-30, 5)
+ax1.grid(True, alpha=0.3)
+ax1.set_xlabel('Search Space')
+ax1.set_ylabel('Objective Value')
+ax1.legend(loc='upper right')
+
+ax2.set_xlim(0, 200)
+ax2.set_ylim(0, initial_temp)
+ax2.grid(True, alpha=0.3)
+ax2.set_xlabel('Iterations')
+ax2.set_ylabel('Temperature')
+ax2.set_title('Cooling Schedule')
+
+# Create and save animation
+anim = FuncAnimation(fig, update, frames=200, interval=50, blit=True)
+anim.save(DIR / '../animations/simulated_annealing.gif', writer='pillow')
+plt.close()
+```
+
+![](../animations/simulated_annealing.gif)
+
+## Traveling Salesman
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import pathlib
+
+DIR = pathlib.Path(".").resolve()
+
+# Setup
+fig = plt.figure(figsize=(18, 8), dpi=150)
+# Create a grid layout with 1x2 main grid, and stack 2 plots on the right
+gs = fig.add_gridspec(1, 2, width_ratios=[3, 2])
+gs_right = gs[1].subgridspec(2, 1, height_ratios=[1, 1])
+
+# Create axes with the new layout
+ax1 = fig.add_subplot(gs[0])  # Main plot on left
+ax2 = fig.add_subplot(gs_right[0])  # Top right
+ax3 = fig.add_subplot(gs_right[1])  # Bottom right
+
+plt.style.use('fivethirtyeight')
+plt.subplots_adjust(wspace=0.2)  # Adjust spacing between plots
+
+# Define major international cities with their coordinates
+# Using approximate normalized coordinates for visualization
+cities_data = {
+    'Tokyo': (8.5, 7.0),
+    'New York': (2.5, 6.5),
+    'London': (4.5, 8.0),
+    'Paris': (4.8, 7.5),
+    'Dubai': (6.5, 5.0),
+    'Singapore': (7.8, 4.0),
+    'Sydney': (8.8, 2.5),
+    'Rio': (3.0, 3.0),
+    'Cape Town': (5.5, 2.0),
+    'Mumbai': (7.0, 5.5)
+}
+
+city_names = list(cities_data.keys())
+cities = np.array(list(cities_data.values()))
+n_cities = len(cities)
+
+# Initial route: simple sequential route
+current_route = np.arange(n_cities)
+np.random.shuffle(current_route)
+
+# Calculate route distance
+def calculate_distance(route):
+    total = 0
+    for i in range(len(route)):
+        city1 = cities[route[i]]
+        city2 = cities[route[(i + 1) % len(route)]]
+        total += np.sqrt(np.sum((city1 - city2) ** 2))
+    return total
+
+# Animation parameters
+initial_temp = 10.0
+temperature = initial_temp
+cooling_rate = 0.995
+distances = [calculate_distance(current_route)]
+best_distances = [distances[0]]
+best_distance = distances[0]
+best_route = current_route.copy()
+
+# Plot cities, route, and names
+scatter = ax1.scatter(cities[:, 0], cities[:, 1], c='red', s=100)
+line, = ax1.plot([], [], 'r-', alpha=0.6)
+temp_line, = ax2.plot([], [], 'b-', alpha=0.6)
+obj_line, = ax3.plot([], [], 'g-', alpha=0.6)
+
+# Add city names as annotations with better positioning
+for i, (x, y) in enumerate(cities):
+    ax1.annotate(city_names[i], (x, y), xytext=(5, 5),
+                textcoords='offset points', fontsize=10,
+                bbox=dict(facecolor='white', edgecolor='none', alpha=0.7))
+
+def update_route_visualization():
+    route_coords = np.concatenate([cities[current_route], [cities[current_route[0]]]])
+    line.set_data(route_coords[:, 0], route_coords[:, 1])
+
+def update(frame):
+    global current_route, temperature, best_distance, best_route
+
+    # Propose new solution by swapping two random cities
+    new_route = current_route.copy()
+    idx1, idx2 = np.random.choice(len(new_route), 2, replace=False)
+    new_route[idx1], new_route[idx2] = new_route[idx2], new_route[idx1]
+
+    # Calculate distances
+    current_distance = calculate_distance(current_route)
+    new_distance = calculate_distance(new_route)
+
+    # Acceptance probability
+    if new_distance < current_distance:
+        acceptance = True
+    else:
+        prob = np.exp((current_distance - new_distance) / temperature)
+        acceptance = np.random.random() < prob
+
+    # Update if accepted
+    if acceptance:
+        current_route = new_route
+        if new_distance < best_distance:
+            best_distance = new_distance
+            best_route = new_route.copy()
+
+    # Cool down system
+    temperature *= cooling_rate
+
+    # Update visualization
+    update_route_visualization()
+    distances.append(calculate_distance(current_route))
+    best_distances.append(best_distance)
+
+    temp_line.set_data(range(len(distances)),
+                      [initial_temp * (cooling_rate ** i) for i in range(len(distances))])
+    obj_line.set_data(range(len(best_distances)), best_distances)
+
+    # Update progress text with arrow symbol
+    progress = frame / 200 * 100
+    current_path = ' → '.join([city_names[i] for i in current_route])
+    ax1.set_title(f'Global TSP Solution Progress: {progress:.1f}%\n'
+                  f'Current Distance: {distances[-1]:.2f}, Best: {best_distance:.2f}\n'
+                  f'Current Path: {current_path}', fontsize=10)
+
+    return line, temp_line, obj_line
+
+# Adjust axis limits and labels
+ax1.set_xlim(1, 10)
+ax1.set_ylim(1, 9)
+ax1.grid(True, alpha=0.3)
+ax1.set_xlabel('Longitude (normalized)')
+ax1.set_ylabel('Latitude (normalized)')
+
+# Make the right-side plots slightly more compact
+ax2.set_xlim(0, 200)
+ax2.set_ylim(0, initial_temp)
+ax2.grid(True, alpha=0.3)
+ax2.set_xlabel('Iterations')
+ax2.set_ylabel('Temperature')
+ax2.set_title('Cooling Schedule')
+
+
+plt.subplots_adjust(wspace=0.3, hspace=0.5)
+
+# Bottom subplot margins
+ax3.set_xlim(0, 200)
+ax3.set_ylim(0, calculate_distance(current_route) * 1.2)
+ax3.grid(True, alpha=0.3)
+ax3.set_xlabel('Iterations', labelpad=10)
+ax3.set_ylabel('Distance')
+ax3.set_title('Best Distance Found')
+
+# Initial route visualization
+update_route_visualization()
+
+# Create and save animation
+anim = FuncAnimation(fig, update, frames=200, interval=50, blit=True)
+anim.save(DIR / '../animations/tsp_annealing.gif', writer='pillow')
+plt.close()
+```
+
+![](../animations/tsp_annealing.gif)
+
+# [Randomness and Society]{.flow} {.title}
+
+## Thought Experiment
+
+**What's more important for a society?**
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+[Freedom]{.highlight}
+
+- Individual choice
+- Personal responsibility
+- Market-driven
+:::
+
+::: {.column width="50%"}
+[Equality]{.highlight}
+
+- Shared resources
+- Social safety nets
+- Regulated systems
+:::
+:::
+
+. . .
+
+[Question:]{.question} **Any problem with this question?**
+
+## Veil of Ignorance
+
+You might [randomly]{.highlight} be:
+
+- Any gender identity and economic status
+- Any health condition and intelligence level
+- Any cultural background and religious belief
+
+. . .
+
+[Question:]{.question} **If you didn't know who you'd be born as, what kind of society would you design?**
+
+## Key Considerations
+
+- **Individual stories:** Powerful but potentially misleading
+- **Statistics:** Comprehensive but can miss nuance
+- **Hidden diversity:** Important subgroups may be overlooked
+- **Small policy changes** [can have cascading effects]{.highlight}
+
+. . .
+
+::: {.callout-important}
+But that's not all! We also need to measure **success** and **failure**!
+:::
+
+## Measuring Success
+
+- **Mean happiness:** Average well-being
+- **Total happiness:** Utilitarian approach
+- **Median happiness:** Focus on the middle class
+- **Minimum happiness:** Protecting the most vulnerable
+
+. . .
+
+[Question:]{.question} **What could be the problem with these measures?**
+
+## Idea: Random Sampling
+
+- Randomly [select a subset of the population]{.highlight}
+- Gather **diverse perspectives** from the sample
+- Better understand **needs** of population
+- **Reduce selection bias** and improve accuracy
+
+. . .
+
+[Question:]{.question} **What is a selection bias?**
+
+## Selection Bias
+
+**Definition**: Selection bias occurs when the sample data you're analyzing [isn't truly representative of the population]{.highlight} you're trying to study.
+
+. . .
+
+::: {.callout-warning}
+### Famous Example
+During WWII, engineers studied returning planes to determine where to add armor. Initially, they focused on areas with most bullet holes. Abraham Wald pointed out they should instead armor the areas with *no* bullet holes - those were the critical areas where planes didn't survive to return!
+:::
+
+## Promoting Fairness
+
+[Question:]{.question} **How can randomness promote fairness?**
+
+. . .
+
+- **Random allocation** of patients in clinical trials
+- **Random audits** for tax compliance
+- **Random assignment** of cases to judges
+- **Random order** of candidates on voting ballots
+
+# [Uncertainty]{.flow} {.title}
+
+## Quick Poll
+[Question:]{.question} **Which would you prefer?**
+
+- **100% chance of winning 50 EUR**
+- **50% chance of winning 120 EUR**
+
+. . .
+
+::: {.callout-tip}
+Answer depends on your **risk aversion**!
+:::
+
+## Decisions Under Uncertainty
+
+[Question:]{.question} **When should we embrace vs. reduce randomness?**
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+[Embrace When]{.highlight}:
+
+- Exploring new solutions
+- Avoiding bias
+- Breaking deadlocks
+- Testing systems
+:::
+
+::: {.column width="50%"}
+[Reduce When]{.highlight}:
+
+- Safety-critical systems
+- Financial transactions
+- Medical procedures
+- Legal proceedings
+:::
+:::
+
+# [Takeaways]{.flow} {.title}
+
+## "Good Enough" Solutions
+
+- **Perfect is enemy of good**
+  - Remember Monte Carlo methods: **approximations work**
+  - Complete analysis often impossible
+  - [Perfect information is rare]{.highlight}
+
+. . .
+
+::: {.callout-tip}
+Many real-world problems benefit from **embracing uncertainty** rather than fighting it!
+:::
+
+## Opportunity Costs
+
+- [Consider opportunity costs]{.highlight}
+  - Quick approximations enable faster decisions
+  - Balance accuracy vs. computation time
+  - Random sampling vs. complete enumeration
+
+
+. . .
+
+::: {.callout-tip}
+Many problems benefit from **fast, good-enough solutions** rather than perfect ones.
+:::
+
+## {.loud-slide}
+::: {.r-fit-text}
+Any questions
+
+so far?
+:::
+
+## After the break — Randomness
+
+- Programming session in our new notebooks
+- How to translate the idea into code and experiments
+- Different scheduling algorithms applied to problems
+
+. . .
+
+::: {.callout-note}
+**That's it for today's lecture!**\
+We've covered the basics of randomness and its applications. In the upcoming tutorials, we'll learn how to use LLMs to generate code with randomness.
+:::
+
+
+# [Literature]{.flow} {.title}
+
+## Interesting literature to start
+
+- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^4]
+
+[^4]: The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.
+
+
+## Books on Programming
+
+- Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. [Here](https://greenteapress.com/wp/think-python-3rd-edition/)
+- Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.
+
+. . .
+
+::: {.callout-note}
+Think Python is a great book to start with. It's available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.
+:::
+
+## More Literature
+
+For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.

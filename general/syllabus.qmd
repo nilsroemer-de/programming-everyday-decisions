@@ -1,0 +1,49 @@
+---
+title: "Syllabus"
+subtitle: "This years course structure"
+---
+
+# Lectures
+
+In our lectures, we mostly refrain from showing you any code. Instead, we will focus on explaining the concepts and how they can be used to solve problems. The tutorials will then show you step-by-step how to implement the concepts in Python.
+
+We were rather ambitious in the design of the course in the course module, thus we will not be able to cover all topics there. However, we have chosen the most important topics from our perspective that will lay a good foundation for interested students to continue learning on their own.
+
+**Welcome and Optimal Stopping (I)**
+
+- Overview of the course and its objectives
+- Introduction to algorithmic thinking
+- Optimal Stopping
+- Programming: First Steps in Python
+
+**Explore & Exploit (II)**
+
+- Multi-armed Bandit Problem
+- Balancing exploration and exploitation
+- Programming: Simulating the Multi-armed Bandit Problem
+
+**Caching (III)**
+
+- Principles of caching and memory management
+- Least Recently Used (LRU) and other caching strategies
+- Programming: Implementing an LRU cache
+
+**Scheduling (IV)**
+
+- Task scheduling algorithms
+- Trade-offs between efficiency and fairness
+- Programming: Implementing scheduling algorithms
+
+**Randomness (V)**
+
+- Role of randomness in algorithms
+- Monte Carlo methods and their applications
+- Programming: Monte Carlo simulation
+
+**Computational Kindness (VI)**
+
+- Algorithms for social good
+- Ethical considerations in algorithm design
+- Quick review of key concepts
+- Brief student presentations
+- Open discussion and Q&A

@@ -1,0 +1,15 @@
+format:
+  html: default
+  typst: default
+  hugo-md: default
+  ipynb: default
+
+format-links:
+  - html
+  - ipynb
+  - format: typst
+    text: PDF
+    icon: file-pdf
+
+execute:
+  echo: true

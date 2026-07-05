@@ -1,0 +1,156 @@
+project:
+  type: website
+  # post-render:
+  #  - helpers/convert_pypercent.py
+  #   - helpers/convert_qmd_to_md.py
+  render:
+    - 404.qmd
+    - index.qmd
+    - general/*.qmd
+    - lectures/*.qmd
+    - tutorials/*.qmd
+
+website:
+  title: "Programming: Everyday Decision-Making Algorithms"
+  repo-url: https://github.com/beyondsimulations/Programming-Everyday-Decisions
+  repo-actions: [edit, source, issue]
+  site-url: https://beyondsimulations.github.io/Programming-Everyday-Decisions
+  bread-crumbs: true
+  sidebar:
+    style: floating
+    logo: https://images.beyondsimulations.com/logo/midjourney-everyday-algorithms.jpeg
+    collapse-level: 1
+    search: true
+    contents:
+      - text: "Welcome"
+        href: index.qmd
+      - text: "Syllabus"
+        href: general/syllabus.qmd
+      - text: "***"
+      - section: "01 Optimal Stopping"
+        contents:
+          - text: "Introduction"
+            href: lectures/lec_00_introduction.qmd
+          - text: "Lecture"
+            href: lectures/lec_01_optimal_stopping.qmd
+          - text: "01-01 - Variables"
+            href: tutorials/tut_01_01_variables.qmd
+          - text: "01-02 - Comparisons"
+            href: tutorials/tut_01_02_comparisons.qmd
+          - text: "01-03 - Decisions"
+            href: tutorials/tut_01_03_stopping.qmd
+      - section: "02 Explore/Exploit"
+        contents:
+          - text: "Lecture"
+            href: lectures/lec_02_explore_exploit.qmd
+          - text: "02-01 - Lists"
+            href: tutorials/tut_02_01_lists.qmd
+          - text: "02-02 - Loops"
+            href: tutorials/tut_02_02_loops.qmd
+          - text: "02-03 - Exploration"
+            href: tutorials/tut_02_03_explore_exploit.qmd
+      - section: "03 Caching"
+        contents:
+          - text: "Lecture"
+            href: lectures/lec_03_caching.qmd
+          - text: "03-01 - Recap"
+            href: tutorials/tut_03_01_recap.qmd
+          - text: "03-02 - Functions"
+            href: tutorials/tut_03_02_functions.qmd
+          - text: "03-03 - Packages"
+            href: tutorials/tut_03_03_packages.qmd
+      - section: "04 Scheduling"
+        contents:
+          - text: "Lecture"
+            href: lectures/lec_04_scheduling.qmd
+          - text: "10 - Recap"
+            href: tutorials/tut_04_01_recap.qmd
+          - text: "11 - Dictionaries"
+            href: tutorials/tut_04_02_dicts.qmd
+          - text: "12 - DataFrames"
+            href: tutorials/tut_04_03_dataframes.qmd
+      - section: "05 Randomness"
+        contents:
+          - text: "Lecture"
+            href: lectures/lec_05_randomness.qmd
+          - text: "13 - LLM"
+            href: lectures/tut_05_01_llm.qmd
+          - text: "14 - Recap"
+            href: tutorials/tut_05_02_recap.qmd
+          - text: "15 - Free Tasks"
+            href: tutorials/tut_05_03_free.qmd
+      - section: "06 Kindness"
+        contents:
+          - text: "Lecture"
+            href: lectures/lec_06_kindness.qmd
+      - text: "***"
+      - text: "FAQs"
+        href: general/faq.qmd
+      - text: "Installation"
+        href: general/uv.qmd
+      - text: "Literature"
+        href: general/literature.qmd
+      - text: "Cheatsheet"
+        href: general/cheatsheet.qmd
+  page-footer:
+    center: "Programming: Everyday Decision-Making Algorithms</br>Tobias Vlćek and Nils Roemer</br>CC BY-NC-SA 4.0"
+    left:
+      - icon: github
+        href: https://github.com/beyondsimulations/Applied-Optimization
+      - icon: linkedin
+        href: https://linkedin.com/in/tobiasvlcek
+      - icon: envelope
+        href: mailto:vlcek@beyondsimulations.com
+      - icon: skip-backward
+        href: https://tobiasvlcek.com/lectures/
+      - icon: shield-check
+        href: general/privacy.qmd
+      - icon: file-text
+        href: general/imprint.qmd
+
+format:
+  html:
+    theme:
+      - default
+      - styles.scss
+      - brand
+    toc: true
+    highlight-style: github
+    callout-appearance: simple
+    code-copy: true
+    code-link: true
+    toc-location: right
+    code-overflow: wrap
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    include-in-header:
+      - general/header.html
+    include-after-body:
+      text: |
+        <script defer src="https://oshu.eu/widget.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            ChatWidget.init({
+              tenant: "platform",
+              agent: "programming-everyday",
+              layoutMode: "sidebar",
+            });
+          });
+        </script>
+
+  hugo-md: default
+
+  typst:
+    papersize: a4
+
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+
+brand: _brand.yml
+
+execute:
+  freeze: true
