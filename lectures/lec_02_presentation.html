@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <meta name="author" content="Dr.&nbsp;Nils Roemer">
+  <title>Programming: Everyday Decision-Making Algorithms – Lecture II - Explore Vs. Exploit</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a79b58f53860612e3d2aa40fa25599fb.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lecture II - Explore Vs. Exploit</h1>
+  <p class="subtitle">Programming: Everyday Decision-Making Algorithms</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Dr.&nbsp;Nils Roemer 
+</div>
+        <p class="quarto-title-affiliation">
+            Kühne Logistics University Hamburg - Winter 2025
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="explore-vs.-exploit" class="title-slide slide level1 title center">
+<h1><span class="flow">Explore Vs. Exploit</span></h1>
+
+</section>
+<section id="section" class="slide level2" data-background-image="https://images.unsplash.com/photo-1661769934431-cc06cfd72d4c?ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;q=80&amp;w=870" data-background-opacity="0.95">
+<h2></h2>
+<p><span class="invert-font">You have 45 minutes for lunch. Do you try the new restaurant or go to your reliable favorite?</span></p>
+<div class="fragment">
+<p><span class="invert-font">🗳️ Quick Poll: Raise your hand, who would try the new restaurant?</span></p>
+</div>
+<div class="fragment">
+<p><span class="invert-font">This decision happens hundreds of times daily — and there’s optimal math behind it!</span></p>
+<div class="footer">
+<p><span class="invert-font">Photo by <a href="https://unsplash.com/de/@jillamatt">Jillian Amatt</a> on Unsplash</span></p>
+</div>
+</div>
+</section>
+<section id="core-concepts" class="slide level2 smaller">
+<h2>Core Concepts</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="explore">🔍 Explore</h3>
+<div class="fragment highlight-current-blue">
+<ul>
+<li><strong>Definition:</strong> Gathering new information</li>
+<li><strong>Risk:</strong> Unknown outcomes</li>
+<li><strong>Example:</strong> Trying that new sushi place</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<h3 id="exploit">🎯 Exploit</h3>
+<div class="fragment highlight-current-red">
+<ul>
+<li><strong>Definition:</strong> Using known information</li>
+<li><strong>Risk:</strong> Missing better options</li>
+<li><strong>Example:</strong> Your go-to pizza joint</li>
+</ul>
+</div>
+</div></div>
+<div class="fragment fade-in">
+<div class="callout callout-important callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>⚖️ The Fundamental Trade-off</strong></p>
+</div>
+<div class="callout-content">
+<p>These are <strong>mutually exclusive</strong> choices in any given moment. You can’t have your cake and eat it (too).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-do-you-have-any-examples-of-explore-vs-exploit-in-your-life" class="slide level2">
+<h2><span class="question">Question:</span> Do you have any examples of explore vs exploit in your life?</h2>
+</section>
+<section id="medical-clinical-trials" class="slide level2">
+<h2>🏥 Medical: Clinical Trials</h2>
+<p><strong>Explore:</strong> Test experimental drug on new patients</p>
+<ul>
+<li><em>Risk:</em> Unknown side effects, potential harm</li>
+<li><em>Reward:</em> Breakthrough treatment discovery</li>
+</ul>
+<p><strong>Exploit:</strong> Use proven treatment</p>
+<ul>
+<li><em>Risk:</em> Missing better cures</li>
+<li><em>Reward:</em> Predictable, safe outcomes</li>
+</ul>
+</section>
+<section id="tech-ab-testing" class="slide level2">
+<h2>💻 Tech: A/B Testing</h2>
+<p><strong>Explore:</strong> Test new website design</p>
+<ul>
+<li><em>Cost:</em> Development time, potential lost conversions</li>
+<li><em>Benefit:</em> Higher conversion rates, better UX</li>
+</ul>
+<p><strong>Exploit:</strong> Keep current design</p>
+<ul>
+<li><em>Cost:</em> Missed optimization opportunities</li>
+<li><em>Benefit:</em> Stable, known performance</li>
+</ul>
+</section>
+<section id="personal-dating-apps" class="slide level2">
+<h2>💕 Personal: Dating Apps</h2>
+<p><strong>Explore:</strong> Meet someone new</p>
+<ul>
+<li><em>Risk:</em> Bad dates, wasted time</li>
+<li><em>Reward:</em> Finding “the one”</li>
+</ul>
+<p><strong>Exploit:</strong> Meet someone you already know</p>
+<ul>
+<li><em>Risk:</em> Settling for “good enough”</li>
+<li><em>Reward:</em> Comfortable, known connection</li>
+</ul>
+</section>
+<section id="the-daily-decision-dilemma" class="slide level2 center">
+<h2>The Daily Decision Dilemma</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment highlight-current-blue">
+<h3 id="explore-moments">Explore Moments</h3>
+<ul>
+<li>Try a new coffee shop</li>
+<li>Learn a new skill</li>
+<li>Watch a different genre</li>
+<li>Take a new route to work</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment highlight-current-red">
+<h3 id="exploit-moments">Exploit Moments</h3>
+<ul>
+<li>Order your usual drink</li>
+<li>Use familiar tools</li>
+<li>Rewatch favorite shows</li>
+<li>Take the fastest route</li>
+</ul>
+</div>
+</div></div>
+<div class="fragment fade-in">
+<div class="callout callout-tip callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>The Million Dollar Question</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>What is the optimal balance?</strong> Science has been asking this for <strong>over 50 years!</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-problem-with-exploitation" class="slide level2">
+<h2>The problem with exploitation</h2>
+<h3 id="question-any-ideas-what-it-might-be"><span class="question">Question:</span> Any ideas what it might be?</h3>
+<ul>
+<li class="fragment">Exploitation is <span class="highlight">not always the best strategy.</span></li>
+<li class="fragment">Especially when you have <strong>very limited information.</strong></li>
+<li class="fragment">When you <strong>stop exploring</strong>, you might <strong>miss better options</strong>.</li>
+<li class="fragment">Imagine you are not able to gather new information and could <strong>only choose known alternatives.</strong></li>
+</ul>
+</section>
+<section id="the-problem-with-exploration" class="slide level2">
+<h2>The problem with exploration</h2>
+<h3 id="question-any-ideas-what-it-might-be-1"><span class="question">Question:</span> Any ideas what it might be?</h3>
+<ul>
+<li class="fragment">Exploration is <span class="highlight">not always the best strategy.</span></li>
+<li class="fragment">Especially when you are <strong>limited in using new information.</strong></li>
+<li class="fragment">When you <strong>constantly explore</strong>, you might <strong>never enjoy the fruits of your exploration.</strong></li>
+<li class="fragment">Imagine you could only <strong>eat each meal only once, hear each song only once, talk to each person only once…</strong></li>
+</ul>
+</section></section>
+<section>
+<section id="multi-armed-bandit-problem" class="title-slide slide level1 title center">
+<h1><span class="flow">Multi-Armed Bandit Problem</span></h1>
+
+</section>
+<section id="decision-support" class="slide level2">
+<h2>Decision Support</h2>
+<ul>
+<li class="fragment">To provide support, computer scientists formulated the explore-exploit trade-off.</li>
+<li class="fragment">It is known as the <span class="highlight">multi-armed bandit problem</span>.</li>
+<li class="fragment"><span class="question">Question:</span> What is a one-armed bandit?</li>
+</ul>
+</section>
+<section id="one-armed-bandit" class="slide level2" data-background-image="https://images.unsplash.com/photo-1578693988706-534015857ff5?q=80&amp;w=2664&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h2><span class="invert-font">One Armed Bandit</span></h2>
+<div class="footer">
+<p><span class="invert-font">Photo by <a href="https://unsplash.com/de/@evoknow">Kabir M</a> on Unsplash</span></p>
+</div>
+</section>
+<section id="multi-armed-bandit-problem-1" class="slide level2">
+<h2>Multi-Armed Bandit Problem</h2>
+<p><strong>Imagine:</strong> You walk into a casino with <strong>3 slot machines</strong></p>
+<ul>
+<li>Each machine has a <strong>different</strong> (unknown) win rate</li>
+<li>You have <strong>$100</strong> and <strong>20 pulls</strong> total</li>
+<li><strong>Goal:</strong> Maximize your winnings</li>
+</ul>
+<div class="fragment fade-in">
+<p><strong>How is this related to explore vs.&nbsp;exploit?</strong></p>
+</div>
+<div class="fragment fade-in">
+<ul>
+<li><strong>Explore:</strong> Try different machines</li>
+<li><strong>Exploit:</strong> Play the best-performing machine</li>
+</ul>
+</div>
+</section>
+<section id="multi-armed-bandit-problem-ii" class="slide level2">
+<h2>Multi-Armed Bandit Problem II</h2>
+<ul>
+<li class="fragment">By playing a slot machine, the gambler can gather information about the probability of winning.</li>
+<li class="fragment">But each pull of a lever comes with a certain cost.</li>
+<li class="fragment">It’s the aim of the gambler to maximize his winnings.</li>
+</ul>
+<div class="fragment fade-in">
+<h3 id="the-core-question">The Core Question</h3>
+<p><strong>How do you decide which machine to play next?</strong></p>
+</div>
+</section>
+<section id="interactive-casino-challenge" class="slide level2">
+<h2>Interactive Casino Challenge</h2>
+<h3 id="your-current-situation">Your Current Situation</h3>
+<p><strong>You’ve been playing for a while. Here’s what you know:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Machine</th>
+<th>Pulls</th>
+<th>Wins</th>
+<th>Win Rate</th>
+<th>Your Choice?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A</strong> 🎰</td>
+<td>15</td>
+<td>9</td>
+<td>60%</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>B</strong> 🎰</td>
+<td>2</td>
+<td>1</td>
+<td>50%</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>C</strong> 🎰</td>
+<td>0</td>
+<td>0</td>
+<td>???</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment fade-in">
+<div class="callout callout-tip callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Class Vote: Raise your hand for your choice!</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Machine A</strong> (known performer)</li>
+<li><strong>Machine B</strong> (limited data)</li>
+<li><strong>Machine C</strong> (complete unknown)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="casino-challenge-follow-up" class="slide level2">
+<h2>Casino Challenge Follow-up</h2>
+<h3 id="your-current-situation-1">Your Current Situation</h3>
+<p><strong>You’ve been playing for a while. Here’s what you know:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Machine</th>
+<th>Pulls</th>
+<th>Wins</th>
+<th>Win Rate</th>
+<th>Your Choice?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A</strong> 🎰</td>
+<td>15</td>
+<td>9</td>
+<td>60%</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>B</strong> 🎰</td>
+<td>2</td>
+<td>1</td>
+<td>50%</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>C</strong> 🎰</td>
+<td>0</td>
+<td>0</td>
+<td>???</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment fade-in">
+<div class="callout callout-note callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Follow-up Questions</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>What if you only had <strong>2 pulls left</strong>?</li>
+<li>What if you had <strong>100 pulls left</strong>?</li>
+<li>How does this change your strategy?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="expected-value-for-a-decision" class="slide level2">
+<h2>Expected value for a decision</h2>
+<ul>
+<li class="fragment">The expected value of a slot machine is the average number of wins per pull.</li>
+<li class="fragment">Expected value of machine A = E(A) = 9/15 = 0.6</li>
+<li class="fragment">Expected value of machine B = E(B) = 1/2 = 0.5</li>
+<li class="fragment">Machine A has the higher expected value.</li>
+<li class="fragment">But 2 and even 15 pulls are not a large number (considering standard deviation).</li>
+</ul>
+</section>
+<section id="multi-armed-bandit-iii" class="slide level2">
+<h2>Multi-Armed Bandit III</h2>
+<ul>
+<li class="fragment">The multi-armed bandit problem represents a lot of different real-world decisions.</li>
+<li class="fragment">It shows us, that there might be a difference between the optimal long-term average performance and the optimal immediate performance.</li>
+<li class="fragment">Which lever to pull next depends completely on something we haven’t discussed yet:</li>
+</ul>
+</section>
+<section id="multi-armed-bandit-iv" class="slide level2">
+<h2>Multi-Armed Bandit IV</h2>
+<ul>
+<li class="fragment">How long you plan to be in the casino?</li>
+<li class="fragment"><span class="question">Question:</span> Why is this important?</li>
+<li class="fragment"><span class="question">Question:</span> How does this influence our decision on taking machine A or machine B?</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>“I’m more likely to try a new restaurant when I move to a city than when I’m leaving it” (Chris Stucchio)</p>
+</blockquote>
+</div>
+</section>
+<section id="the-influence-of-the-interval" class="slide level2">
+<h2>The influence of the interval</h2>
+<ul>
+<li class="fragment">Let’s call the time you plan to be in the casino “the interval”.</li>
+<li class="fragment">The longer the interval, the more (in general) you should explore, since you will have more opportunities to exploit the gathered information.</li>
+<li class="fragment">The shorter the interval, the more you should exploit your current knowledge.</li>
+<li class="fragment">The optimal strategy depends on the length of the interval.</li>
+</ul>
+</section>
+<section id="interval-and-exploration" class="slide level2">
+<h2>Interval and Exploration</h2>
+<p>Explore when you have the time to use the resulting knowledge.</p>
+<blockquote>
+<p>“I moved to Pune, India, and I just […] eat everywhere that didn’t look like it was gonna kill me” (Chris Stucchio)</p>
+</blockquote>
+</section>
+<section id="exploration" class="slide level2" data-background-image="https://images.unsplash.com/photo-1491013516836-7db643ee125a?q=80&amp;w=2650&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h2><span class="invert-font">Exploration</span></h2>
+<div class="footer">
+<p><span class="invert-font">Photo by <a href="https://unsplash.com/de/@invent">Colin Maynard</a> on Unsplash</span></p>
+</div>
+</section>
+<section id="interval-and-exploitation" class="slide level2">
+<h2>Interval and Exploitation</h2>
+<p>Exploit when you are ready to cash in.</p>
+<blockquote>
+<p>“And as I was leaving the city I went back to all my old favorites, rather than trying out new stuff […]. Even if I find a slightly better place, I’m only going to go there once or twice, so why take the risk?” (Chris Stucchio)</p>
+</blockquote>
+</section>
+<section id="exploitation" class="slide level2" data-background-image="https://images.unsplash.com/photo-1504004030892-d06adf9ffbcf?q=80&amp;w=2670&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h2><span class="invert-font">Exploitation</span></h2>
+<div class="footer">
+<p><span class="invert-font">Photo by <a href="https://unsplash.com/de/@cristina_gottardi">Cristina Gottardi</a> on Unsplash</span></p>
+</div>
+</section>
+<section id="hollywoods-strategy" class="slide level2">
+<h2>Hollywood’s Strategy</h2>
+<div class="fragment fade-in">
+<div class="callout callout-note callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Sequels in Top 10 Highest-Grossing Movies</strong></p>
+</div>
+<div class="callout-content">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>Number of Sequels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1981</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>1991</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>2001</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>2011</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment fade-in">
+<div class="callout callout-tip callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>💭 Class Discussion</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>What do you think:</strong></p>
+<ul>
+<li>What explains this trend?</li>
+<li>How does this relate to explore vs.&nbsp;exploit?</li>
+<li>What does this suggest about Hollywood’s “time horizon”?</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sequels" class="slide level2" data-background-image="https://upload.wikimedia.org/wikipedia/commons/3/3d/Fast_X_logo.png" data-background-size="contain" data-background-position="center" data-background-repeat="no-repeat">
+<h2><span class="invert-font">Sequels…</span></h2>
+<div class="fragment">
+<p><span class="invert-font">The Insight: Studios are <strong>exploiting</strong> proven franchises because they think they’re approaching the <strong>“end of their interval”</strong> (streaming disruption, changing audience preferences).</span></p>
+<div class="footer">
+<p><span class="invert-font">Photo by <a href="https://de.wikipedia.org/wiki/Fast_%26_Furious_10">Universal Pictures</a> on Wikipedia</span></p>
+</div>
+</div>
+</section>
+<section id="a-possible-explanation" class="slide level2">
+<h2>A Possible Explanation</h2>
+<ul>
+<li class="fragment">Making a brand new movie is risky but has the potential to create a new fan base. (explore)</li>
+<li class="fragment">From a Studio’s perspective, a sequel is a movie with a guaranteed fan base, a cash cow, a sure thing, an exploit.</li>
+<li class="fragment">One possible explanation for the numbers is that the studios think they are approaching the end of their interval.</li>
+<li class="fragment">They are pulling the arms of the best machines they’ve got before the casino turns them out.</li>
+</ul>
+</section>
+<section id="multi-armed-bandit-vi" class="slide level2">
+<h2>Multi-Armed Bandit VI</h2>
+<ul>
+<li class="fragment">While the so far provided anecdotes are helping us to understand the explore-exploit trade-off, they are far away from beeing a satisfying “optimal” solution.</li>
+<li class="fragment">Actually, finding an algorithm that tells us exactly how to to handle the trade-off is a very hard problem.</li>
+<li class="fragment">On the way there were many interesting approaches…</li>
+</ul>
+</section></section>
+<section>
+<section id="win-stay-lose-shift" class="title-slide slide level1 title center">
+<h1><span class="flow">Win-Stay Lose-Shift</span></h1>
+
+</section>
+<section id="win-stay-lose-shiftmore" class="slide level2">
+<h2>Win-Stay Lose-Shift<sup>1</sup></h2>
+<ul>
+<li class="fragment"><span class="question">Question:</span> What do you think, what the win-stay lose-shift strategy does?</li>
+<li class="fragment">The win-stay lose-shift strategy is a simple strategy that is often used in multi-armed bandit problems.</li>
+<li class="fragment">Based on the idea that if you have won, you should stay. If you have lost, you should switch.</li>
+<li class="fragment">This strategy is not always the best strategy, but it is simple and proven better than choose an arm at random.</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>For more details see Robbins, H. (1952) ‘Some aspects of the sequential design of experiments’, Bulletin of the American Mathematical Society, 58.</p></li></ol></aside></section>
+<section id="win-stay-no-brainer" class="slide level2">
+<h2>Win-Stay = No Brainer?</h2>
+<ul>
+<li class="fragment"><span class="question">Question:</span> What do you think about win-stay?</li>
+<li class="fragment">If you decide to pull an arm and you win, you should pull the same arm again.</li>
+<li class="fragment">Nothing changes, except the attractiveness of the arm you just pulled is higher.</li>
+</ul>
+</section>
+<section id="lose-shift-is-another-story" class="slide level2">
+<h2>Lose-Shift is another story</h2>
+<ul>
+<li class="fragment"><span class="question">Question:</span> What do you think about lose-shift?</li>
+<li class="fragment">Changing arms each time you lose might be a prety rush move.</li>
+<li class="fragment">Imagine you’re eating at your favorite restaurant for the tenth time in a row.</li>
+<li class="fragment">You have always been very satisfied (win), but today you are disappointed (loose).</li>
+<li class="fragment">Should you turn your back on the restaurant?</li>
+</ul>
+</section>
+<section id="like-most-of-the-time-easy-answers-comes-with-problems" class="slide level2">
+<h2>Like most of the time, easy answers comes with problems</h2>
+<ul>
+<li class="fragment">The win-stay lose-shift strategy penalizes losses too much.</li>
+<li class="fragment">The strategy does not take into account the interval.</li>
+<li class="fragment">But the strategy was good start to develop better approaches.</li>
+</ul>
+</section></section>
+<section>
+<section id="the-bellman-approach" class="title-slide slide level1 title center">
+<h1><span class="flow">The Bellman Approach</span></h1>
+
+</section>
+<section id="the-bellman-approach-i" class="slide level2">
+<h2>The Bellman approach I</h2>
+<ul>
+<li class="fragment">Few years later, Richard Bellman, found an exact solution for all cases with finite and known intervals.</li>
+<li class="fragment">Bellman found that under assumptions, exploit vs explore can be seen as an optimal stopping problem.</li>
+<li class="fragment">The question is, when to stop exploring and start exploiting.</li>
+<li class="fragment">The solution is based on dynamic programming and backward calculation starting from the final pull (analogous to the secretary problem with full information).</li>
+</ul>
+</section>
+<section id="the-bellman-approach-ii" class="slide level2">
+<h2>The Bellman approach II</h2>
+<p>Bellman found that the <strong>following equation</strong> provides the optimal strategy (when the assumptions hold):</p>
+<p><span class="math display">\[\mathbb{E}[⋅] = \frac{w + 1}{w + l + 2}\]</span></p>
+<p>where w is the number of wins and l is the number of loses.</p>
+</section>
+<section id="question-time" class="slide level2">
+<h2>Question time</h2>
+<p><span class="math display">\[\mathbb{E}[⋅] = \frac{w + 1}{w + l + 2}\]</span></p>
+<ul>
+<li class="fragment"><span class="question">Question:</span> What is E[B]?</li>
+<li class="fragment"><span class="question">Question:</span> What is E[A]?</li>
+<li class="fragment"><span class="question">Question:</span> What machine shall we play according to the Bellman approach?</li>
+</ul>
+</section>
+<section id="the-bellman-approach-iii" class="slide level2">
+<h2>The Bellman approach III</h2>
+<p>The following table shows the expected value for different win-lose scenarios.</p>
+<div class="cell" style="display: flex; justify-content: center;">
+<style>
+table {
+    border-collapse: collapse;
+    font-size: 24px;
+    font-family: "Courier New", Courier, monospace;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: right;
+    min-width: 60px;
+}
+th {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+th:first-child, td:first-child {
+    text-align: center;
+    font-weight: bold;
+}
+</style>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Loses/Wins</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0.50</td>
+<td>0.60</td>
+<td>0.67</td>
+<td>0.71</td>
+<td>0.75</td>
+<td>0.78</td>
+<td>0.80</td>
+<td>0.82</td>
+<td>0.83</td>
+<td>0.85</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0.40</td>
+<td>0.50</td>
+<td>0.57</td>
+<td>0.63</td>
+<td>0.67</td>
+<td>0.70</td>
+<td>0.73</td>
+<td>0.75</td>
+<td>0.77</td>
+<td>0.79</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0.33</td>
+<td>0.43</td>
+<td>0.50</td>
+<td>0.56</td>
+<td>0.60</td>
+<td>0.64</td>
+<td>0.67</td>
+<td>0.69</td>
+<td>0.71</td>
+<td>0.73</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0.29</td>
+<td>0.38</td>
+<td>0.44</td>
+<td>0.50</td>
+<td>0.55</td>
+<td>0.58</td>
+<td>0.62</td>
+<td>0.64</td>
+<td>0.67</td>
+<td>0.69</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>0.25</td>
+<td>0.33</td>
+<td>0.40</td>
+<td>0.45</td>
+<td>0.50</td>
+<td>0.54</td>
+<td>0.57</td>
+<td>0.60</td>
+<td>0.63</td>
+<td>0.65</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>0.22</td>
+<td>0.30</td>
+<td>0.36</td>
+<td>0.42</td>
+<td>0.46</td>
+<td>0.50</td>
+<td>0.53</td>
+<td>0.56</td>
+<td>0.59</td>
+<td>0.61</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>0.20</td>
+<td>0.27</td>
+<td>0.33</td>
+<td>0.38</td>
+<td>0.43</td>
+<td>0.47</td>
+<td>0.50</td>
+<td>0.53</td>
+<td>0.56</td>
+<td>0.58</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>0.18</td>
+<td>0.25</td>
+<td>0.31</td>
+<td>0.36</td>
+<td>0.40</td>
+<td>0.44</td>
+<td>0.47</td>
+<td>0.50</td>
+<td>0.53</td>
+<td>0.55</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>0.17</td>
+<td>0.23</td>
+<td>0.29</td>
+<td>0.33</td>
+<td>0.38</td>
+<td>0.41</td>
+<td>0.44</td>
+<td>0.47</td>
+<td>0.50</td>
+<td>0.52</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>0.15</td>
+<td>0.21</td>
+<td>0.27</td>
+<td>0.31</td>
+<td>0.35</td>
+<td>0.39</td>
+<td>0.42</td>
+<td>0.45</td>
+<td>0.48</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="the-bellman-approach-iv" class="slide level2">
+<h2>The Bellman approach IV</h2>
+<ul>
+<li class="fragment">The calculation of the optimal strategy is very extensive when there are many arms and a long interval.</li>
+<li class="fragment">And yet the approach does not help us in many scenarios because we do not know the exact length of the interval (time in the casino).</li>
+<li class="fragment">At this point, it looked like the multi-armed bandit problem would remain a problem without a solution.</li>
+</ul>
+</section></section>
+<section>
+<section id="the-gittins-index" class="title-slide slide level1 title center">
+<h1><span class="flow">The Gittins Index</span></h1>
+
+</section>
+<section id="the-gittins-index-igittins" class="slide level2">
+<h2>The Gittins Index I<sup>1</sup></h2>
+<ul>
+<li class="fragment">In the 1970s Unilever asked a young mathematician, John Gittins, to help optimize their drug trials.</li>
+<li class="fragment">Given different compounds, what is the quickest way to determine which is likely to be effective?</li>
+<li class="fragment">Gittins found an optimal strategy and abstracted the problem to a general level.</li>
+<li class="fragment">He found the solution to the multi-armed bandit problem.</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>For more details see Gittins, J. (1979) ‘Bandit Processes and Dynamic Allocation Indices’, Journal of the Royal Statistical Society. Series B (Methodological).</p></li></ol></aside></section>
+<section id="the-gittins-index-ii" class="slide level2">
+<h2>The Gittins Index II</h2>
+<ul>
+<li class="fragment">A major problem with the multi-armed banded problem is that previous solutions made very critical assumptions about the underlying interval.</li>
+<li class="fragment">For example, that the length of the interval is known at the beginning of the analysis.</li>
+<li class="fragment">In his approach, future wins (e.g., cash flows) are discounted so that any interval length (including infinity) can be considered.</li>
+<li class="fragment">Geometric discounting assumption, but the approach can be extended to other discounting assumptions.</li>
+</ul>
+</section>
+<section id="what-is-discounting" class="slide level2">
+<h2>What is Discounting?</h2>
+<ul>
+<li class="fragment">Future rewards are valued less than immediate rewards.</li>
+<li class="fragment">Future rewards are weighted by a discount factor.</li>
+<li class="fragment"><strong>Monetary context:</strong> Easy to justify discounting:
+<ul>
+<li class="fragment">Interest rates: Money today can earn interest.</li>
+<li class="fragment">Opportunity costs: Immediate use of money has value.</li>
+</ul></li>
+<li class="fragment"><strong>Non-monetary context:</strong> Discounting also makes sense:
+<ul>
+<li class="fragment">Time: Immediate gratification often preferred.</li>
+<li class="fragment">Example: Tonight’s dinner vs.&nbsp;the same dinner in a week’s time.</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-gittins-index-iii" class="slide level2">
+<h2>The Gittins Index III</h2>
+<ul>
+<li class="fragment">The Gittins index can be used for any problems of the form of the multi-armed bandit problem.</li>
+<li class="fragment">That means it solves the explore-exploit trade-off.</li>
+<li class="fragment">Let’s consider our machine A and B example one last time.
+<ul>
+<li class="fragment">Machine A: 15 pulls, 9 wins, 6 loses.</li>
+<li class="fragment">Machine B: 2 pulls, 1 win, 1 lose.</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-gittins-index-iv" class="slide level2">
+<h2>The Gittins Index IV</h2>
+<div class="cell" style="display: flex; justify-content: center;">
+<style>
+table {
+    border-collapse: collapse;
+    font-size: 24px;
+    font-family: "Courier New", Courier, monospace;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: right;
+    min-width: 60px;
+}
+th {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+th:first-child, td:first-child {
+    text-align: center;
+    font-weight: bold;
+}
+</style>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Loses/Wins</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>.7029</td>
+<td>.8001</td>
+<td>.8452</td>
+<td>.8723</td>
+<td>.8905</td>
+<td>.9039</td>
+<td>.9141</td>
+<td>.9221</td>
+<td>.9287</td>
+<td>.9342</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>.5001</td>
+<td>.6346</td>
+<td>.7072</td>
+<td>.7539</td>
+<td>.7869</td>
+<td>.8115</td>
+<td>.8307</td>
+<td>.8461</td>
+<td>.8588</td>
+<td>.8695</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>.3796</td>
+<td>.5163</td>
+<td>.6010</td>
+<td>.6579</td>
+<td>.6996</td>
+<td>.7318</td>
+<td>.7573</td>
+<td>.7782</td>
+<td>.7956</td>
+<td>.8103</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>.3021</td>
+<td>.4342</td>
+<td>.5184</td>
+<td>.5809</td>
+<td>.6276</td>
+<td>.6642</td>
+<td>.6940</td>
+<td>.7187</td>
+<td>.7396</td>
+<td>.7573</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>.2488</td>
+<td>.3720</td>
+<td>.4561</td>
+<td>.5179</td>
+<td>.5676</td>
+<td>.6071</td>
+<td>.6395</td>
+<td>.6666</td>
+<td>.6899</td>
+<td>.7101</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>.2103</td>
+<td>.3245</td>
+<td>.4058</td>
+<td>.4677</td>
+<td>.5168</td>
+<td>.5581</td>
+<td>.5923</td>
+<td>.6212</td>
+<td>.6461</td>
+<td>.6677</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>.1815</td>
+<td>.2871</td>
+<td>.3647</td>
+<td>.4257</td>
+<td>.4748</td>
+<td>.5156</td>
+<td>.5510</td>
+<td>.5811</td>
+<td>.6071</td>
+<td>.6300</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>.1591</td>
+<td>.2569</td>
+<td>.3308</td>
+<td>.3900</td>
+<td>.4387</td>
+<td>.4795</td>
+<td>.5144</td>
+<td>.5454</td>
+<td>.5723</td>
+<td>.5960</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>.1413</td>
+<td>.2323</td>
+<td>.3025</td>
+<td>.3595</td>
+<td>.4073</td>
+<td>.4479</td>
+<td>.4828</td>
+<td>.5134</td>
+<td>.5409</td>
+<td>.5652</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>.1269</td>
+<td>.2116</td>
+<td>.2784</td>
+<td>.3332</td>
+<td>.3799</td>
+<td>.4200</td>
+<td>.4548</td>
+<td>.4853</td>
+<td>.5125</td>
+<td>.5373</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="question" class="slide level2">
+<h2>Question</h2>
+<p><strong>Choose machine A or B according to the Gittins index?</strong></p>
+<ul>
+<li class="fragment">The index for machine B (0.6346) is higher than for machine A (0.6300).</li>
+<li class="fragment">The index shows a clear win-stay pattern.</li>
+<li class="fragment">There is a relaxed lose-shift pattern.</li>
+<li class="fragment">At the (0,0) point we see the exploration bonus (premium).</li>
+<li class="fragment">The index converges to 1/2 for a 50/50 chance game.</li>
+</ul>
+</section>
+<section id="gittins-index-the-scary-math" class="slide level2">
+<h2>Gittins Index: The Scary Math</h2>
+<h3 id="the-complex-formula">😱 The Complex Formula</h3>
+<p><span class="math display">\[G_i(s_i, f_i) := \sup_{\tau \geq 1} \frac{\mathbb{E}\left[\sum_{t=0}^{\tau-1} \beta^t \cdot r_i^t \middle| s_i, f_i\right]}{\mathbb{E}\left[\sum_{t=0}^{\tau-1} \beta^t\right]}\]</span></p>
+<div class="fragment fade-in">
+<ul>
+<li><strong>Extremely complex</strong> to calculate by hand</li>
+<li><strong>Requires advanced mathematics</strong> (optimization theory)</li>
+<li><strong>Calculation not practical</strong> for everyday decisions</li>
+</ul>
+</div>
+<div class="fragment fade-in">
+<div class="callout callout-important callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>You don’t need to understand the math</strong> - just use the lookup table!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-it-actually-means" class="slide level2">
+<h2>What It Actually Means</h2>
+<ul>
+<li class="fragment"><strong>Core idea:</strong> “What’s the best possible average reward from this option?”</li>
+<li class="fragment"><strong>Higher Index = Better Choice</strong></li>
+<li class="fragment"><strong>Example:</strong> Machine A (9 wins, 6 losses): Index = 0.6300; Machine B (1 win, 1 loss): Index = 0.6346</li>
+<li class="fragment"><strong>Machine B wins</strong> due to exploration bonus for less-tested options</li>
+<li class="fragment">The Gittins Index automatically balances exploration and exploitation</li>
+</ul>
+</section></section>
+<section>
+<section id="explore-vs-exploit-summary" class="title-slide slide level1 title center">
+<h1><span class="flow">Explore vs Exploit: Summary</span></h1>
+
+</section>
+<section id="explore-vs-exploit-summary-1" class="slide level2">
+<h2>Explore vs Exploit: Summary</h2>
+<ul>
+<li class="fragment">Consider an explore vs exploit decision situation.</li>
+<li class="fragment">As you learned exploiting comes with a known (expected) outcome for example E(exploit) = X</li>
+<li class="fragment">Exploring comes with an unknown outcome E(explore) = ?</li>
+<li class="fragment">What should you do according to decision science?</li>
+</ul>
+</section>
+<section id="explore-vs-exploit-anecdotally" class="slide level2">
+<h2>Explore vs Exploit: Anecdotally</h2>
+<ul>
+<li class="fragment">If you have a long interval, you should explore, choose B untill you are sure about E(explore).</li>
+<li class="fragment">If you have a short interval, you should exploit, choose A.</li>
+</ul>
+</section>
+<section id="explore-vs-exploit-mathematically" class="slide level2">
+<h2>Explore vs Exploit: Mathematically</h2>
+<ul>
+<li class="fragment">If E(exploit) and E(explore) are known, choose higher expected value.</li>
+<li class="fragment">If E(explore) is unknown, but you know the length of the interval, the Bellman-approach provides the optimal strategy.</li>
+<li class="fragment">If E(explore) is unknown, and you do not know the length of the interval, the Gittins index provides the optimal strategy.</li>
+</ul>
+</section>
+<section id="your-personal-action-plan" class="slide level2">
+<h2>🎯 Your Personal Action Plan</h2>
+<div class="callout callout-tip callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Rate yourself (1-10) on each:</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Career exploration:</strong> Trying new skills/roles vs.&nbsp;deepening current expertise</li>
+<li><strong>Social exploration:</strong> Meeting new people vs.&nbsp;investing in current relationships</li>
+<li><strong>Learning exploration:</strong> New subjects vs.&nbsp;mastering current interests</li>
+<li><strong>Life exploration:</strong> New experiences vs.&nbsp;enjoying familiar pleasures</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment fade-in">
+<div class="callout callout-important callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Key Insights to Remember</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><strong>Exploration has inherent value</strong> - it increases your chance of finding the best</li>
+<li><strong>Time horizon matters</strong> - more time left = more exploration optimal</li>
+<li><strong>Age affects strategy</strong> - younger people should explore more</li>
+<li><strong>Don’t stop exploring completely</strong> - even experts need some exploration</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="takeaways" class="slide level2">
+<h2>Takeaways</h2>
+<p>Your todays takeaway from the lecture should be: Be sensitive to how much time you have left in the casino and <strong>explore, explore, explore</strong>…</p>
+</section></section>
+<section>
+<section id="literature" class="title-slide slide level1 title center">
+<h1><span class="flow">Literature</span></h1>
+
+</section>
+<section id="interesting-literature-to-start" class="slide level2">
+<h2>Interesting literature to start</h2>
+<ul>
+<li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<sup>1</sup></li>
+<li>Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
+<section id="books-on-programming" class="slide level2">
+<h2>Books on Programming</h2>
+<ul>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-literature" class="slide level2">
+<h2>More Literature</h2>
+<p>For more interesting literature, take a look at the <a href="../general/literature.html">literature list</a> of this course.</p>
+
+
+</section></section>
+
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Lecture II - Explore Vs. Exploit | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_02_explore_exploit.html">Home</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/beyondsimulations\.github\.io\/Programming-Everyday-Decisions");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

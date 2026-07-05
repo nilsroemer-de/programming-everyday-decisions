@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Tobias Vlćek">
+
+<title>Lecture V - Randomness – Programming: Everyday Decision-Making Algorithms</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b7f2a80d65e4e0c38aaa0b1d52f53cc7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-082c280d0266c6330b148fdd5ce36071.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b7f2a80d65e4e0c38aaa0b1d52f53cc7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0817b4d50de4e2dd54765547bae942e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-7759b4216a47fcb3e944072a87058edb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0817b4d50de4e2dd54765547bae942e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" src="https://umi.byndsim.com/script.js" data-website-id="e230d76b-b0a6-477e-8c5d-19a7bd661e68"></script>
+
+<script defer="" data-domain="beyondsimulations.github.io" src="https://plb.byndsim.com/js/script.file-downloads.hash.outbound-links.js"></script>
+<script>
+    window.plausible =
+        window.plausible ||
+        function () {
+            (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">Lecture</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="https://images.beyondsimulations.com/logo/midjourney-everyday-algorithms.jpeg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="https://images.beyondsimulations.com/logo/midjourney-everyday-algorithms.jpeg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text">***</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 Optimal Stopping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_00_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_01_optimal_stopping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_01_01_variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01-01 - Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_01_02_comparisons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01-02 - Comparisons</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_01_03_stopping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01-03 - Decisions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 Explore/Exploit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_02_explore_exploit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_02_01_lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-01 - Lists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_02_02_loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-02 - Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_02_03_explore_exploit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-03 - Exploration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">03 Caching</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_03_caching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_03_01_recap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03-01 - Recap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_03_02_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03-02 - Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_03_03_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03-03 - Packages</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">04 Scheduling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_04_scheduling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_04_01_recap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 - Recap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_04_02_dicts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 - Dictionaries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_04_03_dataframes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 - DataFrames</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">05 Randomness</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_05_randomness.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/tut_05_01_llm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13 - LLM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_05_02_recap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14 - Recap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_05_03_free.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15 - Free Tasks</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">06 Kindness</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_06_kindness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+ <span class="menu-text">***</span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/uv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Literature</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cheatsheet</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome"><span class="flow">Welcome!</span></a>
+  <ul class="collapse">
+  <li><a href="#todays-topic-randomness-probabilistic-algorithms" id="toc-todays-topic-randomness-probabilistic-algorithms" class="nav-link" data-scroll-target="#todays-topic-randomness-probabilistic-algorithms">Today’s Topic: Randomness &amp; Probabilistic Algorithms</a></li>
+  <li><a href="#todays-agenda" id="toc-todays-agenda" class="nav-link" data-scroll-target="#todays-agenda">Today’s Agenda</a></li>
+  </ul></li>
+  <li><a href="#understanding-randomness" id="toc-understanding-randomness" class="nav-link" data-scroll-target="#understanding-randomness"><span class="flow">Understanding Randomness</span></a>
+  <ul class="collapse">
+  <li><a href="#randomness" id="toc-randomness" class="nav-link" data-scroll-target="#randomness">Randomness</a></li>
+  <li><a href="#casino" id="toc-casino" class="nav-link" data-scroll-target="#casino"><span class="invert-font">Casino</span></a></li>
+  <li><a href="#lottery" id="toc-lottery" class="nav-link" data-scroll-target="#lottery"><span class="invert-font">Lottery</span></a></li>
+  <li><a href="#shuffling-cards" id="toc-shuffling-cards" class="nav-link" data-scroll-target="#shuffling-cards"><span class="invert-font">Shuffling cards</span></a></li>
+  <li><a href="#algorithms" id="toc-algorithms" class="nav-link" data-scroll-target="#algorithms"><span class="invert-font">Algorithms</span></a></li>
+  <li><a href="#cryptography" id="toc-cryptography" class="nav-link" data-scroll-target="#cryptography"><span class="invert-font">Cryptography</span></a></li>
+  <li><a href="#genetic-mutations" id="toc-genetic-mutations" class="nav-link" data-scroll-target="#genetic-mutations"><span class="invert-font">Genetic mutations</span></a></li>
+  <li><a href="#why-randomness-matters" id="toc-why-randomness-matters" class="nav-link" data-scroll-target="#why-randomness-matters">Why Randomness Matters</a></li>
+  <li><a href="#discovery-by-randomness" id="toc-discovery-by-randomness" class="nav-link" data-scroll-target="#discovery-by-randomness">Discovery by Randomness</a></li>
+  <li><a href="#dice-rolls" id="toc-dice-rolls" class="nav-link" data-scroll-target="#dice-rolls">Dice Rolls</a></li>
+  <li><a href="#using-randomness" id="toc-using-randomness" class="nav-link" data-scroll-target="#using-randomness">Using Randomness</a></li>
+  </ul></li>
+  <li><a href="#randomness-in-daily-life" id="toc-randomness-in-daily-life" class="nav-link" data-scroll-target="#randomness-in-daily-life"><span class="flow">Randomness in Daily Life</span></a>
+  <ul class="collapse">
+  <li><a href="#randomness-and-everyday-life" id="toc-randomness-and-everyday-life" class="nav-link" data-scroll-target="#randomness-and-everyday-life">Randomness and Everyday Life</a></li>
+  <li><a href="#social-life" id="toc-social-life" class="nav-link" data-scroll-target="#social-life">Social Life</a></li>
+  <li><a href="#entertainment-industry" id="toc-entertainment-industry" class="nav-link" data-scroll-target="#entertainment-industry">Entertainment Industry</a></li>
+  <li><a href="#cryptography-security" id="toc-cryptography-security" class="nav-link" data-scroll-target="#cryptography-security">Cryptography &amp; Security</a></li>
+  <li><a href="#data-science-research" id="toc-data-science-research" class="nav-link" data-scroll-target="#data-science-research">Data Science &amp; Research</a></li>
+  </ul></li>
+  <li><a href="#randomness-and-computer-science" id="toc-randomness-and-computer-science" class="nav-link" data-scroll-target="#randomness-and-computer-science"><span class="flow">Randomness and Computer Science</span></a>
+  <ul class="collapse">
+  <li><a href="#randomness-in-algorithms" id="toc-randomness-in-algorithms" class="nav-link" data-scroll-target="#randomness-in-algorithms">Randomness in Algorithms</a></li>
+  <li><a href="#types-of-randomness" id="toc-types-of-randomness" class="nav-link" data-scroll-target="#types-of-randomness">Types of Randomness</a></li>
+  <li><a href="#limits-of-computation" id="toc-limits-of-computation" class="nav-link" data-scroll-target="#limits-of-computation">Limits of Computation</a></li>
+  <li><a href="#computational-limits" id="toc-computational-limits" class="nav-link" data-scroll-target="#computational-limits">Computational Limits</a></li>
+  <li><a href="#estimating-π" id="toc-estimating-π" class="nav-link" data-scroll-target="#estimating-π">Estimating π</a></li>
+  </ul></li>
+  <li><a href="#decision-making" id="toc-decision-making" class="nav-link" data-scroll-target="#decision-making"><span class="flow">Decision Making</span></a>
+  <ul class="collapse">
+  <li><a href="#travel-itinerary" id="toc-travel-itinerary" class="nav-link" data-scroll-target="#travel-itinerary">Travel Itinerary</a></li>
+  <li><a href="#brute-force" id="toc-brute-force" class="nav-link" data-scroll-target="#brute-force">Brute Force</a></li>
+  <li><a href="#time-and-space-requirements" id="toc-time-and-space-requirements" class="nav-link" data-scroll-target="#time-and-space-requirements">Time and Space Requirements</a></li>
+  <li><a href="#greedy-algorithm" id="toc-greedy-algorithm" class="nav-link" data-scroll-target="#greedy-algorithm">Greedy Algorithm</a></li>
+  <li><a href="#hill-climbing" id="toc-hill-climbing" class="nav-link" data-scroll-target="#hill-climbing">Hill Climbing</a></li>
+  <li><a href="#simulated-annealing-sa" id="toc-simulated-annealing-sa" class="nav-link" data-scroll-target="#simulated-annealing-sa">Simulated Annealing (SA)</a></li>
+  <li><a href="#sa-animation" id="toc-sa-animation" class="nav-link" data-scroll-target="#sa-animation">SA Animation</a></li>
+  <li><a href="#traveling-salesman" id="toc-traveling-salesman" class="nav-link" data-scroll-target="#traveling-salesman">Traveling Salesman</a></li>
+  </ul></li>
+  <li><a href="#randomness-and-society" id="toc-randomness-and-society" class="nav-link" data-scroll-target="#randomness-and-society"><span class="flow">Randomness and Society</span></a>
+  <ul class="collapse">
+  <li><a href="#thought-experiment" id="toc-thought-experiment" class="nav-link" data-scroll-target="#thought-experiment">Thought Experiment</a></li>
+  <li><a href="#veil-of-ignorance" id="toc-veil-of-ignorance" class="nav-link" data-scroll-target="#veil-of-ignorance">Veil of Ignorance</a></li>
+  <li><a href="#key-considerations" id="toc-key-considerations" class="nav-link" data-scroll-target="#key-considerations">Key Considerations</a></li>
+  <li><a href="#measuring-success" id="toc-measuring-success" class="nav-link" data-scroll-target="#measuring-success">Measuring Success</a></li>
+  <li><a href="#idea-random-sampling" id="toc-idea-random-sampling" class="nav-link" data-scroll-target="#idea-random-sampling">Idea: Random Sampling</a></li>
+  <li><a href="#selection-bias" id="toc-selection-bias" class="nav-link" data-scroll-target="#selection-bias">Selection Bias</a></li>
+  <li><a href="#promoting-fairness" id="toc-promoting-fairness" class="nav-link" data-scroll-target="#promoting-fairness">Promoting Fairness</a></li>
+  </ul></li>
+  <li><a href="#uncertainty" id="toc-uncertainty" class="nav-link" data-scroll-target="#uncertainty"><span class="flow">Uncertainty</span></a>
+  <ul class="collapse">
+  <li><a href="#quick-poll" id="toc-quick-poll" class="nav-link" data-scroll-target="#quick-poll">Quick Poll</a></li>
+  <li><a href="#decisions-under-uncertainty" id="toc-decisions-under-uncertainty" class="nav-link" data-scroll-target="#decisions-under-uncertainty">Decisions Under Uncertainty</a></li>
+  </ul></li>
+  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways"><span class="flow">Takeaways</span></a>
+  <ul class="collapse">
+  <li><a href="#good-enough-solutions" id="toc-good-enough-solutions" class="nav-link" data-scroll-target="#good-enough-solutions">“Good Enough” Solutions</a></li>
+  <li><a href="#opportunity-costs" id="toc-opportunity-costs" class="nav-link" data-scroll-target="#opportunity-costs">Opportunity Costs</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#after-the-break-randomness" id="toc-after-the-break-randomness" class="nav-link" data-scroll-target="#after-the-break-randomness">After the break — Randomness</a></li>
+  </ul></li>
+  <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature"><span class="flow">Literature</span></a>
+  <ul class="collapse">
+  <li><a href="#interesting-literature-to-start" id="toc-interesting-literature-to-start" class="nav-link" data-scroll-target="#interesting-literature-to-start">Interesting literature to start</a></li>
+  <li><a href="#books-on-programming" id="toc-books-on-programming" class="nav-link" data-scroll-target="#books-on-programming">Books on Programming</a></li>
+  <li><a href="#more-literature" id="toc-more-literature" class="nav-link" data-scroll-target="#more-literature">More Literature</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/edit/main/lectures/lec_05_randomness.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/blob/main/lectures/lec_05_randomness.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lec_05_randomness.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="lec_05_presentation.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">Lecture</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lecture V - Randomness</h1>
+<p class="subtitle lead">Programming: Everyday Decision-Making Algorithms</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Tobias Vlćek </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Kühne Logistics University Hamburg - Winter 2024
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="welcome" class="level1 title">
+<h1 class="title"><span class="flow">Welcome!</span></h1>
+<section id="todays-topic-randomness-probabilistic-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="todays-topic-randomness-probabilistic-algorithms">Today’s Topic: Randomness &amp; Probabilistic Algorithms</h2>
+<p><strong>Topic:</strong> Understanding how randomness powers algorithms and decision-making in computer science and everyday life</p>
+<p>. . .</p>
+<p><strong>Why this matters:</strong> Randomness isn’t just about gambling. It’s a powerful tool that makes computers faster, cryptography secure, and helps us solve problems. Today we’ll learn how embracing uncertainty can lead to better solutions.</p>
+</section>
+<section id="todays-agenda" class="level2">
+<h2 class="anchored" data-anchor-id="todays-agenda">Today’s Agenda</h2>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li><strong>Understanding Randomness</strong> - From casinos to algorithms</li>
+<li><strong>Randomness in Daily Life</strong> - Where we encounter it without realizing</li>
+<li><strong>Computer Science Applications</strong> - Monte Carlo, simulated annealing, cryptography</li>
+<li><strong>Decision Making</strong> - Using randomness to solve hard problems</li>
+</ol>
+</div>
+</section>
+</section>
+<section id="understanding-randomness" class="level1 title">
+<h1 class="title"><span class="flow">Understanding Randomness</span></h1>
+<section id="randomness" class="level2">
+<h2 class="anchored" data-anchor-id="randomness">Randomness</h2>
+<p><span class="question">Question:</span> <strong>What comes to your mind when you think of randomness?</strong></p>
+<p>. . .</p>
+</section>
+<section id="casino" class="level2" data-background-image="https://images.unsplash.com/photo-1517232115160-ff93364542dd?q=80&amp;w=3473&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h2 data-background-image="https://images.unsplash.com/photo-1517232115160-ff93364542dd?q=80&amp;w=3473&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="anchored" data-anchor-id="casino"><span class="invert-font">Casino</span></h2>
+<div class="footer">
+
+</div>
+</section>
+<section id="lottery" class="level2" data-background-image="https://images.unsplash.com/photo-1593453917923-c3f751aab514?q=80&amp;w=3536&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h2 data-background-image="https://images.unsplash.com/photo-1593453917923-c3f751aab514?q=80&amp;w=3536&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="anchored" data-anchor-id="lottery"><span class="invert-font">Lottery</span></h2>
+<div class="footer">
+
+</div>
+</section>
+<section id="shuffling-cards" class="level2" data-background-image="https://images.unsplash.com/photo-1691213426024-ab6eb6f33d64?q=80&amp;w=3540&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h2 data-background-image="https://images.unsplash.com/photo-1691213426024-ab6eb6f33d64?q=80&amp;w=3540&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="anchored" data-anchor-id="shuffling-cards"><span class="invert-font">Shuffling cards</span></h2>
+<div class="footer">
+
+</div>
+</section>
+<section id="algorithms" class="level2" data-background-image="https://images.unsplash.com/photo-1717501220725-83f151c447e7?q=80&amp;w=3560&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h2 data-background-image="https://images.unsplash.com/photo-1717501220725-83f151c447e7?q=80&amp;w=3560&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="anchored" data-anchor-id="algorithms"><span class="invert-font">Algorithms</span></h2>
+<div class="footer">
+
+</div>
+</section>
+<section id="cryptography" class="level2" data-background-image="https://images.unsplash.com/photo-1640161704729-cbe966a08476?q=80&amp;w=3544&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h2 data-background-image="https://images.unsplash.com/photo-1640161704729-cbe966a08476?q=80&amp;w=3544&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="anchored" data-anchor-id="cryptography"><span class="invert-font">Cryptography</span></h2>
+<div class="footer">
+
+</div>
+</section>
+<section id="genetic-mutations" class="level2" data-background-image="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&amp;w=3552&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h2 data-background-image="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&amp;w=3552&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="anchored" data-anchor-id="genetic-mutations"><span class="invert-font">Genetic mutations</span></h2>
+<div class="footer">
+
+</div>
+</section>
+<section id="why-randomness-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-randomness-matters">Why Randomness Matters</h2>
+<p><span class="question">Question:</span> <strong>What’s the opposite of randomness?</strong></p>
+<p>. . .</p>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Determinism</strong> - same input, same output</li>
+<li><strong>Predictability</strong> - knowing the outcome in advance</li>
+<li><strong>Consistency</strong> - reliable patterns</li>
+</ul>
+</div>
+<p>. . .</p>
+<ul>
+<li><span class="highlight">Boredom?</span></li>
+</ul>
+</section>
+<section id="discovery-by-randomness" class="level2">
+<h2 class="anchored" data-anchor-id="discovery-by-randomness">Discovery by Randomness</h2>
+<p><span class="question">Question:</span> <strong>How would you test if a pair of dice is fair?</strong></p>
+<p>. . .</p>
+<ul>
+<li>Send the dice <strong>to a lab</strong> to <span class="highlight">check weight and balance</span></li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>Roll the dice <strong>many times</strong></li>
+<li>Check if the outcomes are <strong>uniformly distributed</strong></li>
+<li>Compare <strong>observed</strong> frequencies to <strong>expected</strong> frequencies</li>
+</ul>
+</section>
+<section id="dice-rolls" class="level2">
+<h2 class="anchored" data-anchor-id="dice-rolls">Dice Rolls</h2>
+<p><img src="../animations/dice_fairness.gif" class="img-fluid"></p>
+</section>
+<section id="using-randomness" class="level2">
+<h2 class="anchored" data-anchor-id="using-randomness">Using Randomness</h2>
+<p>Randomness is a <span class="highlight">fundamental aspect of the world</span></p>
+<p>. . .</p>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Testing:</strong> Generate random inputs to find bugs</li>
+<li><strong>Optimization:</strong> Escape local optima in complex problems</li>
+<li><strong>Simulation:</strong> Model complex systems with uncertainty</li>
+<li><strong>Security:</strong> Make systems unpredictable to attackers</li>
+<li><strong>Fairness:</strong> Eliminate bias in selection processes</li>
+</ul>
+</div>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Randomness is not just about <strong>generating random numbers</strong>!</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="randomness-in-daily-life" class="level1 title">
+<h1 class="title"><span class="flow">Randomness in Daily Life</span></h1>
+<section id="randomness-and-everyday-life" class="level2">
+<h2 class="anchored" data-anchor-id="randomness-and-everyday-life">Randomness and Everyday Life</h2>
+<p><span class="question">Question:</span> <strong>Where do you encounter randomness in daily life?</strong></p>
+</section>
+<section id="social-life" class="level2">
+<h2 class="anchored" data-anchor-id="social-life">Social Life</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Dating apps:</strong> Randomized matching within preferences</li>
+<li><strong>Random encounters</strong> that lead to friendships</li>
+<li><strong>Career opportunities</strong> from unexpected connections</li>
+<li><strong>Breaking ties</strong> through coin tosses</li>
+<li><strong>Netflix recommendations:</strong> Controlled randomness for discovery</li>
+</ul>
+</div>
+</section>
+<section id="entertainment-industry" class="level2">
+<h2 class="anchored" data-anchor-id="entertainment-industry">Entertainment Industry</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Pokémon:</strong> “Random” encounters weighted by rarity</li>
+<li><strong>Loot systems:</strong> Rare items have controlled drop rates</li>
+<li><strong>Chess AI:</strong> Introduces randomness to feel more human-like</li>
+<li><strong>Spotify shuffle:</strong> Deliberately less random to feel natural</li>
+<li><strong>TikTok:</strong> Controlled randomization for content discovery</li>
+</ul>
+</div>
+</section>
+<section id="cryptography-security" class="level2">
+<h2 class="anchored" data-anchor-id="cryptography-security">Cryptography &amp; Security</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Cryptocurrency mining:</strong> Solving cryptographic puzzles through guessing</li>
+<li><strong>Password generators:</strong> Balance randomness and memorability</li>
+<li><strong><code>correct-horse-battery-staple</code></strong> is more secure than <strong><code>Tr0ub4dor&amp;3</code></strong></li>
+<li><strong>Modern encryption</strong> relies on random number generation</li>
+<li><strong>Two-factor authentication</strong> uses random codes</li>
+</ul>
+</div>
+</section>
+<section id="data-science-research" class="level2">
+<h2 class="anchored" data-anchor-id="data-science-research">Data Science &amp; Research</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Weather forecasting:</strong> Uses randomness to model uncertainty</li>
+<li><strong>Stock algorithms:</strong> Add randomness to avoid predictable patterns</li>
+<li><strong>Self-driving cars:</strong> Random elements for natural-feeling behavior</li>
+<li><strong>Random sampling:</strong> Ensures unbiased research results</li>
+<li><strong>A/B testing:</strong> Random assignment to treatment groups</li>
+</ul>
+</div>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Randomness is <span class="highlight">everywhere</span> around us!</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="randomness-and-computer-science" class="level1 title">
+<h1 class="title"><span class="flow">Randomness and Computer Science</span></h1>
+<section id="randomness-in-algorithms" class="level2">
+<h2 class="anchored" data-anchor-id="randomness-in-algorithms">Randomness in Algorithms</h2>
+<p><strong>Why do computer scientists love randomness?</strong></p>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Efficiency:</strong> Often faster than deterministic approaches</li>
+<li><strong>Simplicity:</strong> Can solve complex problems with simple code</li>
+<li><strong>Robustness:</strong> Avoids worst-case scenarios</li>
+<li><strong>Approximation:</strong> “Good enough” solutions in reasonable time</li>
+</ul>
+</div>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Key Trade-off:</strong> Perfect vs.&nbsp;“Good Enough” solutions</p>
+</div>
+</div>
+</div>
+</section>
+<section id="types-of-randomness" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-randomness">Types of Randomness</h2>
+<p><span class="question">Question:</span> <strong>Difference between true and pseudo-randomness?</strong></p>
+<p>. . .</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="highlight">True Randomness</span></p>
+<ul>
+<li>Physical phenomena</li>
+<li>Atmospheric noise</li>
+<li>Radioactive decay</li>
+<li>Quantum effects</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="highlight">Pseudo-randomness</span></p>
+<ul>
+<li>Deterministic algorithms</li>
+<li>Seed-based generation</li>
+<li>Repeatable sequences</li>
+<li>Good enough for most uses</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="limits-of-computation" class="level2">
+<h2 class="anchored" data-anchor-id="limits-of-computation">Limits of Computation</h2>
+<p><span class="question">Question:</span> <strong>How many possible combinations exist in a shuffled deck of cards?</strong></p>
+<div id="f9cfcc3f" class="cell" data-output-location="fragment" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math.factorial(<span class="dv">52</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>80658175170943878571660636856403766975289505440883277824000000000000</code></pre>
+</div>
+</div>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Computing and evaluating all possible combinations is not feasible!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="computational-limits" class="level2">
+<h2 class="anchored" data-anchor-id="computational-limits">Computational Limits</h2>
+<p><span class="question">Question:</span> <strong>Anybody ever heard of “Monte Carlo methods”?</strong></p>
+<p>. . .</p>
+<ul>
+<li>Developed in the <strong>1940s for nuclear weapons research</strong></li>
+<li>Nuclear fission chain reactions <strong>were too complex</strong></li>
+<li>Helped to <span class="highlight">evaluate the probabilities of different outcomes</span></li>
+<li>Named after <strong>Monaco’s famous casino</strong></li>
+</ul>
+<p>. . .</p>
+<p><span class="question">Question:</span> <strong>How could we estimate π?</strong></p>
+</section>
+<section id="estimating-π" class="level2">
+<h2 class="anchored" data-anchor-id="estimating-π">Estimating π</h2>
+<p><img src="../animations/pi.gif" class="img-fluid"></p>
+</section>
+</section>
+<section id="decision-making" class="level1 title">
+<h1 class="title"><span class="flow">Decision Making</span></h1>
+<section id="travel-itinerary" class="level2">
+<h2 class="anchored" data-anchor-id="travel-itinerary">Travel Itinerary</h2>
+<p><span class="question">Question:</span> <strong>How and in which order would you visit 10 cities by plane with minimal total distance?</strong></p>
+<div id="90ed47e4" class="cell" data-output-location="fragment" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math.factorial(<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3628800</code></pre>
+</div>
+</div>
+<p>. . .</p>
+<p><span class="question">Question:</span> <strong>What could be a strategy?</strong></p>
+</section>
+<section id="brute-force" class="level2">
+<h2 class="anchored" data-anchor-id="brute-force">Brute Force</h2>
+<ul>
+<li>Try <span class="highlight">every possibility</span></li>
+<li>Total possible routes: 10! = <strong>3,628,800</strong></li>
+<li><strong>Guaranteed</strong> to find best solution</li>
+<li>If each check takes 1ms: <strong>1 hour</strong> to check all routes</li>
+</ul>
+<p>. . .</p>
+<p><span class="question">Question:</span> <strong>What could be the problem with this approach?</strong></p>
+</section>
+<section id="time-and-space-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="time-and-space-requirements">Time and Space Requirements</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>For 20 cities: 20! = <strong>2.4 quintillion</strong> routes</li>
+<li>Would take <strong>77 billion years</strong> at 1ms per check!</li>
+<li><strong>Time complexity</strong> grows <span class="highlight">factorially</span></li>
+<li><strong>Memory requirements</strong> increase with problem size</li>
+</ul>
+</div>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Not feasible for real-world problems!</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="greedy-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="greedy-algorithm">Greedy Algorithm</h2>
+<ul>
+<li><strong>Example:</strong> Always picking shortest next flight</li>
+<li>Make <strong>locally optimal</strong> choices at each step</li>
+<li><span class="highlight">Never backtracks or reconsiders past decisions</span></li>
+<li>Fast execution &amp; simple to implement</li>
+<li>Can perform <strong>poorly on complex problems</strong></li>
+</ul>
+</section>
+<section id="hill-climbing" class="level2">
+<h2 class="anchored" data-anchor-id="hill-climbing">Hill Climbing</h2>
+<ul>
+<li><span class="highlight">Iteratively improve solution</span> by making small changes</li>
+<li>Like <strong>climbing in fog</strong>, can only see immediate surroundings</li>
+<li>Don’t know if <strong>higher peaks</strong> exist elsewhere</li>
+<li>Can get stuck in <strong>local optima</strong></li>
+<li>No guarantee of finding <strong>global best optima</strong></li>
+</ul>
+<p>. . .</p>
+<p><span class="question">Question:</span> <strong>How would you escape a local optimum?</strong></p>
+</section>
+<section id="simulated-annealing-sa" class="level2">
+<h2 class="anchored" data-anchor-id="simulated-annealing-sa">Simulated Annealing (SA)</h2>
+<ul>
+<li>Make random changes and <strong>accept improvements</strong></li>
+<li>Sometimes accept <strong>worse solutions</strong></li>
+<li>Gradually become <strong>more selective</strong></li>
+</ul>
+<p>. . .</p>
+<p><span class="question">Question:</span> <strong>Why accept worse solutions sometimes?</strong></p>
+<p>. . .</p>
+<ul>
+<li>Randomness helps to escape <strong>local optima</strong></li>
+<li>Balances <span class="highlight">exploration vs.&nbsp;exploitation</span></li>
+</ul>
+</section>
+<section id="sa-animation" class="level2">
+<h2 class="anchored" data-anchor-id="sa-animation">SA Animation</h2>
+<p><img src="../animations/simulated_annealing.gif" class="img-fluid"></p>
+</section>
+<section id="traveling-salesman" class="level2">
+<h2 class="anchored" data-anchor-id="traveling-salesman">Traveling Salesman</h2>
+<p><img src="../animations/tsp_annealing.gif" class="img-fluid"></p>
+</section>
+</section>
+<section id="randomness-and-society" class="level1 title">
+<h1 class="title"><span class="flow">Randomness and Society</span></h1>
+<section id="thought-experiment" class="level2">
+<h2 class="anchored" data-anchor-id="thought-experiment">Thought Experiment</h2>
+<p><strong>What’s more important for a society?</strong></p>
+<p>. . .</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="highlight">Freedom</span></p>
+<ul>
+<li>Individual choice</li>
+<li>Personal responsibility</li>
+<li>Market-driven</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="highlight">Equality</span></p>
+<ul>
+<li>Shared resources</li>
+<li>Social safety nets</li>
+<li>Regulated systems</li>
+</ul>
+</div>
+</div>
+<p>. . .</p>
+<p><span class="question">Question:</span> <strong>Any problem with this question?</strong></p>
+</section>
+<section id="veil-of-ignorance" class="level2">
+<h2 class="anchored" data-anchor-id="veil-of-ignorance">Veil of Ignorance</h2>
+<p>You might <span class="highlight">randomly</span> be:</p>
+<ul>
+<li>Any gender identity and economic status</li>
+<li>Any health condition and intelligence level</li>
+<li>Any cultural background and religious belief</li>
+</ul>
+<p>. . .</p>
+<p><span class="question">Question:</span> <strong>If you didn’t know who you’d be born as, what kind of society would you design?</strong></p>
+</section>
+<section id="key-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="key-considerations">Key Considerations</h2>
+<ul>
+<li><strong>Individual stories:</strong> Powerful but potentially misleading</li>
+<li><strong>Statistics:</strong> Comprehensive but can miss nuance</li>
+<li><strong>Hidden diversity:</strong> Important subgroups may be overlooked</li>
+<li><strong>Small policy changes</strong> <span class="highlight">can have cascading effects</span></li>
+</ul>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>But that’s not all! We also need to measure <strong>success</strong> and <strong>failure</strong>!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="measuring-success" class="level2">
+<h2 class="anchored" data-anchor-id="measuring-success">Measuring Success</h2>
+<ul>
+<li><strong>Mean happiness:</strong> Average well-being</li>
+<li><strong>Total happiness:</strong> Utilitarian approach</li>
+<li><strong>Median happiness:</strong> Focus on the middle class</li>
+<li><strong>Minimum happiness:</strong> Protecting the most vulnerable</li>
+</ul>
+<p>. . .</p>
+<p><span class="question">Question:</span> <strong>What could be the problem with these measures?</strong></p>
+</section>
+<section id="idea-random-sampling" class="level2">
+<h2 class="anchored" data-anchor-id="idea-random-sampling">Idea: Random Sampling</h2>
+<ul>
+<li>Randomly <span class="highlight">select a subset of the population</span></li>
+<li>Gather <strong>diverse perspectives</strong> from the sample</li>
+<li>Better understand <strong>needs</strong> of population</li>
+<li><strong>Reduce selection bias</strong> and improve accuracy</li>
+</ul>
+<p>. . .</p>
+<p><span class="question">Question:</span> <strong>What is a selection bias?</strong></p>
+</section>
+<section id="selection-bias" class="level2">
+<h2 class="anchored" data-anchor-id="selection-bias">Selection Bias</h2>
+<p><strong>Definition</strong>: Selection bias occurs when the sample data you’re analyzing <span class="highlight">isn’t truly representative of the population</span> you’re trying to study.</p>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Famous Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>During WWII, engineers studied returning planes to determine where to add armor. Initially, they focused on areas with most bullet holes. Abraham Wald pointed out they should instead armor the areas with <em>no</em> bullet holes - those were the critical areas where planes didn’t survive to return!</p>
+</div>
+</div>
+</section>
+<section id="promoting-fairness" class="level2">
+<h2 class="anchored" data-anchor-id="promoting-fairness">Promoting Fairness</h2>
+<p><span class="question">Question:</span> <strong>How can randomness promote fairness?</strong></p>
+<p>. . .</p>
+<ul>
+<li><strong>Random allocation</strong> of patients in clinical trials</li>
+<li><strong>Random audits</strong> for tax compliance</li>
+<li><strong>Random assignment</strong> of cases to judges</li>
+<li><strong>Random order</strong> of candidates on voting ballots</li>
+</ul>
+</section>
+</section>
+<section id="uncertainty" class="level1 title">
+<h1 class="title"><span class="flow">Uncertainty</span></h1>
+<section id="quick-poll" class="level2">
+<h2 class="anchored" data-anchor-id="quick-poll">Quick Poll</h2>
+<p><span class="question">Question:</span> <strong>Which would you prefer?</strong></p>
+<ul>
+<li><strong>100% chance of winning 50 EUR</strong></li>
+<li><strong>50% chance of winning 120 EUR</strong></li>
+</ul>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Answer depends on your <strong>risk aversion</strong>!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="decisions-under-uncertainty" class="level2">
+<h2 class="anchored" data-anchor-id="decisions-under-uncertainty">Decisions Under Uncertainty</h2>
+<p><span class="question">Question:</span> <strong>When should we embrace vs.&nbsp;reduce randomness?</strong></p>
+<p>. . .</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="highlight">Embrace When</span>:</p>
+<ul>
+<li>Exploring new solutions</li>
+<li>Avoiding bias</li>
+<li>Breaking deadlocks</li>
+<li>Testing systems</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><span class="highlight">Reduce When</span>:</p>
+<ul>
+<li>Safety-critical systems</li>
+<li>Financial transactions</li>
+<li>Medical procedures</li>
+<li>Legal proceedings</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="takeaways" class="level1 title">
+<h1 class="title"><span class="flow">Takeaways</span></h1>
+<section id="good-enough-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="good-enough-solutions">“Good Enough” Solutions</h2>
+<ul>
+<li><strong>Perfect is enemy of good</strong>
+<ul>
+<li>Remember Monte Carlo methods: <strong>approximations work</strong></li>
+<li>Complete analysis often impossible</li>
+<li><span class="highlight">Perfect information is rare</span></li>
+</ul></li>
+</ul>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Many real-world problems benefit from <strong>embracing uncertainty</strong> rather than fighting it!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="opportunity-costs" class="level2">
+<h2 class="anchored" data-anchor-id="opportunity-costs">Opportunity Costs</h2>
+<ul>
+<li><span class="highlight">Consider opportunity costs</span>
+<ul>
+<li>Quick approximations enable faster decisions</li>
+<li>Balance accuracy vs.&nbsp;computation time</li>
+<li>Random sampling vs.&nbsp;complete enumeration</li>
+</ul></li>
+</ul>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Many problems benefit from <strong>fast, good-enough solutions</strong> rather than perfect ones.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="level2 loud-slide">
+<h2 class="loud-slide anchored" data-anchor-id="section"></h2>
+<div class="r-fit-text">
+<p>Any questions</p>
+<p>so far?</p>
+</div>
+</section>
+<section id="after-the-break-randomness" class="level2">
+<h2 class="anchored" data-anchor-id="after-the-break-randomness">After the break — Randomness</h2>
+<ul>
+<li>Programming session in our new notebooks</li>
+<li>How to translate the idea into code and experiments</li>
+<li>Different scheduling algorithms applied to problems</li>
+</ul>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>That’s it for today’s lecture!</strong><br>
+We’ve covered the basics of randomness and its applications. In the upcoming tutorials, we’ll learn how to use LLMs to generate code with randomness.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="literature" class="level1 title">
+<h1 class="title"><span class="flow">Literature</span></h1>
+<section id="interesting-literature-to-start" class="level2">
+<h2 class="anchored" data-anchor-id="interesting-literature-to-start">Interesting literature to start</h2>
+<ul>
+<li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ul>
+</section>
+<section id="books-on-programming" class="level2">
+<h2 class="anchored" data-anchor-id="books-on-programming">Books on Programming</h2>
+<ul>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
+</ul>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="more-literature" class="level2">
+<h2 class="anchored" data-anchor-id="more-literature">More Literature</h2>
+<p>For more interesting literature, take a look at the <a href="../general/literature.html">literature list</a> of this course.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/beyondsimulations\.github\.io\/Programming-Everyday-Decisions");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/beyondsimulations/Applied-Optimization">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/tobiasvlcek">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:vlcek@beyondsimulations.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://tobiasvlcek.com/lectures/">
+      <i class="bi bi-skip-backward" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../general/privacy.html">
+<p>Privacy Policy</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../general/imprint.html">
+<p>Imprint</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+<p>Programming: Everyday Decision-Making Algorithms<br>Tobias Vlćek and Nils Roemer<br>CC BY-NC-SA 4.0</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/edit/main/lectures/lec_05_randomness.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/blob/main/lectures/lec_05_randomness.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script defer="" src="https://oshu.eu/widget.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    ChatWidget.init({
+      tenant: "platform",
+      agent: "programming-everyday",
+      layoutMode: "sidebar",
+    });
+  });
+</script>
+
+
+
+
+</body></html>

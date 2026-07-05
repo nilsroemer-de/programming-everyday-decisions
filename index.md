@@ -1,0 +1,66 @@
+---
+title: 'Programming: Everyday Decision-Making Algorithms'
+subtitle: Kühne Logistics University - Winter 2025
+author: Dr. Tobias Vlćek and Dr. Nils Roemer
+html:
+  theme:
+    - litera
+    - styles_html.scss
+---
+
+
+# Course Description
+
+This course explores the intersection of computer science and everyday life by examining how algorithms can be applied to improve decision-making in various contexts. Based on the book "Algorithms to Live By" by Brian Christian and Tom Griffiths, the course will cover topics such as optimal stopping, scheduling, caching, and game theory, providing both theoretical foundations and practical programming exercises. The course consists of lectures and exercises.
+
+# Learning Outcomes
+
+Our broad goal is to equip students with the ability to get to grips with algorithmic thinking. We want to enable students, to indepently apply methods and concepts from algorithms to solve their everyday practical problems while also providing a brief introduction into programming with python.
+
+Upon completion of the course, students will:
+
+- understand fundamental algorithms and their applications to everyday problems
+- develop the ability to model real-world scenarios using algorithmic thinking
+- implement simple algorithms in python to solve practical problems
+- analyze the efficiency and effectiveness of different algorithms in various contexts
+
+Please note that this course is **specifically designed for business students**. That is, it is **not required to have any advanced knowledge or experience in programming** to attend this course. The teaching format will make it possible to account for different levels of programming skills such that every student can take the most out of the course.
+
+# Course Structure
+
+The course is based on a hands-on approach with a two-fold structure:
+
+1.  **Lectures**: In the lectures, we will introduce and discuss concepts and illustrate them in reproducible examples.
+2.  **Hands-on Tutorials**: Students will apply the concepts from the lecture in jupyter notebooks, while simultaneously learning the basics of python.
+
+The course is not graded and can only be passed/failed. The evaluation of the course will be based on the following components:
+
+1.  **Attendence**: Students are expected to attend at least 75% of the lectures.
+2.  **Assignments**: Students will have to hand in the assignments from 2 out of the 5 tutorials in this course. All are due by the end of the quarter, but earlier submissions of the assignments are highly encouraged. At least 50% of the solutions of the assignment must be correct.
+3.  **Presentation**: Students will give a short presentation in groups of up to 3 students on an implemented prototype of a programm in the last lecture which are then discussed in class.
+
+You can find more information on the course contents in the [syllabus](general/syllabus.qmd).
+
+# How to see the slides
+
+- This course is based on [Quarto](https://quarto.org/)
+- It uses [revealjs](https://revealjs.com/) to render the slides
+- You find the slides for each lecture in the corresponding lecture
+- To see the slides, click on `RevealJS` in the top right corner
+
+## AI Policy
+
+**Level 1: Pause -- Use of AI defined by the educator**
+
+A course chatbot is available on the learning website for exploratory study. It is designed to guide your problem-solving process rather than provide answers directly. Use it as a learning tool, not a solution generator.
+
+You may also use external AI tools (e.g., ChatGPT, Claude, Mistral, Gemini). However:
+
+1.  Please be careful and try to understand the code generated.
+2.  Relying on AI to solve tasks for you weakens your own learning.
+3.  AI should ideally support understanding --- not replace practice.
+4.  Using AI without understand the code can lead to security risks.
+
+# Questions
+
+If you have any questions regarding the course, please contact me under [vlcek@beyondsimulations.com](mailto:vlcek@beyondsimulations.com?subject=Programming%20Algorithms%3A%20%3CYour%20subject%3E).

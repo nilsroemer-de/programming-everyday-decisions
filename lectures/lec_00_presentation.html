@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <meta name="author" content="Dr.&nbsp;Tobias Vlćek">
+  <title>Programming: Everyday Decision-Making Algorithms – Introduction - Programming</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a79b58f53860612e3d2aa40fa25599fb.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Introduction - Programming</h1>
+  <p class="subtitle">Programming: Everyday Decision-Making Algorithms</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Dr.&nbsp;Tobias Vlćek 
+</div>
+        <p class="quarto-title-affiliation">
+            Kühne Logistics University Hamburg - Winter 2025
+          </p>
+    </div>
+</div>
+
+</section>
+<section>
+<section id="about-this-course" class="title-slide slide level1 title center">
+<h1><span class="flow">About this Course</span></h1>
+
+</section>
+<section id="teaching-team" class="slide level2">
+<h2>Teaching Team</h2>
+<div class="quarto-layout-panel" data-layout="[[1,1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/tobias-vlcek.jpg"></p>
+<figcaption><strong>Dr.&nbsp;Tobias Vlcek</strong></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/nils-roemer.jpeg"></p>
+<figcaption><strong>Dr.&nbsp;Nils Roemer</strong></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="about-me" class="slide level2">
+<h2>About me</h2>
+<ul>
+<li class="fragment"><strong>Field:</strong> Optimizing and simulating complex systems</li>
+<li class="fragment"><strong>Languages:</strong> of choice: Julia, Python and Rust</li>
+<li class="fragment"><strong>Interest:</strong> Modelling, Simulations, Machine Learning</li>
+<li class="fragment"><strong>Teaching:</strong> OR, Algorithms, and Programming</li>
+<li class="fragment"><strong>Contact:</strong> <a href="mailto:vlcek@beyondsimulations.com">vlcek@beyondsimulations.com</a></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>We really appreciate active participation and interaction!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="agenda" class="slide level2">
+<h2>Agenda</h2>
+<ul>
+<li>About the course, team, and expectations</li>
+<li>How to learn programming (mindset and resources)</li>
+<li>Setting up Python with uv and VS Code</li>
+<li>Using notebooks with uv</li>
+<li>Q&amp;A and next steps</li>
+</ul>
+</section>
+<section id="course-outline" class="slide level2">
+<h2>Course Outline</h2>
+<ul>
+<li><strong>I:</strong> Optimal Stopping</li>
+<li><strong>II:</strong> Explore &amp; Exploit</li>
+<li><strong>III:</strong> Caching</li>
+<li><strong>IV:</strong> Scheduling</li>
+<li><strong>V:</strong> Randomness</li>
+<li><strong>VI:</strong> Computational Kindness</li>
+</ul>
+</section>
+<section id="participation" class="slide level2">
+<h2>Participation</h2>
+<ul>
+<li>Try <strong>actively participating</strong> in this course</li>
+<li>You will find it much <span class="highlight">(!)</span> easier and more fun</li>
+<li>Lecture based on the book <span class="highlight">Algorithms to live by</span><sup>1</sup></li>
+<li>Material and slides are hosted online: <a href="https://beyondsimulations.github.io/Programming-Everyday-Decisions/">beyondsimulations.github.io/Programming-Everyday-Decisions</a></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.</p></li></ol></aside></section>
+<section id="teaching" class="slide level2">
+<h2>Teaching</h2>
+<ul>
+<li><strong>Lecture:</strong> Presentation and discussion of algorithms related to everyday decision-making</li>
+<li><strong>Tutorial:</strong> Step-by-step assignments to be solved and discussed together in groups</li>
+<li><strong>Difficulty:</strong> Strongly depends on your background and programming experience</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>No worries, we will help you out if you have any questions!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="passing-the-course" class="slide level2">
+<h2>Passing the Course</h2>
+<ul>
+<li><strong>Pass/fail course</strong> without exams</li>
+<li><span class="highlight">75% attendance</span> required for passing the course</li>
+<li>Hand in the assignments of at least <strong>two lectures</strong></li>
+<li><strong>Short presentation</strong> and discussion at the end</li>
+<li>You work together in groups of <strong>three students</strong></li>
+</ul>
+</section>
+<section id="handing-in-assignments" class="slide level2">
+<h2>Handing in Assignments</h2>
+<ul>
+<li>Each student group submits <strong>one solution</strong></li>
+<li>Provide us <strong>all</strong> working notebooks of the lecture</li>
+<li>Hand in is due at the <strong>beginning of the next lecture</strong></li>
+<li>At least <strong>50 %</strong> have to be correct to pass</li>
+<li><span class="highlight">You have to pass at least twice</span></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>This is just in order to provide you with working solutions after each deadline.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="learning-python" class="slide level2">
+<h2>Learning Python</h2>
+<p>We will mostly <strong>not cover Python during the lectures!</strong></p>
+<div class="fragment">
+<p><span class="question">Question</span>: Anybody know why?</p>
+</div>
+<div class="fragment">
+<ul>
+<li>In our experience, the best way to learn is by <strong>doing</strong>!</li>
+<li>Here, we will focus on decision-making algorithms</li>
+<li>You will learn Python by <span class="highlight">doing the tutorials</span></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Don’t worry, we will help you out if you have any questions!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="difficulty-of-the-course" class="slide level2">
+<h2>Difficulty of the Course</h2>
+<ul>
+<li>At first it might be <span class="highlight">a little bit overwhelming</span></li>
+<li>Programming is similar to learning a <strong>new language</strong></li>
+<li>First, you have to <strong>get used to it</strong> and learn words</li>
+<li><strong>Later</strong>, you’ll be able to apply it and see results</li>
+<li>Important: <em>Practice, practice, practice!</em></li>
+</ul>
+</section>
+<section id="goals-of-the-course" class="slide level2">
+<h2>Goals of the Course</h2>
+<ul>
+<li>Learn the <span class="highlight">basics of programming</span></li>
+<li>Learn about <strong>algorithmic thinking</strong></li>
+<li>Be able to <strong>apply</strong> methods and concepts</li>
+<li><strong>Solve practical problems</strong> with algorithms</li>
+</ul>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>We are convinced that this course will be quite interesting and <strong>teach you more for your daily life</strong> than most other courses!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="why-python" class="slide level2">
+<h2>Why Python?</h2>
+<ul>
+<li><strong>Origins</strong>: Conceived in late 1980s as a teaching and scripting language</li>
+<li><strong>Simple Syntax</strong>: Python’s syntax is mostly straightforward and very easy to learn</li>
+<li><strong>Versatility</strong>: Used in web development, data analysis, artificial intelligence, and more</li>
+<li><strong>Community Support</strong>: A large community of users worldwide and extensive documentation</li>
+</ul>
+</section>
+<section id="help-from-ai" class="slide level2">
+<h2>Help from AI</h2>
+<ul>
+<li>You are <span class="highlight">allowed to use AI</span> in the course, we use it as well (e.g., Claude, ChatGPT, LLama3 …)</li>
+<li>These <strong>tools are great</strong> for learning Python!</li>
+<li>Can help you a lot <strong>to get started</strong> with programming</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>But you should <em>not</em> simply use them to <em>replace</em> your learning.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="how-to-learn-programming" class="title-slide slide level1 title center">
+<h1><span class="flow">How to learn programming</span></h1>
+
+</section>
+<section id="our-recommendation" class="slide level2">
+<h2>Our Recommendation</h2>
+<ol type="1">
+<li><span class="highlight">Be present</span>: Attend the lecture and solve the tutorials</li>
+<li><span class="highlight">Put in some work</span>: Repeat code and try to understand it</li>
+<li><span class="highlight">Do coding</span>: Run code, play around, modify, and solve</li>
+</ol>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Great resources to start are books and small challenges. You can find a list of book recommendations at the end of the lecture. Small challenges to solve can for example be found on <a href="https://www.codewars.com/">Codewars</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="dont-give-up" class="slide level2">
+<h2>Don’t give up!</h2>
+<ul>
+<li>Programming is <span class="highlight">problem solving</span>, don’t get <strong>frustrated</strong>!</li>
+<li>Expect to <strong>stretch</strong> your comfort zone</li>
+</ul>
+<center>
+<p><br> <iframe src="https://giphy.com/embed/FKsCiEI5pFvIQ" width="480" height="360" style="" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe></p>
+<center>
+</center></center></section></section>
+<section>
+<section id="setting-up-python" class="title-slide slide level1 title center">
+<h1><span class="flow">Setting up Python</span></h1>
+
+</section>
+<section id="install-vs-code" class="slide level2">
+<h2>Install VS Code</h2>
+<ul>
+<li>Download and install from the <a href="https://code.visualstudio.com/">website</a></li>
+<li>Built for <strong>Windows, Linux and Mac</strong></li>
+<li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a> and <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter">Jupyter</a> extension</li>
+<li><span class="highlight">Now you are ready to go!</span></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Unsure on how to work with VS Code and notebooks? Ask us! We are happy to help you out!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-is-an-ide" class="slide level2">
+<h2>What is an IDE?</h2>
+<ul>
+<li>Integrated Development Environment <code>=</code> application</li>
+<li>It allows you to write, run and debug code scripts</li>
+<li>Other IDEs include for example:
+<ul>
+<li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a> from JetBrains</li>
+<li><a href="https://zed.dev/">Zed</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="installation-of-python-with-uv" class="slide level2">
+<h2>Installation of Python with <code>uv</code></h2>
+<ul>
+<li>We will use <code>uv</code> to install and manage Python versions</li>
+<li>It works on Windows, Mac and Linux</li>
+<li>It helps us to manage packages and virtual environments</li>
+<li>Now, we all <a href="../general/uv.html">go here</a> and install <code>uv</code> and Python</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>If the installation does not work, <strong>let us know!</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="using-notebooks-with-uv" class="title-slide slide level1 title center">
+<h1><span class="flow">Using Notebooks with uv</span></h1>
+
+</section>
+<section id="quick-check" class="slide level2">
+<h2>Quick Check</h2>
+<ul>
+<li>Have you installed <code>uv</code> and initialized the project?</li>
+<li>Great! Before we continue, check the following:
+<ul>
+<li>[] You have a folder for the course</li>
+<li>[] You have initialized <code>uv</code> with <code>uv init</code> inside the folder</li>
+<li>[] You can see a file called <code>pyproject.toml</code> in the folder</li>
+</ul>
+. . .</li>
+</ul>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Something not working yet? Ask us!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="using-notebooks" class="slide level2">
+<h2>Using Notebooks</h2>
+<ul>
+<li>Now we need to add a kernel to our project</li>
+<li>Run <code>uv add --dev ipykernel</code> from your terminal</li>
+<li>Now run <code>uv add jupyter</code> in the terminal</li>
+<li>This allows us to use <code>uv</code> Python in notebooks</li>
+<li>Done? Perfect. Now we can start!</li>
+</ul>
+</section>
+<section id="working-with-notebooks" class="slide level2">
+<h2>Working with Notebooks</h2>
+<ul>
+<li>Now you can download the files from the website</li>
+<li>Just click on one of the sessions and open it</li>
+<li>Select <code>Jupyter</code> on the right side</li>
+<li>Download and save the files <strong>to your course folder</strong></li>
+<li>Open them and select “Open with Jupyter Notebook”</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>That was the hardest part today!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2 loud-slide">
+<h2></h2>
+<div class="r-fit-text">
+<p>Any questions</p>
+<p>so far?</p>
+</div>
+</section>
+<section id="after-the-break-optimal-stopping" class="slide level2">
+<h2>After the break — Optimal Stopping</h2>
+<ul>
+<li>The “Secretary Problem” and the 37% rule</li>
+<li>When to stop searching and make a decision</li>
+<li>How to translate the idea into code and experiments</li>
+</ul>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>That’s it for our introduction!</strong><br>
+Let’s have a short break and then continue with our first topic.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="literature" class="title-slide slide level1 title center">
+<h1><span class="flow">Literature</span></h1>
+
+</section>
+<section id="interesting-literature-to-start" class="slide level2">
+<h2>Interesting literature to start</h2>
+<ul>
+<li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<sup>1</sup></li>
+<li>Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
+<section id="books-on-programming" class="slide level2">
+<h2>Books on Programming</h2>
+<ul>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-literature" class="slide level2">
+<h2>More Literature</h2>
+<p>For more interesting literature, take a look at the <a href="../general/literature.html">literature list</a> of this course.</p>
+
+
+</section></section>
+
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Introduction - Programming | Dr.&nbsp;Tobias Vlćek | <a href="../lectures/lec_00_introduction.html">Home</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/beyondsimulations\.github\.io\/Programming-Everyday-Decisions");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <meta name="author" content="Dr.&nbsp;Tobias Vlćek">
+  <title>Programming: Everyday Decision-Making Algorithms – Lecture I - Optimal Stopping</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a79b58f53860612e3d2aa40fa25599fb.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lecture I - Optimal Stopping</h1>
+  <p class="subtitle">Programming: Everyday Decision-Making Algorithms</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Dr.&nbsp;Tobias Vlćek 
+</div>
+        <p class="quarto-title-affiliation">
+            Kühne Logistics University Hamburg - Winter 2025
+          </p>
+    </div>
+</div>
+
+</section>
+<section id="todays-topic-optimal-stopping" class="slide level2">
+<h2>Today’s Topic: Optimal Stopping</h2>
+<p><strong>Topic:</strong> Understanding optimal stopping problems and the famous “Secretary Problem”</p>
+<p><strong>Why this matters:</strong> Optimal stopping is everywhere in life - from hiring decisions to finding apartments to choosing when to sell stocks. Today we’ll learn the mathematical strategy that maximizes your chances of making the best choice.</p>
+</section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning Objectives</h2>
+<p>By the end of this lecture, you will be able to:</p>
+<ol type="1">
+<li class="fragment"><strong>Define</strong> optimal stopping problems and identify them in real-world scenarios</li>
+<li class="fragment"><strong>Apply</strong> the 37% rule (look-and-leap strategy) to make better decisions</li>
+<li class="fragment"><strong>Connect</strong> optimal stopping principles to programming logic and algorithmic thinking</li>
+</ol>
+</section>
+<section id="todays-agenda" class="slide level2">
+<h2>Today’s Agenda</h2>
+<ol type="1">
+<li class="fragment"><strong>What is Optimal Stopping?</strong> - Definition and real-world examples</li>
+<li class="fragment"><strong>The Secretary Problem</strong> - The classic formulation and solution</li>
+<li class="fragment"><strong>The 37% Rule</strong> - Why it works and how to apply it</li>
+<li class="fragment"><strong>Variations &amp; Extensions</strong> - Rejection, time constraints, other scenarios</li>
+<li class="fragment"><strong>Connecting to Programming</strong> - How this builds our algorithmic mindset</li>
+</ol>
+</section>
+<section>
+<section id="optimal-stopping" class="title-slide slide level1 title center">
+<h1><span class="flow">Optimal Stopping</span></h1>
+
+</section>
+<section id="what-is-optimal-stopping" class="slide level2">
+<h2>What is Optimal Stopping?</h2>
+<p><span class="question">Question:</span> Anybody know what optimal stopping is?</p>
+<ul>
+<li class="fragment"><span class="highlight">Optimal stopping</span> is the problem of:
+<ul>
+<li class="fragment">choosing the <strong>best option</strong></li>
+<li class="fragment">from a <strong>sequence of options</strong></li>
+<li class="fragment">where the options are revealed <strong>one by one</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="section" class="slide level2 loud-slide">
+<h2></h2>
+<div class="r-fit-text">
+<p>Anybody an</p>
+<p>example of</p>
+<p>optimal stopping?</p>
+</div>
+</section>
+<section id="flat-hunting" class="slide level2" data-background-image="https://unsplash.com/photos/CAuxRJhSLC0/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NDZ8fGhhbWJ1cmd8ZW58MHx8fHwxNzI5OTgyMjg3fDA&amp;force=true">
+<h2><span class="invert-font">Flat Hunting</span></h2>
+<div class="footer">
+<p><span class="invert-font">Photo by <a href="https://unsplash.com/@jiren_091">Aditya Ghosh</a> on Unsplash</span></p>
+</div>
+</section>
+<section id="hiring-applicants" class="slide level2" data-background-image="https://unsplash.com/photos/OQMZwNd3ThU/download?ixid=M3wxMjA3fDB8MXxhbGx8NHx8fHx8fHx8MTcyOTk3MzA0OXw&amp;force=true">
+<h2><span class="invert-font">Hiring applicants</span></h2>
+<div class="footer">
+<p><span class="invert-font">Photo by <a href="https://unsplash.com/@homajob">Scott Graham</a> on Unsplash</span></p>
+</div>
+</section>
+<section id="dating" class="slide level2" data-background-image="https://unsplash.com/photos/-XlBjdtRqK8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NTV8fGxvdmV8ZW58MHx8fHwxNzI5OTI4NTkxfDA&amp;force=true">
+<h2><span class="invert-font">Dating</span></h2>
+<div class="footer">
+<p><span class="invert-font">Photo by <a href="https://unsplash.com/@shelbymary_">Shelby Deeter</a> on Unsplash</span></p>
+</div>
+</section></section>
+<section>
+<section id="secretary-problem" class="title-slide slide level1 title center">
+<h1><span class="flow">“Secretary Problem”</span></h1>
+
+</section>
+<section id="the-secretary-problem" class="slide level2">
+<h2>The Secretary Problem</h2>
+<ul>
+<li class="fragment">Imagine you’re <strong>hiring a secretary</strong></li>
+<li class="fragment">You must interview candidates <strong>one by one</strong></li>
+<li class="fragment">Now, you must decide: <strong>hire or continue searching</strong></li>
+<li class="fragment">Once you reject a candidate, <strong>you cannot go back</strong></li>
+<li class="fragment">How to <span class="highlight">maximize chance of selecting the best candidate?</span></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>The name is a bit misleading, as the problem is not about hiring a secretary, but about finding the best candidate. It comes from the 1960s and thus a little outdated.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="basic-setup" class="slide level2">
+<h2>Basic Setup</h2>
+<ul>
+<li>We have <code>n</code> candidates</li>
+<li>We interview them <strong>one by one</strong></li>
+<li>We must decide to <strong>hire or continue searching</strong></li>
+<li><span class="highlight">Ordinal ranking</span> of candidates</li>
+</ul>
+<div class="fragment">
+<p><span class="question">Question:</span> Anybody know what ordinal ranking is?</p>
+</div>
+</section>
+<section id="ways-to-fail" class="slide level2">
+<h2>Ways to fail</h2>
+<p><span class="question">Question:</span> Anybody an idea how we can fail?</p>
+<div class="fragment">
+<ol type="1">
+<li>Reject all candidates and never hire - <span class="highlight">stopping too late</span></li>
+<li>You hire someone too early - <span class="highlight">stopping too early</span></li>
+</ol>
+</div>
+</section>
+<section id="section-1" class="slide level2 loud-slide">
+<h2></h2>
+<div class="r-fit-text">
+<p>Ideas?</p>
+</div>
+</section>
+<section id="look-and-leap-strategy" class="slide level2">
+<h2>Look-and-Leap Strategy</h2>
+<p>The optimal strategy is to:</p>
+<ol type="1">
+<li class="fragment">Look at the <span class="highlight">first 37 %</span> of options</li>
+<li class="fragment">Remember the <strong>best one seen so far</strong></li>
+<li class="fragment">Choose the next option that’s <strong>better than the best seen</strong></li>
+<li class="fragment">Chance of selecting the best candidate is <strong>37 %</strong><sup>1</sup></li>
+<li class="fragment">Thus, we can fail with <strong>63 %</strong>!</li>
+</ol>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Large number of candidates! With a small number of candidates, we can do even better.</p></li></ol></aside></section>
+<section id="look-and-leap-strategy-1" class="slide level2">
+<h2>Look-and-Leap Strategy</h2>
+<p>The mathematically optimal strategy:</p>
+<ol type="1">
+<li class="fragment"><strong>Look</strong> at the <span class="highlight">first 37%</span> of candidates without hiring anyone</li>
+<li class="fragment"><strong>Remember</strong> the best candidate from this observation phase</li>
+<li class="fragment"><strong>Leap:</strong> Hire the next candidate who is <strong>better than the best observed</strong></li>
+<li class="fragment"><strong>Success rate:</strong> 37% chance of selecting the absolute best candidate</li>
+</ol>
+<div class="fragment">
+<p>This means we fail 63% of the time - but this is the <strong>best we can possibly do</strong>!</p>
+</div>
+</section>
+<section id="step-by-step-approximation" class="slide level2">
+<h2>Step-by-step Approximation</h2>
+<p>Why does the success probability decrease with more candidates?</p>
+<ul>
+<li>1 candidate: 100% (no choice!)</li>
+<li>2 candidates: 50%</li>
+<li>3 candidates: 33%</li>
+<li>4 candidates: 25%</li>
+<li>5 candidates: 20%</li>
+</ul>
+<div class="fragment">
+<p><span class="question">Question:</span> Do you see the pattern?</p>
+</div>
+<div class="fragment">
+<p><strong>Pattern:</strong> 1/n - as we have more options, each individual option is less likely to be the best.</p>
+</div>
+</section>
+<section id="why-37" class="slide level2">
+<h2>Why 37%?</h2>
+<ul>
+<li>This is based on the <strong>geometric distribution</strong></li>
+<li>The <span class="highlight">optimal stopping point</span> is at <code>n/e</code><sup>1</sup></li>
+<li><code>e</code> is the base of the natural logarithm (≈ 2.718)</li>
+<li>This comes from maximizing the probability of success</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>This is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</p></li></ol></aside></section>
+<section id="computing-the-number" class="slide level2">
+<h2>Computing the number</h2>
+<div id="3ae1cfaa" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> math</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>percentage <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>math.e</span>
+<span id="cb1-4"><a></a><span class="bu">print</span>(<span class="ss">f"Percentage of options to look at: </span><span class="sc">{</span>percentage<span class="sc">:.3f}</span><span class="ss">%"</span>)</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>candidates <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb1-7"><a></a>lookout_phase <span class="op">=</span> candidates<span class="op">/</span>math.e</span>
+<span id="cb1-8"><a></a><span class="bu">print</span>(<span class="ss">f"Look at first </span><span class="sc">{</span>lookout_phase<span class="sc">:.3f}</span><span class="ss"> candidates"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell fragment" data-execution_count="1">
+<div class="cell-output cell-output-stdout">
+<pre><code>Percentage of options to look at: 0.368%
+Look at first 7.358 candidates</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>No worries if you don’t understand the code! We are essentialy just using the formula to calculate the percentage of candidates to look at.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="geometric-distribution" class="slide level2">
+<h2>Geometric Distribution</h2>
+<p>Let’s visualize the success of a simulation with 20 candidates:</p>
+<div id="25301ed5" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_01_optimal_stopping_files/figure-revealjs/cell-3-output-1.png" width="1118" height="541"></p>
+</figure>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="variations" class="title-slide slide level1 title center">
+<h1><span class="flow">Variations</span></h1>
+
+</section>
+<section id="rejection" class="slide level2">
+<h2>Rejection</h2>
+<p><span class="question">Question:</span> Imagine a dating scenario, <span class="highlight">where the other person can also reject you</span>. <strong>Optimal stopping point?</strong></p>
+<ul>
+<li class="fragment">The optimal stopping point is now <strong>lower</strong></li>
+<li class="fragment">Because we can now <strong>fail more often</strong></li>
+<li class="fragment">With 50 % chance of rejection, we <strong>start leaping at 25 %</strong></li>
+<li class="fragment"><strong>Formula:</strong> <span class="math inline">\(q^{\frac{1}{1-q}}\)</span> with <span class="math inline">\(q\)</span> being the chance of rejection</li>
+</ul>
+</section>
+<section id="mutual-rejection" class="slide level2">
+<h2>Mutual Rejection</h2>
+<p><span class="question">Question:</span> What if in dating, <span class="highlight">the other person can also reject you</span>?</p>
+<ul>
+<li class="fragment">The optimal stopping point <strong>decreases</strong></li>
+<li class="fragment">We need to account for rejection risk</li>
+<li class="fragment">With 50% rejection probability: <strong>start accepting at 25%</strong></li>
+<li class="fragment"><strong>Formula:</strong> <span class="math inline">\(q^{\frac{1}{1-q}}\)</span> where <span class="math inline">\(q\)</span> = rejection probability</li>
+</ul>
+<div class="fragment">
+<p><strong>Life lesson:</strong> Higher risk of rejection means we should be less picky!</p>
+</div>
+</section>
+<section id="time-constraints" class="slide level2">
+<h2>Time Constraints</h2>
+<p>What if we don’t have a fixed number of candidates, but a <span class="highlight">fixed amount of time</span>?</p>
+<div class="fragment">
+<p><strong>Example:</strong> One year to find an apartment</p>
+</div>
+<div class="fragment">
+<p><span class="question">Question:</span> How should we adapt our strategy?</p>
+</div>
+<div class="fragment">
+<ul>
+<li class="fragment"><strong>Same principle applies!</strong> Observe for first 37% of available time</li>
+<li class="fragment">But now we also control the <strong>search intensity</strong></li>
+<li class="fragment">This connects to <strong>resource allocation</strong> problems in computer science</li>
+</ul>
+</div>
+</section>
+<section id="other-versions" class="slide level2">
+<h2>Other versions</h2>
+<ul>
+<li>Selling a house for the <strong>best price</strong> (“Threshold Rule”)</li>
+<li>Stealing with a <strong>success probability</strong> (“Burglar’s Problem”)</li>
+<li><strong>Finding</strong> a parking spot (“Parking Lot Problem”)</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Side note for drivers: An increase in occupancy from 90 to 95% doubles the search time for all drivers!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="building-your-technical-mindset" class="slide level2">
+<h2>Building Your Technical Mindset</h2>
+<p><span class="question">Question:</span> <strong>How does optimal stopping connect to programming?</strong></p>
+<div class="fragment">
+<ol type="1">
+<li class="fragment"><strong>Algorithmic thinking:</strong> Break complex decisions into logical steps</li>
+<li class="fragment"><strong>Trade-off analysis:</strong> Exploration vs.&nbsp;exploitation (fundamental in AI)</li>
+<li class="fragment"><strong>Mathematical optimization:</strong> Using formulas to find best solutions</li>
+</ol>
+</div>
+</section>
+<section id="key-takeaways" class="slide level2">
+<h2>Key Takeaways</h2>
+<p><strong>What we learned:</strong></p>
+<ol type="1">
+<li class="fragment"><strong>Optimal stopping problems</strong> are everywhere in life and business</li>
+<li class="fragment"><strong>The 37% rule</strong> provides a mathematically optimal strategy</li>
+<li class="fragment"><strong>Exploration vs.&nbsp;exploitation</strong> is a fundamental trade-off</li>
+<li class="fragment"><strong>Real-world variations</strong> require adapting the basic strategy</li>
+<li class="fragment"><strong>This thinking</strong> builds foundation for algorithmic problem-solving</li>
+</ol>
+</section>
+<section id="section-2" class="slide level2 loud-slide">
+<h2></h2>
+<div class="r-fit-text">
+<p>Any questions</p>
+<p>so far?</p>
+</div>
+</section>
+<section id="after-the-break-optimal-stopping" class="slide level2">
+<h2>After the break — Optimal Stopping</h2>
+<ul>
+<li>Gentle introduction to Python Programming</li>
+<li>We work in our notebooks on basics and optimal stopping</li>
+<li>How to translate the idea into code and experiments</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>That’s it for optimal stopping!</strong><br>
+Let’s have a short break and then continue with our first Python programming session.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="literature" class="title-slide slide level1 title center">
+<h1><span class="flow">Literature</span></h1>
+
+</section>
+<section id="interesting-literature-to-start" class="slide level2">
+<h2>Interesting literature to start</h2>
+<ul>
+<li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<sup>1</sup></li>
+<li>Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
+<section id="books-on-programming" class="slide level2">
+<h2>Books on Programming</h2>
+<ul>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="more-literature" class="slide level2">
+<h2>More Literature</h2>
+<p>For more interesting literature, take a look at the <a href="../general/literature.html">literature list</a> of this course.</p>
+
+
+</section></section>
+
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Lecture I - Optimal Stopping | Dr.&nbsp;Tobias Vlćek | <a href="../lectures/lec_01_optimal_stopping.html">Home</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/beyondsimulations\.github\.io\/Programming-Everyday-Decisions");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

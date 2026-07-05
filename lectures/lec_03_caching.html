@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr.&nbsp;Nils Roemer">
+
+<title>Lecture III - Caching – Programming: Everyday Decision-Making Algorithms</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b7f2a80d65e4e0c38aaa0b1d52f53cc7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-082c280d0266c6330b148fdd5ce36071.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b7f2a80d65e4e0c38aaa0b1d52f53cc7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0817b4d50de4e2dd54765547bae942e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-7759b4216a47fcb3e944072a87058edb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0817b4d50de4e2dd54765547bae942e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" src="https://umi.byndsim.com/script.js" data-website-id="e230d76b-b0a6-477e-8c5d-19a7bd661e68"></script>
+
+<script defer="" data-domain="beyondsimulations.github.io" src="https://plb.byndsim.com/js/script.file-downloads.hash.outbound-links.js"></script>
+<script>
+    window.plausible =
+        window.plausible ||
+        function () {
+            (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">Lecture</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="https://images.beyondsimulations.com/logo/midjourney-everyday-algorithms.jpeg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="https://images.beyondsimulations.com/logo/midjourney-everyday-algorithms.jpeg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text">***</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">01 Optimal Stopping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_00_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_01_optimal_stopping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_01_01_variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01-01 - Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_01_02_comparisons.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01-02 - Comparisons</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_01_03_stopping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01-03 - Decisions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">02 Explore/Exploit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_02_explore_exploit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_02_01_lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-01 - Lists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_02_02_loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-02 - Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_02_03_explore_exploit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-03 - Exploration</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">03 Caching</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_03_caching.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_03_01_recap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03-01 - Recap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_03_02_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03-02 - Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_03_03_packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03-03 - Packages</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">04 Scheduling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_04_scheduling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_04_01_recap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10 - Recap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_04_02_dicts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 - Dictionaries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_04_03_dataframes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 - DataFrames</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">05 Randomness</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_05_randomness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/tut_05_01_llm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13 - LLM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_05_02_recap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14 - Recap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorials/tut_05_03_free.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">15 - Free Tasks</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">06 Kindness</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/lec_06_kindness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+ <span class="menu-text">***</span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/uv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Literature</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../general/cheatsheet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cheatsheet</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="flow">Introduction</span></a>
+  <ul class="collapse">
+  <li><a href="#a-quick-question-first" id="toc-a-quick-question-first" class="nav-link" data-scroll-target="#a-quick-question-first">A Quick Question First</a></li>
+  <li><a href="#lets-approach-the-topic-using-an-everyday-decision" id="toc-lets-approach-the-topic-using-an-everyday-decision" class="nav-link" data-scroll-target="#lets-approach-the-topic-using-an-everyday-decision">Let’s approach the topic using an everyday decision</a></li>
+  <li><a href="#question-what-could-we-do" id="toc-question-what-could-we-do" class="nav-link" data-scroll-target="#question-what-could-we-do"><span class="question">Question:</span> What could we do?</a></li>
+  <li><a href="#two-approaches-to-storage-problems" id="toc-two-approaches-to-storage-problems" class="nav-link" data-scroll-target="#two-approaches-to-storage-problems">Two Approaches to Storage Problems</a></li>
+  <li><a href="#even-best-organization-has-limits" id="toc-even-best-organization-has-limits" class="nav-link" data-scroll-target="#even-best-organization-has-limits">Even best organization has limits</a></li>
+  <li><a href="#question-what-do-we-do-when-the-storage-is-full" id="toc-question-what-do-we-do-when-the-storage-is-full" class="nav-link" data-scroll-target="#question-what-do-we-do-when-the-storage-is-full"><span class="question">Question:</span> What do we do, when the storage is full?</a></li>
+  <li><a href="#but" id="toc-but" class="nav-link" data-scroll-target="#but">But…</a></li>
+  <li><a href="#question-what-else-faces-this-problem" id="toc-question-what-else-faces-this-problem" class="nav-link" data-scroll-target="#question-what-else-faces-this-problem"><span class="question">Question:</span> What else faces this problem?</a></li>
+  <li><a href="#question-impact-of-full-storage" id="toc-question-impact-of-full-storage" class="nav-link" data-scroll-target="#question-impact-of-full-storage"><span class="question">Question:</span> Impact of full storage?</a></li>
+  </ul></li>
+  <li><a href="#clearing-out" id="toc-clearing-out" class="nav-link" data-scroll-target="#clearing-out"><span class="flow">Clearing out</span></a>
+  <ul class="collapse">
+  <li><a href="#why-clearing-out-matters" id="toc-why-clearing-out-matters" class="nav-link" data-scroll-target="#why-clearing-out-matters">Why Clearing Out Matters</a></li>
+  <li><a href="#learning-from-computer-science" id="toc-learning-from-computer-science" class="nav-link" data-scroll-target="#learning-from-computer-science">Learning from Computer Science</a></li>
+  <li><a href="#the-bottleneck" id="toc-the-bottleneck" class="nav-link" data-scroll-target="#the-bottleneck">The Bottleneck</a></li>
+  </ul></li>
+  <li><a href="#cache" id="toc-cache" class="nav-link" data-scroll-target="#cache"><span class="flow">Cache</span></a>
+  <ul class="collapse">
+  <li><a href="#cache-the-solution" id="toc-cache-the-solution" class="nav-link" data-scroll-target="#cache-the-solution">Cache: The Solution</a></li>
+  <li><a href="#the-library-principle" id="toc-the-library-principle" class="nav-link" data-scroll-target="#the-library-principle">The Library Principle</a></li>
+  <li><a href="#the-trade-off-size-and-speed" id="toc-the-trade-off-size-and-speed" class="nav-link" data-scroll-target="#the-trade-off-size-and-speed">The Trade-off: Size and Speed</a></li>
+  <li><a href="#why-the-trade-off" id="toc-why-the-trade-off" class="nav-link" data-scroll-target="#why-the-trade-off">Why the Trade-off?</a></li>
+  <li><a href="#the-nessecity-of-clearing-out" id="toc-the-nessecity-of-clearing-out" class="nav-link" data-scroll-target="#the-nessecity-of-clearing-out">The nessecity of clearing out</a></li>
+  </ul></li>
+  <li><a href="#clearing-out-strategies" id="toc-clearing-out-strategies" class="nav-link" data-scroll-target="#clearing-out-strategies"><span class="flow">Clearing out Strategies</span></a>
+  <ul class="collapse">
+  <li><a href="#question-eviction-strategies" id="toc-question-eviction-strategies" class="nav-link" data-scroll-target="#question-eviction-strategies"><span class="question">Question:</span> Eviction Strategies?</a></li>
+  <li><a href="#how-to-clear-up" id="toc-how-to-clear-up" class="nav-link" data-scroll-target="#how-to-clear-up">How to clear up?</a></li>
+  <li><a href="#realistic-strategies" id="toc-realistic-strategies" class="nav-link" data-scroll-target="#realistic-strategies">Realistic Strategies</a></li>
+  <li><a href="#why-lru-works-the-principle-of-temporal-locality" id="toc-why-lru-works-the-principle-of-temporal-locality" class="nav-link" data-scroll-target="#why-lru-works-the-principle-of-temporal-locality">Why LRU Works: The Principle of Temporal Locality</a></li>
+  <li><a href="#managerial-and-personal-insights" id="toc-managerial-and-personal-insights" class="nav-link" data-scroll-target="#managerial-and-personal-insights">Managerial and personal insights:</a></li>
+  <li><a href="#spatial-locality" id="toc-spatial-locality" class="nav-link" data-scroll-target="#spatial-locality">Spatial Locality</a></li>
+  </ul></li>
+  <li><a href="#productivity" id="toc-productivity" class="nav-link" data-scroll-target="#productivity"><span class="flow">Productivity</span></a>
+  <ul class="collapse">
+  <li><a href="#our-brains-are-caches" id="toc-our-brains-are-caches" class="nav-link" data-scroll-target="#our-brains-are-caches">Our Brains are Caches</a></li>
+  <li><a href="#cache-vulnerabilities" id="toc-cache-vulnerabilities" class="nav-link" data-scroll-target="#cache-vulnerabilities">Cache Vulnerabilities</a></li>
+  <li><a href="#productivity-killers" id="toc-productivity-killers" class="nav-link" data-scroll-target="#productivity-killers">Productivity Killers</a></li>
+  <li><a href="#the-attention-crisis" id="toc-the-attention-crisis" class="nav-link" data-scroll-target="#the-attention-crisis">The Attention Crisis</a></li>
+  <li><a href="#the-solution-manage-your-mental-cache" id="toc-the-solution-manage-your-mental-cache" class="nav-link" data-scroll-target="#the-solution-manage-your-mental-cache">The Solution: Manage Your Mental Cache</a></li>
+  </ul></li>
+  <li><a href="#mitigation" id="toc-mitigation" class="nav-link" data-scroll-target="#mitigation"><span class="flow">Mitigation</span></a>
+  <ul class="collapse">
+  <li><a href="#mitigation-1" id="toc-mitigation-1" class="nav-link" data-scroll-target="#mitigation-1">Mitigation</a></li>
+  <li><a href="#awareness-three-levels-of-attention" id="toc-awareness-three-levels-of-attention" class="nav-link" data-scroll-target="#awareness-three-levels-of-attention">Awareness: Three Levels of Attention</a></li>
+  <li><a href="#practical-strategies" id="toc-practical-strategies" class="nav-link" data-scroll-target="#practical-strategies">Practical Strategies</a></li>
+  <li><a href="#cache-hierarchy-for-workspace" id="toc-cache-hierarchy-for-workspace" class="nav-link" data-scroll-target="#cache-hierarchy-for-workspace">Cache Hierarchy for Workspace</a></li>
+  <li><a href="#self-assessment" id="toc-self-assessment" class="nav-link" data-scroll-target="#self-assessment">Self-Assessment</a></li>
+  </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="flow">Key Takeaways</span></a>
+  <ul class="collapse">
+  <li><a href="#key-takeaways-the-concepts" id="toc-key-takeaways-the-concepts" class="nav-link" data-scroll-target="#key-takeaways-the-concepts">Key Takeaways: The Concepts</a></li>
+  <li><a href="#key-takeaways-your-life" id="toc-key-takeaways-your-life" class="nav-link" data-scroll-target="#key-takeaways-your-life">Key Takeaways: Your Life</a></li>
+  </ul></li>
+  <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature"><span class="flow">Literature</span></a>
+  <ul class="collapse">
+  <li><a href="#interesting-literature-to-start" id="toc-interesting-literature-to-start" class="nav-link" data-scroll-target="#interesting-literature-to-start">Interesting literature to start</a></li>
+  <li><a href="#books-on-programming" id="toc-books-on-programming" class="nav-link" data-scroll-target="#books-on-programming">Books on Programming</a></li>
+  <li><a href="#more-literature" id="toc-more-literature" class="nav-link" data-scroll-target="#more-literature">More Literature</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/edit/main/lectures/lec_03_caching.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/blob/main/lectures/lec_03_caching.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lec_03_caching.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="lec_03_presentation.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">Lecture</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lecture III - Caching</h1>
+<p class="subtitle lead">Programming: Everyday Decision-Making Algorithms</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Nils Roemer </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Kühne Logistics University Hamburg - Winter 2025
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="learning-objectives" class="level1 title">
+<h1 class="title">Learning Objectives</h1>
+<div class="fragment">
+<p>By the end of this lecture, you will be able to:</p>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li>Explain the fundamental concepts of caching and its importance</li>
+<li>Compare different cache replacement strategies</li>
+<li>Identify caching principles in everyday life</li>
+<li>Apply caching concepts to personal productivity</li>
+<li>Understand the relationship between caching and attention management</li>
+</ul>
+</div>
+</section>
+<section id="introduction" class="level1 title">
+<h1 class="title"><span class="flow">Introduction</span></h1>
+<section id="a-quick-question-first" class="level2">
+<h2 class="anchored" data-anchor-id="a-quick-question-first">A Quick Question First</h2>
+<div class="fragment">
+<p><span class="question">Question:</span> <strong>How many of you have a messy desktop right now?</strong></p>
+</div>
+<div class="fragment">
+<p><strong>Raise your hand!</strong></p>
+</div>
+<div class="fragment">
+<p>Today’s lecture will explain why that matters more than you think…</p>
+</div>
+</section>
+<section id="lets-approach-the-topic-using-an-everyday-decision" class="level2">
+<h2 class="anchored" data-anchor-id="lets-approach-the-topic-using-an-everyday-decision">Let’s approach the topic using an everyday decision</h2>
+<div class="incremental">
+<div class="quarto-layout-panel" data-layout="[[50,50]]">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul class="incremental">
+<li>We have a problem: Our cupboard.</li>
+<li>It’s time to put things in order.</li>
+</ul>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div style="text-align: center;">
+<p><img src="../images/caching/closet_1.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-what-could-we-do" class="level2">
+<h2 class="anchored" data-anchor-id="question-what-could-we-do"><span class="question">Question:</span> What could we do?</h2>
+<div class="incremental">
+<div class="quarto-layout-panel" data-layout="[[50,50]]">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul class="incremental">
+<li>Better organization</li>
+<li>Clearing out things we no longer need</li>
+<li>Now we have two problems:
+<ul class="incremental">
+<li>Storing?</li>
+<li>Clearing out?</li>
+</ul></li>
+</ul>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div style="text-align: center;">
+<p><img src="../images/caching/closet_2.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="two-approaches-to-storage-problems" class="level2">
+<h2 class="anchored" data-anchor-id="two-approaches-to-storage-problems">Two Approaches to Storage Problems</h2>
+<div class="incremental">
+<div class="quarto-layout-panel" data-layout="[[50,50]]">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul class="incremental">
+<li><strong>Better Organization:</strong>
+<ul class="incremental">
+<li>Subdivide storage</li>
+<li>Efficient sorting</li>
+</ul></li>
+<li><strong>More Space:</strong>
+<ul class="incremental">
+<li>Increase capacity</li>
+</ul></li>
+<li><span class="question">Question:</span> Which approach is better?</li>
+</ul>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div style="text-align: center;">
+<p><img src="../images/caching/closet_2.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="even-best-organization-has-limits" class="level2">
+<h2 class="anchored" data-anchor-id="even-best-organization-has-limits">Even best organization has limits</h2>
+<div class="incremental">
+<div class="quarto-layout-panel" data-layout="[[50,50]]">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul class="incremental">
+<li>Organization helps, but takes time.</li>
+<li>More space helps, but has limits.</li>
+<li><strong>Every storage has a finite capacity.</strong></li>
+</ul>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div style="text-align: center;">
+<p><img src="../images/caching/closet_2.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-what-do-we-do-when-the-storage-is-full" class="level2">
+<h2 class="anchored" data-anchor-id="question-what-do-we-do-when-the-storage-is-full"><span class="question">Question:</span> What do we do, when the storage is full?</h2>
+<div class="fragment">
+<div style="text-align: center;">
+<p><img src="https://images.unsplash.com/photo-1640357154220-9775b0f31dec?q=80&amp;w=2670&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" style="width:60.0%"></p>
+<p><strong>We could increase the capacity</strong></p>
+</div>
+</div>
+</section>
+<section id="but" class="level2">
+<h2 class="anchored" data-anchor-id="but">But…</h2>
+<div class="incremental">
+<div class="quarto-layout-panel" data-layout="[[50,50]]">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul class="incremental">
+<li>Increasing capacity = costly</li>
+<li><strong>Trade-off:</strong> Size vs.&nbsp;Speed</li>
+<li>Larger = slower to search</li>
+<li>Sooner or later: Still fills up</li>
+</ul>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div style="text-align: center;">
+<p><img src="../images/caching/closet_3.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-what-else-faces-this-problem" class="level2">
+<h2 class="anchored" data-anchor-id="question-what-else-faces-this-problem"><span class="question">Question:</span> What else faces this problem?</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Cupboards</li>
+<li>Computers</li>
+<li>Email inbox</li>
+<li>Smartphones</li>
+<li>Warehouses</li>
+<li><strong>Our brain?!</strong></li>
+</ul>
+</div>
+</section>
+<section id="question-impact-of-full-storage" class="level2">
+<h2 class="anchored" data-anchor-id="question-impact-of-full-storage"><span class="question">Question:</span> Impact of full storage?</h2>
+<div class="incremental">
+<div class="quarto-layout-panel" data-layout="[[50,50]]">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul class="incremental">
+<li>Access speed drops</li>
+<li>Processing time up</li>
+<li>Performance down</li>
+</ul>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div style="text-align: center;">
+<p><img src="../images/caching/closet_3.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="clearing-out" class="level1 title">
+<h1 class="title"><span class="flow">Clearing out</span></h1>
+<section id="why-clearing-out-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-clearing-out-matters">Why Clearing Out Matters</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>True for cupboards, computers, brains…</li>
+<li><strong>But what stays and what goes?</strong></li>
+</ul>
+</div>
+</section>
+<section id="learning-from-computer-science" class="level2">
+<h2 class="anchored" data-anchor-id="learning-from-computer-science">Learning from Computer Science</h2>
+<div class="fragment">
+<p><strong>The evolution of computer memory</strong></p>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li>1950s: Computer science faced the same problem</li>
+<li>Processors got faster (Moore’s Law)</li>
+<li>Memory demands grew</li>
+<li>But memory speed couldn’t keep up</li>
+</ul>
+<div class="fragment">
+<p><strong>→ The Memory Wall</strong></p>
+</div>
+</div>
+</section>
+<section id="the-bottleneck" class="level2">
+<h2 class="anchored" data-anchor-id="the-bottleneck">The Bottleneck</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Modern CPUs:</strong> Billions of ops/second</li>
+<li><strong>Problem:</strong> Data isn’t available fast enough</li>
+<li><span class="question">Question:</span> What’s the point of a fast CPU if it has to wait for slow memory?</li>
+</ul>
+<div class="fragment">
+<p><strong>→ Von Neumann Bottleneck</strong></p>
+</div>
+</div>
+</section>
+</section>
+<section id="cache" class="level1 title">
+<h1 class="title"><span class="flow">Cache</span></h1>
+<section id="cache-the-solution" class="level2">
+<h2 class="anchored" data-anchor-id="cache-the-solution">Cache: The Solution</h2>
+<div class="fragment">
+<p><strong>A hierarchical memory system</strong></p>
+</div>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>L1 Cache:</strong> Tiny but ultra-fast (64-256 KB)</li>
+<li><strong>L2/L3 Cache:</strong> Larger, still fast (MB range)</li>
+<li><strong>RAM:</strong> Main workspace (8-32 GB)</li>
+<li><strong>Storage:</strong> Huge but slow (256 GB - 2 TB)</li>
+</ul>
+<div class="fragment">
+<p><strong>Like a library…</strong></p>
+</div>
+</div>
+</section>
+<section id="the-library-principle" class="level2">
+<h2 class="anchored" data-anchor-id="the-library-principle">The Library Principle</h2>
+<div class="incremental">
+<div class="quarto-layout-panel" data-layout="[[50,50]]">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul class="incremental">
+<li><strong>Library storage</strong> (5 million books, Mass Storage)</li>
+<li><strong>Subject locations</strong> (100K books, RAM)</li>
+<li><strong>Your desk</strong> (5 borrowed books, L2)</li>
+<li><strong>Short-term memory</strong> (current page, L1)</li>
+</ul>
+<div class="fragment">
+<p><strong>Closer = Faster = Smaller</strong></p>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://images.beyondsimulations.com/alg/Desk-1.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-trade-off-size-and-speed" class="level2">
+<h2 class="anchored" data-anchor-id="the-trade-off-size-and-speed">The Trade-off: Size and Speed</h2>
+<div style="text-align: center;">
+<p><img src="https://i.imgur.com/suD65Rs.png" class="img-fluid" style="width:50.0%"></p>
+<p><strong>Registers are 10 million times faster than the hard drive!</strong></p>
+<p><strong>Why can’t we just make everything as fast as L1 cache?</strong></p>
+</div>
+</section>
+<section id="why-the-trade-off" class="level2">
+<h2 class="anchored" data-anchor-id="why-the-trade-off">Why the Trade-off?</h2>
+<div class="incremental">
+<p><strong>Why not make everything ultra-fast?</strong></p>
+<ul class="incremental">
+<li><strong>Physical limits:</strong> Larger caches sit further from CPU, signals take longer to travel, and dense fast memory generates extreme heat that must be dissipated</li>
+<li><strong>Economic limits:</strong> SRAM costs $50,000/GB vs.&nbsp;HDDs at $0.02/GB</li>
+<li><strong>Solution:</strong> Multiple cache levels, each optimized for different needs</li>
+</ul>
+</div>
+</section>
+<section id="the-nessecity-of-clearing-out" class="level2">
+<h2 class="anchored" data-anchor-id="the-nessecity-of-clearing-out">The nessecity of clearing out</h2>
+<div class="incremental">
+<div class="quarto-layout-panel" data-layout="[[50,50]]">
+<div class="quarto-layout-row">
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul class="incremental">
+<li>L1 and L2 cache only contain most necessary data.</li>
+<li>The same should apply to your desk.</li>
+<li>Therefore, both must be cleared regularly.</li>
+</ul>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div style="text-align: center;">
+<p><img src="../images/caching/Desk_full.png" class="img-fluid" style="width:70.0%"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="clearing-out-strategies" class="level1 title">
+<h1 class="title"><span class="flow">Clearing out Strategies</span></h1>
+<section id="question-eviction-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="question-eviction-strategies"><span class="question">Question:</span> Eviction Strategies?</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Random</li>
+<li>First-In, First-Out (FIFO)</li>
+<li>Least Frequently Used (LFU)</li>
+<li>Least Recently Used (LRU)</li>
+</ul>
+</div>
+</section>
+<section id="how-to-clear-up" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-clear-up">How to clear up?</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Optimal: Clairvoyance</strong>
+<ul class="incremental">
+<li>Keep what you’ll need</li>
+<li>Remove what you won’t</li>
+</ul></li>
+<li><span class="question">Question:</span> What’s the problem?</li>
+</ul>
+<div class="fragment">
+<p><strong>→ Requires knowledge of the future!</strong></p>
+</div>
+</div>
+</section>
+<section id="realistic-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="realistic-strategies">Realistic Strategies</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Least Recently Used (LRU)</strong> is the dominant strategy.</li>
+<li>Evicts the least recently accessed item from the cache when space is needed.</li>
+<li>Leads to much better performance on average than, for example, random eviction.</li>
+<li><span class="question">Question:</span> Why do you think least recently used is the better strategy?</li>
+</ul>
+</div>
+</section>
+<section id="why-lru-works-the-principle-of-temporal-locality" class="level2">
+<h2 class="anchored" data-anchor-id="why-lru-works-the-principle-of-temporal-locality">Why LRU Works: The Principle of Temporal Locality</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Temporal Locality:</strong> Recent use → Likely need again soon</li>
+<li><strong>Examples:</strong>
+<ul class="incremental">
+<li>Books on your desk</li>
+<li>Apps opened today</li>
+<li>People texted this morning</li>
+</ul></li>
+<li><strong>Performance:</strong> 80-90% hit rate (vs.&nbsp;50-60% random)</li>
+</ul>
+<div class="fragment">
+<p><strong>Recent past predicts near future</strong></p>
+</div>
+</div>
+</section>
+<section id="managerial-and-personal-insights" class="level2">
+<h2 class="anchored" data-anchor-id="managerial-and-personal-insights">Managerial and personal insights:</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Let go of unused things</strong> → LRU principle</li>
+<li><strong>Keep things where used</strong> → Spatial locality</li>
+<li><strong>Result:</strong> Significant productivity increase</li>
+</ul>
+<div class="fragment">
+<p><strong>Marie Kondo = LRU for physical objects!</strong></p>
+</div>
+</div>
+</section>
+<section id="spatial-locality" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-locality">Spatial Locality</h2>
+<div class="fragment">
+<p><span class="question">Question:</span> Can you think of examples where spatial locality is applied in your daily life?</p>
+</div>
+<div class="fragment">
+<div style="text-align: center;">
+<p><img src="https://images.beyondsimulations.com/alg/Bed.png" class="img-fluid" style="width:30.0%"></p>
+<p><strong>Mathematically optimal</strong></p>
+</div>
+</div>
+</section>
+</section>
+<section id="productivity" class="level1 title">
+<h1 class="title"><span class="flow">Productivity</span></h1>
+<section id="our-brains-are-caches" class="level2">
+<h2 class="anchored" data-anchor-id="our-brains-are-caches">Our Brains are Caches</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>We’ve learned how computers manage limited cache space</li>
+<li><strong>But why does this matter for humans?</strong></li>
+<li>Your brain works remarkably similar to a computer cache:
+<ul class="incremental">
+<li>Limited capacity for active information</li>
+<li>Fast access to recently used information</li>
+<li>Must constantly decide what to keep and what to forget</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="cache-vulnerabilities" class="level2">
+<h2 class="anchored" data-anchor-id="cache-vulnerabilities">Cache Vulnerabilities</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Denial-of-Service (DoS) attacks</strong> exploit cache limitations:
+<ul class="incremental">
+<li><strong>Cache Flooding:</strong> Overload with excessive requests</li>
+<li><strong>Cache Poisoning:</strong> Insert malicious data to evict important information</li>
+</ul></li>
+<li>These attacks overload a system with excessive requests or data.</li>
+<li>Causing it to slow down or crash.</li>
+<li>The system is forced to evict important data.</li>
+</ul>
+</div>
+</section>
+<section id="productivity-killers" class="level2">
+<h2 class="anchored" data-anchor-id="productivity-killers">Productivity Killers</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Overload</strong> (too much information, cache capacity exceeded)</li>
+<li><strong>Exhaustion</strong> (too long without “cache clearing”)</li>
+<li><strong>Context switching</strong> (interruption of “flow”, ~23 minutes to get back on track)</li>
+<li><strong>Distraction</strong> (Cache Flooding: constant notifications, social media)</li>
+<li><strong>Misinformation</strong> (Cache Poisoning: fake news, misleading information)</li>
+</ul>
+</div>
+</section>
+<section id="the-attention-crisis" class="level2">
+<h2 class="anchored" data-anchor-id="the-attention-crisis">The Attention Crisis</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Technology &amp; Social Media:</strong> Designed to capture attention (Cache Flooding)</li>
+<li><strong>Constant Interruptions:</strong> Notifications = Forced cache evictions</li>
+<li><strong>Result:</strong> Reduced creativity, critical thinking, and productivity</li>
+</ul>
+<div class="fragment">
+<p><span class="question">Reflection:</span> How many times did you check your phone during this lecture?</p>
+</div>
+</div>
+</section>
+<section id="the-solution-manage-your-mental-cache" class="level2">
+<h2 class="anchored" data-anchor-id="the-solution-manage-your-mental-cache">The Solution: Manage Your Mental Cache</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Limit screen time and practice “monotasking” (Reduce cache thrashing).</li>
+<li>Prioritize sleep, nutrition, and mindful habits (Maintain cache performance).</li>
+<li>Create protected time for deep work (Prevent cache flooding).</li>
+<li>Be selective about what enters your attention (Smart cache management).</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="mitigation" class="level1 title">
+<h1 class="title"><span class="flow">Mitigation</span></h1>
+<section id="mitigation-1" class="level2">
+<h2 class="anchored" data-anchor-id="mitigation-1">Mitigation</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>Distraction can hardly be avoided in today’s world but can be mitigated.</li>
+<li>This is particularly important for managers.</li>
+<li>This lecture is designed to raise your awareness of what you can do to keep your brain working efficiently.</li>
+<li><strong>Want to dive deeper? Read “Stolen Focus” by Johann Hari</strong></li>
+</ul>
+</div>
+</section>
+<section id="awareness-three-levels-of-attention" class="level2">
+<h2 class="anchored" data-anchor-id="awareness-three-levels-of-attention">Awareness: Three Levels of Attention</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Spotlight</strong> – Immediate goals – Focus (Your L1 Cache: What are you working on RIGHT NOW?)</li>
+<li><strong>Starlight</strong> – Medium-term goals – Wishes (Your L2 Cache: What matters this week/month?)</li>
+<li><strong>Daylight</strong> – Long-term goals – Values (Your Storage: What defines your life direction?)</li>
+</ul>
+</div>
+</section>
+<section id="practical-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="practical-strategies">Practical Strategies</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Prioritization:</strong> What deserves to be in your mental cache?</li>
+<li><strong>Structure (Schedule):</strong> Time-boxing prevents cache overflow</li>
+<li><strong>Breaks:</strong> Regular “cache clearing” prevents exhaustion</li>
+<li><strong>Enable flow:</strong> Dedicated workspace, manage notifications, clear communication</li>
+<li><strong>Meditation &amp; exercise:</strong> Maintenance routines for optimal cache performance</li>
+</ul>
+</div>
+</section>
+<section id="cache-hierarchy-for-workspace" class="level2">
+<h2 class="anchored" data-anchor-id="cache-hierarchy-for-workspace">Cache Hierarchy for Workspace</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Hot Cache (On your desk):</strong> Only items for current tasks (today)</li>
+<li><strong>Warm Cache (Nearby shelf/drawer):</strong> This week’s projects (this week)</li>
+<li><strong>Cold Storage (Archive/closet):</strong> Everything else</li>
+</ul>
+<div class="fragment">
+<p><strong>→ The key principle:</strong> If you haven’t used it recently, move it away!</p>
+</div>
+</div>
+</section>
+<section id="self-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="self-assessment">Self-Assessment</h2>
+<p><span class="question">Question:</span> <strong>Right now:</strong></p>
+<div class="incremental">
+<ol class="incremental" type="1">
+<li>How many browser tabs do you have open? ___</li>
+<li>How many notifications did you receive in the last hour? ___</li>
+<li>How many unread emails in your inbox? ___</li>
+</ol>
+<div class="fragment">
+<p><strong>Do you see any risks of cache flooding?</strong></p>
+</div>
+</div>
+</section>
+</section>
+<section id="key-takeaways" class="level1 title">
+<h1 class="title"><span class="flow">Key Takeaways</span></h1>
+<section id="key-takeaways-the-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways-the-concepts">Key Takeaways: The Concepts</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Caching is universal:</strong> It applies to computers, organizations, and human cognition</li>
+<li><strong>The fundamental trade-off:</strong> Fast storage is small, large storage is slow</li>
+<li><strong>LRU works because of temporal locality:</strong> Recent past predicts near future</li>
+</ul>
+</div>
+</section>
+<section id="key-takeaways-your-life" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways-your-life">Key Takeaways: Your Life</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><strong>Your brain is a cache:</strong> Limited capacity, vulnerable to flooding and poisoning</li>
+<li><strong>Protect your attention:</strong> It’s your scarcest and most valuable resource</li>
+<li><strong>Apply caching principles to life:</strong> Keep what you use, remove what you don’t</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="literature" class="level1 title">
+<h1 class="title"><span class="flow">Literature</span></h1>
+<section id="interesting-literature-to-start" class="level2">
+<h2 class="anchored" data-anchor-id="interesting-literature-to-start">Interesting literature to start</h2>
+<ul>
+<li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</li>
+</ul>
+</section>
+<section id="books-on-programming" class="level2">
+<h2 class="anchored" data-anchor-id="books-on-programming">Books on Programming</h2>
+<ul>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
+</ul>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="more-literature" class="level2">
+<h2 class="anchored" data-anchor-id="more-literature">More Literature</h2>
+<p>For more interesting literature, take a look at the <a href="../general/literature.html">literature list</a> of this course.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/beyondsimulations\.github\.io\/Programming-Everyday-Decisions");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/beyondsimulations/Applied-Optimization">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://linkedin.com/in/tobiasvlcek">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:vlcek@beyondsimulations.com">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://tobiasvlcek.com/lectures/">
+      <i class="bi bi-skip-backward" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../general/privacy.html">
+<p>Privacy Policy</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../general/imprint.html">
+<p>Imprint</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+<p>Programming: Everyday Decision-Making Algorithms<br>Tobias Vlćek and Nils Roemer<br>CC BY-NC-SA 4.0</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/edit/main/lectures/lec_03_caching.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/blob/main/lectures/lec_03_caching.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script defer="" src="https://oshu.eu/widget.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    ChatWidget.init({
+      tenant: "platform",
+      agent: "programming-everyday",
+      layoutMode: "sidebar",
+    });
+  });
+</script>
+
+
+
+
+</body></html>
