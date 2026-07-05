@@ -1,1 +1,1 @@
-Sitemap: https://beyondsimulations.github.io/Programming-Everyday-Decisions/sitemap.xml
+Sitemap: https://courses.nilsroemer.com/sitemap.xml

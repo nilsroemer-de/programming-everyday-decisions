@@ -11,48 +11,9 @@ format:
 
 # <span class="flow">About this Course</span>
 
-## Teaching Team
-
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<figure>
-<img src="../images/tobias-vlcek.jpg" alt="Dr. Tobias Vlcek" />
-<figcaption aria-hidden="true"><strong>Dr. Tobias Vlcek</strong></figcaption>
-</figure>
-</div></td>
-<td style="text-align: left;"><div width="50.0%" data-layout-align="left">
-<figure>
-<img src="../images/nils-roemer.jpeg" alt="Dr. Nils Roemer" />
-<figcaption aria-hidden="true"><strong>Dr. Nils Roemer</strong></figcaption>
-</figure>
-</div></td>
-</tr>
-</tbody>
-</table>
-
-## About me
-
-- **Field:** Optimizing and simulating complex systems
-- **Languages:** of choice: Julia, Python and Rust
-- **Interest:** Modelling, Simulations, Machine Learning
-- **Teaching:** OR, Algorithms, and Programming
-- **Contact:** <vlcek@beyondsimulations.com>
-
-. . .
-
-> **Tip**
->
-> We really appreciate active participation and interaction!
-
 ## Agenda
 
-- About the course, team, and expectations
+- About the course and expectations
 - How to learn programming (mindset and resources)
 - Setting up Python with uv and VS Code
 - Using notebooks with uv
@@ -72,7 +33,7 @@ format:
 - Try **actively participating** in this course
 - You will find it much <span class="highlight">(!)</span> easier and more fun
 - Lecture based on the book <span class="highlight">Algorithms to live by</span>[^1]
-- Material and slides are hosted online: [beyondsimulations.github.io/Programming-Everyday-Decisions](https://beyondsimulations.github.io/Programming-Everyday-Decisions/)
+- Material and slides are hosted online: [courses.nilsroemer.com](https://courses.nilsroemer.com)
 
 ## Teaching
 

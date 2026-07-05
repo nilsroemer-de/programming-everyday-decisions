@@ -110,16 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script defer="" src="https://umi.byndsim.com/script.js" data-website-id="e230d76b-b0a6-477e-8c5d-19a7bd661e68"></script>
-
-<script defer="" data-domain="beyondsimulations.github.io" src="https://plb.byndsim.com/js/script.file-downloads.hash.outbound-links.js"></script>
-<script>
-    window.plausible =
-        window.plausible ||
-        function () {
-            (window.plausible.q = window.plausible.q || []).push(arguments);
-        };
-</script>
+<!-- Site-wide header includes (analytics, widgets) can be added here. -->
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -150,10 +141,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="https://images.beyondsimulations.com/logo/midjourney-everyday-algorithms.jpeg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="https://images.beyondsimulations.com/logo/midjourney-everyday-algorithms.jpeg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
-      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Programming: Everyday Decision-Making Algorithms</a> 
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -518,7 +508,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#more-literature" id="toc-more-literature" class="nav-link" data-scroll-target="#more-literature">More Literature</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/edit/main/lectures/lec_04_scheduling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/blob/main/lectures/lec_04_scheduling.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lec_04_scheduling.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="lec_04_presentation.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/lectures/lec_04_scheduling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/lectures/lec_04_scheduling.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lec_04_scheduling.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="lec_04_presentation.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -539,7 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            Kühne Logistics University Hamburg - Winter 2024
+            Kühne Logistics University Hamburg
           </p>
       </div>
   </div>
@@ -581,7 +571,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title"><span class="flow">Scheduling Fundamentals</span></h1>
 <section id="a-simple-scheduling-problem" class="level2">
 <h2 class="anchored" data-anchor-id="a-simple-scheduling-problem">A Simple Scheduling Problem</h2>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-washdry.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-washdry.svg" class="img-fluid"></p>
 </section>
 <section id="washing-machine-dryer" class="level2">
 <h2 class="anchored" data-anchor-id="washing-machine-dryer">Washing Machine &amp; Dryer</h2>
@@ -675,7 +665,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="optimal-solution" class="level2">
 <h2 class="anchored" data-anchor-id="optimal-solution">Optimal Solution</h2>
 <p><strong>Optimal Solution: <span class="highlight">B A D C</span></strong></p>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-johnson-optimal.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-johnson-optimal.svg" class="img-fluid"></p>
 <!--
 
 ::::::{.cell layout-align="default"}
@@ -718,7 +708,7 @@ gantt
 <section id="suboptimal-solution" class="level2">
 <h2 class="anchored" data-anchor-id="suboptimal-solution">Suboptimal Solution</h2>
 <p><strong>Suboptimal Solution: <span class="highlight">C D A B</span></strong></p>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-johnson-suboptimal.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-johnson-suboptimal.svg" class="img-fluid"></p>
 <!--
 
 ::::::{.cell layout-align="default"}
@@ -847,7 +837,7 @@ gantt
 </section>
 <section id="single-machine-scheduling" class="level2">
 <h2 class="anchored" data-anchor-id="single-machine-scheduling">Single Machine Scheduling</h2>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-human.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-human.svg" class="img-fluid"></p>
 <p><span class="question">Question:</span> <strong>What is different from before?</strong></p>
 </section>
 <section id="order-is-irrelevant" class="level2">
@@ -920,7 +910,7 @@ gantt
 </section>
 <section id="edd-schedule" class="level2">
 <h2 class="anchored" data-anchor-id="edd-schedule">EDD Schedule</h2>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-edd.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-edd.svg" class="img-fluid"></p>
 <!--
 
 ::::::{.cell layout-align="default"}
@@ -967,7 +957,7 @@ gantt
 <h2 class="anchored" data-anchor-id="shortest-processing-time-spt">Shortest Processing Time (SPT)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-human.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-human.svg" class="img-fluid"></p>
 </div><div class="column" style="width:50%;">
 <p>Instead of deadlines, we now have <strong>processing times.</strong></p>
 <p><span class="fragment"><span class="highlight">Goal:</span> Min. total waiting time</span></p>
@@ -1003,7 +993,7 @@ gantt
 <section id="spt-solution" class="level2">
 <h2 class="anchored" data-anchor-id="spt-solution">SPT Solution</h2>
 <p><strong>Optimal sequence:</strong></p>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-spt-1.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-spt-1.svg" class="img-fluid"></p>
 <!--
 
 ::::::{.cell layout-align="default"}
@@ -1039,7 +1029,7 @@ gantt
 <section id="spt-waiting-time" class="level2">
 <h2 class="anchored" data-anchor-id="spt-waiting-time">SPT Waiting Time</h2>
 <p><span class="highlight">Total waiting time:</span> 340 minutes</p>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-spt-2.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-spt-2.svg" class="img-fluid"></p>
 <p>. . .</p>
 <p><span class="question">Question:</span> <strong>Would this be applicable for your work?</strong></p>
 </section>
@@ -1232,7 +1222,7 @@ gantt
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  C    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  D    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  E    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-inheritance.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-inheritance.svg" class="img-fluid"></p>
 <p><span class="fragment"><strong>Challenge:</strong> High-priority tasks depend on low-priority tasks.</span></p>
 </div><div class="column" style="width:50%;">
 <p><span class="fragment"><span class="highlight">Risk:</span> Priority inversion can lead to significant delays!</span></p>
@@ -1357,7 +1347,7 @@ gantt
 </section>
 <section id="lawlers-solution" class="level2">
 <h2 class="anchored" data-anchor-id="lawlers-solution">Lawler’s Solution</h2>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-edd-inheritance.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-edd-inheritance.svg" class="img-fluid"></p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1453,7 +1443,7 @@ gantt
 </section>
 <section id="edd-solution-for-real-time" class="level2">
 <h2 class="anchored" data-anchor-id="edd-solution-for-real-time">EDD Solution for Real-time</h2>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-edd-breaks.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-edd-breaks.svg" class="img-fluid"></p>
 <p>. . .</p>
 <p><span class="question">Question:</span> <strong>What’s the maximum delay with this schedule?</strong></p>
 </section>
@@ -1500,13 +1490,13 @@ gantt
 </section>
 <section id="spt-solution-for-real-time" class="level2" data-auto-animate="true">
 <h2 data-auto-animate="true" class="anchored" data-anchor-id="spt-solution-for-real-time">SPT Solution for Real-time</h2>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-spt-breaks.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-spt-breaks.svg" class="img-fluid"></p>
 <p>. . .</p>
 <p><span class="question">Question:</span> <strong>Where can we see the waiting time?</strong></p>
 </section>
 <section id="spt-solution-for-real-time-1" class="level2" data-auto-animate="true">
 <h2 data-auto-animate="true" class="anchored" data-anchor-id="spt-solution-for-real-time-1">SPT Solution for Real-time</h2>
-<p><img src="https://images.beyondsimulations.com/atlb/atlb_schedule-spt-breaks-wait.svg" class="img-fluid"></p>
+<p><img src="../images/atlb/atlb_schedule-spt-breaks-wait.svg" class="img-fluid"></p>
 <p><span class="highlight">Total waiting time:</span> 260 minutes</p>
 </section>
 </section>
@@ -1739,7 +1729,7 @@ Let’s have a short break and then continue with our fourth Python programming 
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/beyondsimulations\.github\.io\/Programming-Everyday-Decisions");
+        var filterRegex = new RegExp("https:\/\/courses\.nilsroemer\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -2072,25 +2062,25 @@ Let’s have a short break and then continue with our fourth Python programming 
     <div class="nav-footer-left">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/beyondsimulations/Applied-Optimization">
+    <a class="nav-link" href="https://github.com/nilsroemer-de/programming-everyday-decisions">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://linkedin.com/in/tobiasvlcek">
+    <a class="nav-link" href="https://www.linkedin.com/in/nroemer/">
       <i class="bi bi-linkedin" role="img">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="mailto:vlcek@beyondsimulations.com">
+    <a class="nav-link" href="mailto:nils.roemer@planningio.com">
       <i class="bi bi-envelope" role="img">
 </i> 
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://tobiasvlcek.com/lectures/">
+    <a class="nav-link" href="https://nilsroemer.com">
       <i class="bi bi-skip-backward" role="img">
 </i> 
     </a>
@@ -2108,23 +2098,13 @@ Let’s have a short break and then continue with our fourth Python programming 
 </ul>
     </div>   
     <div class="nav-footer-center">
-<p>Programming: Everyday Decision-Making Algorithms<br>Tobias Vlćek and Nils Roemer<br>CC BY-NC-SA 4.0</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/edit/main/lectures/lec_04_scheduling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/blob/main/lectures/lec_04_scheduling.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/beyondsimulations/Programming-Everyday-Decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<p>Programming: Everyday Decision-Making Algorithms<br>Nils Roemer and Tobias Vlćek<br>CC BY-NC-SA 4.0</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/lectures/lec_04_scheduling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/lectures/lec_04_scheduling.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
-<script defer="" src="https://oshu.eu/widget.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    ChatWidget.init({
-      tenant: "platform",
-      agent: "programming-everyday",
-      layoutMode: "sidebar",
-    });
-  });
-</script>
 
 
 

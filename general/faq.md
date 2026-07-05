@@ -10,11 +10,11 @@ html:
 
 ## Unanswered Questions
 
-If you have a question that is not answered here, please let me know by sending me an e-mail to [vlcek@beyondsimulations.com](mailto:vlcek@beyondsimulations.com?subject=ProgrammingEverydayDecisions) or by creating an issue on [GitHub](https://github.com/beyondsimulations/Programming-Everyday-Decisions/issues).
+If you have a question that is not answered here, please let me know by sending me an e-mail to [nils.roemer@planningio.com](mailto:nils.roemer@planningio.com?subject=ProgrammingEverydayDecisions) or by creating an issue on [GitHub](https://github.com/nilsroemer-de/programming-everyday-decisions/issues).
 
 ## Contribution and Mistakes
 
-If you have found a mistake in the course material or if you have any suggestion on how to improve the course, please let me know by sending me an e-mail to [vlcek@beyondsimulations.com](mailto:vlcek@beyondsimulations.com?subject=ProgrammingEverydayDecisions) or by creating an issue on [GitHub](https://github.com/beyondsimulations/Programming-Everyday-Decisions/issues).
+If you have found a mistake in the course material or if you have any suggestion on how to improve the course, please let me know by sending me an e-mail to [nils.roemer@planningio.com](mailto:nils.roemer@planningio.com?subject=ProgrammingEverydayDecisions) or by creating an issue on [GitHub](https://github.com/nilsroemer-de/programming-everyday-decisions/issues).
 
 ## FAQs
 

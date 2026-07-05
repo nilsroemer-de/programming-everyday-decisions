@@ -1,7 +1,7 @@
 ---
 title: Imprint
 subtitle: Legal notice
-date: '2026-06-22'
+date: '2026-07-05'
 ---
 
 
@@ -9,12 +9,12 @@ date: '2026-06-22'
 
 Information pursuant to § 5 DDG (German Digital Services Act) and responsibility for content pursuant to § 18(2) MStV:
 
-Dr. Tobias Vlćek  
-Am Eich 9d  
-22113 Oststeinbek  
+Dr. Nils Roemer  
+Billhorner Deich 88  
+20539 Hamburg  
 Germany
 
-Email: <vlcek@beyondsimulations.com>
+Email: <nils.roemer@planningio.com>
 
 ## Liability for content
 

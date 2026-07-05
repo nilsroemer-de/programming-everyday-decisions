@@ -2,7 +2,7 @@
 title: Lecture IV - Scheduling
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 author: Dr. Tobias Vlćek
-institute: Kühne Logistics University Hamburg - Winter 2024
+institute: Kühne Logistics University Hamburg
 format:
   revealjs:
     footer: ' {{< meta title >}} | {{< meta author >}} | [Home](lec_04_scheduling.qmd)'
@@ -39,7 +39,7 @@ format:
 
 ## A Simple Scheduling Problem
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-washdry.svg)
+![](../images/atlb/atlb_schedule-washdry.svg)
 
 ## Washing Machine & Dryer
 
@@ -156,7 +156,7 @@ Task  Washing  Drying  Schedule
 
 **Optimal Solution: <span class="highlight">B A D C</span>**
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-johnson-optimal.svg)
+![](../images/atlb/atlb_schedule-johnson-optimal.svg)
 
 <!--
 
@@ -204,7 +204,7 @@ gantt
 
 **Suboptimal Solution: <span class="highlight">C D A B</span>**
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-johnson-suboptimal.svg)
+![](../images/atlb/atlb_schedule-johnson-suboptimal.svg)
 
 <!--
 
@@ -320,7 +320,7 @@ gantt
 
 ## Single Machine Scheduling
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-human.svg)
+![](../images/atlb/atlb_schedule-human.svg)
 
 <span class="question">Question:</span> **What is different from before?**
 
@@ -393,7 +393,7 @@ Task  Duration  Deadline
 
 ## EDD Schedule
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-edd.svg)
+![](../images/atlb/atlb_schedule-edd.svg)
 
 <!--
 
@@ -440,7 +440,7 @@ Task  Duration  Deadline
 
 ## Shortest Processing Time (SPT)
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-human.svg)
+![](../images/atlb/atlb_schedule-human.svg)
 
 Instead of deadlines, we now have **processing times.**
 
@@ -488,7 +488,7 @@ Task  Duration  Schedule
 
 **Optimal sequence:**
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-spt-1.svg)
+![](../images/atlb/atlb_schedule-spt-1.svg)
 
 <!--
 
@@ -528,7 +528,7 @@ Task  Duration  Schedule
 
 <span class="highlight">Total waiting time:</span> 340 minutes
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-spt-2.svg)
+![](../images/atlb/atlb_schedule-spt-2.svg)
 
 . . .
 
@@ -751,7 +751,7 @@ Task  Duration  Priority
   E    30min     2
 ```
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-inheritance.svg)
+![](../images/atlb/atlb_schedule-inheritance.svg)
 
 <span class="fragment">**Challenge:**
 High-priority tasks depend on low-priority tasks.</span>
@@ -888,7 +888,7 @@ Task  Duration  Deadline  Predecessor Schedule
 
 ## Lawler's Solution
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-edd-inheritance.svg)
+![](../images/atlb/atlb_schedule-edd-inheritance.svg)
 
 > **Predecessor Tasks**
 >
@@ -961,7 +961,7 @@ Email D        40min    10:00
 
 ## EDD Solution for Real-time
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-edd-breaks.svg)
+![](../images/atlb/atlb_schedule-edd-breaks.svg)
 
 . . .
 
@@ -993,7 +993,7 @@ Email D        40min    10:00
 
 ## SPT Solution for Real-time
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-spt-breaks.svg)
+![](../images/atlb/atlb_schedule-spt-breaks.svg)
 
 . . .
 
@@ -1001,7 +1001,7 @@ Email D        40min    10:00
 
 ## SPT Solution for Real-time
 
-![](https://images.beyondsimulations.com/atlb/atlb_schedule-spt-breaks-wait.svg)
+![](../images/atlb/atlb_schedule-spt-breaks-wait.svg)
 
 <span class="highlight">Total waiting time:</span> 260 minutes
 

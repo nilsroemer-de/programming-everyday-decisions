@@ -3114,77 +3114,56 @@
     "href": "general/privacy.html",
     "title": "Privacy Policy",
     "section": "",
-    "text": "The controller responsible for data processing on this website is:\nDr. Tobias Vlćek\nEmail: vlcek@beyondsimulations.com\nThis policy covers the AI chat assistant (“Oshu”) embedded on this website and the privacy-friendly web analytics (Umami) used to measure site usage. To exercise your rights or for any questions about data processing, please contact us using the details above."
+    "text": "The controller responsible for data processing on this website is:\nDr. Nils Roemer\nBillhorner Deich 88\n20539 Hamburg\nGermany\nEmail: nils.roemer@planningio.com\nThis website is a purely informational course website. It does not use web analytics, tracking, or embedded chat assistants. To exercise your rights or for any questions about data processing, please contact us using the details above."
   },
   {
     "objectID": "general/privacy.html#controller",
     "href": "general/privacy.html#controller",
     "title": "Privacy Policy",
     "section": "",
-    "text": "The controller responsible for data processing on this website is:\nDr. Tobias Vlćek\nEmail: vlcek@beyondsimulations.com\nThis policy covers the AI chat assistant (“Oshu”) embedded on this website and the privacy-friendly web analytics (Umami) used to measure site usage. To exercise your rights or for any questions about data processing, please contact us using the details above."
+    "text": "The controller responsible for data processing on this website is:\nDr. Nils Roemer\nBillhorner Deich 88\n20539 Hamburg\nGermany\nEmail: nils.roemer@planningio.com\nThis website is a purely informational course website. It does not use web analytics, tracking, or embedded chat assistants. To exercise your rights or for any questions about data processing, please contact us using the details above."
   },
   {
-    "objectID": "general/privacy.html#ai-chat-assistant-oshu",
-    "href": "general/privacy.html#ai-chat-assistant-oshu",
+    "objectID": "general/privacy.html#hosting",
+    "href": "general/privacy.html#hosting",
     "title": "Privacy Policy",
-    "section": "2. AI chat assistant (Oshu)",
-    "text": "2. AI chat assistant (Oshu)\nOn this website we use an embeddable AI chat assistant operated on our behalf by BeyondSimulations GmbH, Am Eich 9d, 22113 Oststeinbek, Germany (“Oshu”) as our processor. A data processing agreement under Art. 28 GDPR is in place with Oshu.\nPurpose: the assistant answers visitor questions based on content we have provided.\nData processed: when you use the chat, the messages you enter, the generated responses, and a conversation identifier are processed. Technical data such as your IP address is processed only transiently for security and abuse prevention and is not stored permanently with the conversation. Please do not enter special categories of personal data (Art. 9 GDPR) into the chat.\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in answering enquiries efficiently). If the chat forms part of a contractual service, Art. 6(1)(b) GDPR."
+    "section": "2. Hosting",
+    "text": "2. Hosting\nThis website is hosted on GitHub Pages, a service provided by GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When you visit this website, GitHub technically requires certain connection data to deliver the pages to your device. This includes your IP address, the date and time of your request, the pages accessed, and general browser and operating system information. This data is processed transiently in server logs to deliver the website and to ensure its security and stability; it is not merged with other data sources by us or used to identify individual visitors.\nBecause GitHub, Inc. is based in the USA, your data may be transferred to a third country. GitHub is certified under the EU-US Data Privacy Framework, which the European Commission has recognised as providing an adequate level of data protection (adequacy decision of 10 July 2023). This forms the basis for the transfer.\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in providing and securing this website)."
   },
   {
-    "objectID": "general/privacy.html#hosting-and-inference",
-    "href": "general/privacy.html#hosting-and-inference",
+    "objectID": "general/privacy.html#cookies-and-tracking",
+    "href": "general/privacy.html#cookies-and-tracking",
     "title": "Privacy Policy",
-    "section": "3. Hosting and inference",
-    "text": "3. Hosting and inference\nData is processed on servers of Hetzner Online GmbH in Falkenstein, Germany. Responses are generated via the EU API of Mistral AI SAS in Paris, France. There is no transfer to a third country, and the content is not used to train AI models."
-  },
-  {
-    "objectID": "general/privacy.html#cookies",
-    "href": "general/privacy.html#cookies",
-    "title": "Privacy Policy",
-    "section": "4. Cookies",
-    "text": "4. Cookies\nThe widget sets two strictly necessary first-party cookies so a conversation can be resumed:\n\ncw_conv_&lt;agent&gt; — conversation identifier\ncw_conv_session_&lt;agent&gt; — signed session token to retrieve the conversation history\n\nBoth last approximately 24 hours, with SameSite=Lax and the Secure flag. No tracking, marketing, or third-party cookies are set.\nLegal basis: § 25(2) TDDDG (strictly necessary cookies)."
-  },
-  {
-    "objectID": "general/privacy.html#retention",
-    "href": "general/privacy.html#retention",
-    "title": "Privacy Policy",
-    "section": "5. Retention",
-    "text": "5. Retention\nConversation logs are automatically deleted after at most 12 months. If “private mode” is enabled, the content of visitor messages is not stored."
-  },
-  {
-    "objectID": "general/privacy.html#web-analytics-umami",
-    "href": "general/privacy.html#web-analytics-umami",
-    "title": "Privacy Policy",
-    "section": "6. Web analytics (Umami)",
-    "text": "6. Web analytics (Umami)\nTo understand how this website is used and to improve its content, we use Umami, a privacy-friendly web analytics tool. Umami is self-hosted on our own infrastructure (umi.byndsim.com) on servers of Hetzner Online GmbH in Germany; usage data is not shared with third parties and there is no transfer to a third country.\nNo cookies, no tracking across sites: Umami does not set cookies and does not store any information on your device. It does not create a persistent identifier and does not track you across other websites.\nData processed: Umami collects aggregated, anonymized usage statistics such as the pages viewed, the referring website, and general information about your browser, operating system, device type, and country. Your IP address is used only transiently to derive this information and is not stored.\nLegal basis: Art. 6(1)(f) GDPR (legitimate interest in analyzing and improving our website). Because Umami does not store or access information on your device, no consent under § 25(1) TDDDG is required."
+    "section": "3. Cookies and tracking",
+    "text": "3. Cookies and tracking\nThis website does not set cookies and does not use any tracking, analytics, or marketing tools. No information is stored on or read from your device, so no consent under § 25 TDDDG is required."
   },
   {
     "objectID": "general/privacy.html#your-data-protection-rights",
     "href": "general/privacy.html#your-data-protection-rights",
     "title": "Privacy Policy",
-    "section": "7. Your data protection rights",
-    "text": "7. Your data protection rights\nUnder the EU General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:\n\nRight to access (Art. 15 GDPR)\nRight to rectification (Art. 16 GDPR)\nRight to erasure (Art. 17 GDPR)\nRight to restrict processing (Art. 18 GDPR)\nRight to data portability (Art. 20 GDPR)\nRight to object (Art. 21 GDPR)\n\nTo exercise any of these rights, please contact us as the controller using the details in Section 1. You also have the right to lodge a complaint with a supervisory authority, in particular in the EU member state of your habitual residence, place of work, or the place of the alleged infringement."
+    "section": "4. Your data protection rights",
+    "text": "4. Your data protection rights\nUnder the EU General Data Protection Regulation (GDPR), you have the following rights regarding your personal data:\n\nRight to access (Art. 15 GDPR)\nRight to rectification (Art. 16 GDPR)\nRight to erasure (Art. 17 GDPR)\nRight to restrict processing (Art. 18 GDPR)\nRight to data portability (Art. 20 GDPR)\nRight to object (Art. 21 GDPR)\n\nTo exercise any of these rights, please contact us as the controller using the details in Section 1. You also have the right to lodge a complaint with a supervisory authority, in particular in the EU member state of your habitual residence, place of work, or the place of the alleged infringement."
   },
   {
     "objectID": "general/privacy.html#changes-to-this-privacy-policy",
     "href": "general/privacy.html#changes-to-this-privacy-policy",
     "title": "Privacy Policy",
-    "section": "8. Changes to this Privacy Policy",
-    "text": "8. Changes to this Privacy Policy\nWe may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page and updating the date at the top. We encourage you to review this policy periodically."
+    "section": "5. Changes to this Privacy Policy",
+    "text": "5. Changes to this Privacy Policy\nWe may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on this page and updating the date at the top. We encourage you to review this policy periodically."
   },
   {
     "objectID": "general/imprint.html",
     "href": "general/imprint.html",
     "title": "Imprint",
     "section": "",
-    "text": "Information pursuant to § 5 DDG (German Digital Services Act) and responsibility for content pursuant to § 18(2) MStV:\nDr. Tobias Vlćek\nAm Eich 9d\n22113 Oststeinbek\nGermany\nEmail: vlcek@beyondsimulations.com"
+    "text": "Information pursuant to § 5 DDG (German Digital Services Act) and responsibility for content pursuant to § 18(2) MStV:\nDr. Nils Roemer\nBillhorner Deich 88\n20539 Hamburg\nGermany\nEmail: nils.roemer@planningio.com"
   },
   {
     "objectID": "general/imprint.html#provider-and-responsible-for-content",
     "href": "general/imprint.html#provider-and-responsible-for-content",
     "title": "Imprint",
     "section": "",
-    "text": "Information pursuant to § 5 DDG (German Digital Services Act) and responsibility for content pursuant to § 18(2) MStV:\nDr. Tobias Vlćek\nAm Eich 9d\n22113 Oststeinbek\nGermany\nEmail: vlcek@beyondsimulations.com"
+    "text": "Information pursuant to § 5 DDG (German Digital Services Act) and responsibility for content pursuant to § 18(2) MStV:\nDr. Nils Roemer\nBillhorner Deich 88\n20539 Hamburg\nGermany\nEmail: nils.roemer@planningio.com"
   },
   {
     "objectID": "general/imprint.html#liability-for-content",
@@ -3482,7 +3461,7 @@
     "href": "index.html",
     "title": "Programming: Everyday Decision-Making Algorithms",
     "section": "",
-    "text": "This course explores the intersection of computer science and everyday life by examining how algorithms can be applied to improve decision-making in various contexts. Based on the book “Algorithms to Live By” by Brian Christian and Tom Griffiths, the course will cover topics such as optimal stopping, scheduling, caching, and game theory, providing both theoretical foundations and practical programming exercises. The course consists of lectures and exercises.",
+    "text": "Course materials developed together with Dr. Tobias Vlćek. Based on the book “Algorithms to Live By” by Brian Christian and Tom Griffiths.",
     "crumbs": [
       "Welcome"
     ]
@@ -3492,7 +3471,7 @@
     "href": "index.html#ai-policy",
     "title": "Programming: Everyday Decision-Making Algorithms",
     "section": "AI Policy",
-    "text": "AI Policy\nLevel 1: Pause – Use of AI defined by the educator\nA course chatbot is available on the learning website for exploratory study. It is designed to guide your problem-solving process rather than provide answers directly. Use it as a learning tool, not a solution generator.\nYou may also use external AI tools (e.g., ChatGPT, Claude, Mistral, Gemini). However:\n\nPlease be careful and try to understand the code generated.\nRelying on AI to solve tasks for you weakens your own learning.\nAI should ideally support understanding — not replace practice.\nUsing AI without understand the code can lead to security risks.",
+    "text": "AI Policy\nLevel 1: Pause – Use of AI defined by the educator\nYou may use AI tools (e.g., ChatGPT, Claude, Mistral, Gemini) as learning tools, not as solution generators. However:\n\nPlease be careful and try to understand the code generated.\nRelying on AI to solve tasks for you weakens your own learning.\nAI should ideally support understanding — not replace practice.\nUsing AI without understand the code can lead to security risks.",
     "crumbs": [
       "Welcome"
     ]
@@ -3502,7 +3481,7 @@
     "href": "general/faq.html",
     "title": "Frequently Asked Questions",
     "section": "",
-    "text": "If you have a question that is not answered here, please let me know by sending me an e-mail to vlcek@beyondsimulations.com or by creating an issue on GitHub.",
+    "text": "If you have a question that is not answered here, please let me know by sending me an e-mail to nils.roemer@planningio.com or by creating an issue on GitHub.",
     "crumbs": [
       "FAQs"
     ]
@@ -3512,7 +3491,7 @@
     "href": "general/faq.html#unanswered-questions",
     "title": "Frequently Asked Questions",
     "section": "",
-    "text": "If you have a question that is not answered here, please let me know by sending me an e-mail to vlcek@beyondsimulations.com or by creating an issue on GitHub.",
+    "text": "If you have a question that is not answered here, please let me know by sending me an e-mail to nils.roemer@planningio.com or by creating an issue on GitHub.",
     "crumbs": [
       "FAQs"
     ]
@@ -3522,7 +3501,7 @@
     "href": "general/faq.html#contribution-and-mistakes",
     "title": "Frequently Asked Questions",
     "section": "Contribution and Mistakes",
-    "text": "Contribution and Mistakes\nIf you have found a mistake in the course material or if you have any suggestion on how to improve the course, please let me know by sending me an e-mail to vlcek@beyondsimulations.com or by creating an issue on GitHub.",
+    "text": "Contribution and Mistakes\nIf you have found a mistake in the course material or if you have any suggestion on how to improve the course, please let me know by sending me an e-mail to nils.roemer@planningio.com or by creating an issue on GitHub.",
     "crumbs": [
       "FAQs"
     ]
@@ -3612,29 +3591,7 @@
     "href": "lectures/lec_00_introduction.html",
     "title": "Introduction - Programming",
     "section": "",
-    "text": "Dr. Tobias Vlcek\n\n\n\n\n\n\n\nDr. Nils Roemer\n\n\n\n\n\n\n\n\n\n\nField: Optimizing and simulating complex systems\nLanguages: of choice: Julia, Python and Rust\nInterest: Modelling, Simulations, Machine Learning\nTeaching: OR, Algorithms, and Programming\nContact: vlcek@beyondsimulations.com\n\n\n. . .\n\n\n\n\n\n\nWe really appreciate active participation and interaction!\n\n\n\n\n\n\n\nAbout the course, team, and expectations\nHow to learn programming (mindset and resources)\nSetting up Python with uv and VS Code\nUsing notebooks with uv\nQ&A and next steps\n\n\n\n\n\nI: Optimal Stopping\nII: Explore & Exploit\nIII: Caching\nIV: Scheduling\nV: Randomness\nVI: Computational Kindness\n\n\n\n\n\nTry actively participating in this course\nYou will find it much (!) easier and more fun\nLecture based on the book Algorithms to live by1\nMaterial and slides are hosted online: beyondsimulations.github.io/Programming-Everyday-Decisions\n\n\n\n\n\nLecture: Presentation and discussion of algorithms related to everyday decision-making\nTutorial: Step-by-step assignments to be solved and discussed together in groups\nDifficulty: Strongly depends on your background and programming experience\n\n. . .\n\n\n\n\n\n\nNo worries, we will help you out if you have any questions!\n\n\n\n\n\n\n\nPass/fail course without exams\n75% attendance required for passing the course\nHand in the assignments of at least two lectures\nShort presentation and discussion at the end\nYou work together in groups of three students\n\n\n\n\n\nEach student group submits one solution\nProvide us all working notebooks of the lecture\nHand in is due at the beginning of the next lecture\nAt least 50 % have to be correct to pass\nYou have to pass at least twice\n\n. . .\n\n\n\n\n\n\nThis is just in order to provide you with working solutions after each deadline.\n\n\n\n\n\n\nWe will mostly not cover Python during the lectures!\n. . .\nQuestion: Anybody know why?\n. . .\n\nIn our experience, the best way to learn is by doing!\nHere, we will focus on decision-making algorithms\nYou will learn Python by doing the tutorials\n\n. . .\n\n\n\n\n\n\nDon’t worry, we will help you out if you have any questions!\n\n\n\n\n\n\n\nAt first it might be a little bit overwhelming\nProgramming is similar to learning a new language\nFirst, you have to get used to it and learn words\nLater, you’ll be able to apply it and see results\nImportant: Practice, practice, practice!\n\n\n\n\n\nLearn the basics of programming\nLearn about algorithmic thinking\nBe able to apply methods and concepts\nSolve practical problems with algorithms\n\n\n\n\n\n\n\nWe are convinced that this course will be quite interesting and teach you more for your daily life than most other courses!\n\n\n\n\n\n\n\nOrigins: Conceived in late 1980s as a teaching and scripting language\nSimple Syntax: Python’s syntax is mostly straightforward and very easy to learn\nVersatility: Used in web development, data analysis, artificial intelligence, and more\nCommunity Support: A large community of users worldwide and extensive documentation\n\n\n\n\n\nYou are allowed to use AI in the course, we use it as well (e.g., Claude, ChatGPT, LLama3 …)\nThese tools are great for learning Python!\nCan help you a lot to get started with programming\n\n. . .\n\n\n\n\n\n\nBut you should not simply use them to replace your learning.",
-    "crumbs": [
-      "01 Optimal Stopping",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_00_introduction.html#teaching-team",
-    "href": "lectures/lec_00_introduction.html#teaching-team",
-    "title": "Introduction - Programming",
-    "section": "",
-    "text": "Dr. Tobias Vlcek\n\n\n\n\n\n\n\nDr. Nils Roemer",
-    "crumbs": [
-      "01 Optimal Stopping",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_00_introduction.html#about-me",
-    "href": "lectures/lec_00_introduction.html#about-me",
-    "title": "Introduction - Programming",
-    "section": "",
-    "text": "Field: Optimizing and simulating complex systems\nLanguages: of choice: Julia, Python and Rust\nInterest: Modelling, Simulations, Machine Learning\nTeaching: OR, Algorithms, and Programming\nContact: vlcek@beyondsimulations.com\n\n\n. . .\n\n\n\n\n\n\nWe really appreciate active participation and interaction!",
+    "text": "About the course and expectations\nHow to learn programming (mindset and resources)\nSetting up Python with uv and VS Code\nUsing notebooks with uv\nQ&A and next steps\n\n\n\n\n\nI: Optimal Stopping\nII: Explore & Exploit\nIII: Caching\nIV: Scheduling\nV: Randomness\nVI: Computational Kindness\n\n\n\n\n\nTry actively participating in this course\nYou will find it much (!) easier and more fun\nLecture based on the book Algorithms to live by1\nMaterial and slides are hosted online: courses.nilsroemer.com\n\n\n\n\n\nLecture: Presentation and discussion of algorithms related to everyday decision-making\nTutorial: Step-by-step assignments to be solved and discussed together in groups\nDifficulty: Strongly depends on your background and programming experience\n\n. . .\n\n\n\n\n\n\nNo worries, we will help you out if you have any questions!\n\n\n\n\n\n\n\nPass/fail course without exams\n75% attendance required for passing the course\nHand in the assignments of at least two lectures\nShort presentation and discussion at the end\nYou work together in groups of three students\n\n\n\n\n\nEach student group submits one solution\nProvide us all working notebooks of the lecture\nHand in is due at the beginning of the next lecture\nAt least 50 % have to be correct to pass\nYou have to pass at least twice\n\n. . .\n\n\n\n\n\n\nThis is just in order to provide you with working solutions after each deadline.\n\n\n\n\n\n\nWe will mostly not cover Python during the lectures!\n. . .\nQuestion: Anybody know why?\n. . .\n\nIn our experience, the best way to learn is by doing!\nHere, we will focus on decision-making algorithms\nYou will learn Python by doing the tutorials\n\n. . .\n\n\n\n\n\n\nDon’t worry, we will help you out if you have any questions!\n\n\n\n\n\n\n\nAt first it might be a little bit overwhelming\nProgramming is similar to learning a new language\nFirst, you have to get used to it and learn words\nLater, you’ll be able to apply it and see results\nImportant: Practice, practice, practice!\n\n\n\n\n\nLearn the basics of programming\nLearn about algorithmic thinking\nBe able to apply methods and concepts\nSolve practical problems with algorithms\n\n\n\n\n\n\n\nWe are convinced that this course will be quite interesting and teach you more for your daily life than most other courses!\n\n\n\n\n\n\n\nOrigins: Conceived in late 1980s as a teaching and scripting language\nSimple Syntax: Python’s syntax is mostly straightforward and very easy to learn\nVersatility: Used in web development, data analysis, artificial intelligence, and more\nCommunity Support: A large community of users worldwide and extensive documentation\n\n\n\n\n\nYou are allowed to use AI in the course, we use it as well (e.g., Claude, ChatGPT, LLama3 …)\nThese tools are great for learning Python!\nCan help you a lot to get started with programming\n\n. . .\n\n\n\n\n\n\nBut you should not simply use them to replace your learning.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
@@ -3645,7 +3602,7 @@
     "href": "lectures/lec_00_introduction.html#agenda",
     "title": "Introduction - Programming",
     "section": "",
-    "text": "About the course, team, and expectations\nHow to learn programming (mindset and resources)\nSetting up Python with uv and VS Code\nUsing notebooks with uv\nQ&A and next steps",
+    "text": "About the course and expectations\nHow to learn programming (mindset and resources)\nSetting up Python with uv and VS Code\nUsing notebooks with uv\nQ&A and next steps",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
@@ -3667,7 +3624,7 @@
     "href": "lectures/lec_00_introduction.html#participation",
     "title": "Introduction - Programming",
     "section": "",
-    "text": "Try actively participating in this course\nYou will find it much (!) easier and more fun\nLecture based on the book Algorithms to live by1\nMaterial and slides are hosted online: beyondsimulations.github.io/Programming-Everyday-Decisions",
+    "text": "Try actively participating in this course\nYou will find it much (!) easier and more fun\nLecture based on the book Algorithms to live by1\nMaterial and slides are hosted online: courses.nilsroemer.com",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
@@ -3916,25 +3873,11 @@
     ]
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#teaching-team",
-    "href": "lectures/lec_00_presentation.html#teaching-team",
-    "title": "Introduction - Programming",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\n\n\n\n\n\nDr. Tobias Vlcek\n\n\n\n\n\n\n\nDr. Nils Roemer"
-  },
-  {
-    "objectID": "lectures/lec_00_presentation.html#about-me",
-    "href": "lectures/lec_00_presentation.html#about-me",
-    "title": "Introduction - Programming",
-    "section": "About me",
-    "text": "About me\n\nField: Optimizing and simulating complex systems\nLanguages: of choice: Julia, Python and Rust\nInterest: Modelling, Simulations, Machine Learning\nTeaching: OR, Algorithms, and Programming\nContact: vlcek@beyondsimulations.com\n\n\n\n\n\n\n\n\nWe really appreciate active participation and interaction!"
-  },
-  {
     "objectID": "lectures/lec_00_presentation.html#agenda",
     "href": "lectures/lec_00_presentation.html#agenda",
     "title": "Introduction - Programming",
     "section": "Agenda",
-    "text": "Agenda\n\nAbout the course, team, and expectations\nHow to learn programming (mindset and resources)\nSetting up Python with uv and VS Code\nUsing notebooks with uv\nQ&A and next steps"
+    "text": "Agenda\n\nAbout the course and expectations\nHow to learn programming (mindset and resources)\nSetting up Python with uv and VS Code\nUsing notebooks with uv\nQ&A and next steps"
   },
   {
     "objectID": "lectures/lec_00_presentation.html#course-outline",
@@ -3948,7 +3891,7 @@
     "href": "lectures/lec_00_presentation.html#participation",
     "title": "Introduction - Programming",
     "section": "Participation",
-    "text": "Participation\n\nTry actively participating in this course\nYou will find it much (!) easier and more fun\nLecture based on the book Algorithms to live by1\nMaterial and slides are hosted online: beyondsimulations.github.io/Programming-Everyday-Decisions\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company."
+    "text": "Participation\n\nTry actively participating in this course\nYou will find it much (!) easier and more fun\nLecture based on the book Algorithms to live by1\nMaterial and slides are hosted online: courses.nilsroemer.com\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company."
   },
   {
     "objectID": "lectures/lec_00_presentation.html#teaching",

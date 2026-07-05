@@ -1,13 +1,15 @@
 ---
 title: 'Programming: Everyday Decision-Making Algorithms'
-subtitle: Kühne Logistics University - Winter 2025
-author: Dr. Tobias Vlćek and Dr. Nils Roemer
+subtitle: Kühne Logistics University
+author: Dr. Nils Roemer and Dr. Tobias Vlćek
 html:
   theme:
     - litera
     - styles_html.scss
 ---
 
+
+*Course materials developed together with Dr. Tobias Vlćek. Based on the book "Algorithms to Live By" by Brian Christian and Tom Griffiths.*
 
 # Course Description
 
@@ -52,9 +54,7 @@ You can find more information on the course contents in the [syllabus](general/s
 
 **Level 1: Pause -- Use of AI defined by the educator**
 
-A course chatbot is available on the learning website for exploratory study. It is designed to guide your problem-solving process rather than provide answers directly. Use it as a learning tool, not a solution generator.
-
-You may also use external AI tools (e.g., ChatGPT, Claude, Mistral, Gemini). However:
+You may use AI tools (e.g., ChatGPT, Claude, Mistral, Gemini) as learning tools, not as solution generators. However:
 
 1.  Please be careful and try to understand the code generated.
 2.  Relying on AI to solve tasks for you weakens your own learning.
@@ -63,4 +63,4 @@ You may also use external AI tools (e.g., ChatGPT, Claude, Mistral, Gemini). How
 
 # Questions
 
-If you have any questions regarding the course, please contact me under [vlcek@beyondsimulations.com](mailto:vlcek@beyondsimulations.com?subject=Programming%20Algorithms%3A%20%3CYour%20subject%3E).
+If you have any questions regarding the course, please contact me under [nils.roemer@planningio.com](mailto:nils.roemer@planningio.com?subject=Programming%20Algorithms%3A%20%3CYour%20subject%3E).

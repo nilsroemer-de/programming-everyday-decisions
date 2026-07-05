@@ -265,7 +265,7 @@ Today's lecture will explain why that matters more than you think...
 </div>
 </div></td>
 <td style="text-align: center;"><div class="column" data-layout-align="center" style="width:50.0%;">
-<p><img src="https://images.beyondsimulations.com/alg/Desk-1.png" /></p>
+<p><img src="../images/alg/Desk-1.png" /></p>
 </div></td>
 </tr>
 </tbody>
@@ -360,7 +360,7 @@ Today's lecture will explain why that matters more than you think...
 
 <span class="question">Question:</span> Can you think of examples where spatial locality is applied in your daily life?
 
-<img src="https://images.beyondsimulations.com/alg/Bed.png" style="width:30.0%" />
+<img src="../images/alg/Bed.png" style="width:30.0%" />
 
 **Mathematically optimal**
 
