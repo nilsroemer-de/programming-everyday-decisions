@@ -15,7 +15,7 @@ This course explores the intersection of computer science and everyday life by e
 
 # Learning Outcomes
 
-Our broad goal is to equip students with the ability to get to grips with algorithmic thinking. We want to enable students, to indepently apply methods and concepts from algorithms to solve their everyday practical problems while also providing a brief introduction into programming with python.
+Our broad goal is to equip students with the ability to get to grips with algorithmic thinking. We want to enable students to independently apply methods and concepts from algorithms to solve their everyday practical problems while also providing a brief introduction into programming with python.
 
 Upon completion of the course, students will:
 
