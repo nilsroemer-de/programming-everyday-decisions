@@ -1,7 +1,7 @@
 ---
 title: "Lecture I - Optimal Stopping"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
-author: "Dr. Tobias Vlćek"
+author: "Dr. Nils Roemer"
 format:
   revealjs:
     footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_01_optimal_stopping.qmd)"
@@ -367,7 +367,7 @@ Let's have a short break and then continue with our first Python programming ses
 - Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^4]
 - Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.
 
-[^4]: The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.
+[^4]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
 
 
 ## Books on Programming

@@ -1,7 +1,7 @@
 ---
 title: "Lecture VI - Computational Kindness"
 subtitle: "Programming with Python"
-author: "Dr. Tobias Vlćek"
+author: "Dr. Nils Roemer"
 institute: "Kühne Logistics University Hamburg - Fall 2024"
 format:
   revealjs:
@@ -197,7 +197,7 @@ Several ways to counter overfitting, e.g. cross-validation.
 
 - Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^4]
 
-[^4]: The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.
+[^4]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
 
 
 ## Books on Programming

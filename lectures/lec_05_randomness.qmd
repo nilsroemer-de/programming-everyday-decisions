@@ -1,7 +1,7 @@
 ---
 title: "Lecture V - Randomness"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
-author: "Dr. Tobias Vlćek"
+author: "Dr. Nils Roemer"
 institute: "Kühne Logistics University Hamburg"
 format:
   revealjs:
@@ -949,7 +949,7 @@ We've covered the basics of randomness and its applications. In the upcoming tut
 
 - Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^4]
 
-[^4]: The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.
+[^4]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
 
 
 ## Books on Programming
