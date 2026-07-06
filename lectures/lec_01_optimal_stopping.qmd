@@ -57,17 +57,17 @@ example of
 optimal stopping?
 :::
 
-## [Flat Hunting]{.invert-font} {background-image="https://unsplash.com/photos/CAuxRJhSLC0/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NDZ8fGhhbWJ1cmd8ZW58MHx8fHwxNzI5OTgyMjg3fDA&force=true"}
+## [Flat Hunting]{.invert-font} {background-image="../images/bg/lec01-flat-hunting.jpg"}
 ::: footer
 [Photo by <a href="https://unsplash.com/@jiren_091">Aditya Ghosh</a> on Unsplash]{.invert-font}
 :::
 
-## [Hiring applicants]{.invert-font} {background-image="https://unsplash.com/photos/OQMZwNd3ThU/download?ixid=M3wxMjA3fDB8MXxhbGx8NHx8fHx8fHx8MTcyOTk3MzA0OXw&force=true"}
+## [Hiring applicants]{.invert-font} {background-image="../images/bg/lec01-hiring.jpg"}
 ::: footer
 [Photo by <a href="https://unsplash.com/@homajob">Scott Graham</a> on Unsplash]{.invert-font}
 :::
 
-## [Dating]{.invert-font} {background-image="https://unsplash.com/photos/-XlBjdtRqK8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NTV8fGxvdmV8ZW58MHx8fHwxNzI5OTI4NTkxfDA&force=true"}
+## [Dating]{.invert-font} {background-image="../images/bg/lec01-dating.jpg"}
 ::: footer
 [Photo by <a href="https://unsplash.com/@shelbymary_">Shelby Deeter</a> on Unsplash]{.invert-font}
 :::

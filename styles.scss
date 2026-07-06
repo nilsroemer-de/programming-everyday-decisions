@@ -1,33 +1,186 @@
 /*-- scss:defaults --*/
 
+// Suppress the bootswatch theme's Google Fonts @import, so no visitor
+// requests go to fonts.googleapis.com / fonts.gstatic.com. All fonts
+// are self-hosted via @font-face below.
+$web-font-path: false;
+
 // ========================================================================
 // HTML BASE THEME VARS (applies to all HTML, including presentations)
 // ========================================================================
 
 // Callouts
-$callout-color-note: $brand-oneLight;
-$callout-color-tip: $brand-twoLight;
-$callout-color-warning: $brand-threeLight;
-$callout-color-important: $brand-oneDark;
-$callout-color-caution: $brand-threeDark;
+$callout-color-note: $brand-primary-light;
+$callout-color-tip: $brand-sky-500;
+$callout-color-warning: $brand-accent-amber;
+$callout-color-important: $brand-primary-blue;
+$callout-color-caution: $brand-accent-red;
 
 // Code styling
-$code-block-border-left: $brand-threeLight;
+$code-block-border-left: $brand-primary-light;
 
 // ========================================================================
 // REVEAL.JS PRESENTATION VARS (override to match HTML theme)
 // ========================================================================
 $presentation-title-slide-text-align: left;
 
-// ========================================================================
-// RULES: only for custom visual effects / overrides
-// ========================================================================
+/*-- scss:rules --*/
+
+/* ================================================================
+   Self-hosted fonts — Poppins (headings), Inter (body),
+   Space Mono (code). latin + latin-ext, served from /fonts.
+   No Google Fonts CDN (GDPR). Ranges are the Google standard subsets.
+   ================================================================ */
+$latin: "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD";
+$latinext: "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF";
+
+// Poppins — static instances 400/500/600/700
+@each $w in 400, 500, 600, 700 {
+  @font-face {
+    font-family: "Poppins"; font-style: normal; font-weight: $w; font-display: swap;
+    src: url("/fonts/poppins-#{$w}-latin.woff2") format("woff2");
+    unicode-range: #{$latin};
+  }
+  @font-face {
+    font-family: "Poppins"; font-style: normal; font-weight: $w; font-display: swap;
+    src: url("/fonts/poppins-#{$w}-latinext.woff2") format("woff2");
+    unicode-range: #{$latinext};
+  }
+}
+
+// Inter — variable font, one file covers weights 400–700
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+  unicode-range: #{$latin};
+}
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 400 700; font-display: swap;
+  src: url("/fonts/inter-latinext.woff2") format("woff2");
+  unicode-range: #{$latinext};
+}
+
+// Space Mono — static instances 400/700
+@each $w in 400, 700 {
+  @font-face {
+    font-family: "Space Mono"; font-style: normal; font-weight: $w; font-display: swap;
+    src: url("/fonts/spacemono-#{$w}-latin.woff2") format("woff2");
+    unicode-range: #{$latin};
+  }
+  @font-face {
+    font-family: "Space Mono"; font-style: normal; font-weight: $w; font-display: swap;
+    src: url("/fonts/spacemono-#{$w}-latinext.woff2") format("woff2");
+    unicode-range: #{$latinext};
+  }
+}
+
+/* ================================================================
+   Design tokens (from Planningio DESIGN-TOKENS.md — adopted subset,
+   same as nilsroemer.com custom.scss)
+   ================================================================ */
+:root {
+  --ink:            #1e2648;
+  --primary:        #01579b;
+  --primary-light:  #85bae3;
+  --primary-faint:  #d2e7f8;
+  --milk:           #edf1f5;
+  --sky-100:        #f3f8fd;
+  --sky-200:        #e7f1fb;
+  --sky-300:        #cfe2f4;
+  --sky-500:        #9cc6e8;
+  --fg-1:           #1e2648;
+  --fg-2:           #4a5578;
+  --fg-3:           #8a93ad;
+  --border:         #dde5ee;
+  --border-strong:  #c3d2e2;
+  --border-faint:   #eef3f8;
+
+  /* spacing — 4px base */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 96px;
+
+  /* radii (pill intentionally omitted) */
+  --r-xs: 6px; --r-sm: 10px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px;
+
+  /* soft, low-contrast, blue-tinted shadows */
+  --shadow-xs: 0 1px 2px  rgba(30,38,72,.06);
+  --shadow-sm: 0 2px 8px  rgba(30,38,72,.07);
+  --shadow-md: 0 8px 24px rgba(30,38,72,.09);
+  --shadow-lg: 0 20px 48px rgba(30,38,72,.12);
+}
+
+/* ================================================================
+   Headings — Poppins (via _brand.yml); tighten tracking to match
+   nilsroemer.com
+   ================================================================ */
+h1, .h1 { letter-spacing: -.018em; line-height: 1.08; }
+h2, .h2 { letter-spacing: -.012em; line-height: 1.15; }
+h3, .h3 { letter-spacing: -.006em; }
+
+/* ================================================================
+   Prose / inline links — ink text with a primary-blue underline;
+   hover -> primary text. Scoped to main content so sidebar, footer,
+   TOC and icon links keep their own styling.
+   ================================================================ */
+#quarto-content p a:not(.btn),
+#quarto-content li a:not(.btn) {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary);
+  transition: color .2s ease, border-color .2s ease;
+}
+#quarto-content p a:not(.btn):hover,
+#quarto-content li a:not(.btn):hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ================================================================
+   Sidebar — plain text wordmark (no logo image), Poppins
+   ================================================================ */
+.sidebar-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -.012em;
+  line-height: 1.25;
+}
+.sidebar-title a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.sidebar-title a:hover {
+  color: var(--primary);
+}
+
+/* ================================================================
+   Footer — subtle; Space Mono meta labels (like nilsroemer.com)
+   ================================================================ */
+.nav-footer {
+  border-top: 1px solid var(--border);
+  background: #fff;
+  font-family: "Space Mono", ui-monospace, Menlo, monospace;
+  font-size: .8rem;
+}
+.nav-footer a {
+  color: var(--fg-3);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
+}
+.nav-footer a:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ================================================================
+   RULES: custom visual effects / overrides for slides
+   ================================================================ */
 
 // Text emphasis
 .reveal strong,
 .reveal b,
 .reveal .bold {
-    color: $brand-twoDark;
+    color: $brand-primary-blue;
     font-size: 1em;
     font-weight: 600;
 }
@@ -36,52 +189,55 @@ $presentation-title-slide-text-align: left;
 .reveal i,
 .reveal .italic {
     font-style: italic;
-    color: $brand-twoDark;
+    color: $brand-primary-blue;
     font-weight: 400;
 }
 
 // Utility text classes
 .highlight {
-    color: $brand-threeDark;
+    color: $brand-accent-red;
     font-weight: bold;
 }
 .task {
-    color: $brand-oneDark;
+    color: $brand-accent-amber;
     font-weight: bold;
 }
 .question {
-    color: $brand-greyer;
+    color: $brand-fg-2;
     font-weight: bold;
 }
 .light {
-    color: $brand-oneLight;
+    color: $brand-sky-300;
 }
 .errors {
-    color: $brand-threeDark;
+    color: $brand-accent-red;
     font-weight: bold;
 }
 
 // Inverted font block
 .invert-font {
-    color: $brand-lighter;
-    background-color: $brand-darker;
-    border: 5px solid $brand-darker;
+    color: $brand-white;
+    background-color: $brand-ink;
+    border: 5px solid $brand-ink;
     border-radius: 0;
 }
 
 // Slide-specific
 .title-slide.title {
-    background-color: $brand-twoLight !important;
+    background-color: $brand-sky-200 !important;
 }
 .loud-slide {
-    background-color: $brand-twoDark !important;
-    color: $brand-oneDark !important;
+    background-color: $brand-ink !important;
+    color: $brand-milk !important;
     font-weight: bold !important;
 }
 
-// Animation effect
+// Animation effect — panning brand-blue gradient clipped to the text
+// (replaces the former remote background image; zero external requests)
 .flow {
-    background-image: url("https://images.beyondsimulations.com/logo/main-web.png");
+    background-image: linear-gradient(115deg,
+        $brand-primary-blue, $brand-sky-500, $brand-primary-light,
+        $brand-ink, $brand-primary-blue);
     background-size: 3840px 2160px;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;

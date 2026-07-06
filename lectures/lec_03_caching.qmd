@@ -110,7 +110,7 @@ Today's lecture will explain why that matters more than you think...
 :::{.fragment}
 ::: {style="text-align: center;"}
 
-![](https://images.unsplash.com/photo-1640357154220-9775b0f31dec?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D){width="60%"}
+![](../images/caching/lec03-caching-photo.jpg){width="60%"}
 
 **We could increase the capacity**
 :::
@@ -238,7 +238,7 @@ Today's lecture will explain why that matters more than you think...
 ## The Trade-off: Size and Speed
 
 ::: {style="text-align: center;"}
-![](https://i.imgur.com/suD65Rs.png){width="50%"}
+![](../images/caching/lec03-tradeoff.png){width="50%"}
 
 **Registers are 10 million times faster than the hard drive!**
 

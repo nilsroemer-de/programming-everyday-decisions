@@ -22,7 +22,7 @@ format:
 # [Computational Kindness]{.flow} {.title}
 
 
-## [Computational Kindness]{.invert-font} {background-color="#000000" background-image="https://images.unsplash.com/photo-1549925245-f20a1bac6454?q=80&w=2304&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" background-size="cover" background-position="center"}
+## [Computational Kindness]{.invert-font} {background-color="#000000" background-image="../images/bg/lec06-kindness.jpg" background-size="cover" background-position="center"}
 
 . . .
 
@@ -96,7 +96,7 @@ format:
 
 # [How to continue?]{.flow} {.title}
 
-## [How to continue learning?]{.invert-font} {background-color="#000000" background-image="https://images.unsplash.com/photo-1547190027-9156686aa2f0?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" background-size="cover" background-position="center"}
+## [How to continue learning?]{.invert-font} {background-color="#000000" background-image="../images/bg/lec06-learning.jpg" background-size="cover" background-position="center"}
 
 ::: {.invert-font}
 
@@ -173,7 +173,7 @@ Several ways to counter overfitting, e.g. cross-validation.
 - It is **completely free** and ad-free and starts each year at 01.12.
 
 <center>
-<iframe src="https://giphy.com/embed/F1Gh6u8YEG3FctxYWc" width="280" height="280" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<img src="../images/gif/lec06-first.gif" width="280" height="280" alt="">
 </center>
 
 ## That's it for the Lecture Series!
@@ -186,7 +186,7 @@ Several ways to counter overfitting, e.g. cross-validation.
 ## {background-color="#000000"}
 
 <center>
-<iframe src="https://giphy.com/embed/YVg3fCdaBpLEc" width="480" height="355" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<img src="../images/gif/lec06-second.gif" width="480" height="355" alt="">
 </center>
 
 # [Q&A]{.flow}

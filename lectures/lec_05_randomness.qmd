@@ -36,27 +36,27 @@ format:
 
 . . .
 
-## [Casino]{.invert-font} {background-image="https://images.unsplash.com/photo-1517232115160-ff93364542dd?q=80&w=3473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+## [Casino]{.invert-font} {background-image="../images/bg/lec05-casino.jpg"}
 ::: footer
 :::
 
-## [Lottery]{.invert-font} {background-image="https://images.unsplash.com/photo-1593453917923-c3f751aab514?q=80&w=3536&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+## [Lottery]{.invert-font} {background-image="../images/bg/lec05-lottery.jpg"}
 ::: footer
 :::
 
-## [Shuffling cards]{.invert-font} {background-image="https://images.unsplash.com/photo-1691213426024-ab6eb6f33d64?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+## [Shuffling cards]{.invert-font} {background-image="../images/bg/lec05-cards.jpg"}
 ::: footer
 :::
 
-## [Algorithms]{.invert-font} {background-image="https://images.unsplash.com/photo-1717501220725-83f151c447e7?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+## [Algorithms]{.invert-font} {background-image="../images/bg/lec05-algorithms.jpg"}
 ::: footer
 :::
 
-## [Cryptography]{.invert-font} {background-image="https://images.unsplash.com/photo-1640161704729-cbe966a08476?q=80&w=3544&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+## [Cryptography]{.invert-font} {background-image="../images/bg/lec05-crypto.jpg"}
 ::: footer
 :::
 
-## [Genetic mutations]{.invert-font} {background-image="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=3552&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+## [Genetic mutations]{.invert-font} {background-image="../images/bg/lec05-mutations.jpg"}
 ::: footer
 :::
 

@@ -4,6 +4,9 @@ format:
   hugo-md: default
   typst: default
   revealjs:
+    html-math-method:
+      method: mathjax
+      url: "/assets/mathjax2/MathJax.js"
     theme:
       - default
       - ../styles.scss

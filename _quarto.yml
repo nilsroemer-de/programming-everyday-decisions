@@ -1,8 +1,7 @@
 project:
   type: website
-  # post-render:
-  #  - helpers/convert_pypercent.py
-  #   - helpers/convert_qmd_to_md.py
+  post-render:
+    - python3 helpers/strip_polyfill.py
   render:
     - 404.qmd
     - index.qmd
@@ -11,6 +10,9 @@ project:
     - tutorials/*.qmd
   resources:
     - CNAME
+    - fonts/
+    - assets/
+    - images/
 
 website:
   title: "Programming: Everyday Decision-Making Algorithms"
@@ -112,7 +114,7 @@ website:
 format:
   html:
     theme:
-      - default
+      - cosmo
       - styles.scss
       - brand
     toc: true
@@ -124,7 +126,7 @@ format:
     code-overflow: wrap
     html-math-method:
       method: mathjax
-      url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      url: "/assets/mathjax/tex-mml-chtml.js"
     include-in-header:
       - general/header.html
 
@@ -132,6 +134,7 @@ format:
 
   typst:
     papersize: a4
+    font-paths: fonts-ttf
 
 format-links:
   - html

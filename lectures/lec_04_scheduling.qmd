@@ -219,7 +219,7 @@ gantt
 
 # [History]{.flow} {.title}
 
-## [Industrial Revolution]{.invert-font} {background-image="https://images.unsplash.com/photo-1627807451414-0912da0b8aee?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+## [Industrial Revolution]{.invert-font} {background-image="../images/bg/lec04-industrial.jpg"}
 
 . . .
 
@@ -245,7 +245,7 @@ gantt
 
 
 
-## [Modern Scheduling Theory]{.invert-font} {background-image="https://images.unsplash.com/photo-1508759191076-7d83edf34fb5?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+## [Modern Scheduling Theory]{.invert-font} {background-image="../images/bg/lec04-scheduling.jpg"}
 
 . . .
 
@@ -745,7 +745,7 @@ High-priority tasks depend on low-priority tasks.]{.fragment}
 
 [[Risk:]{.highlight} Priority inversion can lead to significant delays!]{.fragment}
 
-[![](https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=3474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D){width=90%}]{.fragment .center}
+[![](../images/bg/lec04-priority-inversion.jpg){width=90%}]{.fragment .center}
 :::
 
 ::::
