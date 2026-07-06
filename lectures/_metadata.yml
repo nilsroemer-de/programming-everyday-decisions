@@ -1,4 +1,7 @@
 institute: "Kühne Logistics University Hamburg"
+language:
+  title-block-author-single: "Lecturer"
+  title-block-author-plural: "Lecturers"
 format:
   html: default
   hugo-md: default
