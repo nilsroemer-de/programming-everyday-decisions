@@ -35,11 +35,11 @@ def greet_visitor(name):
     return f"Welcome to the library, {name}!"
 
 # Using our function
-message = greet_visitor("Tobias")
+message = greet_visitor("Nils")
 print(message)
 ```
 
-    Welcome to the library, Tobias!
+    Welcome to the library, Nils!
 
 The structure is:
 

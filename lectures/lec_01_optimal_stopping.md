@@ -1,7 +1,7 @@
 ---
 title: Lecture I - Optimal Stopping
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
-author: Dr. Tobias Vlćek
+author: Dr. Nils Roemer
 format:
   revealjs:
     footer: ' {{< meta title >}} | {{< meta author >}} | [Home](lec_01_optimal_stopping.qmd)'
@@ -299,4 +299,4 @@ For more interesting literature, take a look at the [literature list](../general
 
 [^2]: This is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) 'Who solved the secretary problem?', Statistical Science, 4(3). doi:10.1214/ss/1177012493.
 
-[^3]: The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.
+[^3]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.

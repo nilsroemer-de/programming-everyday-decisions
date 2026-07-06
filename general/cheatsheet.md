@@ -436,7 +436,7 @@ def greet_visitor(name="People"):
     return f"Welcome to the library, {name}!"
 
 print(greet_visitor()) # Calls the function with the default parameter
-print(greet_visitor("Tobias")) # Calls the function with a custom parameter
+print(greet_visitor("Nils")) # Calls the function with a custom parameter
 ```
 
 ## Multiple Parameters
@@ -448,7 +448,7 @@ print(greet_visitor("Tobias")) # Calls the function with a custom parameter
 def greet_visitor(name, age):
     return f"Welcome to the library, {name}! You are {age} years old."
 
-print(greet_visitor("Tobias", 30))
+print(greet_visitor("Nils", 30))
 ```
 
 # String Methods
@@ -506,7 +506,7 @@ random_number = rd.random()
 print(random_number)
 ```
 
-    0.5035224061299236
+    0.7629559351988863
 
 ## Installing Packages
 

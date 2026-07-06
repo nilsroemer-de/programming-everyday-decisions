@@ -484,4 +484,4 @@ Today's lecture will explain why that matters more than you think...
 
 For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.
 
-[^1]: The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.
+[^1]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.

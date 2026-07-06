@@ -1,7 +1,7 @@
 ---
 title: Lecture V - Randomness
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
-author: Dr. Tobias Vlćek
+author: Dr. Nils Roemer
 institute: Kühne Logistics University Hamburg
 format:
   revealjs:
@@ -493,4 +493,4 @@ so far?
 
 For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.
 
-[^1]: The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.
+[^1]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.

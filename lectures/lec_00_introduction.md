@@ -1,7 +1,7 @@
 ---
 title: Introduction - Programming
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
-author: Dr. Tobias Vlćek
+author: Dr. Nils Roemer
 format:
   revealjs:
     footer: ' {{< meta title >}} | {{< meta author >}} | [Home](lec_00_introduction.qmd)'
@@ -269,4 +269,4 @@ For more interesting literature, take a look at the [literature list](../general
 
 [^1]: Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.
 
-[^2]: The main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.
+[^2]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.

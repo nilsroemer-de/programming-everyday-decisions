@@ -1204,7 +1204,7 @@
     "href": "lectures/lec_05_presentation.html#interesting-literature-to-start",
     "title": "Lecture V - Randomness",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course."
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course."
   },
   {
     "objectID": "lectures/lec_05_presentation.html#books-on-programming",
@@ -1753,7 +1753,7 @@
     "href": "lectures/lec_05_randomness.html#footnotes",
     "title": "Lecture V - Randomness",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -2009,7 +2009,7 @@
     "href": "lectures/lec_03_presentation.html#interesting-literature-to-start",
     "title": "Lecture III - Caching",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\nFerguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course."
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\nFerguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course."
   },
   {
     "objectID": "lectures/lec_03_presentation.html#books-on-programming",
@@ -2459,7 +2459,7 @@
     "href": "lectures/lec_03_caching.html#footnotes",
     "title": "Lecture III - Caching",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -2652,7 +2652,7 @@
     "href": "lectures/lec_01_presentation.html#interesting-literature-to-start",
     "title": "Lecture I - Optimal Stopping",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\nFerguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course."
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\nFerguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course."
   },
   {
     "objectID": "lectures/lec_01_presentation.html#books-on-programming",
@@ -3003,7 +3003,7 @@
     "href": "lectures/lec_01_optimal_stopping.html#footnotes",
     "title": "Lecture I - Optimal Stopping",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nLarge number of candidates! With a small number of candidates, we can do even better.↩︎\nThis is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.↩︎\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nLarge number of candidates! With a small number of candidates, we can do even better.↩︎\nThis is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "01 Optimal Stopping",
       "Lecture"
@@ -3428,7 +3428,7 @@
     "href": "general/cheatsheet.html#default-parameters",
     "title": "Cheatsheet",
     "section": "Default Parameters",
-    "text": "Default Parameters\n\nDefinition: Provide default values for function parameters.\nStructure:\n\ndef greet_visitor(name=\"People\"):\n    return f\"Welcome to the library, {name}!\"\n\nprint(greet_visitor()) # Calls the function with the default parameter\nprint(greet_visitor(\"Tobias\")) # Calls the function with a custom parameter",
+    "text": "Default Parameters\n\nDefinition: Provide default values for function parameters.\nStructure:\n\ndef greet_visitor(name=\"People\"):\n    return f\"Welcome to the library, {name}!\"\n\nprint(greet_visitor()) # Calls the function with the default parameter\nprint(greet_visitor(\"Nils\")) # Calls the function with a custom parameter",
     "crumbs": [
       "Cheatsheet"
     ]
@@ -3438,7 +3438,7 @@
     "href": "general/cheatsheet.html#multiple-parameters",
     "title": "Cheatsheet",
     "section": "Multiple Parameters",
-    "text": "Multiple Parameters\n\nDefinition: Functions can have multiple parameters.\nStructure:\n\ndef greet_visitor(name, age):\n    return f\"Welcome to the library, {name}! You are {age} years old.\"\n\nprint(greet_visitor(\"Tobias\", 30))",
+    "text": "Multiple Parameters\n\nDefinition: Functions can have multiple parameters.\nStructure:\n\ndef greet_visitor(name, age):\n    return f\"Welcome to the library, {name}! You are {age} years old.\"\n\nprint(greet_visitor(\"Nils\", 30))",
     "crumbs": [
       "Cheatsheet"
     ]
@@ -3448,7 +3448,7 @@
     "href": "general/cheatsheet.html#standard-libraries",
     "title": "Cheatsheet",
     "section": "Standard Libraries",
-    "text": "Standard Libraries\n\nDefinition: Libraries that are part of the Python standard library.\nAccess: Import them using import.\n\n\nimport math\nimport random\n\n\nFor long package names, you can use the as keyword to create an alias.\n\n\nimport random as rd\n\n\nTo call a function from an imported package, use the package name as a prefix.\n\n\nrandom_number = rd.random()\nprint(random_number)\n\n0.8528291505786311",
+    "text": "Standard Libraries\n\nDefinition: Libraries that are part of the Python standard library.\nAccess: Import them using import.\n\n\nimport math\nimport random\n\n\nFor long package names, you can use the as keyword to create an alias.\n\n\nimport random as rd\n\n\nTo call a function from an imported package, use the package name as a prefix.\n\n\nrandom_number = rd.random()\nprint(random_number)\n\n0.2727254942396148",
     "crumbs": [
       "Cheatsheet"
     ]
@@ -3873,7 +3873,7 @@
     "href": "lectures/lec_00_introduction.html#footnotes",
     "title": "Introduction - Programming",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.↩︎\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
@@ -4031,7 +4031,7 @@
     "href": "lectures/lec_00_presentation.html#interesting-literature-to-start",
     "title": "Introduction - Programming",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\nFerguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course."
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\nFerguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course."
   },
   {
     "objectID": "lectures/lec_00_presentation.html#books-on-programming",
@@ -4624,7 +4624,7 @@
     "href": "lectures/lec_02_explore_exploit.html#footnotes",
     "title": "Lecture II - Explore Vs. Exploit",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nFor more details see Robbins, H. (1952) ‘Some aspects of the sequential design of experiments’, Bulletin of the American Mathematical Society, 58.↩︎\nFor more details see Gittins, J. (1979) ‘Bandit Processes and Dynamic Allocation Indices’, Journal of the Royal Statistical Society. Series B (Methodological).↩︎\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nFor more details see Robbins, H. (1952) ‘Some aspects of the sequential design of experiments’, Bulletin of the American Mathematical Society, 58.↩︎\nFor more details see Gittins, J. (1979) ‘Bandit Processes and Dynamic Allocation Indices’, Journal of the Royal Statistical Society. Series B (Methodological).↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "02 Explore/Exploit",
       "Lecture"
@@ -4978,7 +4978,7 @@
     "href": "lectures/lec_02_presentation.html#interesting-literature-to-start",
     "title": "Lecture II - Explore Vs. Exploit",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\nFerguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course."
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\nFerguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course."
   },
   {
     "objectID": "lectures/lec_02_presentation.html#books-on-programming",
@@ -5769,7 +5769,7 @@
     "href": "lectures/lec_04_scheduling.html#footnotes",
     "title": "Lecture IV - Scheduling",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6235,7 +6235,7 @@
     "href": "lectures/lec_04_presentation.html#interesting-literature-to-start",
     "title": "Lecture IV - Scheduling",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course."
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#books-on-programming",
@@ -6483,7 +6483,7 @@
     "href": "lectures/lec_06_kindness.html#footnotes",
     "title": "Lecture VI - Computational Kindness",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "06 Kindness",
       "Lecture"
@@ -6606,7 +6606,7 @@
     "href": "lectures/lec_06_presentation.html#interesting-literature-to-start",
     "title": "Lecture VI - Computational Kindness",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\n\nThe main inspiration for this lecture. Nils and I have read it and discussed it in depth, always wanting to translate it into a course."
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course."
   },
   {
     "objectID": "lectures/lec_06_presentation.html#books-on-programming",
