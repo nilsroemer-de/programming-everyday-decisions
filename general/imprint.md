@@ -1,9 +1,9 @@
 ---
-title: Imprint
-subtitle: Legal notice
-date: '2026-07-05'
+pagetitle: Imprint
 ---
 
+
+# Imprint
 
 ## Provider and responsible for content
 

@@ -162,8 +162,7 @@ format:
 - It is **completely free** and ad-free and starts each year at 01.12.
 
 <center>
-<iframe src="https://giphy.com/embed/F1Gh6u8YEG3FctxYWc" width="280" height="280" style frameBorder="0" class="giphy-embed" allowFullScreen>
-</iframe>
+<img src="../images/gif/lec06-first.gif" width="280" height="280" alt="">
 </center>
 
 ## That's it for the Lecture Series!
@@ -176,8 +175,7 @@ format:
 ## 
 
 <center>
-<iframe src="https://giphy.com/embed/YVg3fCdaBpLEc" width="480" height="355" style frameBorder="0" class="giphy-embed" allowFullScreen>
-</iframe>
+<img src="../images/gif/lec06-second.gif" width="480" height="355" alt="">
 </center>
 
 # <span class="flow">Q&A</span>

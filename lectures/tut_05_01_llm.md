@@ -19,8 +19,7 @@ format:
 . . .
 
 <center>
-<iframe src="https://giphy.com/embed/0lGd2OXXHe4tFhb7Wh" width="400" height="400" style frameBorder="0" class="giphy-embed" allowFullScreen>
-</iframe>
+<img src="../images/gif/tut05-llm.gif" width="400" height="400" alt="">
 </p>
 </center>
 
@@ -102,7 +101,8 @@ Models work?
 - Great starting point to understand LLMs
 - Check out his [YouTube channel, 3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) for more
 
-<https://www.youtube.com/embed/LPZh9BOjkQs>
+<iframe src="https://www.youtube-nocookie.com/embed/LPZh9BOjkQs" title="But what is a GPT? Visual intro to transformers (3Blue1Brown)" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 
 # <span class="flow">AI Coding Partner</span>
 

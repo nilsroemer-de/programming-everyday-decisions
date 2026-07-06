@@ -98,7 +98,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a79b58f53860612e3d2aa40fa25599fb.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b2296277df239b774fa479879ac923b5.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -260,19 +260,19 @@ Dr.&nbsp;Tobias Vlćek
 <p>optimal stopping?</p>
 </div>
 </section>
-<section id="flat-hunting" class="slide level2" data-background-image="https://unsplash.com/photos/CAuxRJhSLC0/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NDZ8fGhhbWJ1cmd8ZW58MHx8fHwxNzI5OTgyMjg3fDA&amp;force=true">
+<section id="flat-hunting" class="slide level2" data-background-image="../images/bg/lec01-flat-hunting.jpg">
 <h2><span class="invert-font">Flat Hunting</span></h2>
 <div class="footer">
 <p><span class="invert-font">Photo by <a href="https://unsplash.com/@jiren_091">Aditya Ghosh</a> on Unsplash</span></p>
 </div>
 </section>
-<section id="hiring-applicants" class="slide level2" data-background-image="https://unsplash.com/photos/OQMZwNd3ThU/download?ixid=M3wxMjA3fDB8MXxhbGx8NHx8fHx8fHx8MTcyOTk3MzA0OXw&amp;force=true">
+<section id="hiring-applicants" class="slide level2" data-background-image="../images/bg/lec01-hiring.jpg">
 <h2><span class="invert-font">Hiring applicants</span></h2>
 <div class="footer">
 <p><span class="invert-font">Photo by <a href="https://unsplash.com/@homajob">Scott Graham</a> on Unsplash</span></p>
 </div>
 </section>
-<section id="dating" class="slide level2" data-background-image="https://unsplash.com/photos/-XlBjdtRqK8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NTV8fGxvdmV8ZW58MHx8fHwxNzI5OTI4NTkxfDA&amp;force=true">
+<section id="dating" class="slide level2" data-background-image="../images/bg/lec01-dating.jpg">
 <h2><span class="invert-font">Dating</span></h2>
 <div class="footer">
 <p><span class="invert-font">Photo by <a href="https://unsplash.com/@shelbymary_">Shelby Deeter</a> on Unsplash</span></p>
@@ -385,7 +385,7 @@ Dr.&nbsp;Tobias Vlćek
 <aside><ol class="aside-footnotes"><li id="fn2"><p>This is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</p></li></ol></aside></section>
 <section id="computing-the-number" class="slide level2">
 <h2>Computing the number</h2>
-<div id="3ae1cfaa" class="cell" data-execution_count="1">
+<div id="e8672c76" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> math</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a>percentage <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>math.e</span>
@@ -417,11 +417,11 @@ Look at first 7.358 candidates</code></pre>
 <section id="geometric-distribution" class="slide level2">
 <h2>Geometric Distribution</h2>
 <p>Let’s visualize the success of a simulation with 20 candidates:</p>
-<div id="25301ed5" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="2">
+<div id="58b74222" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lec_01_optimal_stopping_files/figure-revealjs/cell-3-output-1.png" width="1118" height="541"></p>
+<p><img data-src="lec_01_optimal_stopping_files/figure-html/cell-3-output-1.png" width="1118" height="541"></p>
 </figure>
 </div>
 </div>
@@ -769,7 +769,7 @@ Let’s have a short break and then continue with our first Python programming s
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: '/assets/mathjax2/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],

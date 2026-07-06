@@ -758,7 +758,7 @@ High-priority tasks depend on low-priority tasks.</span>
 
 <span class="fragment"><span class="highlight">Risk:</span> Priority inversion can lead to significant delays!</span>
 
-<span class="fragment center"><img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&amp;w=3474&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:90.0%" /></span>
+<span class="fragment center"><img src="../images/bg/lec04-priority-inversion.jpg" style="width:90.0%" /></span>
 
 ## Priority Inheritance
 

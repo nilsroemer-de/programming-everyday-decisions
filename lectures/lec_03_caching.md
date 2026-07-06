@@ -141,7 +141,7 @@ Today's lecture will explain why that matters more than you think...
 
 ## <span class="question">Question:</span> What do we do, when the storage is full?
 
-<img src="https://images.unsplash.com/photo-1640357154220-9775b0f31dec?q=80&amp;w=2670&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:60.0%" />
+<img src="../images/caching/lec03-caching-photo.jpg" style="width:60.0%" />
 
 **We could increase the capacity**
 
@@ -273,7 +273,7 @@ Today's lecture will explain why that matters more than you think...
 
 ## The Trade-off: Size and Speed
 
-<img src="https://i.imgur.com/suD65Rs.png" style="width:50.0%" />
+<img src="../images/caching/lec03-tradeoff.png" style="width:50.0%" />
 
 **Registers are 10 million times faster than the hard drive!**
 

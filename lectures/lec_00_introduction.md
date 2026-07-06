@@ -149,7 +149,7 @@ We will mostly **not cover Python during the lectures!**
 <center>
 
 <br>
-<iframe src="https://giphy.com/embed/FKsCiEI5pFvIQ" width="480" height="360" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<img src="../images/gif/lec00-intro.gif" width="480" height="360" alt="">
 
 <center>
 
