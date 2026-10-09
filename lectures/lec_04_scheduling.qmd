@@ -1089,7 +1089,7 @@ Any questions
 so far?
 :::
 
-## After the break — Scheduling
+## After the break: Scheduling
 
 - Programming session in our new notebooks
 - How to translate the idea into code and experiments

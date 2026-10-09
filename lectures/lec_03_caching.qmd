@@ -415,9 +415,9 @@ Today's lecture will explain why that matters more than you think...
 ## Awareness: Three Levels of Attention
 
 :::{.incremental}
-- **Spotlight** – Immediate goals – Focus (Your L1 Cache: What are you working on RIGHT NOW?)
-- **Starlight** – Medium-term goals – Wishes (Your L2 Cache: What matters this week/month?)
-- **Daylight** – Long-term goals – Values (Your Storage: What defines your life direction?)
+- **Spotlight**: Immediate goals, your focus (Your L1 Cache: What are you working on RIGHT NOW?)
+- **Starlight**: Medium-term goals, your wishes (Your L2 Cache: What matters this week/month?)
+- **Daylight**: Long-term goals, your values (Your Storage: What defines your life direction?)
 :::
 
 ## Practical Strategies

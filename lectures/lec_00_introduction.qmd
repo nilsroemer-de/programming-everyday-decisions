@@ -236,7 +236,7 @@ Any questions
 so far?
 :::
 
-## After the break — Optimal Stopping
+## After the break: Optimal Stopping
 
 - The "Secretary Problem" and the 37% rule
 - When to stop searching and make a decision

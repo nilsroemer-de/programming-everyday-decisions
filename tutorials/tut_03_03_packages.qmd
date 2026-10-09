@@ -11,7 +11,7 @@ Think of Python as your local library's main building. Just like a library has:
 
 - A main collection (Python's standard library)
 - Different sections (third-party packages)
-- A catalog system (a package manager — we use `uv`)
+- A catalog system (a package manager, in our case `uv`)
 - Multiple branches (virtual environments / project folders)
 
 ## In more detail

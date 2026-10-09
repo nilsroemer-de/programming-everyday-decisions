@@ -347,7 +347,7 @@ Any questions
 so far?
 :::
 
-## After the break — Optimal Stopping
+## After the break: Optimal Stopping
 
 - Gentle introduction to Python Programming
 - We work in our notebooks on basics and optimal stopping

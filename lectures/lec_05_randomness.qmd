@@ -929,7 +929,7 @@ Any questions
 so far?
 :::
 
-## After the break — Randomness
+## After the break: Randomness
 
 - Programming session in our new notebooks
 - How to translate the idea into code and experiments
