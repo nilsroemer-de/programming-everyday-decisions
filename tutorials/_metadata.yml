@@ -1,5 +1,6 @@
 format:
-  html: default
+  html:
+    body-classes: tutorial
   typst: default
   hugo-md: default
   ipynb: default

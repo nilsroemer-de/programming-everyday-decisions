@@ -2,18 +2,18 @@
 title: "Programming: Everyday Decision-Making Algorithms"
 subtitle: "Kühne Logistics University"
 author: "Dr. Nils Roemer and Dr. Tobias Vlćek"
-
-html:
-    theme: [litera, styles_html.scss]
+format:
+  html:
+    body-classes: entries
 ---
 
 *Course materials developed together with Dr. Tobias Vlćek. Based on the book "Algorithms to Live By" by Brian Christian and Tom Griffiths.*
 
-# Course Description
+## Course Description
 
 This course explores the intersection of computer science and everyday life by examining how algorithms can be applied to improve decision-making in various contexts. Based on the book "Algorithms to Live By" by Brian Christian and Tom Griffiths, the course will cover topics such as optimal stopping, scheduling, caching, and game theory, providing both theoretical foundations and practical programming exercises. The course consists of lectures and exercises.
 
-# Learning Outcomes
+## Learning Outcomes
 
 Our broad goal is to equip students with the ability to get to grips with algorithmic thinking. We want to enable students to independently apply methods and concepts from algorithms to solve their everyday practical problems while also providing a brief introduction into programming with python.
 
@@ -26,8 +26,8 @@ Upon completion of the course, students will:
 
 Please note that this course is **specifically designed for business students**. That is, it is **not required to have any advanced knowledge or experience in programming** to attend this course. The teaching format will make it possible to account for different levels of programming skills such that every student can take the most out of the course.
 
+## Course Structure
 
-# Course Structure
 The course is based on a hands-on approach with a two-fold structure:
 
 1. **Lectures**: In the lectures, we will introduce and discuss concepts and illustrate them in reproducible examples.
@@ -41,7 +41,7 @@ The course is not graded and can only be passed/failed. The evaluation of the co
 
 You can find more information on the course contents in the [syllabus](general/syllabus.qmd).
 
-# How to see the slides
+## How to see the slides
 
 - This course is based on [Quarto](https://quarto.org/)
 - It uses [revealjs](https://revealjs.com/) to render the slides
@@ -50,15 +50,16 @@ You can find more information on the course contents in the [syllabus](general/s
 
 ## AI Policy
 
-**Level 1: Pause – Use of AI defined by the educator**
+**Level 1 (Pause): Use of AI defined by the educator**
 
 You may use AI tools (e.g., ChatGPT, Claude, Mistral, Gemini) as learning tools, not as solution generators. However:
 
 1. Please be careful and try to understand the code generated.
 2. Relying on AI to solve tasks for you weakens your own learning.
-3. AI should ideally support understanding — not replace practice.
+3. AI should ideally support understanding, not replace practice.
 4. Using AI without understand the code can lead to security risks.
 
-# Questions
+## Questions
 
 If you have any questions regarding the course, please contact me under [nils.roemer@planningio.com](mailto:nils.roemer@planningio.com?subject=Programming%20Algorithms%3A%20%3CYour%20subject%3E).
+

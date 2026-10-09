@@ -110,33 +110,196 @@ $latinext: "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0
 }
 
 /* ================================================================
-   Headings — Poppins (via _brand.yml); tighten tracking to match
-   nilsroemer.com
+   Shared label styles (nilsroemer.com): a small uppercase Poppins
+   "eyebrow" for section labels, Space Mono for meta information.
    ================================================================ */
-h1, .h1 { letter-spacing: -.018em; line-height: 1.08; }
-h2, .h2 { letter-spacing: -.012em; line-height: 1.15; }
-h3, .h3 { letter-spacing: -.006em; }
+@mixin eyebrow {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+@mixin meta {
+  font-family: "Space Mono", ui-monospace, Menlo, monospace;
+  font-size: .8rem;
+  color: var(--fg-3);
+}
 
 /* ================================================================
-   Prose / inline links — ink text with a primary-blue underline;
-   hover -> primary text. Scoped to main content so sidebar, footer,
-   TOC and icon links keep their own styling.
+   Headings — Poppins (via _brand.yml); tighten tracking to match
+   nilsroemer.com. Content headings are quiet: no rule under h2, a
+   restrained size scale and generous space above each section.
    ================================================================ */
-#quarto-content p a:not(.btn),
-#quarto-content li a:not(.btn) {
+h1, .h1 { letter-spacing: -.018em; line-height: 1.08; color: var(--ink); }
+h2, .h2 { letter-spacing: -.012em; line-height: 1.15; color: var(--ink); }
+h3, .h3 { letter-spacing: -.006em; color: var(--ink); }
+
+#quarto-document-content h2,
+#quarto-document-content .h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+#quarto-document-content h1:not(.title) {
+  font-size: 1.75rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+#quarto-document-content h2:not(.title) {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: .85rem;
+}
+#quarto-document-content h3 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+  margin-bottom: .6rem;
+}
+#quarto-document-content h4 {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+/* A heading that directly follows the title block or another heading
+   does not need the full gap above it. */
+#quarto-document-content #title-block-header + section > :is(h1, h2, h3):first-child,
+#quarto-document-content section > :is(h1, h2) + section > :is(h2, h3):first-child {
+  margin-top: 1.25rem;
+}
+
+/* ================================================================
+   Title block — title in Poppins, subtitle and meta (Lecturer,
+   Affiliation, date) as muted Space Mono labels.
+   ================================================================ */
+#title-block-header {
+  margin-bottom: 2.5rem;
+}
+#title-block-header .quarto-title .title {
+  margin-bottom: .4rem;
+}
+#title-block-header .subtitle,
+#title-block-header .quarto-title .subtitle {
+  @include meta;
+  margin-top: .25rem;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+.quarto-title-meta {
+  margin-top: 1.25rem;
+}
+.quarto-title-meta-heading {
+  @include eyebrow;
+  color: var(--fg-3);
+  margin-bottom: .15rem;
+}
+.quarto-title-meta-contents {
+  @include meta;
+  color: var(--fg-2);
+}
+.quarto-title-meta-contents a {
+  color: var(--fg-2);
+  text-decoration: none;
+}
+.quarto-page-breadcrumbs {
+  @include meta;
+}
+.quarto-page-breadcrumbs .breadcrumb-item a {
+  color: var(--fg-3);
+  text-decoration: none;
+}
+.quarto-page-breadcrumbs .breadcrumb-item a:hover {
+  color: var(--primary);
+}
+
+/* ================================================================
+   Content links (global, no page-specific overrides, same as
+   nilsroemer.com): text colour, no underline; primary colour and
+   underline on hover. Scoped to the document body so sidebar, TOC,
+   footer and icon links keep their own styling.
+   ================================================================ */
+#quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link) {
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid transparent;
   transition: color .2s ease, border-color .2s ease;
 }
-#quarto-content p a:not(.btn):hover,
-#quarto-content li a:not(.btn):hover {
+#quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link):hover {
   color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+/* Symbol links inside code (code-link) keep the syntax colour */
+#quarto-document-content code a {
+  color: inherit;
+  border-bottom: none;
+}
+
+/* Exception for tutorials (body-classes: tutorial): links inside
+   exercise text keep a subtle marker so students can still find them. */
+body.tutorial #quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link) {
+  border-bottom-color: var(--border-strong);
+}
+body.tutorial #quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link):hover {
   border-bottom-color: var(--primary);
 }
 
 /* ================================================================
-   Sidebar — plain text wordmark (no logo image), Poppins
+   Entry pages (body-classes: entries in the page YAML): Welcome,
+   Syllabus. Small uppercase section labels, lots of air. Ported from
+   nilsroemer.com custom.scss. A body class is used instead of a
+   ::: {.entries} wrapper div because Pandoc drops the TOC when several
+   h2 sections sit inside one div.
+   ================================================================ */
+.entry-meta {
+  @include meta;
+  white-space: nowrap;
+}
+body.entries #quarto-document-content {
+  h2:not(.title) {
+    @include eyebrow;
+    font-size: .8rem;
+    color: var(--primary);
+    border-bottom: none;
+    margin-top: 4rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0;
+  }
+  #title-block-header + section > h2:first-child {
+    margin-top: 1rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 2.25rem;
+    margin-bottom: .35rem;
+  }
+  h2 + section.level3 > h3 {
+    margin-top: 0;
+  }
+  .entry-meta {
+    display: block;
+    white-space: normal;
+    line-height: 1.5;
+  }
+  p:has(> .entry-meta:only-child) {
+    margin-bottom: .9rem;
+  }
+  p {
+    margin-bottom: .9rem;
+  }
+  ul, ol {
+    padding-left: 1.1rem;
+    margin-bottom: .9rem;
+  }
+  li {
+    margin-bottom: .35rem;
+  }
+  li::marker {
+    color: var(--fg-3);
+  }
+}
+
+/* ================================================================
+   Sidebar — plain text wordmark (no logo image), Poppins; quiet
+   section labels and items.
    ================================================================ */
 .sidebar-title {
   font-family: "Poppins", system-ui, sans-serif;
@@ -151,6 +314,73 @@ h3, .h3 { letter-spacing: -.006em; }
 .sidebar-title a:hover {
   color: var(--primary);
 }
+.sidebar-navigation .sidebar-item .sidebar-item-text,
+.sidebar-navigation .sidebar-item .sidebar-link {
+  font-size: .9rem;
+}
+.sidebar-navigation .sidebar-item-container .sidebar-link {
+  color: var(--fg-2);
+  text-decoration: none;
+}
+.sidebar-navigation .sidebar-item-container .sidebar-link:hover {
+  color: var(--primary);
+}
+.sidebar-navigation .sidebar-item-container .sidebar-link.active,
+.sidebar-navigation .sidebar-item-container .sidebar-link.active .sidebar-item-text {
+  color: var(--primary);
+}
+.sidebar-navigation .sidebar-item-section > .sidebar-item-container .sidebar-item-text {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 500;
+  color: var(--ink);
+}
+.sidebar-navigation .sidebar-item-section > .sidebar-item-container .sidebar-link:hover .sidebar-item-text {
+  color: var(--primary);
+}
+.sidebar-navigation .sidebar-item-container .sidebar-item-toggle {
+  color: var(--fg-3);
+}
+.sidebar-navigation .sidebar-divider {
+  border-top: 1px solid var(--border);
+  margin: .75rem 0;
+}
+#quarto-search .aa-Form {
+  border-color: var(--border);
+  border-radius: var(--r-xs);
+}
+
+/* ================================================================
+   Margin sidebar — "On this page" and "Other Formats" as eyebrow
+   labels, items in muted Inter, actions as plain muted links.
+   ================================================================ */
+#quarto-margin-sidebar #toc-title,
+#quarto-margin-sidebar .quarto-alternate-formats h2,
+#quarto-margin-sidebar .toc-actions h2,
+#quarto-margin-sidebar .quarto-other-links h2 {
+  @include eyebrow;
+  color: var(--fg-3);
+  margin-bottom: .5rem;
+}
+#quarto-margin-sidebar #TOC .nav-link {
+  font-size: .85rem;
+  color: var(--fg-2);
+}
+#quarto-margin-sidebar #TOC .nav-link:hover,
+#quarto-margin-sidebar #TOC .nav-link.active {
+  color: var(--primary);
+}
+#quarto-margin-sidebar .toc-actions a,
+#quarto-margin-sidebar .quarto-alternate-formats a,
+#quarto-margin-sidebar .quarto-other-links a {
+  font-size: .85rem;
+  color: var(--fg-2);
+  text-decoration: none;
+}
+#quarto-margin-sidebar .toc-actions a:hover,
+#quarto-margin-sidebar .quarto-alternate-formats a:hover,
+#quarto-margin-sidebar .quarto-other-links a:hover {
+  color: var(--primary);
+}
 
 /* ================================================================
    Footer — subtle; Space Mono meta labels (like nilsroemer.com)
@@ -160,6 +390,7 @@ h3, .h3 { letter-spacing: -.006em; }
   background: #fff;
   font-family: "Space Mono", ui-monospace, Menlo, monospace;
   font-size: .8rem;
+  color: var(--fg-3);
 }
 .nav-footer a {
   color: var(--fg-3);
@@ -175,6 +406,22 @@ h3, .h3 { letter-spacing: -.006em; }
 /* ================================================================
    RULES: custom visual effects / overrides for slides
    ================================================================ */
+
+// Links on slides — same rule as on the website: text colour, no
+// underline, primary colour with underline on hover.
+.reveal .slides a,
+.reveal .footer a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+}
+.reveal .slides a:hover,
+.reveal .footer a:hover {
+    color: $brand-primary-blue;
+    border-bottom-color: $brand-primary-blue;
+    text-shadow: none;
+}
 
 // Text emphasis
 .reveal strong,

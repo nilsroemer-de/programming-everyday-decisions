@@ -1,9 +1,6 @@
 ---
 title: "Cheatsheet"
 subtitle: "Useful commands and tips"
-
-html:
-    theme: [litera, ../styles_html.scss]
 ---
 
 # Variables and Types

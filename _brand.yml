@@ -59,7 +59,7 @@ typography:
     background-color: sky-100
   link:
     color: primary-blue
-    decoration: underline
+    decoration: none
 
 defaults:
   quarto:
