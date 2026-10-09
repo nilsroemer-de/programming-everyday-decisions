@@ -1,60 +1,113 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Anleitung für Claude Code (claude.ai/code) beim Arbeiten in diesem Repository.
 
-## Project Overview
+## Projektkontext
 
-This is a Quarto-based educational website for the course "Programming: Everyday Decision-Making Algorithms" at Kühne Logistics University. The course teaches algorithmic thinking concepts (optimal stopping, explore/exploit, caching, scheduling, randomness) while introducing Python programming to business students.
+Kurs-Website für „Programming: Everyday Decision-Making Algorithms" an der Kühne Logistics University (KLU), Hamburg, unter `https://courses.nilsroemer.com`. Der Kurs vermittelt algorithmisches Denken nach dem Buch „Algorithms to Live By" (Optimal Stopping, Explore/Exploit, Caching, Scheduling, Randomness, Computational Kindness) und führt Business-Studierende nebenbei in Python ein. Die Website enthält Vorlesungsfolien, interaktive Tutorials und Kursinformationen (Syllabus, FAQ, Installation, Literatur, Cheatsheet). Die Seiteninhalte sind auf Englisch, die Kommunikation im Repo (Commits, diese Datei) auf Deutsch.
 
-## Build Commands
+Lehrender und Betreiber ist Dr. Nils Roemer. Dr. Tobias Vlćek hat die Materialien mitentwickelt und wird **nur in den Credits** genannt: auf der Startseite (Author-Zeile und Hinweis im Einleitungstext) und im CC-BY-NC-SA-Footer („Nils Roemer and Tobias Vlćek"). In Lectures, Tutorials und sonstigen Seiten steht ausschließlich Nils Roemer als Lecturer.
 
-```bash
-# Render the entire website
-quarto render
+Der Name wird immer **„Roemer"** geschrieben, nie „Römer", auch in Alt-Texten, Metadaten und Dateinamen.
 
-# Preview with live reload
-quarto preview
+## Infrastruktur
 
-# Render a single file
-quarto render lectures/lec_01_optimal_stopping.qmd
+- **Hosting:** GitHub Pages aus dem Branch `gh-pages` des Repos `github.com/nilsroemer-de/programming-everyday-decisions` (Remote `origin`, SSH).
+- **Branches:** `main` enthält ausschließlich die Quelldateien. `gh-pages` enthält nur den gebauten Output und wird allein von `quarto publish gh-pages` geschrieben, nie manuell.
+- **Domain:** `courses.nilsroemer.com` ist eine Subdomain von `nilsroemer.com` (bei Strato registriert, dient nur als DNS). DNS-Einstellungen nie anfassen.
+- **CNAME:** Die Datei `CNAME` (Inhalt: `courses.nilsroemer.com`) liegt im Repo-Root und ist in `_quarto.yml` unter `project.resources` eingetragen. Dadurch landet sie bei jedem Build in `_site/` und auf `gh-pages`, sonst verliert GitHub Pages die Custom Domain.
+- **Keine CI/CD:** Keine GitHub Actions, kein automatischer Deploy. Veröffentlicht wird ausschließlich manuell (siehe Workflow).
+- **Toolchain:** Quarto 1.9.x, `uv` (Python 3.12, Abhängigkeiten in `pyproject.toml`/`uv.lock`: jupyter, jupytext, matplotlib, numpy, pandas), Git, Claude Code.
+- **Mermaid:** Die Mermaid-Diagramme in `lectures/lec_04_scheduling.qmd` brauchen für den Typst-/PDF-Export das Quarto-Tool `chrome-headless-shell` (`quarto tools`; installieren mit `quarto install chrome-headless-shell`). Ohne das Tool scheitert der Render.
+- **Nicht versionierte Build-Voraussetzungen:** `_freeze/` (Ausführungs-Cache) und `animations/` (GIFs, von `lec_05_randomness.qmd` referenziert) sind gitignored, werden beim Render aber gebraucht. In einem frischen Clone oder Worktree beide Ordner aus dem Hauptcheckout kopieren, sonst scheitert der Typst-Export von Lecture 05 bzw. werden alle Python-Zellen neu ausgeführt.
 
-# Check Quarto installation (may need QUARTO_CHROMIUM set for PDF export)
-QUARTO_CHROMIUM=/Applications/Brave\ Browser.app/Contents/MacOS/Brave quarto check
-```
-
-## Python Environment
-
-The project uses `uv` for Python dependency management (Python 3.12):
+## Wichtige Befehle
 
 ```bash
-# Sync dependencies from pyproject.toml
-uv sync
-
-# Run Python scripts
-uv run python script.py
-
-# Add a package
-uv add package_name
+uv sync                          # Python-Umgebung (.venv) aus pyproject.toml/uv.lock anlegen
+uv run quarto preview            # lokal rendern mit Live-Reload
+uv run quarto render             # kompletter Build nach _site/ (gitignored)
+uv run quarto render tutorials/tut_01_01_variables.qmd   # einzelne Datei
+quarto publish gh-pages          # Deploy auf GitHub Pages → courses.nilsroemer.com (nur auf Anweisung!)
+quarto tools                     # Status von chrome-headless-shell prüfen
 ```
 
-Key dependencies: jupyter, jupytext, matplotlib, numpy, pandas
+Immer `uv run quarto …` verwenden, nicht `quarto …` allein: Jupyter liegt im `.venv`, und Quarto findet den Python-Kernel sonst nicht.
 
-## Repository Structure
+## Workflow
 
-- `lectures/` - RevealJS slide decks (`.qmd` files with `format: revealjs`)
-- `tutorials/` - Interactive Python tutorials in Quarto format
-- `general/` - Course information pages (syllabus, FAQ, installation guide)
-- `_quarto.yml` - Main Quarto configuration (website structure, theme, output formats)
-- `_brand.yml` - Brand/styling configuration
-- `styles.scss` - Custom SCSS styles
-- `helpers/` - Conversion scripts (qmd to md, pypercent format)
-- `include/` - Reusable Quarto includes (e.g., tutorial_end.qmd)
-- `_site/` - Generated output (do not edit)
-- `_repo-md/` - Markdown versions of content
+**Veröffentlichen**
 
-## Content Authoring
+- `quarto publish gh-pages` wird **nur auf ausdrückliche Anweisung von Nils** ausgeführt. Ein Push auf `main` veröffentlicht nichts; erst `publish` ändert die Live-Seite.
+- Vor dem Publish lokal mit `uv run quarto render` prüfen, dass der Build fehlerfrei durchläuft (alle Formate: HTML, RevealJS, Typst-PDF, ipynb, hugo-md).
 
-- Lectures use RevealJS format with custom CSS classes (`.flow`, `.highlight`, `.question`, `.incremental`)
-- Tutorials include executable Python code cells
-- The `execute: freeze: true` setting caches code execution results
-- Output formats: HTML (primary), Hugo-MD, and Typst (PDF)
+**Kleine Änderungen** (Texte, Styling, einzelne Seiten)
+
+- Direkt auf `main` arbeiten, committen und pushen (Commit-Messages auf Deutsch, wie in der Historie).
+
+**Größere Umbauten** (neue Bereiche, Struktur-/Designänderungen, mehrere Seiten gleichzeitig)
+
+- Mit den Superpowers-Skills arbeiten: Brainstorming → Plan → Umsetzung auf einem eigenen Branch in einem Git-Worktree (`superpowers:using-git-worktrees`).
+- Am Ende das Ergebnis zeigen. **Erst nach Freigabe von Nils** in `main` mergen, dann den Branch und den Worktree aufräumen (`superpowers:finishing-a-development-branch`).
+- Auch danach gilt: kein Publish ohne Anweisung.
+
+## Projektstruktur
+
+```
+_quarto.yml          # Projektkonfiguration: Sidebar, Footer, Theme, Formate, Resources (CNAME, fonts/, assets/, images/)
+_brand.yml           # Quarto-Brand: Farbpalette und Schriftfamilien (Planningio-Ableitung wie nilsroemer.com, plus Kurs-Akzente)
+styles.scss          # @font-face (self-hosted), Design-Tokens, Linkstil, Sidebar/Footer, RevealJS-Klassen (.flow, .highlight, .task, .question …)
+index.qmd            # Startseite: Kursbeschreibung, Learning Outcomes, Struktur, AI Policy, Kontakt
+general/             # Syllabus, FAQ, Installation (uv.qmd), Literatur, Cheatsheet, Imprint, Privacy, header.html (leer)
+lectures/            # Vorlesungen als .qmd (HTML-Seite + RevealJS-Folien + PDF); tut_05_01_llm.qmd ist ein Tutorial im Lecture-Ordner
+tutorials/           # Interaktive Python-Tutorials (HTML, ipynb, PDF)
+include/             # Wiederverwendbare Includes (tutorial_end.qmd: Abschnitt „Solutions")
+helpers/             # strip_polyfill.py (Post-Render, entfernt cdnjs-Polyfill), Konvertierungsskripte
+assets/              # Self-hosted MathJax: assets/mathjax (v3, HTML) und assets/mathjax2 (v2, RevealJS-Plugin braucht v2-API)
+fonts/               # woff2: Poppins, Inter, Space Mono (latin + latin-ext)
+fonts-ttf/           # TTF-Varianten für den Typst-PDF-Export (font-paths)
+images/              # Alle Bilder lokal (bg/, gif/, alg/, atlb/, caching/, Porträts)
+animations/          # GIFs für Lecture 05, gitignored (siehe Infrastruktur)
+CNAME                # Custom Domain für GitHub Pages
+pyproject.toml, uv.lock   # Python-Abhängigkeiten
+_freeze/, _site/, .quarto/   # Build-Cache und Output, gitignored, nie manuell bearbeiten
+```
+
+Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`, `projects/`) sind Arbeitsmaterial und werden nicht gerendert (`project.render` in `_quarto.yml` listet die Quellen explizit).
+
+**Navigation:** Sidebar (Welcome, Syllabus, Kapitel 01 bis 06 mit Lecture und Tutorials, FAQs, Installation, Literature, Cheatsheet) und Footer werden zentral in `_quarto.yml` konfiguriert. Neue Seiten dort eintragen. Die Anzeige-Titel der Tutorials folgen dem Schema `01-01 - Variables` (Kapitel-Nummer, Tutorial-Nummer, Thema); Dateinamen und URLs bleiben davon unberührt.
+
+**Theme:** Cosmo + `styles.scss` + Brand, in genau dieser Reihenfolge (`brand` muss nach `styles.scss` stehen, sonst „Undefined variable $brand-*", weil die Defaults-Ebenen rückwärts verarbeitet werden). Die RevealJS-Folien binden dieselbe `styles.scss` über `lectures/_metadata.yml` ein. Das Design ist eine reduzierte Ableitung des Planningio-Brands wie auf nilsroemer.com (Navy/Blau, Poppins für Überschriften, Inter für Fließtext, Space Mono für Code und Meta-Angaben). Kurs-spezifische Zusatzakzente (Amber, Rot, Grün) nur für Folien-Hervorhebungen und Callouts.
+
+**Ausführung:** `execute: freeze: true` in `_quarto.yml`. Python-Zellen werden nur neu ausgeführt, wenn sich die Quelle ändert; die Ergebnisse liegen in `_freeze/`. Für einen kompletten Neuaufbau `_freeze/` löschen (dauert deutlich länger).
+
+## Konventionen
+
+- **Titel:** Inhaltsseiten mit Quarto-Title-Block nutzen `title:` und `subtitle:`. Die Rechtstexte (`general/imprint.qmd`, `general/privacy.qmd`) nutzen `pagetitle:` und setzen die sichtbare Überschrift als `# …` im Body.
+- **Keine Requests an Dritte:** Fonts self-hosted (`fonts/`, `@font-face` in `styles.scss`, `$web-font-path: false`), MathJax self-hosted (`assets/`), alle Bilder und GIFs lokal (`images/`, `animations/`), der von Pandoc injizierte cdnjs-Polyfill wird per Post-Render-Skript entfernt. Keine Analytics, keine Cookies, keine CDN-Skripte. Einzige Ausnahme: ein YouTube-Embed im privacy-enhanced Mode (youtube-nocookie.com) in `lectures/tut_05_01_llm.qmd`, der in der Datenschutzerklärung erfasst ist. Die Datenschutzerklärung sichert genau diesen Stand zu, jede neue Abhängigkeit muss dagegen geprüft werden.
+- **Rechtstexte (`general/imprint.qmd`, `general/privacy.qmd`):**
+  - Keine sichtbaren Datumsangaben („Stand: …", „Last updated …") einfügen.
+  - Änderungen an Rechtstexten vor dem Einarbeiten als Vorschlag zeigen und von Nils freigeben lassen. Das gilt auch für scheinbar triviale Korrekturen.
+- **Keine Gedankenstriche als Satzzeichen im sichtbaren Text.** Sätze stattdessen umformulieren (Komma, Punkt, Doppelpunkt, Klammer). Bereichsangaben wie `2018–2022` bleiben. Code, Code-Kommentare und Rechtstexte sind davon ausgenommen und werden nicht angefasst.
+- **Links im Inhalt:** Textfarbe, keine Unterstreichung, bei Hover Primärfarbe mit Unterstreichung. Global in `styles.scss` definiert (Website, Tutorials und Folien), keine seitenspezifischen Abweichungen. Einzige bewusste Ausnahme: In Tutorials behalten Links im Fließtext eine dezente Kennzeichnung, damit sie in Aufgabentexten auffindbar bleiben.
+- **Abschnittstitel und Labels** ruhig halten wie auf nilsroemer.com: keine Trennlinien unter Überschriften, Meta-Angaben (Untertitel, Lecturer, Datum, „On this page", „Other Formats") als kleine, gedämpfte Labels in Space Mono. Die Startseite und der Syllabus nutzen das Eintrags-Layout `::: {.entries}` aus nilsroemer.com (Abschnitte als `##` werden zu kleinen Uppercase-Labels, Einträge als `###`, Meta-Zeile als `[…]{.entry-meta}`).
+- **Folien:** RevealJS mit eigenen Klassen (`.flow` für animierte Titel, `.highlight`, `.task`, `.question`, `.errors`, `.invert-font`, `.loud-slide`, `.incremental`). Keine persönlichen „About me"-Folien, Nils' Person wird über nilsroemer.com abgedeckt.
+- **Tutorials:** Aufgaben als `## Exercise x.y - Titel` mit einer leeren Code-Zelle (`# YOUR CODE BELOW`) und einer eingeklappten Test-Zelle mit `assert`. Am Ende jedes Tutorials `{{< include ../include/tutorial_end.qmd >}}`.
+- **Bilder:** Vor dem Einchecken für Web komprimieren und EXIF-Metadaten entfernen. Keine Hotlinks auf fremde Server.
+- **Build-Artefakte** (`_site/`, `_freeze/`, `.quarto/`, `.DS_Store`, `*.quarto_ipynb`) niemals committen.
+
+## Stand und offene Punkte
+
+**Stand**
+
+- Live unter courses.nilsroemer.com (GitHub Pages). Kursstart Ende Oktober 2026.
+- Seit Juli 2026 betreibt Nils die Seite allein; Design an nilsroemer.com angeglichen, alle Drittanbieter-Requests entfernt, Rechtstexte aktualisiert, Tobias nur noch in den Credits.
+- Design-Pass Oktober 2026 (Branch `design-angleich`): globaler Linkstil, ruhige Abschnittstitel und Labels, Gedankenstriche im sichtbaren Text entfernt, Tutorial-Nummerierung in der Sidebar vereinheitlicht. Details in `UEBERGABE.md`.
+
+**Offene Punkte**
+
+- Vor Kursstart: Termine und Semesterangaben prüfen (Syllabus, Startseite, `klu_syllabus.md`), Welcome-Mail in `messages/` aktualisieren.
+- `animations/` und `_freeze/` sind gitignored, werden aber zum Rendern gebraucht. Entscheiden, ob `animations/` versioniert werden soll.
+- `404.qmd` steht in `project.render`, existiert aber nicht; Quarto ignoriert das stillschweigend. Entweder anlegen oder den Eintrag entfernen.
+- Wenn eigene Analytics gewünscht: neu einbauen und Datenschutzerklärung ergänzen (nach Freigabe).
+- Optional: Favicon, Open-Graph-Metadaten.
