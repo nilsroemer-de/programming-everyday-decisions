@@ -128,51 +128,68 @@ $latinext: "U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0
 
 /* ================================================================
    Headings — Poppins (via _brand.yml); tighten tracking to match
-   nilsroemer.com. Content headings are quiet: no rule under h2, a
-   restrained size scale and generous space above each section.
+   nilsroemer.com.
    ================================================================ */
 h1, .h1 { letter-spacing: -.018em; line-height: 1.08; color: var(--ink); }
 h2, .h2 { letter-spacing: -.012em; line-height: 1.15; color: var(--ink); }
 h3, .h3 { letter-spacing: -.006em; color: var(--ink); }
 
+/* ================================================================
+   Page header — same on every website page, spacing via the shared
+   tokens (nilsroemer.com convention "Seitenkopf", adapted):
+     navbar/top -> header   padding-top on <main>      --space-6
+     header -> content      margin-bottom of header    --space-5
+     before every section   margin-top of h2           --space-7
+   The course site keeps Quarto's title block as the page header
+   (title, subtitle, Lecturer/Affiliation meta, format links). On
+   pages with `pagetitle:` (Imprint, Privacy) the block is empty and
+   the body `#` heading takes its place. No line under h1 or h2, no
+   page-specific deviations. Slides are not affected (scoped to
+   #quarto-document-content).
+   ================================================================ */
+#quarto-content > #quarto-document-content {
+  padding-top: var(--space-6);
+}
+#title-block-header:not(:empty) {
+  margin-bottom: var(--space-5);
+  margin-block-end: var(--space-5);
+}
+#title-block-header:empty + section > h1:first-child {
+  margin-top: 0;
+  margin-bottom: var(--space-5);
+}
+#quarto-document-content h1,
 #quarto-document-content h2,
 #quarto-document-content .h2 {
   border-bottom: none;
   padding-bottom: 0;
 }
+/* Section headings inside the content (tutorials use # for chapters) */
 #quarto-document-content h1:not(.title) {
   font-size: 1.75rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-4);
 }
 #quarto-document-content h2:not(.title) {
   font-size: 1.4rem;
-  margin-top: 2.5rem;
-  margin-bottom: .85rem;
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-4);
 }
 #quarto-document-content h3 {
   font-size: 1.15rem;
-  margin-top: 2rem;
-  margin-bottom: .6rem;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
 }
 #quarto-document-content h4 {
   font-size: 1rem;
-  margin-top: 1.5rem;
-}
-/* A heading that directly follows the title block or another heading
-   does not need the full gap above it. */
-#quarto-document-content #title-block-header + section > :is(h1, h2, h3):first-child,
-#quarto-document-content section > :is(h1, h2) + section > :is(h2, h3):first-child {
-  margin-top: 1.25rem;
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-3);
 }
 
 /* ================================================================
    Title block — title in Poppins, subtitle and meta (Lecturer,
    Affiliation, date) as muted Space Mono labels.
    ================================================================ */
-#title-block-header {
-  margin-bottom: 2.5rem;
-}
 #title-block-header .quarto-title .title {
   margin-bottom: .4rem;
 }
@@ -184,7 +201,7 @@ h3, .h3 { letter-spacing: -.006em; color: var(--ink); }
   line-height: 1.6;
 }
 .quarto-title-meta {
-  margin-top: 1.25rem;
+  margin-top: var(--space-4);
 }
 .quarto-title-meta-heading {
   @include eyebrow;
@@ -253,17 +270,12 @@ body.tutorial #quarto-document-content :is(p, li, td, th, dd, dt, figcaption, bl
   white-space: nowrap;
 }
 body.entries #quarto-document-content {
+  /* Section titles as small uppercase labels; spacing comes from the
+     global page header rule (no page-specific deviations) */
   h2:not(.title) {
     @include eyebrow;
     font-size: .8rem;
     color: var(--primary);
-    border-bottom: none;
-    margin-top: 4rem;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0;
-  }
-  #title-block-header + section > h2:first-child {
-    margin-top: 1rem;
   }
   h3 {
     font-size: 1.1rem;
