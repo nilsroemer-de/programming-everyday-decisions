@@ -29,7 +29,7 @@ website:
         href: index.qmd
       - text: "Syllabus"
         href: general/syllabus.qmd
-      - text: "***"
+      - text: "---"
       - section: "01 Optimal Stopping"
         contents:
           - text: "Introduction"
@@ -66,27 +66,27 @@ website:
         contents:
           - text: "Lecture"
             href: lectures/lec_04_scheduling.qmd
-          - text: "10 - Recap"
+          - text: "04-01 - Recap"
             href: tutorials/tut_04_01_recap.qmd
-          - text: "11 - Dictionaries"
+          - text: "04-02 - Dictionaries"
             href: tutorials/tut_04_02_dicts.qmd
-          - text: "12 - DataFrames"
+          - text: "04-03 - DataFrames"
             href: tutorials/tut_04_03_dataframes.qmd
       - section: "05 Randomness"
         contents:
           - text: "Lecture"
             href: lectures/lec_05_randomness.qmd
-          - text: "13 - LLM"
+          - text: "05-01 - LLM"
             href: lectures/tut_05_01_llm.qmd
-          - text: "14 - Recap"
+          - text: "05-02 - Recap"
             href: tutorials/tut_05_02_recap.qmd
-          - text: "15 - Free Tasks"
+          - text: "05-03 - Free Tasks"
             href: tutorials/tut_05_03_free.qmd
       - section: "06 Kindness"
         contents:
           - text: "Lecture"
             href: lectures/lec_06_kindness.qmd
-      - text: "***"
+      - text: "---"
       - text: "FAQs"
         href: general/faq.qmd
       - text: "Installation"
