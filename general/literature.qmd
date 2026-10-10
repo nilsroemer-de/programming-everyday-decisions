@@ -53,7 +53,7 @@ This section provides a curated list of books and resources to enhance your unde
 - [Quarto](https://quarto.org)
     - A static website generator that is very powerful and flexible. Used to create the slides and the website for the course.
 
-- [Cursor](https://cursor.sh)
+- [Cursor](https://cursor.com)
     - A code editor based on VS Code that is very powerful and flexible. It uses AI to help you write code.
 
 - [Zed](https://zed.dev)
