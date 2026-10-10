@@ -1,10 +1,9 @@
 ---
-title: "Introduction - Programming"
+title: "Introduction: Programming"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
-author: "Dr. Nils Roemer"
 format:
   revealjs:
-    footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_00_introduction.qmd)"
+    footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_00_introduction.qmd)"
     output-file: lec_00_presentation.html
 ---
 

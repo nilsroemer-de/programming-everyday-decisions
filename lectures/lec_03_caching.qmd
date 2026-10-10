@@ -1,10 +1,9 @@
 ---
-title: "Lecture III - Caching"
+title: "Lecture III: Caching"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
-author: "Dr. Nils Roemer"
 format:
   revealjs:
-    footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_03_caching.qmd)"
+    footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_03_caching.qmd)"
     output-file: lec_03_presentation.html
 ---
 # Learning Objectives {.title}

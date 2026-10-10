@@ -1,11 +1,9 @@
 ---
-title: "Lecture IV - Scheduling"
+title: "Lecture IV: Scheduling"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
-author: "Dr. Nils Roemer"
-institute: "Kühne Logistics University Hamburg"
 format:
   revealjs:
-    footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_04_scheduling.qmd)"
+    footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_04_scheduling.qmd)"
     output-file: lec_04_presentation.html
     html:
       mermaid:

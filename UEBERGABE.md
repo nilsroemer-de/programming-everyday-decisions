@@ -1,6 +1,6 @@
 # Übergabe: Branch `design-angleich`
 
-Stand: 10. Oktober 2026 (Nachtrag unten). Branch ist gepusht, nicht in `main` gemergt, nicht veröffentlicht. Worktree: `.claude/worktrees/design-angleich`.
+Stand: 10. Oktober 2026 (Nachträge unten). Branch ist gepusht, nicht in `main` gemergt, nicht veröffentlicht. Worktree: `.claude/worktrees/design-angleich`.
 
 ## Was geändert wurde
 
@@ -45,6 +45,19 @@ Stand: 10. Oktober 2026 (Nachtrag unten). Branch ist gepusht, nicht in `main` ge
 4. **`.claude/worktrees/` in `.gitignore` aufgenommen.**
 
 CLAUDE.md entsprechend angepasst (Linkkonvention, Build-Voraussetzungen, offene Punkte).
+
+## Nachtrag 2, 10. Oktober 2026: weitere Anpassungen
+
+1. **GitHub-Issue-Verweise entfernt.** Nur die FAQ hatte welche (zwei Sätze „or by creating an issue on GitHub"), jetzt Kontakt nur per E-Mail. Nicht angefasst, weil kein Issue-Verweis: der GitHub-Link im Footer und der Hinweis in `include/tutorial_end.qmd`, dass die Lösungen im GitHub-Repository liegen (Button unten links). Die Erwähnungen von GitHub Copilot in `tut_05_01_llm.qmd` sind Inhalt.
+2. **Repo-Actions entfernt** (`repo-actions` in `_quarto.yml`). `repo-url` steht noch drin, ist ohne Actions aber wirkungslos.
+3. **Lecturer und Affiliation** zentral in `lectures/_metadata.yml` und `tutorials/_metadata.yml`: `author: "Dr. Nils Roemer, External Lecturer"`, `institute: "Planningio GmbH"`. Die `author:`- und `institute:`-Zeilen in den einzelnen Lectures (darunter „Kühne Logistics University Hamburg - Fall 2024" in Lecture VI) sind entfernt. Entscheidungen dabei:
+   - Startseite behält die Author-Zeile „Dr. Nils Roemer and Dr. Tobias Vlćek" (Credits-Regel). Die allgemeinen Seiten (Syllabus, FAQ, Installation, Literature, Cheatsheet) hatten bisher keinen Lecturer-Block und haben weiterhin keinen. Wenn du ihn dort auch willst: `author`/`institute` in den Dateien oder in `_quarto.yml` ergänzen.
+   - Der Folien-Footer stand auf `{{< meta author >}}` und hätte „Dr. Nils Roemer, External Lecturer" auf jeder Folie gezeigt. Jetzt fest „Dr. Nils Roemer".
+   - Quarto rendert den Autor-String mit Komma als eine Person (geprüft im Titelblock und auf der Titelfolie).
+4. **Navigationselemente ohne Link-Unterstreichung.** Die Linkregel in `styles.scss` schließt jetzt `nav` (Breadcrumbs, Sidebar, TOC), Titelblock, Format-Links, TOC-Actions und Seiten-Footer aus.
+5. **Doppelpunkt statt „ - " in Titeln:** alle `title:` in `lectures/` und `tutorials/` (z. B. „Lecture I: Optimal Stopping", „Tutorial I.I: Variables and Types", „Introduction: Programming") und die 15 Tutorial-Einträge in der Sidebar („01-01: Variables"). Dateinamen und URLs unverändert. Nicht angefasst: Abschnittsüberschriften in Tutorials (`# Section 1 - Using Standard Libraries`, rund 30 Stück) und die 57 Exercise-Überschriften (`## Exercise 1.1 - …`, dokumentierte Konvention). Sag Bescheid, wenn die auch umgestellt werden sollen.
+
+CLAUDE.md entsprechend angepasst (Lecturer-Meta, Titel-Trennzeichen, Kontakt, Links).
 
 ## Offene Fragen an dich
 

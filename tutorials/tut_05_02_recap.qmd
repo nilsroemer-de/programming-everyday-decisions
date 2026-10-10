@@ -1,5 +1,5 @@
 ---
-title: "Tutorial V.II - Recap with Randomness"
+title: "Tutorial V.II: Recap with Randomness"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 

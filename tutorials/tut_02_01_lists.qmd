@@ -1,5 +1,5 @@
 ---
-title: "Tutorial II.I - Lists and Tuples"
+title: "Tutorial II.I: Lists and Tuples"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 

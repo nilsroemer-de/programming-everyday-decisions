@@ -1,5 +1,5 @@
 ---
-title: "Tutorial V.III - Free Tasks"
+title: "Tutorial V.III: Free Tasks"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Tutorial I.II - Comparison Operators"
+title: "Tutorial I.II: Comparison Operators"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 

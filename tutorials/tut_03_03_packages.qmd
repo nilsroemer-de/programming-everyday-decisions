@@ -1,5 +1,5 @@
 ---
-title: "Tutorial III.III - Package Management"
+title: "Tutorial III.III: Package Management"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 

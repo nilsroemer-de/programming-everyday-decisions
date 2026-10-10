@@ -1,11 +1,9 @@
 ---
-title: "Lecture V - Randomness"
+title: "Lecture V: Randomness"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
-author: "Dr. Nils Roemer"
-institute: "Kühne Logistics University Hamburg"
 format:
   revealjs:
-    footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_05_randomness.qmd)"
+    footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_05_randomness.qmd)"
     output-file: lec_05_presentation.html
 ---
 

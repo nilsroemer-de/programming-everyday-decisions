@@ -1,11 +1,9 @@
 ---
-title: "Lecture VI - Computational Kindness"
+title: "Lecture VI: Computational Kindness"
 subtitle: "Programming with Python"
-author: "Dr. Nils Roemer"
-institute: "Kühne Logistics University Hamburg - Fall 2024"
 format:
   revealjs:
-    footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_06_kindness.qmd)"
+    footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_06_kindness.qmd)"
     output-file: lec_06_presentation.html
 ---
 

@@ -16,7 +16,6 @@ project:
 website:
   title: "Programming: Everyday Decision-Making Algorithms"
   repo-url: https://github.com/nilsroemer-de/programming-everyday-decisions
-  repo-actions: [edit, source, issue]
   site-url: https://courses.nilsroemer.com
   bread-crumbs: true
   sidebar:
@@ -35,51 +34,51 @@ website:
             href: lectures/lec_00_introduction.qmd
           - text: "Lecture"
             href: lectures/lec_01_optimal_stopping.qmd
-          - text: "01-01 - Variables"
+          - text: "01-01: Variables"
             href: tutorials/tut_01_01_variables.qmd
-          - text: "01-02 - Comparisons"
+          - text: "01-02: Comparisons"
             href: tutorials/tut_01_02_comparisons.qmd
-          - text: "01-03 - Decisions"
+          - text: "01-03: Decisions"
             href: tutorials/tut_01_03_stopping.qmd
       - section: "02 Explore/Exploit"
         contents:
           - text: "Lecture"
             href: lectures/lec_02_explore_exploit.qmd
-          - text: "02-01 - Lists"
+          - text: "02-01: Lists"
             href: tutorials/tut_02_01_lists.qmd
-          - text: "02-02 - Loops"
+          - text: "02-02: Loops"
             href: tutorials/tut_02_02_loops.qmd
-          - text: "02-03 - Exploration"
+          - text: "02-03: Exploration"
             href: tutorials/tut_02_03_explore_exploit.qmd
       - section: "03 Caching"
         contents:
           - text: "Lecture"
             href: lectures/lec_03_caching.qmd
-          - text: "03-01 - Recap"
+          - text: "03-01: Recap"
             href: tutorials/tut_03_01_recap.qmd
-          - text: "03-02 - Functions"
+          - text: "03-02: Functions"
             href: tutorials/tut_03_02_functions.qmd
-          - text: "03-03 - Packages"
+          - text: "03-03: Packages"
             href: tutorials/tut_03_03_packages.qmd
       - section: "04 Scheduling"
         contents:
           - text: "Lecture"
             href: lectures/lec_04_scheduling.qmd
-          - text: "04-01 - Recap"
+          - text: "04-01: Recap"
             href: tutorials/tut_04_01_recap.qmd
-          - text: "04-02 - Dictionaries"
+          - text: "04-02: Dictionaries"
             href: tutorials/tut_04_02_dicts.qmd
-          - text: "04-03 - DataFrames"
+          - text: "04-03: DataFrames"
             href: tutorials/tut_04_03_dataframes.qmd
       - section: "05 Randomness"
         contents:
           - text: "Lecture"
             href: lectures/lec_05_randomness.qmd
-          - text: "05-01 - LLM"
+          - text: "05-01: LLM"
             href: lectures/tut_05_01_llm.qmd
-          - text: "05-02 - Recap"
+          - text: "05-02: Recap"
             href: tutorials/tut_05_02_recap.qmd
-          - text: "05-03 - Free Tasks"
+          - text: "05-03: Free Tasks"
             href: tutorials/tut_05_03_free.qmd
       - section: "06 Kindness"
         contents:

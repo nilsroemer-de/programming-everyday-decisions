@@ -231,16 +231,17 @@ h3, .h3 { letter-spacing: -.006em; color: var(--ink); }
    Content links (global, no page-specific overrides): text colour
    with a subtle grey underline; primary colour and underline on
    hover. Applies to the whole course site (website and tutorials);
-   slides have their own rule below. Scoped to the document body so
-   sidebar, TOC, footer and icon links keep their own styling.
+   slides have their own rule below. Scoped to the document body and
+   excluding navigation (breadcrumbs, sidebar, TOC, format links, page
+   footer), which keeps its own styling.
    ================================================================ */
-#quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link) {
+#quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link):not(nav a):not(#title-block-header a):not(.sidebar a):not(.nav-footer a):not(.quarto-alternate-formats a):not(.toc-actions a) {
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid var(--border-strong);
   transition: color .2s ease, border-color .2s ease;
 }
-#quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link):hover {
+#quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link):not(nav a):not(#title-block-header a):not(.sidebar a):not(.nav-footer a):not(.quarto-alternate-formats a):not(.toc-actions a):hover {
   color: var(--primary);
   border-bottom-color: var(--primary);
 }

@@ -1,5 +1,5 @@
 ---
-title: "Tutorial II.II - Loops"
+title: "Tutorial II.II: Loops"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 # Introduction

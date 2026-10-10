@@ -1,5 +1,5 @@
 ---
-title: "Tutorial IV.III - DataFrames"
+title: "Tutorial IV.III: DataFrames"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 

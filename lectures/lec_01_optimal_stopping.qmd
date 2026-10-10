@@ -1,10 +1,9 @@
 ---
-title: "Lecture I - Optimal Stopping"
+title: "Lecture I: Optimal Stopping"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
-author: "Dr. Nils Roemer"
 format:
   revealjs:
-    footer: " {{< meta title >}} | {{< meta author >}} | [Home](lec_01_optimal_stopping.qmd)"
+    footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_01_optimal_stopping.qmd)"
     output-file: lec_01_presentation.html
 ---
 

@@ -1,10 +1,9 @@
 ---
-title: "Tutorial V.I - Programming with AI"
+title: "Tutorial V.I: Programming with AI"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
-author: "Dr. Nils Roemer"
 format:
   revealjs:
-    footer: " {{< meta title >}} | {{< meta author >}} | [Home](tut_05_01_llm.qmd)"
+    footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](tut_05_01_llm.qmd)"
     output-file: tut_05_01_presentation.html
 ---
 

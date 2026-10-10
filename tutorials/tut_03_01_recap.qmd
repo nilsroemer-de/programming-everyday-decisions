@@ -1,5 +1,5 @@
 ---
-title: "Tutorial III.I - Recap with Caching"
+title: "Tutorial III.I: Recap with Caching"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 

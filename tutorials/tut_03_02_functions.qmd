@@ -1,5 +1,5 @@
 ---
-title: "Tutorial III.II - Functions"
+title: "Tutorial III.II: Functions"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 

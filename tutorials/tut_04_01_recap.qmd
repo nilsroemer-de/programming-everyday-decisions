@@ -1,5 +1,5 @@
 ---
-title: "Tutorial IV.I - Recap"
+title: "Tutorial IV.I: Recap"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 

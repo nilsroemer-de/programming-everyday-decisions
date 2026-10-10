@@ -1,5 +1,5 @@
 ---
-title: "Tutorial IV.II - Dictionaries"
+title: "Tutorial IV.II: Dictionaries"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 ---
 
