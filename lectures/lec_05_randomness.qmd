@@ -95,6 +95,7 @@ format:
 ```{python}
 #| echo: false
 import numpy as np
+np.random.seed(42)  # fixed seed: identical GIFs in animations/ on every run
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import pathlib
@@ -338,6 +339,7 @@ Computing and evaluating all possible combinations is not feasible!
 ```{python}
 #| echo: false
 import numpy as np
+np.random.seed(42)  # fixed seed: identical GIFs in animations/ on every run
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import pathlib
@@ -495,6 +497,7 @@ print(math.factorial(10))
 
 ```{python}
 #| echo: false
+np.random.seed(42)  # fixed seed: identical GIFs in animations/ on every run
 # Setup the figure with two subplots: main visualization and temperature
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(18, 8), height_ratios=[3, 1], dpi=150)
 plt.subplots_adjust(hspace=0.3)
@@ -591,6 +594,7 @@ plt.close()
 ```{python}
 #| echo: false
 import numpy as np
+np.random.seed(42)  # fixed seed: identical GIFs in animations/ on every run
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import pathlib

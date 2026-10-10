@@ -302,13 +302,13 @@ mindmap
       Resource constraints
 ```
 
-. . .
+## Task Classification II
 
 [Question:]{.question} **What types of tasks do you deal with most often?**
 
 ## Single Machine Scheduling
 
-![](../images/atlb/atlb_schedule-human.svg)
+![](../images/atlb/atlb_schedule-human.svg){height="340px"}
 
 [Question:]{.question} **What is different from before?**
 

@@ -68,7 +68,7 @@ assets/              # Self-hosted MathJax: assets/mathjax (v3, HTML) und assets
 fonts/               # woff2: Poppins, Inter, Space Mono (latin + latin-ext)
 fonts-ttf/           # TTF-Varianten für den Typst-PDF-Export (font-paths)
 images/              # Alle Bilder lokal (bg/, gif/, alg/, atlb/, caching/, Porträts)
-animations/          # GIFs für Lecture 05 (versioniert, ca. 23 MB)
+animations/          # GIFs für Lecture 05 (versioniert, ca. 23 MB, von lec_05 mit festem Seed erzeugt)
 CNAME                # Custom Domain für GitHub Pages
 pyproject.toml, uv.lock   # Python-Abhängigkeiten
 _freeze/, _site/, .quarto/   # Build-Cache und Output, gitignored, nie manuell bearbeiten
@@ -80,7 +80,7 @@ Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`
 
 **Theme:** Cosmo + `styles.scss` + Brand, in genau dieser Reihenfolge (`brand` muss nach `styles.scss` stehen, sonst „Undefined variable $brand-*", weil die Defaults-Ebenen rückwärts verarbeitet werden). Die RevealJS-Folien binden dieselbe `styles.scss` über `lectures/_metadata.yml` ein. Das Design ist eine reduzierte Ableitung des Planningio-Brands wie auf nilsroemer.com (Navy/Blau, Poppins für Überschriften, Inter für Fließtext, Space Mono für Code und Meta-Angaben). Kurs-spezifische Zusatzakzente (Amber, Rot, Grün) nur für Folien-Hervorhebungen und Callouts.
 
-**Ausführung:** `execute: freeze: true` in `_quarto.yml`. Achtung, `true` heißt: Beim Komplett-Render (`uv run quarto render`) werden Dokumente mit Python-Zellen **nie** neu ausgeführt, auch nicht nach Änderungen an der Quelle. Quarto nimmt dann den kompletten Inhalt (inklusive Titel und Text) aus `_freeze/`. Nach jeder Änderung an einer Datei mit Code-Zellen (alle Tutorials, `lec_01`, `lec_05`) die Datei deshalb einmal einzeln rendern (`uv run quarto render tutorials/…qmd`), das aktualisiert den Cache. Alternativ vor dem Komplett-Render `_freeze/` löschen (dauert deutlich länger). Dateien ohne Code-Zellen sind nicht betroffen.
+**Ausführung:** `execute: freeze: auto` in `_quarto.yml`. Dokumente mit Python-Zellen (alle Tutorials, `lec_01`, `lec_05`) werden beim Render nur dann neu ausgeführt, wenn sich ihre Quelle geändert hat; sonst kommt der Inhalt aus `_freeze/`. Nicht auf `freeze: true` wechseln: damit würde Quarto auch nach Quelländerungen den alten Cache nehmen (inklusive veralteter Titel und Texte). Lecture V erzeugt beim Ausführen die GIFs in `animations/` mit festem Random-Seed (`np.random.seed(42)` in jeder Animationszelle), damit die versionierten Dateien bei jedem Lauf identisch bleiben; der Seed bleibt erhalten.
 
 ## Konventionen
 

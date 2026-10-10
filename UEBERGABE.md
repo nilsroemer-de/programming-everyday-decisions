@@ -117,7 +117,7 @@ Messartefakt, kein Problem: Codefolien melden 8 px „zu breit" (1058/1050), das
 3. `strong` nicht mehr blau. Mit 100+ fetten Begriffen pro Deck wäre Primärblau sonst Flächenfarbe. Falls du die Hervorhebung vermisst: `.reveal strong { color: var(--primary) }` ist eine Zeile.
 4. `.highlight` von Rot auf Ink-fett-mit-Sky-Fläche: Rot ist für `.errors` reserviert.
 5. Typst-Vorlage als Kopie der Quarto-Standardvorlage statt nur `include-in-header`: nur so lässt sich der Titelblock umbauen. Nachteil: bei Quarto-Updates gegen das Original abgleichen (steht in CLAUDE.md).
-6. `freeze: true` beibehalten, siehe Probleme.
+6. `freeze: true` beibehalten, siehe Probleme (in Nachtrag 4 auf `auto` umgestellt).
 
 **Probleme, die dabei aufgefallen sind**
 
@@ -125,12 +125,24 @@ Messartefakt, kein Problem: Codefolien melden 8 px „zu breit" (1058/1050), das
 - **`animations/` wird von Lecture V erzeugt.** Die vier GIFs entstehen in den Code-Zellen von `lec_05_randomness.qmd` und sehen nach jedem Neu-Ausführen anders aus (Zufallssimulation). Seit sie versioniert sind, erzeugt jeder Lauf ohne Freeze-Cache 23 MB Diff. Ich habe nach dem Neu-Ausführen die committeten Versionen wiederhergestellt. Entscheide, ob die GIFs versioniert bleiben (dann nach einem Neu-Ausführen jeweils `git checkout -- animations`) oder ob sie wieder gitignored werden und die Erzeugung Teil des Builds ist (dann scheitert ein frischer Clone nicht mehr, weil `_freeze/` ohnehin fehlt und die Zellen laufen).
 - **`lectures/lec_01_optimal_stopping_files/figure-revealjs/cell-3-output-1.png`** ist im Repo versioniert, wird aber von jedem Render gelöscht (Quarto legt die Grafik in `_freeze/` ab). Ich habe die Datei jeweils wiederhergestellt. Empfehlung: `git rm`, sie ist ein Build-Artefakt.
 
+## Nachtrag 4, 10. Oktober 2026: Freeze, Seed, Überlauf-Folien, Merge
+
+**Umgesetzt**
+
+1. `execute: freeze: auto` in `_quarto.yml`; CLAUDE.md entsprechend (Abschnitt „Ausführung" und Projektstruktur). Dokumente mit Code-Zellen werden jetzt nur bei geänderter Quelle neu ausgeführt.
+2. `lec_05_randomness.qmd`: in jeder der vier Animationszellen (Dice Rolls, Estimating π, Simulated Annealing, TSP) steht am Anfang `np.random.seed(42)`. Die GIFs in `animations/` wurden einmal neu erzeugt und committet (24 MB). Reproduzierbarkeit geprüft: `_freeze/lectures/lec_05_randomness` gelöscht, Lecture V erneut gerendert, MD5-Summen aller vier GIFs identisch (siehe unten).
+3. `lectures/lec_01_optimal_stopping_files/figure-revealjs/cell-3-output-1.png` per `git rm` entfernt.
+4. Überlauf-Folien: Lecture II „The Bellman approach III" und „The Gittins Index IV" mit `{.smaller}`; Lecture IV „Single Machine Scheduling" Bild auf `{height="340px"}`; „Task Classification" zweite Frage auf die neue Folie „Task Classification II" (Lecture IV hat jetzt 83 statt 82 Folien). Überlaufprüfung erneut für alle acht Decks (normal und `?print-pdf`): 0 Überläufe, 0 Footer-Berührungen, 0 Folien mit zwei Druckseiten. Übrig bleibt nur das bekannte Messartefakt (Kopieren-Button, 8 px) auf drei Codefolien. Screenshots in `screenshots-review/nachtrag-4/`.
+5. Komplett-Render fehlerfrei ohne Warnungen (`render_round4.log` im Scratchpad). `design-angleich` in `main` gemergt, Worktree und Branch aufgeräumt, nichts veröffentlicht.
+
+**Entscheidungen**
+
+- Seed 42 in jeder Zelle statt einmal am Anfang: die Zellen sind unabhängig voneinander ausführbar (z. B. beim Rendern einzelner Abschnitte oder in einem Notebook), und jede soll für sich reproduzierbar sein.
+- Neue Folie heißt „Task Classification II" (römische Nummerierung wie bei „The Bellman approach III").
+
 ## Offene Fragen an dich
 
 - Syllabus-Untertitel „This year's course structure" und Semesterangaben vor Kursstart prüfen.
-- Die vier Überlauf-Folien aus der Tabelle in Nachtrag 3 (Inhalt kürzen, aufteilen oder `{.smaller}`).
-- `freeze: true` → `freeze: auto`? (siehe Probleme in Nachtrag 3)
-- `animations/` versioniert lassen oder von Lecture V erzeugen lassen? (siehe Probleme in Nachtrag 3)
 - Grundschrift der Folien: 32 px passend für den Hörsaal, oder lieber 34 bis 36 px?
 
 ## Probleme
