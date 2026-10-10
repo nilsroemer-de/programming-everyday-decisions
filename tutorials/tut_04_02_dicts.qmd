@@ -174,7 +174,7 @@ Compute the average priority of the tasks in the `tasks` dictionary. Save the re
 ```{python}
 #| eval: false
 # Test your answer
-assert len(tasks) == 4, "The number of tasks is not correct. It should be 4 based on the previous excercises."
+assert len(tasks) == 4, "The number of tasks is not correct. It should be 4 based on the previous exercises."
 assert average_priority == 4.25, "The average priority is not correct. It should be 4.25."
 print("Great! You've successfully computed the average priority of the tasks.")
 ```
@@ -220,7 +220,7 @@ print("Great! You've successfully removed a task from the dictionary.")
 Great! You've just navigated through the basics of dictionaries in Python. Dictionaries are powerful data structures that allow for efficient data organization and retrieval. Remember:
 
 - Dictionaries can store information using key-value pairs
-- Accessing them using keys is efficient and easier as accessing them using indices
+- Accessing them using keys is efficient and easier than accessing them using indices
 - Loops can iterate over dictionaries to perform operations on each key-value pair
 
 {{< include ../include/tutorial_end.qmd >}}

@@ -18,7 +18,7 @@ WHY it matters: You avoid random breakage when different projects need different
 
 ## Install `uv`
 
-Choose the instructions for your operating system. To these, you need to work in your terminal.
+Choose the instructions for your operating system. For this, you need to work in your terminal.
 
 :::{.callout-tip}
 Open the terminal in VS Code by selecting (Terminal → New Terminal).
@@ -73,7 +73,7 @@ If you get "command not found" or "'uv' is not recognized":
 :::
 
 
-## InstallPython
+## Install Python
 
 We want everyone on the **same** Python version for consistency. Thus, we’ll use Python 3.12 for the course this year.
 

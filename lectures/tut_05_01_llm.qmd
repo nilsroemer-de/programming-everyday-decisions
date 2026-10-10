@@ -17,7 +17,7 @@ format:
 . . .
 
 <center>
-<img src="../images/gif/tut05-llm.gif" width="400" height="400" alt=""></p>
+<img src="../images/gif/tut05-llm.gif" width="400" height="400" alt="">
 </center>
 
 
@@ -51,7 +51,7 @@ Models work?
 - Learns patterns in **how words and ideas connect** via tokens
 - Interconnected nodes with **weights representing patterns**
 - During training, these **weights are adjusted**
-- Once trained, **applying** them takes much less ressources
+- Once trained, **applying** them takes much less resources
 
 . . .
 
@@ -76,7 +76,7 @@ Managing **context windows** is crucial!
 ## Probability based responses
 
 - After each written token, it predicts ["what should come next?"]{.highlight}
-- Like a advanced version of the **word prediction** on your phone
+- Like an advanced version of the **word prediction** on your phone
 - Chooses the **most likely next token** based on training
 - [But can't actually "think" or "understand" like humans]{.highlight}
 
@@ -113,7 +113,7 @@ If you use free models, be aware that your prompts are going to be used by the p
 
 ## A Great Overview by 3Blue1Brown
 
-- **Greg Sanderson provides an excellent explanation of LLMs**
+- **Grant Sanderson provides an excellent explanation of LLMs**
 - Great starting point to understand LLMs
 - Check out his [YouTube channel, 3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) for more
 
@@ -142,7 +142,7 @@ Copilot uses AI trained on billions of lines of public code to suggest completio
 . . .
 
 ::: callout-tip
-There are alternative like Zed or Cursor, but you can use Copilot for free as student.
+There are alternatives like Zed or Cursor, but you can use Copilot for free as student.
 :::
 
 ## Used autocomplete before?
@@ -161,7 +161,7 @@ When you type on your phone, it suggests the next word.
 
 . . .
 
-[It's autocomplete but much better then what you are used to]{.highlight}
+[It's autocomplete but much better than what you are used to]{.highlight}
 
 ## Why Use Copilot?
 
@@ -218,7 +218,7 @@ Especially helpful when you know **WHAT** you want to do but forget **HOW** to d
 - Contains subtle bugs or edge cases
 - Doesn't match your specific requirements
 - Uses inefficient approaches
-- Introduce dangerous code in your project
+- Introduces dangerous code in your project
 
 . . .
 
@@ -253,7 +253,7 @@ Don't accept code blindly, especially later if things are more complicated.
 2. Sign up with your university email
 3. Verify your student status
 4. Wait for approval (usually 1-2 days)
-5. Login into your account in VS Code
+5. Log in to your account in VS Code
 
 . . .
 
@@ -277,7 +277,7 @@ You'll need a GitHub account. Create one at [github.com](https://github.com) if 
 . . .
 
 ::: callout-tip
-Try to get copilot running on your own until next session.
+Try to get Copilot running on your own until next session.
 :::
 
 # [Summary]{.flow} {.title}

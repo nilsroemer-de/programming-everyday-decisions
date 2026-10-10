@@ -25,7 +25,7 @@ date_name = "Alexander" # Current date's name
 red_flags = 0 # Count of red flags noticed
 butterflies_felt = True # Do I feel butterflies?
 compatibility_score = 8.5 # On a scale of 1-10, how compatible are we?
-print("We have defined a some variables based on tonight's date.")
+print("We have defined some variables based on tonight's date.")
 ```
 
 :::{.callout-tip}
@@ -236,7 +236,7 @@ We have already defined the variables `name` and `minimum_rating`. Now we want t
 #| code-fold: true
 # Test your answer
 assert profile_message == "Hello, Casey! Nice to meet you. I hope you are at least 7.0/10 compatible with me!", "Format your first message to Casey correctly!"
-print("Your message is send - good luck!")
+print("Your message is sent - good luck!")
 ```
 
 # Conclusion

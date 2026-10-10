@@ -151,7 +151,7 @@ Great resources to start are books and small challenges. You can find a list of 
 <br>
 <img src="../images/gif/lec00-intro.gif" width="480" height="360" alt="">
 
-<center>
+</center>
 
 # [Setting up Python]{.flow} {.title}
 
@@ -196,11 +196,11 @@ If the installation does not work, **let us know!**
 
 - Have you installed `uv` and initialized the project?
 - Great! Before we continue, check the following:
-  - [] You have a folder for the course
-  - [] You have initialized `uv` with `uv init` inside the folder
-  - [] You can see a file called `pyproject.toml` in the folder
+  - [ ] You have a folder for the course
+  - [ ] You have initialized `uv` with `uv init` inside the folder
+  - [ ] You can see a file called `pyproject.toml` in the folder
 
-  . . .
+. . .
 
 :::{.callout-tip}
 Something not working yet? Ask us!

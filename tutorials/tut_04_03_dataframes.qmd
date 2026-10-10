@@ -41,7 +41,7 @@ print(tasks)
 
 ::: {.callout-note}
 
-The `pd.DataFrame()` function is used to create a DataFrame. A DataFrame is a two-dimensional, size-mutable, and heterogeneous tabular data structure with labeled axes (rows and columns). Here, we've created a DataFrame with three rows and four columns: `task`, `duration`, and `deadline`.
+The `pd.DataFrame()` function is used to create a DataFrame. A DataFrame is a two-dimensional, size-mutable, and heterogeneous tabular data structure with labeled axes (rows and columns). Here, we've created a DataFrame with three rows and three columns: `task`, `duration`, and `deadline`.
 
 :::
 
@@ -137,7 +137,7 @@ subset = tasks.loc['Task 2', 'task']
 print("\nSubset of data based on labels:\n", subset)
 ```
 
-## Exercise 4.1 - Data Access Practice
+## Exercise 2.1 - Data Access Practice
 
 Using the `mission_tasks` DataFrame from earlier, complete these tasks:
 
@@ -197,7 +197,7 @@ print(tasks)
 
 Here, we've added a new column called `delayed_deadline` to the `tasks` DataFrame. The new column is calculated by adding 1 to the `deadline` column.
 
-## Exercise 2.1 - Apply EDD to Mission Tasks
+## Exercise 3.1 - Apply EDD to Mission Tasks
 
 Sort your `mission_tasks` using the EDD algorithm (sort by deadline).
 
@@ -215,9 +215,9 @@ print("EDD Schedule created successfully!")
 print(edd_schedule)
 ```
 
-## Exercise 2.2 - Calculate New Deadline
+## Exercise 3.2 - Calculate New Deadline
 
-Unfortuantely, the mission has been delayed as some tasks are rather complex. Add a new column to the `mission_tasks` DataFrame called `new_deadline`. The new deadline is the old deadline plus the duration of the task.
+Unfortunately, the mission has been delayed as some tasks are rather complex. Add a new column to the `mission_tasks` DataFrame called `new_deadline`. The new deadline is the old deadline plus the duration of the task.
 
 ```{python}
 #| eval: true
@@ -234,7 +234,7 @@ print("New deadlines calculated successfully!")
 print(mission_tasks)
 ```
 
-# Section 3 - Looping over DataFrames
+# Section 4 - Looping over DataFrames
 
 Now, we want to apply the EDD algorithm to the `mission_tasks` DataFrame. We can do this sorting the rows by deadline and then looping over the rows, computing the completion time and the maximum delay.
 
@@ -276,7 +276,7 @@ If you want to access the index of the row, you can use the `name` attribute to 
 print(sorted_tasks.iloc[-1].name)
 ```
 
-## Exercise 3.1 - Apply Earliest Due Date to Mission Tasks
+## Exercise 4.1 - Apply Earliest Due Date to Mission Tasks
 
 Now it is your turn: Apply the EDD algorithm to the `mission_tasks` DataFrame. Remember, that the EDD algorithm **sorts the tasks by the original deadline** and then loops over the rows, computing the completion time and maximum delay for each task (just like in the example above).
 
@@ -296,11 +296,11 @@ print("EDD Schedule created successfully!")
 print(edd_schedule)
 ```
 
-## Exercise 3.2 - Apply Shortest Processing Time to Mission Tasks
+## Exercise 4.2 - Apply Shortest Processing Time to Mission Tasks
 
 Now, apply the SPT algorithm to the `mission_tasks` DataFrame. Remember, that the SPT algorithm **sorts the tasks by duration** and then loops over the rows, computing the completion time and total waiting time for all tasks.
 
-Compute the sum of the waiting times for all tasks in a variabel called `total_waiting_time` and compute the completion time of the last task in a variable called `completion_time`.
+Compute the sum of the waiting times for all tasks in a variable called `total_waiting_time` and compute the completion time of the last task in a variable called `completion_time`.
 
 ```{python}
 #| eval: true
@@ -332,4 +332,4 @@ Remember:
 
 ---
 
-*That's it for this weeks tutorials. Next week we are going to cover the topic of randomness in everyday life.*
+*That's it for this week's tutorials. Next week we are going to cover the topic of randomness in everyday life.*

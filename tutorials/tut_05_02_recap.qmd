@@ -5,7 +5,7 @@ subtitle: "Programming: Everyday Decision-Making Algorithms"
 
 # Introduction
 
-[From now on, it is rather difficult to give you tasks that you cannot solve within minutes by yourself with the help of AI]{.highlight}. Therefore, today's tutorial will be more open-ended than usual. All tasks are designed to be solved together with AI, but you are nonetheless the human in the loop. Thus, your responsiblities are to control the AI and to learn how to use it by doing. Instructions and explanations will only be given sparsely, as you are encouraged to use AI to ask for help and explanations to explore the tasks on your own.
+[From now on, it is rather difficult to give you tasks that you cannot solve within minutes by yourself with the help of AI]{.highlight}. Therefore, today's tutorial will be more open-ended than usual. All tasks are designed to be solved together with AI, but you are nonetheless the human in the loop. Thus, your responsibilities are to control the AI and to learn how to use it by doing. Instructions and explanations will only be given sparsely, as you are encouraged to use AI to ask for help and explanations to explore the tasks on your own.
 
 Let's explore how randomness affects our daily decision-making. As always, we will use Python and simulate various scenarios where randomness plays a crucial role.
 
@@ -93,7 +93,7 @@ appetizers = ["Sorted Salad", "Binary Bruschetta", "Array of Antipasti"]
 mains = ["Loop Lasagna", "Python Pasta", "Recursive Risotto"]
 desserts = ["Binary Brownie", "Cache Cookie", "Stack Sundae"]
 
-# YOUR CODE HERE
+# YOUR CODE BELOW
 
 ```
 ```{python}
@@ -123,7 +123,7 @@ Your task is to create a function `schedule_tasks(tasks)` that:
 
 - Sorts tasks by due date
 - Creates a schedule with start and end times for each task
-- Returns the complete schedule as an pandas DataFrame
+- Returns the complete schedule as a pandas DataFrame
 - Keep the same column names as in the dictionary
 
 ```{python}
@@ -160,7 +160,7 @@ tasks = [
     }
 ]
 
-# YOUR CODE HERE
+# YOUR CODE BELOW
 
 ```
 ```{python}
@@ -204,7 +204,7 @@ cost_df = pd.DataFrame(cost_matrix, index=cities, columns=cities)
 # Display the DataFrame
 print(cost_df)
 
-# YOUR CODE HERE
+# YOUR CODE BELOW
 
 ```
 ```{python}

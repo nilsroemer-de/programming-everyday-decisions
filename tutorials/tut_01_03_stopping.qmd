@@ -293,4 +293,4 @@ Remember, just like in apartment hunting, these tools help us make better decisi
 
 {{< include ../include/tutorial_end.qmd >}}
 
-*That's it for part I! Next week, we'll apply these skills exploration and exploitation!*
+*That's it for part I! Next week, we'll apply these skills to exploration and exploitation!*

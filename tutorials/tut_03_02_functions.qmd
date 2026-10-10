@@ -292,4 +292,4 @@ In a real library system, functions like these would be part of a larger caching
 
 ---
 
-*In the next tutorial, we'll take a look on how to import packages and libraries to extend our functionality!*
+*In the next tutorial, we'll take a look at how to import packages and libraries to extend our functionality!*

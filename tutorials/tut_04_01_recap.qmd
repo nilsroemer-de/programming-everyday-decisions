@@ -5,7 +5,7 @@ subtitle: "Programming: Everyday Decision-Making Algorithms"
 
 # Introduction
 
-To get you started again on the topics of the last lecture, we'll go through a recap of th previous concepts before we start with some new concepts. In this tutorial, we'll apply Python programming concepts to solve common scheduling problems to make better scheduling decisions!
+To get you started again on the topics of the last lecture, we'll go through a recap of the previous concepts before we start with some new concepts. In this tutorial, we'll apply Python programming concepts to solve common scheduling problems to make better scheduling decisions!
 
 Imagine you're managing "The Python Café". Every day, you face these challenges:
 
@@ -34,7 +34,7 @@ Create two lists:
 
 ```{python}
 #| eval: true
-# YOUR CODE HERE
+# YOUR CODE BELOW
 
 ```
 
@@ -52,7 +52,7 @@ print("Great! Your menu lists have been created.")
 
 # Section 2 - Shortest Processing Time
 
-One effective scheduling strategy is to handle the quickest tasks first. This minimizes average waiting time. To find the quickest drink, we can use a inbuilt function in Python, but let's try to do it by ourselves first with a loop. Remember how to loop through a list from the previous lecture? Loops are created using the `for` keyword. The `for` loop is used to iterate over a sequence (like a list) and execute a block of code for each item in the sequence.
+One effective scheduling strategy is to handle the quickest tasks first. This minimizes average waiting time. To find the quickest drink, we can use an inbuilt function in Python, but let's try to do it by ourselves first with a loop. Remember how to loop through a list from the previous lecture? Loops are created using the `for` keyword. The `for` loop is used to iterate over a sequence (like a list) and execute a block of code for each item in the sequence.
 
 ::: {.callout-note}
 ## Common Mistakes in Loops

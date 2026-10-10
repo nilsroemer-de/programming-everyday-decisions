@@ -254,7 +254,7 @@ Today's lecture will explain why that matters more than you think...
 - **Solution:** Multiple cache levels, each optimized for different needs
 :::
 
-## The nessecity of clearing out
+## The necessity of clearing out
 
 :::{.incremental}
 ::: {layout="[[50,50]]"}

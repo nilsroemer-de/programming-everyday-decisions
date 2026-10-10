@@ -155,7 +155,7 @@ if (flat_rating >= 9) and (price < 1000):
 
 # Lists and Tuples
 
-# Lists
+## Lists
 
 - **Definition**: Ordered, mutable collections of items.
 - **Creation**: Use square brackets `[]`.

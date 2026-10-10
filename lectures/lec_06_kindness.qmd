@@ -1,6 +1,6 @@
 ---
 title: "Lecture VI: Computational Kindness"
-subtitle: "Programming with Python"
+subtitle: "Programming: Everyday Decision-Making Algorithms"
 format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_06_kindness.qmd)"
@@ -187,7 +187,7 @@ Several ways to counter overfitting, e.g. cross-validation.
 <img src="../images/gif/lec06-second.gif" width="480" height="355" alt="">
 </center>
 
-# [Q&A]{.flow}
+# [Q&A]{.flow} {.title}
 
 # [Literature]{.flow} {.title}
 

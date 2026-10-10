@@ -773,7 +773,7 @@ Task  Duration  Priority
 
 ## EDD and Dependencies
 
-[Question:]{.question} **What's was earliest due date again?**
+[Question:]{.question} **What was earliest due date again?**
 
 . . .
 

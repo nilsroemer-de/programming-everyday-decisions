@@ -93,7 +93,7 @@ In Python, we start counting positions from 0, not 1. So `restaurants[0]` gives 
 
 ## Exercise 1.1 - Create a Restaurant List
 
-reate a list `favorite_spots` with your top three favorite restaurants. Remember to:
+Create a list `favorite_spots` with your top three favorite restaurants. Remember to:
 
 - Use square brackets `[]`
 - Put restaurant names in quotes (they're strings!)
@@ -198,7 +198,7 @@ assert best_rating == 4.5, "Should be the highest rating"
 print(f"The best restaurant is {best_restaurant} with a rating of {best_rating}")
 ```
 
-# Exercise 2.2 - Create a Categorized Restaurant List
+## Exercise 2.2 - Create a Categorized Restaurant List
 
 Create a nested list `categorized_restaurants` where each inner list contains:
 1. Two cuisine categories - here `"Italian"` and `"Japanese"`

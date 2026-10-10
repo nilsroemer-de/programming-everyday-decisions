@@ -5,7 +5,7 @@ subtitle: "Programming: Everyday Decision-Making Algorithms"
 
 # Introduction
 
-You're teaching a computer to make decisions. Just like we compare things in everyday life ("Is it raining?", "Do I have enough money?"), computers need ways to compare values and make choices. Let's look at this in the context of hiring decisions to help us how to make decisions in the context of optimal stopping problems.
+You're teaching a computer to make decisions. Just like we compare things in everyday life ("Is it raining?", "Do I have enough money?"), computers need ways to compare values and make choices. Let's look at this in the context of hiring decisions to help us make decisions in the context of optimal stopping problems.
 
 Imagine you're helping a company make hiring decisions. You need to look at different candidates and decide if they meet certain requirements. To make these decisions with Python, we need to learn how to make comparisons!
 
@@ -265,7 +265,7 @@ assert final_decision == False, "The candidate should not meet all requirements"
 print("Good job! You correctly identified that the candidate does not meet all requirements as his salary expectation is too high.")
 ```
 
-## Exercise 2.3 - Optimal Stopping Decision
+## Exercise 3.2 - Optimal Stopping Decision
 We have:
 
 - Seen 18 out of 40 candidates

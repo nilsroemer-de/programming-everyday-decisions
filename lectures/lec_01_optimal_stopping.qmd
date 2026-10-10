@@ -192,7 +192,7 @@ print(f"Look at first {lookout_phase:.3f} candidates")
 . . .
 
 ::: {.callout-note}
-No worries if you don't understand the code! We are essentialy just using the formula to calculate the percentage of candidates to look at.
+No worries if you don't understand the code! We are essentially just using the formula to calculate the percentage of candidates to look at.
 :::
 
 ## Geometric Distribution
