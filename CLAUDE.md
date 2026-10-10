@@ -19,7 +19,7 @@ Der Name wird immer **„Roemer"** geschrieben, nie „Römer", auch in Alt-Text
 - **Keine CI/CD:** Keine GitHub Actions, kein automatischer Deploy. Veröffentlicht wird ausschließlich manuell (siehe Workflow).
 - **Toolchain:** Quarto 1.9.x, `uv` (Python 3.12, Abhängigkeiten in `pyproject.toml`/`uv.lock`: jupyter, jupytext, matplotlib, numpy, pandas), Git, Claude Code.
 - **Mermaid:** Die Mermaid-Diagramme in `lectures/lec_04_scheduling.qmd` brauchen für den Typst-/PDF-Export das Quarto-Tool `chrome-headless-shell` (`quarto tools`; installieren mit `quarto install chrome-headless-shell`). Ohne das Tool scheitert der Render.
-- **Nicht versionierte Build-Voraussetzungen:** `_freeze/` (Ausführungs-Cache) und `animations/` (GIFs, von `lec_05_randomness.qmd` referenziert) sind gitignored, werden beim Render aber gebraucht. In einem frischen Clone oder Worktree beide Ordner aus dem Hauptcheckout kopieren, sonst scheitert der Typst-Export von Lecture 05 bzw. werden alle Python-Zellen neu ausgeführt.
+- **Nicht versionierte Build-Voraussetzung:** `_freeze/` (Ausführungs-Cache) ist gitignored. In einem frischen Clone oder Worktree den Ordner aus dem Hauptcheckout kopieren, sonst werden alle Python-Zellen neu ausgeführt (dauert deutlich länger, scheitert aber nicht).
 
 ## Wichtige Befehle
 
@@ -67,7 +67,7 @@ assets/              # Self-hosted MathJax: assets/mathjax (v3, HTML) und assets
 fonts/               # woff2: Poppins, Inter, Space Mono (latin + latin-ext)
 fonts-ttf/           # TTF-Varianten für den Typst-PDF-Export (font-paths)
 images/              # Alle Bilder lokal (bg/, gif/, alg/, atlb/, caching/, Porträts)
-animations/          # GIFs für Lecture 05, gitignored (siehe Infrastruktur)
+animations/          # GIFs für Lecture 05 (versioniert, ca. 23 MB)
 CNAME                # Custom Domain für GitHub Pages
 pyproject.toml, uv.lock   # Python-Abhängigkeiten
 _freeze/, _site/, .quarto/   # Build-Cache und Output, gitignored, nie manuell bearbeiten
@@ -89,7 +89,7 @@ Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`
   - Keine sichtbaren Datumsangaben („Stand: …", „Last updated …") einfügen.
   - Änderungen an Rechtstexten vor dem Einarbeiten als Vorschlag zeigen und von Nils freigeben lassen. Das gilt auch für scheinbar triviale Korrekturen.
 - **Keine Gedankenstriche als Satzzeichen im sichtbaren Text.** Sätze stattdessen umformulieren (Komma, Punkt, Doppelpunkt, Klammer). Bereichsangaben wie `2018–2022` bleiben. Code, Code-Kommentare und Rechtstexte sind davon ausgenommen und werden nicht angefasst.
-- **Links im Inhalt:** Textfarbe, keine Unterstreichung, bei Hover Primärfarbe mit Unterstreichung. Global in `styles.scss` definiert (Website, Tutorials und Folien), keine seitenspezifischen Abweichungen. Einzige bewusste Ausnahme: In Tutorials (`body-classes: tutorial` über `tutorials/_metadata.yml` und in `lectures/tut_05_01_llm.qmd`) behalten Links im Fließtext eine dezente graue Unterstreichung, damit sie in Aufgabentexten auffindbar bleiben.
+- **Links im Inhalt:** Textfarbe mit dezenter grauer Unterstreichung (`--border-strong`), bei Hover Primärfarbe mit Unterstreichung in Primärfarbe. Gilt auf der gesamten Kursseite (Website und Tutorials), global in `styles.scss` definiert, keine seitenspezifischen Abweichungen. Bewusste Abweichung von nilsroemer.com: Die graue Linie bleibt, damit Links in Aufgaben- und Fließtexten auffindbar sind. Folien ausgenommen: dort Textfarbe ohne Linie, Hover Primärfarbe mit Linie.
 - **Seitenkopf:** Auf allen Website-Seiten gleich, global in `styles.scss` definiert (Block „Page header", Spacing über die `--space-*`-Tokens). Anders als auf nilsroemer.com bleibt Quartos Title-Block der Seitenkopf (Titel, Untertitel, Lecturer/Affiliation, Format-Links); die Rechtstexte nutzen `pagetitle:` und ein `#` im Body. Abstände: oberhalb des Kopfs `padding-top` auf `main` (`--space-6`), Kopf → Inhalt `margin-bottom` des Title-Blocks bzw. der Body-h1 (`--space-5`), vor jedem Abschnitt `margin-top` der h2 (`--space-7`). Keine Linie unter h1 oder h2, keine seitenspezifischen Abweichungen. Folien sind davon ausgenommen.
 - **Abschnittstitel und Labels** ruhig halten wie auf nilsroemer.com: Meta-Angaben (Untertitel, Lecturer, Breadcrumbs, „On this page", „Other Formats") als kleine, gedämpfte Labels in Space Mono bzw. Poppins-Uppercase.
 - **Eintrags-Layout (Startseite, Syllabus):** Entspricht `.entries` auf nilsroemer.com, wird hier aber über `body-classes: entries` im YAML-Header aktiviert, nicht über ein `::: {.entries}`-Div. Grund: Pandoc erzeugt kein Inhaltsverzeichnis, wenn mehrere `##`-Abschnitte in einem Div liegen. Abschnitte als `##` (kleine Uppercase-Labels), Einträge als `###`, Meta-Zeile als `[…]{.entry-meta}` (Space Mono, gedämpft).
@@ -104,12 +104,10 @@ Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`
 
 - Live unter courses.nilsroemer.com (GitHub Pages). Kursstart Ende Oktober 2026.
 - Seit Juli 2026 betreibt Nils die Seite allein; Design an nilsroemer.com angeglichen, alle Drittanbieter-Requests entfernt, Rechtstexte aktualisiert, Tobias nur noch in den Credits.
-- Design-Pass Oktober 2026 (Branch `design-angleich`): globaler Linkstil, ruhige Abschnittstitel und Labels, Gedankenstriche im sichtbaren Text entfernt, Tutorial-Nummerierung in der Sidebar vereinheitlicht. Details in `UEBERGABE.md`.
+- Design-Pass Oktober 2026 (Branch `design-angleich`): globaler Linkstil, ruhige Abschnittstitel und Labels, Gedankenstriche im sichtbaren Text entfernt, Tutorial-Nummerierung in der Sidebar vereinheitlicht, `animations/` versioniert. Details in `UEBERGABE.md`.
 
 **Offene Punkte**
 
 - Vor Kursstart: Termine und Semesterangaben prüfen (Syllabus, Startseite, `klu_syllabus.md`), Welcome-Mail in `messages/` aktualisieren.
-- `animations/` und `_freeze/` sind gitignored, werden aber zum Rendern gebraucht. Entscheiden, ob `animations/` versioniert werden soll.
-- `404.qmd` steht in `project.render`, existiert aber nicht; Quarto ignoriert das stillschweigend. Entweder anlegen oder den Eintrag entfernen.
 - Wenn eigene Analytics gewünscht: neu einbauen und Datenschutzerklärung ergänzen (nach Freigabe).
 - Optional: Favicon, Open-Graph-Metadaten.

@@ -3,7 +3,6 @@ project:
   post-render:
     - python3 helpers/strip_polyfill.py
   render:
-    - 404.qmd
     - index.qmd
     - general/*.qmd
     - lectures/*.qmd

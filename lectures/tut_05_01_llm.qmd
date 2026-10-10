@@ -3,8 +3,6 @@ title: "Tutorial V.I - Programming with AI"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 author: "Dr. Nils Roemer"
 format:
-  html:
-    body-classes: tutorial
   revealjs:
     footer: " {{< meta title >}} | {{< meta author >}} | [Home](tut_05_01_llm.qmd)"
     output-file: tut_05_01_presentation.html

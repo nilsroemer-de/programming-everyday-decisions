@@ -228,15 +228,16 @@ h3, .h3 { letter-spacing: -.006em; color: var(--ink); }
 }
 
 /* ================================================================
-   Content links (global, no page-specific overrides, same as
-   nilsroemer.com): text colour, no underline; primary colour and
-   underline on hover. Scoped to the document body so sidebar, TOC,
-   footer and icon links keep their own styling.
+   Content links (global, no page-specific overrides): text colour
+   with a subtle grey underline; primary colour and underline on
+   hover. Applies to the whole course site (website and tutorials);
+   slides have their own rule below. Scoped to the document body so
+   sidebar, TOC, footer and icon links keep their own styling.
    ================================================================ */
 #quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link) {
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--border-strong);
   transition: color .2s ease, border-color .2s ease;
 }
 #quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link):hover {
@@ -247,15 +248,6 @@ h3, .h3 { letter-spacing: -.006em; color: var(--ink); }
 #quarto-document-content code a {
   color: inherit;
   border-bottom: none;
-}
-
-/* Exception for tutorials (body-classes: tutorial): links inside
-   exercise text keep a subtle marker so students can still find them. */
-body.tutorial #quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link) {
-  border-bottom-color: var(--border-strong);
-}
-body.tutorial #quarto-document-content :is(p, li, td, th, dd, dt, figcaption, blockquote) a:not(.btn):not(.anchorjs-link):hover {
-  border-bottom-color: var(--primary);
 }
 
 /* ================================================================

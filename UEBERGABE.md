@@ -1,6 +1,6 @@
 # Übergabe: Branch `design-angleich`
 
-Stand: 9. Oktober 2026. Branch ist gepusht, nicht in `main` gemergt, nicht veröffentlicht. Worktree: `.claude/worktrees/design-angleich`.
+Stand: 10. Oktober 2026 (Nachtrag unten). Branch ist gepusht, nicht in `main` gemergt, nicht veröffentlicht. Worktree: `.claude/worktrees/design-angleich`.
 
 ## Was geändert wurde
 
@@ -37,16 +37,22 @@ Stand: 9. Oktober 2026. Branch ist gepusht, nicht in `main` gemergt, nicht verö
 7. **`_brand.yml`**: `link.decoration` von `underline` auf `none`, damit Brand und Linkstil nicht gegeneinander arbeiten.
 8. **Nicht angefasst**: Rechtstexte, Code, Code-Kommentare, Bindestriche mit Leerzeichen in Titeln („Lecture I - Optimal Stopping"), Folien-Typografie abseits des Linkstils, `author:`-Zeile der Startseite (Credit).
 
+## Nachtrag 10. Oktober 2026: deine Antworten umgesetzt
+
+1. **Linkkennzeichnung gilt auf der gesamten Kursseite.** Die graue Unterstreichung (`--border-strong`, Hover Primärfarbe) ist jetzt die globale Regel in `styles.scss`, die Tutorial-Ausnahme und die `body-classes: tutorial` in `tutorials/_metadata.yml` und `lectures/tut_05_01_llm.qmd` sind entfernt (beide Dateien wieder wie auf `main`). Folien unverändert: Textfarbe ohne Linie, Hover Primärfarbe. Entscheidung 1 unten ist damit überholt.
+2. **`animations/` versioniert.** Gesamtgröße 23 MB (vier GIFs, größte `dice_fairness.gif` mit 9,6 MB), also unter deiner 50-MB-Grenze. Eintrag aus `.gitignore` entfernt, Ordner eingecheckt.
+3. **`404.qmd` aus `project.render` entfernt.**
+4. **`.claude/worktrees/` in `.gitignore` aufgenommen.**
+
+CLAUDE.md entsprechend angepasst (Linkkonvention, Build-Voraussetzungen, offene Punkte).
+
 ## Offene Fragen an dich
 
-- Sollen die Website-Links auf der Startseite („syllabus", „Quarto", „revealjs") und in den FAQ (E-Mail, GitHub) wirklich unsichtbar bleiben, oder sollen sie als Linktext umformuliert werden (z. B. „See the syllabus →" wie „Course website →" auf nilsroemer.com)?
-- Soll `animations/` versioniert werden? Der Ordner ist gitignored, ohne ihn scheitert der Typst-Export von Lecture 05 (siehe Probleme).
-- `404.qmd` steht in `project.render`, existiert aber nicht. Anlegen oder Eintrag entfernen?
 - Syllabus-Untertitel „This year's course structure" und Semesterangaben vor Kursstart prüfen.
 
 ## Probleme
 
-- **Build in frischem Checkout schlägt fehl**: `animations/` (GIFs für `lec_05_randomness.qmd`) und `_freeze/` sind gitignored. Für den Worktree habe ich beide aus dem Hauptcheckout kopiert. In CLAUDE.md dokumentiert.
+- **Build in frischem Checkout** (erledigt im Nachtrag): `animations/` war gitignored, ohne den Ordner scheiterte der Typst-Export von Lecture 05. Jetzt versioniert. `_freeze/` bleibt gitignored; ohne den Cache werden alle Python-Zellen neu ausgeführt, der Build läuft aber durch.
 - **Slide-Klassen auf der Lecture-HTML-Seite**: `.invert-font`, `.loud-slide` und Bildnachweise mit weißem Text auf dunklem Grund erscheinen auch in der HTML-Version der Lectures (vorbestehend, nicht Teil dieses Auftrags, siehe Screenshot `lecture-page.png`).
 - Beim Bisect für das TOC-Problem habe ich `index.qmd` und `general/syllabus.qmd` mehrfach einzeln gerendert; der finale Komplett-Render lief danach fehlerfrei durch (siehe Log).
 

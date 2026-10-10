@@ -169,6 +169,8 @@ cython_debug/
 solutions
 students
 _repo-md
-animations
 
 **/*.quarto_ipynb
+
+# Claude Code worktrees
+.claude/worktrees/
