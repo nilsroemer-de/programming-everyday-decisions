@@ -1,6 +1,6 @@
 # Übergabe: Branch `design-angleich`
 
-Stand: 10. Oktober 2026 (Nachträge unten). Branch ist gepusht, nicht in `main` gemergt, nicht veröffentlicht. Worktree: `.claude/worktrees/design-angleich`.
+Stand: 10. Oktober 2026 (drei Nachträge unten, der jüngste ist die Design-Angleichung der Folien und PDFs). Branch ist gepusht, nicht in `main` gemergt, nicht veröffentlicht. Worktree: `.claude/worktrees/design-angleich`.
 
 ## Was geändert wurde
 
@@ -59,9 +59,79 @@ CLAUDE.md entsprechend angepasst (Linkkonvention, Build-Voraussetzungen, offene 
 
 CLAUDE.md entsprechend angepasst (Lecturer-Meta, Titel-Trennzeichen, Kontakt, Links).
 
+## Nachtrag 3, 10. Oktober 2026: Design-Angleichung Folien, PDF und Website
+
+Auftrag: Website, Tutorials, RevealJS-Folien und Typst-PDF einheitlich nach nilsroemer.com. Alles auf `design-angleich`, nicht gemergt, nicht veröffentlicht. Der Auftrag endete mit „ENDE DES AUFTRAGS", war also vollständig.
+
+**Schritt 1 (Issue-Verweise, Repo-Actions, Lecturer, Navigation, Titel)** war aus Nachtrag 2 bereits erledigt. Zusätzlich geprüft: Der PDF-Titelblock zeigt Lecturer und Affiliation (siehe Typst unten).
+
+**Schritt 2 („based on" → „inspired by")**
+
+- Geändert: `index.qmd` (Credits-Zeile und Kursbeschreibung), `lectures/lec_00_introduction.qmd` („Lecture inspired by the book"). Auf nilsroemer.com war das schon erledigt.
+- Bewusst nicht geändert: `klu_syllabus.md` (nicht gerenderte Kopie des bei der KLU eingereichten Syllabus, sollte dem eingereichten Text entsprechen) und fachliche Formulierungen wie „based on the geometric distribution" oder „based on dynamic programming", die nichts mit dem Buch zu tun haben.
+
+**Schritt 3 (RevealJS-Folien)**, alles in `styles.scss` (Defaults `$presentation-*`, Block „SLIDES"), keine Inhalte, keine Bilder, keine Reihenfolge geändert:
+
+- Typografie: Root-Schriftgröße 32 px statt 40 px (Quarto-Standard), Zeilenhöhe 1.45, Überschriften Poppins 600 in Ink (h2 1.45em), Listen mit gedämpften Aufzählungszeichen und etwas Luft. Die kleinere Grundschrift ist die wichtigste Einzelmaßnahme gegen den Überlauf und wirkt ruhiger; wenn dir die Folien im Hörsaal zu klein sind, ist `$presentation-font-size-root` die eine Stellschraube.
+- Titelfolie wie der Seitenkopf der Website: Titel in Poppins, Untertitel als Space-Mono-Label, darunter „Lecturer" und „Affiliation" als kleine Uppercase-Labels (per CSS `::before`, kein Inhalt geändert) mit den Werten in Space Mono.
+- Abschnittsfolien (`# Titel {.title}`): weiß statt Sky-Blau, Titel in Ink. `.flow` ist jetzt statisch (vorher animierter Farbverlauf), die Klasse bleibt in allen Dateien erhalten.
+- `.loud-slide`: weiß mit großem Ink-Text in Poppins statt dunkelblau mit heller Schrift. Reveal erkennt den hellen Hintergrund automatisch, Footer und Foliennummer passen sich an.
+- Hervorhebungen: `strong`/`em` in Textfarbe (vorher Primärblau), `.highlight` Ink fett auf Sky-200-Fläche (vorher Rot), `.question` Primärblau, `.task` Amber, `.errors` Rot. Primärblau bleibt damit den Frage-Labels, dem Fortschrittsbalken und Hover-Links vorbehalten.
+- Bildfolien: `.invert-font` als halbtransparentes Ink-Panel mit kleinem Radius (vorher Vollton mit 5-px-Rahmen), Bildnachweis im Footer als Space Mono.
+- Code: Sky-100-Panel mit feinem Rahmen und Radius, Space Mono, Ausgabe gedämpft; Inline-Code primärblau auf Sky-100.
+- Callouts: weiß, feiner Rahmen, 4-px-Akzentlinie links, Titel in Poppins; Tabellen: Inter, Kopfzeile als kleines Uppercase-Label, nur horizontale Linien.
+- Footer und Foliennummer in Space Mono 13 px gedämpft, Fortschrittsbalken 3 px Primärblau, Menü-Button gedämpft.
+- Fußnoten klein und gedämpft, 44 px über dem unteren Rand (Quarto setzt sie auf 20 px, direkt auf die Footer-Zeile). Bilder im Inhalt auf max. 440 px Höhe begrenzt (`r-stretch` 520 px), `.r-fit-text` mit engem Zeilenabstand; in der Druckansicht feste Größe statt Fit.
+- HTML-Lecture-Seiten: alle Slide-Klassen sind auf `.reveal` gescoped, dazu HTML-Fallbacks (`.invert-font`, `.loud-slide`, `.flow`, `.white` → normaler Text; Bildnachweise als Meta-Text). Kein weißer Text auf dunklem Grund mehr (Screenshot `nachher/html-lecture-01.png`).
+- Druckansicht (`?print-pdf`): gemessen 0 abgeschnittene Seiten bei Lecture I (alte Gestaltung: 6), siehe `nachher/print-lec01.png`.
+
+**Schritt 4 (Typst-PDF)**
+
+- Schriften (Inter, Poppins, Space Mono), Farben, Code-Hintergrund und Link-Farbe kamen schon aus `_brand.yml`. Neu: `_typst/typst-template.typ` (in `_quarto.yml` unter `format.typst.template-partials` registriert), Kopie von Quartos Standardvorlage mit angepasstem Titelblock (linksbündig, Untertitel und Lecturer/Affiliation als Labels wie auf der Website), ruhigeren Überschriften (Abstände, Größen 15/12.5/11 pt), Code-Panel mit feinem Rahmen, gedämpften Aufzählungszeichen, Flattersatz statt Blocksatz und Seitenzahl in Space Mono.
+- Nicht gemacht: Callout-Boxen im PDF (Quarto-eigene Funktion, Farben kommen bereits aus dem Brand), Tabellen (Quarto-Standard). Beides wäre nur mit Eingriffen in Quartos Typst-Definitionen machbar.
+- Vorbestehend, nicht Teil des Auftrags: Die Pausenmarker `. . .` aus den Folien erscheinen im PDF und auf den HTML-Seiten als Text, ebenso werden die `.loud-slide`-Texte zu drei kurzen Absätzen. Beides ist Inhalt (Quarto rendert Pausen nur in RevealJS); Abhilfe wäre, Pausen über `{.fragment}` zu setzen oder die Lecture-Seiten als eigene Quelle zu führen.
+
+**Schritt 5 (Überlaufprüfung)**, Skript `overflow.mjs` (chrome-headless-shell per DevTools-Protokoll, misst sichtbare Textausdehnung aller Folien mit allen Fragmenten und zählt die PDF-Seiten pro Folie in `?print-pdf`), Messwerte in `screenshots-review/ueberlauf/messung-*.json`:
+
+- Vorher (40 px, alte Gestaltung): 10 Folien brauchten im Druck zwei Seiten, zahlreiche Folien liefen in den Footer (z. B. „The Secretary Problem", „Interactive Casino Challenge", alle Fußnotenfolien).
+- Nachher: 1 Folie mit Überlauf, 2 Folien, die den Footer-Bereich berühren, 1 Folie mit zwei Druckseiten. Alle vier sind Inhaltsfragen, nichts davon habe ich per CSS kaschiert:
+
+| Lecture | Folie | Problem | Vorschlag | Screenshot |
+|---|---|---|---|---|
+| II Explore vs. Exploit | 40 „The Bellman approach III" | 10 × 10-Tabelle, 70 px zu hoch und 44 px zu breit, im Druck 2 Seiten | `## … {.smaller}` oder Tabelle auf zwei Folien aufteilen, alternativ auf 5 Spalten kürzen | `ueberlauf/lec02-39-bellman-iii.png`, `ueberlauf/print-lec02-bellman.png` |
+| II Explore vs. Exploit | 47 „The Gittins Index IV" | 10 × 10-Tabelle, 64 px zu breit, berührt den Footer | `{.smaller}` oder weniger Spalten | `ueberlauf/lec02-46-gittins-iv.png` |
+| IV Scheduling | 22 „Single Machine Scheduling" | Bild plus Frage reicht in den Footer-Bereich (670 von 700 px) | Bild mit `{height=380}` oder Frage auf die nächste Folie | `ueberlauf/lec04-21-single-machine.png` |
+| IV Scheduling | 21 „Task Classification" | Mermaid-Diagramm plus zweite Frage endet knapp über dem Footer (697 px) | zweite Frage in die Notizen oder auf eine eigene Folie | `ueberlauf/lec04-20-task-classification.png` |
+
+Messartefakt, kein Problem: Codefolien melden 8 px „zu breit" (1058/1050), das ist der Kopieren-Button am rechten Rand des Code-Panels.
+
+**Schritt 6 (Render, Screenshots)**
+
+- Nach jedem Schritt `uv run quarto render`, letzter Lauf fehlerfrei ohne Warnungen (`render_final2.log` im Scratchpad).
+- Screenshots in `screenshots-review/` im Worktree (gitignored): `vorher/` und `nachher/` je 30 Bilder (Titel-, Abschnitts-, Text-, Code-, Bild-, Tabellen-, Callout-Folien aus Lectures I, II, IV, V, VI und Tutorial V.I, Druckansicht Lecture I, Typst-PDF Seite 1 und 3 von Lecture I, Lecture-HTML-Seite, Tutorial), `ueberlauf/` mit den Folien aus der Tabelle, dazu `vorher-runde-1/` und `nachher-runde-1-3/` aus den vorherigen Aufträgen.
+
+**Entscheidungen**
+
+1. Grundschrift der Folien 32 px statt 40 px (siehe oben), eine Stellschraube.
+2. `.flow` ohne Animation, `.loud-slide` und Abschnittsfolien weiß: entspricht „hell, weißer Grund, Primärblau sparsam"; die Klassen bleiben, nur der Stil ändert sich.
+3. `strong` nicht mehr blau. Mit 100+ fetten Begriffen pro Deck wäre Primärblau sonst Flächenfarbe. Falls du die Hervorhebung vermisst: `.reveal strong { color: var(--primary) }` ist eine Zeile.
+4. `.highlight` von Rot auf Ink-fett-mit-Sky-Fläche: Rot ist für `.errors` reserviert.
+5. Typst-Vorlage als Kopie der Quarto-Standardvorlage statt nur `include-in-header`: nur so lässt sich der Titelblock umbauen. Nachteil: bei Quarto-Updates gegen das Original abgleichen (steht in CLAUDE.md).
+6. `freeze: true` beibehalten, siehe Probleme.
+
+**Probleme, die dabei aufgefallen sind**
+
+- **`freeze: true` liefert veraltete Inhalte.** Beim Komplett-Render nimmt Quarto für Dokumente mit Python-Zellen den kompletten Inhalt aus `_freeze/`, auch Titel und Text, und zwar auch dann, wenn die Quelle geändert wurde. Dadurch standen nach Nachtrag 2 in 12 Tutorials und Lecture V noch die alten Titel („Tutorial I.II - …", „Lecture V - Randomness") im Output, obwohl der Render fehlerfrei war. Für diesen Auftrag habe ich `_freeze/` einmal gelöscht und alles neu ausgeführt; der Output ist jetzt konsistent. In CLAUDE.md steht die Regel, geänderte Dateien mit Code-Zellen einzeln zu rendern. Empfehlung: in `_quarto.yml` auf `freeze: auto` wechseln (führt nur bei geänderter Quelle neu aus), das ist das Verhalten, das man erwartet. Habe ich nicht geändert, weil du `freeze: true` explizit vorgegeben hast.
+- **`animations/` wird von Lecture V erzeugt.** Die vier GIFs entstehen in den Code-Zellen von `lec_05_randomness.qmd` und sehen nach jedem Neu-Ausführen anders aus (Zufallssimulation). Seit sie versioniert sind, erzeugt jeder Lauf ohne Freeze-Cache 23 MB Diff. Ich habe nach dem Neu-Ausführen die committeten Versionen wiederhergestellt. Entscheide, ob die GIFs versioniert bleiben (dann nach einem Neu-Ausführen jeweils `git checkout -- animations`) oder ob sie wieder gitignored werden und die Erzeugung Teil des Builds ist (dann scheitert ein frischer Clone nicht mehr, weil `_freeze/` ohnehin fehlt und die Zellen laufen).
+- **`lectures/lec_01_optimal_stopping_files/figure-revealjs/cell-3-output-1.png`** ist im Repo versioniert, wird aber von jedem Render gelöscht (Quarto legt die Grafik in `_freeze/` ab). Ich habe die Datei jeweils wiederhergestellt. Empfehlung: `git rm`, sie ist ein Build-Artefakt.
+
 ## Offene Fragen an dich
 
 - Syllabus-Untertitel „This year's course structure" und Semesterangaben vor Kursstart prüfen.
+- Die vier Überlauf-Folien aus der Tabelle in Nachtrag 3 (Inhalt kürzen, aufteilen oder `{.smaller}`).
+- `freeze: true` → `freeze: auto`? (siehe Probleme in Nachtrag 3)
+- `animations/` versioniert lassen oder von Lecture V erzeugen lassen? (siehe Probleme in Nachtrag 3)
+- Grundschrift der Folien: 32 px passend für den Hörsaal, oder lieber 34 bis 36 px?
 
 ## Probleme
 
@@ -71,7 +141,7 @@ CLAUDE.md entsprechend angepasst (Lecturer-Meta, Titel-Trennzeichen, Kontakt, Li
 
 ## Screenshots und Logs
 
-Alle im Scratchpad der Session:
+Ab Nachtrag 3 liegen alle Screenshots zusätzlich in `screenshots-review/` im Worktree (gitignored, siehe oben). Ältere Pfade im Scratchpad der Session:
 
 ```
 /private/tmp/claude-501/-Users-nils-Projekte-Programming-Everyday-Decisions/cf5c9fb6-d317-4fff-bb24-e4a13102ce62/scratchpad/

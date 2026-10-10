@@ -23,6 +23,22 @@ $code-block-border-left: $brand-primary-light;
 // REVEAL.JS PRESENTATION VARS (override to match HTML theme)
 // ========================================================================
 $presentation-title-slide-text-align: left;
+$presentation-slide-text-align: left;
+// Calmer type scale: 32px root (Quarto default 40px) with more air in lists;
+// headings in Poppins/ink like the website, bullets muted.
+$presentation-font-size-root: 32px;
+$presentation-line-height: 1.45;
+$presentation-heading-font: "Poppins", system-ui, sans-serif;
+$presentation-heading-color: $brand-ink;
+$presentation-heading-font-weight: 600;
+$presentation-heading-line-height: 1.15;
+$presentation-heading-letter-spacing: -.012em;
+$presentation-h1-font-size: 2.1em;
+$presentation-h2-font-size: 1.45em;
+$presentation-h3-font-size: 1.1em;
+$presentation-h4-font-size: 1em;
+$presentation-block-margin: 14px;
+$presentation-list-bullet-color: $brand-fg-3;
 
 /*-- scss:rules --*/
 
@@ -409,100 +425,505 @@ body.entries #quarto-document-content {
 }
 
 /* ================================================================
-   RULES: custom visual effects / overrides for slides
+   SLIDES (RevealJS) — quiet, light, aligned with nilsroemer.com.
+   Everything here is scoped to .reveal so the lecture HTML pages
+   (which share this file) are not affected; HTML fallbacks for the
+   slide-only classes follow at the end of this block.
+   Slide size is 1050 x 700 (Quarto default); the root font size is
+   set in the defaults layer ($presentation-font-size-root).
    ================================================================ */
+@mixin slide-eyebrow {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: .42em;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+@mixin slide-meta {
+  font-family: "Space Mono", ui-monospace, Menlo, monospace;
+  font-size: .55em;
+  color: var(--fg-3);
+  letter-spacing: 0;
+}
 
-// Links on slides — same rule as on the website: text colour, no
-// underline, primary colour with underline on hover.
+// Base text ------------------------------------------------------------
+.reveal {
+  color: var(--ink);
+}
+.reveal .slides section {
+  text-align: left;
+}
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  color: var(--ink);
+  text-shadow: none;
+}
+.reveal h2 {
+  margin-bottom: .55em;
+}
+.reveal h3 {
+  margin-top: .4em;
+  margin-bottom: .35em;
+}
+.reveal p {
+  margin: 0 0 .6em 0;
+}
+.reveal ul, .reveal ol {
+  margin: 0 0 .6em 1em;
+}
+.reveal ul ul, .reveal ol ol, .reveal ul ol, .reveal ol ul {
+  margin-bottom: 0;
+  font-size: .92em;
+}
+.reveal li {
+  margin-bottom: .22em;
+}
+.reveal li::marker {
+  color: var(--fg-3);
+}
+.reveal .slides section .fragment.highlight-current-blue.current-fragment,
+.reveal .slides section .fragment.highlight-blue.visible {
+  color: var(--primary);
+}
+.reveal .slides section .fragment.highlight-current-red.current-fragment,
+.reveal .slides section .fragment.highlight-red.visible {
+  color: $brand-accent-red;
+}
+
+// Emphasis: strong and em stay in the text colour; the primary blue is
+// reserved for the .question label and links on hover.
+.reveal strong, .reveal b {
+  color: inherit;
+  font-weight: 600;
+}
+.reveal em, .reveal i {
+  color: inherit;
+  font-style: italic;
+}
+
+// Links on slides: text colour, no underline; primary with underline on hover.
 .reveal .slides a,
 .reveal .footer a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: color .2s ease, border-color .2s ease;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
 }
 .reveal .slides a:hover,
 .reveal .footer a:hover {
-    color: $brand-primary-blue;
-    border-bottom-color: $brand-primary-blue;
-    text-shadow: none;
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  text-shadow: none;
 }
 
-// Text emphasis
-.reveal strong,
-.reveal b,
-.reveal .bold {
-    color: $brand-primary-blue;
-    font-size: 1em;
-    font-weight: 600;
+// Title slide — like the website page header: title, subtitle as a
+// Space Mono label, Lecturer / Affiliation as eyebrow-labelled meta.
+.reveal .slides #title-slide,
+.reveal .slides section.quarto-title-block {
+  text-align: left;
+  h1.title {
+    font-size: 2.1em;
+    margin-bottom: .3em;
+  }
+  .subtitle {
+    @include slide-meta;
+    margin-top: 0;
+    margin-bottom: 2.4em;
+    line-height: 1.6;
+  }
+  .quarto-title-authors {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3em;
+    margin: 0;
+  }
+  .quarto-title-author {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+  .quarto-title-author-name,
+  .quarto-title-affiliation {
+    @include slide-meta;
+    color: var(--fg-2);
+    margin: 0;
+    line-height: 1.6;
+  }
+  .quarto-title-author-name::before {
+    content: "Lecturer";
+    display: block;
+    @include slide-eyebrow;
+    font-size: .76em;
+    margin-bottom: .35em;
+  }
+  .quarto-title-affiliation {
+    margin-top: 1.1em;
+  }
+  .quarto-title-affiliation::before {
+    content: "Affiliation";
+    display: block;
+    @include slide-eyebrow;
+    font-size: .76em;
+    margin-bottom: .35em;
+  }
+  .quarto-title-author-email,
+  .quarto-title-author-orcid {
+    display: none;
+  }
 }
 
-.reveal em,
-.reveal i,
-.reveal .italic {
-    font-style: italic;
-    color: $brand-primary-blue;
-    font-weight: 400;
+// Section title slides (# Heading {.title}) — white, title in ink.
+.reveal .slides section.title-slide.title,
+.reveal .slides section.title {
+  background-color: #fff !important;
+}
+.reveal .slides section.title-slide h1,
+.reveal .slides section.title h1 {
+  font-size: 2.1em;
+  color: var(--ink);
+}
+// .flow used to be an animated gradient; kept as a class, now static ink.
+.reveal .flow {
+  color: var(--ink);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  animation: none;
+  font-family: "Poppins", system-ui, sans-serif;
 }
 
-// Utility text classes
-.highlight {
-    color: $brand-accent-red;
-    font-weight: bold;
-}
-.task {
-    color: $brand-accent-amber;
-    font-weight: bold;
-}
-.question {
-    color: $brand-fg-2;
-    font-weight: bold;
-}
-.light {
-    color: $brand-sky-300;
-}
-.errors {
-    color: $brand-accent-red;
-    font-weight: bold;
+// Loud slides (## {.loud-slide} with .r-fit-text) — white, big ink text.
+.reveal .slides section.loud-slide {
+  background-color: #fff !important;
+  color: var(--ink) !important;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 600 !important;
+  letter-spacing: -.012em;
 }
 
-// Inverted font block
-.invert-font {
-    color: $brand-white;
-    background-color: $brand-ink;
-    border: 5px solid $brand-ink;
-    border-radius: 0;
+// Utility text classes (course-specific accents, used inline)
+.reveal .highlight {
+  color: var(--ink);
+  font-weight: 600;
+  background: var(--sky-200);
+  padding: 0 .15em;
+  border-radius: 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.reveal .question {
+  color: var(--primary);
+  font-weight: 600;
+}
+.reveal .task {
+  color: $brand-accent-amber;
+  font-weight: 600;
+}
+.reveal .errors {
+  color: $brand-accent-red;
+  font-weight: 600;
+}
+.reveal .light {
+  color: var(--fg-3);
+}
+.reveal .white {
+  color: #fff;
 }
 
-// Slide-specific
-.title-slide.title {
-    background-color: $brand-sky-200 !important;
+// Image slides: text on photos sits in a translucent ink panel
+.reveal .invert-font {
+  color: #fff;
+  background-color: rgba(30, 38, 72, .84);
+  border: 0;
+  border-radius: var(--r-xs);
+  padding: .08em .35em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
-.loud-slide {
-    background-color: $brand-ink !important;
-    color: $brand-milk !important;
-    font-weight: bold !important;
+.reveal div.invert-font {
+  padding: .5em .8em;
+  display: inline-block;
+}
+.reveal .invert-font strong,
+.reveal .invert-font .highlight {
+  color: #fff;
+  background: none;
+  padding: 0;
+}
+.reveal .invert-font .question {
+  color: var(--sky-500);
+}
+.reveal .invert-font a:hover {
+  color: var(--sky-500);
+  border-bottom-color: var(--sky-500);
+}
+.reveal .footer .invert-font {
+  font-size: .9em;
+  padding: .15em .5em;
 }
 
-// Animation effect — panning brand-blue gradient clipped to the text
-// (replaces the former remote background image; zero external requests)
-.flow {
-    background-image: linear-gradient(115deg,
-        $brand-primary-blue, $brand-sky-500, $brand-primary-light,
-        $brand-ink, $brand-primary-blue);
-    background-size: 3840px 2160px;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    animation: animate 60s linear infinite;
-    font-family: $presentation-heading-font;
+// Code ----------------------------------------------------------------
+.reveal pre {
+  width: 100%;
+  margin: .4em 0 .7em 0;
+  box-shadow: none;
+  font-size: .62em;
+  line-height: 1.5;
+}
+.reveal pre.sourceCode,
+.reveal pre code {
+  background-color: var(--sky-100);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  box-sizing: border-box;
+}
+.reveal pre code {
+  padding: .9em 1.1em;
+  max-height: 460px;
+  border: 0;
+}
+.reveal div.sourceCode {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+}
+.reveal .cell-output pre,
+.reveal .cell-output pre code {
+  background-color: transparent;
+  border: 0;
+  color: var(--fg-2);
+  padding: .2em 0 0 .4em;
+}
+.reveal code {
+  font-family: "Space Mono", ui-monospace, Menlo, monospace;
+}
+.reveal p code,
+.reveal li code,
+.reveal td code,
+.reveal h2 code,
+.reveal h3 code {
+  color: var(--primary);
+  background-color: var(--sky-100);
+  border-radius: 4px;
+  padding: .05em .3em;
+  font-size: .85em;
+}
+.reveal .code-copy-button {
+  color: var(--fg-3);
 }
 
-@keyframes animate {
-    0% {
-        background-position: left 384px top 216px;
-    }
-    100% {
-        background-position: left 3456px top 1944px;
-    }
+// Callouts ------------------------------------------------------------
+.reveal div.callout {
+  font-size: .8em;
+  margin: .6em 0;
+  border-radius: var(--r-sm);
+  background: #fff;
+}
+.reveal div.callout.callout-style-simple,
+.reveal div.callout.callout-style-default {
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-left-width: 4px;
+}
+.reveal div.callout .callout-title,
+.reveal div.callout .callout-title p,
+.reveal div.callout .callout-title-container {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+}
+.reveal div.callout .callout-body {
+  font-weight: 400;
+}
+.reveal div.callout .callout-body p:last-child,
+.reveal div.callout .callout-body ul:last-child {
+  margin-bottom: 0;
+}
+.reveal div.callout .callout-icon::before {
+  opacity: .7;
+}
+
+// Tables --------------------------------------------------------------
+.reveal table {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: .72em;
+  border-collapse: collapse;
+  margin: .4em 0 .8em 0;
+}
+.reveal table th {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: .78em;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  border-bottom: 1px solid var(--border-strong);
+  padding: .4em .8em;
+  text-align: left;
+}
+.reveal table td {
+  border-bottom: 1px solid var(--border-faint);
+  padding: .4em .8em;
+  vertical-align: top;
+}
+.reveal table tr:last-child td {
+  border-bottom: 1px solid var(--border);
+}
+
+// Figures, images -----------------------------------------------------
+.reveal img {
+  box-shadow: none;
+  border: 0;
+}
+// Keep pictures clear of the footer: cap the height of content images
+// (reveal's r-stretch sets an inline height, max-height still applies)
+.reveal .slides section img.r-stretch {
+  max-height: 520px;
+}
+.reveal .slides section p > img,
+.reveal .slides section figure img,
+.reveal .slides section center img,
+.reveal .slides section .cell-output-display img {
+  max-height: 440px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.reveal .slides section .columns img {
+  max-height: 420px;
+}
+
+// Footnotes: small, muted, above the footer (Quarto places the aside at
+// bottom: 20px, which collides with the footer line)
+.reveal .slides section aside {
+  bottom: 44px;
+}
+.reveal aside .aside-footnotes {
+  font-size: .55em;
+  line-height: 1.4;
+  color: var(--fg-3);
+  margin-bottom: 0;
+}
+.reveal aside .aside-footnotes li,
+.reveal aside .aside-footnotes p {
+  color: var(--fg-3);
+  margin-bottom: .15em;
+}
+.reveal aside .aside-footnotes a {
+  color: var(--fg-2);
+}
+.reveal sup {
+  color: var(--fg-3);
+  font-size: .6em;
+}
+
+// Fit-text slides: tight lines so three-line statements stay on the slide;
+// in the print view the fitted size is replaced by a fixed one.
+.reveal .r-fit-text {
+  line-height: 1.1;
+}
+.reveal .r-fit-text p {
+  margin: 0;
+  line-height: 1.1;
+}
+html.reveal-print .reveal .r-fit-text {
+  font-size: 2.4em !important;
+  white-space: normal !important;
+}
+.reveal figcaption,
+.reveal .figure-caption {
+  @include slide-meta;
+  margin-top: .3em;
+}
+
+// Footer, slide number, progress, menu -------------------------------
+.reveal .footer {
+  font-family: "Space Mono", ui-monospace, Menlo, monospace;
+  font-size: 13px;
+  color: var(--fg-3);
+}
+.reveal .footer a {
+  color: var(--fg-3);
+}
+.reveal .footer.has-dark-background,
+.reveal .footer.has-dark-background a {
+  color: rgba(255, 255, 255, .8);
+}
+.reveal .slide-number {
+  font-family: "Space Mono", ui-monospace, Menlo, monospace;
+  font-size: 13px;
+  color: var(--fg-3);
+  background: transparent;
+}
+.reveal .slide-number.has-dark-background {
+  color: rgba(255, 255, 255, .8);
+}
+.reveal .progress {
+  height: 3px;
+  color: var(--primary);
+}
+.reveal .slide-menu-button .fa-bars::before {
+  background-image: none;
+}
+.reveal .slide-menu-button {
+  color: var(--fg-3) !important;
+  opacity: .8;
+}
+.reveal .slide-menu-button a {
+  color: var(--fg-3) !important;
+}
+
+// Print view (?print-pdf): reveal's print CSS already uses white pages;
+// no extra background here (it would cover background-image slides).
+
+/* ================================================================
+   HTML fallbacks for slide-only classes, so the lecture HTML pages
+   never show white text on a dark background.
+   ================================================================ */
+#quarto-document-content .invert-font,
+#quarto-document-content .loud-slide,
+#quarto-document-content .flow,
+#quarto-document-content .white {
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+}
+#quarto-document-content .highlight {
+  color: var(--ink);
+  font-weight: 600;
+  background: var(--sky-200);
+  padding: 0 .15em;
+  border-radius: 4px;
+}
+#quarto-document-content .question {
+  color: var(--primary);
+  font-weight: 600;
+}
+#quarto-document-content .task {
+  color: $brand-accent-amber;
+  font-weight: 600;
+}
+#quarto-document-content .errors {
+  color: $brand-accent-red;
+  font-weight: 600;
+}
+/* Photo credits (::: footer blocks on image slides) as meta text */
+#quarto-document-content div.footer {
+  @include meta;
+  margin: -.5rem 0 1rem 0;
+}
+#quarto-document-content div.footer a {
+  color: var(--fg-3);
+  border-bottom-color: transparent;
+}
+#quarto-document-content section.loud-slide > h2:empty {
+  display: none;
+}
+#quarto-document-content .r-fit-text {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 1.5rem 0;
 }

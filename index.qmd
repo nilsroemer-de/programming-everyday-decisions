@@ -7,11 +7,11 @@ format:
     body-classes: entries
 ---
 
-*Course materials developed together with Dr. Tobias Vlćek. Based on the book "Algorithms to Live By" by Brian Christian and Tom Griffiths.*
+*Course materials developed together with Dr. Tobias Vlćek. Inspired by the book "Algorithms to Live By" by Brian Christian and Tom Griffiths.*
 
 ## Course Description
 
-This course explores the intersection of computer science and everyday life by examining how algorithms can be applied to improve decision-making in various contexts. Based on the book "Algorithms to Live By" by Brian Christian and Tom Griffiths, the course will cover topics such as optimal stopping, scheduling, caching, and game theory, providing both theoretical foundations and practical programming exercises. The course consists of lectures and exercises.
+This course explores the intersection of computer science and everyday life by examining how algorithms can be applied to improve decision-making in various contexts. Inspired by the book "Algorithms to Live By" by Brian Christian and Tom Griffiths, the course will cover topics such as optimal stopping, scheduling, caching, and game theory, providing both theoretical foundations and practical programming exercises. The course consists of lectures and exercises.
 
 ## Learning Outcomes
 

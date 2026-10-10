@@ -133,6 +133,8 @@ format:
   typst:
     papersize: a4
     font-paths: fonts-ttf
+    template-partials:
+      - _typst/typst-template.typ
 
 format-links:
   - html

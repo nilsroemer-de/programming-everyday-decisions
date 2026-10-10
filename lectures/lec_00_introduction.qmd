@@ -30,7 +30,7 @@ format:
 
 - Try **actively participating** in this course
 - You will find it much [(!)]{.highlight} easier and more fun
-- Lecture based on the book [Algorithms to live by]{.highlight}[^3]
+- Lecture inspired by the book [Algorithms to live by]{.highlight}[^3]
 - Material and slides are hosted online: [courses.nilsroemer.com](https://courses.nilsroemer.com)
 
 [^3]: Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.

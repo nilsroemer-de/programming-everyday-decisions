@@ -174,3 +174,6 @@ _repo-md
 
 # Claude Code worktrees
 .claude/worktrees/
+
+# Screenshot-Kopien für die Design-Abnahme (siehe UEBERGABE.md)
+screenshots-review/
