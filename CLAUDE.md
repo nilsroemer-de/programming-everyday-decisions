@@ -63,7 +63,7 @@ general/             # Syllabus, FAQ, Installation (uv.qmd), Literatur, Cheatshe
 lectures/            # Vorlesungen als .qmd (HTML-Seite + RevealJS-Folien + PDF); tut_05_01_llm.qmd ist ein Tutorial im Lecture-Ordner
 tutorials/           # Interaktive Python-Tutorials (HTML, ipynb, PDF)
 include/             # Wiederverwendbare Includes (tutorial_end.qmd: Abschnitt „Solutions")
-helpers/             # strip_polyfill.py (Post-Render, entfernt cdnjs-Polyfill), Konvertierungsskripte
+helpers/             # strip_polyfill.py (Post-Render, entfernt cdnjs-Polyfill), strip-pauses.lua (Pausenmarker nur in RevealJS), Konvertierungsskripte
 assets/              # Self-hosted MathJax: assets/mathjax (v3, HTML) und assets/mathjax2 (v2, RevealJS-Plugin braucht v2-API)
 fonts/               # woff2: Poppins, Inter, Space Mono (latin + latin-ext)
 fonts-ttf/           # TTF-Varianten für den Typst-PDF-Export (font-paths)
@@ -98,6 +98,7 @@ Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`
 - **Folien (RevealJS):** Gestaltung komplett in `styles.scss` (Defaults `$presentation-*`, Block „SLIDES", alles auf `.reveal` gescoped). Hell und ruhig: weißer Grund, Text und Überschriften in Ink, Inter für Text, Poppins für Überschriften, Space Mono für Meta-Angaben (Untertitel, Lecturer/Affiliation, Footer, Foliennummer). Primärblau nur für `.question`-Labels, den Fortschrittsbalken und Links beim Hover. Titelfolie wie der Seitenkopf der Website (Lecturer/Affiliation mit kleinen Uppercase-Labels per CSS), Abschnittsfolien (`# Titel {.title}`) weiß mit Titel in Ink, `.loud-slide` weiß mit großem Ink-Text. Eigene Klassen bleiben erhalten: `.flow` (statisch, früher Gradient-Animation), `.highlight` (Ink fett auf Sky-Hintergrund), `.question` (Primärblau), `.task` (Amber), `.errors` (Rot), `.invert-font` (weiß auf halbtransparentem Ink-Panel, nur auf Bildfolien), `.loud-slide`, `.incremental`. Slide-Klassen dürfen auf den HTML-Lecture-Seiten keinen weißen Text auf dunklem Grund erzeugen; dafür gibt es am Ende des Blocks HTML-Fallbacks. `strong` und `em` bleiben in Textfarbe. Keine neuen Logos oder Hintergrundbilder, Seitenverhältnis 1050 × 700 unverändert. Keine persönlichen „About me"-Folien, Nils' Person wird über nilsroemer.com abgedeckt.
 - **Folien prüfen:** Nach Gestaltungsänderungen alle Decks auf Überlauf prüfen (normale Ansicht und `?print-pdf`). Überlauf durch zu viel Inhalt wird nicht per CSS kaschiert, sondern als Vorschlag (kürzen, aufteilen, in Notizen) gelistet.
 - **PDF (Typst):** Schriften und Farben kommen aus `_brand.yml`, Layout aus `_typst/typst-template.typ` (Titelblock linksbündig wie der Seitenkopf, Untertitel und Lecturer/Affiliation als Space-Mono-Labels, ruhige Überschriften, Code in Sky-Panel, Seitenzahl in Space Mono). Die Vorlage ist eine Kopie von Quartos Standard-`typst-template.typ` mit angepasstem Titelblock; bei Quarto-Updates gegen das Original (`quarto --paths`, `share/formats/typst/pandoc/quarto/`) abgleichen.
+- **Folien-Pausen:** Pausenmarker `. . .` nur in Lectures verwenden. Der Lua-Filter `helpers/strip-pauses.lua` (in `_quarto.yml` registriert) entfernt sie in allen Formaten außer revealjs, sonst stehen sie als Text auf der HTML-Seite und im PDF.
 - **Tutorials:** Aufgaben als `## Exercise x.y - Titel` mit einer leeren Code-Zelle (`# YOUR CODE BELOW`) und einer eingeklappten Test-Zelle mit `assert`. Am Ende jedes Tutorials `{{< include ../include/tutorial_end.qmd >}}`.
 - **Bilder:** Vor dem Einchecken für Web komprimieren und EXIF-Metadaten entfernen. Keine Hotlinks auf fremde Server.
 - **Build-Artefakte** (`_site/`, `_freeze/`, `.quarto/`, `.DS_Store`, `*.quarto_ipynb`) niemals committen.
@@ -109,6 +110,7 @@ Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`
 - Live unter courses.nilsroemer.com (GitHub Pages). Kursstart Ende Oktober 2026.
 - Seit Juli 2026 betreibt Nils die Seite allein; Design an nilsroemer.com angeglichen, alle Drittanbieter-Requests entfernt, Rechtstexte aktualisiert, Tobias nur noch in den Credits.
 - Design-Pass Oktober 2026 (Branch `design-angleich`): globaler Linkstil, ruhige Abschnittstitel und Labels, Gedankenstriche im sichtbaren Text entfernt, Tutorial-Nummerierung in der Sidebar vereinheitlicht, `animations/` versioniert. Details in `UEBERGABE.md`.
+- Inhaltliches Review Oktober 2026 (Branch `inhalt-review`): Tippfehler und eindeutige Fehler korrigiert, Pausenmarker-Filter, alle Befunde mit Priorität und Vorschlag in `REVIEW.md`.
 
 **Offene Punkte**
 
