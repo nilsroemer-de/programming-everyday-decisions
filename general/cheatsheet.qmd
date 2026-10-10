@@ -223,7 +223,7 @@ restaurant_data = [
     ["Pasta Place", 4.5, 3],
     ["Sushi Bar", 4.2, 1]
 ]
-print(restaurants[0][1])  # Access the second element of the first list
+print(restaurant_data[0][1])  # Access the second element of the first list
 ```
 
 ## Tuples
@@ -295,7 +295,7 @@ efficacy_scores = [45, 60, 75, 85, 90]
 for score in efficacy_scores:
     if score < 50:
         continue
-        print(f"Treatment efficacy: {score}%")
+    print(f"Treatment efficacy: {score}%")
     if score >= 85:
         break
 ```

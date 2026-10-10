@@ -120,7 +120,7 @@ Use the `random` library to generate a random number between 1 and 25. Call the 
 
 ```{python}
 #| eval: false
-#| # YOUR CODE BELOW
+# YOUR CODE BELOW
 
 ```
 
