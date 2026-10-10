@@ -144,5 +144,9 @@ format-links:
 
 brand: _brand.yml
 
+# Pausenmarker ". . ." nur in RevealJS wirken lassen (helpers/strip-pauses.lua)
+filters:
+  - helpers/strip-pauses.lua
+
 execute:
   freeze: auto
