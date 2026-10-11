@@ -122,9 +122,9 @@ Let's create a task scheduler that handles tasks with different due dates. The s
 Your task is to create a function `schedule_tasks(tasks)` that:
 
 - Sorts tasks by due date
-- Creates a schedule with start and end times for each task
+- Adds the start and end time of each task in two new columns `start_time` and `end_time`
+- Keeps the original columns `name`, `duration` and `due_time`
 - Returns the complete schedule as a pandas DataFrame
-- Keep the same column names as in the dictionary
 
 ```{python}
 # Pre-generated tasks (don't modify this!)
@@ -168,7 +168,9 @@ tasks = [
 #| code-fold: true
 # Test your solution with the following code
 schedule_df = schedule_tasks(tasks)
-assert schedule_df.shape == (5, 4), "The schedule should have 5 rows and 4 columns"
+assert schedule_df.shape == (5, 5), "The schedule should have 5 rows and 5 columns"
+assert set(schedule_df.columns) == {"name", "duration", "due_time", "start_time", "end_time"}, "Check the column names"
+assert schedule_df.iloc[4]['end_time'] == 15, "The last task should end after 15 hours"
 assert schedule_df.iloc[0]['name'] == "Team Meeting", "First task should be 'Team Meeting'"
 assert schedule_df.iloc[4]['name'] == "Project Review", "Fifth task should be 'Project Review'"
 print(r"All tests passed, you have successfully implemented the task scheduler!")

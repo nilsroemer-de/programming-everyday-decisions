@@ -164,7 +164,7 @@ Installing packages is like ordering new books for your library branch. With `uv
 - Add dependencies (`uv add packagename`)
 - Remove them if not needed (`uv remove packagename`)
 - Sync a project copied from elsewhere (`uv sync`)
-- Update dependencies (`uv update`)
+- Update dependencies (`uv lock --upgrade`, then `uv sync`)
 
 Under the hood `uv` creates (and reuses) a virtual environment for the project. Luckily most of that is handled for you and not that important in this basic introduction to Python.
 
