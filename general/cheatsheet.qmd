@@ -303,7 +303,7 @@ for score in efficacy_scores:
 ## Tuple unpacking
 
 - **Definition**: Assign elements of a tuple to variables.
-- **Structure**:
+- **Structure**: `a, b, c = some_tuple` (as many variables as elements)
 - **Example**:
 
 ```{python}
@@ -454,3 +454,40 @@ print(random_number)
 ```{bash}
 uv add package_name
 ```
+
+# Dictionaries
+
+- **Definition**: Collections of key-value pairs; keys are unique.
+- **Creation**: Use curly braces `{}`.
+
+```{python}
+tasks = {"Check Emails": 1, "Team Meeting": 3}
+print(tasks["Check Emails"])   # access a value by its key
+tasks["Prepare Slides"] = 2     # add or change an entry
+del tasks["Team Meeting"]       # remove an entry
+print("Check Emails" in tasks)  # check if a key exists
+```
+
+- **Looping**: `.keys()`, `.values()` and `.items()`.
+
+```{python}
+for task, priority in tasks.items():
+    print(f"{task}: {priority}")
+```
+
+# DataFrames (pandas)
+
+- **Definition**: Tables with labeled rows and columns.
+- **Creation**: From a dictionary of lists.
+
+```{python}
+import pandas as pd
+
+df = pd.DataFrame({"task": ["A", "B", "C"], "duration": [40, 30, 60], "deadline": [110, 90, 150]})
+print(df["duration"])                 # one column
+print(df.iloc[0])                     # first row by position
+print(df.sort_values("deadline"))     # sort, e.g. for EDD
+df["finish"] = df["duration"].cumsum()  # new column
+```
+
+- **Looping**: `for index, row in df.iterrows():`

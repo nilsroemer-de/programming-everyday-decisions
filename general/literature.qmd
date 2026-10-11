@@ -11,7 +11,7 @@ This section provides a curated list of books and resources to enhance your unde
 
 - Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.
     - A book that inspired this lecture and will give you a good intuition for the principles of algorithmic thinking and how they can be applied to solve problems in everyday life.
-- Zingaro, D. (2024) Algorithmic thinking, 2nd edition: Unlock your programming potential. AU: No Starch Press.
+- Zingaro, D. (2024) Algorithmic thinking, 2nd edition: Unlock your programming potential. San Francisco: No Starch Press.
     - A book that introduces you to different algorithms and their reasoning. Written without any pseudocode, but with a lot of examples and explanations.
 
 # Python
