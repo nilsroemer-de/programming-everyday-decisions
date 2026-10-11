@@ -181,7 +181,7 @@ def johnson_gantt(order: str, first: dict[str, int], second: dict[str, int],
 
 # --- One machine ------------------------------------------------------------
 def single_machine_gantt(order: str, durations: dict[str, int], deadlines: dict[str, int] | None = None,
-                         show_wait=False, row_labels: dict[str, str] | None = None,
+                         show_wait=False, show_late=True, row_labels: dict[str, str] | None = None,
                          title: str | None = None, end: int | None = None, width=10, height=3.0):
     """One row per task in processing order; optional deadline markers and waiting time."""
     fig, ax = plt.subplots(figsize=(width, height))
@@ -198,7 +198,7 @@ def single_machine_gantt(order: str, durations: dict[str, int], deadlines: dict[
         if deadlines:
             dl = deadlines[job]
             ax.plot([dl, dl], [y - 0.38, y + 0.38], color=DEADLINE_COLOR, linewidth=3, solid_capstyle="butt")
-            if t > dl:
+            if show_late and t > dl:
                 ax.text(t + 2, y, f"{t - dl} min late", va="center", fontsize=11, color=DEADLINE_COLOR)
     labels = [(row_labels or {}).get(j, j) for j in rows]
     ax.set_yticks(range(len(rows) - 1, -1, -1), labels, fontsize=12)
@@ -259,7 +259,7 @@ def simulate_realtime(tasks: list[dict], rule: str, step: int = 10):
     return segments, finish
 
 
-def realtime_gantt(tasks: list[dict], rule: str, show_wait=False, deadlines=True,
+def realtime_gantt(tasks: list[dict], rule: str, show_wait=False, deadlines=True, show_late=True,
                    clock_start=(8, 0), title: str | None = None, end: int = 240, width=10.5, height=3.6):
     segments, finish = simulate_realtime(tasks, rule)
     fig, ax = plt.subplots(figsize=(width, height))
@@ -283,7 +283,7 @@ def realtime_gantt(tasks: list[dict], rule: str, show_wait=False, deadlines=True
         if deadlines:
             ax.plot([t["deadline"]] * 2, [y - 0.38, y + 0.38], color=DEADLINE_COLOR, linewidth=3, solid_capstyle="butt")
             late = finish[t["name"]] - t["deadline"]
-            if late > 0:
+            if show_late and late > 0:
                 ax.text(finish[t["name"]] + 2, y, f"+{late} min", va="center", fontsize=10, color=DEADLINE_COLOR)
     ax.set_yticks(range(n - 1, -1, -1), [f'{t["name"]} ({t["duration"]} min)' for t in tasks], fontsize=11)
     _time_axis(ax, end, major=60, clock_start=clock_start)
