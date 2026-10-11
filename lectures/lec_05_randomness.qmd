@@ -447,7 +447,7 @@ print(math.factorial(10))
 
 :::{.incremental}
 - For 20 cities: 20! = **2.4 quintillion** routes
-- Would take **77 billion years** at 1ms per check!
+- Would take about **77 million years** at 1ms per check!
 - **Time complexity** grows [factorially]{.highlight}
 - **Memory requirements** increase with problem size
 :::
@@ -933,9 +933,9 @@ so far?
 
 ## After the break: Randomness
 
-- Programming session in our new notebooks
-- How to translate the idea into code and experiments
-- Different scheduling algorithms applied to problems
+- Tutorial V.I: Programming with AI coding assistants
+- Tutorial V.II: Recap of the course topics with randomness
+- Monte Carlo simulation of a travel problem in code
 
 . . .
 
