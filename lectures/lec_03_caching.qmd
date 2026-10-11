@@ -6,6 +6,27 @@ format:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_03_caching.qmd)"
     output-file: lec_03_presentation.html
 ---
+
+```{python}
+#| include: false
+import sys
+sys.path.insert(0, "../helpers")
+import matplotlib.pyplot as plt
+from course_plots import use_course_style, latency_ladder
+use_course_style()
+
+# (level, typical access time in ns, typical size), orders of magnitude
+memory_levels = [
+    ("Register (1 CPU cycle)", 0.3, "~1 KB"),
+    ("L1 cache", 0.9, "~64 KB"),
+    ("L2 cache", 2.8, "~1 MB"),
+    ("L3 cache", 12.9, "~10-30 MB"),
+    ("Main memory (RAM)", 120, "~8-32 GB"),
+    ("SSD", 100_000, "~0.5-2 TB"),
+    ("Hard disk", 5_000_000, "~2-20 TB"),
+]
+```
+
 # Learning Objectives {.title}
 
 :::{.fragment}
@@ -173,13 +194,13 @@ Today's lecture will explain why that matters more than you think...
 **The evolution of computer memory**
 :::
 :::{.incremental}
-- 1950s: Computer science faced the same problem
-- Processors got faster (Moore's Law)
-- Memory demands grew
-- But memory speed couldn't keep up
+- 1946: Von Neumann and colleagues already expect a **hierarchy of memories**[^hierarchy]
+- Processors got faster much quicker than memory (Moore's Law, 1965)
+- 1965: Maurice Wilkes proposes a small, fast "slave memory", the first **cache**
+- 1995: Wulf and McKee call the growing gap the **Memory Wall**
 
 :::{.fragment}
-**→ The Memory Wall**
+**→ Computer science faced the same storage problem as our cupboard**
 :::
 :::
 
@@ -191,9 +212,11 @@ Today's lecture will explain why that matters more than you think...
 - [Question:]{.question} What's the point of a fast CPU if it has to wait for slow memory?
 
 :::{.fragment}
-**→ Von Neumann Bottleneck**
+**→ Von Neumann Bottleneck** (term coined by John Backus, 1977)
 :::
 :::
+
+[^hierarchy]: Burks, A. W., Goldstine, H. H., & von Neumann, J. (1946). Preliminary discussion of the logical design of an electronic computing instrument. Wilkes, M. V. (1965). Slave memories and dynamic storage allocation. Wulf, W. A., & McKee, S. A. (1995). Hitting the memory wall. See also Christian & Griffiths (2016), ch. 4.
 
 # [Cache]{.flow} {.title}
 
@@ -204,10 +227,10 @@ Today's lecture will explain why that matters more than you think...
 :::
 
 :::{.incremental}
-- **L1 Cache:** Tiny but ultra-fast (64-256 KB)
-- **L2/L3 Cache:** Larger, still fast (MB range)
-- **RAM:** Main workspace (8-32 GB)
-- **Storage:** Huge but slow (256 GB - 2 TB)
+- **L1 Cache:** Tiny but ultra-fast (kilobytes)
+- **L2/L3 Cache:** Larger, still fast (megabytes)
+- **RAM:** Main workspace (gigabytes)
+- **Storage:** Huge but slow (terabytes)
 
 :::{.fragment}
 **Like a library...**
@@ -219,9 +242,9 @@ Today's lecture will explain why that matters more than you think...
 :::{.incremental}
 ::: {layout="[[50,50]]"}
 ::: {.column width="50%"}
-- **Library storage** (5 million books, Mass Storage)
-- **Subject locations** (100K books, RAM)
-- **Your desk** (5 borrowed books, L2)
+- **Library storage** (millions of books, mass storage)
+- **Subject shelves** (thousands of books, RAM)
+- **Your desk** (a few borrowed books, L2)
 - **Short-term memory** (current page, L1)
 
 :::{.fragment}
@@ -236,21 +259,21 @@ Today's lecture will explain why that matters more than you think...
 
 ## The Trade-off: Size and Speed
 
-::: {style="text-align: center;"}
-![](../images/caching/lec03-tradeoff.png){width="50%"}
+```{python}
+#| echo: false
+fig = latency_ladder(memory_levels, source="Source: Gregg, B. (2020). Systems Performance, 2nd ed., latency table. Orders of magnitude, typical sizes of a 2026 laptop.")
+plt.show()
+```
 
-**Registers are 10 million times faster than the hard drive!**
-
-**Why can't we just make everything as fast as L1 cache?**
-:::
+A register is roughly **ten million times faster** than a hard disk. [Question:]{.question} **Why not make everything that fast?**
 
 ## Why the Trade-off?
 
 :::{.incremental}
 **Why not make everything ultra-fast?**
 
-- **Physical limits:** Larger caches sit further from CPU, signals take longer to travel, and dense fast memory generates extreme heat that must be dissipated
-- **Economic limits:** SRAM costs $50,000/GB vs. HDDs at $0.02/GB
+- **Physical limits:** Larger memory sits further from the CPU, signals take longer, and fast memory produces heat
+- **Economic limits:** Per gigabyte, fast cache memory costs many orders of magnitude more than a hard disk
 - **Solution:** Multiple cache levels, each optimized for different needs
 :::
 
@@ -313,12 +336,14 @@ Today's lecture will explain why that matters more than you think...
     - Books on your desk
     - Apps opened today
     - People texted this morning
-- **Performance:** 80-90% hit rate (vs. 50-60% random)
+- **Performance:** In Belady's classic comparison, LRU came closest to the clairvoyant optimum[^belady]
 
 :::{.fragment}
 **Recent past predicts near future**
 :::
 :::
+
+[^belady]: Belady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian & Griffiths (2016), ch. 4. In Tutorial III.III you measure LRU against random eviction yourself.
 
 ## Managerial and personal insights:
 
@@ -362,12 +387,9 @@ Today's lecture will explain why that matters more than you think...
 ## Cache Vulnerabilities
 
 :::{.incremental}
-- **Denial-of-Service (DoS) attacks** exploit cache limitations:
-    - **Cache Flooding:** Overload with excessive requests
-    - **Cache Poisoning:** Insert malicious data to evict important information
-- These attacks overload a system with excessive requests or data.
-- Causing it to slow down or crash.
-- The system is forced to evict important data.
+- **Cache Flooding:** Overload the cache with requests, so important data gets evicted and the system slows down (a Denial-of-Service attack)
+- **Cache Poisoning:** Plant **false data** in a cache, so later requests are answered with wrong content (e.g., DNS cache poisoning sends users to a fake website)
+- Both exploit that a cache is **small** and is **trusted** without checking the original
 :::
 
 ## Productivity Killers
@@ -375,10 +397,12 @@ Today's lecture will explain why that matters more than you think...
 :::{.incremental}
 - **Overload** (too much information, cache capacity exceeded)
 - **Exhaustion** (too long without "cache clearing")
-- **Context switching** (interruption of "flow", ~23 minutes to get back on track)
+- **Context switching** (interruption of "flow", often 20+ minutes to get back on track[^mark])
 - **Distraction** (Cache Flooding: constant notifications, social media)
 - **Misinformation** (Cache Poisoning: fake news, misleading information)
 :::
+
+[^mark]: Order of magnitude from Gloria Mark's workplace studies, e.g. Mark, G., Gonzalez, V. M., & Harris, J. (2005). No task left behind? Examining the nature of fragmented work. CHI 2005.
 
 ## The Attention Crisis
 
