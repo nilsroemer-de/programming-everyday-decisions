@@ -40,7 +40,7 @@ website:
             href: tutorials/tut_01_02_comparisons.qmd
           - text: "01-03: Decisions"
             href: tutorials/tut_01_03_stopping.qmd
-      - section: "02 Explore/Exploit"
+      - section: "02 Explore & Exploit"
         contents:
           - text: "Lecture"
             href: lectures/lec_02_explore_exploit.qmd
