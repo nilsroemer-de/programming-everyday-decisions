@@ -879,10 +879,7 @@ fig, _ = single_machine_gantt(order, duration, deadline, show_late=False,
 plt.show()
 ```
 
-:::{.callout-note}
-## Predecessor Tasks
-A predecessor must be finished before a task can start. Predecessors are shown in brackets.
-:::
+The task in brackets must be finished first. Red marks: deadlines.
 
 . . .
 

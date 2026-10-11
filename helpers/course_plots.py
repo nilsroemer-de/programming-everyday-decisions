@@ -57,7 +57,8 @@ def use_course_style() -> None:
         font_manager.fontManager.addfont(str(ttf))
     plt.rcParams.update({
         "font.family": "Inter",
-        "font.size": 12,
+        "font.size": 13,
+        "figure.dpi": 150,  # sharp on projectors and in the PDF
         "text.color": INK,
         "axes.labelcolor": FG_2,
         "axes.edgecolor": BORDER_STRONG,
