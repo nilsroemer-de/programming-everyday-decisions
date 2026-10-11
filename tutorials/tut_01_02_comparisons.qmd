@@ -268,7 +268,7 @@ print("Good job! You correctly identified that the candidate does not meet all r
 ## Exercise 3.2 - Optimal Stopping Decision
 We have:
 
-- Seen 18 out of 40 candidates
+- Seen 12 out of 40 candidates
 - Current candidate score: 90
 - Best score so far: 85
 
@@ -279,7 +279,7 @@ Store the result in `make_offer`.
 ```{python}
 #| eval: false
 # Candidate information
-candidates_seen = 18
+candidates_seen = 12
 total_candidates = 40
 current_score = 90
 best_score_so_far = 85
@@ -290,8 +290,8 @@ best_score_so_far = 85
 #| eval: false
 #| code-fold: true
 # Test your answer
-assert make_offer == True, "We should hire this candidate"
-print("Good job! You correctly identified that we should hire this candidate")
+assert make_offer == False, "12 of 40 is only 30%, we are still in the observation phase"
+print("Good job! The candidate is better than everyone so far, but we are still in the observation phase.")
 ```
 
 # Conclusion

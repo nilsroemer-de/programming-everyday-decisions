@@ -23,7 +23,7 @@ First, let's import the necessary library:
 import random
 ```
 
-In total, you have 32 candidates. Screen the candidates one by one and compute the `best_candidate_index` to find the best candidate.
+In total, you have 32 candidates. Screen the candidates one by one and store the index of the candidate you select in `best_candidate_index`.
 
 ::: {.callout-tip}
 ## How to work with AI coding assistants and agents
@@ -37,7 +37,7 @@ You can use any current AI coding assistant or agent, for example GitHub Copilot
 :::
 
 ```{python}
-random.seed(42) # Sets the random seed for reproducibility
+random.seed(13) # Sets the random seed for reproducibility
 candidates = [random.random() for _ in range(32)]
 
 # YOUR CODE BELOW
@@ -48,8 +48,9 @@ candidates = [random.random() for _ in range(32)]
 #| eval: false
 #| code-fold: true
 # Test your solution with the following code
-assert best_candidate_index == 24, "The selected candidate is not the best one"
+assert best_candidate_index == 19, "The 37% rule should select candidate 19"
 print(r"All tests passed, you have successfully implemented the 37% rule!")
+print(f"The very best candidate was number {candidates.index(max(candidates))}: the rule finds the best only about 37% of the time.")
 ```
 
 # Section 2 - Explore vs Exploit

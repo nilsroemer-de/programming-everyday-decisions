@@ -254,18 +254,19 @@ else:
 ```
 
 ## Exercise 5.1 - Implement the Rule
-Adjust the code below to change the variable `make_application` to True if:
+Create a variable `make_application` that is `True` if:
 
 - We've seen at least 37% of available flats (use 15 total flats), AND
 - The current flat is better than the best we've seen so far
+
+and `False` otherwise.
 
 ```{python}
 #| eval: false
 flats_seen = 6  # We've seen 6 flats
 total_viewings = 15  # We plan to view 15 flats in total
-current_rating = 9
+current_rating = 7
 best_rating_so_far = 8
-make_application = False
 # YOUR CODE BELOW
 
 ```
@@ -273,7 +274,7 @@ make_application = False
 #| eval: false
 #| code-fold: true
 # Test your answer
-assert make_application == True, "We have seen 6 of 15 flats (more than 37%) and 9 beats our best so far, so we should apply"
+assert make_application == False, "We have seen enough flats (6 of 15), but 7 does not beat our best so far (8)"
 print(f"Should we apply for this flat? {make_application}")
 ```
 

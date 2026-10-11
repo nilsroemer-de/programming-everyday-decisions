@@ -206,7 +206,7 @@ Sort your `mission_tasks` using the EDD algorithm (sort by deadline).
 #| eval: false
 #| code-fold: true
 # Test your answer
-assert edd_schedule.iloc[0]['task'] == 'Communication Setup', "First task should be Communication Setup"
+assert list(edd_schedule['task']) == ['Communication Setup', 'Fuel Loading', 'Life Support Check', 'Navigation Systems'], "Sort the tasks by deadline"
 print("EDD Schedule created successfully!")
 print(edd_schedule)
 ```
