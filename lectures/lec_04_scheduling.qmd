@@ -1081,26 +1081,6 @@ so far?
 Let's have a short break and then continue with our fourth Python programming session.
 :::
 
-# [Literature]{.flow} {.title}
+{{< include ../include/lecture_literature_start.qmd >}}
 
-## Interesting literature to start
-
-- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^4]
-
-[^4]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
-
-## Books on Programming
-
-- Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. [Here](https://greenteapress.com/wp/think-python-3rd-edition/)
-- Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.
-
-
-## Questions & Discussion
-
-::: {.callout-note}
-Think Python is a great book to start with. It's available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.
-:::
-
-## More Literature
-
-For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.
+{{< include ../include/lecture_literature_books.qmd >}}

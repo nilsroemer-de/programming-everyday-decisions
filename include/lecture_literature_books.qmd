@@ -1,0 +1,14 @@
+## Books on Programming
+
+- Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. [Free online](https://greenteapress.com/wp/think-python-3rd-edition/)
+- Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.
+
+. . .
+
+::: {.callout-note}
+Think Python is free online and a great start. Schrödinger programmiert Python is a playful alternative in German.
+:::
+
+## More Literature
+
+For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.

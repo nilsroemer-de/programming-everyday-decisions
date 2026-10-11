@@ -1,0 +1,7 @@
+# [Literature]{.flow} {.title}
+
+## Interesting literature to start
+
+- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^atlb]
+
+[^atlb]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
