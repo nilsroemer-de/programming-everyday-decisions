@@ -413,6 +413,54 @@ plt.close()
 
 ![](../animations/pi.gif)
 
+## Monte Carlo in Business
+
+:::{.incremental}
+- **Project planning:** How likely do we finish before the deadline?
+- **Finance:** How much could a portfolio lose in a bad month?
+- **Inventory:** How much stock covers an uncertain demand?
+- **Recipe:** Model the uncertain inputs, draw random values many times, look at the distribution of outcomes
+:::
+
+. . .
+
+::: {.callout-tip}
+Instead of a single forecast, Monte Carlo gives a **range of outcomes with probabilities**.
+:::
+
+## Will the Project Finish on Time?
+
+Three tasks with uncertain durations. The most likely values add up to **21 days**, the deadline is **25 days**.
+
+```{python}
+#| echo: false
+import sys
+sys.path.insert(0, "../helpers")
+from course_plots import use_course_style, PRIMARY, RED, INK
+
+rng = np.random.default_rng(42)
+runs = 10_000
+# (minimum, most likely, maximum) duration in days
+tasks = {"Requirements": (3, 5, 10), "Build": (8, 12, 20), "Test": (2, 4, 8)}
+total = sum(rng.triangular(low, mode, high, runs) for low, mode, high in tasks.values())
+deadline = 25
+on_time = (total <= deadline).mean()
+
+with plt.rc_context():
+    plt.style.use("default")
+    use_course_style()
+    fig, ax = plt.subplots(figsize=(10, 3.6))
+    ax.hist(total, bins=60, color=PRIMARY, alpha=0.75)
+    ax.axvline(deadline, color=RED, linewidth=2)
+    ax.text(deadline + 0.3, ax.get_ylim()[1] * 0.85, f"Deadline: {deadline} days", color=RED)
+    ax.set_title(f"{runs:,} simulated projects: {on_time:.0%} finish on time")
+    ax.set_xlabel("Total duration in days")
+    ax.set_yticks([])
+    ax.spines["left"].set_visible(False)
+    fig.tight_layout()
+    plt.show()
+```
+
 
 # [Decision Making]{.flow} {.title}
 

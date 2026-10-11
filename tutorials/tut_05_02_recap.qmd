@@ -180,9 +180,18 @@ print(r"All tests passed, you have successfully implemented the task scheduler!"
 
 In our daily lives, we often encounter situations where randomness plays a crucial role in decision-making. From choosing a restaurant for dinner to selecting which tasks to tackle first, incorporating some randomness can actually lead to better outcomes than strictly deterministic approaches.
 
-## Solving your travel problem by brute force
+## Exercise 5.1 - Monte Carlo Route Planning
 
-Imagine you want to travel during the semester break and you want to visit 6 cities and then return to Hamburg. Your aim is to find the route that is the cheapest to travel. Implement a heuristic that randomly tries 10 different routes and picks the cheapest one. Save the costs in `min_cost`.
+Imagine you want to travel during the semester break: starting in Hamburg, you want to visit the other 5 cities once and then return to Hamburg. Instead of checking all possible routes, use a **Monte Carlo simulation** as in the lecture:
+
+1. Create 1,000 random routes (for example with `random.shuffle()` on the list of cities to visit)
+2. Compute the cost of each route, including the flights from and back to Hamburg
+3. Estimate the **expected cost of a random route** as the average of all simulated costs and save it in `average_cost`
+4. Save the cost of the cheapest route you found in `min_cost`
+
+::: {.callout-tip}
+The more random routes you simulate, the closer `average_cost` gets to the true average, and the more likely it is that you also find the cheapest route.
+:::
 
 ```{python}
 # City names and cost matrix
@@ -213,8 +222,10 @@ print(cost_df)
 #| eval: false
 #| code-fold: true
 # Test your solution with the following code
-assert min_cost < 6000, "The cheapest route should be cheaper than 6000. Try again, if you think your algorithm works correctly."
-print(r"All tests passed, you have successfully implemented the route planner!")
+assert abs(average_cost - 6880) < 150, "The average cost of a random route should be close to 6880"
+assert min_cost == 5500, "With 1,000 random routes, you should find the cheapest route (5500)"
+print(r"All tests passed, you have successfully simulated the route planner!")
+print(f"A random route costs about {average_cost:.0f} on average, the best one {min_cost}.")
 ```
 
 # Conclusion
@@ -225,7 +236,7 @@ We've explored how randomness affects decision-making through:
 - Optimal stopping with random elements
 - Caching a random subset of data
 - Scheduling tasks with due dates
-- Finding the cheapest route for a travel problem
+- Monte Carlo simulation of a travel problem
 
 Remember that randomness isn't always bad - sometimes it's the best strategy we have!
 
