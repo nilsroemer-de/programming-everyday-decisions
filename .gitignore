@@ -177,3 +177,8 @@ _repo-md
 
 # Screenshot-Kopien für die Design-Abnahme (siehe UEBERGABE.md)
 screenshots-review/
+
+# Quarto-Zwischenablage für Abbildungen (wird bei jedem Render neu erzeugt)
+/lectures/*_files/
+/tutorials/*_files/
+/general/*_files/
