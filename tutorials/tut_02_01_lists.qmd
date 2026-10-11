@@ -177,7 +177,8 @@ When accessing nested lists, the first `[]` selects the outer list item, and the
 Using the `restaurant_data` list above, create variables `best_restaurant` and `best_rating` containing the name and rating of the restaurant with the highest rating. You'll need to:
 
 1. Look at each restaurant's rating (position 1 in each inner list)
-2. Keep track of the highest rating and its restaurant name
+2. Compare the three ratings with `>` or use `max()` (loops follow in the next tutorial)
+3. Store the name and rating of the best restaurant
 
 ```{python}
 #| eval: false

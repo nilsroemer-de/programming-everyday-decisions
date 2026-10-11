@@ -273,7 +273,7 @@ make_application = False
 #| eval: false
 #| code-fold: true
 # Test your answer
-assert make_application == True, "The flat rating is 9 and we've been searching for 4 weeks, so we should apply"
+assert make_application == True, "We have seen 6 of 15 flats (more than 37%) and 9 beats our best so far, so we should apply"
 print(f"Should we apply for this flat? {make_application}")
 ```
 

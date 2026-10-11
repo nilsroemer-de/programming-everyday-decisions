@@ -262,7 +262,7 @@ candidate_has_degree = True
 #| code-fold: true
 # Test your answer
 assert final_decision == False, "The candidate should not meet all requirements"
-print("Good job! You correctly identified that the candidate does not meet all requirements as his salary expectation is too high.")
+print("Good job! You correctly identified that the candidate does not meet all requirements as their salary expectation is too high.")
 ```
 
 ## Exercise 3.2 - Optimal Stopping Decision

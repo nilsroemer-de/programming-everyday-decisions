@@ -13,7 +13,7 @@ The question is thus: **When should you stop dating and commit to someone?**
 
 Known academically as the "Optimal Stopping Problem" or "The Marriage Problem", it asks: If you want to find the best possible partner, and you can only date one person at a time (no going back to previous dates!), when should you stop dating and propose?
 
-Let's learn how to use Python to help us in order to make better dating decisions!
+Let's learn how to use Python to make better dating decisions!
 
 # 1 - Variables
 

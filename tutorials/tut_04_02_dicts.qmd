@@ -46,11 +46,11 @@ tasks["Answer Emails"] = 7
 print(tasks)
 ```
 
-To delete entries, you can use the `del()` function:
+To delete entries, you can use the `del` statement:
 
 ```{python}
 #| eval: true
-del(tasks["Answer Emails"])
+del tasks["Answer Emails"]
 print(tasks)
 ```
 
@@ -71,8 +71,8 @@ Furthermore, we can nest a dictionary in a dictionary:
 #| eval: false
 # Creating a dictionary of projects
 projects = {
-    "Project Alpha": {"status": "In Progress", "deadline": "2023-12-31"},
-    "Project Beta": {"status": "Completed", "deadline": "2023-06-30"}
+    "Project Alpha": {"status": "In Progress", "deadline": "2026-12-31"},
+    "Project Beta": {"status": "Completed", "deadline": "2026-06-30"}
 }
 print(f"The deadline of Project Alpha is {projects['Project Alpha']['deadline']}.")
 ```
@@ -88,6 +88,7 @@ Add a new task called "Prepare Presentation" with the priority level `5` to the 
 ```
 ```{python}
 #| eval: false
+#| code-fold: true
 # Test your answer
 assert "Prepare Presentation" in tasks, "The task 'Prepare Presentation' was not added to the dictionary."
 print("Great! You've successfully added a new task to the tasks dictionary.")
@@ -104,6 +105,7 @@ Check if the key "Team Meeting" exists in the `tasks` dictionary using the `in` 
 ```
 ```{python}
 #| eval: false
+#| code-fold: true
 # Test your answer
 assert message == "Team Meeting is in the dictionary", "The message is not correct. It should be 'Team Meeting is in the dictionary'."
 print("Great! You've successfully checked if a key exists in the dictionary.")
@@ -120,6 +122,7 @@ Change the value associated with the key "Check Emails" to `6`.
 ```
 ```{python}
 #| eval: false
+#| code-fold: true
 # Test your answer
 assert tasks["Check Emails"] == 6, "The value associated with the key 'Check Emails' is not correct. It should be 6."
 print("Great! You've successfully changed the value of a key in the dictionary.")
@@ -173,6 +176,7 @@ Compute the average priority of the tasks in the `tasks` dictionary. Save the re
 
 ```{python}
 #| eval: false
+#| code-fold: true
 # Test your answer
 assert len(tasks) == 4, "The number of tasks is not correct. It should be 4 based on the previous exercises."
 assert average_priority == 4.25, "The average priority is not correct. It should be 4.25."
@@ -191,6 +195,7 @@ Get the task with the highest priority from the `tasks` dictionary. Save the res
 
 ```{python}
 #| eval: false
+#| code-fold: true
 # Test your answer
 assert highest_priority_task == "Liquidity Planning", f"The task {highest_priority_task} as the task with the highest priority is not correct. It should be 'Liquidity Planning'."
 print("Great! You've successfully gotten the task with the highest priority.")
@@ -201,7 +206,7 @@ print("Great! You've successfully gotten the task with the highest priority.")
 First, check if the key `"Liquidity Planning"` exists in the `tasks` dictionary. If it exists, remove it using the appropriate method.
 
 ::: {.callout-tip}
-You can use the `del()` function to remove a key from a dictionary.
+You can use the `del` statement to remove a key from a dictionary, e.g. `del tasks["Team Meeting"]`.
 :::
 
 ```{python}
@@ -211,6 +216,7 @@ You can use the `del()` function to remove a key from a dictionary.
 ```
 ```{python}
 #| eval: false
+#| code-fold: true
 # Test your answer
 assert "Liquidity Planning" not in tasks, "The task 'Liquidity Planning' was not removed from the dictionary."
 print("Great! You've successfully removed a task from the dictionary.")

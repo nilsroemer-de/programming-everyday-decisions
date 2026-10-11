@@ -136,11 +136,11 @@ The function should return a **list of lists** where each inner list contains `[
 #| eval: false
 #| code-fold: true
 # Test your answer
-names = ["Elio", "Mischa", "Nina"]
-drinks = ["Latte", "Espresso", "Cappuccino"]
-prices = [3.5, 2.5, 4.0]
-deadline = [10, 5, 15]
-result = create_order_list(names, drinks, prices, deadline)
+test_names = ["Elio", "Mischa", "Nina"]
+test_drinks = ["Latte", "Espresso", "Cappuccino"]
+test_prices = [3.5, 2.5, 4.0]
+test_deadlines = [10, 5, 15]
+result = create_order_list(test_names, test_drinks, test_prices, test_deadlines)
 assert isinstance(result, list), "Should return a list"
 assert len(result) == 3, "Should have one entry per customer"
 assert len(result[0]) == 4, "Each entry should have 4 elements"

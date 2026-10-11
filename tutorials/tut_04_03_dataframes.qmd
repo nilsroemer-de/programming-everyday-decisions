@@ -104,8 +104,8 @@ selected_cols = tasks[['task', 'duration']]
 print("\nSelected columns:\n", selected_cols)
 
 # Using dot notation (only works for simple column names)
-priorities = tasks.deadline
-print("\nPriorities:\n", priorities)
+deadlines = tasks.deadline
+print("\nDeadlines:\n", deadlines)
 ```
 
 ## Accessing Rows
