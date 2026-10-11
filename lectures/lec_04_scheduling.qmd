@@ -702,7 +702,7 @@ Without revenues, we can use the same approach with **metric priorities**!
 
 ::: {.column width="50%"}
 
-**Setup:**
+**Setup** (priority 1 = highest):
 
 ```python
 Task  Duration  Priority
@@ -731,13 +731,13 @@ High-priority tasks depend on low-priority tasks.]{.fragment}
 
 ## Priority Inheritance
 
-[Question:]{.question} **How to handle with shortest processing time?**
+[Question:]{.question} **How do we prevent the inversion?**
 
 ::: {.incremental}
 
 - [Rule:]{.task} Tasks inherit priority from their dependents.
-- A gets the highest priority from B
-- This ensures the **critical path completion**
+- A inherits priority 1 from B and is done first
+- B can start right after A, C to E follow
 
 :::
 
@@ -745,8 +745,8 @@ High-priority tasks depend on low-priority tasks.]{.fragment}
 
 ```python
 Task  Duration  Priority
-  A    20min     3
-  B    30min     3
+  A    20min     1
+  B    30min     1
   C    30min     2
   D    30min     2
   E    30min     2
