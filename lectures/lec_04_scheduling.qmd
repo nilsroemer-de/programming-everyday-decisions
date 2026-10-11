@@ -10,6 +10,19 @@ format:
           theme: neutral
 ---
 
+```{python}
+#| include: false
+# Charts on these slides are drawn from the task tables shown on the slides
+import sys
+sys.path.insert(0, "../helpers")
+import matplotlib.pyplot as plt
+from course_plots import *
+use_course_style()
+
+wash = {"A": 40, "B": 30, "C": 60, "D": 50}
+dry = {"A": 60, "B": 80, "C": 20, "D": 60}
+```
+
 # [Introduction]{.flow} {.title}
 
 ## Today's Topic: Scheduling Algorithms
@@ -34,7 +47,11 @@ format:
 
 ## A Simple Scheduling Problem
 
-![](../images/atlb/atlb_schedule-washdry.svg)
+```{python}
+#| echo: false
+fig = task_durations({"Washing": wash, "Drying": dry})
+plt.show()
+```
 
 ## Washing Machine & Dryer
 
@@ -151,31 +168,13 @@ Task  Washing  Drying  Schedule
 
 **Optimal Solution: [B A D C]{.highlight}**
 
-![](../images/atlb/atlb_schedule-johnson-optimal.svg)
-
-<!--
-```{mermaid}
-%%| echo: false
-
-gantt
-    title Optimal Schedule
-    dateFormat HH:mm
-    axisFormat %H:%M
-
-    section Washing
-        Wash B : 00:00, 30m
-        Wash A : 40m
-        Wash D : 50m
-        Wash C : 60m
-
-    section Drying
-        Dry B : 00:30, 80m
-        Dry A : 60m
-        Dry D : 60m
-        Dry C : 20m
+```{python}
+#| echo: false
+fig = johnson_gantt("BADC", wash, dry, end=330)
+plt.show()
 ```
--->
-**Total time:** 4 hours 20 minutes
+
+**Total time:** 4 hours 10 minutes
 
 . . .
 
@@ -184,29 +183,11 @@ gantt
 ## Suboptimal Solution
 **Suboptimal Solution: [C D A B]{.highlight}**
 
-![](../images/atlb/atlb_schedule-johnson-suboptimal.svg)
-
-<!--
-```{mermaid}
-%%| echo: false
-gantt
-    title Suboptimal Schedule
-    dateFormat HH:mm
-    axisFormat %H:%M
-
-    section Washing
-    Wash C : 00:00, 60m
-    Wash D : 50m
-    Wash A : 40m
-    Wash B : 60m
-
-    section Drying
-    Dry C : 01:00, 20m
-    Dry D : 01:50, 60m
-    Dry A : 60m
-    Dry B : 80m
+```{python}
+#| echo: false
+fig = johnson_gantt("CDAB", wash, dry, end=330)
+plt.show()
 ```
--->
 
 **Total time:** 5 hours 10 minutes
 
