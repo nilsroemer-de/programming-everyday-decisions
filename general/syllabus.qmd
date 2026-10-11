@@ -24,36 +24,39 @@ We were rather ambitious in the design of the course in the course module, thus 
 [Lecture II]{.entry-meta}
 
 - Multi-armed Bandit Problem
-- Balancing exploration and exploitation
-- Programming: Simulating the Multi-armed Bandit Problem
+- Balancing exploration and exploitation (Laplace's rule, Bellman, Gittins index)
+- Programming: Lists, loops and simulating slot machines
 
 ### Caching
 [Lecture III]{.entry-meta}
 
 - Principles of caching and memory management
 - Least Recently Used (LRU) and other caching strategies
-- Programming: Implementing an LRU cache
+- Caching for personal productivity and attention
+- Programming: Implementing an LRU cache with lists, functions and packages
 
 ### Scheduling
 [Lecture IV]{.entry-meta}
 
-- Task scheduling algorithms
-- Trade-offs between efficiency and fairness
-- Programming: Implementing scheduling algorithms
+- Task scheduling algorithms (Johnson's rule, EDD, SPT, Lawler)
+- Different objectives: deadlines, waiting time, priorities and dependencies
+- Real-time scheduling and thrashing
+- Programming: Implementing scheduling algorithms with dictionaries and DataFrames
 
 ### Randomness
 [Lecture V]{.entry-meta}
 
 - Role of randomness in algorithms
-- Monte Carlo methods and their applications
-- Programming: Monte Carlo simulation
+- Monte Carlo methods and their applications in business
+- Simulated annealing and the traveling salesman problem
+- Programming: Working with AI coding assistants and Monte Carlo simulation
 
 ### Computational Kindness
 [Lecture VI]{.entry-meta}
 
-- Algorithms for social good
-- Ethical considerations in algorithm design
-- Quick review of key concepts
+- Computational kindness: algorithms that reduce the burden for others
+- Fairness and bias in algorithms
+- Quick review of key concepts and outlook (Bayes' rule, overfitting, game theory, networking)
 - Brief student presentations
 - Open discussion and Q&A
 

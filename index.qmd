@@ -11,7 +11,7 @@ format:
 
 ## Course Description
 
-This course explores the intersection of computer science and everyday life by examining how algorithms can be applied to improve decision-making in various contexts. Inspired by the book "Algorithms to Live By" by Brian Christian and Tom Griffiths, the course will cover topics such as optimal stopping, scheduling, caching, and game theory, providing both theoretical foundations and practical programming exercises. The course consists of lectures and exercises.
+This course explores the intersection of computer science and everyday life by examining how algorithms can be applied to improve decision-making in various contexts. Inspired by the book "Algorithms to Live By" by Brian Christian and Tom Griffiths, the course will cover optimal stopping, explore and exploit, caching, scheduling, randomness and computational kindness, with an outlook on topics such as game theory, providing both theoretical foundations and practical programming exercises. The course consists of lectures and exercises.
 
 ## Learning Outcomes
 
