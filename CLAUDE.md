@@ -62,12 +62,12 @@ index.qmd            # Startseite: Kursbeschreibung, Learning Outcomes, Struktur
 general/             # Syllabus, FAQ, Installation (uv.qmd), Literatur, Cheatsheet, Imprint, Privacy, header.html (leer)
 lectures/            # Vorlesungen als .qmd (HTML-Seite + RevealJS-Folien + PDF); tut_05_01_llm.qmd ist ein Tutorial im Lecture-Ordner
 tutorials/           # Interaktive Python-Tutorials (HTML, ipynb, PDF)
-include/             # Wiederverwendbare Includes (tutorial_end.qmd: Abschnitt „Solutions")
-helpers/             # strip_polyfill.py (Post-Render, entfernt cdnjs-Polyfill), strip-pauses.lua (Pausenmarker nur in RevealJS), Konvertierungsskripte
+include/             # Wiederverwendbare Includes (tutorial_end.qmd: Abschnitt „Solutions"; lecture_literature_start/_books.qmd: Literaturfolien aller Lectures)
+helpers/             # course_plots.py (Grafiken im Website-Stil), strip_polyfill.py (Post-Render, entfernt cdnjs-Polyfill), strip-pauses.lua (Pausenmarker nur in RevealJS), Konvertierungsskripte
 assets/              # Self-hosted MathJax: assets/mathjax (v3, HTML) und assets/mathjax2 (v2, RevealJS-Plugin braucht v2-API)
 fonts/               # woff2: Poppins, Inter, Space Mono (latin + latin-ext)
 fonts-ttf/           # TTF-Varianten für den Typst-PDF-Export (font-paths)
-images/              # Alle Bilder lokal (bg/, gif/, alg/, atlb/, caching/, Porträts)
+images/              # Alle Bilder lokal: Fotos (bg/), GIFs (gif/), Illustrationen (alg/, caching/), Porträts (derzeit ungenutzt)
 animations/          # GIFs für Lecture 05 (versioniert, ca. 23 MB, von lec_05 mit festem Seed erzeugt)
 CNAME                # Custom Domain für GitHub Pages
 pyproject.toml, uv.lock   # Python-Abhängigkeiten
@@ -99,8 +99,14 @@ Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`
 - **Folien prüfen:** Nach Gestaltungsänderungen alle Decks auf Überlauf prüfen (normale Ansicht und `?print-pdf`). Überlauf durch zu viel Inhalt wird nicht per CSS kaschiert, sondern als Vorschlag (kürzen, aufteilen, in Notizen) gelistet.
 - **PDF (Typst):** Schriften und Farben kommen aus `_brand.yml`, Layout aus `_typst/typst-template.typ` (Titelblock linksbündig wie der Seitenkopf, Untertitel und Lecturer/Affiliation als Space-Mono-Labels, ruhige Überschriften, Code in Sky-Panel, Seitenzahl in Space Mono). Die Vorlage ist eine Kopie von Quartos Standard-`typst-template.typ` mit angepasstem Titelblock; bei Quarto-Updates gegen das Original (`quarto --paths`, `share/formats/typst/pandoc/quarto/`) abgleichen.
 - **Folien-Pausen:** Pausenmarker `. . .` nur in Lectures verwenden. Der Lua-Filter `helpers/strip-pauses.lua` (in `_quarto.yml` registriert) entfernt sie in allen Formaten außer revealjs, sonst stehen sie als Text auf der HTML-Seite und im PDF.
-- **Tutorials:** Aufgaben als `## Exercise x.y - Titel` mit einer leeren Code-Zelle (`# YOUR CODE BELOW`) und einer eingeklappten Test-Zelle mit `assert`. Am Ende jedes Tutorials `{{< include ../include/tutorial_end.qmd >}}`.
+- **Tutorials:** Aufgaben als `## Exercise x.y - Titel` mit einer leeren Code-Zelle (`# YOUR CODE BELOW`) und einer eingeklappten Test-Zelle (`#| code-fold: true`) mit `assert`. Am Ende jedes Tutorials `{{< include ../include/tutorial_end.qmd >}}`. Inhalte erst verwenden, wenn sie eingeführt sind (Schleifen ab II.II, Funktionen ab III.II, Dictionaries ab IV.II). Tutorials III haben einen eigenen LRU-Cache als roten Faden (Listen, Funktionen, `random`), IV.II greift ihn mit Dictionaries auf.
+- **Tests prüfen:** Nach Änderungen an Übungen jede Übung einmal korrekt lösen und zusätzlich eine typische Fehlerlösung probieren: Tests dürfen korrekte Lösungen nicht ablehnen und typische Fehler nicht durchlassen. Testdaten so wählen, dass die häufigste Auslassung auffällt; Zufall nur mit festem Seed. Lösungen nie committen (Lösungen veröffentlicht Nils separat).
+- **pandas 3:** Positionszugriff immer mit `.iloc[...]`, nie `serie[-1]` (wirft bei Datums- oder Textindex einen KeyError).
 - **Bilder:** Vor dem Einchecken für Web komprimieren und EXIF-Metadaten entfernen. Keine Hotlinks auf fremde Server.
+- **Grafiken per Code:** Diagramme, Zeitpläne und Kurven entstehen in Code-Zellen aus denselben Daten, die auf der Folie stehen (`helpers/course_plots.py`: `use_course_style()` lädt Inter/Poppins aus `fonts-ttf/` und die Farben aus `_brand.yml`; Funktionen für Gantt-Pläne, Echtzeit-Scheduling, Abhängigkeiten, Zugriffszeiten). Eine versteckte Setup-Zelle (`#| include: false`) am Anfang der Lecture bindet das Modul ein (`sys.path.insert(0, "../helpers")`). Achtung: `freeze: auto` merkt Änderungen an `course_plots.py` nicht; danach die betroffenen Lectures (III, IV, V) mit gelöschtem `_freeze/lectures/<datei>` neu rendern. Fotos und Illustrationen bleiben Bilddateien. Grafiken auf Folien, die nach dem Ergebnis fragen (z. B. maximale Verspätung), zeigen die Antwort nicht vorab.
+- **Zahlen und Fakten:** Konkrete Zahlen auf Folien mit Quelle (Fußnote) oder ausdrücklich als Größenordnung kennzeichnen.
+- **Literaturfolien:** Jede Lecture endet mit `{{< include ../include/lecture_literature_start.qmd >}}` und `{{< include ../include/lecture_literature_books.qmd >}}`; lecture-spezifische Literatur (z. B. Ferguson in Lecture I) als eigene Folie dazwischen.
+- **Abgaberegel** (Quelle: `klu_syllabus.md`): pass/fail, mindestens 75 % Anwesenheit, zwei Assignments zu algorithmischen Problemen aus dem Kurs, kurze Abschlusspräsentation, alles bis Quartalsende, mindestens 50 % korrekt, Gruppen bis drei Personen. Startseite und Einführungsfolien müssen gleich lauten.
 - **Build-Artefakte** (`_site/`, `_freeze/`, `.quarto/`, `.DS_Store`, `*.quarto_ipynb`) niemals committen.
 
 ## Stand und offene Punkte
@@ -110,7 +116,7 @@ Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`
 - Live unter courses.nilsroemer.com (GitHub Pages). Kursstart Ende Oktober 2026.
 - Seit Juli 2026 betreibt Nils die Seite allein; Design an nilsroemer.com angeglichen, alle Drittanbieter-Requests entfernt, Rechtstexte aktualisiert, Tobias nur noch in den Credits.
 - Design-Pass Oktober 2026 (Branch `design-angleich`): globaler Linkstil, ruhige Abschnittstitel und Labels, Gedankenstriche im sichtbaren Text entfernt, Tutorial-Nummerierung in der Sidebar vereinheitlicht, `animations/` versioniert. Details in `UEBERGABE.md`.
-- Inhaltliches Review Oktober 2026 (Branch `inhalt-review`): Tippfehler und eindeutige Fehler korrigiert, Pausenmarker-Filter, alle Befunde mit Priorität und Vorschlag in `REVIEW.md`.
+- Inhaltliches Review Oktober 2026 (Branch `inhalt-review`): Runde 1 Prüfung und eindeutige Korrekturen, Runde 2 alle Befunde umgesetzt (Fachfehler, Abgaberegel, LRU-/Monte-Carlo-/Fairness-Inhalte, Python 3.13 und pandas 3, Grafiken per Code, gekürzte Folien, geschärfte Tests). Status je Befund in `REVIEW.md`.
 
 **Offene Punkte**
 

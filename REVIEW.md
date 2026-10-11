@@ -1,10 +1,12 @@
 # REVIEW.md: Inhaltliche Prüfung vor dem Kursstart
 
-Stand: 10. Oktober 2026, Branch `inhalt-review` (von `main` 51b9446). Geprüft: alle Lectures, Tutorials, Website-Seiten (Startseite, Syllabus, FAQ, Installation, Literatur, Cheatsheet), Rechtstexte nur gelesen. Alle Code-Zellen wurden einmal komplett ausgeführt (`_freeze/` leer, `uv run quarto render`, Exit 0, keine Warnungen im Log, keine stderr-Ausgaben in den gerenderten Seiten). Links und Bildverweise automatisch geprüft (40 externe Links, 0 fehlende lokale Verweise).
+Stand: 11. Oktober 2026, Branch `inhalt-review` (von `main` 51b9446). Runde 1 (10. Oktober): Prüfung und eindeutige Korrekturen. Runde 2 (11. Oktober): alle Befunde umgesetzt, siehe Status in Abschnitt 2 und Zusammenfassung in Abschnitt 3.
+
+Runde 1: Geprüft: alle Lectures, Tutorials, Website-Seiten (Startseite, Syllabus, FAQ, Installation, Literatur, Cheatsheet), Rechtstexte nur gelesen. Alle Code-Zellen wurden einmal komplett ausgeführt (`_freeze/` leer, `uv run quarto render`, Exit 0, keine Warnungen im Log, keine stderr-Ausgaben in den gerenderten Seiten). Links und Bildverweise automatisch geprüft (40 externe Links, 0 fehlende lokale Verweise).
 
 Prioritäten: **hoch** = fachlich falsch oder kaputt, **mittel** = veraltet oder inkonsistent, **niedrig** = Stil.
 
-## 1. Direkte Korrekturen (committet)
+## 1. Direkte Korrekturen aus Runde 1 (committet)
 
 | Commit | Inhalt |
 |---|---|
@@ -32,97 +34,148 @@ Prioritäten: **hoch** = fachlich falsch oder kaputt, **mittel** = veraltet oder
 
 - `helpers/strip-pauses.lua`, projektweit in `_quarto.yml` registriert. Entfernt `. . .`-Absätze in allen Formaten außer revealjs. Geprüft: 0 Marker in HTML und hugo-md, Fragmentzahl der Folien unverändert (Lecture IV: 77, vorher 78 wegen der in Nachtrag 4 aufgeteilten Folie).
 
-Nicht geändert, obwohl eindeutig (Inhalt oder Code-Ausgabe, deine Entscheidung): siehe Befunde „hoch".
 
-## 2. Befunde
+## 2. Befunde mit Status
+
+Status nach der Überarbeitung vom 11. Oktober 2026 (Runde 2, alle Befunde von dir freigegeben). Der Commit steht jeweils dabei.
 
 ### Hoch
 
-| Datei | Stelle | Problem | Vorschlag |
+| Datei | Stelle | Problem | Status |
 |---|---|---|---|
-| `lectures/lec_04_scheduling.qmd` | „Optimal Solution" und `images/atlb/atlb_schedule-johnson-optimal.svg` | Gesamtzeit „4 hours 20 minutes" ist falsch. Mit den Tabellenwerten (C trocknet 20 min) ergibt B A D C 250 min = 4 h 10 min (nachgerechnet, über alle 24 Reihenfolgen minimal). Die Grafik zeichnet C im Trockner 30 min lang und beschriftet 260 m. | Text auf „4 hours 10 minutes", Grafik korrigieren (C-Trocknen 2 Kästchen, Ende 250). Alternativ C-Trocknen in der Tabelle auf 30 min setzen, dann stimmt 260, die Suboptimal-Variante wird 320. |
-| `lectures/lec_05_randomness.qmd` | „Time and Space Requirements" | „20! … would take 77 **billion** years at 1 ms per check": 2,43·10¹⁸ ms ≈ 7,7·10⁷ Jahre = 77 **Millionen** Jahre. | „77 million years". |
-| `lectures/lec_01_optimal_stopping.qmd` | „Why 37%?" und Folientitel „Geometric Distribution" | Das 37-%-Ergebnis hat nichts mit der geometrischen Verteilung zu tun (es folgt aus der Maximierung von −x·ln x, Ferguson 1989). Die Simulationsfolie heißt ebenfalls „Geometric Distribution", zeigt aber Erfolgsquoten je Stopp-Position. | Satz „This is based on the geometric distribution" streichen, Folie umbenennen in „Simulation: Success Rate per Stopping Position". |
-| `lectures/lec_01_optimal_stopping.qmd` | „Step-by-step Approximation" | Die Reihe 100 %, 50 %, 33 %, … (1/n) ist die Trefferchance bei **zufälliger** Wahl, nicht die „success probability" der Strategie (die fällt nicht auf 20 %, sondern konvergiert gegen 37 %). Der Folientext legt Letzteres nahe. | Umformulieren: „Chance of picking the best by random choice", danach der Kontrast zur 37-%-Strategie. |
-| `lectures/lec_01_optimal_stopping.qmd` | Zelle „Computing the number" | Ausgabe lautet `Percentage of options to look at: 0.368%`, Einheit falsch. | `{percentage:.1%}` → `36.8%`. Code-Ausgabe, deshalb nicht geändert. |
-| `lectures/lec_02_explore_exploit.qmd` | „The Bellman approach II", „Question time", „Bellman approach III" | (w+1)/(w+l+2) ist die Laplace-Regel (Schätzer für die Gewinnwahrscheinlichkeit), nicht Bellmans „optimale Strategie". Bellmans Beitrag ist die Rückwärtsrechnung bei bekanntem Horizont (Folie I und IV beschreiben das richtig). Das Buch führt die Formel nur als Faustregel ein. | Die drei Folien als „A simple estimate (Laplace's rule of succession)" abtrennen und bei Bellman nur die Rückwärtsinduktion lassen. |
-| `lectures/lec_04_scheduling.qmd` | „Priority Inversion" / „Priority Inheritance" | Prioritätsskala widersprüchlich: Tabelle A 3, B 1; Text „A gets the highest priority from B" setzt 1 = höchste voraus; nach der Vererbung steht A 3, B 3. Ist 1 die höchste Priorität, müsste A auf 1 steigen; ist 3 die höchste, hätte A schon die höchste und es gäbe keine Inversion. | Skala festlegen (1 = höchste) und Tabelle nach Vererbung auf A 1, B 1 setzen. |
-| `index.qmd` vs. `lectures/lec_00_introduction.qmd` | „Course Structure" vs. „Passing the Course" / „Handing in Assignments" | Abgaberegeln widersprechen sich: Startseite „assignments from 2 out of the 5 tutorials … due by the end of the quarter"; Einführung „assignments of at least two lectures … due at the beginning of the next lecture", „You have to pass at least twice". Außerdem gibt es 15 Tutorials in 5 Teilen, nicht „5 tutorials". | Eine Regel festlegen und an beiden Stellen gleich formulieren („two of the five tutorial parts", Frist). |
-| `tutorials/tut_05_02_recap.qmd` | Exercise 4.1, Test | `assert schedule_df.shape == (5, 4)` passt nicht zur Aufgabe: Spalten aus dem Dictionary (name, duration, due_time) plus start und end sind 5 Spalten. Korrekte Lösungen fallen durch. | Erwartung auf (5, 5) ändern oder nur eine Spalte `end_time` verlangen. |
-| `tutorials/tut_03_03_packages.qmd` | Section 3, Liste der uv-Befehle | „Update dependencies (`uv update`)": den Befehl gibt es nicht. | `uv lock --upgrade` und `uv sync` (oder `uv sync --upgrade`); `uv self update` aktualisiert uv selbst. |
-| `tutorials/tut_03_01_recap.qmd` | Section 2, Beispiel „Simple cache eviction policy" | Regel `access_count > 10 and last_accessed_minutes < 30 → evict` wirft genau das häufig und kürzlich genutzte Element raus, das Gegenteil von LRU aus der Vorlesung. | Bedingung umdrehen (`access_count < 10 and last_accessed_minutes > 30`), Text anpassen. |
-| `lectures/lec_05_randomness.qmd` | „After the break: Randomness" | Bullets aus Lecture IV kopiert („Different scheduling algorithms applied to problems"). | Auf Tutorial V.I (Programming with AI) und V.II verweisen. |
+| `lectures/lec_04_scheduling.qmd` | Johnson „Optimal Solution" | Gesamtzeit 4 h 20 falsch (richtig 250 min), Grafik zeichnete C-Trocknen 30 statt 20 min | erledigt: 4 h 10 min, Grafik per Code aus der Tabelle (739fc03) |
+| `lectures/lec_05_randomness.qmd` | „Time and Space Requirements" | 77 Milliarden statt 77 Millionen Jahre | erledigt (00a3e7f) |
+| `lectures/lec_01_optimal_stopping.qmd` | „Why 37%?", Simulationsfolie | 37 % über „geometric distribution" begründet | erledigt: Herleitung über −x·ln x, Folie „Simulation: Success Rate by Stopping Point" (6031e84) |
+| `lectures/lec_01_optimal_stopping.qmd` | „Step-by-step Approximation" | 1/n als Erfolgschance der Strategie lesbar | erledigt: „Why not pick at random?" mit Kontrast (6031e84) |
+| `lectures/lec_01_optimal_stopping.qmd` | Zelle „Computing the number" | Ausgabe 0.368% | erledigt: 36.8% (6031e84) |
+| `lectures/lec_02_explore_exploit.qmd` | Bellman II bis III | Laplace-Regel als Bellmans Strategie dargestellt | erledigt: eigener Teil „A simple estimate: Laplace's rule of succession", Bellman nur Rückwärtsrechnung (ae40a7e) |
+| `lectures/lec_04_scheduling.qmd` | Priority Inversion/Inheritance | Prioritätsskala widersprüchlich | erledigt: 1 = höchste, A erbt 1 (4ec220b) |
+| `index.qmd`, `lec_00_introduction.qmd` | Abgaberegeln | widersprüchlich | erledigt nach KLU-Syllabus (7a3abf8) |
+| `tutorials/tut_05_02_recap.qmd` | Exercise 4.1, Test | erwartete 4 statt 5 Spalten | erledigt, Spalten in der Aufgabe benannt (1cad20e) |
+| `tutorials/tut_03_03_packages.qmd` | uv-Befehle | `uv update` existiert nicht | erledigt (1cad20e) |
+| `tutorials/tut_03_01_recap.qmd` | Eviction-Beispiel | Gegenteil von LRU | erledigt im LRU-Umbau (8802dee) |
+| `lectures/lec_05_randomness.qmd` | „After the break" | aus Lecture IV kopiert | erledigt (00a3e7f) |
+| *neu gefunden* `lectures/lec_01_optimal_stopping.qmd` | „Rejection" | In q^(1/(1−q)) ist q die **Annahme**-, nicht die Ablehnungswahrscheinlichkeit (bei q → 1 ergibt sich 1/e) | erledigt (00fca45) |
+| *neu gefunden* `lectures/lec_04_scheduling.qmd` | „Lawler's Solution" | Grafik zeigte A D B C E statt D B A C E von der Folie | erledigt, Grafik per Code (220b72c) |
+| *neu gefunden* `tutorials/tut_05_02_recap.qmd` | alte Routenaufgabe | Test `min_cost < 6000` bei 10 Versuchen lehnte rund 38 % der korrekten Lösungen ab | erledigt im Monte-Carlo-Umbau (3504308) |
+| *neu gefunden* `tutorials/tut_02_03_explore_exploit.qmd` | Exercise 2.1, Test | Grenze 60 Spiele lehnte korrekte Lösungen ab (Rate 1,8 ergibt im Mittel rund 90) | erledigt (7a8a485) |
+| *neu gefunden* `projects/stocks_streamlit.py` | Kennzahlen | `['Close'][-1]` wirft unter pandas 3 KeyError | erledigt (163d556) |
 
 ### Mittel
 
-| Datei | Stelle | Problem | Vorschlag |
-|---|---|---|---|
-| `general/syllabus.qmd`, `index.qmd` | Programming-Zeilen, Lecture VI, Kursbeschreibung | Syllabus verspricht „Implementing an LRU cache" (III), „Monte Carlo simulation" (V), „Algorithms for social good, Ethical considerations" (VI); die Tutorials III sind Recap/Funktionen/Pakete, V.II zieht nur zufällige Routen, Lecture VI ist Computational Kindness plus Ausblick. Startseite nennt „game theory" als Thema, das nur im Ausblick vorkommt. | Syllabus-Zeilen an den Inhalt anpassen (III: „Functions and packages", V: „Random sampling and AI-assisted coding", VI: „Computational kindness, outlook, presentations"), „game theory" auf der Startseite streichen oder durch „randomness" ersetzen. |
-| alle Lectures, `include/tutorial_end.qmd`, `general/syllabus.qmd` | „we/us/our" | Seit Juli 2026 ein Lehrender; FAQ und Startseite sagen „me", Folien „we will help you", „Ask us!", „Provide us", „We were rather ambitious", „We have read it and discussed it in depth". | Sprecherperspektive festlegen (Vorschlag: „I" für den Lehrenden, „we" nur für „wir im Kurs") und einmal durchgehen. |
-| `general/uv.qmd` | „Run the starter script", „What does that code mean?", „Install Python" | `uv init` (uv 0.11) erzeugt `print("Hello from <projekt>!")` und zusätzlich ein Git-Repo; Seite zeigt „Hello World!" / `print("Hello, World!")`. Python 3.12 „for the course this year": 3.12 ist 2026 im Security-only-Status. | Ausgabe und Codebeispiel auf das aktuelle uv-Template bringen; Python-Version prüfen (3.13 oder 3.14, dann auch `requires-python` in `pyproject.toml`). |
-| `lectures/lec_00_introduction.qmd` | „Help from AI" | Modellliste „Claude, ChatGPT, LLama3" veraltet. | „Claude, ChatGPT, Gemini" oder allgemein „current AI assistants". |
-| `tutorials/tut_05_02_recap.qmd` | Callout „How to start with AI pair programming" | Beschreibt Cursor-Shortcuts (Ctrl+L, Ctrl+K); Tutorial V.I und V.III empfehlen VS Code mit Copilot. | Auf Copilot Chat umschreiben (Chat öffnen, Inline-Chat, Tab zum Annehmen) oder Cursor-Hinweis als Alternative kennzeichnen. |
-| `tutorials/tut_04_03_dataframes.qmd`, `general/cheatsheet.qmd` | Installationshinweis | `conda install pandas` / „If you are using Miniconda": der Kurs nutzt nur uv. | Conda-Zeilen entfernen. |
-| `lectures/lec_02_explore_exploit.qmd` | Titel, Folien „Multi-Armed Bandit …" | „Explore Vs. Exploit" (Titel) vs. „Explore & Exploit" (Einführung, Syllabus) vs. „Explore/Exploit" (Sidebar). Folien nummeriert I, II, III, IV, VI (V fehlt). | Einheitlich „Explore & Exploit"; Folien durchnummerieren. |
-| `lectures/lec_01_optimal_stopping.qmd` | „Look-and-Leap Strategy" (2×), „Rejection" / „Mutual Rejection" | Je zwei Folien mit fast identischem Inhalt. | Je eine streichen (kürzt das Deck um zwei Folien). |
-| `lectures/lec_01_optimal_stopping.qmd` | „After the break: Optimal Stopping" | Titel nennt Optimal Stopping, Inhalt beschreibt die Python-Session. | „After the break: First Steps in Python". |
-| `lectures/lec_03_caching.qmd` | „Learning from Computer Science", „Why the Trade-off?", „Why LRU Works", „Cache Vulnerabilities" | Zeitangaben unscharf (1950s, Moore's Law 1965, „Memory Wall" 1994); „SRAM $50,000/GB", „80-90 % hit rate (vs. 50-60 % random)" ohne Quelle; „Cache Poisoning: insert malicious data to evict" beschreibt eher Flooding, Poisoning heißt falsche Daten einschleusen (DNS). | Zahlen mit Quelle versehen oder als Größenordnung kennzeichnen; Poisoning-Definition korrigieren. |
-| `lectures/lec_04_scheduling.qmd` | „Industrial Revolution", YAML-Header, „Questions & Discussion" | Gantt-Chart um 1910 liegt nach der Industriellen Revolution. `format.revealjs.html.mermaid.theme` ist falsch verschachtelt und wirkungslos. Die Folie „Questions & Discussion" enthält nur den Think-Python-Hinweis (Kopierfehler aus „Books on Programming"). | „Industrialization"; `mermaid: theme: neutral` direkt unter `revealjs`; Folie mit „Books on Programming" zusammenlegen. |
-| alle Lectures | „Interesting literature to start", „Books on Programming" | Identische Literaturfolien in jedem Deck, Lectures II und III zitieren Ferguson (Secretary Problem) ohne Bezug. | Einen Include `include/lecture_literature.qmd` nutzen, Ferguson nur in Lecture I. |
-| `tutorials/tut_02_01_lists.qmd` | Exercise 2.1 | „Keep track of the highest rating" verlangt faktisch eine Schleife; Schleifen kommen erst in II.II. Mit drei Einträgen geht es auch mit if-Vergleichen, das sagt die Aufgabe aber nicht. | Hinweis „use comparisons, loops come next" ergänzen oder Aufgabe nach II.II verschieben. |
-| `tutorials/tut_03_03_packages.qmd` | Schlusssatz | Verspricht „read and write files … tabular data"; IV.I bis IV.III behandeln Recap, Dictionaries, DataFrames, keine Dateien. | „dictionaries and tabular data with pandas". |
-| `tutorials/tut_04_01_recap.qmd` | Tests zu Exercise 2.1 und 3.1 | Test 3.1 überschreibt `drinks` mit 3 Einträgen; ein erneuter Lauf von Test 2.1 (`len(drinks) >= 5`) scheitert danach. | In Test 3.1 `test_names`, `test_drinks` verwenden. |
-| `tutorials/tut_04_02_dicts.qmd` | Section 1, Exercise 2.3, Tests | `del()` als Funktion erklärt (`del` ist eine Anweisung). Beispieldaten „2023-12-31". Testzellen ohne `#| code-fold: true`, anders als in allen anderen Tutorials. | `del tasks["…"]`; Daten auf 2026/2027; code-fold ergänzen. |
-| `tutorials/tut_05_03_free.qmd` | Überschrift „Pygame Games" | Projekte 5 bis 8 (Tic-Tac-Toe im Terminal, OCR, Streamlit) stehen unter „Pygame Games". | Zweite Überschrift „Other Projects". |
-| `general/cheatsheet.qmd` | Umfang | Endet bei Paketen: keine Dictionaries, keine DataFrames (Tutorials IV.II, IV.III), Abschnitt „Tuple unpacking: Structure" leer. | Zwei Abschnitte ergänzen, leeren Punkt füllen. |
-| `general/faq.qmd` | „How can I download PDF slides" | Beschreibt den Reveal-Menü-Weg; jede Lecture-Seite hat inzwischen einen direkten PDF-Link (Typst). | Beide Wege nennen. |
-| `pyproject.toml` / `uv.lock` | Abhängigkeiten | Veraltet, nicht aktualisiert (siehe Tabelle unten). pandas 3.0 ist ein Major-Release (String-Dtype, Copy-on-Write), IV.III und V.II vor einem Upgrade testen. | Nach dem Review gezielt `uv lock --upgrade` und Tutorials IV.III, V.II, Lectures I und V neu ausführen. |
-| `lectures/lec_02_explore_exploit.qmd` | „Hollywood's Strategy" | Tabelle endet 2011 (Buchstand). | Zeile 2021 oder 2025 ergänzen, Quelle nennen. |
-| `tutorials/tut_01_02_comparisons.qmd`, `tut_01_03_stopping.qmd` | Testmeldungen | „as his salary expectation" (Exercise 3.1); Meldung in 5.1 („searching for 4 weeks") passt nicht zur Aufgabe. | „their"; Meldung anpassen. |
+| Datei | Problem | Status |
+|---|---|---|
+| `general/syllabus.qmd`, `index.qmd` | Syllabus versprach Inhalte, die fehlten | erledigt: Inhalte ergänzt (LRU in III, Monte Carlo in V, Fairness in VI) und Syllabus/Startseite angeglichen; Game Theory bleibt als Ausblick (8802dee, 3504308, ae5a422, 6ec996d) |
+| alle | „we/us" trotz Einzel-Lehrendem | **nicht umgesetzt**, Vorgabe: Sprecherperspektive „we" bleibt |
+| `general/uv.qmd` | veraltete `uv init`-Ausgabe, Python 3.12 | erledigt: aktuelles Template, Python 3.13, `uv python pin` (66d8256) |
+| `lec_00_introduction.qmd` | Modellliste veraltet | erledigt: „current AI assistants such as Claude, ChatGPT or Gemini", auch Startseite und Tutorial-Abschluss (66d8256) |
+| `tut_05_02_recap.qmd` | Cursor-Kürzel | erledigt: werkzeugneutral, Copilot, Cursor, Claude Code (66d8256) |
+| `tut_04_03_dataframes.qmd`, Cheatsheet | Conda-Reste | erledigt (66d8256) |
+| `lec_02_explore_exploit.qmd` | Schreibweise, Nummerierung I/II/III/IV/VI | erledigt: „Explore & Exploit" (auch Sidebar), sprechende Folientitel (2eddd4b) |
+| `lec_01_optimal_stopping.qmd` | doppelte Folien | erledigt: zusammengelegt (00fca45) |
+| `lec_01_optimal_stopping.qmd` | „After the break" | erledigt (00fca45) |
+| `lec_03_caching.qmd` | Zahlen ohne Quelle, Poisoning-Definition | erledigt: Quellen oder Größenordnung, Poisoning = falsche Daten (d3d4682) |
+| `lec_04_scheduling.qmd` | „Industrial Revolution", Mermaid-YAML, Folie „Questions & Discussion" | erledigt (e8e914a, c5807e2) |
+| alle Lectures | Literaturfolien doppelt, Ferguson ohne Bezug | erledigt: gemeinsame Includes, Ferguson nur in Lecture I (c5807e2) |
+| `tut_02_01_lists.qmd` | Schleife vor II.II | erledigt: Hinweis auf Vergleiche/`max()` (fc33ab5) |
+| `tut_03_03_packages.qmd` | Schlusssatz | erledigt (8802dee) |
+| `tut_04_01_recap.qmd` | Test überschreibt Listen | erledigt (fc33ab5) |
+| `tut_04_02_dicts.qmd` | `del()`, 2023, Testzellen offen | erledigt (fc33ab5) |
+| `tut_05_03_free.qmd` | Überschrift für Nicht-Pygame-Projekte | erledigt (fc33ab5) |
+| `general/cheatsheet.qmd` | Dictionaries und DataFrames fehlten | erledigt (a350eab) |
+| `general/faq.qmd` | PDF-Weg | erledigt (a350eab) |
+| `pyproject.toml` | veraltete Pakete | erledigt: aktualisiert und alles neu ausgeführt (66d8256) |
+| `lec_02_explore_exploit.qmd` | Hollywood endet 2011 | erledigt: 2024 9 von 10 (Box Office Mojo, US domestic; *Twisters* als Fortsetzung gezählt, *Wicked* nicht) (2eddd4b) |
+| `tut_01_02`, `tut_01_03` | Testmeldungen | erledigt (fc33ab5, 7a8a485) |
 
 ### Niedrig
 
-| Datei | Stelle | Problem | Vorschlag |
+Alle erledigt: Simulation in Lecture I mit Seed und 2.000 Durchläufen (00fca45), „37%" einheitlich, Fußnoten benannt (00fca45), Frage nicht mehr als Folientitel und Summary getrennt (2eddd4b), „Preventing Thrashing: …" (e8e914a), leerer Pausenmarker in Lecture V (580fe95), Caching-Beschreibung in Lecture VI (e8e914a), `popped_song` (8802dee), `deadlines` statt `priorities` (fc33ab5), „Exercise 5.1" in V.II (3504308), Satz in V.III (fc33ab5), Einleitung I.I (fc33ab5), Zingaro-Verlagsort (a350eab).
+
+## 3. Überarbeitung Runde 2 (11. Oktober 2026)
+
+### Neue Inhalte
+
+- **Tutorials III:** eigener LRU-Cache als roter Faden. III.I: LRU-Liste, Cache-Hit, Übungen 3.2 (ein LRU-Schritt) und 4.2 (Treffer zählen). III.II: `lru_access()` und `hit_rate()`. III.III: `random_access()`, Vergleich LRU gegen Zufall mit `random` (LRU 71,9 % Treffer), `functools.lru_cache`. IV.II: LRU-Cache mit einem Dictionary.
+- **Block V:** Lecture V „Monte Carlo in Business" und „Will the Project Finish on Time?" (10.000 simulierte Projekte, 63 % pünktlich, obwohl die wahrscheinlichsten Dauern 21 von 25 Tagen ergeben). Tutorial V.II: Routenaufgabe als Monte-Carlo-Simulation mit Schätzung der erwarteten Kosten.
+- **Lecture VI:** „Fairness in Algorithms", „Where Bias Comes From", „Kind Algorithm Design".
+
+### Kürzungen (Wörter sichtbarer Text, vorher → nachher)
+
+| Deck | Folie | Wörter | Was entfiel |
 |---|---|---|---|
-| `lectures/lec_01_optimal_stopping.qmd` | Simulationszelle | Kommentar „first stopping_position-1 candidates" vs. Schleife über `stopping_position`; kein Seed, Abbildung ändert sich je Lauf; 20 × 10.000 Durchläufe dauern spürbar. | Seed setzen, Kommentar angleichen, 2.000 Durchläufe. |
-| `lectures/lec_01_optimal_stopping.qmd` | durchgehend | „37 %" und „37%" gemischt; Fußnoten [^1], [^8], [^4] unsystematisch. | Eine Schreibweise. |
-| `lectures/lec_02_explore_exploit.qmd` | „## [Question:]{.question} Do you have any examples…", „Explore vs Exploit: Summary" | Frage als Folientitel; Abschnitts- und Folientitel identisch. | Titel „Examples from your life", Folie „Summary I". |
-| `lectures/lec_04_scheduling.qmd` | „Preventing Thrashing Strategic/Tactical" | Doppelpunkt fehlt. | „Preventing Thrashing: Strategic". |
-| `lectures/lec_05_randomness.qmd` | „## Randomness" | Pausenmarker am Folienende ohne Inhalt danach. | Marker streichen. |
-| `lectures/lec_06_kindness.qmd` | „Topics from the Lecture" | „Caching: … by sticking to a task" trifft den Inhalt von Lecture III nicht. | „Keeping what you use and letting go of the rest". |
-| `tutorials/tut_03_01_recap.qmd` | Section 3 | Variable `poped_song`. | `popped_song`. |
-| `tutorials/tut_04_03_dataframes.qmd` | „Accessing Columns" | `priorities = tasks.deadline`, Ausgabe „Priorities". | `deadlines`. |
-| `tutorials/tut_05_02_recap.qmd` | Section 5 | Aufgabe ohne „Exercise 5.1"-Überschrift; Lösung braucht `sorted(key=…)` oder Permutationen, die nie eingeführt wurden (ist als KI-gestützte Aufgabe vertretbar). | Überschrift ergänzen. |
-| `tutorials/tut_05_03_free.qmd` | Einleitung | „put some time 2-3 hours outside of class". | „spend two to three hours outside of class". |
-| `tutorials/tut_01_01_variables.qmd` | Einleitung | „Let's learn how to use Python to help us in order to make better dating decisions". | „…to make better dating decisions". |
-| `general/literature.qmd` | Zingaro | „AU: No Starch Press" (Verlag sitzt in San Francisco). | „San Francisco: No Starch Press". |
+| Lecture I | The Secretary Problem | 64 → 52 | Hinweis zum Namen auf einen Satz |
+| Lecture I | Look-and-Leap Strategy (2 Folien) | 105 → 62 | doppelte Folie, Fußnote präzisiert |
+| Lecture I | Rejection / Mutual Rejection | 100 → 61 | doppelte Folie |
+| Lecture I | Time Constraints | 55 → 50 | Satz zu Ressourcenallokation |
+| Lecture II | The problem with exploitation / exploration | 45 → 27, 56 → 35 | je ein Beispielsatz |
+| Lecture II | Multi-Armed Bandit Problem II | 45 → 33 | Satzform in Stichpunkte |
+| Lecture II | Interactive Casino Challenge + Follow-up | 2 Folien → 1 | gleiche Tabelle zweimal |
+| Lecture II | Expected value for a decision | 44 → 25 | Herleitung gestrafft |
+| Lecture II | The influence of the interval | 57 → 41 | Satzform in Stichpunkte |
+| Lecture II | A Possible Explanation | 68 → 42 | Wiederholungen |
+| Lecture II | Win-Stay Lose-Shift | 71 → 29 | Definition doppelt |
+| Lecture II | Win-Stay = No Brainer? / Lose-Shift | 38 → 23, 53 → 29 | Beispiel gestrafft |
+| Lecture II | The Gittins Index I / II / III | 53 → 31, 69 → 23, 45 → 27 | Annahmen-Details |
+| Lecture II | What is Discounting? | 58 → 25 | Unterpunkte zusammengefasst |
+| Lecture II | Question (Gittins) | 53 → 30 | Konvergenz-Detail |
+| Lecture II | The Scary Math | 48 → 35 | drei Stichpunkte im Callout zusammengefasst |
+| Lecture II | Explore vs Exploit: Mathematically | 50 → 20 | Formulierungen |
+| Lecture II | Personal Action Plan | 2 Callouts → Frageliste + 1 Callout | vierte Dimension, drei der vier „Key Insights" |
+| Lecture II | gesamt | 2304 → 1792 | |
+| Einführung | Our Recommendation / Install VS Code | 66 → 48, 59 → 45 | Callout-Text |
+| Lecture V | Selection Bias | 68 → 45 | Wald-Beispiel gestrafft |
+| Tutorial V.I | What is GitHub Copilot? / Accept without reading? / Impact on Jobs | 74 → 43, 65 → 33, 57 → 39 | Callouts zusammengefasst |
+| alle Lectures | Books on Programming | 67 → 50 | Callout gekürzt, im Include |
 
-**Folien mit viel Text (Kandidaten zum Kürzen, Wörter sichtbarer Text):** Lecture II „Win-Stay Lose-Shift" (73), „The Gittins Index II" (70), „A Possible Explanation" (69), „The Bellman approach I" (67), „Gittins Index: The Scary Math" (64), „What is Discounting?" (59), „Your Personal Action Plan" (zwei Callouts), „Interactive Casino Challenge" und „Follow-up" (gleiche Tabelle zweimal); Lecture I „The Secretary Problem" (68), „Look-and-Leap Strategy" (63), „Time Constraints" (58); Lecture V „Selection Bias" (71); Tutorial V.I „What is GitHub Copilot?" (77), „Accept without reading?" (66), „Impact on Jobs" (63); Einführung „Our Recommendation" (71), „Install VS Code" (62), „Handing in Assignments" (58); in jedem Deck „Books on Programming" (69, Volltitel der Zitate).
+### Grafiken
 
-**Links:** alle lokalen Verweise vorhanden. Extern 36 × 200, `cursor.sh` korrigiert. Nicht per Skript erreichbar, im Browser aber in Ordnung: `openai.com/index/strengthening-chatgpt-responses…` (403, Bot-Schutz) und die acht Unsplash-Fotografenlinks (401, Bot-Schutz).
+| Datei | Entscheidung |
+|---|---|
+| `images/atlb/*.svg` (12 Scheduling-Diagramme) | per Code ersetzt (`helpers/course_plots.py`, Inter/Poppins, Farben aus `_brand.yml`), Ordner entfernt |
+| `images/caching/lec03-tradeoff.png` (Speicherpyramide ohne Quelle) | per Code ersetzt (Zugriffszeiten nach Gregg 2020), entfernt |
+| Lecture IV Mindmap (Mermaid) | bleibt Code, Theme `neutral` jetzt wirksam |
+| Lecture I Erfolgsquote, Lecture V GIFs | waren schon Code |
+| neu: Lecture V Projektsimulation | Code |
+| Fotos in `images/bg/`, GIFs in `images/gif/`, Illustrationen `closet_*`, `Desk*`, `Bed.png`, `lec03-caching-photo.jpg` | bleiben (Fotos und Illustrationen) |
+| `images/caching/motivation.png`, `images/nils-roemer.jpeg`, `images/tobias-vlcek.jpg` | werden nirgends verwendet, aber nicht ersetzt; bleiben, bitte selbst entscheiden |
 
-**Python-Abhängigkeiten (gesperrt vs. PyPI am 10.10.2026, nicht aktualisiert):**
+### Werkzeuge
 
-| Paket | uv.lock | aktuell |
-|---|---|---|
-| numpy | 2.3.2 | 2.5.4 |
-| pandas | 2.3.2 | 3.0.6 (Major) |
-| matplotlib | 3.10.6 | 3.11.2 |
-| jupytext | 1.17.3 | 1.19.6 |
-| jupyter | 1.1.1 | 1.1.1 |
-| ipykernel | 6.30.1 | 7.4.0 (Major) |
-| jupyterlab | 4.4.6 | 4.6.4 |
-| notebook | 7.4.5 | 7.6.3 |
-| pillow | 11.3.0 | 12.3.0 (Major) |
+Python 3.13, `uv lock --upgrade` (numpy 2.5.4, pandas 3.0.6, matplotlib 3.11.2, jupytext 1.19.6, ipykernel 7.4.0, pillow 12.3.0). Inkompatibilitäten: in Lectures und Tutorials keine; im Projekt `stocks_streamlit.py` eine (behoben). Die GIFs in `animations/` ändern sich mit matplotlib 3.11/pillow 12 einmalig, zwei unabhängige Läufe ergeben identische Hashes. ipykernel 7 meldet beim Kernelstart „Kernel is running over TCP without encryption"; das ist eine Startmeldung von Quarto/Jupyter, keine Warnung aus dem Kurscode.
 
-## 3. Gesamteinschätzung
+### Qualitätstest
 
-Der Kurs ist inhaltlich tragfähig und didaktisch gut aufgebaut: Jede Lecture hat einen klaren Alltagsbezug, die Tutorials führen Python in kleinen, getesteten Schritten ein und greifen das Vorlesungsthema auf. Die Qualität schwankt zwischen den Teilen. Lecture II ist am textlastigsten und hat die meisten Unschärfen (Bellman vs. Laplace, Nummerierung), Lecture IV ist am dichtesten und enthält zwei Rechenfehler, Lectures III, V und VI sind rund. Die Tutorials I bis IV sind solide; V.II und V.III setzen auf KI-gestütztes Arbeiten und sind entsprechend offener. Die größten Risiken für den neuen Durchlauf sind die widersprüchlichen Abgaberegeln, die Abweichung zwischen Syllabus und tatsächlichen Tutorial-Inhalten und die veralteten Tool-Angaben (uv-Ausgabe, Python-Version, Cursor vs. Copilot).
+- **Tutorials:** Alle 79 Übungszellen gelöst (Lösungen nur im Scratchpad, nicht committet), alle 71 Tests bestehen. Zusätzlich 30 typische Fehlerlösungen: alle werden abgelehnt, nachdem sechs Tests geschärft wurden (7a8a485). Zwei Tests lehnten korrekte Lösungen ab (II.III 2.1, alte V.II-Route), fünf ließen Fehler durch (I.II 3.2, I.III 5.1, II.I 2.1, IV.III 3.1, V.II 1.1).
+- **Offene Übungen ohne harten Test:** I.III 1.1 (Ausgabe selbst prüfen), III.I 1.1/2.1/3.1 (eigene Werte), V.III (freie Projekte). Bewusst so gelassen.
+- **projects/:** `jump-and-run.py` (pygame, headless mit simulierten Tasten), `tutorial_randomwalk.py` und `stocks_streamlit.py` (Streamlit AppTest mit echten Kursdaten) laufen mit Python 3.13.
 
-## 4. Die fünf wichtigsten Empfehlungen
+### Entscheidungen
 
-1. **Abgaberegeln und Syllabus festziehen.** Eine Regel für Abgaben (welche Tutorials, welche Frist, Gruppengröße) auf Startseite und Einführungsfolien, Syllabus-Zeilen an die realen Tutorial-Inhalte anpassen, „game theory" streichen.
-2. **Die vier fachlichen Fehler beheben:** Johnson-Gesamtzeit und Grafik (4 h 10), 77 Millionen Jahre, 37-%-Herleitung ohne „geometric distribution", Bellman-Folien von der Laplace-Regel trennen. Dazu die Prioritätsskala bei Priority Inheritance und den Test in Tutorial V.II.
-3. **Werkzeuge auf Stand bringen:** uv-Seite gegen das aktuelle `uv init` prüfen, Python-Version entscheiden, Copilot statt Cursor in V.II, Conda-Reste entfernen, Modellliste in der Einführung. Danach Abhängigkeiten gezielt aktualisieren und die Tutorials mit pandas 3 testen.
-4. **Sprecherperspektive vereinheitlichen** („I" statt „we/us"), passend zur Übernahme durch einen Lehrenden; dabei die doppelten Folien in Lecture I und die Literaturfolien in einen Include ziehen.
-5. **Lecture II entschlacken:** Folien mit über 60 Wörtern kürzen, Casino-Tabelle nur einmal zeigen, „Personal Action Plan" auf einen Callout reduzieren, Folien durchnummerieren. Das ist das Deck, bei dem Kürzen am meisten bringt.
+1. **Tutorials III arbeiten mit Listen, nicht mit Dictionaries:** Dictionaries kommen erst in IV.II. Der LRU-Cache mit Dictionary steht deshalb als Anschluss in IV.II.
+2. **Literatur als zwei Includes** (`include/lecture_literature_start.qmd`, `include/lecture_literature_books.qmd`), damit Lecture I dazwischen die Ferguson-Folie zeigen kann.
+3. **Grafik-Hilfsmodul** `helpers/course_plots.py` statt Code in jeder Folie: Folien enthalten nur einen Aufruf mit den Daten der Tabelle, Stil und Fonts kommen zentral.
+4. **Fragen nach der Verspätung:** Die Grafiken auf diesen Folien zeigen Deadlines, aber nicht die Antwort.
+5. **Hollywood 2024:** US-Inlandszahlen wie im Buch; *Twisters* zählt als Fortsetzung, *Wicked* nicht. Ohne *Twisters* wären es 8.
+6. **Tests mit einem Szenario:** Wo ein Test nur ein Szenario prüfen kann, sind die Daten so gewählt, dass die häufigste Auslassung auffällt.
+7. **Gittins-Tabelle:** Werte wie im Buch (Diskontfaktor 0,9), nicht neu berechnet.
+
+## 4. Gesamteinschätzung
+
+Der Kurs war inhaltlich tragfähig, hatte aber in Lecture I, II und IV echte Fachfehler und in Lecture II zu viel Text. Nach Runde 2 sind alle bekannten Fehler behoben, die Syllabus-Versprechen sind durch echte Inhalte gedeckt (LRU-Cache, Monte Carlo, Fairness), und die Tutorials sind durchgängig getestet. Die größten verbleibenden Hebel liegen nicht mehr in Korrekturen, sondern im Feinschliff einzelner Folien im Probelauf vor Kursstart.
+
+## 5. Empfehlungen für den neuen Durchlauf
+
+1. **Probelauf der Lectures II und IV** im Hörsaal-Format: beide Decks haben die meisten neuen Folien und Grafiken.
+2. **Zeitbedarf der Tutorials III messen:** durch den LRU-Faden haben sie vier neue Übungen.
+3. **Gittins-Werte und Hollywood-Zahl gegenlesen**, falls du andere Quellen bevorzugst.
+4. **Ungenutzte Bilder** (`motivation.png`, Porträts) behalten oder löschen.
+5. **Abhängigkeiten zum Semesterende** noch einmal mit `uv lock --upgrade` prüfen und den Komplett-Render laufen lassen.
+
+## 6. Abschlussprüfung
+
+- **Komplett-Render** ohne Ausführungs-Cache (`_freeze/` gelöscht, `uv run quarto render`): Exit 0, keine Warnungen aus dem Kurscode; danach Lectures III bis V nach der Grafik-Anpassung erneut ausgeführt, ebenfalls fehlerfrei.
+- **Überlaufprüfung** aller acht Decks, normale Ansicht und `?print-pdf`: kein Überlauf, keine Footer-Berührung, keine Folie mit zwei Druckseiten. Einzige Meldung ist das bekannte Messartefakt des Kopieren-Buttons (8 px) auf drei Codefolien. Messung in `screenshots-review/inhalt/messung.json`.
+- **Screenshots** der 55 geänderten oder neuen Folien in `screenshots-review/inhalt/` (gitignored).
+- **Animationen:** Lecture V erzeugt die GIFs mit festem Seed; zwei vollständige Läufe ergeben identische Dateien.
+- **Hinweis ohne Änderung:** Die Aufgaben-Tabellen in Lecture IV stehen in ```` ```python ````-Blöcken, die Syntaxfärbung markiert deshalb „min" rot. Das war schon vorher so; als ```` ```text ```` wären sie neutral.
