@@ -144,8 +144,8 @@ The mathematically optimal strategy:
 This means we fail 63% of the time - but this is the **best we can possibly do**!
 
 
-## Step-by-step Approximation
-Why does the success probability decrease with more candidates?
+## Why not pick at random?
+Chance of getting the best candidate if we simply **pick one at random**:
 
 - 1 candidate: 100% (no choice!)
 - 2 candidates: 50%
@@ -159,16 +159,14 @@ Why does the success probability decrease with more candidates?
 
 . . .
 
-**Pattern:** 1/n - as we have more options, each individual option is less likely to be the best.
+**Pattern:** 1/n. Random choice gets worse with every extra candidate, while the look-and-leap strategy stays at about 37%, however many candidates there are.
 
 ## Why 37%?
 
-- This is based on the **geometric distribution**
-- The [optimal stopping point]{.highlight} is at `n/e`[^8]
-- `e` is the base of the natural logarithm (≈ 2.718)
-- This comes from maximizing the probability of success
-
-. . .
+- Look at the first share $x$ of candidates, then leap
+- For many candidates, the chance of getting the best is about $-x \ln x$
+- This is largest at $x = 1/e$, the [optimal stopping point]{.highlight} is at `n/e`[^8]
+- `e` is the base of the natural logarithm (≈ 2.718), so $1/e \approx 37\%$
 
 
 [^8]: This is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.
@@ -182,7 +180,7 @@ Why does the success probability decrease with more candidates?
 import math
 
 percentage = 1/math.e
-print(f"Percentage of options to look at: {percentage:.3f}%")
+print(f"Percentage of options to look at: {percentage:.1%}")
 
 candidates = 20
 lookout_phase = candidates/math.e
@@ -195,7 +193,7 @@ print(f"Look at first {lookout_phase:.3f} candidates")
 No worries if you don't understand the code! We are essentially just using the formula to calculate the percentage of candidates to look at.
 :::
 
-## Geometric Distribution
+## Simulation: Success Rate by Stopping Point
 
 Let's visualize the success of a simulation with 20 candidates:
 
