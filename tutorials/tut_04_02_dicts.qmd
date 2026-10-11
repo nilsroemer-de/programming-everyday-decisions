@@ -216,6 +216,40 @@ assert "Liquidity Planning" not in tasks, "The task 'Liquidity Planning' was not
 print("Great! You've successfully removed a task from the dictionary.")
 ```
 
+# Section 3 - Back to our LRU Cache
+
+Remember our LRU cache from Tutorials III? Real caches store a **value** for each key, for example the loaded data of an app. That's exactly what dictionaries do. And since Python 3.7, dictionaries remember the order in which keys were inserted, so we can use the order for LRU: the **first** key is the least recently used one, the **last** key the most recently used one.
+
+```{python}
+#| eval: true
+cache = {"Maps": "map data", "Mail": "inbox", "Spotify": "playlist"}  # oldest first
+value = cache.pop("Mail")   # a hit: take the entry out ...
+cache["Mail"] = value       # ... and put it back at the end
+print(list(cache.keys()))
+```
+
+## Exercise 3.1 - LRU with a Dictionary
+
+Open the app `new_app` with the value `new_value`. If the cache already holds 3 apps, first remove the least recently used one (the first key, e.g. `list(cache.keys())[0]`). Then add the new app at the end.
+
+```{python}
+#| eval: true
+cache = {"Maps": "map data", "Mail": "inbox", "Spotify": "playlist"}  # oldest first
+new_app = "Camera"
+new_value = "photos"
+max_cache_size = 3
+# YOUR CODE BELOW
+
+```
+```{python}
+#| eval: false
+#| code-fold: true
+# Test your answer
+assert list(cache.keys()) == ["Mail", "Spotify", "Camera"], "Maps should be evicted and Camera added at the end"
+assert cache["Camera"] == "photos", "The value of Camera should be 'photos'"
+print("Great! Your dictionary works as an LRU cache.")
+```
+
 ## Conclusion
 Great! You've just navigated through the basics of dictionaries in Python. Dictionaries are powerful data structures that allow for efficient data organization and retrieval. Remember:
 
