@@ -116,7 +116,7 @@ We are convinced that this course will be quite interesting and **teach you more
 
 ## Help from AI
 
-- You are [allowed to use AI]{.highlight} in the course, we use it as well (e.g., Claude, ChatGPT, LLama3 ...)
+- You are [allowed to use AI]{.highlight} in the course, we use it as well (current AI assistants such as Claude, ChatGPT or Gemini)
 - These **tools are great** for learning Python!
 - Can help you a lot **to get started** with programming
 

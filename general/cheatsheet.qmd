@@ -454,9 +454,3 @@ print(random_number)
 ```{bash}
 uv add package_name
 ```
-
-- If you are using Miniconda, you can use `conda` instead.
-
-```{bash}
-conda install package_name
-```

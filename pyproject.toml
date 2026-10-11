@@ -1,13 +1,13 @@
 [project]
 name = "programming-everyday-decisions"
 version = "0.1.0"
-description = "Add your description here"
+description = "Course website: Programming, Everyday Decision-Making Algorithms"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
     "jupyter>=1.1.1",
-    "jupytext>=1.17.3",
-    "matplotlib>=3.10.6",
-    "numpy>=2.3.2",
-    "pandas>=2.3.2",
+    "jupytext>=1.19.6",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "pandas>=3.0.6",
 ]

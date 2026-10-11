@@ -26,12 +26,14 @@ import random
 In total, you have 32 candidates. Screen the candidates one by one and compute the `best_candidate_index` to find the best candidate.
 
 ::: {.callout-tip}
-## How to start with AI pair programming
+## How to work with AI coding assistants and agents
 
-1. In Cursor, you can select the code or text you want to work with and then press `Ctrl+L` to open the chat.
-2. In the chat, you can ask the AI to help you complete the task or ask it to explain the code, the task, or related concepts
-3. While writing code, you can press `Ctrl+K` to let the AI help you write the code directly in the editor.
-4. Furthermore, the AI will try to understand your code and might make suggestions on how to improve it or on how to continue. Just press `TAB` to accept a suggestion.
+You can use any current AI coding assistant or agent, for example GitHub Copilot (free for students, see Tutorial V.I), Cursor or Claude Code.
+
+1. Select the task or the code and ask the assistant in its chat to explain the task, the code or a concept.
+2. Let it suggest code directly in your notebook and read every suggestion before you accept it.
+3. Agents can work on whole files: describe the goal, review their changes and run the tests yourself.
+4. If a test fails, ask the assistant why, and make sure you understand the fix.
 :::
 
 ```{python}

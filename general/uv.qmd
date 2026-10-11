@@ -75,12 +75,12 @@ If you get "command not found" or "'uv' is not recognized":
 
 ## Install Python
 
-We want everyone on the **same** Python version for consistency. Thus, we’ll use Python 3.12 for the course this year.
+We want everyone on the **same** Python version for consistency. Thus, we’ll use Python 3.13 for the course this year.
 
 Install (you only need to do this once):
 
 ```bash
-uv python install 3.12
+uv python install 3.13
 ```
 
 Check the installation:
@@ -92,7 +92,7 @@ uv run python --version
 Expected output starts with:
 
 ```
-Python 3.12.
+Python 3.13.
 ```
 
 
@@ -105,12 +105,19 @@ uv init
 ```
 
 `uv init` creates:
+
 - `main.py` (starter script)
 - `pyproject.toml` (project + dependencies config)
-- `.python-version` (records the Python version we chose)
-- `.gitignore` (useful if you ever use Git)
+- `.python-version` (records the Python version of the project)
 - `README.md` (you can jot notes here)
-- (A `.venv` folder will appear later once packages are added or synced.)
+- a Git repository (`.git` folder and `.gitignore`), if Git is installed. You can ignore it for now.
+- (A `.venv` folder and a `uv.lock` file appear the first time you run `uv run` or add a package.)
+
+To make sure the project uses the course version, pin it once:
+
+```bash
+uv python pin 3.13
+```
 
 You do **not** need to edit any of these (except maybe `README.md` for your notes and `main.py` if you want to run something different).
 
@@ -124,10 +131,10 @@ Inside the project folder **in your terminal**:
 uv run python main.py
 ```
 
-You should see something like:
+You should see a greeting with the name of your folder, for example for a folder called `programming-course`:
 
 ```
-Hello World!
+Hello from programming-course!
 ```
 
 (If you want, you can open `main.py` and change the message, then re-run.)
@@ -136,7 +143,7 @@ Hello World!
 
 ```python
 def main():
-    print("Hello, World!")
+    print("Hello from programming-course!")
 
 if __name__ == "__main__":
     main()

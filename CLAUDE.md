@@ -17,7 +17,7 @@ Der Name wird immer **„Roemer"** geschrieben, nie „Römer", auch in Alt-Text
 - **Domain:** `courses.nilsroemer.com` ist eine Subdomain von `nilsroemer.com` (bei Strato registriert, dient nur als DNS). DNS-Einstellungen nie anfassen.
 - **CNAME:** Die Datei `CNAME` (Inhalt: `courses.nilsroemer.com`) liegt im Repo-Root und ist in `_quarto.yml` unter `project.resources` eingetragen. Dadurch landet sie bei jedem Build in `_site/` und auf `gh-pages`, sonst verliert GitHub Pages die Custom Domain.
 - **Keine CI/CD:** Keine GitHub Actions, kein automatischer Deploy. Veröffentlicht wird ausschließlich manuell (siehe Workflow).
-- **Toolchain:** Quarto 1.9.x, `uv` (Python 3.12, Abhängigkeiten in `pyproject.toml`/`uv.lock`: jupyter, jupytext, matplotlib, numpy, pandas), Git, Claude Code.
+- **Toolchain:** Quarto 1.9.x, `uv` (Python 3.13, Abhängigkeiten in `pyproject.toml`/`uv.lock`: jupyter, jupytext, matplotlib, numpy, pandas 3), Git, Claude Code.
 - **Mermaid:** Die Mermaid-Diagramme in `lectures/lec_04_scheduling.qmd` brauchen für den Typst-/PDF-Export das Quarto-Tool `chrome-headless-shell` (`quarto tools`; installieren mit `quarto install chrome-headless-shell`). Ohne das Tool scheitert der Render.
 - **Nicht versionierte Build-Voraussetzung:** `_freeze/` (Ausführungs-Cache) ist gitignored. In einem frischen Clone oder Worktree den Ordner aus dem Hauptcheckout kopieren, sonst werden alle Python-Zellen neu ausgeführt (dauert deutlich länger, scheitert aber nicht).
 

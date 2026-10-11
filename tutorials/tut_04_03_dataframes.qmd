@@ -13,10 +13,6 @@ Before starting, ensure you have the `pandas` library installed.
 ```{bash}
 uv add pandas
 ```
-
-```{bash}
-conda install pandas
-```
 :::
 
 Let's begin by importing pandas:
