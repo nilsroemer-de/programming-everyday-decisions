@@ -205,9 +205,9 @@ print(f"LRU: {lru_rate:.1%} hits, random: {random_rate:.1%} hits")
 ::: {.callout-tip}
 ## Python ships an LRU cache
 The standard library already contains an LRU cache: `functools.lru_cache`. It remembers the results of a function, so repeated calls with the same input are answered from the cache instead of being computed again.
+:::
 
 ```{python}
-#| eval: false
 from functools import lru_cache
 
 @lru_cache(maxsize=3)  # keep the results of the 3 most recent inputs
@@ -218,7 +218,6 @@ def slow_square(n):
 slow_square(4)  # computed
 slow_square(4)  # answered from the cache, no "Computing" message
 ```
-:::
 
 # Section 3 - Using a package manager (`uv`)
 
