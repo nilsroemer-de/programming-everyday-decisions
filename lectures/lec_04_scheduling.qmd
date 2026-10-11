@@ -5,9 +5,11 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_04_scheduling.qmd)"
     output-file: lec_04_presentation.html
-    html:
-      mermaid:
-          theme: neutral
+    mermaid:
+      theme: neutral
+  html:
+    mermaid:
+      theme: neutral
 ---
 
 ```{python}
@@ -214,7 +216,7 @@ plt.show()
 
 # [History]{.flow} {.title}
 
-## [Industrial Revolution]{.invert-font} {background-image="../images/bg/lec04-industrial.jpg"}
+## [Industrialization]{.invert-font} {background-image="../images/bg/lec04-industrial.jpg"}
 
 . . .
 
@@ -222,7 +224,7 @@ plt.show()
 
 - First systematic visualization by Frederick Taylor
 - Henry Gantt develops the Gantt Chart around 1910
-- Key tool during Industrial Revolution
+- Key tool of industrial production planning
 - But no scheduling theory yet!
 
 :::
@@ -1035,7 +1037,7 @@ plt.show()
 
 [Question:]{.question} **Any ideas how to prevent this?**
 
-## Preventing Thrashing Strategic
+## Preventing Thrashing: Strategic
 
 :::{.callout-tip}
 ## Strategic
@@ -1050,7 +1052,7 @@ Strategic solutions focus on **long-term** changes to prevent thrashing.
 4. Reduced reactivity requirements
 
 
-## Preventing Thrashing Tactical
+## Preventing Thrashing: Tactical
 
 1. Time blocking
 2. Focus periods

@@ -13,7 +13,7 @@ format:
 
 - **Optimal Stopping**: How to decide [when to stop looking]{.highlight} for better options.
 - **Explore/Exploit Tradeoff**: [Balancing]{.highlight} between trying new things and sticking with known options.
-- **Caching**: Storing and reusing information by [sticking to a task]{.highlight} to improve performance.
+- **Caching**: Keeping what you use close and [letting go of the rest]{.highlight}.
 - **Scheduling**: Efficiently managing [tasks and time.]{.highlight}
 - **Randomness**: Understanding and working with [uncertainty]{.highlight}.
 - **Computational Kindness**: Reducing the burden for others and designing [fair]{.highlight} algorithms.
