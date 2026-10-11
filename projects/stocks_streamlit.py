@@ -78,7 +78,7 @@ try:
     )
     
     # Display the chart
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")
     
     # Display additional information
     col1, col2, col3 = st.columns(3)
@@ -86,8 +86,8 @@ try:
     with col1:
         st.metric(
             "Current Price",
-            f"${filtered_df['Close'][-1]:.2f}",
-            f"{((filtered_df['Close'][-1] - filtered_df['Close'][-2]) / filtered_df['Close'][-2] * 100):.2f}%"
+            f"${filtered_df['Close'].iloc[-1]:.2f}",
+            f"{((filtered_df['Close'].iloc[-1] - filtered_df['Close'].iloc[-2]) / filtered_df['Close'].iloc[-2] * 100):.2f}%"
         )
     
     with col2:
