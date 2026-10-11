@@ -32,8 +32,6 @@ format:
 
 [Question:]{.question} **What comes to your mind when you think of randomness?**
 
-. . .
-
 ## [Casino]{.invert-font} {background-image="../images/bg/lec05-casino.jpg"}
 ::: footer
 :::
@@ -883,13 +881,13 @@ But that's not all! We also need to measure **success** and **failure**!
 
 ## Selection Bias
 
-**Definition**: Selection bias occurs when the sample data you're analyzing [isn't truly representative of the population]{.highlight} you're trying to study.
+**Definition**: The sample you analyze [is not representative of the population]{.highlight} you want to study.
 
 . . .
 
 ::: {.callout-warning}
 ### Famous Example
-During WWII, engineers studied returning planes to determine where to add armor. Initially, they focused on areas with most bullet holes. Abraham Wald pointed out they should instead armor the areas with *no* bullet holes - those were the critical areas where planes didn't survive to return!
+WWII: Engineers wanted to armor returning planes where they had the most bullet holes. Abraham Wald suggested armoring the areas **without** holes: planes hit there did not return.
 :::
 
 ## Promoting Fairness

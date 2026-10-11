@@ -108,7 +108,7 @@ Managing **context windows** is crucial!
 . . .
 
 ::: {.callout-warning}
-If you use free models, be aware that your prompts are going to be used by the providers and are not private. But for learning and experimenting, this should be no issue.
+Free models may use your prompts for training. Don't enter private or company data.
 :::
 
 ## A Great Overview by 3Blue1Brown
@@ -123,26 +123,16 @@ If you use free models, be aware that your prompts are going to be used by the p
 
 ## What is GitHub Copilot?
 
-[GitHub Copilot]{.highlight} is an *AI pair programmer* that helps you write code faster and with less effort.
+[GitHub Copilot]{.highlight} is an *AI pair programmer* inside your editor:
 
-. . .
-
-**Think of it as:**
-
-- An autocomplete for entire lines or blocks of code
-- A coding assistant that understands context
-- A learning tool that shows you coding patterns
-
-. . .
-
-:::{.callout-note}
-Copilot uses AI trained on billions of lines of public code to suggest completions.
-:::
+- Autocomplete for entire lines or blocks of code
+- A chat that knows your code
+- A tool to learn common coding patterns
 
 . . .
 
 ::: callout-tip
-There are alternatives like Zed or Cursor, but you can use Copilot for free as student.
+Alternatives are Cursor, Zed or Claude Code. Copilot is free for students.
 :::
 
 ## Used autocomplete before?
@@ -214,17 +204,10 @@ Especially helpful when you know **WHAT** you want to do but forget **HOW** to d
 
 [Copilot might suggest code that:]{.highlight}
 
-- Works but uses concepts you haven't learned yet
-- Contains subtle bugs or edge cases
-- Doesn't match your specific requirements
-- Uses inefficient approaches
-- Introduces dangerous code in your project
-
-. . .
-
-::: callout-warning
-Dangerous code can lead to security vulnerabilities, data loss, or other issues. In the context of this lecture it should be no issue, but in companies it can be one!
-:::
+- Uses concepts you haven't learned yet
+- Contains subtle bugs or misses edge cases
+- Doesn't match your requirements
+- Introduces security risks (an issue in companies, less in this course)
 
 ## My take: Just be careful, ok?
 

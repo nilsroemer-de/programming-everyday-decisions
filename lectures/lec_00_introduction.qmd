@@ -137,7 +137,7 @@ But you should *not* simply use them to *replace* your learning.
 . . .
 
 :::{.callout-tip}
-Great resources to start are books and small challenges. You can find a list of book recommendations at the end of the lecture. Small challenges to solve can for example be found on [Codewars](https://www.codewars.com/).
+Start with books (list at the end of the lecture) and small challenges, e.g. on [Codewars](https://www.codewars.com/).
 :::
 
 ## Don't give up!
@@ -158,14 +158,12 @@ Great resources to start are books and small challenges. You can find a list of 
 
 - Download and install from the [website](https://code.visualstudio.com/)
 - Built for **Windows, Linux and Mac**
-- Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extension
-- [Now you are ready to go!]{.highlight}
+- Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions
 
 . . .
 
 ::: {.callout-tip}
-Unsure on how to work with VS Code and notebooks?
-Ask us! We are happy to help you out!
+Unsure how to work with VS Code and notebooks? Ask us!
 :::
 
 ## What is an IDE?
