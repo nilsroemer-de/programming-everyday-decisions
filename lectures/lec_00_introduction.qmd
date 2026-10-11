@@ -50,23 +50,22 @@ No worries, we will help you out if you have any questions!
 ## Passing the Course
 
 - **Pass/fail course** without exams
-- [75% attendance]{.highlight} required for passing the course
-- Hand in the assignments of at least **two lectures**
-- **Short presentation** and discussion at the end
-- You work together in groups of **three students**
+- [75% attendance]{.highlight} required
+- **Two assignments** on algorithmic problems from the course
+- **Short final presentation** of your prototype in the last lecture
+- You can work in groups of **up to three students**
 
 ## Handing in Assignments
 
-- Each student group submits **one solution**
-- Provide us **all** working notebooks of the lecture
-- Hand in is due at the **beginning of the next lecture**
-- At least **50 %** have to be correct to pass
-- [You have to pass at least twice]{.highlight}
+- Each group submits **one solution** per assignment
+- Hand in your **working notebooks**
+- Due by the **end of the quarter**
+- At least **50 %** of the solutions have to be correct
 
 . . .
 
 :::{.callout-tip}
-This is just in order to provide you with working solutions after each deadline.
+Earlier submissions are highly encouraged: you get feedback while the topic is still fresh.
 :::
 
 ## Learning Python

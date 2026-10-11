@@ -33,11 +33,13 @@ The course is based on a hands-on approach with a two-fold structure:
 1. **Lectures**: In the lectures, we will introduce and discuss concepts and illustrate them in reproducible examples.
 2. **Hands-on Tutorials**: Students will apply the concepts from the lecture in Jupyter notebooks, while simultaneously learning the basics of Python.
 
-The course is not graded and can only be passed/failed. The evaluation of the course will be based on the following components:
+The course is not graded and can only be passed/failed. To pass, you need:
 
-1. **Attendance**: Students are expected to attend at least 75% of the lectures.
-2. **Assignments**: Students will have to hand in the assignments from 2 out of the 5 tutorials in this course. All are due by the end of the quarter, but earlier submissions of the assignments are highly encouraged. At least 50% of the solutions of the assignment must be correct.
-3. **Presentation**: Students will give a short presentation in groups of up to 3 students on an implemented prototype of a program in the last lecture which are then discussed in class.
+1. **Attendance**: at least 75% of the lectures.
+2. **Assignments**: two assignments, each on an algorithmic problem from the course. At least 50% of the solutions must be correct.
+3. **Presentation**: a short final presentation of an implemented prototype in the last lecture, followed by a discussion in class.
+
+All assignments are due by the end of the quarter, but earlier submissions are highly encouraged. You can work in groups of up to three students.
 
 You can find more information on the course contents in the [syllabus](general/syllabus.qmd).
 
