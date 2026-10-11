@@ -76,17 +76,16 @@ optimal stopping?
 ## The Secretary Problem
 
 :::{.incremental}
-- Imagine you're **hiring a secretary**
-- You must interview candidates **one by one**
-- Now, you must decide: **hire or continue searching**
+- You are **hiring a secretary** and interview candidates **one by one**
+- After each interview: **hire or continue searching**
 - Once you reject a candidate, **you cannot go back**
-- How to [maximize chance of selecting the best candidate?]{.highlight}
+- How to [maximize the chance of hiring the best candidate?]{.highlight}
 :::
 
 . . .
 
 ::: {.callout-note}
-The name is a bit misleading, as the problem is not about hiring a secretary, but about finding the best candidate. It comes from the 1960s and thus a little outdated.
+The name comes from the 1960s. The problem is about finding the best candidate, not about secretaries.
 :::
 
 ## Basic Setup
@@ -116,33 +115,20 @@ Ideas?
 
 ## Look-and-Leap Strategy
 
-The optimal strategy is to:
-
-:::{.incremental}
-1. Look at the [first 37 %]{.highlight} of options
-2. Remember the **best one seen so far**
-3. Choose the next option that's **better than the best seen**
-4. Chance of selecting the best candidate is **37 %**[^1]
-5. Thus, we can fail with **63 %**!
-:::
-
-[^1]: Large number of candidates! With a small number of candidates, we can do even better.
-
-## Look-and-Leap Strategy
-
 The mathematically optimal strategy:
 
 :::{.incremental}
 1. **Look** at the [first 37%]{.highlight} of candidates without hiring anyone
 2. **Remember** the best candidate from this observation phase
 3. **Leap:** Hire the next candidate who is **better than the best observed**
-4. **Success rate:** 37% chance of selecting the absolute best candidate
+4. **Success rate:** 37% chance of selecting the absolute best candidate[^large]
 :::
 
 . . .
 
-This means we fail 63% of the time - but this is the **best we can possibly do**!
+This means we fail 63% of the time, but this is the **best we can possibly do**!
 
+[^large]: For a large number of candidates. With only a few candidates, the chance is even higher.
 
 ## Why not pick at random?
 Chance of getting the best candidate if we simply **pick one at random**:
@@ -165,11 +151,11 @@ Chance of getting the best candidate if we simply **pick one at random**:
 
 - Look at the first share $x$ of candidates, then leap
 - For many candidates, the chance of getting the best is about $-x \ln x$
-- This is largest at $x = 1/e$, the [optimal stopping point]{.highlight} is at `n/e`[^8]
+- This is largest at $x = 1/e$, the [optimal stopping point]{.highlight} is at `n/e`[^ferguson]
 - `e` is the base of the natural logarithm (≈ 2.718), so $1/e \approx 37\%$
 
 
-[^8]: This is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.
+[^ferguson]: This is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.
 
 ## Computing the number
 
@@ -205,7 +191,9 @@ Let's visualize the success of a simulation with 20 candidates:
 import numpy as np
 import matplotlib.pyplot as plt
 
-def simulate_secretary_problem(n_candidates, stopping_position, n_trials=10000):
+np.random.seed(42)  # reproducible figure
+
+def simulate_secretary_problem(n_candidates, stopping_position, n_trials=2000):
     successes = 0
 
     for _ in range(n_trials):
@@ -216,7 +204,7 @@ def simulate_secretary_problem(n_candidates, stopping_position, n_trials=10000):
         # Position of the best candidate overall
         best_overall_pos = np.argmax(candidates)
 
-        # Look at first stopping_position-1 candidates
+        # Look at the first stopping_position candidates
         for i in range(stopping_position):
             if candidates[i] > best_so_far:
                 best_so_far = candidates[i]
@@ -232,7 +220,7 @@ def simulate_secretary_problem(n_candidates, stopping_position, n_trials=10000):
 
 # Parameters
 n_candidates = 20
-n_trials = 10000
+n_trials = 2000
 
 # Calculate success rate for each stopping position
 stopping_positions = range(1, n_candidates + 1)
@@ -260,21 +248,9 @@ plt.show()
 [Question:]{.question} Imagine a dating scenario, [where the other person can also reject you]{.highlight}. **Optimal stopping point?**
 
 :::{.incremental}
-- The optimal stopping point is now **lower**
-- Because we can now **fail more often**
-- With 50 % chance of rejection, we **start leaping at 25 %**
-- **Formula:** $q^{\frac{1}{1-q}}$ with $q$ being the chance of rejection
-:::
-
-## Mutual Rejection
-
-[Question:]{.question} What if in dating, [the other person can also reject you]{.highlight}?
-
-:::{.incremental}
-- The optimal stopping point **decreases**
-- We need to account for rejection risk
-- With 50% rejection probability: **start accepting at 25%**
-- **Formula:** $q^{\frac{1}{1-q}}$ where $q$ = rejection probability
+- The optimal stopping point **decreases**, because we can now fail more often
+- With a 50% chance of rejection: **start leaping at 25%**
+- **Formula:** $q^{\frac{1}{1-q}}$ with $q$ being the chance that your offer is **accepted**
 :::
 
 . . .
@@ -296,9 +272,8 @@ What if we don't have a fixed number of candidates, but a [fixed amount of time]
 . . .
 
 :::{.incremental}
-- **Same principle applies!** Observe for first 37% of available time
+- **Same principle:** observe for the first 37% of the time (if options arrive evenly)
 - But now we also control the **search intensity**
-- This connects to **resource allocation** problems in computer science
 :::
 
 ## Other versions
@@ -344,7 +319,7 @@ Any questions
 so far?
 :::
 
-## After the break: Optimal Stopping
+## After the break: First Steps in Python
 
 - Gentle introduction to Python Programming
 - We work in our notebooks on basics and optimal stopping
@@ -357,27 +332,10 @@ so far?
 Let's have a short break and then continue with our first Python programming session.
 :::
 
-# [Literature]{.flow} {.title}
+{{< include ../include/lecture_literature_start.qmd >}}
 
-## Interesting literature to start
+## Optimal Stopping in Depth
 
-- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^4]
-- Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.
+- Ferguson, T.S. (1989). Who solved the secretary problem? Statistical Science, 4(3). doi:10.1214/ss/1177012493.
 
-[^4]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
-
-
-## Books on Programming
-
-- Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. [Here](https://greenteapress.com/wp/think-python-3rd-edition/)
-- Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.
-
-. . .
-
-::: {.callout-note}
-Think Python is a great book to start with. It's available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.
-:::
-
-## More Literature
-
-For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.
+{{< include ../include/lecture_literature_books.qmd >}}
