@@ -1020,13 +1020,11 @@ plt.show()
 
 ## How to use this starting today
 
-**How can you use these algorithms starting today?**
-
 :::{.incremental}
-- **Daily planning:** Use SPT for your to-do list to minimize waiting time
-- **Project management:** Apply EDD when managing deadlines
-- **Team coordination:** Use Johnson's Rule for two-stage processes
-- **Time blocking:** Prevent thrashing with strategic scheduling
+- **Daily planning:** SPT for your to-do list, less waiting
+- **Project management:** EDD when deadlines matter
+- **Team coordination:** Johnson's rule for two-stage processes
+- **Time blocking:** prevent thrashing
 :::
 
 ::: {.lecture-closing}
