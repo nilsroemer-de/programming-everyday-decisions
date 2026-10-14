@@ -5,6 +5,17 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_03_caching.qmd)"
     output-file: lec_03_presentation.html
+lecture-summary: "When space is limited, keep close what you are likely to need next, and the best guide to that is what you used most recently."
+lecture-why: "Your cupboard is full, your desk is cluttered, your inbox overflows. Companies have the same problem: which goods sit next to the loading dock, which files stay on the fast server, which tasks get your attention today."
+lecture-roadmap:
+  - "The problem: limited space, too much stuff"
+  - "The solution: keep what you need close, clear out the rest"
+  - "Your mind is a cache: protecting your attention"
+lecture-covered:
+  - "Every storage system faces the same question: what to keep close and what to clear out."
+  - "Fast storage is always small, so we need a rule for clearing out. Least Recently Used works because the recent past predicts the near future."
+  - "Your attention works like a cache: small, valuable and easily flooded, so protect it."
+lecture-key: "What you used last, you'll need next."
 ---
 
 ```{python}
@@ -27,35 +38,24 @@ memory_levels = [
 ]
 ```
 
-# Learning Objectives {.title}
+# [The problem: limited space, too much stuff]{.flow} {.title}
+
+## A quick question first
 
 :::{.fragment}
-By the end of this lecture, you will be able to:
-:::
-:::{.incremental}
-- Explain the fundamental concepts of caching and its importance
-- Compare different cache replacement strategies
-- Identify caching principles in everyday life
-- Apply caching concepts to personal productivity
-- Understand the relationship between caching and attention management
-:::
-# [Introduction]{.flow} {.title}
+[Question:]{.question} **How many of you have a messy desktop right now?** Raise your hand!
 
-## A Quick Question First
-
-:::{.fragment}
-[Question:]{.question} **How many of you have a messy desktop right now?**
-:::
-
-:::{.fragment}
-**Raise your hand!**
 :::
 
 :::{.fragment}
 Today's lecture will explain why that matters more than you think...
 :::
 
-## Let's approach the topic using an everyday decision
+::: {.notes}
+Learning objectives: explain the fundamental concepts of caching and its importance; compare different cache replacement strategies; identify caching principles in everyday life; apply caching concepts to personal productivity; understand the relationship between caching and attention management.
+:::
+
+## An everyday problem: the cupboard is full
 :::{.incremental}
 ::: {layout="[[50,50]]"}
 ::: {.column width="50%"}
@@ -70,7 +70,10 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 
-## [Question:]{.question} What could we do?
+## Organize better, or clear out?
+
+[Question:]{.question} What could we do?
+
 :::{.incremental}
 ::: {layout="[[50,50]]"}
 ::: {.column width="50%"}
@@ -88,7 +91,7 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 
-## Two Approaches to Storage Problems
+## Two ways out: better organization or more space
 
 :::{.incremental}
 ::: {layout="[[50,50]]"}
@@ -108,7 +111,7 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 
-## Even best organization has limits
+## Even the best organization has limits
 
 :::{.incremental}
 ::: {layout="[[50,50]]"}
@@ -125,7 +128,9 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 
-## [Question:]{.question} What do we do, when the storage is full?
+## When storage is full, we could buy more
+
+[Question:]{.question} What do we do when the storage is full?
 
 :::{.fragment}
 ::: {style="text-align: center;"}
@@ -136,14 +141,13 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 
-## But...
+## But more space is costly and slow
 :::{.incremental}
 ::: {layout="[[50,50]]"}
 ::: {.column width="50%"}
-- Increasing capacity = costly
-- **Trade-off:** Size vs. Speed
-- Larger = slower to search
-- Sooner or later: Still fills up
+- Increasing capacity costs money
+- **Trade-off:** size vs. speed, larger is slower to search
+- Sooner or later it still fills up
 :::
 ::: {.column width="50%"}
 ::: {style="text-align: center;"}
@@ -153,7 +157,9 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 
-## [Question:]{.question} What else faces this problem?
+## Every storage has this problem
+
+[Question:]{.question} What else faces this problem?
 
 :::{.incremental}
 - Cupboards
@@ -164,7 +170,10 @@ Today's lecture will explain why that matters more than you think...
 - **Our brain?!**
 :::
 
-## [Question:]{.question} Impact of full storage?
+## Full storage slows everything down
+
+[Question:]{.question} What is the impact of full storage?
+
 :::{.incremental}
 ::: {layout="[[50,50]]"}
 ::: {.column width="50%"}
@@ -180,47 +189,45 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 
-# [Clearing out]{.flow} {.title}
-## Why Clearing Out Matters
+## So we have to clear out, but what goes?
 
 :::{.incremental}
 - True for cupboards, computers, brains...
 - **But what stays and what goes?**
 :::
 
-## Learning from Computer Science
+## Computers hit the same wall
 
-:::{.fragment}
-**The evolution of computer memory**
-:::
 :::{.incremental}
-- 1946: Von Neumann and colleagues already expect a **hierarchy of memories**[^hierarchy]
+- 1946: von Neumann's team expects a **hierarchy of memories**[^hierarchy]
 - Processors got faster much quicker than memory (Moore's Law, 1965)
-- 1965: Maurice Wilkes proposes a small, fast "slave memory", the first **cache**
+- 1965: Maurice Wilkes proposes a small, fast memory, the first **cache**
 - 1995: Wulf and McKee call the growing gap the **Memory Wall**
-
-:::{.fragment}
-**→ Computer science faced the same storage problem as our cupboard**
-:::
 :::
 
-## The Bottleneck
+::: {.notes}
+The evolution of computer memory: computer science faced the same storage problem as our cupboard. Processors became faster much more quickly than memory, so a small, fast memory close to the processor (Wilkes called it a "slave memory") became necessary.
+:::
+
+## A fast processor waiting for slow memory
 
 :::{.incremental}
-- **Modern CPUs:** Billions of ops/second
-- **Problem:** Data isn't available fast enough
-- [Question:]{.question} What's the point of a fast CPU if it has to wait for slow memory?
+- **Modern CPUs:** billions of operations per second
+- **Problem:** data doesn't arrive fast enough
+- [Question:]{.question} What's the point of a fast CPU that waits for slow memory?
 
 :::{.fragment}
-**→ Von Neumann Bottleneck** (term coined by John Backus, 1977)
+**→ The Von Neumann bottleneck**[^backus]
 :::
 :::
+
+[^backus]: Term coined by John Backus (1977).
 
 [^hierarchy]: Burks, A. W., Goldstine, H. H., & von Neumann, J. (1946). Preliminary discussion of the logical design of an electronic computing instrument. Wilkes, M. V. (1965). Slave memories and dynamic storage allocation. Wulf, W. A., & McKee, S. A. (1995). Hitting the memory wall. See also Christian & Griffiths (2016), ch. 4.
 
-# [Cache]{.flow} {.title}
+# [The solution: keep what you need close, clear out the rest]{.flow} {.title}
 
-## Cache: The Solution
+## The cache: a hierarchy of memories
 
 :::{.fragment}
 **A hierarchical memory system**
@@ -237,7 +244,7 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 
-## The Library Principle
+## Like a library: closer is faster and smaller
 
 :::{.incremental}
 ::: {layout="[[50,50]]"}
@@ -257,7 +264,7 @@ Today's lecture will explain why that matters more than you think...
 :::
 :::
 
-## The Trade-off: Size and Speed
+## Fast memory is small, big memory is slow
 
 ```{python}
 #| echo: false
@@ -267,17 +274,19 @@ plt.show()
 
 A register is roughly **ten million times faster** than a hard disk. [Question:]{.question} **Why not make everything that fast?**
 
-## Why the Trade-off?
+## Why not make everything fast?
 
 :::{.incremental}
-**Why not make everything ultra-fast?**
-
-- **Physical limits:** Larger memory sits further from the CPU, signals take longer, and fast memory produces heat
-- **Economic limits:** Per gigabyte, fast cache memory costs many orders of magnitude more than a hard disk
-- **Solution:** Multiple cache levels, each optimized for different needs
+- **Physics:** larger memory sits further away, signals take longer, fast memory gets hot
+- **Money:** per gigabyte, cache memory costs many times more than a hard disk
+- **Solution:** several levels, each optimized for its job
 :::
 
-## The necessity of clearing out
+::: {.notes}
+Physical limits: larger memory sits further from the CPU, signals take longer to travel, and dense fast memory produces heat that must be dissipated. Economic limits: per gigabyte, fast cache memory costs many orders of magnitude more than a hard disk. The solution is a hierarchy with multiple cache levels, each optimized for different needs.
+:::
+
+## Small and fast means clearing out regularly
 
 :::{.incremental}
 ::: {layout="[[50,50]]"}
@@ -294,10 +303,9 @@ A register is roughly **ten million times faster** than a hard disk. [Question:]
 :::
 :::
 
-# [Clearing out Strategies]{.flow} {.title}
+## Four ways to decide what goes
 
-
-## [Question:]{.question} Eviction Strategies?
+[Question:]{.question} Which eviction strategies can you think of?
 
 :::{.incremental}
 - Random
@@ -306,7 +314,7 @@ A register is roughly **ten million times faster** than a hard disk. [Question:]
 - Least Recently Used (LRU)
 :::
 
-## How to clear up?
+## The perfect strategy needs a crystal ball
 
 :::{.incremental}
 - **Optimal: Clairvoyance**
@@ -319,33 +327,26 @@ A register is roughly **ten million times faster** than a hard disk. [Question:]
 :::
 :::
 
-## Realistic Strategies
+## In practice: throw out what you used longest ago
 
 :::{.incremental}
-- **Least Recently Used (LRU)** is the dominant strategy.
-- Evicts the least recently accessed item from the cache when space is needed.
-- Leads to much better performance on average than, for example, random eviction.
-- [Question:]{.question} Why do you think least recently used is the better strategy?
+- **Least Recently Used (LRU)** is the dominant strategy
+- When space is needed, evict the item that was **not used for the longest time**
+- On average much better than, for example, random eviction
+- [Question:]{.question} Why is this the better strategy?
 :::
 
-## Why LRU Works: The Principle of Temporal Locality
+## LRU works because the recent past predicts the near future
 
 :::{.incremental}
-- **Temporal Locality:** Recent use → Likely need again soon
-- **Examples:**
-    - Books on your desk
-    - Apps opened today
-    - People texted this morning
-- **Performance:** In Belady's classic comparison, LRU came closest to the clairvoyant optimum[^belady]
-
-:::{.fragment}
-**Recent past predicts near future**
-:::
+- **Temporal locality:** what you used recently, you will likely need again soon
+- Books on your desk, apps opened today, people texted this morning
+- In Belady's classic comparison, LRU came closest to the crystal ball[^belady]
 :::
 
 [^belady]: Belady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian & Griffiths (2016), ch. 4. In Tutorial III.III you measure LRU against random eviction yourself.
 
-## Managerial and personal insights:
+## Marie Kondo is LRU for your home
 
 :::{.incremental}
 - **Let go of unused things** → LRU principle
@@ -357,10 +358,11 @@ A register is roughly **ten million times faster** than a hard disk. [Question:]
 :::
 :::
 
-## Spatial Locality
+## Spatial locality: keep things where you use them
 
 :::{.fragment}
 [Question:]{.question} Can you think of examples where spatial locality is applied in your daily life?
+
 :::
 
 :::{.fragment}
@@ -371,101 +373,121 @@ A register is roughly **ten million times faster** than a hard disk. [Question:]
 :::
 :::
 
-# [Productivity]{.flow} {.title}
+# [Your mind is a cache: protecting your attention]{.flow} {.title}
 
-## Our Brains are Caches
+## Our brains are caches
 
 :::{.incremental}
-- We've learned how computers manage limited cache space
-- **But why does this matter for humans?**
-- Your brain works remarkably similar to a computer cache:
-    - Limited capacity for active information
-    - Fast access to recently used information
-    - Must constantly decide what to keep and what to forget
+- **Why does this matter for humans?**
+- Your brain works like a cache: **limited capacity** for active information
+- **Fast access** to what you used recently
+- It constantly decides **what to keep and what to forget**
 :::
 
-## Cache Vulnerabilities
+## Caches can be flooded and poisoned
 
 :::{.incremental}
-- **Cache Flooding:** Overload the cache with requests, so important data gets evicted and the system slows down (a Denial-of-Service attack)
-- **Cache Poisoning:** Plant **false data** in a cache, so later requests are answered with wrong content (e.g., DNS cache poisoning sends users to a fake website)
-- Both exploit that a cache is **small** and is **trusted** without checking the original
+- **Cache flooding:** overload the cache, so important data gets evicted and everything slows down
+- **Cache poisoning:** plant **false data**, so later requests get wrong answers
+- Both exploit that a cache is **small** and **trusted** without checking
 :::
 
-## Productivity Killers
+::: {.notes}
+Cache flooding is a form of Denial-of-Service attack: the system is overloaded with requests, important data is evicted, the system slows down or crashes. Cache poisoning plants false data in a cache, so later requests are answered with wrong content; DNS cache poisoning, for example, sends users to a fake website. Both exploit that a cache is small and is trusted without checking the original source.
+:::
+
+## Five productivity killers
 
 :::{.incremental}
-- **Overload** (too much information, cache capacity exceeded)
-- **Exhaustion** (too long without "cache clearing")
-- **Context switching** (interruption of "flow", often 20+ minutes to get back on track[^mark])
-- **Distraction** (Cache Flooding: constant notifications, social media)
-- **Misinformation** (Cache Poisoning: fake news, misleading information)
+- **Overload:** too much information at once
+- **Exhaustion:** too long without clearing out
+- **Context switching:** often 20+ minutes to get back on track[^mark]
+- **Distraction:** cache flooding by notifications and social media
+- **Misinformation:** cache poisoning by fake news
+:::
+
+::: {.notes}
+Overload: too much information, the cache capacity is exceeded. Exhaustion: too long without "cache clearing". Context switching: every interruption of flow costs often 20 minutes or more to get back on track. Distraction is cache flooding by constant notifications and social media. Misinformation is cache poisoning by fake news and misleading information.
 :::
 
 [^mark]: Order of magnitude from Gloria Mark's workplace studies, e.g. Mark, G., Gonzalez, V. M., & Harris, J. (2005). No task left behind? Examining the nature of fragmented work. CHI 2005.
 
-## The Attention Crisis
+## Your attention is under attack
 
 :::{.incremental}
-- **Technology & Social Media:** Designed to capture attention (Cache Flooding)
-- **Constant Interruptions:** Notifications = Forced cache evictions
-- **Result:** Reduced creativity, critical thinking, and productivity
+- **Technology and social media** are designed to capture attention (cache flooding)
+- **Constant interruptions:** every notification is a forced eviction
+- **Result:** less creativity, critical thinking and productivity
 
 :::{.fragment}
 [Reflection:]{.question} How many times did you check your phone during this lecture?
 :::
 :::
 
-## The Solution: Manage Your Mental Cache
+## Manage your mental cache
 
 :::{.incremental}
-- Limit screen time and practice "monotasking" (Reduce cache thrashing).
-- Prioritize sleep, nutrition, and mindful habits (Maintain cache performance).
-- Create protected time for deep work (Prevent cache flooding).
-- Be selective about what enters your attention (Smart cache management).
+- Limit screen time and practice "monotasking"
+- Prioritize sleep, nutrition and mindful habits
+- Create protected time for deep work
+- Be selective about what enters your attention
 :::
 
-# [Mitigation]{.flow} {.title}
-## Mitigation
+::: {.notes}
+In cache terms: monotasking reduces cache thrashing, sleep and nutrition maintain cache performance, protected time for deep work prevents cache flooding, and being selective is smart cache management.
+:::
+
+## Distraction can't be avoided, but it can be reduced
 
 :::{.incremental}
-- Distraction can hardly be avoided in today’s world but can be mitigated.
-- This is particularly important for managers.
-- This lecture is designed to raise your awareness of what you can do to keep your brain working efficiently.
+- Distraction is everywhere, especially for managers
+- Awareness is the first step to keep your brain working well
 - **Want to dive deeper? Read "Stolen Focus" by Johann Hari**
 :::
 
-## Awareness: Three Levels of Attention
-
-:::{.incremental}
-- **Spotlight**: Immediate goals, your focus (Your L1 Cache: What are you working on RIGHT NOW?)
-- **Starlight**: Medium-term goals, your wishes (Your L2 Cache: What matters this week/month?)
-- **Daylight**: Long-term goals, your values (Your Storage: What defines your life direction?)
+::: {.notes}
+Distraction can hardly be avoided in today's world, but it can be mitigated. This is particularly important for managers. This part of the lecture is designed to raise your awareness of what you can do to keep your brain working efficiently.
 :::
 
-## Practical Strategies
+## Three levels of attention: spotlight, starlight, daylight
 
 :::{.incremental}
-- **Prioritization:** What deserves to be in your mental cache?
-- **Structure (Schedule):** Time-boxing prevents cache overflow
-- **Breaks:** Regular "cache clearing" prevents exhaustion
-- **Enable flow:** Dedicated workspace, manage notifications, clear communication
-- **Meditation & exercise:** Maintenance routines for optimal cache performance
+- **Spotlight:** what you work on right now (your L1 cache)
+- **Starlight:** your goals for this week or month (your L2 cache)
+- **Daylight:** your long-term values and direction (your storage)
 :::
 
-## Cache Hierarchy for Workspace
+::: {.notes}
+The three levels come from Johann Hari's "Stolen Focus". Spotlight: immediate goals, your focus, what are you working on right now? Starlight: medium-term goals, your wishes, what matters this week or month? Daylight: long-term goals, your values, what defines your life direction?
+:::
+
+## Five practical strategies
 
 :::{.incremental}
-- **Hot Cache (On your desk):** Only items for current tasks (today)
-- **Warm Cache (Nearby shelf/drawer):** This week's projects (this week)
-- **Cold Storage (Archive/closet):** Everything else
+- **Prioritize:** what deserves a place in your mental cache?
+- **Time-box:** structure prevents overflow
+- **Take breaks:** regular clearing out prevents exhaustion
+- **Enable flow:** dedicated workspace, fewer notifications
+- **Meditation and exercise:** maintenance for your cache
+:::
+
+::: {.notes}
+Prioritization: what deserves to be in your mental cache? Structure and schedule: time-boxing prevents cache overflow. Breaks: regular cache clearing prevents exhaustion. Enable flow: dedicated workspace, manage notifications, clear communication. Meditation and exercise: maintenance routines for optimal cache performance.
+:::
+
+## Your desk as a cache hierarchy
+
+:::{.incremental}
+- **Hot cache (on your desk):** only today's tasks
+- **Warm cache (nearby shelf or drawer):** this week's projects
+- **Cold storage (archive or closet):** everything else
 
 :::{.fragment}
-**→ The key principle:** If you haven't used it recently, move it away!
+**Key principle:** if you haven't used it recently, move it away!
 :::
 :::
 
-## Self-Assessment
+## Self-assessment
 
 [Question:]{.question} **Right now:**
 
@@ -479,22 +501,11 @@ A register is roughly **ten million times faster** than a hard disk. [Question:]
 :::
 :::
 
-# [Key Takeaways]{.flow} {.title}
-
-## Key Takeaways: The Concepts
-
-:::{.incremental}
-- **Caching is universal:** It applies to computers, organizations, and human cognition
-- **The fundamental trade-off:** Fast storage is small, large storage is slow
-- **LRU works because of temporal locality:** Recent past predicts near future
+::: {.lecture-closing}
 :::
 
-## Key Takeaways: Your Life
-
-:::{.incremental}
-- **Your brain is a cache:** Limited capacity, vulnerable to flooding and poisoning
-- **Protect your attention:** It's your scarcest and most valuable resource
-- **Apply caching principles to life:** Keep what you use, remove what you don't
+::: {.notes}
+Key takeaways, the concepts: caching is universal, it applies to computers, organizations and human cognition. The fundamental trade-off: fast storage is small, large storage is slow. LRU works because of temporal locality, the recent past predicts the near future. Key takeaways for your life: your brain is a cache, with limited capacity, vulnerable to flooding and poisoning. Protect your attention, it is your scarcest and most valuable resource. Apply caching principles to life: keep what you use, remove what you don't.
 :::
 
 {{< include ../include/lecture_literature_start.qmd >}}
