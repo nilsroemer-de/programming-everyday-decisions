@@ -5,20 +5,34 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_06_kindness.qmd)"
     output-file: lec_06_presentation.html
+lecture-summary: "The best algorithms don't just solve a problem, they make life easier and fairer for the people affected."
+lecture-why: "\"When works for you?\" sounds polite but hands the work to the other person. Proposing two concrete slots is kinder. Companies face the same question at scale: how to design processes, products and automated decisions that are easy and fair for customers and colleagues."
+lecture-roadmap:
+  - "Looking back: five ideas for better decisions"
+  - "Computational kindness: easy and fair for others"
+  - "Looking ahead: where to go from here"
+lecture-covered:
+  - "Optimal stopping, explore and exploit, caching, scheduling and randomness give you a toolkit for everyday decisions."
+  - "Good algorithms reduce the burden for others and treat people fairly. Biased data leads to biased decisions."
+  - "Many more ideas from computer science help in everyday life, and the best way to keep learning is to keep programming."
+lecture-key: "Make it easy for others."
 ---
 
-# [Key Concepts]{.flow} {.title}
+# [Looking back: five ideas for better decisions]{.flow} {.title}
 
-## Topics from the Lecture
+## Five ideas from this course
 
-- **Optimal Stopping**: How to decide [when to stop looking]{.highlight} for better options.
-- **Explore/Exploit Tradeoff**: [Balancing]{.highlight} between trying new things and sticking with known options.
-- **Caching**: Keeping what you use close and [letting go of the rest]{.highlight}.
-- **Scheduling**: Efficiently managing [tasks and time.]{.highlight}
-- **Randomness**: Understanding and working with [uncertainty]{.highlight}.
-- **Computational Kindness**: Reducing the burden for others and designing [fair]{.highlight} algorithms.
+- **Optimal stopping:** [when to stop looking]{.highlight}
+- **Explore and exploit:** [balance]{.highlight} the new and the known
+- **Caching:** keep what you use close, [let go of the rest]{.highlight}
+- **Scheduling:** your goal decides [your order]{.highlight}
+- **Randomness:** simulate what you [can't calculate]{.highlight}
 
-# [Computational Kindness]{.flow} {.title}
+::: {.notes}
+Today we add a sixth idea, computational kindness: reducing the burden for others and designing fair algorithms.
+:::
+
+# [Computational kindness: easy and fair for others]{.flow} {.title}
 
 
 ## [Computational Kindness]{.invert-font} {background-color="#000000" background-image="../images/bg/lec06-kindness.jpg" background-size="cover" background-position="center"}
@@ -41,7 +55,7 @@ format:
 :::
 
 
-## Scheduling Meetings
+## Propose two slots instead of asking "when are you free?"
 
 - [Propose specific times!]{.highlight}
 - Don't ask "when are you free?"
@@ -54,7 +68,7 @@ format:
 **Now a simple yes/no decision!**
 :::
 
-## Communication
+## Say what you prefer
 
 - [Be explicit rather than implicit]{.highlight}
 - Provide **clear** options instead
@@ -67,7 +81,7 @@ format:
 **Avoid** deferring → "I'm fine with [whatever]{.highlight}"!
 :::
 
-## The Cost of Flexibility
+## "I'm free whenever" is not helpful
 
 - "I'm free whenever" [seems helpful]{.highlight}
 - [But it is not!]{.highlight}
@@ -78,42 +92,42 @@ format:
 - **Increases** cognitive load
 - Makes decision-making **more complex**
 
-## Principles
+## Four principles of computational kindness
 
 1. **Reduce Options**: Fewer choices lead to [better decisions]{.highlight}
 2. **Be Explicit**: Clear constraints [help]{.highlight} others decide
 3. **Consider Cognitive Load**: Design interactions minimizing [mental effort]{.highlight} for others
 4. **Make Decisions**: [Taking responsibility]{.highlight} can be kind
 
-## Fairness in Algorithms
+## Biased data leads to biased decisions
 
 - Algorithms increasingly decide **about people**: credit, job ads, CV screening
 - They learn from **historical data**, including its [biases]{.highlight}
-- Example: Amazon dropped an experimental CV-screening tool that had learned to downgrade CVs mentioning "women's"[^amazon]
+- Amazon dropped a CV-screening tool that downgraded CVs mentioning "women's"[^amazon]
 
 . . .
 
-::: {.callout-important}
-Computational kindness also means thinking about the **people affected** by our algorithms.
-:::
+Kindness also means thinking about the **people affected** by our algorithms.
 
 [^amazon]: Dastin, J. (2018). Amazon scraps secret AI recruiting tool that showed bias against women. Reuters, 10 October 2018.
 
-## Where Bias Comes From
+## Where bias comes from
 
-- **Data:** Some groups are missing or underrepresented ([selection bias]{.highlight}, Lecture V)
-- **Objective:** Optimizing only speed or profit ignores who bears the errors
-- **Feedback loops:** Decisions shape the next data, e.g. more checks where we already checked a lot[^loops]
+- **Data:** some groups are missing ([selection bias]{.highlight}, Lecture V)
+- **Objective:** optimizing only speed or profit ignores who bears the errors
+- **Feedback loops:** decisions shape the next data[^loops]
 
 . . .
 
-::: {.callout-tip}
-Fairness is a design decision: test outcomes for different groups, explain decisions, and keep a human in the loop.
+Fairness is a design decision: **test** outcomes for groups, **explain** decisions, keep a **human** in the loop.
+
+::: {.notes}
+Feedback loops: decisions shape the next data, for example more checks where we already checked a lot, so the data confirms the earlier decision. Fairness is a design decision: test outcomes for different groups, explain decisions, and keep a human in the loop.
 :::
 
 [^loops]: Ensign, D. et al. (2018). Runaway feedback loops in predictive policing. Proceedings of Machine Learning Research, 81, 160–171.
 
-## Kind Algorithm Design
+## Three questions before you deploy an algorithm
 
 [Question:]{.question} **Before you deploy an algorithm, ask:**
 
@@ -121,15 +135,15 @@ Fairness is a design decision: test outcomes for different groups, explain decis
 - Can a person **understand and contest** the decision?
 - Does it **reduce or add burden** for the people involved?
 
-## Reflection
+## Your turn: be kind in three situations
 
-[Think about it:]{.highlight} **How could you apply computational kindness in these scenarios?**
+[Think about it:]{.highlight} **How could you apply computational kindness here?**
 
 - Planning a **group dinner** with friends
 - Asking your professor for **thesis feedback**
 - Coordinating a **team project** at work
 
-# [How to continue?]{.flow} {.title}
+# [Looking ahead: where to go from here]{.flow} {.title}
 
 ## [How to continue learning?]{.invert-font} {background-color="#000000" background-image="../images/bg/lec06-learning.jpg" background-size="cover" background-position="center"}
 
@@ -140,7 +154,7 @@ Fairness is a design decision: test outcomes for different groups, explain decis
 
 :::
 
-## Bayes' Rule
+## Bayes' rule: update your beliefs with new evidence
 
 - Fundamental theorem in probability theory
 - Updates probability of hypothesis based on [new evidence]{.highlight}
@@ -152,7 +166,7 @@ Fairness is a design decision: test outcomes for different groups, explain decis
 Helps make **informed predictions and decisions** under uncertainty in the real world!
 :::
 
-## Overfitting
+## Overfitting: a model that learned the past too well
 
 - Occurs when a model [learns the training data too well]{.highlight}
 - **Captures noise and outliers** rather than pattern
@@ -164,7 +178,7 @@ Helps make **informed predictions and decisions** under uncertainty in the real 
 Several ways to counter overfitting, e.g. cross-validation.
 :::
 
-## Game Theory
+## Game theory: decisions when others decide too
 
 - Strategic interactions among [rational decision-makers]{.highlight}
 - Analyzes situations with **multiple agents** and their strategies
@@ -175,7 +189,7 @@ Several ways to counter overfitting, e.g. cross-validation.
 **Many applications** in economics, politics, and biology!
 :::
 
-## Networking
+## Networking: how information travels
 
 - Study of **information exchange** over networks
 - Includes [understanding protocols and data transmission]{.highlight}
@@ -187,21 +201,23 @@ Several ways to counter overfitting, e.g. cross-validation.
 **Important** in computer networks, the internet and social life!
 :::
 
-## Relaxation
+## Relaxation: solve an easier version first
 
 - Simplifies [complex problems]{.highlight} to make them more tractable
 - Involves **relaxing certain constraints**
 - Provides insights or **approximate** solutions
 
-## Continue programming?
+## Keep programming
 
-- The best way to continue learning is to [keep programming in the future]{.highlight}
-- Potentially, you will continue to do so during your studies
-- Coding in your Thesis is another great way to improve
-- Try to find a way to apply programming in your work
+- The best way to keep learning is to [keep programming]{.highlight}
+- In your studies, in your thesis, in your job
 - **There are many interesting topics to explore!**
 
-## Advent of Code
+::: {.notes}
+Potentially you will continue programming during your studies. Coding in your thesis is another great way to improve. Try to find a way to apply programming in your work.
+:::
+
+## Advent of Code: a puzzle a day in December
 
 - [Advent of Code](https://adventofcode.com/) is a fun way to keep programming
 - Here you can solve programming puzzles during Advent
@@ -211,20 +227,24 @@ Several ways to counter overfitting, e.g. cross-validation.
 <img src="../images/gif/lec06-first.gif" width="280" height="280" alt="">
 </center>
 
-## That's it for the Lecture Series!
+::: {.lecture-closing}
+:::
 
-- We now have covered the basics of Python
-- I hope you enjoyed the lecture and found it helpful
+## That's it for the lecture series!
+
+- We have covered the basics of Python and six ideas for better decisions
 - If you have questions or feedback, [please let me know!]{.highlight}
-- I wish you all the best for your studies and your career!
+- All the best for your studies and your career!
+
+::: {.notes}
+I hope you enjoyed the lecture and found it helpful.
+:::
 
 ## {background-color="#000000"}
 
 <center>
 <img src="../images/gif/lec06-second.gif" width="480" height="355" alt="">
 </center>
-
-# [Q&A]{.flow} {.title}
 
 {{< include ../include/lecture_literature_start.qmd >}}
 
