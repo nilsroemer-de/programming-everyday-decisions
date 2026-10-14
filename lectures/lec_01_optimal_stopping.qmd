@@ -5,46 +5,38 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_01_optimal_stopping.qmd)"
     output-file: lec_01_presentation.html
+lecture-summary: "When options come one by one and you can't go back, look at the first 37 % without committing, then take the first one that beats them all."
+lecture-why: "You visit flats in Hamburg. Each viewing, you must decide on the spot, and if you say no, the flat is gone. Choose too early and you miss better ones; wait too long and the best is behind you. Companies face the same problem when hiring, choosing suppliers or accepting offers."
+lecture-roadmap:
+  - "The problem: choosing the best when options come one at a time"
+  - "The rule: look first, then leap"
+  - "Real life: rejection and time pressure"
+lecture-covered:
+  - "Many decisions share one structure: options arrive one at a time, and there is no going back."
+  - "Looking at the first 37 % and then taking the first better option gives the best possible chance of picking the very best: 37 %."
+  - "If you can be rejected or time is short, start leaping earlier."
+lecture-key: "Look first. Then leap."
 ---
 
 
-## Today's Topic: Optimal Stopping
+# [The problem: choosing the best when options come one at a time]{.flow} {.title}
 
-**Topic:** Understanding optimal stopping problems and the famous "Secretary Problem"
-
-**Why this matters:** Optimal stopping is everywhere in life - from hiring decisions to finding apartments to choosing when to sell stocks. Today we'll learn the mathematical strategy that maximizes your chances of making the best choice.
-
-## Learning Objectives
-
-By the end of this lecture, you will be able to:
-
-:::{.incremental}
-1. **Define** optimal stopping problems and identify them in real-world scenarios
-2. **Apply** the 37% rule (look-and-leap strategy) to make better decisions
-3. **Connect** optimal stopping principles to programming logic and algorithmic thinking
-:::
-
-## Today's Agenda
-
-:::{.incremental}
-1. **What is Optimal Stopping?** - Definition and real-world examples
-2. **The Secretary Problem** - The classic formulation and solution
-3. **The 37% Rule** - Why it works and how to apply it
-4. **Variations & Extensions** - Rejection, time constraints, other scenarios
-5. **Connecting to Programming** - How this builds our algorithmic mindset
-:::
-
-# [Optimal Stopping]{.flow} {.title}
-
-## What is Optimal Stopping?
+## Options come one by one, and there is no going back
 
 [Question:]{.question} Anybody know what optimal stopping is?
 
 :::{.incremental}
-- [Optimal stopping]{.highlight} is the problem of:
-    - choosing the **best option**
-    - from a **sequence of options**
-    - where the options are revealed **one by one**
+- [Optimal stopping]{.highlight} is the problem of choosing the **best option**
+- from a **sequence of options**
+- that are revealed **one by one**
+:::
+
+::: {.notes}
+Topic: understanding optimal stopping problems and the famous Secretary Problem. Why this matters: optimal stopping is everywhere in life, from hiring decisions to finding apartments to choosing when to sell stocks. Today we learn the mathematical strategy that maximizes the chance of making the best choice.
+
+Learning objectives: define optimal stopping problems and identify them in real-world scenarios; apply the 37 % rule (look-and-leap strategy) to make better decisions; connect optimal stopping principles to programming logic and algorithmic thinking.
+
+Old agenda: what is optimal stopping (definition and examples), the Secretary Problem (classic formulation and solution), the 37 % rule (why it works and how to apply it), variations and extensions (rejection, time constraints, other scenarios), connecting to programming.
 :::
 
 ## {.loud-slide}
@@ -71,9 +63,7 @@ optimal stopping?
 [Photo by <a href="https://unsplash.com/@shelbymary_">Shelby Deeter</a> on Unsplash]{.invert-font}
 :::
 
-# ["Secretary Problem"]{.flow} {.title}
-
-## The Secretary Problem
+## The Secretary Problem: hire now or keep looking?
 
 :::{.incremental}
 - You are **hiring a secretary** and interview candidates **one by one**
@@ -82,62 +72,59 @@ optimal stopping?
 - How to [maximize the chance of hiring the best candidate?]{.highlight}
 :::
 
-. . .
-
-::: {.callout-note}
-The name comes from the 1960s. The problem is about finding the best candidate, not about secretaries.
+::: {.notes}
+The name comes from the 1960s. The problem is about finding the best candidate, not about secretaries. It is also known as the marriage problem or the dowry problem.
 :::
 
-## Basic Setup
+## The setup in four lines
 
-- We have `n` candidates
-- We interview them **one by one**
-- We must decide to **hire or continue searching**
-- [Ordinal ranking]{.highlight} of candidates
+- We have `n` candidates and interview them **one by one**
+- After each one: **hire or continue searching**
+- We can only **rank** candidates against each other ([ordinal ranking]{.highlight})
 
 . . .
 
 [Question:]{.question} Anybody know what ordinal ranking is?
 
-## Ways to fail
+::: {.notes}
+Ordinal ranking: we can say which of two candidates is better, but we do not have a score or an absolute scale. This is what makes the problem hard, we never know how good the best candidate could be.
+:::
+
+## Two ways to fail
 
 [Question:]{.question} Anybody an idea how we can fail?
 
 . . .
 
-1. Reject all candidates and never hire - [stopping too late]{.highlight}
-2. You hire someone too early - [stopping too early]{.highlight}
+1. Reject everyone and never hire: [stopping too late]{.highlight}
+2. Hire someone too early: [stopping too early]{.highlight}
 
 ## {.loud-slide}
 ::: {.r-fit-text}
 Ideas?
 :::
 
-## Look-and-Leap Strategy
+# [The rule: look first, then leap]{.flow} {.title}
 
-The mathematically optimal strategy:
+## Look at the first 37 %, then leap
 
 :::{.incremental}
 1. **Look** at the [first 37%]{.highlight} of candidates without hiring anyone
-2. **Remember** the best candidate from this observation phase
-3. **Leap:** Hire the next candidate who is **better than the best observed**
-4. **Success rate:** 37% chance of selecting the absolute best candidate[^large]
+2. **Remember** the best candidate so far
+3. **Leap:** hire the next candidate who is **better than that one**
+4. This finds the very best candidate in **37 %** of all cases
 :::
 
-. . .
+::: {.notes}
+This is the mathematically optimal strategy. It means we still fail 63 % of the time, but this is the best we can possibly do. The 37 % holds for a large number of candidates; with only a few candidates, the chance is even higher.
+:::
 
-This means we fail 63% of the time, but this is the **best we can possibly do**!
+## Picking at random gets worse with every candidate
 
-[^large]: For a large number of candidates. With only a few candidates, the chance is even higher.
+Chance of the best candidate if we **pick one at random**:
 
-## Why not pick at random?
-Chance of getting the best candidate if we simply **pick one at random**:
-
-- 1 candidate: 100% (no choice!)
-- 2 candidates: 50%
-- 3 candidates: 33%
-- 4 candidates: 25%
-- 5 candidates: 20%
+- 1 candidate: 100%, 2 candidates: 50%, 3 candidates: 33%
+- 4 candidates: 25%, 5 candidates: 20%
 
 . . .
 
@@ -145,19 +132,26 @@ Chance of getting the best candidate if we simply **pick one at random**:
 
 . . .
 
-**Pattern:** 1/n. Random choice gets worse with every extra candidate, while the look-and-leap strategy stays at about 37%, however many candidates there are.
+**Pattern:** 1/n. Look-and-leap stays at **37 %** for any number of candidates.
+
+::: {.notes}
+Random choice gets worse with every extra candidate, because each individual candidate is less likely to be the best. The look-and-leap strategy does not have this problem: its success chance converges to 37 % as the number of candidates grows.
+:::
 
 ## Why 37%?
 
 - Look at the first share $x$ of candidates, then leap
-- For many candidates, the chance of getting the best is about $-x \ln x$
-- This is largest at $x = 1/e$, the [optimal stopping point]{.highlight} is at `n/e`[^ferguson]
-- `e` is the base of the natural logarithm (≈ 2.718), so $1/e \approx 37\%$
+- Chance of getting the best: about $-x \ln x$
+- In words: look longer and your benchmark improves, but the best may already be gone
+- Largest at $x = 1/e \approx 37\%$[^ferguson]
 
+[^ferguson]: `e` is the base of the natural logarithm (≈ 2.718). The math is more advanced than we need here; see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.
 
-[^ferguson]: This is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.
+::: {.notes}
+The formula balances two risks. If we look at too few candidates, our benchmark is weak and we leap on a mediocre candidate. If we look at too many, the best candidate is likely among those we have already rejected. The product of "benchmark is good" and "best is still ahead" peaks at 1/e of the candidates, so the optimal stopping point is at n/e.
+:::
 
-## Computing the number
+## The computer does the math for us
 
 ```{python}
 #| eval: true
@@ -176,12 +170,12 @@ print(f"Look at first {lookout_phase:.3f} candidates")
 . . .
 
 ::: {.callout-note}
-No worries if you don't understand the code! We are essentially just using the formula to calculate the percentage of candidates to look at.
+No worries if you don't understand the code yet! It just applies the formula.
 :::
 
-## Simulation: Success Rate by Stopping Point
+## Simulation: looking at 7 of 20 candidates works best
 
-Let's visualize the success of a simulation with 20 candidates:
+20 candidates, 2,000 simulated runs per stopping point:
 
 
 ```{python}
@@ -241,29 +235,25 @@ plt.legend()
 plt.show()
 ```
 
-# [Variations]{.flow} {.title}
+# [Real life: rejection and time pressure]{.flow} {.title}
 
-## Rejection
+## If you can be rejected, leap earlier
 
-[Question:]{.question} Imagine a dating scenario, [where the other person can also reject you]{.highlight}. **Optimal stopping point?**
+[Question:]{.question} In dating, [the other person can also say no]{.highlight}. **When to leap?**
 
 :::{.incremental}
-- The optimal stopping point **decreases**, because we can now fail more often
-- With a 50% chance of rejection: **start leaping at 25%**
-- **Formula:** $q^{\frac{1}{1-q}}$ with $q$ being the chance that your offer is **accepted**
+- 50% chance of rejection: **leap at 25%**
+- **Formula:** $q^{\frac{1}{1-q}}$, $q$ = chance that your offer is **accepted**
+- In words: the more often you hear "no", the earlier you leap
 :::
 
-. . .
+::: {.notes}
+Life lesson: higher risk of rejection means we should be less picky. With q = 0.5 the formula gives 0.5 to the power of 2, that is 25 %. If offers are always accepted (q close to 1), the formula gives back the familiar 1/e.
+:::
 
-**Life lesson:** Higher risk of rejection means we should be less picky!
+## Fixed time instead of a fixed number of options
 
-## Time Constraints
-
-What if we don't have a fixed number of candidates, but a [fixed amount of time]{.highlight}?
-
-. . .
-
-**Example:** One year to find an apartment
+**Example:** one year to find a flat, viewings come as they come
 
 . . .
 
@@ -272,44 +262,25 @@ What if we don't have a fixed number of candidates, but a [fixed amount of time]
 . . .
 
 :::{.incremental}
-- **Same principle:** observe for the first 37% of the time (if options arrive evenly)
-- But now we also control the **search intensity**
+- **Same principle:** look for the first 37% of the time, then leap
+- Now we also control **how hard we search**
 :::
 
-## Other versions
+::: {.notes}
+This holds if options arrive evenly over time. We can also decide how intensively we search, for example by viewing more flats per week. Searching harder in the look phase improves the benchmark.
+:::
+
+## The same idea in other places
 
 - Selling a house for the **best price** ("Threshold Rule")
-- Stealing with a **success probability** ("Burglar's Problem")
+- A burglar deciding **when to stop** ("Burglar's Problem")
 - **Finding** a parking spot ("Parking Lot Problem")
 
-. . .
-
-::: {.callout-note}
-Side note for drivers: An increase in occupancy from 90 to 95% doubles the search time for all drivers!
+::: {.notes}
+Side note for drivers: an increase in occupancy from 90 to 95 % doubles the search time for all drivers. Each variation changes the rule a little, but the structure stays: options come one at a time, and you cannot go back.
 :::
 
-## Building Your Technical Mindset
-
-[Question:]{.question} **How does optimal stopping connect to programming?**
-
-. . .
-
-:::{.incremental}
-1. **Algorithmic thinking:** Break complex decisions into logical steps
-2. **Trade-off analysis:** Exploration vs. exploitation (fundamental in AI)
-3. **Mathematical optimization:** Using formulas to find best solutions
-:::
-
-## Key Takeaways
-
-**What we learned:**
-
-:::{.incremental}
-1. **Optimal stopping problems** are everywhere in life and business
-2. **The 37% rule** provides a mathematically optimal strategy
-3. **Exploration vs. exploitation** is a fundamental trade-off
-4. **Real-world variations** require adapting the basic strategy
-5. **This thinking** builds foundation for algorithmic problem-solving
+::: {.lecture-closing}
 :::
 
 ## {.loud-slide}
@@ -321,15 +292,16 @@ so far?
 
 ## After the break: First Steps in Python
 
-- Gentle introduction to Python Programming
-- We work in our notebooks on basics and optimal stopping
-- How to translate the idea into code and experiments
+- A gentle introduction to Python in our notebooks
+- We turn today's idea into **code and experiments**
+- This is how **algorithmic thinking** starts: break a decision into logical steps
 
-. . .
+::: {.notes}
+How does optimal stopping connect to programming? Algorithmic thinking: break complex decisions into logical steps. Trade-off analysis: exploration vs. exploitation, fundamental in AI and the topic of the next lecture. Mathematical optimization: using formulas to find the best solution.
 
-::: {.callout-note}
-**That's it for optimal stopping!**\
-Let's have a short break and then continue with our first Python programming session.
+Key takeaways: optimal stopping problems are everywhere in life and business; the 37 % rule is a mathematically optimal strategy; exploration vs. exploitation is a fundamental trade-off; real-world variations require adapting the basic strategy; this thinking builds the foundation for algorithmic problem-solving.
+
+That's it for optimal stopping! Let's have a short break and then continue with our first Python programming session.
 :::
 
 {{< include ../include/lecture_literature_start.qmd >}}
