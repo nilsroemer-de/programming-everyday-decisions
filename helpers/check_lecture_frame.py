@@ -50,6 +50,7 @@ def visible_words(slide_body: str) -> int:
     s = re.sub(r"::: ?\{\.notes\}.*?\n:::", " ", slide_body, flags=re.S)
     s = re.sub(r"::: ?footer.*?\n:::", " ", s, flags=re.S)
     s = re.sub(r"^\[\^[^\]]+\]:.*$", " ", s, flags=re.M)      # footnote definitions
+    s = re.sub(r"^\|.*$", " ", s, flags=re.M)                   # table rows (lookup tables are not prose)
     s = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", s)                # images
     s = re.sub(r"<[^>]+>", " ", s)                              # html
     s = re.sub(r"\$\$.*?\$\$", " formula ", s, flags=re.S)      # display math counts as one word
