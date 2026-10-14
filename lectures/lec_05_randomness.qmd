@@ -5,32 +5,30 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_05_randomness.qmd)"
     output-file: lec_05_presentation.html
+lecture-summary: "When a problem is too big to solve exactly, a bit of randomness often gets you a good answer fast."
+lecture-why: "Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes and allocate scarce places fairly."
+lecture-roadmap:
+  - "Randomness everywhere: why chance is useful"
+  - "Simulate instead of calculate: Monte Carlo"
+  - "Let chance help you decide: smarter searches, fairer choices"
+lecture-covered:
+  - "Randomness is more than gambling: it makes algorithms faster, systems secure and discoveries possible."
+  - "Running many random simulations gives reliable estimates where exact calculation is out of reach."
+  - "Random steps help a search escape bad solutions, and random choices can make decisions fairer."
+lecture-key: "When you can't calculate it, simulate it."
 ---
 
-# [Welcome!]{.flow} {.title}
+# [Randomness everywhere: why chance is useful]{.flow} {.title}
 
-## Today's Topic: Randomness & Probabilistic Algorithms
-
-**Topic:** Understanding how randomness powers algorithms and decision-making in computer science and everyday life
-
-. . .
-
-**Why this matters:** Randomness isn't just about gambling. It's a powerful tool that makes computers faster, cryptography secure, and helps us solve problems. Today we'll learn how embracing uncertainty can lead to better solutions.
-
-## Today's Agenda
-
-:::{.incremental}
-1. **Understanding Randomness** - From casinos to algorithms
-2. **Randomness in Daily Life** - Where we encounter it without realizing
-3. **Computer Science Applications** - Monte Carlo, simulated annealing, cryptography
-4. **Decision Making** - Using randomness to solve hard problems
-:::
-
-# [Understanding Randomness]{.flow} {.title}
-
-## Randomness
+## What comes to your mind?
 
 [Question:]{.question} **What comes to your mind when you think of randomness?**
+
+::: {.notes}
+Topic: understanding how randomness powers algorithms and decision-making in computer science and everyday life. Why this matters: randomness isn't just about gambling. It is a powerful tool that makes computers faster, cryptography secure, and helps us solve problems. Today we learn how embracing uncertainty can lead to better solutions.
+
+Old agenda: understanding randomness (from casinos to algorithms), randomness in daily life, computer science applications (Monte Carlo, simulated annealing, cryptography), decision making with randomness.
+:::
 
 ## [Casino]{.invert-font} {background-image="../images/bg/lec05-casino.jpg"}
 ::: footer
@@ -57,7 +55,7 @@ format:
 :::
 
 
-## Why Randomness Matters
+## The opposite of randomness is predictability
 
 [Question:]{.question} **What's the opposite of randomness?**
 
@@ -73,7 +71,7 @@ format:
 
 - [Boredom?]{.highlight}
 
-## Discovery by Randomness
+## Is the die fair? Roll it many times
 
 [Question:]{.question} **How would you test if a pair of dice is fair?**
 
@@ -87,7 +85,7 @@ format:
 - Check if the outcomes are **uniformly distributed**
 - Compare **observed** frequencies to **expected** frequencies
 
-## Dice Rolls
+## A fair and a loaded die after 200 rolls
 
 
 ```{python}
@@ -181,33 +179,25 @@ plt.close()
 
 ![](../animations/dice_fairness.gif)
 
-## Using Randomness
-
-Randomness is a [fundamental aspect of the world]{.highlight}
-
-. . .
+## Randomness is a tool, not just a gamble
 
 :::{.incremental}
-- **Testing:** Generate random inputs to find bugs
-- **Optimization:** Escape local optima in complex problems
-- **Simulation:** Model complex systems with uncertainty
-- **Security:** Make systems unpredictable to attackers
-- **Fairness:** Eliminate bias in selection processes
+- **Testing:** random inputs find bugs
+- **Optimization:** random steps escape dead ends
+- **Simulation:** model systems with uncertainty
+- **Security:** stay unpredictable for attackers
+- **Fairness:** remove bias from selection
 :::
 
-. . .
-
-::: {.callout-important}
-Randomness is not just about **generating random numbers**!
+::: {.notes}
+Randomness is a fundamental aspect of the world, and it is not just about generating random numbers. Testing: generate random inputs to find bugs. Optimization: escape local optima in complex problems. Simulation: model complex systems with uncertainty. Security: make systems unpredictable to attackers. Fairness: eliminate bias in selection processes.
 :::
 
-# [Randomness in Daily Life]{.flow} {.title}
-
-## Randomness and Everyday Life
+## Where do you meet randomness every day?
 
 [Question:]{.question} **Where do you encounter randomness in daily life?**
 
-## Social Life
+## Social life: chance brings people together
 
 :::{.incremental}
 - **Dating apps:** Randomized matching within preferences
@@ -217,7 +207,7 @@ Randomness is not just about **generating random numbers**!
 - **Netflix recommendations:** Controlled randomness for discovery
 :::
 
-## Entertainment Industry
+## Entertainment: controlled randomness keeps us playing
 
 :::{.incremental}
 - **Pokémon:** "Random" encounters weighted by rarity
@@ -227,7 +217,7 @@ Randomness is not just about **generating random numbers**!
 - **TikTok:** Controlled randomization for content discovery
 :::
 
-## Cryptography & Security
+## Security: unpredictability protects us
 
 :::{.incremental}
 - **Cryptocurrency mining:** Solving cryptographic puzzles through guessing
@@ -237,42 +227,30 @@ Randomness is not just about **generating random numbers**!
 - **Two-factor authentication** uses random codes
 :::
 
-## Data Science & Research
+## Research: random samples give unbiased answers
 
 :::{.incremental}
-- **Weather forecasting:** Uses randomness to model uncertainty
-- **Stock algorithms:** Add randomness to avoid predictable patterns
-- **Self-driving cars:** Random elements for natural-feeling behavior
-- **Random sampling:** Ensures unbiased research results
-- **A/B testing:** Random assignment to treatment groups
+- **Weather forecasting:** randomness models uncertainty
+- **Stock algorithms:** randomness avoids predictable patterns
+- **Self-driving cars:** random elements feel natural
+- **Random sampling:** unbiased research results
+- **A/B testing:** random assignment to groups
 :::
 
-. . .
-
-::: {.callout-note}
-Randomness is [everywhere]{.highlight} around us!
-:::
-
-# [Randomness and Computer Science]{.flow} {.title}
-
-## Randomness in Algorithms
-
-**Why do computer scientists love randomness?**
+## Why computer scientists love randomness
 
 :::{.incremental}
-- **Efficiency:** Often faster than deterministic approaches
-- **Simplicity:** Can solve complex problems with simple code
-- **Robustness:** Avoids worst-case scenarios
-- **Approximation:** "Good enough" solutions in reasonable time
+- **Efficiency:** often faster than deterministic approaches
+- **Simplicity:** complex problems, simple code
+- **Robustness:** avoids worst-case scenarios
+- **Approximation:** "good enough" solutions in reasonable time
 :::
 
-. . .
-
-::: {.callout-important}
-**Key Trade-off:** Perfect vs. "Good Enough" solutions
+::: {.notes}
+The key trade-off of this lecture: perfect vs. "good enough" solutions. Randomness is everywhere around us, and computer scientists use it on purpose.
 :::
 
-## Types of Randomness
+## True randomness comes from physics, pseudo-randomness from a seed
 
 [Question:]{.question} **Difference between true and pseudo-randomness?**
 
@@ -298,9 +276,11 @@ Randomness is [everywhere]{.highlight} around us!
 :::
 :::
 
-## Limits of Computation
+# [Simulate instead of calculate: Monte Carlo]{.flow} {.title}
 
-[Question:]{.question} **How many possible combinations exist in a shuffled deck of cards?**
+## Some things are too big to count
+
+[Question:]{.question} **How many possible orders exist for a shuffled deck of cards?**
 
 ```{python}
 #| echo: true
@@ -317,22 +297,25 @@ Computing and evaluating all possible combinations is not feasible!
 :::
 
 
-## Computational Limits
+## Monte Carlo: estimate by running many random trials
 
 [Question:]{.question} **Anybody ever heard of "Monte Carlo methods"?**
 
 . . .
 
-- Developed in the **1940s for nuclear weapons research**
-- Nuclear fission chain reactions **were too complex**
-- Helped to [evaluate the probabilities of different outcomes]{.highlight}
+- 1940s nuclear research: chain reactions were too complex to calculate
+- Idea: draw random cases many times and [count the outcomes]{.highlight}
 - Named after **Monaco's famous casino**
+
+::: {.notes}
+Monte Carlo methods were developed in the 1940s for nuclear weapons research. Nuclear fission chain reactions were too complex to calculate exactly, so the researchers simulated them with random numbers to evaluate the probabilities of different outcomes.
+:::
 
 . . .
 
 [Question:]{.question} **How could we estimate π?**
 
-## Estimating π
+## Estimating π by throwing random points
 
 ```{python}
 #| echo: false
@@ -411,24 +394,22 @@ plt.close()
 
 ![](../animations/pi.gif)
 
-## Monte Carlo in Business
+## Monte Carlo in business: a range instead of a single forecast
 
 :::{.incremental}
-- **Project planning:** How likely do we finish before the deadline?
-- **Finance:** How much could a portfolio lose in a bad month?
-- **Inventory:** How much stock covers an uncertain demand?
-- **Recipe:** Model the uncertain inputs, draw random values many times, look at the distribution of outcomes
+- **Project planning:** how likely do we finish before the deadline?
+- **Finance:** how much could a portfolio lose in a bad month?
+- **Inventory:** how much stock covers an uncertain demand?
+- **Recipe:** model the uncertain inputs, draw random values many times
 :::
 
-. . .
-
-::: {.callout-tip}
-Instead of a single forecast, Monte Carlo gives a **range of outcomes with probabilities**.
+::: {.notes}
+Instead of a single forecast, Monte Carlo gives a range of outcomes with probabilities. The recipe is always the same: describe each uncertain input by a range or distribution, draw random values for all inputs, compute the result, repeat thousands of times, and look at the distribution of results.
 :::
 
-## Will the Project Finish on Time?
+## Most likely 21 days, but only 63 % finish by day 25
 
-Three tasks with uncertain durations. The most likely values add up to **21 days**, the deadline is **25 days**.
+Three uncertain tasks, most likely **21 days** in total, deadline **25 days**:
 
 ```{python}
 #| echo: false
@@ -460,11 +441,11 @@ with plt.rc_context():
 ```
 
 
-# [Decision Making]{.flow} {.title}
+# [Let chance help you decide: smarter searches, fairer choices]{.flow} {.title}
 
-## Travel Itinerary
+## Ten cities, one trip: which order is shortest?
 
-[Question:]{.question} **How and in which order would you visit 10 cities by plane with minimal total distance?**
+[Question:]{.question} **In which order would you visit 10 cities by plane with minimal total distance?**
 
 ```{python}
 #| echo: true
@@ -478,7 +459,7 @@ print(math.factorial(10))
 
 [Question:]{.question} **What could be a strategy?**
 
-## Brute Force
+## Brute force: try every route
 
 - Try [every possibility]{.highlight}
 - Total possible routes: 10! = **3,628,800**
@@ -489,42 +470,39 @@ print(math.factorial(10))
 
 [Question:]{.question} **What could be the problem with this approach?**
 
-## Time and Space Requirements
+## Twenty cities would take 77 million years
 
 :::{.incremental}
 - For 20 cities: 20! = **2.4 quintillion** routes
-- Would take about **77 million years** at 1ms per check!
-- **Time complexity** grows [factorially]{.highlight}
-- **Memory requirements** increase with problem size
+- About **77 million years** at 1 ms per check
+- The effort grows [factorially]{.highlight}: not feasible for real problems
 :::
 
-. . .
-
-::: {.callout-important}
-**Not feasible for real-world problems!**
+::: {.notes}
+Time complexity grows factorially with the number of cities, and memory requirements increase with the problem size as well. Brute force is not feasible for real-world problems.
 :::
 
-## Greedy Algorithm
+## Greedy: always take the shortest next flight
 
-- **Example:** Always picking shortest next flight
-- Make **locally optimal** choices at each step
-- [Never backtracks or reconsiders past decisions]{.highlight}
-- Fast execution & simple to implement
-- Can perform **poorly on complex problems**
+- Make the **locally best** choice at each step
+- [Never backtrack or reconsider]{.highlight}
+- Fast and simple, but can perform **poorly on complex problems**
 
-## Hill Climbing
+## Hill climbing: improve step by step, until you are stuck
 
-- [Iteratively improve solution]{.highlight} by making small changes
-- Like **climbing in fog**, can only see immediate surroundings
-- Don't know if **higher peaks** exist elsewhere
-- Can get stuck in **local optima**
-- No guarantee of finding **global best optima**
+- [Improve the solution]{.highlight} by small changes, keep the better one
+- Like **climbing in fog**: you only see your immediate surroundings
+- You get stuck on a **local optimum**, a small hill, and never see the mountain
+
+::: {.notes}
+Hill climbing iteratively improves a solution by making small changes. Like climbing in fog, it can only see the immediate surroundings and does not know whether higher peaks exist elsewhere. It can get stuck in local optima and gives no guarantee of finding the global optimum.
+:::
 
 . . .
 
 [Question:]{.question} **How would you escape a local optimum?**
 
-## Simulated Annealing (SA)
+## Simulated annealing: sometimes accept a worse step
 
 - Make random changes and **accept improvements**
 - Sometimes accept **worse solutions**
@@ -539,7 +517,7 @@ print(math.factorial(10))
 - Randomness helps to escape **local optima**
 - Balances [exploration vs. exploitation]{.highlight}
 
-## SA Animation
+## Annealing on a simple curve
 
 ```{python}
 #| echo: false
@@ -635,7 +613,7 @@ plt.close()
 
 ![](../animations/simulated_annealing.gif)
 
-## Traveling Salesman
+## Annealing finds a short route through ten cities
 
 ```{python}
 #| echo: false
@@ -802,9 +780,7 @@ plt.close()
 
 ![](../animations/tsp_annealing.gif)
 
-# [Randomness and Society]{.flow} {.title}
-
-## Thought Experiment
+## Thought experiment: freedom or equality?
 
 **What's more important for a society?**
 
@@ -832,7 +808,7 @@ plt.close()
 
 [Question:]{.question} **Any problem with this question?**
 
-## Veil of Ignorance
+## Veil of ignorance: design a society without knowing your place in it
 
 You might [randomly]{.highlight} be:
 
@@ -844,20 +820,18 @@ You might [randomly]{.highlight} be:
 
 [Question:]{.question} **If you didn't know who you'd be born as, what kind of society would you design?**
 
-## Key Considerations
+## Stories mislead, statistics miss nuance
 
-- **Individual stories:** Powerful but potentially misleading
-- **Statistics:** Comprehensive but can miss nuance
-- **Hidden diversity:** Important subgroups may be overlooked
+- **Individual stories:** powerful but potentially misleading
+- **Statistics:** comprehensive but can miss nuance
+- **Hidden diversity:** important subgroups may be overlooked
 - **Small policy changes** [can have cascading effects]{.highlight}
 
-. . .
-
-::: {.callout-important}
-But that's not all! We also need to measure **success** and **failure**!
+::: {.notes}
+But that's not all: we also need to decide how to measure success and failure of a policy.
 :::
 
-## Measuring Success
+## Which measure of success?
 
 - **Mean happiness:** Average well-being
 - **Total happiness:** Utilitarian approach
@@ -868,7 +842,7 @@ But that's not all! We also need to measure **success** and **failure**!
 
 [Question:]{.question} **What could be the problem with these measures?**
 
-## Idea: Random Sampling
+## Idea: ask a random sample
 
 - Randomly [select a subset of the population]{.highlight}
 - Gather **diverse perspectives** from the sample
@@ -879,18 +853,21 @@ But that's not all! We also need to measure **success** and **failure**!
 
 [Question:]{.question} **What is a selection bias?**
 
-## Selection Bias
+## Selection bias: the sample is not the population
 
 **Definition**: The sample you analyze [is not representative of the population]{.highlight} you want to study.
 
 . . .
 
 ::: {.callout-warning}
-### Famous Example
-WWII: Engineers wanted to armor returning planes where they had the most bullet holes. Abraham Wald suggested armoring the areas **without** holes: planes hit there did not return.
+WWII: engineers wanted to armor returning planes where the bullet holes were. Abraham Wald: armor where there are **no** holes, those planes never returned.
 :::
 
-## Promoting Fairness
+::: {.notes}
+The famous example of survivorship bias: engineers studied returning planes to decide where to add armor and initially focused on the areas with the most bullet holes. Abraham Wald pointed out that they should armor the areas without bullet holes, because planes hit there did not survive to return.
+:::
+
+## Random choices can be the fairest choices
 
 [Question:]{.question} **How can randomness promote fairness?**
 
@@ -901,9 +878,7 @@ WWII: Engineers wanted to armor returning planes where they had the most bullet 
 - **Random assignment** of cases to judges
 - **Random order** of candidates on voting ballots
 
-# [Uncertainty]{.flow} {.title}
-
-## Quick Poll
+## Quick poll: sure 50 or maybe 120?
 [Question:]{.question} **Which would you prefer?**
 
 - **100% chance of winning 50 EUR**
@@ -915,7 +890,7 @@ WWII: Engineers wanted to armor returning planes where they had the most bullet 
 Answer depends on your **risk aversion**!
 :::
 
-## Decisions Under Uncertainty
+## When to embrace randomness, when to reduce it
 
 [Question:]{.question} **When should we embrace vs. reduce randomness?**
 
@@ -941,33 +916,17 @@ Answer depends on your **risk aversion**!
 :::
 :::
 
-# [Takeaways]{.flow} {.title}
+## Good enough beats perfect
 
-## "Good Enough" Solutions
+- **Perfect is the enemy of good:** approximations work, complete analysis is often impossible
+- [Perfect information is rare]{.highlight}
+- Quick approximations enable **faster decisions**: balance accuracy against time
 
-- **Perfect is enemy of good**
-  - Remember Monte Carlo methods: **approximations work**
-  - Complete analysis often impossible
-  - [Perfect information is rare]{.highlight}
-
-. . .
-
-::: {.callout-tip}
-Many real-world problems benefit from **embracing uncertainty** rather than fighting it!
+::: {.notes}
+Remember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Consider the opportunity costs: quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration. Many problems benefit from fast, good-enough solutions rather than perfect ones.
 :::
 
-## Opportunity Costs
-
-- [Consider opportunity costs]{.highlight}
-  - Quick approximations enable faster decisions
-  - Balance accuracy vs. computation time
-  - Random sampling vs. complete enumeration
-
-
-. . .
-
-::: {.callout-tip}
-Many problems benefit from **fast, good-enough solutions** rather than perfect ones.
+::: {.lecture-closing}
 :::
 
 ## {.loud-slide}
@@ -983,11 +942,8 @@ so far?
 - Tutorial V.II: Recap of the course topics with randomness
 - Monte Carlo simulation of a travel problem in code
 
-. . .
-
-::: {.callout-note}
-**That's it for today's lecture!**\
-We've covered the basics of randomness and its applications. In the upcoming tutorials, we'll learn how to use LLMs to generate code with randomness.
+::: {.notes}
+That's it for today's lecture! We've covered the basics of randomness and its applications. In the upcoming tutorials, we'll learn how to use AI assistants to generate code with randomness.
 :::
 
 {{< include ../include/lecture_literature_start.qmd >}}
