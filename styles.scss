@@ -872,6 +872,87 @@ html.reveal-print .reveal .r-fit-text {
   color: var(--fg-3) !important;
 }
 
+// Lecture frame (helpers/lecture-frame.lua): opening, roadmap, covered, closing
+.reveal .eyebrow {
+  @include slide-eyebrow;
+  display: block;
+  margin-bottom: .3em;
+}
+.reveal .statement {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -.012em;
+  color: var(--ink);
+}
+.reveal .lecture-summary {
+  margin-bottom: 1em;
+}
+.reveal .lecture-why p {
+  font-size: .85em;
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+.reveal .lecture-why.closing p {
+  font-size: 1em;
+  color: var(--ink);
+}
+.reveal .roadmap ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: roadmap;
+}
+.reveal .roadmap li {
+  counter-increment: roadmap;
+  position: relative;
+  margin: 0 0 .55em 0;
+  padding-left: 2.2em;
+  line-height: 1.3;
+}
+.reveal .roadmap li::before {
+  content: "0" counter(roadmap);
+  position: absolute;
+  left: 0;
+  top: .12em;
+  font-family: "Space Mono", ui-monospace, Menlo, monospace;
+  font-size: .6em;
+  color: var(--fg-3);
+}
+.reveal .roadmap .roadmap-item.current {
+  color: var(--ink);
+  font-weight: 600;
+}
+.reveal .roadmap .roadmap-item.done,
+.reveal .roadmap .roadmap-item.future {
+  color: var(--fg-3);
+}
+// roadmap under a section title: smaller, with a quiet line above
+.reveal .slides section.title .roadmap {
+  margin-top: 1em;
+  padding-top: .8em;
+  border-top: 1px solid var(--border);
+  font-size: .8em;
+}
+.reveal .slides section.title .roadmap li {
+  margin-bottom: .4em;
+}
+.reveal .section-covered {
+  margin-top: .8em;
+}
+.reveal .covered-list .covered-item {
+  margin-bottom: .75em;
+}
+.reveal .covered-list .covered-item p {
+  margin: 0;
+  font-size: .85em;
+  line-height: 1.4;
+}
+.reveal .covered-list .covered-item .eyebrow {
+  margin-bottom: .15em;
+}
+
 // Print view (?print-pdf): reveal's print CSS already uses white pages;
 // no extra background here (it would cover background-image slides).
 
@@ -919,6 +1000,34 @@ html.reveal-print .reveal .r-fit-text {
 }
 #quarto-document-content section.loud-slide > h2:empty {
   display: none;
+}
+/* Lecture frame on the HTML page (helpers/lecture-frame.lua) */
+#quarto-document-content .lecture-intro {
+  margin-bottom: var(--space-6);
+}
+#quarto-document-content .lecture-intro > p:first-child {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+#quarto-document-content .roadmap ol {
+  padding-left: 1.4rem;
+}
+#quarto-document-content .lecture-notes {
+  margin: var(--space-4) 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--sky-100);
+  border-left: 3px solid var(--border-strong);
+  border-radius: var(--r-xs);
+  font-size: .92rem;
+  color: var(--fg-2);
+}
+#quarto-document-content .lecture-notes .eyebrow {
+  @include eyebrow;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+#quarto-document-content .lecture-notes p:last-child {
+  margin-bottom: 0;
 }
 #quarto-document-content .r-fit-text {
   font-family: "Poppins", system-ui, sans-serif;
