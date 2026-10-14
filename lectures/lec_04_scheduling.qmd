@@ -10,6 +10,17 @@ format:
   html:
     mermaid:
       theme: neutral
+lecture-summary: "There is no single best order for your tasks: first decide what you want to achieve, and the right rule follows."
+lecture-why: "Monday morning, ten tasks on your list: where do you start? Companies face the same question at scale: which order on the production line, which customer order first, which project gets the team this week."
+lecture-roadmap:
+  - "The basics: when order matters, and when it doesn't"
+  - "Your goal decides the rule: deadlines, waiting time, value"
+  - "Real life: dependencies, interruptions and thrashing"
+lecture-covered:
+  - "Sometimes the order of tasks changes the result, sometimes it doesn't. Knowing which saves time."
+  - "Each goal has its own simple rule: earliest deadline first to avoid being late, shortest task first to cut waiting, highest value per minute first to maximize what you deliver."
+  - "Dependencies make planning harder, and constant switching eats up your time. Protect blocks of focused work."
+lecture-key: "First choose your goal. Then choose your order."
 ---
 
 ```{python}
@@ -41,29 +52,9 @@ realtime_tasks = [
 ]
 ```
 
-# [Introduction]{.flow} {.title}
+# [The basics: when order matters, and when it doesn't]{.flow} {.title}
 
-## Today's Topic: Scheduling Algorithms
-
-**Topic:** Understanding scheduling problems and algorithmic solutions for optimal task ordering
-
-. . .
-
-**Why this matters:** Every day you make scheduling decisions, from organizing your to-do list to managing projects. Today we'll learn the mathematical algorithms that can optimize these decisions and see how they connect to programming logic.
-
-## Today's Agenda
-
-:::{.incremental}
-1. **Scheduling Fundamentals** - Johnson's Rule and two-machine problems
-2. **Historical Context** - How scheduling theory developed
-3. **Core Algorithms** - EDD for deadlines, SPT for efficiency
-4. **Advanced Topics** - Dependencies, real-time scheduling, thrashing
-5. **Programming Connections** - How this builds algorithmic problem-solving skills
-:::
-
-# [Scheduling Fundamentals]{.flow} {.title}
-
-## A Simple Scheduling Problem
+## Four loads of laundry, one washer, one dryer
 
 ```{python}
 #| echo: false
@@ -71,9 +62,13 @@ fig = task_durations({"Washing": wash, "Drying": dry})
 plt.show()
 ```
 
-## Washing Machine & Dryer
+::: {.notes}
+Topic: understanding scheduling problems and algorithmic solutions for optimal task ordering. Why this matters: every day you make scheduling decisions, from organizing your to-do list to managing projects. Today we learn the mathematical algorithms that can optimize these decisions.
 
-Let's solve this simple scheduling problem:
+Old agenda: scheduling fundamentals (Johnson's rule and two-machine problems), historical context, core algorithms (EDD for deadlines, SPT for efficiency), advanced topics (dependencies, real-time scheduling, thrashing).
+:::
+
+## Goal: all laundry done as early as possible
 
 . . .
 
@@ -92,7 +87,7 @@ Task  Washing  Drying
 
 [Question:]{.question} **An idea how to solve this?**
 
-## Johnson's Rule
+## Johnson's rule: shortest job first or last
 
 [Rule:]{.task} To find the [optimal solution]{.highlight}:
 
@@ -214,8 +209,6 @@ plt.show()
 [Question:]{.question} **What's the difference?**
 
 
-# [History]{.flow} {.title}
-
 ## [Industrialization]{.invert-font} {background-image="../images/bg/lec04-industrial.jpg"}
 
 . . .
@@ -258,25 +251,21 @@ plt.show()
 ::: footer
 :::
 
-## Professional Applications
-
-**Where do we see scheduling in professional practice?**
+## Scheduling is everywhere in professional practice
 
 :::{.incremental}
-- **Project Management:** Task dependencies, resource allocation
-- **Software Development:** CPU, thread management, job queues
-- **Operations:** Production, supply chain optimization
-- **Healthcare:** Patients, surgery planning, staff allocation
-- **Transportation:** Routes, crews, maintenance
+- **Project management:** task dependencies, resource allocation
+- **Software:** CPU, threads, job queues
+- **Operations:** production, supply chain
+- **Healthcare:** patients, surgeries, staff
+- **Transportation:** routes, crews, maintenance
 :::
 
-. . .
+::: {.notes}
+Where do we see scheduling in professional practice? These are the same optimization problems that algorithms solve: in project management (task dependencies and resource allocation), software development (CPU, thread management, job queues), operations (production and supply chain optimization), healthcare (patients, surgery planning, staff allocation) and transportation (routes, crews, maintenance).
+:::
 
-**Connection to Programming:** These are the same optimization problems that algorithms solve!
-
-# [Scheduling Tasks]{.flow} {.title}
-
-## Task Classification
+## Tasks differ in time and in relationships
 
 [Question:]{.question} **What properties can scheduled tasks have?**
 
@@ -301,11 +290,11 @@ mindmap
       Resource constraints
 ```
 
-## Task Classification II
+## Which tasks do you deal with?
 
 [Question:]{.question} **What types of tasks do you deal with most often?**
 
-## Single Machine Scheduling
+## One person instead of two machines
 
 ```{python}
 #| echo: false
@@ -315,11 +304,10 @@ plt.show()
 
 [Question:]{.question} **What is different from before?**
 
-## Order is Irrelevant
+## For total time alone, the order doesn't matter
 
 :::{.callout-note}
-## Order is Irrelevant
-Under simple minimization of total processing time, **order doesn't matter!**
+With one person and no deadlines, every order takes the same **total time**.
 :::
 
 . . .
@@ -329,13 +317,16 @@ Under simple minimization of total processing time, **order doesn't matter!**
 . . .
 
 :::{.callout-important}
-## Order Matters
-Order becomes crucial when we consider, **Deadlines, Priorities and Dependencies!**
+Order becomes crucial with **deadlines, priorities and dependencies**.
 :::
 
-# [Deadlines]{.flow} {.title}
+::: {.notes}
+Under simple minimization of total processing time, order doesn't matter: the total is the sum of all durations, whatever the order. As soon as we care about deadlines, waiting time, priorities or dependencies, the order matters a lot.
+:::
 
-## Earliest Due Date (EDD)
+# [Your goal decides the rule: deadlines, waiting time, value]{.flow} {.title}
+
+## Goal 1: nobody waits too long past the deadline
 
 Tasks with individual deadlines:
 
@@ -356,9 +347,9 @@ Task  Duration  Deadline
 
 [Question:]{.question} **An idea how to solve this?**
 
-## EDD Solution
+## Earliest Due Date: sort by deadline
 
-[Rule:]{.task} Sort the tasks by deadline.
+[Rule:]{.task} Sort the tasks by deadline (**EDD**).
 
 ```{.python}
 Task  Duration  Deadline
@@ -384,7 +375,7 @@ Task  Duration  Deadline
 
 [Let's visualize this!]{.highlight}
 
-## EDD Schedule
+## The EDD schedule
 
 ```{python}
 #| echo: false
@@ -399,9 +390,7 @@ Red marks: deadlines.
 
 [Question:]{.question} **What's the maximum delay here?**
 
-# [Processing Time]{.flow} {.title}
-
-## Shortest Processing Time (SPT)
+## Goal 2: as little waiting as possible
 
 :::{.columns}
 
@@ -429,7 +418,7 @@ Instead of deadlines, we now have **processing times.**
 
 :::
 
-## Shortest Processing Time Applied {auto-animate=true}
+## Shortest Processing Time: shortest task first {auto-animate=true}
 
 [Rule:]{.task} Always schedule the **shortest remaining task**. Choose random if multiple tasks are tied.
 
@@ -446,7 +435,7 @@ Task  Duration  Schedule
 
 [Question:]{.question} **What's the order of scheduled tasks?**
 
-## Shortest Processing Time Applied {auto-animate=true}
+## Shortest Processing Time: shortest task first {auto-animate=true}
 
 [Rule:]{.task} Always schedule the **shortest remaining task**. Choose random if multiple tasks are tied.
 
@@ -463,9 +452,7 @@ Task  Duration  Schedule
 
 **Final sequence: [B E A D C]{.highlight} or [E B A D C]{.highlight}**
 
-## SPT Solution
-
-**Optimal sequence:**
+## The SPT schedule
 
 ```{python}
 #| echo: false
@@ -478,7 +465,7 @@ plt.show()
 
 [Question:]{.question} **Where can we see the waiting time?**
 
-## SPT Waiting Time
+## Waiting time adds up to 340 minutes
 
 [Total waiting time:]{.highlight} 340 minutes
 
@@ -494,10 +481,9 @@ Grey: time a task waits before it starts.
 
 [Question:]{.question} **Would this be applicable for your work?**
 
-## Weighted SPT
+## Goal 3: deliver the most value
 
-- [Change:]{.highlight} Tasks with **additional priorities**
-- Priorities could be, e.g., revenue if we are consultants.
+- [Change:]{.highlight} Tasks now have **different values**, e.g. revenue for a consultant
 
 ```python
 Task  Duration  Revenue
@@ -516,7 +502,7 @@ Task  Duration  Revenue
 
 [Question:]{.question} **Any ideas how to approach this?**
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -537,7 +523,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
 
 [Question:]{.question} **What's the order of scheduled tasks?**
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -554,7 +540,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8
 ```
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -571,7 +557,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8
 ```
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -588,7 +574,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8
 ```
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -605,7 +591,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8
 ```
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -622,7 +608,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8
 ```
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -639,7 +625,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8
 ```
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -656,7 +642,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8           7
 ```
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -673,7 +659,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8           7
 ```
 
-## Gain/Revenue Per Minute {auto-animate=true}
+## Weighted SPT: highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Schedule by revenue per minute (descending)
 
@@ -697,76 +683,14 @@ Task  Duration  Revenue  Revenue/Min  Schedule
 Without revenues, we can use the same approach with **metric priorities**!
 :::
 
-# [Dependencies]{.flow} {.title}
-
-## Priority Inversion
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-**Setup** (priority 1 = highest):
-
-```python
-Task  Duration  Priority
-  A    20min     3
-  B    30min     1
-  C    30min     2
-  D    30min     2
-  E    30min     2
-```
-
-```{python}
-#| echo: false
-fig = dependency_diagram(("A", 20), ("B", 30), "A must be finished before B can start")
-plt.show()
-```
-
-[**Challenge:**
-High-priority tasks depend on low-priority tasks.]{.fragment}
-
-:::
-
-::: {.column width="50%"}
-
-[[Risk:]{.highlight} Priority inversion can lead to significant delays!]{.fragment}
-
-[![](../images/bg/lec04-priority-inversion.jpg){width=90%}]{.fragment .center}
-:::
-
-::::
-
-## Priority Inheritance
-
-[Question:]{.question} **How do we prevent the inversion?**
-
-::: {.incremental}
-
-- [Rule:]{.task} Tasks inherit priority from their dependents.
-- A inherits priority 1 from B and is done first
-- B can start right after A, C to E follow
-
-:::
-
-. . .
-
-```python
-Task  Duration  Priority
-  A    20min     1
-  B    30min     1
-  C    30min     2
-  D    30min     2
-  E    30min     2
-```
-
-## EDD and Dependencies
+## Deadlines with dependencies
 
 [Question:]{.question} **What was earliest due date again?**
 
 . . .
 
-- Sort the tasks by deadline, schedule equal tasks randomly
-- Things get more complex when we add dependencies
+- Sort the tasks by deadline
+- Now some tasks must **wait for a predecessor**
 
 . . .
 
@@ -783,7 +707,7 @@ Task  Duration  Deadline  Predecessor
 
 
 
-## Lawler's Algorithm
+## Lawler's algorithm: fill the schedule from the back
 
 [Rule:]{.task} We can use **Lawler's Algorithm** (1968)
 
@@ -869,7 +793,7 @@ Task  Duration  Deadline  Predecessor Schedule
 Note, how all tasks become tasks without successors at some point.
 :::
 
-## Lawler's Solution
+## The Lawler schedule
 
 ```{python}
 #| echo: false
@@ -885,36 +809,89 @@ The task in brackets must be finished first. Red marks: deadlines.
 
 [Question:]{.question} **What's the maximum delay?**
 
-# [Difficulty of Scheduling]{.flow} {.title}
+## Waiting time with dependencies has no fast exact solution
 
-## SPT with Predecessors
+- [NP-hard]{.highlight}: no known algorithm solves it efficiently
+- True for **most scheduling problems**
+- In practice we use **heuristics**, good rules without a guarantee
 
-- No solution in **polynomial time**
-- [NP-hard problem]{.highlight} (no efficient algorithm)
-- True for **most scheduling problems!**
-- We can use **heuristics**, though
-
-. . .
-
-[Question:]{.question} **What have we missed so far?**
-
-# [Real-time Scheduling]{.flow} {.title}
-
-## Interruptions
-
-- In reality, we **cannot predict the future**
-- We need to react to **new tasks** as they happen
-- If we have a **deadline**, we might need to meet it
-- Let's look at this for the [earliest due date objective]{.highlight}
-
-. . .
-
-:::{.callout-note}
-## Quick reminder
-An earliest due date is a specific point in time by which a task must be completed. Under this objective, we want to minimize the **maximum delay**.
+::: {.notes}
+Shortest processing time with predecessors cannot be solved in polynomial time, it is NP-hard. This is true for most scheduling problems. We can use heuristics, though: rules that give good, but not provably optimal schedules.
 :::
 
-## Real-time EDD
+# [Real life: dependencies, interruptions and thrashing]{.flow} {.title}
+
+## Priority inversion: an important task waits for an unimportant one
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+**Setup** (priority 1 = highest):
+
+```python
+Task  Duration  Priority
+  A    20min     3
+  B    30min     1
+  C    30min     2
+  D    30min     2
+  E    30min     2
+```
+
+```{python}
+#| echo: false
+fig = dependency_diagram(("A", 20), ("B", 30), "A must be finished before B can start")
+plt.show()
+```
+
+[**Challenge:**
+High-priority tasks depend on low-priority tasks.]{.fragment}
+
+:::
+
+::: {.column width="50%"}
+
+[[Risk:]{.highlight} Priority inversion can lead to significant delays!]{.fragment}
+
+[![](../images/bg/lec04-priority-inversion.jpg){width=90%}]{.fragment .center}
+:::
+
+::::
+
+## Priority inheritance: the blocker borrows the priority
+
+[Question:]{.question} **How do we prevent the inversion?**
+
+::: {.incremental}
+
+- [Rule:]{.task} Tasks inherit priority from their dependents.
+- A inherits priority 1 from B and is done first
+- B can start right after A, C to E follow
+
+:::
+
+. . .
+
+```python
+Task  Duration  Priority
+  A    20min     1
+  B    30min     1
+  C    30min     2
+  D    30min     2
+  E    30min     2
+```
+
+## Interruptions: new tasks arrive while you work
+
+- In reality we **cannot predict the future**
+- New tasks arrive **while we work**
+- Let's look at this for the [earliest due date objective]{.highlight}
+
+::: {.notes}
+Quick reminder: an earliest due date is a specific point in time by which a task must be completed. Under this objective, we want to minimize the maximum delay. If we have a deadline, we might need to meet it even when new tasks come in.
+:::
+
+## A morning with seven tasks
 
 8:00-12:00 Schedule, tasks arrive during the morning:
 
@@ -931,24 +908,21 @@ Email D         9:20    40min     10:00
 
 . . .
 
-[Question:]{.question} **Any ideas how to start with under the objective of the earliest due date?**
+[Question:]{.question} **How would you start, if the goal is to avoid being late?**
 
-## EDD Rule for Real-time
+## EDD in real time: switch only for an earlier deadline
 
 [Rule:]{.task}
 
-- Always schedule the task with the **earliest deadline**
-- If a new task with an earlier deadline comes in, **re-schedule**
-- Otherwise, stick to the original schedule.
+- Always work on the task with the **earliest deadline**
+- A new task with an **earlier** deadline interrupts the current one
+- Otherwise, stick to the current task
 
-. . .
-
-:::{.callout-tip}
-## Equal Deadline
-If a new task has the same deadline as the current task, you can choose either. But due to the cost of context switching, you might want to stick with the current task.
+::: {.notes}
+Equal deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task.
 :::
 
-## EDD Solution for Real-time
+## The real-time EDD schedule
 
 ```{python}
 #| echo: false
@@ -962,34 +936,27 @@ Grey line: arrival, red mark: deadline.
 
 [Question:]{.question} **What's the maximum delay with this schedule?**
 
-## SPT for Real-time
+## Same morning, new goal: as little waiting as possible
 
-:::{.callout-tip}
-## Quick reminder
+[Question:]{.question} **How would you start here?**
 
-A shortest processing time is the task with the shortest duration. Under this objective, we want to minimize the **total waiting time**.
+::: {.notes}
+Quick reminder: shortest processing time picks the task with the shortest duration. Under this objective, we want to minimize the total waiting time.
 :::
 
-. . .
-
-[Question:]{.question} **Any ideas how to start here?**
-
-## SPT Rule for Real-time
+## SPT in real time: switch only for a shorter task
 
 [Rule:]{.task}
 
-- Always schedule the task with the **shortest duration**
-- If a new task with a shorter duration comes in, **re-schedule**
-- Otherwise, stick to the original schedule.
+- Always work on the task with the **shortest duration**
+- A new task that is **shorter** interrupts the current one
+- Otherwise, stick to the current task
 
-. . .
-
-:::{.callout-note}
-## Equal Duration
-If a new task has the same duration as the current task, you can choose either. But due to the cost of context switching, you might again want to stick with the current task.
+::: {.notes}
+Equal duration: if a new task has the same duration as the current task, you can choose either. But because of the cost of context switching, you should again stick with the current task.
 :::
 
-## SPT Solution for Real-time {auto-animate=true}
+## The real-time SPT schedule {auto-animate=true}
 
 ```{python}
 #| echo: false
@@ -1001,7 +968,7 @@ plt.show()
 
 [Question:]{.question} **Where can we see the waiting time?**
 
-## SPT Solution for Real-time {auto-animate=true}
+## The real-time SPT schedule {auto-animate=true}
 
 ```{python}
 #| echo: false
@@ -1011,9 +978,7 @@ plt.show()
 
 [Total waiting time:]{.highlight} 260 minutes
 
-# [Thrashing]{.flow} {.title}
-
-## What is Thrashing?
+## Thrashing: switching so much that nothing gets done
 
 - Excessive **context switching**
 - Organization [overhead exceeds productivity]{.highlight}
@@ -1023,7 +988,7 @@ plt.show()
 
 [Question:]{.question} **Have you ever experienced this?**
 
-## Thrashing Warning Signs
+## Warning signs of thrashing
 
 - Constant **task switching**
 - **Nothing** getting completed
@@ -1034,14 +999,7 @@ plt.show()
 
 [Question:]{.question} **Any ideas how to prevent this?**
 
-## Preventing Thrashing: Strategic
-
-:::{.callout-tip}
-## Strategic
-Strategic solutions focus on **long-term** changes to prevent thrashing.
-:::
-
-. . .
+## Preventing thrashing: long-term rules
 
 1. Task rejection/delegation threshold
 2. Simplified organization systems
@@ -1049,7 +1007,7 @@ Strategic solutions focus on **long-term** changes to prevent thrashing.
 4. Reduced reactivity requirements
 
 
-## Preventing Thrashing: Tactical
+## Preventing thrashing: today's tactics
 
 1. Time blocking
 2. Focus periods
@@ -1060,9 +1018,7 @@ Strategic solutions focus on **long-term** changes to prevent thrashing.
 
 [Question:]{.question} **What strategies have worked for you?**
 
-# [Applying This Knowledge]{.flow} {.title}
-
-## Immediate Applications
+## How to use this starting today
 
 **How can you use these algorithms starting today?**
 
@@ -1073,16 +1029,7 @@ Strategic solutions focus on **long-term** changes to prevent thrashing.
 - **Time blocking:** Prevent thrashing with strategic scheduling
 :::
 
-## Key Takeaways
-
-**What we learned today:**
-
-:::{.incremental}
-1. **Scheduling algorithms** provide optimal solutions to time management problems
-2. **Different objectives** require different algorithms
-3. **Dependencies and constraints** add complexity but have algorithmic solutions
-4. **Thrashing prevention** is crucial for productivity
-5. **These principles** directly translate to programming and system design
+::: {.lecture-closing}
 :::
 
 ## {.loud-slide}
@@ -1095,14 +1042,13 @@ so far?
 ## After the break: Scheduling
 
 - Programming session in our new notebooks
-- How to translate the idea into code and experiments
+- Today's rules in code: dictionaries and DataFrames
 - Different scheduling algorithms applied to problems
 
-. . .
+::: {.notes}
+Key takeaways: scheduling algorithms provide optimal solutions to time management problems; different objectives require different algorithms; dependencies and constraints add complexity but have algorithmic solutions; thrashing prevention is crucial for productivity; these principles directly translate to programming and system design.
 
-::: {.callout-note}
-**That's it for scheduling!**\
-Let's have a short break and then continue with our fourth Python programming session.
+That's it for scheduling! Let's have a short break and then continue with our fourth Python programming session.
 :::
 
 {{< include ../include/lecture_literature_start.qmd >}}
