@@ -515,6 +515,26 @@ body.entries #quarto-document-content {
   border-bottom-color: var(--primary);
   text-shadow: none;
 }
+// Prominent link to the Installation Guide (lec_00): primary colour, underlined,
+// larger, so the URL is readable from the back of the room.
+.reveal .slides a.guide-link {
+  display: inline-block;
+  margin: .3em 0 .5em;
+  font-family: "Space Mono", monospace;
+  font-size: 1.15em;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+// Reference to a guide step on the checkpoint slides: small muted mono label.
+.reveal .slides a.guide-ref {
+  display: inline-block;
+  margin-top: .4em;
+  font-family: "Space Mono", monospace;
+  font-size: .7em;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--fg-3);
+}
 
 // Title slide — like the website page header: title, subtitle as a
 // Space Mono label, Lecturer / Affiliation as eyebrow-labelled meta.
