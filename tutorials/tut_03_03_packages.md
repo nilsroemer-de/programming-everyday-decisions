@@ -77,7 +77,7 @@ a_random_number = random.random()
 print(f"A random number is {a_random_number}!")
 ```
 
-    A random number is 0.42914009537412046!
+    A random number is 0.7551099213458505!
 
 We can also use the library to choose a random element from a list. For example, the following code chooses a random element from the list `['book1', 'book2', 'book3']`. Try it out by executing the cell multiple times.
 
@@ -96,7 +96,7 @@ a_random_integer = randint(1, 10)
 print(f"A random integer between 1 and 10 is {a_random_integer}!")
 ```
 
-    A random integer between 1 and 10 is 2!
+    A random integer between 1 and 10 is 3!
 
 Other times, we might need to work with a library that has a rather long name. In this case, we can use the `as` keyword to give the library a shorter name. For example, the following code imports the `random` library and gives it the shorter name `rd`.
 
@@ -106,7 +106,7 @@ a_random_integer = rd.randint(1, 100)
 print(f"Now, a random integer between 1 and 100 is {a_random_integer}!")
 ```
 
-    Now, a random integer between 1 and 100 is 27!
+    Now, a random integer between 1 and 100 is 31!
 
 ## Exercise 1.1 - Use the math library
 
@@ -340,7 +340,7 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, we will share the solutions to these exercises with you, and we will also quickly go over them next week. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 ------------------------------------------------------------------------
 

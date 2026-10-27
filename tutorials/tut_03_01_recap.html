@@ -483,7 +483,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="section-1---variables-and-datatypes" class="level1">
 <h1>Section 1 - Variables and Datatypes</h1>
 <p>Just as a cache stores different types of data, Python variables can hold various datatypes. Let’s explore this through a simple caching system for a coffee shop.</p>
-<div id="7cfaff12" class="cell" data-execution_count="1">
+<div id="3a21d46f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic cache for coffee orders</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>last_order <span class="op">=</span> <span class="st">"Latte"</span> <span class="co"># String cache</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>drink_temperature <span class="op">=</span> <span class="fl">75.5</span> <span class="co"># Float cache</span></span>
@@ -516,10 +516,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Whether you would order it again in a variable <code>would_order_again</code> (as a boolean)</li>
 <li>How many times you’ve ordered it in the last month in a variable <code>num_orders</code> (as an integer)</li>
 </ol>
-<div id="f4ec79d6" class="cell" data-execution_count="2">
+<div id="e8ce43cf" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="2f08f050" class="cell" data-execution_count="3">
+<div id="50679fa3" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
@@ -535,7 +535,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="section-2---comparisons" class="level1">
 <h1>Section 2 - Comparisons</h1>
 <p>Cache systems need to make decisions about what data to keep or remove. This is similar to how we use comparisons in Python. For example, the following code checks a simple eviction policy: items that were rarely used and not used for a while are removed. This is the idea behind <strong>Least Recently Used (LRU)</strong> from the lecture.</p>
-<div id="fcb0b6da" class="cell" data-execution_count="4">
+<div id="1488a2d5" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple cache eviction policy</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>access_count <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>last_accessed_minutes <span class="op">=</span> <span class="dv">45</span></span>
@@ -571,10 +571,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Save the result of the decision in a variable <code>should_evict</code></li>
 <li>Print the result of whether we should evict the song or not</li>
 </ol>
-<div id="19ccf479" class="cell" data-execution_count="5">
+<div id="1fc14b48" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="777309de" class="cell" data-execution_count="6">
+<div id="fefac995" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
@@ -607,7 +607,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </div>
 </div>
-<div id="a965f565" class="cell" data-execution_count="7">
+<div id="2d3a5359" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recently played songs cache</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>recent_songs <span class="op">=</span> [<span class="st">"Lithonia"</span>, <span class="st">"Leon"</span>, <span class="st">"WHEN THE MUSIC STOPS"</span>, <span class="st">"Chop Suey"</span>, <span class="st">"Rain of Fire"</span>]</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>max_cache_size <span class="op">=</span> <span class="dv">5</span></span>
@@ -635,7 +635,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>What if we play a song that is <strong>already in the cache</strong>? This is called a <strong>cache hit</strong>. Then we do not add it again, but move it to the front, because it is now the most recently used song:</p>
-<div id="8577e4c8" class="cell" data-execution_count="8">
+<div id="bc70df6d" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>recent_songs <span class="op">=</span> [<span class="st">"Carnival of Rust"</span>, <span class="st">"Lithonia"</span>, <span class="st">"Leon"</span>, <span class="st">"WHEN THE MUSIC STOPS"</span>, <span class="st">"Chop Suey"</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>song <span class="op">=</span> <span class="st">"Leon"</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -649,7 +649,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We can also use <strong>lists to store tuples</strong>, which is useful for storing multiple items with different properties. For example, we can store the name and price of items in a shopping cart.</p>
-<div id="86b76f23" class="cell" data-execution_count="9">
+<div id="9e70db45" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shopping cart cache of a very expensive trip to the Apple store</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>shopping <span class="op">=</span> [(<span class="st">"MacBook Pro"</span>, <span class="fl">1999.99</span>), (<span class="st">"AirPods"</span>, <span class="fl">159.99</span>), (<span class="st">"Apple Watch"</span>, <span class="fl">399.99</span>)]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -675,10 +675,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="211b3154" class="cell" data-execution_count="10">
+<div id="b8dbe3bc" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1f1082de" class="cell" data-execution_count="11">
+<div id="580c172a" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
@@ -699,13 +699,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>On a miss, add the requested app at the front</li>
 <li>Store whether it was a hit in a boolean variable <code>is_hit</code></li>
 </ol>
-<div id="4a29ad8b" class="cell" data-execution_count="12">
+<div id="739ff7b2" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cache <span class="op">=</span> [<span class="st">"Spotify"</span>, <span class="st">"WhatsApp"</span>, <span class="st">"Maps"</span>]  <span class="co"># most recently used first</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>max_cache_size <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>requested_app <span class="op">=</span> <span class="st">"Camera"</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="93964ff5" class="cell" data-execution_count="13">
+<div id="4334fdae" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
@@ -719,7 +719,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="section-4---loops" class="level1">
 <h1>Section 4 - Loops</h1>
 <p>Loops are essential for cache maintenance and updates, just like how we periodically clean up our browser cache. We know two types of loops: <code>for</code> and <code>while</code>. The <code>for</code> loop is used when we know the number of iterations beforehand, while the <code>while</code> loop is used when we don’t.</p>
-<div id="676cea95" class="cell" data-execution_count="14">
+<div id="651351a1" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cache cleanup process</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>cached_items <span class="op">=</span> [(<span class="st">"fork"</span>, <span class="dv">5</span>), (<span class="st">"spoon"</span>, <span class="dv">0</span>), (<span class="st">"knife"</span>, <span class="dv">12</span>)] <span class="co"># (item, access_count)</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>min_access_count <span class="op">=</span> <span class="dv">10</span> <span class="co"># Minimum access count to keep an item</span></span>
@@ -757,7 +757,7 @@ Cached items after cleanup: [('knife', 12)]</code></pre>
 </div>
 </div>
 </div>
-<div id="acff09fa" class="cell" data-execution_count="15">
+<div id="35d69083" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>browser_history <span class="op">=</span> [</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"google.com"</span>, <span class="dv">10</span>),</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"youtube.de"</span>, <span class="dv">5</span>),</span>
@@ -767,7 +767,7 @@ Cached items after cleanup: [('knife', 12)]</code></pre>
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>]</span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="36a9338b" class="cell" data-execution_count="16">
+<div id="687396d5" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
@@ -780,7 +780,7 @@ Cached items after cleanup: [('knife', 12)]</code></pre>
 <section id="exercise-4.2-count-cache-hits" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4.2-count-cache-hits">Exercise 4.2: Count cache hits</h2>
 <p>Now let’s run a whole sequence of app requests through our LRU cache with a loop. For every request, update the cache as in Exercise 3.2 and count the hits in <code>hits</code> and the misses in <code>misses</code>.</p>
-<div id="62d8aaa0" class="cell" data-execution_count="17">
+<div id="aeb423f3" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>requests <span class="op">=</span> [<span class="st">"Maps"</span>, <span class="st">"Spotify"</span>, <span class="st">"Maps"</span>, <span class="st">"Mail"</span>, <span class="st">"Camera"</span>, <span class="st">"Maps"</span>, <span class="st">"Spotify"</span>, <span class="st">"Mail"</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>cache <span class="op">=</span> []  <span class="co"># start with an empty cache</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>max_cache_size <span class="op">=</span> <span class="dv">3</span></span>
@@ -788,7 +788,7 @@ Cached items after cleanup: [('knife', 12)]</code></pre>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>misses <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="0964e7d9" class="cell" data-execution_count="18">
+<div id="644d8080" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
@@ -808,7 +808,7 @@ Cached items after cleanup: [('knife', 12)]</code></pre>
 <h1>Solutions</h1>
 <p>You will likely find solutions to most exercises online. However, we strongly encourage you to work on these exercises independently without searching explicitly for the exact answers to the exercises. Understanding someone else’s solution is very different from developing your own. Use the lecture notes and try to solve the exercises on your own. This approach will significantly enhance your learning and problem-solving skills.</p>
 <p>Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don’t hesitate to ask for clarification during class discussions.</p>
-<p>Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today’s lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.</p>
+<p>Later, we will share the solutions to these exercises with you, and we will also quickly go over them next week. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.</p>
 <hr>
 <p><em>In the next tutorial, we’ll turn our LRU cache into reusable functions!</em></p>
 
