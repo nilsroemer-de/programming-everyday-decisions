@@ -141,14 +141,6 @@ But don't let them *replace* your learning.
 Current AI assistants help you a lot to get started with programming. But you should not simply use them to replace your learning: read and understand what they suggest.
 :::
 
-## About this course: topics, format and how you pass {.section-covered}
-
-::: {.section-covered}
-[What we covered]{.eyebrow}
-
-[Six topics, each with a lecture and a Python session. You pass with 75% attendance, two assignments and a final presentation.]{.statement}
-:::
-
 # [How to learn programming]{.flow} {.title visibility="hidden"}
 
 ## Roadmap {.section-roadmap}
@@ -180,14 +172,6 @@ Great resources to start are books (see the list at the end of the lecture) and 
 <img src="../images/gif/lec00-intro.gif" width="480" height="360" alt="">
 
 </center>
-
-## How to learn programming {.section-covered}
-
-::: {.section-covered}
-[What we covered]{.eyebrow}
-
-[Programming is learned by doing: small steps, regular practice, and don't give up.]{.statement}
-:::
 
 # [Setting up Python]{.flow} {.title visibility="hidden"}
 
@@ -257,14 +241,6 @@ The first command adds a kernel to the project, the second the Jupyter tools. Do
 
 :::{.callout-tip}
 That was the hardest part today!
-:::
-
-## Setting up Python {.section-covered}
-
-::: {.section-covered}
-[What we covered]{.eyebrow}
-
-[Your laptop is ready: VS Code, Python with uv and notebooks.]{.statement}
 :::
 
 ## What we covered {.lecture-closing}

@@ -3,8 +3,8 @@
 The frame slides are written out in each lecture. For each lectures/lec_0*.qmd the script
 reports, as hints only (exit code is always 0):
 - the frame slides: "Today in one sentence", the opening "Roadmap", a roadmap slide before
-  section 2 and 3, one covered slide per section, "What we covered", "Why it matters" and
-  the key message slide,
+  section 2 and 3, "What we covered", "Why it matters" and the key message slide
+  (section covered slides are optional; if present, their titles must match the roadmap),
 - whether there are exactly three level-1 sections whose titles equal the points of the
   opening roadmap, and whether every roadmap slide lists the same three points,
 - slides (level-2 headers) whose visible text has more than 40 words
@@ -89,7 +89,8 @@ def check(path: pathlib.Path) -> list[str]:
             hints.append(f"opening roadmap has {len(roadmaps[0])} points, expected 3")
         if [s.lower() for s in sections] != [p.lower() for p in roadmaps[0]]:
             hints.append(f"sections {sections} do not equal the roadmap {roadmaps[0]}")
-        if [c.lower() for c in covered] != [p.lower() for p in roadmaps[0]]:
+        # section covered slides are optional (no longer part of the frame); if present they must match
+        if covered and [c.lower() for c in covered] != [p.lower() for p in roadmaps[0]]:
             hints.append(f"covered slides {covered} do not match the roadmap (one per section, same title)")
     elif len(sections) != 3:
         hints.append(f"{len(sections)} level-1 sections, expected 3")

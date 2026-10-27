@@ -4,6 +4,8 @@ Stand: 27. Oktober 2026, Branch `inhalt-review`. Geprüft wurden `lectures/lec_0
 
 Vorab: Nils' ungesicherte Änderungen in beiden Dateien wurden als eigener Commit gesichert (dee0756). Die Folie „The same idea in other places" war darin bereits gelöscht; die Parkplatz-Notiz stand aber noch nirgends und wurde in die Notizen von „In practice, people stop too early" übernommen.
 
+**Nachtrag 27. Oktober 2026:** Befunde 1 bis 7 sind umgesetzt (Satz mit 34.4 entfernt, Abschnitts-Abschlussfolien in Lecture 0 entfernt und aus der Rahmung gestrichen, Buch-Fußnote an 61%, 37% der Zeit und den Experimenten, Notebook-Befehle auf der uv-Seite, Link in der Burglar-Fußnote). Befunde 8 bis 14 bleiben offen.
+
 ## 1. Direkt korrigiert
 
 | Datei | Folie | Korrektur |

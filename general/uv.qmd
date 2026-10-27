@@ -155,6 +155,35 @@ if __name__ == "__main__":
 
 Don’t worry about this yet, we'll gradually build up to it.
 
+## Add notebooks to your project
+
+The tutorials are notebooks. Inside the project folder **in your terminal**, run the two commands from the introduction, one after the other:
+
+```bash
+uv add --dev ipykernel
+```
+
+```bash
+uv add jupyter
+```
+
+The first command adds a kernel to the project, the second the Jupyter tools. Now notebooks can use the Python of your project.
+
+Quick check before you continue:
+
+- [ ] You have a folder for the course
+- [ ] You ran `uv init` inside the folder
+- [ ] You can see a file called `pyproject.toml` in the folder
+- [ ] You ran `uv add --dev ipykernel` and `uv add jupyter`
+
+## Download a tutorial and open it
+
+1. Open a tutorial on the website and select `Jupyter` on the right.
+2. Save the file **to your course folder**.
+3. Open it in VS Code and select "Open with Jupyter Notebook".
+
+That was the hardest part. If something does not work, ask us.
+
 ## Adding packages (later in the course)
 
 If/when you need a package (example: `pandas`):
@@ -210,6 +239,7 @@ You can now:
 1. Install `uv`.
 2. Create a project.
 3. Run a script.
-4. Add/remove/sync packages.
+4. Add notebooks to your project and open a tutorial.
+5. Add/remove/sync packages.
 
 Now, you’re set to continue the course.
