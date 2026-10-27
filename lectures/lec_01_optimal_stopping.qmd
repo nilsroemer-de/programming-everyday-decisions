@@ -274,7 +274,7 @@ plt.show()
 
 ## Real life changes the assumptions
 
-The 37% rule assumes that offers are always accepted, there is no going back, we only know rankings, and looking is free.
+So far, we made some strong simplifications. Real life is messier.
 
 . . .
 
@@ -297,9 +297,11 @@ The 37% rule assumes that offers are always accepted, there is no going back, we
 
 :::{.incremental}
 - 50% chance of rejection: **leap at 25%**
-- **Formula:** $q^{\frac{1}{1-q}}$, $q$ = chance that your offer is **accepted**
+- **Formula:** $q^{\frac{1}{1-q}}$, $q$ = chance that your offer is **accepted**[^rejection]
 - In words: the more often you hear "no", the earlier you leap
 :::
+
+[^rejection]: How it works: after the look phase, you ask everyone who beats all earlier candidates, and each says yes with chance $q$. You get the best only if the best says yes and everyone you asked before said no. More rejections mean you use up more candidates after the look phase, so you have to start earlier. The stated formula is the best look phase, for example 25% when $q = 50\%$. As in the basic problem, your chance of getting the best equals the look phase. With $q$ close to 1, it gives back 37%.
 
 ::: {.notes}
 Life lesson: higher risk of rejection means we should be less picky. With q = 0.5 the formula gives 0.5 to the power of 2, that is 25%. If offers are always accepted (q close to 1), the formula gives back the familiar 1/e.
@@ -326,11 +328,13 @@ Example from the book: an immediate offer is always accepted, a belated one only
 [Question:]{.question} What if you **know how good** each option is, not just how it compares?
 
 :::{.incremental}
-- Example: you know typing speeds, or the range of prices
+- Example: you know test scores, or the price per square meter of a flat
 - **No look phase needed:** take the first option above a threshold
 - The threshold **drops** as fewer options remain
-- Chance of getting the very best rises to **58%**
+- Chance of getting the very best rises to **58%**[^gilbert]
 :::
+
+[^gilbert]: Gilbert, J.P. & Mosteller, F. (1966). Recognizing the maximum of a sequence. Journal of the American Statistical Association, 61(313), 35–73.
 
 ::: {.notes}
 This is the "full information" version. With absolute scores and a known distribution, you don't need to learn a benchmark first. The threshold starts high and falls as you run out of options.
@@ -348,7 +352,7 @@ This is the "full information" version. With absolute scores and a known distrib
 
 :::{.incremental}
 - **Same principle:** look for the first 37% of the time, then leap
-- Now we also control **how hard we search**
+- The number of options is not fixed: **the harder we search, the more options we see**
 :::
 
 ::: {.notes}
@@ -367,9 +371,11 @@ This holds if options arrive evenly over time. We can also decide how intensivel
 
 :::{.incremental}
 - Stop after about $\frac{q}{1-q}$ successes
-- With $q = 90\%$: retire after **9** break-ins
+- With $q = 90\%$: retire after **9** break-ins[^burglar]
 - Same logic for any streak that can end badly: a winning run in the casino, a project that keeps growing in risk
 :::
+
+[^burglar]: Ferguson, T.S. Optimal Stopping and Applications. Lecture notes, University of California, Los Angeles. The rule assumes the same haul every time: stop once your total haul is worth more than what you would expect to gain from one more attempt.
 
 ## In practice, people stop too early
 
@@ -382,15 +388,6 @@ This holds if options arrive evenly over time. We can also decide how intensivel
 
 ::: {.notes}
 Experiments by Seale and Rapoport (1997). The 37% rule assumes that looking is free. In real life, every viewing or interview costs time, so stopping a bit earlier is often rational, not a mistake.
-:::
-
-## The same idea in other places
-
-- Selling a house for the **best price** ("Threshold Rule")
-- **Finding** a parking spot ("Parking Lot Problem")
-
-::: {.notes}
-Side note for drivers: an increase in occupancy from 90 to 95% doubles the search time for all drivers. Each variation changes the rule a little, but the structure stays: options come one at a time, and you cannot go back.
 :::
 
 ## What we covered {.lecture-closing}

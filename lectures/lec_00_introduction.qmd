@@ -293,7 +293,7 @@ Your laptop is ready: VS Code, Python with uv and notebooks.
 ## Why it matters {.lecture-closing}
 
 ::: {.lecture-why .closing}
-More and more business decisions rely on data and algorithms. You don't need to become a programmer, but understanding how algorithms think, and writing a few lines of code yourself, makes you a better decision maker. No prior knowledge required.
+More and more business decisions rely on data and algorithms. You don't need to become a programmer, but understanding how algorithms think, and writing a few lines of code yourself, makes you a better decision maker.
 :::
 
 ## {.loud-slide .lecture-key}
@@ -313,7 +313,7 @@ so far?
 
 - The "Secretary Problem" and the 37% rule
 - When to stop searching and make a decision
-- How to translate the idea into code and experiments
+- Testing the rule ourselves with a small simulation
 
 ::: {.callout-note}
 **That's it for our introduction!**\
