@@ -301,8 +301,6 @@ print(f"Great job! {hits} hits and {misses} misses, the hit rate is {hits / len(
 
 Understanding these programming fundamentals through the lens of caching helps us see how computers and human decision-making often follow similar patterns. Whether we're deciding which restaurant to visit or which data to keep in memory, the principles remain surprisingly similar.
 
-{{< include ../include/tutorial_end.qmd >}}
-
 ---
 
 *In the next tutorial, we'll turn our LRU cache into reusable functions!*

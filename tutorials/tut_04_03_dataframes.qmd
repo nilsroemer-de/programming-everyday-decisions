@@ -324,8 +324,6 @@ Remember:
 - SPT minimizes average completion time
 - Real-world scheduling often needs hybrid approaches considering priorities and dependencies
 
-{{< include ../include/tutorial_end.qmd >}}
-
 ---
 
 *That's it for this week's tutorials. Next week we are going to cover the topic of randomness in everyday life.*

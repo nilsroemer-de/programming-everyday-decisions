@@ -263,8 +263,6 @@ Great! You've just navigated through the basics of dictionaries in Python. Dicti
 - Accessing them using keys is efficient and easier than accessing them using indices
 - Loops can iterate over dictionaries to perform operations on each key-value pair
 
-{{< include ../include/tutorial_end.qmd >}}
-
 ---
 
 *In the next tutorial, we'll dive deeper into DataFrames and how to use them!*

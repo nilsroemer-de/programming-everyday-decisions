@@ -286,6 +286,4 @@ These loop structures are fundamental tools, allowing us to process large datase
 
 ---
 
-{{< include ../include/tutorial_end.qmd >}}
-
 *Continue to the next tutorial to tie all previous concepts together in the context of the explore-exploit problem in a casino!*

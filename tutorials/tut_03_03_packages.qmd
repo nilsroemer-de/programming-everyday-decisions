@@ -309,8 +309,6 @@ Great work! You learned how Python projects organize and access code via:
 
 Treat each project like its own library branch: well‑labeled, independent, and easy to maintain.
 
-{{< include ../include/tutorial_end.qmd >}}
-
 ---
 
 *That's it for this week! Next week, we'll work with dictionaries and tabular data with pandas!*

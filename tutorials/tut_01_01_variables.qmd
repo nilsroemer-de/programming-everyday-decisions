@@ -253,8 +253,4 @@ Remember:
 Dating tip: While this mathematical approach is a good starting point, remember that love isn't always logical! We haven't considered the emotional aspects of dating yet or the fact that we might not be the best partner for each other.
 
 ---
-
-{{< include ../include/tutorial_end.qmd >}}
-
----
 *Continue to the next tutorial to learn about comparisons and conditionals in the context of the optimal stopping problem!*

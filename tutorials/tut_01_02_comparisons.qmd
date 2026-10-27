@@ -306,6 +306,4 @@ These skills are useful not just for hiring decisions, but for any situation whe
 
 ---
 
-{{< include ../include/tutorial_end.qmd >}}
-
 *Continue to the next tutorial to learn how to apply these skills to the optimal stopping problem!*

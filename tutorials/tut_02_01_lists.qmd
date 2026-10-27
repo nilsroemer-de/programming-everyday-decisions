@@ -285,7 +285,5 @@ In the context of the explore-exploit trade-off:
 - Nested lists could help us make informed decisions (by storing ratings and visit counts)
 - Tuples could help us remember important fixed information about each place
 
-{{< include ../include/tutorial_end.qmd >}}
-
 ---
 *Continue to the next tutorial to learn about loops in the context of the explore-exploit problem!*

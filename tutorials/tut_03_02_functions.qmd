@@ -340,8 +340,6 @@ Remember:
 
 With `lru_access()` and `hit_rate()`, you have built your own small LRU cache. In the next tutorial, we'll compare it with random eviction using Python packages.
 
-{{< include ../include/tutorial_end.qmd >}}
-
 ---
 
 *In the next tutorial, we'll take a look at how to import packages and libraries to extend our functionality!*

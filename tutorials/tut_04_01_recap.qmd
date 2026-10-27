@@ -196,8 +196,6 @@ Excellent work! You've learned how to apply various scheduling algorithms using 
 
 These concepts apply not just to coffee shops, but to any situation where you need to schedule tasks efficiently!
 
-{{< include ../include/tutorial_end.qmd >}}
-
 ---
 
 *In the next tutorial, we'll dive deeper into dictionaries!*
