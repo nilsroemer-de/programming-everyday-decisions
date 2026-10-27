@@ -8501,5 +8501,23 @@
       "05 Randomness",
       "05-02: Recap"
     ]
+  },
+  {
+    "objectID": "lectures/lec_00_presentation.html#learn-first-then-use-ai",
+    "href": "lectures/lec_00_presentation.html#learn-first-then-use-ai",
+    "title": "Introduction",
+    "section": "Learn first, then use AI",
+    "text": "Learn first, then use AI\n\nIn the tutorials, write the code yourself: that’s how you learn\nAt the end of the course, you build a small project with AI support\nUntil then: if you use AI, ask it to explain, not to solve\n\n\nAI assistants are powerful, but learning to program means struggling a bit yourself. We use AI deliberately in the final project phase."
+  },
+  {
+    "objectID": "lectures/lec_00_introduction.html#learn-first-then-use-ai",
+    "href": "lectures/lec_00_introduction.html#learn-first-then-use-ai",
+    "title": "Introduction",
+    "section": "Learn first, then use AI",
+    "text": "Learn first, then use AI\n\nIn the tutorials, write the code yourself: that’s how you learn\nAt the end of the course, you build a small project with AI support\nUntil then: if you use AI, ask it to explain, not to solve\n\n\nNotes\nAI assistants are powerful, but learning to program means struggling a bit yourself. We use AI deliberately in the final project phase.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Introduction"
+    ]
   }
 ]

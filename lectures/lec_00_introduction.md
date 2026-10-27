@@ -93,14 +93,11 @@ We will mostly **not cover Python during the lectures!**
 - **Versatile**: web, data analysis, artificial intelligence
 - **Big community**: help and documentation everywhere
 
-## AI is allowed, but learn yourself
+## Learn first, then use AI
 
-- You are <span class="highlight">allowed to use AI</span>, we use it as well
-- Assistants such as Claude, ChatGPT or Gemini are **great for learning Python**
-
-> **Warning**
->
-> But don't let them *replace* your learning.
+- In the tutorials, <span class="highlight">write the code yourself</span>: that's how you learn
+- At the end of the course, you build a small project **with AI support**
+- Until then: if you use AI, ask it to **explain**, not to solve
 
 # <span class="flow">How to learn programming</span>
 
