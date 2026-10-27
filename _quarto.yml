@@ -86,7 +86,7 @@ website:
       - text: "---"
       - text: "FAQs"
         href: general/faq.qmd
-      - text: "Installation"
+      - text: "Installation Guide"
         href: general/uv.qmd
       - text: "Literature"
         href: general/literature.qmd
