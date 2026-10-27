@@ -126,19 +126,14 @@ In our experience, the best way to learn programming is by doing. Don't worry, w
 Origins: Python was conceived in the late 1980s as a teaching and scripting language. Its syntax is mostly straightforward and very easy to learn. It is used in web development, data analysis, artificial intelligence and more, and it has a large community of users worldwide with extensive documentation.
 :::
 
-## AI is allowed, but learn yourself
+## Learn first, then use AI
 
-- You are [allowed to use AI]{.highlight}, we use it as well
-- Assistants such as Claude, ChatGPT or Gemini are **great for learning Python**
-
-. . .
-
-:::{.callout-warning}
-But don't let them *replace* your learning.
-:::
+- In the tutorials, [write the code yourself]{.highlight}: that's how you learn
+- At the end of the course, you build a small project **with AI support**
+- Until then: if you use AI, ask it to **explain**, not to solve
 
 ::: {.notes}
-Current AI assistants help you a lot to get started with programming. But you should not simply use them to replace your learning: read and understand what they suggest.
+AI assistants are powerful, but learning to program means struggling a bit yourself. We use AI deliberately in the final project phase.
 :::
 
 # [How to learn programming]{.flow} {.title visibility="hidden"}
