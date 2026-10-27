@@ -11,7 +11,7 @@ format:
 ## Today in one sentence {.lecture-opening}
 
 ::: {.lecture-summary}
-[When options come one by one and you can't go back, look at the first 37 % without committing, then take the first one that beats them all.]{.statement}
+[When options come one by one and you can't go back, look at the first 37% without committing, then take the first one that beats them all.]{.statement}
 :::
 
 ::: {.lecture-why}
@@ -25,14 +25,14 @@ You visit flats in Hamburg. Each viewing, you must decide on the spot, and if yo
 ::: {.roadmap}
 1. [The problem: choosing the best when options come one at a time]{.roadmap-item .future}
 2. [The rule: look first, then leap]{.roadmap-item .future}
-3. [Real life: rejection and time pressure]{.roadmap-item .future}
+3. [Real life: when the assumptions change]{.roadmap-item .future}
 :::
 
 # [The problem: choosing the best when options come one at a time]{.flow} {.title visibility="hidden"}
 
 ## Options come one by one, and there is no going back
 
-[Question:]{.question} Anybody know what optimal stopping is?
+[Question:]{.question} Does anybody know what optimal stopping is?
 
 :::{.incremental}
 - [Optimal stopping]{.highlight} is the problem of choosing the **best option**
@@ -42,10 +42,6 @@ You visit flats in Hamburg. Each viewing, you must decide on the spot, and if yo
 
 ::: {.notes}
 Topic: understanding optimal stopping problems and the famous Secretary Problem. Why this matters: optimal stopping is everywhere in life, from hiring decisions to finding apartments to choosing when to sell stocks. Today we learn the mathematical strategy that maximizes the chance of making the best choice.
-
-Learning objectives: define optimal stopping problems and identify them in real-world scenarios; apply the 37 % rule (look-and-leap strategy) to make better decisions; connect optimal stopping principles to programming logic and algorithmic thinking.
-
-Old agenda: what is optimal stopping (definition and examples), the Secretary Problem (classic formulation and solution), the 37 % rule (why it works and how to apply it), variations and extensions (rejection, time constraints, other scenarios), connecting to programming.
 :::
 
 ## {.loud-slide}
@@ -85,15 +81,15 @@ optimal stopping?
 The name comes from the 1960s. The problem is about finding the best candidate, not about secretaries. It is also known as the marriage problem or the dowry problem.
 :::
 
-## The setup in four lines
+## The setup in three lines
 
 - We have `n` candidates and interview them **one by one**
 - After each one: **hire or continue searching**
-- We can only **rank** candidates against each other ([ordinal ranking]{.highlight})
+- We can only **rank** candidates relative to those we have already seen ([ordinal ranking]{.highlight})
 
 . . .
 
-[Question:]{.question} Anybody know what ordinal ranking is?
+[Question:]{.question} Where in your life can you say "this one is better than that one", but not "this one is worth 7 out of 10"?
 
 ::: {.notes}
 Ordinal ranking: we can say which of two candidates is better, but we do not have a score or an absolute scale. This is what makes the problem hard, we never know how good the best candidate could be.
@@ -101,7 +97,7 @@ Ordinal ranking: we can say which of two candidates is better, but we do not hav
 
 ## Two ways to fail
 
-[Question:]{.question} Anybody an idea how we can fail?
+[Question:]{.question} Any idea how we could fail?
 
 . . .
 
@@ -110,15 +106,9 @@ Ordinal ranking: we can say which of two candidates is better, but we do not hav
 
 ## {.loud-slide}
 ::: {.r-fit-text}
-Ideas?
-:::
+How would you
 
-## The problem: choosing the best when options come one at a time {.section-covered}
-
-::: {.section-covered}
-[What we covered]{.eyebrow}
-
-[Many decisions share one structure: options arrive one at a time, and there is no going back.]{.statement}
+decide when to stop?
 :::
 
 # [The rule: look first, then leap]{.flow} {.title visibility="hidden"}
@@ -128,20 +118,20 @@ Ideas?
 ::: {.roadmap}
 1. [The problem: choosing the best when options come one at a time]{.roadmap-item .done}
 2. [The rule: look first, then leap]{.roadmap-item .current}
-3. [Real life: rejection and time pressure]{.roadmap-item .future}
+3. [Real life: when the assumptions change]{.roadmap-item .future}
 :::
 
-## Look at the first 37 %, then leap
+## Look at the first 37%, then leap
 
 :::{.incremental}
 1. **Look** at the [first 37%]{.highlight} of candidates without hiring anyone
 2. **Remember** the best candidate so far
 3. **Leap:** hire the next candidate who is **better than that one**
-4. This finds the very best candidate in **37 %** of all cases
+4. This finds the very best candidate in **37%** of all cases
 :::
 
 ::: {.notes}
-This is the mathematically optimal strategy. It means we still fail 63 % of the time, but this is the best we can possibly do. The 37 % holds for a large number of candidates; with only a few candidates, the chance is even higher.
+This is the mathematically optimal strategy. It means we still fail 63% of the time, but this is the best we can possibly do. The 37% holds for a large number of candidates; with only a few candidates, the chance is even higher.
 :::
 
 ## Picking at random gets worse with every candidate
@@ -157,45 +147,55 @@ Chance of the best candidate if we **pick one at random**:
 
 . . .
 
-**Pattern:** 1/n. Look-and-leap stays at **37 %** for any number of candidates.
+**Pattern:** 1/n. Look-and-leap **never drops below 37%**, however many candidates there are.
 
 ::: {.notes}
-Random choice gets worse with every extra candidate, because each individual candidate is less likely to be the best. The look-and-leap strategy does not have this problem: its success chance converges to 37 % as the number of candidates grows.
+Random choice gets worse with every extra candidate, because each individual candidate is less likely to be the best. The look-and-leap strategy does not have this problem: its success chance never drops below 37%, however many candidates there are, and with few candidates it is even higher.
 :::
 
 ## Why 37%?
 
 - Look at the first share $x$ of candidates, then leap
-- Chance of getting the best: about $-x \ln x$
+- Chance of getting the best: about $-x \ln x$[^derivation]
 - In words: look longer and your benchmark improves, but the best may already be gone
 - Largest at $x = 1/e \approx 37\%$[^ferguson]
 
-[^ferguson]: `e` is the base of the natural logarithm (≈ 2.718). The math is more advanced than we need here; see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.
+[^derivation]: Where does this come from? You win if the best candidate comes after your look phase and nobody before them beats your benchmark. That happens exactly when the best of all earlier candidates was in your look phase. Adding up these chances for every position, with many candidates, gives about $-x \ln x$, where $x$ is the share of candidates you only look at.
 
-::: {.notes}
-The formula balances two risks. If we look at too few candidates, our benchmark is weak and we leap on a mediocre candidate. If we look at too many, the best candidate is likely among those we have already rejected. The product of "benchmark is good" and "best is still ahead" peaks at 1/e of the candidates, so the optimal stopping point is at n/e.
+[^ferguson]: To find the best look phase, we only need to know where $-x \ln x$ reaches its maximum. Setting its derivative $-\ln x - 1$ to zero gives $x = 1/e \approx 37\%$, where $e \approx 2.718$ is the base of the natural logarithm. For the full story, see Ferguson, T.S. (1989) 'Who solved the secretary problem?', Statistical Science, 4(3).
+
+## Let the computer try it out
+
+:::{.incremental}
+1. Shuffle 100 candidates into a random order
+2. Look at the first 37 and remember the best one
+3. Hire the first candidate who beats that benchmark
+4. Check: did we get the very best?
+5. Repeat 10,000 times and count how often we won
 :::
 
-## The computer does the math for us
+## The same idea in code
 
 ```{python}
-#| eval: true
 #| output-location: fragment
+import random
+random.seed(42)
 
-import math
+def one_round(n=100, look=37):
+    candidates = list(range(n))          # n - 1 is the best
+    random.shuffle(candidates)
+    benchmark = max(candidates[:look])   # best of the look phase
+    for c in candidates[look:]:
+        if c > benchmark:                # first one who beats it
+            return c == n - 1            # did we hire the best?
+    return False                         # nobody beat the benchmark
 
-percentage = 1/math.e
-print(f"Percentage of options to look at: {percentage:.1%}")
-
-candidates = 20
-lookout_phase = candidates/math.e
-print(f"Look at first {lookout_phase:.3f} candidates")
+wins = sum(one_round() for _ in range(10_000))
+print(f"Best candidate found in {wins / 10_000:.1%} of rounds")
 ```
 
-. . .
-
 ::: {.callout-note}
-No worries if you don't understand the code yet! It just applies the formula.
+No worries if you don't understand every line yet. By the end of the course, you will.
 :::
 
 ## Simulation: looking at 37 of 100 candidates works best
@@ -248,11 +248,11 @@ ax.plot(share, exact, color=PRIMARY, linewidth=2.2, label="Exact probability")
 ax.scatter(share, simulated, s=16, color=FG_3, zorder=3,
            label=f"Simulation ({n_trials:,} runs per share)")
 ax.axvline(100 / np.e, color=AMBER, linestyle="--", linewidth=1.4)
-ax.text(100 / np.e + 1.2, 0.02, "37 % of candidates", color=AMBER, fontsize=12, va="bottom")
+ax.text(100 / np.e + 1.2, 0.02, "37% of candidates", color=AMBER, fontsize=12, va="bottom")
 ax.set_xlim(0, 100)
 ax.set_ylim(0, 0.45)
-ax.set_xticks(range(0, 101, 20), [f"{t} %" for t in range(0, 101, 20)])
-ax.set_yticks([0, 0.1, 0.2, 0.3, 0.4], ["0 %", "10 %", "20 %", "30 %", "40 %"])
+ax.set_xticks(range(0, 101, 20), [f"{t}%" for t in range(0, 101, 20)])
+ax.set_yticks([0, 0.1, 0.2, 0.3, 0.4], ["0%", "10%", "20%", "30%", "40%"])
 ax.set_xlabel("Share of candidates you only look at")
 ax.set_ylabel("Chance of picking the best")
 ax.grid(True, axis="y")
@@ -262,22 +262,33 @@ fig.tight_layout()
 plt.show()
 ```
 
-## The rule: look first, then leap {.section-covered}
-
-::: {.section-covered}
-[What we covered]{.eyebrow}
-
-[Looking at the first 37 % and then taking the first better option gives the best possible chance of picking the very best: 37 %.]{.statement}
-:::
-
-# [Real life: rejection and time pressure]{.flow} {.title visibility="hidden"}
+# [Real life: when the assumptions change]{.flow} {.title visibility="hidden"}
 
 ## Roadmap {.section-roadmap}
 
 ::: {.roadmap}
 1. [The problem: choosing the best when options come one at a time]{.roadmap-item .done}
 2. [The rule: look first, then leap]{.roadmap-item .done}
-3. [Real life: rejection and time pressure]{.roadmap-item .current}
+3. [Real life: when the assumptions change]{.roadmap-item .current}
+:::
+
+## Real life changes the assumptions
+
+The 37% rule assumes that offers are always accepted, there is no going back, we only know rankings, and looking is free.
+
+. . .
+
+[Question:]{.question} What could be different in real life?
+
+. . .
+
+:::{.incremental}
+- The other person can **say no**
+- You can **go back** to someone you passed
+- You **know how good** an option is, not just how it compares
+- You have **a fixed time**, not a fixed number of options
+- One failure can mean **losing everything**
+- Looking **costs time and effort**
 :::
 
 ## If you can be rejected, leap earlier
@@ -291,7 +302,38 @@ plt.show()
 :::
 
 ::: {.notes}
-Life lesson: higher risk of rejection means we should be less picky. With q = 0.5 the formula gives 0.5 to the power of 2, that is 25 %. If offers are always accepted (q close to 1), the formula gives back the familiar 1/e.
+Life lesson: higher risk of rejection means we should be less picky. With q = 0.5 the formula gives 0.5 to the power of 2, that is 25%. If offers are always accepted (q close to 1), the formula gives back the familiar 1/e.
+
+Example from Brian Christian: searching from age 18 to 40, the 37% rule says get serious at 26.1. With many rejections, start at 23.5. If you can go back to earlier prospects, keep exploring until 34.4.
+:::
+
+## If you can go back, wait longer
+
+[Question:]{.question} What if you could **return to someone you passed on**, but they might say no?
+
+:::{.incremental}
+- Going back works only half the time: **look at 61%**, then leap
+- If nobody better comes, **return to the best** you passed
+- In words: a second chance makes it safe to look longer
+:::
+
+::: {.notes}
+Example from the book: an immediate offer is always accepted, a belated one only with 50%. The safety net of going back shifts the look phase from 37% to 61%.
+:::
+
+## If you know the scale, use a threshold
+
+[Question:]{.question} What if you **know how good** each option is, not just how it compares?
+
+:::{.incremental}
+- Example: you know typing speeds, or the range of prices
+- **No look phase needed:** take the first option above a threshold
+- The threshold **drops** as fewer options remain
+- Chance of getting the very best rises to **58%**
+:::
+
+::: {.notes}
+This is the "full information" version. With absolute scores and a known distribution, you don't need to learn a benchmark first. The threshold starts high and falls as you run out of options.
 :::
 
 ## Fixed time instead of a fixed number of options
@@ -313,22 +355,42 @@ Life lesson: higher risk of rejection means we should be less picky. With q = 0.
 This holds if options arrive evenly over time. We can also decide how intensively we search, for example by viewing more flats per week. Searching harder in the look phase improves the benchmark.
 :::
 
+## The burglar: knowing when to quit
+
+**Example:** each break-in succeeds with chance $q$, one failure means losing everything
+
+. . .
+
+[Question:]{.question} When should the burglar retire?
+
+. . .
+
+:::{.incremental}
+- Stop after about $\frac{q}{1-q}$ successes
+- With $q = 90\%$: retire after **9** break-ins
+- Same logic for any streak that can end badly: a winning run in the casino, a project that keeps growing in risk
+:::
+
+## In practice, people stop too early
+
+:::{.incremental}
+- In about a dozen experiments, people **leap earlier** than the 37% rule suggests
+- [Question:]{.question} Why might that be?
+- Searching costs **time and effort**, and the rule ignores that
+- If looking is expensive, leaping earlier can be **the right choice**
+:::
+
+::: {.notes}
+Experiments by Seale and Rapoport (1997). The 37% rule assumes that looking is free. In real life, every viewing or interview costs time, so stopping a bit earlier is often rational, not a mistake.
+:::
+
 ## The same idea in other places
 
 - Selling a house for the **best price** ("Threshold Rule")
-- A burglar deciding **when to stop** ("Burglar's Problem")
 - **Finding** a parking spot ("Parking Lot Problem")
 
 ::: {.notes}
-Side note for drivers: an increase in occupancy from 90 to 95 % doubles the search time for all drivers. Each variation changes the rule a little, but the structure stays: options come one at a time, and you cannot go back.
-:::
-
-## Real life: rejection and time pressure {.section-covered}
-
-::: {.section-covered}
-[What we covered]{.eyebrow}
-
-[If you can be rejected or time is short, start leaping earlier.]{.statement}
+Side note for drivers: an increase in occupancy from 90 to 95% doubles the search time for all drivers. Each variation changes the rule a little, but the structure stays: options come one at a time, and you cannot go back.
 :::
 
 ## What we covered {.lecture-closing}
@@ -343,13 +405,13 @@ Many decisions share one structure: options arrive one at a time, and there is n
 ::: {.covered-item}
 [The rule: look first, then leap]{.eyebrow}
 
-Looking at the first 37 % and then taking the first better option gives the best possible chance of picking the very best: 37 %.
+Looking at the first 37% and then taking the first better option gives the best possible chance of picking the very best: 37%.
 :::
 
 ::: {.covered-item}
-[Real life: rejection and time pressure]{.eyebrow}
+[Real life: when the assumptions change]{.eyebrow}
 
-If you can be rejected or time is short, start leaping earlier.
+The rule adapts to real life: leap earlier if you can be rejected or looking is costly, wait longer if you can go back.
 :::
 
 :::
@@ -383,8 +445,6 @@ so far?
 
 ::: {.notes}
 How does optimal stopping connect to programming? Algorithmic thinking: break complex decisions into logical steps. Trade-off analysis: exploration vs. exploitation, fundamental in AI and the topic of the next lecture. Mathematical optimization: using formulas to find the best solution.
-
-Key takeaways: optimal stopping problems are everywhere in life and business; the 37 % rule is a mathematically optimal strategy; exploration vs. exploitation is a fundamental trade-off; real-world variations require adapting the basic strategy; this thinking builds the foundation for algorithmic problem-solving.
 
 That's it for optimal stopping! Let's have a short break and then continue with our first Python programming session.
 :::
