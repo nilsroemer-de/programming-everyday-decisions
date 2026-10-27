@@ -5,7 +5,7 @@ subtitle: "From zero to your first notebook, step by step"
 
 ## Before you start
 
-This guide takes about **30 minutes**. You don't need any prior knowledge. Follow the steps in order and don't skip any.
+You don't need any prior knowledge. Follow the steps in order and don't skip any.
 
 You need:
 
