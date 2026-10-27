@@ -136,47 +136,110 @@ We will mostly **not cover Python during the lectures!**
 2.  <span class="roadmap-item done">How to learn programming</span>
 3.  <span class="roadmap-item current">Setting up Python</span>
 
+## VS Code is where you write code
+
+- Like **Word for text**, but for code: an app to **write, run and find mistakes** in code
+- Apps like this are called <span class="highlight">IDEs</span> (Integrated Development Environments)
+- We use VS Code for the **whole course**
+
 ## Install VS Code
 
-- Download and install from the [website](https://code.visualstudio.com/), for **Windows, Linux and Mac**
-- Add the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions
+- Download from [code.visualstudio.com](https://code.visualstudio.com/), for **Windows and Mac**
+- Open it once: you should see a **welcome page**
 
-## VS Code is an IDE
+> **Tip**
+>
+> Every step is in the [Installation Guide](../general/uv.qmd), with a check at the end.
 
-- IDE = Integrated Development Environment, an app to **write, run and debug code**
-- Other IDEs: [PyCharm](https://www.jetbrains.com/pycharm/), [Zed](https://zed.dev/)
+## Add the Python and Jupyter extensions
 
-## Install Python with `uv`
+- Out of the box, VS Code doesn't know Python. Extensions **teach it**
+- Click the **Extensions** icon on the left (four small squares)
+- Install **Python** and **Jupyter**, both by Microsoft
 
-- `uv` installs Python and manages packages for us
-- It works on Windows, Mac and Linux
-- Now we all [go here](../general/uv.qmd) and install `uv` and Python
+## Create your course folder
+
+- One folder for everything, called `programming-course`
+- In your **home folder**, not in OneDrive
+- In VS Code: **File → Open Folder...** and select it
+
+## The terminal: typing instead of clicking
+
+- A window where you **type commands** and the computer answers with text
+- Open it in VS Code: **Terminal → New Terminal**
+- Copy a command from the guide, paste it, press **Enter**, wait until the line is back
+
+## Install `uv`
+
+- `uv` installs Python and everything Python needs, you install it **once**
+
+**macOS:**
+
+``` bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**Windows:**
+
+``` powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Then **close VS Code completely**, open it again, and check: `uv --version`
+
+## Install Python
+
+- Everyone uses the **same version**, so the code works the same for all
+
+``` bash
+uv python install 3.13
+```
 
 > **Tip**
 >
 > If the installation does not work, **let us know!**
 
-## Quick check
+## Turn your folder into a Python project
 
-- [ ] You have a folder for the course
-- [ ] You ran `uv init` inside the folder
-- [ ] You can see a file called `pyproject.toml` in the folder
+In the terminal, inside `programming-course`, one after the other:
+
+``` bash
+uv init
+```
+
+``` bash
+uv python pin 3.13
+```
+
+**Check:** `uv run python main.py` prints `Hello from programming-course!`
+
+## Add notebook support
+
+``` bash
+uv add --dev ipykernel
+```
+
+``` bash
+uv add jupyter
+```
+
+- The first lets notebooks use **the Python of your project**, the second adds the **notebook tools**
+
+## Your first notebook
+
+- **Cmd + Shift + P** (Mac) or **Ctrl + Shift + P** (Windows), then `Create: New Jupyter Notebook`
+- **Select Kernel** in the top right: **.venv** with **Python 3.13**
+- Type `print("Hello")` and press **Shift + Enter**
 
 > **Tip**
 >
-> Something not working yet? Ask us!
-
-## Add notebooks to your project
-
-- Run `uv add --dev ipykernel` in your terminal
-- Then run `uv add jupyter`
-- Now notebooks can use the Python of your project
+> Something not working yet? Ask us, or see "Something doesn't work?" in the guide.
 
 ## Download a tutorial and open it
 
-- Open a tutorial on the website and select `Jupyter` on the right
-- Save the file **to your course folder**
-- Open it in VS Code and select "Open with Jupyter Notebook"
+- Open a tutorial on the website and click **Jupyter** under **Other Formats**
+- Move the file into `programming-course`
+- Open it in VS Code and choose the **.venv** kernel
 
 > **Tip**
 >

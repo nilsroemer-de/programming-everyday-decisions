@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bb978de86abbef3b36a933764425996b.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -416,14 +482,15 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </ol>
 </div>
 </section>
-<section id="install-vs-code" class="slide level2">
-<h2>Install VS Code</h2>
+<section id="vs-code-is-where-you-write-code" class="slide level2">
+<h2>VS Code is where you write code</h2>
 <ul>
-<li>Download and install from the <a href="https://code.visualstudio.com/">website</a>, for <strong>Windows, Linux and Mac</strong></li>
-<li>Add the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a> and <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter">Jupyter</a> extensions</li>
+<li>Like <strong>Word for text</strong>, but for code: an app to <strong>write, run and find mistakes</strong> in code</li>
+<li>Apps like this are called <span class="highlight">IDEs</span> (Integrated Development Environments)</li>
+<li>We use VS Code for the <strong>whole course</strong></li>
 </ul>
 <aside class="notes">
-<p>Unsure how to work with VS Code and notebooks? Ask us, we are happy to help you out.</p>
+<p>Other IDEs exist, for example PyCharm or Zed. We use VS Code because it is free, works on all systems and has good notebook support. Every step of the setup is in the Installation Guide on the website, with a check at the end of each step.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -436,20 +503,107 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </section>
-<section id="vs-code-is-an-ide" class="slide level2">
-<h2>VS Code is an IDE</h2>
+<section id="install-vs-code" class="slide level2">
+<h2>Install VS Code</h2>
 <ul>
-<li>IDE = Integrated Development Environment, an app to <strong>write, run and debug code</strong></li>
-<li>Other IDEs: <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, <a href="https://zed.dev/">Zed</a></li>
+<li>Download from <a href="https://code.visualstudio.com/">code.visualstudio.com</a>, for <strong>Windows and Mac</strong></li>
+<li>Open it once: you should see a <strong>welcome page</strong></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Every step is in the <a href="../general/uv.html">Installation Guide</a>, with a check at the end.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="add-the-python-and-jupyter-extensions" class="slide level2">
+<h2>Add the Python and Jupyter extensions</h2>
+<ul>
+<li>Out of the box, VS Code doesn’t know Python. Extensions <strong>teach it</strong></li>
+<li>Click the <strong>Extensions</strong> icon on the left (four small squares)</li>
+<li>Install <strong>Python</strong> and <strong>Jupyter</strong>, both by Microsoft</li>
 </ul>
 </section>
-<section id="install-python-with-uv" class="slide level2">
-<h2>Install Python with <code>uv</code></h2>
+<section id="create-your-course-folder" class="slide level2">
+<h2>Create your course folder</h2>
 <ul>
-<li><code>uv</code> installs Python and manages packages for us</li>
-<li>It works on Windows, Mac and Linux</li>
-<li>Now we all <a href="../general/uv.html">go here</a> and install <code>uv</code> and Python</li>
+<li>One folder for everything, called <code>programming-course</code></li>
+<li>In your <strong>home folder</strong>, not in OneDrive</li>
+<li>In VS Code: <strong>File → Open Folder…</strong> and select it</li>
 </ul>
+<aside class="notes">
+<p>Python works best when each project has its own folder. OneDrive syncing can break the setup on Windows.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-terminal-typing-instead-of-clicking" class="slide level2">
+<h2>The terminal: typing instead of clicking</h2>
+<ul>
+<li>A window where you <strong>type commands</strong> and the computer answers with text</li>
+<li>Open it in VS Code: <strong>Terminal → New Terminal</strong></li>
+<li>Copy a command from the guide, paste it, press <strong>Enter</strong>, wait until the line is back</li>
+</ul>
+<aside class="notes">
+<p>On a Mac the line ends with a percent sign, on Windows it starts with PS for PowerShell. We only need a handful of commands, all of them are on the guide page to copy.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="install-uv" class="slide level2 smaller">
+<h2>Install <code>uv</code></h2>
+<ul>
+<li><code>uv</code> installs Python and everything Python needs, you install it <strong>once</strong></li>
+</ul>
+<p><strong>macOS:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Windows:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource powershell number-lines code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a></a>powershell <span class="op">-</span>ExecutionPolicy ByPass <span class="op">-</span>c <span class="st">"irm https://astral.sh/uv/install.ps1 | iex"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>Then <strong>close VS Code completely</strong>, open it again, and check: <code>uv --version</code></p>
+<aside class="notes">
+<p>Closing and reopening is important: only then does the terminal know the new tool. If uv is “not found”, that is almost always the reason.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="install-python" class="slide level2">
+<h2>Install Python</h2>
+<ul>
+<li>Everyone uses the <strong>same version</strong>, so the code works the same for all</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">uv</span> python install 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <div class="callout callout-tip callout-style-simple">
 <div class="callout-body">
@@ -463,35 +617,37 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </div>
 </div>
 </section>
-<section id="quick-check" class="slide level2">
-<h2>Quick check</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">You have a folder for the course</label></li>
-<li><label><input type="checkbox">You ran <code>uv init</code> inside the folder</label></li>
-<li><label><input type="checkbox">You can see a file called <code>pyproject.toml</code> in the folder</label></li>
-</ul>
+<section id="turn-your-folder-into-a-python-project" class="slide level2">
+<h2>Turn your folder into a Python project</h2>
+<p>In the terminal, inside <code>programming-course</code>, one after the other:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">uv</span> init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="ex">uv</span> python pin 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Something not working yet? Ask us!</p>
-</div>
-</div>
-</div>
+<p><strong>Check:</strong> <code>uv run python main.py</code> prints <code>Hello from programming-course!</code></p>
+<aside class="notes">
+<p>uv creates a few files: main.py, pyproject.toml and .python-version. Nobody needs to touch them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="add-notebooks-to-your-project" class="slide level2">
-<h2>Add notebooks to your project</h2>
+<section id="add-notebook-support" class="slide level2">
+<h2>Add notebook support</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">uv</span> add <span class="at">--dev</span> ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">uv</span> add jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li>Run <code>uv add --dev ipykernel</code> in your terminal</li>
-<li>Then run <code>uv add jupyter</code></li>
-<li>Now notebooks can use the Python of your project</li>
+<li>The first lets notebooks use <strong>the Python of your project</strong>, the second adds the <strong>notebook tools</strong></li>
 </ul>
 <aside class="notes">
-<p>The first command adds a kernel to the project, the second the Jupyter tools. Done? Perfect, now we can start.</p>
+<p>A new folder .venv appears: the project’s own Python environment. Done? Perfect, now we can start.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -504,12 +660,32 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </section>
+<section id="your-first-notebook" class="slide level2">
+<h2>Your first notebook</h2>
+<ul>
+<li><strong>Cmd + Shift + P</strong> (Mac) or <strong>Ctrl + Shift + P</strong> (Windows), then <code>Create: New Jupyter Notebook</code></li>
+<li><strong>Select Kernel</strong> in the top right: <strong>.venv</strong> with <strong>Python 3.13</strong></li>
+<li>Type <code>print("Hello")</code> and press <strong>Shift + Enter</strong></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Something not working yet? Ask us, or see “Something doesn’t work?” in the guide.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="download-a-tutorial-and-open-it" class="slide level2">
 <h2>Download a tutorial and open it</h2>
 <ul>
-<li>Open a tutorial on the website and select <code>Jupyter</code> on the right</li>
-<li>Save the file <strong>to your course folder</strong></li>
-<li>Open it in VS Code and select “Open with Jupyter Notebook”</li>
+<li>Open a tutorial on the website and click <strong>Jupyter</strong> under <strong>Other Formats</strong></li>
+<li>Move the file into <code>programming-course</code></li>
+<li>Open it in VS Code and choose the <strong>.venv</strong> kernel</li>
 </ul>
 <div class="fragment">
 <div class="callout callout-tip callout-style-simple">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Installing Python – Programming: Everyday Decision-Making Algorithms</title>
+<title>Installation Guide – Programming: Everyday Decision-Making Algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../general/uv.html">Installation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../general/uv.html">Installation Guide</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -369,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../general/uv.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Installation</span></a>
+ <span class="menu-text">Installation Guide</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -394,25 +394,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-we-use-uv-for-this-course" id="toc-why-we-use-uv-for-this-course" class="nav-link active" data-scroll-target="#why-we-use-uv-for-this-course">Why we use <code>uv</code> for this course</a></li>
-  <li><a href="#install-uv" id="toc-install-uv" class="nav-link" data-scroll-target="#install-uv">Install <code>uv</code></a>
-  <ul class="collapse">
-  <li><a href="#macos-or-linux-terminal" id="toc-macos-or-linux-terminal" class="nav-link" data-scroll-target="#macos-or-linux-terminal">macOS or Linux (Terminal)</a></li>
-  <li><a href="#windows-powershell" id="toc-windows-powershell" class="nav-link" data-scroll-target="#windows-powershell">Windows (PowerShell)</a></li>
-  <li><a href="#verify-installation" id="toc-verify-installation" class="nav-link" data-scroll-target="#verify-installation">Verify installation</a></li>
-  </ul></li>
-  <li><a href="#install-python" id="toc-install-python" class="nav-link" data-scroll-target="#install-python">Install Python</a></li>
-  <li><a href="#create-your-first-project" id="toc-create-your-first-project" class="nav-link" data-scroll-target="#create-your-first-project">Create your first project</a></li>
-  <li><a href="#run-the-starter-script" id="toc-run-the-starter-script" class="nav-link" data-scroll-target="#run-the-starter-script">Run the starter script</a>
-  <ul class="collapse">
-  <li><a href="#what-does-that-code-mean" id="toc-what-does-that-code-mean" class="nav-link" data-scroll-target="#what-does-that-code-mean">What does that code mean?</a></li>
-  </ul></li>
-  <li><a href="#add-notebooks-to-your-project" id="toc-add-notebooks-to-your-project" class="nav-link" data-scroll-target="#add-notebooks-to-your-project">Add notebooks to your project</a></li>
-  <li><a href="#download-a-tutorial-and-open-it" id="toc-download-a-tutorial-and-open-it" class="nav-link" data-scroll-target="#download-a-tutorial-and-open-it">Download a tutorial and open it</a></li>
-  <li><a href="#adding-packages-later-in-the-course" id="toc-adding-packages-later-in-the-course" class="nav-link" data-scroll-target="#adding-packages-later-in-the-course">Adding packages (later in the course)</a></li>
-  <li><a href="#updating-uv" id="toc-updating-uv" class="nav-link" data-scroll-target="#updating-uv">Updating <code>uv</code></a></li>
-  <li><a href="#best-practices-for-this-course" id="toc-best-practices-for-this-course" class="nav-link" data-scroll-target="#best-practices-for-this-course">Best practices for this course</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link active" data-scroll-target="#before-you-start">Before you start</a></li>
+  <li><a href="#the-big-picture-five-things-you-will-use" id="toc-the-big-picture-five-things-you-will-use" class="nav-link" data-scroll-target="#the-big-picture-five-things-you-will-use">The big picture: five things you will use</a></li>
+  <li><a href="#step-1-install-vs-code" id="toc-step-1-install-vs-code" class="nav-link" data-scroll-target="#step-1-install-vs-code">Step 1: Install VS Code</a></li>
+  <li><a href="#step-2-add-the-python-and-jupyter-extensions" id="toc-step-2-add-the-python-and-jupyter-extensions" class="nav-link" data-scroll-target="#step-2-add-the-python-and-jupyter-extensions">Step 2: Add the Python and Jupyter extensions</a></li>
+  <li><a href="#step-3-create-your-course-folder" id="toc-step-3-create-your-course-folder" class="nav-link" data-scroll-target="#step-3-create-your-course-folder">Step 3: Create your course folder</a></li>
+  <li><a href="#step-4-open-the-terminal" id="toc-step-4-open-the-terminal" class="nav-link" data-scroll-target="#step-4-open-the-terminal">Step 4: Open the terminal</a></li>
+  <li><a href="#step-5-install-uv" id="toc-step-5-install-uv" class="nav-link" data-scroll-target="#step-5-install-uv">Step 5: Install uv</a></li>
+  <li><a href="#step-6-install-python" id="toc-step-6-install-python" class="nav-link" data-scroll-target="#step-6-install-python">Step 6: Install Python</a></li>
+  <li><a href="#step-7-turn-your-folder-into-a-python-project" id="toc-step-7-turn-your-folder-into-a-python-project" class="nav-link" data-scroll-target="#step-7-turn-your-folder-into-a-python-project">Step 7: Turn your folder into a Python project</a></li>
+  <li><a href="#step-8-add-notebook-support" id="toc-step-8-add-notebook-support" class="nav-link" data-scroll-target="#step-8-add-notebook-support">Step 8: Add notebook support</a></li>
+  <li><a href="#step-9-your-first-notebook" id="toc-step-9-your-first-notebook" class="nav-link" data-scroll-target="#step-9-your-first-notebook">Step 9: Your first notebook</a></li>
+  <li><a href="#step-10-open-a-tutorial" id="toc-step-10-open-a-tutorial" class="nav-link" data-scroll-target="#step-10-open-a-tutorial">Step 10: Open a tutorial</a></li>
+  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
+  <li><a href="#every-next-session" id="toc-every-next-session" class="nav-link" data-scroll-target="#every-next-session">Every next session</a></li>
+  <li><a href="#something-doesnt-work" id="toc-something-doesnt-work" class="nav-link" data-scroll-target="#something-doesnt-work">Something doesn’t work?</a></li>
+  <li><a href="#later-in-the-course-adding-packages" id="toc-later-in-the-course-adding-packages" class="nav-link" data-scroll-target="#later-in-the-course-adding-packages">Later in the course: adding packages</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="uv.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -421,8 +418,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Installing Python</h1>
-<p class="subtitle lead">A small guide using uv</p>
+<h1 class="title">Installation Guide</h1>
+<p class="subtitle lead">From zero to your first notebook, step by step</p>
 </div>
 
 
@@ -439,195 +436,290 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="why-we-use-uv-for-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="why-we-use-uv-for-this-course">Why we use <code>uv</code> for this course</h2>
-<p><code>uv</code> is a new (and very fast) Python tool written in Rust. It: - Installs Python for you (no manual downloads). - Creates isolated <em>virtual environments</em> (safe sandboxes per project). - Installs and updates packages quickly.</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>WHAT is a virtual environment? Think of each project as its own coffee shop with its own supplies. One shop changing its menu does <strong>not</strong> affect the others. WHY it matters: You avoid random breakage when different projects need different versions of the same package.</p>
-</div>
-</div>
-</div>
+<section id="before-you-start" class="level2">
+<h2 class="anchored" data-anchor-id="before-you-start">Before you start</h2>
+<p>This guide takes about <strong>30 minutes</strong>. You don’t need any prior knowledge. Follow the steps in order and don’t skip any.</p>
+<p>You need:</p>
+<ul>
+<li>Your <strong>laptop</strong> (Windows or macOS) with internet access</li>
+<li>The <strong>password</strong> of your laptop, because installing software sometimes asks for it</li>
+</ul>
+<p>At the end, you will have everything you need for the tutorials.</p>
 </section>
-<section id="install-uv" class="level2">
-<h2 class="anchored" data-anchor-id="install-uv">Install <code>uv</code></h2>
-<p>Choose the instructions for your operating system. For this, you need to work in your terminal.</p>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="the-big-picture-five-things-you-will-use" class="level2">
+<h2 class="anchored" data-anchor-id="the-big-picture-five-things-you-will-use">The big picture: five things you will use</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What</th>
+<th>In simple words</th>
+<th>Why we need it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Python</strong></td>
+<td>A programming language</td>
+<td>We write our programs in Python</td>
+</tr>
+<tr class="even">
+<td><strong>VS Code</strong></td>
+<td>An app to write code, like Word for text</td>
+<td>This is where you write and run your code</td>
+</tr>
+<tr class="odd">
+<td><strong>Terminal</strong></td>
+<td>A window where you type commands instead of clicking</td>
+<td>We use it to install things</td>
+</tr>
+<tr class="even">
+<td><strong>uv</strong></td>
+<td>A small helper tool</td>
+<td>It installs Python and everything Python needs</td>
+</tr>
+<tr class="odd">
+<td><strong>Notebook</strong></td>
+<td>A document that mixes text and code you can run</td>
+<td>All tutorials are notebooks</td>
+</tr>
+</tbody>
+</table>
+<p>How they fit together: you open <strong>VS Code</strong>, use its <strong>terminal</strong> to let <strong>uv</strong> install <strong>Python</strong>, and then work in <strong>notebooks</strong> inside VS Code.</p>
+</section>
+<section id="step-1-install-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-install-vs-code">Step 1: Install VS Code</h2>
+<p><strong>Where:</strong> your web browser</p>
+<p><strong>Why:</strong> VS Code is the app you will work in for the whole course. Apps like this are called IDEs (Integrated Development Environments): one place to write code, run it and find mistakes.</p>
+<p><strong>Do:</strong> Go to <a href="https://code.visualstudio.com/">code.visualstudio.com</a> and download VS Code for your system.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ol type="1">
+<li>Open the downloaded file. A file called <strong>Visual Studio Code</strong> appears.</li>
+<li>Drag it into your <strong>Applications</strong> folder.</li>
+<li>Open it from Applications. If your Mac asks whether you want to open an app from the internet, click <strong>Open</strong>.</li>
+</ol>
 </div>
-<div class="callout-body-container">
-<p>Open the terminal in VS Code by selecting (Terminal → New Terminal).</p>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ol type="1">
+<li>Open the downloaded installer.</li>
+<li>Accept the agreement and keep the default settings. Make sure <strong>“Add to PATH”</strong> is ticked.</li>
+<li>Click <strong>Install</strong>, then <strong>Finish</strong>.</li>
+</ol>
 </div>
 </div>
 </div>
-<section id="macos-or-linux-terminal" class="level3">
-<h3 class="anchored" data-anchor-id="macos-or-linux-terminal">macOS or Linux (Terminal)</h3>
+<p><strong>Check:</strong> VS Code opens and shows a welcome page.</p>
+</section>
+<section id="step-2-add-the-python-and-jupyter-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-add-the-python-and-jupyter-extensions">Step 2: Add the Python and Jupyter extensions</h2>
+<p><strong>Where:</strong> VS Code</p>
+<p><strong>Why:</strong> Out of the box, VS Code doesn’t know Python or notebooks. Extensions are small add-ons that teach it.</p>
+<p><strong>Do:</strong></p>
+<ol type="1">
+<li>Click the <strong>Extensions</strong> icon on the left side (four small squares).</li>
+<li>Search for <strong>Python</strong> and click <strong>Install</strong> on the one by Microsoft.</li>
+<li>Search for <strong>Jupyter</strong> and click <strong>Install</strong> on the one by Microsoft.</li>
+</ol>
+<p><strong>Check:</strong> Both extensions show “Installed” or a gear icon instead of an Install button.</p>
+</section>
+<section id="step-3-create-your-course-folder" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-create-your-course-folder">Step 3: Create your course folder</h2>
+<p><strong>Where:</strong> Finder (macOS) or File Explorer (Windows)</p>
+<p><strong>Why:</strong> Everything for this course lives in one folder. That keeps things tidy, and Python works best when each project has its own folder.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Open <strong>Finder</strong>, go to your <strong>home folder</strong> (the one with the house icon) and create a new folder called <code>programming-course</code>.</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Open <strong>File Explorer</strong>, go to <code>C:\Users\YourName</code> and create a new folder called <code>programming-course</code>.</p>
+<p>Please <strong>don’t</strong> put it in a OneDrive folder. Syncing can break the setup.</p>
+</div>
+</div>
+</div>
+<p><strong>Do in VS Code:</strong> Click <strong>File → Open Folder…</strong>, select <code>programming-course</code> and click <strong>Open</strong>. If VS Code asks whether you trust the authors of the files, click <strong>Yes, I trust the authors</strong>.</p>
+<p><strong>Check:</strong> On the left side of VS Code, you see the name <code>PROGRAMMING-COURSE</code> at the top.</p>
+</section>
+<section id="step-4-open-the-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-open-the-terminal">Step 4: Open the terminal</h2>
+<p><strong>Where:</strong> VS Code</p>
+<p><strong>Why:</strong> The terminal is where you type commands. You type a command, press <strong>Enter</strong>, and the computer answers with text. We only need a few commands, and you can copy them from this page.</p>
+<p><strong>Do:</strong> In the menu bar, click <strong>Terminal → New Terminal</strong>. A panel opens at the bottom of VS Code.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>The terminal shows a line ending with <code>%</code>. That’s where you type.</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>The terminal shows a line starting with <code>PS</code> and ending with <code>&gt;</code>. <code>PS</code> means <strong>PowerShell</strong>, which is exactly what we need. If you don’t see <code>PS</code>, click the small arrow next to the <strong>+</strong> in the terminal panel and choose <strong>PowerShell</strong>.</p>
+</div>
+</div>
+</div>
+<p><strong>Good to know:</strong></p>
+<ul>
+<li>Copy a command from this page, paste it into the terminal and press <strong>Enter</strong>.</li>
+<li>Paste with <strong>Cmd + V</strong> (macOS) or <strong>Ctrl + V</strong> or a right-click (Windows).</li>
+<li>Some commands take a few seconds. Wait until the line with <code>%</code> or <code>&gt;</code> is back before typing the next one.</li>
+</ul>
+<p><strong>Check:</strong> You see a terminal at the bottom of VS Code, and its line mentions <code>programming-course</code>.</p>
+</section>
+<section id="step-5-install-uv" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-install-uv">Step 5: Install uv</h2>
+<p><strong>Where:</strong> the terminal in VS Code</p>
+<p><strong>Why:</strong> uv is a helper that installs Python for you and keeps each project clean. You only install it once.</p>
+<p><strong>Do:</strong> Copy the command for your system and press <strong>Enter</strong>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If <code>curl</code> is missing:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-qO-</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>After installation: <strong>close and reopen</strong> your terminal (so your PATH updates).</p>
-</section>
-<section id="windows-powershell" class="level3">
-<h3 class="anchored" data-anchor-id="windows-powershell">Windows (PowerShell)</h3>
-<p>Open PowerShell and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>powershell <span class="op">-</span>ExecutionPolicy Bypass <span class="op">-</span>c <span class="st">"irm https://astral.sh/uv/install.ps1 | iex"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you see a script execution warning, you can alternatively first run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>ExecutionPolicy Bypass <span class="op">-</span>Scope <span class="cf">Process</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then re-run the install line.</p>
-</section>
-<section id="verify-installation" class="level3">
-<h3 class="anchored" data-anchor-id="verify-installation">Verify installation</h3>
-<p>Run (macOS / Linux / Windows):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you see a version number: great!</p>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>If you get “command not found” or “‘uv’ is not recognized”:</p>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>powershell <span class="op">-</span>ExecutionPolicy ByPass <span class="op">-</span>c <span class="st">"irm https://astral.sh/uv/install.ps1 | iex"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>Now <strong>close VS Code completely</strong> and open it again. This is important: only then does the terminal know the new tool. Open a new terminal again with <strong>Terminal → New Terminal</strong>.</p>
+<p><strong>Check:</strong> Type this and press <strong>Enter</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see something like <code>uv 0.11.26</code>. The exact number doesn’t matter.</p>
+</section>
+<section id="step-6-install-python" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-install-python">Step 6: Install Python</h2>
+<p><strong>Where:</strong> the terminal in VS Code</p>
+<p><strong>Why:</strong> This installs the Python language itself. Everyone in the course uses the same version, so the code works the same for all.</p>
+<p><strong>Do:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python install 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Check:</strong> The terminal says that Python 3.13 was installed, or that it is already installed. Both are fine.</p>
+</section>
+<section id="step-7-turn-your-folder-into-a-python-project" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-turn-your-folder-into-a-python-project">Step 7: Turn your folder into a Python project</h2>
+<p><strong>Where:</strong> the terminal in VS Code, inside <code>programming-course</code></p>
+<p><strong>Why:</strong> This tells uv: “this folder is a Python project”. uv creates a few files it needs to keep track of things.</p>
+<p><strong>Do:</strong> Run these two commands, one after the other:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python pin 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>New files appear on the left in VS Code. You don’t need to touch them:</p>
+<ul>
+<li><code>main.py</code>: a tiny example program</li>
+<li><code>pyproject.toml</code>: the list of what your project needs</li>
+<li><code>.python-version</code>: which Python version the project uses</li>
+</ul>
+<p><strong>Check:</strong> Run the example program:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run python main.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see <code>Hello from programming-course!</code>. Congratulations, you just ran your first Python program!</p>
+</section>
+<section id="step-8-add-notebook-support" class="level2">
+<h2 class="anchored" data-anchor-id="step-8-add-notebook-support">Step 8: Add notebook support</h2>
+<p><strong>Where:</strong> the terminal in VS Code</p>
+<p><strong>Why:</strong> Notebooks need two extra helpers. The first one lets notebooks use the Python of your project, the second one adds the notebook tools.</p>
+<p><strong>Do:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="at">--dev</span> ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Check:</strong> The terminal lists a lot of installed packages and ends without an error. A new folder <code>.venv</code> appears on the left. That’s your project’s own Python environment.</p>
+</section>
+<section id="step-9-your-first-notebook" class="level2">
+<h2 class="anchored" data-anchor-id="step-9-your-first-notebook">Step 9: Your first notebook</h2>
+<p><strong>Where:</strong> VS Code</p>
+<p><strong>Why:</strong> This checks that everything works together, before you start with the tutorials.</p>
+<p><strong>Do:</strong></p>
 <ol type="1">
-<li>Close and reopen the terminal (important).</li>
-<li>On Windows: make sure you used PowerShell (not Command Prompt).</li>
-<li>Still broken? Ask for help, no need of guessing the error.</li>
+<li>Press <strong>Cmd + Shift + P</strong> (macOS) or <strong>Ctrl + Shift + P</strong> (Windows). A search bar opens at the top.</li>
+<li>Type <code>Create: New Jupyter Notebook</code> and press <strong>Enter</strong>.</li>
+<li>Click <strong>Select Kernel</strong> in the top right corner. The kernel is the Python that runs your notebook.</li>
+<li>Choose <strong>Python Environments</strong>, then the one that says <strong>.venv</strong> and <strong>Python 3.13</strong>.</li>
+<li>Click into the first cell, type <code>print("Hello")</code> and press <strong>Shift + Enter</strong>.</li>
 </ol>
-</div>
-</div>
-</div>
+<p><strong>Check:</strong> Below the cell, you see <code>Hello</code>. Everything works!</p>
+<p>If VS Code asks to install extensions at any point, click <strong>Install</strong>.</p>
 </section>
+<section id="step-10-open-a-tutorial" class="level2">
+<h2 class="anchored" data-anchor-id="step-10-open-a-tutorial">Step 10: Open a tutorial</h2>
+<p><strong>Where:</strong> your web browser, then VS Code</p>
+<p><strong>Do:</strong></p>
+<ol type="1">
+<li>Open a tutorial on the course website.</li>
+<li>On the right side under <strong>Other Formats</strong>, click <strong>Jupyter</strong> to download the notebook.</li>
+<li>Move the downloaded file into your <code>programming-course</code> folder.</li>
+<li>Open it in VS Code by clicking it on the left.</li>
+<li>If VS Code asks for a kernel, choose the same <strong>.venv</strong> with <strong>Python 3.13</strong> as in Step 9.</li>
+</ol>
+<p>You’re ready for the tutorials!</p>
 </section>
-<section id="install-python" class="level2">
-<h2 class="anchored" data-anchor-id="install-python">Install Python</h2>
-<p>We want everyone on the <strong>same</strong> Python version for consistency. Thus, we’ll use Python 3.13 for the course this year.</p>
-<p>Install (you only need to do this once):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python install 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the installation:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run python <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Expected output starts with:</p>
-<pre><code>Python 3.13.</code></pre>
-</section>
-<section id="create-your-first-project" class="level2">
-<h2 class="anchored" data-anchor-id="create-your-first-project">Create your first project</h2>
-<p>Pick a folder where you keep course work. <strong>If you do not have one, make sure to create one!</strong> Open the course folder in your IDE and then run the following from the terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>uv init</code> creates:</p>
-<ul>
-<li><code>main.py</code> (starter script)</li>
-<li><code>pyproject.toml</code> (project + dependencies config)</li>
-<li><code>.python-version</code> (records the Python version of the project)</li>
-<li><code>README.md</code> (you can jot notes here)</li>
-<li>a Git repository (<code>.git</code> folder and <code>.gitignore</code>), if Git is installed. You can ignore it for now.</li>
-<li>(A <code>.venv</code> folder and a <code>uv.lock</code> file appear the first time you run <code>uv run</code> or add a package.)</li>
-</ul>
-<p>To make sure the project uses the course version, pin it once:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python pin 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You do <strong>not</strong> need to edit any of these (except maybe <code>README.md</code> for your notes and <code>main.py</code> if you want to run something different).</p>
-<hr>
-</section>
-<section id="run-the-starter-script" class="level2">
-<h2 class="anchored" data-anchor-id="run-the-starter-script">Run the starter script</h2>
-<p>Inside the project folder <strong>in your terminal</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run python main.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see a greeting with the name of your folder, for example for a folder called <code>programming-course</code>:</p>
-<pre><code>Hello from programming-course!</code></pre>
-<p>(If you want, you can open <code>main.py</code> and change the message, then re-run.)</p>
-<section id="what-does-that-code-mean" class="level3">
-<h3 class="anchored" data-anchor-id="what-does-that-code-mean">What does that code mean?</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello from programming-course!"</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li><code>def main():</code> defines a function (a reusable block of code).</li>
-<li><code>print(...)</code> shows text in the terminal.</li>
-<li>The line <code>if __name__ == "__main__":</code> ensures this only auto-runs when the file is executed directly.</li>
-</ul>
-<p>Don’t worry about this yet, we’ll gradually build up to it.</p>
-</section>
-</section>
-<section id="add-notebooks-to-your-project" class="level2">
-<h2 class="anchored" data-anchor-id="add-notebooks-to-your-project">Add notebooks to your project</h2>
-<p>The tutorials are notebooks. Inside the project folder <strong>in your terminal</strong>, run the two commands from the introduction, one after the other:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="at">--dev</span> ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The first command adds a kernel to the project, the second the Jupyter tools. Now notebooks can use the Python of your project.</p>
-<p>Quick check before you continue:</p>
+<section id="checklist" class="level2">
+<h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">You have a folder for the course</label></li>
-<li><label><input type="checkbox">You ran <code>uv init</code> inside the folder</label></li>
-<li><label><input type="checkbox">You can see a file called <code>pyproject.toml</code> in the folder</label></li>
-<li><label><input type="checkbox">You ran <code>uv add --dev ipykernel</code> and <code>uv add jupyter</code></label></li>
+<li><label><input type="checkbox">VS Code is installed and opens</label></li>
+<li><label><input type="checkbox">The Python and Jupyter extensions are installed</label></li>
+<li><label><input type="checkbox">You have a folder <code>programming-course</code> and opened it in VS Code</label></li>
+<li><label><input type="checkbox"><code>uv --version</code> shows a version number</label></li>
+<li><label><input type="checkbox"><code>uv run python main.py</code> shows <code>Hello from programming-course!</code></label></li>
+<li><label><input type="checkbox">A notebook cell with <code>print("Hello")</code> shows <code>Hello</code></label></li>
 </ul>
 </section>
-<section id="download-a-tutorial-and-open-it" class="level2">
-<h2 class="anchored" data-anchor-id="download-a-tutorial-and-open-it">Download a tutorial and open it</h2>
+<section id="every-next-session" class="level2">
+<h2 class="anchored" data-anchor-id="every-next-session">Every next session</h2>
+<p>You don’t need to install anything again. Just:</p>
 <ol type="1">
-<li>Open a tutorial on the website and select <code>Jupyter</code> on the right.</li>
-<li>Save the file <strong>to your course folder</strong>.</li>
-<li>Open it in VS Code and select “Open with Jupyter Notebook”.</li>
+<li>Open VS Code.</li>
+<li>Click <strong>File → Open Recent → programming-course</strong>.</li>
+<li>Open the notebook you want to work on.</li>
 </ol>
-<p>That was the hardest part. If something does not work, ask us.</p>
 </section>
-<section id="adding-packages-later-in-the-course" class="level2">
-<h2 class="anchored" data-anchor-id="adding-packages-later-in-the-course">Adding packages (later in the course)</h2>
-<p>If/when you need a package (example: <code>pandas</code>):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you added the wrong one:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> remove pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If your <code>pyproject.toml</code> changed (e.g.&nbsp;you pulled code from someone else):</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>If something seems “off”, just close the terminal and reopen in the project folder. Fresh starts fix many early mistakes.</p>
-</div>
-</div>
-</div>
+<section id="something-doesnt-work" class="level2">
+<h2 class="anchored" data-anchor-id="something-doesnt-work">Something doesn’t work?</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>uv</code> is “not found” or “not recognized”</td>
+<td>Close VS Code completely and open it again. On Windows, check that the terminal says <code>PS</code>.</td>
+</tr>
+<tr class="even">
+<td>Windows says scripts are disabled</td>
+<td>Run <code>Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process</code>, then repeat Step 5.</td>
+</tr>
+<tr class="odd">
+<td><code>.venv</code> doesn’t appear under Select Kernel</td>
+<td>Press <strong>Cmd/Ctrl + Shift + P</strong>, type <code>Developer: Reload Window</code>, press <strong>Enter</strong>, try again.</td>
+</tr>
+<tr class="even">
+<td>The notebook shows a different Python than 3.13</td>
+<td>Click on the kernel name in the top right and choose the <strong>.venv</strong> one.</td>
+</tr>
+<tr class="odd">
+<td><code>uv self update</code> fails on a Mac</td>
+<td>If you installed uv with Homebrew, use <code>brew upgrade uv</code> instead.</td>
+</tr>
+<tr class="even">
+<td>Anything else</td>
+<td>Ask us! Guessing usually takes longer than asking.</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="updating-uv" class="level2">
-<h2 class="anchored" data-anchor-id="updating-uv">Updating <code>uv</code></h2>
-<p>Occasionally:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> self update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>(If it ever errors, you can just reinstall using the same one-liner from earlier.)</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>If you installed <code>uv</code> with Homebrew on macOS, <code>uv self update</code> does not work. Update it with Homebrew instead:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> upgrade uv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="best-practices-for-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices-for-this-course">Best practices for this course</h2>
-<ul>
-<li>One folder for the course keeps everything tidy.</li>
-<li>Never install packages “globally” outside a project.</li>
-<li>Keep a short personal log in each project’s <code>README.md</code> (What did I do? What still confuses me?).</li>
-<li>Ask early for help, guessing usually takes much more time than asking.</li>
-</ul>
-<p>You can always see available commands:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--help</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap">Recap</h2>
-<p>You can now: 1. Install <code>uv</code>. 2. Create a project. 3. Run a script. 4. Add notebooks to your project and open a tutorial. 5. Add/remove/sync packages.</p>
-<p>Now, you’re set to continue the course.</p>
+<section id="later-in-the-course-adding-packages" class="level2">
+<h2 class="anchored" data-anchor-id="later-in-the-course-adding-packages">Later in the course: adding packages</h2>
+<p>Sometimes a tutorial needs an extra package, for example <code>pandas</code>. Then run this in the terminal of your course folder:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

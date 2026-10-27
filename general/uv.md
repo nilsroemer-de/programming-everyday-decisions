@@ -1,158 +1,193 @@
 ---
-title: Installing Python
-subtitle: A small guide using uv
+title: Installation Guide
+subtitle: From zero to your first notebook, step by step
 ---
 
 
-## Why we use `uv` for this course
+## Before you start
 
-`uv` is a new (and very fast) Python tool written in Rust. It:
-- Installs Python for you (no manual downloads).
-- Creates isolated *virtual environments* (safe sandboxes per project).
-- Installs and updates packages quickly.
+This guide takes about **30 minutes**. You don't need any prior knowledge. Follow the steps in order and don't skip any.
 
-> **Note**
->
-> WHAT is a virtual environment?
-> Think of each project as its own coffee shop with its own supplies. One shop changing its menu does **not** affect the others.
-> WHY it matters: You avoid random breakage when different projects need different versions of the same package.
+You need:
 
-## Install `uv`
+- Your **laptop** (Windows or macOS) with internet access
+- The **password** of your laptop, because installing software sometimes asks for it
 
-Choose the instructions for your operating system. For this, you need to work in your terminal.
+At the end, you will have everything you need for the tutorials.
 
-> **Tip**
->
-> Open the terminal in VS Code by selecting (Terminal → New Terminal).
+## The big picture: five things you will use
 
-### macOS or Linux (Terminal)
+| What | In simple words | Why we need it |
+|------------------------|------------------------|------------------------|
+| **Python** | A programming language | We write our programs in Python |
+| **VS Code** | An app to write code, like Word for text | This is where you write and run your code |
+| **Terminal** | A window where you type commands instead of clicking | We use it to install things |
+| **uv** | A small helper tool | It installs Python and everything Python needs |
+| **Notebook** | A document that mixes text and code you can run | All tutorials are notebooks |
+
+How they fit together: you open **VS Code**, use its **terminal** to let **uv** install **Python**, and then work in **notebooks** inside VS Code.
+
+## Step 1: Install VS Code
+
+**Where:** your web browser
+
+**Why:** VS Code is the app you will work in for the whole course. Apps like this are called IDEs (Integrated Development Environments): one place to write code, run it and find mistakes.
+
+**Do:** Go to [code.visualstudio.com](https://code.visualstudio.com/) and download VS Code for your system.
+
+## macOS
+
+1.  Open the downloaded file. A file called **Visual Studio Code** appears.
+2.  Drag it into your **Applications** folder.
+3.  Open it from Applications. If your Mac asks whether you want to open an app from the internet, click **Open**.
+
+## Windows
+
+1.  Open the downloaded installer.
+2.  Accept the agreement and keep the default settings. Make sure **"Add to PATH"** is ticked.
+3.  Click **Install**, then **Finish**.
+
+**Check:** VS Code opens and shows a welcome page.
+
+## Step 2: Add the Python and Jupyter extensions
+
+**Where:** VS Code
+
+**Why:** Out of the box, VS Code doesn't know Python or notebooks. Extensions are small add-ons that teach it.
+
+**Do:**
+
+1.  Click the **Extensions** icon on the left side (four small squares).
+2.  Search for **Python** and click **Install** on the one by Microsoft.
+3.  Search for **Jupyter** and click **Install** on the one by Microsoft.
+
+**Check:** Both extensions show "Installed" or a gear icon instead of an Install button.
+
+## Step 3: Create your course folder
+
+**Where:** Finder (macOS) or File Explorer (Windows)
+
+**Why:** Everything for this course lives in one folder. That keeps things tidy, and Python works best when each project has its own folder.
+
+## macOS
+
+Open **Finder**, go to your **home folder** (the one with the house icon) and create a new folder called `programming-course`.
+
+## Windows
+
+Open **File Explorer**, go to `C:\Users\YourName` and create a new folder called `programming-course`.
+
+Please **don't** put it in a OneDrive folder. Syncing can break the setup.
+
+**Do in VS Code:** Click **File → Open Folder...**, select `programming-course` and click **Open**. If VS Code asks whether you trust the authors of the files, click **Yes, I trust the authors**.
+
+**Check:** On the left side of VS Code, you see the name `PROGRAMMING-COURSE` at the top.
+
+## Step 4: Open the terminal
+
+**Where:** VS Code
+
+**Why:** The terminal is where you type commands. You type a command, press **Enter**, and the computer answers with text. We only need a few commands, and you can copy them from this page.
+
+**Do:** In the menu bar, click **Terminal → New Terminal**. A panel opens at the bottom of VS Code.
+
+## macOS
+
+The terminal shows a line ending with `%`. That's where you type.
+
+## Windows
+
+The terminal shows a line starting with `PS` and ending with `>`. `PS` means **PowerShell**, which is exactly what we need. If you don't see `PS`, click the small arrow next to the **+** in the terminal panel and choose **PowerShell**.
+
+**Good to know:**
+
+- Copy a command from this page, paste it into the terminal and press **Enter**.
+- Paste with **Cmd + V** (macOS) or **Ctrl + V** or a right-click (Windows).
+- Some commands take a few seconds. Wait until the line with `%` or `>` is back before typing the next one.
+
+**Check:** You see a terminal at the bottom of VS Code, and its line mentions `programming-course`.
+
+## Step 5: Install uv
+
+**Where:** the terminal in VS Code
+
+**Why:** uv is a helper that installs Python for you and keeps each project clean. You only install it once.
+
+**Do:** Copy the command for your system and press **Enter**.
+
+## macOS
 
 ``` bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-If `curl` is missing:
-
-``` bash
-wget -qO- https://astral.sh/uv/install.sh | sh
-```
-
-After installation: **close and reopen** your terminal (so your PATH updates).
-
-### Windows (PowerShell)
-
-Open PowerShell and run:
+## Windows
 
 ``` powershell
-powershell -ExecutionPolicy Bypass -c "irm https://astral.sh/uv/install.ps1 | iex"
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-If you see a script execution warning, you can alternatively first run:
+Now **close VS Code completely** and open it again. This is important: only then does the terminal know the new tool. Open a new terminal again with **Terminal → New Terminal**.
 
-``` powershell
-Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
-```
-
-Then re-run the install line.
-
-### Verify installation
-
-Run (macOS / Linux / Windows):
+**Check:** Type this and press **Enter**:
 
 ``` bash
 uv --version
 ```
 
-If you see a version number: great!
+You should see something like `uv 0.11.26`. The exact number doesn't matter.
 
-> **Warning**
->
-> If you get "command not found" or "'uv' is not recognized":
->
-> 1.  Close and reopen the terminal (important).
-> 2.  On Windows: make sure you used PowerShell (not Command Prompt).
-> 3.  Still broken? Ask for help, no need of guessing the error.
+## Step 6: Install Python
 
-## Install Python
+**Where:** the terminal in VS Code
 
-We want everyone on the **same** Python version for consistency. Thus, we'll use Python 3.13 for the course this year.
+**Why:** This installs the Python language itself. Everyone in the course uses the same version, so the code works the same for all.
 
-Install (you only need to do this once):
+**Do:**
 
 ``` bash
 uv python install 3.13
 ```
 
-Check the installation:
+**Check:** The terminal says that Python 3.13 was installed, or that it is already installed. Both are fine.
 
-``` bash
-uv run python --version
-```
+## Step 7: Turn your folder into a Python project
 
-Expected output starts with:
+**Where:** the terminal in VS Code, inside `programming-course`
 
-    Python 3.13.
+**Why:** This tells uv: "this folder is a Python project". uv creates a few files it needs to keep track of things.
 
-## Create your first project
-
-Pick a folder where you keep course work. **If you do not have one, make sure to create one!** Open the course folder in your IDE and then run the following from the terminal:
+**Do:** Run these two commands, one after the other:
 
 ``` bash
 uv init
 ```
 
-`uv init` creates:
-
-- `main.py` (starter script)
-- `pyproject.toml` (project + dependencies config)
-- `.python-version` (records the Python version of the project)
-- `README.md` (you can jot notes here)
-- a Git repository (`.git` folder and `.gitignore`), if Git is installed. You can ignore it for now.
-- (A `.venv` folder and a `uv.lock` file appear the first time you run `uv run` or add a package.)
-
-To make sure the project uses the course version, pin it once:
-
 ``` bash
 uv python pin 3.13
 ```
 
-You do **not** need to edit any of these (except maybe `README.md` for your notes and `main.py` if you want to run something different).
+New files appear on the left in VS Code. You don't need to touch them:
 
-------------------------------------------------------------------------
+- `main.py`: a tiny example program
+- `pyproject.toml`: the list of what your project needs
+- `.python-version`: which Python version the project uses
 
-## Run the starter script
-
-Inside the project folder **in your terminal**:
+**Check:** Run the example program:
 
 ``` bash
 uv run python main.py
 ```
 
-You should see a greeting with the name of your folder, for example for a folder called `programming-course`:
+You should see `Hello from programming-course!`. Congratulations, you just ran your first Python program!
 
-    Hello from programming-course!
+## Step 8: Add notebook support
 
-(If you want, you can open `main.py` and change the message, then re-run.)
+**Where:** the terminal in VS Code
 
-### What does that code mean?
+**Why:** Notebooks need two extra helpers. The first one lets notebooks use the Python of your project, the second one adds the notebook tools.
 
-``` python
-def main():
-    print("Hello from programming-course!")
-
-if __name__ == "__main__":
-    main()
-```
-
-- `def main():` defines a function (a reusable block of code).
-- `print(...)` shows text in the terminal.
-- The line `if __name__ == "__main__":` ensures this only auto-runs when the file is executed directly.
-
-Don't worry about this yet, we'll gradually build up to it.
-
-## Add notebooks to your project
-
-The tutorials are notebooks. Inside the project folder **in your terminal**, run the two commands from the introduction, one after the other:
+**Do:**
 
 ``` bash
 uv add --dev ipykernel
@@ -162,87 +197,72 @@ uv add --dev ipykernel
 uv add jupyter
 ```
 
-The first command adds a kernel to the project, the second the Jupyter tools. Now notebooks can use the Python of your project.
+**Check:** The terminal lists a lot of installed packages and ends without an error. A new folder `.venv` appears on the left. That's your project's own Python environment.
 
-Quick check before you continue:
+## Step 9: Your first notebook
 
-- [ ] You have a folder for the course
-- [ ] You ran `uv init` inside the folder
-- [ ] You can see a file called `pyproject.toml` in the folder
-- [ ] You ran `uv add --dev ipykernel` and `uv add jupyter`
+**Where:** VS Code
 
-## Download a tutorial and open it
+**Why:** This checks that everything works together, before you start with the tutorials.
 
-1.  Open a tutorial on the website and select `Jupyter` on the right.
-2.  Save the file **to your course folder**.
-3.  Open it in VS Code and select "Open with Jupyter Notebook".
+**Do:**
 
-That was the hardest part. If something does not work, ask us.
+1.  Press **Cmd + Shift + P** (macOS) or **Ctrl + Shift + P** (Windows). A search bar opens at the top.
+2.  Type `Create: New Jupyter Notebook` and press **Enter**.
+3.  Click **Select Kernel** in the top right corner. The kernel is the Python that runs your notebook.
+4.  Choose **Python Environments**, then the one that says **.venv** and **Python 3.13**.
+5.  Click into the first cell, type `print("Hello")` and press **Shift + Enter**.
 
-## Adding packages (later in the course)
+**Check:** Below the cell, you see `Hello`. Everything works!
 
-If/when you need a package (example: `pandas`):
+If VS Code asks to install extensions at any point, click **Install**.
+
+## Step 10: Open a tutorial
+
+**Where:** your web browser, then VS Code
+
+**Do:**
+
+1.  Open a tutorial on the course website.
+2.  On the right side under **Other Formats**, click **Jupyter** to download the notebook.
+3.  Move the downloaded file into your `programming-course` folder.
+4.  Open it in VS Code by clicking it on the left.
+5.  If VS Code asks for a kernel, choose the same **.venv** with **Python 3.13** as in Step 9.
+
+You're ready for the tutorials!
+
+## Checklist
+
+- [ ] VS Code is installed and opens
+- [ ] The Python and Jupyter extensions are installed
+- [ ] You have a folder `programming-course` and opened it in VS Code
+- [ ] `uv --version` shows a version number
+- [ ] `uv run python main.py` shows `Hello from programming-course!`
+- [ ] A notebook cell with `print("Hello")` shows `Hello`
+
+## Every next session
+
+You don't need to install anything again. Just:
+
+1.  Open VS Code.
+2.  Click **File → Open Recent → programming-course**.
+3.  Open the notebook you want to work on.
+
+## Something doesn't work?
+
+| Problem | What to do |
+|------------------------------------|------------------------------------|
+| `uv` is "not found" or "not recognized" | Close VS Code completely and open it again. On Windows, check that the terminal says `PS`. |
+| Windows says scripts are disabled | Run `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process`, then repeat Step 5. |
+| `.venv` doesn't appear under Select Kernel | Press **Cmd/Ctrl + Shift + P**, type `Developer: Reload Window`, press **Enter**, try again. |
+| The notebook shows a different Python than 3.13 | Click on the kernel name in the top right and choose the **.venv** one. |
+| `uv self update` fails on a Mac | If you installed uv with Homebrew, use `brew upgrade uv` instead. |
+| Anything else | Ask us! Guessing usually takes longer than asking. |
+
+## Later in the course: adding packages
+
+Sometimes a tutorial needs an extra package, for example `pandas`. Then run this in the terminal of your course folder:
 
 ``` bash
 uv add pandas
 ```
-
-If you added the wrong one:
-
-``` bash
-uv remove pandas
-```
-
-If your `pyproject.toml` changed (e.g. you pulled code from someone else):
-
-``` bash
-uv sync
-```
-
-> **Tip**
->
-> If something seems "off", just close the terminal and reopen in the project folder. Fresh starts fix many early mistakes.
-
-## Updating `uv`
-
-Occasionally:
-
-``` bash
-uv self update
-```
-
-(If it ever errors, you can just reinstall using the same one-liner from earlier.)
-
-> **Note**
->
-> If you installed `uv` with Homebrew on macOS, `uv self update` does not work. Update it with Homebrew instead:
->
-> ``` bash
-> brew upgrade uv
-> ```
-
-------------------------------------------------------------------------
-
-## Best practices for this course
-
-- One folder for the course keeps everything tidy.
-- Never install packages "globally" outside a project.
-- Keep a short personal log in each project's `README.md` (What did I do? What still confuses me?).
-- Ask early for help, guessing usually takes much more time than asking.
-
-You can always see available commands:
-
-``` bash
-uv --help
-```
-
-## Recap
-
-You can now:
-1. Install `uv`.
-2. Create a project.
-3. Run a script.
-4. Add notebooks to your project and open a tutorial.
-5. Add/remove/sync packages.
-
-Now, you're set to continue the course.

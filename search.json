@@ -3514,121 +3514,171 @@
   {
     "objectID": "general/uv.html",
     "href": "general/uv.html",
-    "title": "Installing Python",
+    "title": "Installation Guide",
     "section": "",
-    "text": "uv is a new (and very fast) Python tool written in Rust. It: - Installs Python for you (no manual downloads). - Creates isolated virtual environments (safe sandboxes per project). - Installs and updates packages quickly.\n\n\n\n\n\n\nWHAT is a virtual environment? Think of each project as its own coffee shop with its own supplies. One shop changing its menu does not affect the others. WHY it matters: You avoid random breakage when different projects need different versions of the same package.",
+    "text": "This guide takes about 30 minutes. You don’t need any prior knowledge. Follow the steps in order and don’t skip any.\nYou need:\n\nYour laptop (Windows or macOS) with internet access\nThe password of your laptop, because installing software sometimes asks for it\n\nAt the end, you will have everything you need for the tutorials.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#why-we-use-uv-for-this-course",
-    "href": "general/uv.html#why-we-use-uv-for-this-course",
-    "title": "Installing Python",
+    "objectID": "general/uv.html#before-you-start",
+    "href": "general/uv.html#before-you-start",
+    "title": "Installation Guide",
     "section": "",
-    "text": "uv is a new (and very fast) Python tool written in Rust. It: - Installs Python for you (no manual downloads). - Creates isolated virtual environments (safe sandboxes per project). - Installs and updates packages quickly.\n\n\n\n\n\n\nWHAT is a virtual environment? Think of each project as its own coffee shop with its own supplies. One shop changing its menu does not affect the others. WHY it matters: You avoid random breakage when different projects need different versions of the same package.",
+    "text": "This guide takes about 30 minutes. You don’t need any prior knowledge. Follow the steps in order and don’t skip any.\nYou need:\n\nYour laptop (Windows or macOS) with internet access\nThe password of your laptop, because installing software sometimes asks for it\n\nAt the end, you will have everything you need for the tutorials.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#install-uv",
-    "href": "general/uv.html#install-uv",
-    "title": "Installing Python",
-    "section": "Install uv",
-    "text": "Install uv\nChoose the instructions for your operating system. For this, you need to work in your terminal.\n\n\n\n\n\n\nOpen the terminal in VS Code by selecting (Terminal → New Terminal).\n\n\n\n\nmacOS or Linux (Terminal)\ncurl -LsSf https://astral.sh/uv/install.sh | sh\nIf curl is missing:\nwget -qO- https://astral.sh/uv/install.sh | sh\nAfter installation: close and reopen your terminal (so your PATH updates).\n\n\nWindows (PowerShell)\nOpen PowerShell and run:\npowershell -ExecutionPolicy Bypass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\nIf you see a script execution warning, you can alternatively first run:\nSet-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process\nThen re-run the install line.\n\n\nVerify installation\nRun (macOS / Linux / Windows):\nuv --version\nIf you see a version number: great!\n\n\n\n\n\n\nIf you get “command not found” or “‘uv’ is not recognized”:\n\nClose and reopen the terminal (important).\nOn Windows: make sure you used PowerShell (not Command Prompt).\nStill broken? Ask for help, no need of guessing the error.",
+    "objectID": "general/uv.html#the-big-picture-five-things-you-will-use",
+    "href": "general/uv.html#the-big-picture-five-things-you-will-use",
+    "title": "Installation Guide",
+    "section": "The big picture: five things you will use",
+    "text": "The big picture: five things you will use\n\n\n\n\n\n\n\n\nWhat\nIn simple words\nWhy we need it\n\n\n\n\nPython\nA programming language\nWe write our programs in Python\n\n\nVS Code\nAn app to write code, like Word for text\nThis is where you write and run your code\n\n\nTerminal\nA window where you type commands instead of clicking\nWe use it to install things\n\n\nuv\nA small helper tool\nIt installs Python and everything Python needs\n\n\nNotebook\nA document that mixes text and code you can run\nAll tutorials are notebooks\n\n\n\nHow they fit together: you open VS Code, use its terminal to let uv install Python, and then work in notebooks inside VS Code.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#install-python",
-    "href": "general/uv.html#install-python",
-    "title": "Installing Python",
-    "section": "Install Python",
-    "text": "Install Python\nWe want everyone on the same Python version for consistency. Thus, we’ll use Python 3.13 for the course this year.\nInstall (you only need to do this once):\nuv python install 3.13\nCheck the installation:\nuv run python --version\nExpected output starts with:\nPython 3.13.",
+    "objectID": "general/uv.html#step-1-install-vs-code",
+    "href": "general/uv.html#step-1-install-vs-code",
+    "title": "Installation Guide",
+    "section": "Step 1: Install VS Code",
+    "text": "Step 1: Install VS Code\nWhere: your web browser\nWhy: VS Code is the app you will work in for the whole course. Apps like this are called IDEs (Integrated Development Environments): one place to write code, run it and find mistakes.\nDo: Go to code.visualstudio.com and download VS Code for your system.\n\nmacOSWindows\n\n\n\nOpen the downloaded file. A file called Visual Studio Code appears.\nDrag it into your Applications folder.\nOpen it from Applications. If your Mac asks whether you want to open an app from the internet, click Open.\n\n\n\n\nOpen the downloaded installer.\nAccept the agreement and keep the default settings. Make sure “Add to PATH” is ticked.\nClick Install, then Finish.\n\n\n\n\nCheck: VS Code opens and shows a welcome page.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#create-your-first-project",
-    "href": "general/uv.html#create-your-first-project",
-    "title": "Installing Python",
-    "section": "Create your first project",
-    "text": "Create your first project\nPick a folder where you keep course work. If you do not have one, make sure to create one! Open the course folder in your IDE and then run the following from the terminal:\nuv init\nuv init creates:\n\nmain.py (starter script)\npyproject.toml (project + dependencies config)\n.python-version (records the Python version of the project)\nREADME.md (you can jot notes here)\na Git repository (.git folder and .gitignore), if Git is installed. You can ignore it for now.\n(A .venv folder and a uv.lock file appear the first time you run uv run or add a package.)\n\nTo make sure the project uses the course version, pin it once:\nuv python pin 3.13\nYou do not need to edit any of these (except maybe README.md for your notes and main.py if you want to run something different).",
+    "objectID": "general/uv.html#step-2-add-the-python-and-jupyter-extensions",
+    "href": "general/uv.html#step-2-add-the-python-and-jupyter-extensions",
+    "title": "Installation Guide",
+    "section": "Step 2: Add the Python and Jupyter extensions",
+    "text": "Step 2: Add the Python and Jupyter extensions\nWhere: VS Code\nWhy: Out of the box, VS Code doesn’t know Python or notebooks. Extensions are small add-ons that teach it.\nDo:\n\nClick the Extensions icon on the left side (four small squares).\nSearch for Python and click Install on the one by Microsoft.\nSearch for Jupyter and click Install on the one by Microsoft.\n\nCheck: Both extensions show “Installed” or a gear icon instead of an Install button.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#run-the-starter-script",
-    "href": "general/uv.html#run-the-starter-script",
-    "title": "Installing Python",
-    "section": "Run the starter script",
-    "text": "Run the starter script\nInside the project folder in your terminal:\nuv run python main.py\nYou should see a greeting with the name of your folder, for example for a folder called programming-course:\nHello from programming-course!\n(If you want, you can open main.py and change the message, then re-run.)\n\nWhat does that code mean?\ndef main():\n    print(\"Hello from programming-course!\")\n\nif __name__ == \"__main__\":\n    main()\n\ndef main(): defines a function (a reusable block of code).\nprint(...) shows text in the terminal.\nThe line if __name__ == \"__main__\": ensures this only auto-runs when the file is executed directly.\n\nDon’t worry about this yet, we’ll gradually build up to it.",
+    "objectID": "general/uv.html#step-3-create-your-course-folder",
+    "href": "general/uv.html#step-3-create-your-course-folder",
+    "title": "Installation Guide",
+    "section": "Step 3: Create your course folder",
+    "text": "Step 3: Create your course folder\nWhere: Finder (macOS) or File Explorer (Windows)\nWhy: Everything for this course lives in one folder. That keeps things tidy, and Python works best when each project has its own folder.\n\nmacOSWindows\n\n\nOpen Finder, go to your home folder (the one with the house icon) and create a new folder called programming-course.\n\n\nOpen File Explorer, go to C:\\Users\\YourName and create a new folder called programming-course.\nPlease don’t put it in a OneDrive folder. Syncing can break the setup.\n\n\n\nDo in VS Code: Click File → Open Folder…, select programming-course and click Open. If VS Code asks whether you trust the authors of the files, click Yes, I trust the authors.\nCheck: On the left side of VS Code, you see the name PROGRAMMING-COURSE at the top.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#add-notebooks-to-your-project",
-    "href": "general/uv.html#add-notebooks-to-your-project",
-    "title": "Installing Python",
-    "section": "Add notebooks to your project",
-    "text": "Add notebooks to your project\nThe tutorials are notebooks. Inside the project folder in your terminal, run the two commands from the introduction, one after the other:\nuv add --dev ipykernel\nuv add jupyter\nThe first command adds a kernel to the project, the second the Jupyter tools. Now notebooks can use the Python of your project.\nQuick check before you continue:\n\nYou have a folder for the course\nYou ran uv init inside the folder\nYou can see a file called pyproject.toml in the folder\nYou ran uv add --dev ipykernel and uv add jupyter",
+    "objectID": "general/uv.html#step-4-open-the-terminal",
+    "href": "general/uv.html#step-4-open-the-terminal",
+    "title": "Installation Guide",
+    "section": "Step 4: Open the terminal",
+    "text": "Step 4: Open the terminal\nWhere: VS Code\nWhy: The terminal is where you type commands. You type a command, press Enter, and the computer answers with text. We only need a few commands, and you can copy them from this page.\nDo: In the menu bar, click Terminal → New Terminal. A panel opens at the bottom of VS Code.\n\nmacOSWindows\n\n\nThe terminal shows a line ending with %. That’s where you type.\n\n\nThe terminal shows a line starting with PS and ending with &gt;. PS means PowerShell, which is exactly what we need. If you don’t see PS, click the small arrow next to the + in the terminal panel and choose PowerShell.\n\n\n\nGood to know:\n\nCopy a command from this page, paste it into the terminal and press Enter.\nPaste with Cmd + V (macOS) or Ctrl + V or a right-click (Windows).\nSome commands take a few seconds. Wait until the line with % or &gt; is back before typing the next one.\n\nCheck: You see a terminal at the bottom of VS Code, and its line mentions programming-course.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#download-a-tutorial-and-open-it",
-    "href": "general/uv.html#download-a-tutorial-and-open-it",
-    "title": "Installing Python",
-    "section": "Download a tutorial and open it",
-    "text": "Download a tutorial and open it\n\nOpen a tutorial on the website and select Jupyter on the right.\nSave the file to your course folder.\nOpen it in VS Code and select “Open with Jupyter Notebook”.\n\nThat was the hardest part. If something does not work, ask us.",
+    "objectID": "general/uv.html#step-5-install-uv",
+    "href": "general/uv.html#step-5-install-uv",
+    "title": "Installation Guide",
+    "section": "Step 5: Install uv",
+    "text": "Step 5: Install uv\nWhere: the terminal in VS Code\nWhy: uv is a helper that installs Python for you and keeps each project clean. You only install it once.\nDo: Copy the command for your system and press Enter.\n\nmacOSWindows\n\n\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n\n\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n\n\n\nNow close VS Code completely and open it again. This is important: only then does the terminal know the new tool. Open a new terminal again with Terminal → New Terminal.\nCheck: Type this and press Enter:\nuv --version\nYou should see something like uv 0.11.26. The exact number doesn’t matter.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#adding-packages-later-in-the-course",
-    "href": "general/uv.html#adding-packages-later-in-the-course",
-    "title": "Installing Python",
-    "section": "Adding packages (later in the course)",
-    "text": "Adding packages (later in the course)\nIf/when you need a package (example: pandas):\nuv add pandas\nIf you added the wrong one:\nuv remove pandas\nIf your pyproject.toml changed (e.g. you pulled code from someone else):\nuv sync\n\n\n\n\n\n\nIf something seems “off”, just close the terminal and reopen in the project folder. Fresh starts fix many early mistakes.",
+    "objectID": "general/uv.html#step-6-install-python",
+    "href": "general/uv.html#step-6-install-python",
+    "title": "Installation Guide",
+    "section": "Step 6: Install Python",
+    "text": "Step 6: Install Python\nWhere: the terminal in VS Code\nWhy: This installs the Python language itself. Everyone in the course uses the same version, so the code works the same for all.\nDo:\nuv python install 3.13\nCheck: The terminal says that Python 3.13 was installed, or that it is already installed. Both are fine.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#updating-uv",
-    "href": "general/uv.html#updating-uv",
-    "title": "Installing Python",
-    "section": "Updating uv",
-    "text": "Updating uv\nOccasionally:\nuv self update\n(If it ever errors, you can just reinstall using the same one-liner from earlier.)\n\n\n\n\n\n\nIf you installed uv with Homebrew on macOS, uv self update does not work. Update it with Homebrew instead:\nbrew upgrade uv",
+    "objectID": "general/uv.html#step-7-turn-your-folder-into-a-python-project",
+    "href": "general/uv.html#step-7-turn-your-folder-into-a-python-project",
+    "title": "Installation Guide",
+    "section": "Step 7: Turn your folder into a Python project",
+    "text": "Step 7: Turn your folder into a Python project\nWhere: the terminal in VS Code, inside programming-course\nWhy: This tells uv: “this folder is a Python project”. uv creates a few files it needs to keep track of things.\nDo: Run these two commands, one after the other:\nuv init\nuv python pin 3.13\nNew files appear on the left in VS Code. You don’t need to touch them:\n\nmain.py: a tiny example program\npyproject.toml: the list of what your project needs\n.python-version: which Python version the project uses\n\nCheck: Run the example program:\nuv run python main.py\nYou should see Hello from programming-course!. Congratulations, you just ran your first Python program!",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#best-practices-for-this-course",
-    "href": "general/uv.html#best-practices-for-this-course",
-    "title": "Installing Python",
-    "section": "Best practices for this course",
-    "text": "Best practices for this course\n\nOne folder for the course keeps everything tidy.\nNever install packages “globally” outside a project.\nKeep a short personal log in each project’s README.md (What did I do? What still confuses me?).\nAsk early for help, guessing usually takes much more time than asking.\n\nYou can always see available commands:\nuv --help",
+    "objectID": "general/uv.html#step-8-add-notebook-support",
+    "href": "general/uv.html#step-8-add-notebook-support",
+    "title": "Installation Guide",
+    "section": "Step 8: Add notebook support",
+    "text": "Step 8: Add notebook support\nWhere: the terminal in VS Code\nWhy: Notebooks need two extra helpers. The first one lets notebooks use the Python of your project, the second one adds the notebook tools.\nDo:\nuv add --dev ipykernel\nuv add jupyter\nCheck: The terminal lists a lot of installed packages and ends without an error. A new folder .venv appears on the left. That’s your project’s own Python environment.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
     ]
   },
   {
-    "objectID": "general/uv.html#recap",
-    "href": "general/uv.html#recap",
-    "title": "Installing Python",
-    "section": "Recap",
-    "text": "Recap\nYou can now: 1. Install uv. 2. Create a project. 3. Run a script. 4. Add notebooks to your project and open a tutorial. 5. Add/remove/sync packages.\nNow, you’re set to continue the course.",
+    "objectID": "general/uv.html#step-9-your-first-notebook",
+    "href": "general/uv.html#step-9-your-first-notebook",
+    "title": "Installation Guide",
+    "section": "Step 9: Your first notebook",
+    "text": "Step 9: Your first notebook\nWhere: VS Code\nWhy: This checks that everything works together, before you start with the tutorials.\nDo:\n\nPress Cmd + Shift + P (macOS) or Ctrl + Shift + P (Windows). A search bar opens at the top.\nType Create: New Jupyter Notebook and press Enter.\nClick Select Kernel in the top right corner. The kernel is the Python that runs your notebook.\nChoose Python Environments, then the one that says .venv and Python 3.13.\nClick into the first cell, type print(\"Hello\") and press Shift + Enter.\n\nCheck: Below the cell, you see Hello. Everything works!\nIf VS Code asks to install extensions at any point, click Install.",
     "crumbs": [
-      "Installation"
+      "Installation Guide"
+    ]
+  },
+  {
+    "objectID": "general/uv.html#step-10-open-a-tutorial",
+    "href": "general/uv.html#step-10-open-a-tutorial",
+    "title": "Installation Guide",
+    "section": "Step 10: Open a tutorial",
+    "text": "Step 10: Open a tutorial\nWhere: your web browser, then VS Code\nDo:\n\nOpen a tutorial on the course website.\nOn the right side under Other Formats, click Jupyter to download the notebook.\nMove the downloaded file into your programming-course folder.\nOpen it in VS Code by clicking it on the left.\nIf VS Code asks for a kernel, choose the same .venv with Python 3.13 as in Step 9.\n\nYou’re ready for the tutorials!",
+    "crumbs": [
+      "Installation Guide"
+    ]
+  },
+  {
+    "objectID": "general/uv.html#checklist",
+    "href": "general/uv.html#checklist",
+    "title": "Installation Guide",
+    "section": "Checklist",
+    "text": "Checklist\n\nVS Code is installed and opens\nThe Python and Jupyter extensions are installed\nYou have a folder programming-course and opened it in VS Code\nuv --version shows a version number\nuv run python main.py shows Hello from programming-course!\nA notebook cell with print(\"Hello\") shows Hello",
+    "crumbs": [
+      "Installation Guide"
+    ]
+  },
+  {
+    "objectID": "general/uv.html#every-next-session",
+    "href": "general/uv.html#every-next-session",
+    "title": "Installation Guide",
+    "section": "Every next session",
+    "text": "Every next session\nYou don’t need to install anything again. Just:\n\nOpen VS Code.\nClick File → Open Recent → programming-course.\nOpen the notebook you want to work on.",
+    "crumbs": [
+      "Installation Guide"
+    ]
+  },
+  {
+    "objectID": "general/uv.html#something-doesnt-work",
+    "href": "general/uv.html#something-doesnt-work",
+    "title": "Installation Guide",
+    "section": "Something doesn’t work?",
+    "text": "Something doesn’t work?\n\n\n\n\n\n\n\nProblem\nWhat to do\n\n\n\n\nuv is “not found” or “not recognized”\nClose VS Code completely and open it again. On Windows, check that the terminal says PS.\n\n\nWindows says scripts are disabled\nRun Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process, then repeat Step 5.\n\n\n.venv doesn’t appear under Select Kernel\nPress Cmd/Ctrl + Shift + P, type Developer: Reload Window, press Enter, try again.\n\n\nThe notebook shows a different Python than 3.13\nClick on the kernel name in the top right and choose the .venv one.\n\n\nuv self update fails on a Mac\nIf you installed uv with Homebrew, use brew upgrade uv instead.\n\n\nAnything else\nAsk us! Guessing usually takes longer than asking.",
+    "crumbs": [
+      "Installation Guide"
+    ]
+  },
+  {
+    "objectID": "general/uv.html#later-in-the-course-adding-packages",
+    "href": "general/uv.html#later-in-the-course-adding-packages",
+    "title": "Installation Guide",
+    "section": "Later in the course: adding packages",
+    "text": "Later in the course: adding packages\nSometimes a tutorial needs an extra package, for example pandas. Then run this in the terminal of your course folder:\nuv add pandas",
+    "crumbs": [
+      "Installation Guide"
     ]
   },
   {
@@ -4373,55 +4423,110 @@
     ]
   },
   {
+    "objectID": "lectures/lec_00_introduction.html#vs-code-is-where-you-write-code",
+    "href": "lectures/lec_00_introduction.html#vs-code-is-where-you-write-code",
+    "title": "Introduction",
+    "section": "VS Code is where you write code",
+    "text": "VS Code is where you write code\n\nLike Word for text, but for code: an app to write, run and find mistakes in code\nApps like this are called IDEs (Integrated Development Environments)\nWe use VS Code for the whole course\n\n\nNotes\nOther IDEs exist, for example PyCharm or Zed. We use VS Code because it is free, works on all systems and has good notebook support. Every step of the setup is in the Installation Guide on the website, with a check at the end of each step.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Introduction"
+    ]
+  },
+  {
     "objectID": "lectures/lec_00_introduction.html#install-vs-code",
     "href": "lectures/lec_00_introduction.html#install-vs-code",
     "title": "Introduction",
     "section": "Install VS Code",
-    "text": "Install VS Code\n\nDownload and install from the website, for Windows, Linux and Mac\nAdd the Python and Jupyter extensions\n\n\nNotes\nUnsure how to work with VS Code and notebooks? Ask us, we are happy to help you out.",
+    "text": "Install VS Code\n\nDownload from code.visualstudio.com, for Windows and Mac\nOpen it once: you should see a welcome page\n\n\n\n\n\n\n\nEvery step is in the Installation Guide, with a check at the end.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#vs-code-is-an-ide",
-    "href": "lectures/lec_00_introduction.html#vs-code-is-an-ide",
+    "objectID": "lectures/lec_00_introduction.html#add-the-python-and-jupyter-extensions",
+    "href": "lectures/lec_00_introduction.html#add-the-python-and-jupyter-extensions",
     "title": "Introduction",
-    "section": "VS Code is an IDE",
-    "text": "VS Code is an IDE\n\nIDE = Integrated Development Environment, an app to write, run and debug code\nOther IDEs: PyCharm, Zed",
+    "section": "Add the Python and Jupyter extensions",
+    "text": "Add the Python and Jupyter extensions\n\nOut of the box, VS Code doesn’t know Python. Extensions teach it\nClick the Extensions icon on the left (four small squares)\nInstall Python and Jupyter, both by Microsoft",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#install-python-with-uv",
-    "href": "lectures/lec_00_introduction.html#install-python-with-uv",
+    "objectID": "lectures/lec_00_introduction.html#create-your-course-folder",
+    "href": "lectures/lec_00_introduction.html#create-your-course-folder",
     "title": "Introduction",
-    "section": "Install Python with uv",
-    "text": "Install Python with uv\n\nuv installs Python and manages packages for us\nIt works on Windows, Mac and Linux\nNow we all go here and install uv and Python\n\n\n\n\n\n\n\nIf the installation does not work, let us know!",
+    "section": "Create your course folder",
+    "text": "Create your course folder\n\nOne folder for everything, called programming-course\nIn your home folder, not in OneDrive\nIn VS Code: File → Open Folder… and select it\n\n\nNotes\nPython works best when each project has its own folder. OneDrive syncing can break the setup on Windows.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#quick-check",
-    "href": "lectures/lec_00_introduction.html#quick-check",
+    "objectID": "lectures/lec_00_introduction.html#the-terminal-typing-instead-of-clicking",
+    "href": "lectures/lec_00_introduction.html#the-terminal-typing-instead-of-clicking",
     "title": "Introduction",
-    "section": "Quick check",
-    "text": "Quick check\n\nYou have a folder for the course\nYou ran uv init inside the folder\nYou can see a file called pyproject.toml in the folder\n\n\n\n\n\n\n\nSomething not working yet? Ask us!",
+    "section": "The terminal: typing instead of clicking",
+    "text": "The terminal: typing instead of clicking\n\nA window where you type commands and the computer answers with text\nOpen it in VS Code: Terminal → New Terminal\nCopy a command from the guide, paste it, press Enter, wait until the line is back\n\n\nNotes\nOn a Mac the line ends with a percent sign, on Windows it starts with PS for PowerShell. We only need a handful of commands, all of them are on the guide page to copy.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#add-notebooks-to-your-project",
-    "href": "lectures/lec_00_introduction.html#add-notebooks-to-your-project",
+    "objectID": "lectures/lec_00_introduction.html#install-uv",
+    "href": "lectures/lec_00_introduction.html#install-uv",
     "title": "Introduction",
-    "section": "Add notebooks to your project",
-    "text": "Add notebooks to your project\n\nRun uv add --dev ipykernel in your terminal\nThen run uv add jupyter\nNow notebooks can use the Python of your project\n\n\nNotes\nThe first command adds a kernel to the project, the second the Jupyter tools. Done? Perfect, now we can start.",
+    "section": "Install uv",
+    "text": "Install uv\n\nuv installs Python and everything Python needs, you install it once\n\nmacOS:\ncurl -LsSf https://astral.sh/uv/install.sh | sh\nWindows:\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\nThen close VS Code completely, open it again, and check: uv --version\n\nNotes\nClosing and reopening is important: only then does the terminal know the new tool. If uv is “not found”, that is almost always the reason.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_00_introduction.html#install-python",
+    "href": "lectures/lec_00_introduction.html#install-python",
+    "title": "Introduction",
+    "section": "Install Python",
+    "text": "Install Python\n\nEveryone uses the same version, so the code works the same for all\n\nuv python install 3.13\n\n\n\n\n\n\nIf the installation does not work, let us know!",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_00_introduction.html#turn-your-folder-into-a-python-project",
+    "href": "lectures/lec_00_introduction.html#turn-your-folder-into-a-python-project",
+    "title": "Introduction",
+    "section": "Turn your folder into a Python project",
+    "text": "Turn your folder into a Python project\nIn the terminal, inside programming-course, one after the other:\nuv init\nuv python pin 3.13\nCheck: uv run python main.py prints Hello from programming-course!\n\nNotes\nuv creates a few files: main.py, pyproject.toml and .python-version. Nobody needs to touch them.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_00_introduction.html#add-notebook-support",
+    "href": "lectures/lec_00_introduction.html#add-notebook-support",
+    "title": "Introduction",
+    "section": "Add notebook support",
+    "text": "Add notebook support\nuv add --dev ipykernel\nuv add jupyter\n\nThe first lets notebooks use the Python of your project, the second adds the notebook tools\n\n\nNotes\nA new folder .venv appears: the project’s own Python environment. Done? Perfect, now we can start.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_00_introduction.html#your-first-notebook",
+    "href": "lectures/lec_00_introduction.html#your-first-notebook",
+    "title": "Introduction",
+    "section": "Your first notebook",
+    "text": "Your first notebook\n\nCmd + Shift + P (Mac) or Ctrl + Shift + P (Windows), then Create: New Jupyter Notebook\nSelect Kernel in the top right: .venv with Python 3.13\nType print(\"Hello\") and press Shift + Enter\n\n\n\n\n\n\n\nSomething not working yet? Ask us, or see “Something doesn’t work?” in the guide.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
@@ -4432,7 +4537,7 @@
     "href": "lectures/lec_00_introduction.html#download-a-tutorial-and-open-it",
     "title": "Introduction",
     "section": "Download a tutorial and open it",
-    "text": "Download a tutorial and open it\n\nOpen a tutorial on the website and select Jupyter on the right\nSave the file to your course folder\nOpen it in VS Code and select “Open with Jupyter Notebook”\n\n\n\n\n\n\n\nThat was the hardest part today!",
+    "text": "Download a tutorial and open it\n\nOpen a tutorial on the website and click Jupyter under Other Formats\nMove the file into programming-course\nOpen it in VS Code and choose the .venv kernel\n\n\n\n\n\n\n\nThat was the hardest part today!",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
@@ -4650,46 +4755,81 @@
     "text": "Roadmap\n\n\nAbout this course: topics, format and how you pass\nHow to learn programming\nSetting up Python"
   },
   {
+    "objectID": "lectures/lec_00_presentation.html#vs-code-is-where-you-write-code",
+    "href": "lectures/lec_00_presentation.html#vs-code-is-where-you-write-code",
+    "title": "Introduction",
+    "section": "VS Code is where you write code",
+    "text": "VS Code is where you write code\n\nLike Word for text, but for code: an app to write, run and find mistakes in code\nApps like this are called IDEs (Integrated Development Environments)\nWe use VS Code for the whole course\n\n\nOther IDEs exist, for example PyCharm or Zed. We use VS Code because it is free, works on all systems and has good notebook support. Every step of the setup is in the Installation Guide on the website, with a check at the end of each step."
+  },
+  {
     "objectID": "lectures/lec_00_presentation.html#install-vs-code",
     "href": "lectures/lec_00_presentation.html#install-vs-code",
     "title": "Introduction",
     "section": "Install VS Code",
-    "text": "Install VS Code\n\nDownload and install from the website, for Windows, Linux and Mac\nAdd the Python and Jupyter extensions\n\n\nUnsure how to work with VS Code and notebooks? Ask us, we are happy to help you out."
+    "text": "Install VS Code\n\nDownload from code.visualstudio.com, for Windows and Mac\nOpen it once: you should see a welcome page\n\n\n\n\n\n\n\n\nEvery step is in the Installation Guide, with a check at the end."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#vs-code-is-an-ide",
-    "href": "lectures/lec_00_presentation.html#vs-code-is-an-ide",
+    "objectID": "lectures/lec_00_presentation.html#add-the-python-and-jupyter-extensions",
+    "href": "lectures/lec_00_presentation.html#add-the-python-and-jupyter-extensions",
     "title": "Introduction",
-    "section": "VS Code is an IDE",
-    "text": "VS Code is an IDE\n\nIDE = Integrated Development Environment, an app to write, run and debug code\nOther IDEs: PyCharm, Zed"
+    "section": "Add the Python and Jupyter extensions",
+    "text": "Add the Python and Jupyter extensions\n\nOut of the box, VS Code doesn’t know Python. Extensions teach it\nClick the Extensions icon on the left (four small squares)\nInstall Python and Jupyter, both by Microsoft"
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#install-python-with-uv",
-    "href": "lectures/lec_00_presentation.html#install-python-with-uv",
+    "objectID": "lectures/lec_00_presentation.html#create-your-course-folder",
+    "href": "lectures/lec_00_presentation.html#create-your-course-folder",
     "title": "Introduction",
-    "section": "Install Python with uv",
-    "text": "Install Python with uv\n\nuv installs Python and manages packages for us\nIt works on Windows, Mac and Linux\nNow we all go here and install uv and Python\n\n\n\n\n\n\n\n\nIf the installation does not work, let us know!"
+    "section": "Create your course folder",
+    "text": "Create your course folder\n\nOne folder for everything, called programming-course\nIn your home folder, not in OneDrive\nIn VS Code: File → Open Folder… and select it\n\n\nPython works best when each project has its own folder. OneDrive syncing can break the setup on Windows."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#quick-check",
-    "href": "lectures/lec_00_presentation.html#quick-check",
+    "objectID": "lectures/lec_00_presentation.html#the-terminal-typing-instead-of-clicking",
+    "href": "lectures/lec_00_presentation.html#the-terminal-typing-instead-of-clicking",
     "title": "Introduction",
-    "section": "Quick check",
-    "text": "Quick check\n\nYou have a folder for the course\nYou ran uv init inside the folder\nYou can see a file called pyproject.toml in the folder\n\n\n\n\n\n\n\n\nSomething not working yet? Ask us!"
+    "section": "The terminal: typing instead of clicking",
+    "text": "The terminal: typing instead of clicking\n\nA window where you type commands and the computer answers with text\nOpen it in VS Code: Terminal → New Terminal\nCopy a command from the guide, paste it, press Enter, wait until the line is back\n\n\nOn a Mac the line ends with a percent sign, on Windows it starts with PS for PowerShell. We only need a handful of commands, all of them are on the guide page to copy."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#add-notebooks-to-your-project",
-    "href": "lectures/lec_00_presentation.html#add-notebooks-to-your-project",
+    "objectID": "lectures/lec_00_presentation.html#install-uv",
+    "href": "lectures/lec_00_presentation.html#install-uv",
     "title": "Introduction",
-    "section": "Add notebooks to your project",
-    "text": "Add notebooks to your project\n\nRun uv add --dev ipykernel in your terminal\nThen run uv add jupyter\nNow notebooks can use the Python of your project\n\n\nThe first command adds a kernel to the project, the second the Jupyter tools. Done? Perfect, now we can start."
+    "section": "Install uv",
+    "text": "Install uv\n\nuv installs Python and everything Python needs, you install it once\n\nmacOS:\ncurl -LsSf https://astral.sh/uv/install.sh | sh\nWindows:\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n\nThen close VS Code completely, open it again, and check: uv --version\n\nClosing and reopening is important: only then does the terminal know the new tool. If uv is “not found”, that is almost always the reason."
+  },
+  {
+    "objectID": "lectures/lec_00_presentation.html#install-python",
+    "href": "lectures/lec_00_presentation.html#install-python",
+    "title": "Introduction",
+    "section": "Install Python",
+    "text": "Install Python\n\nEveryone uses the same version, so the code works the same for all\n\nuv python install 3.13\n\n\n\n\n\n\n\nIf the installation does not work, let us know!"
+  },
+  {
+    "objectID": "lectures/lec_00_presentation.html#turn-your-folder-into-a-python-project",
+    "href": "lectures/lec_00_presentation.html#turn-your-folder-into-a-python-project",
+    "title": "Introduction",
+    "section": "Turn your folder into a Python project",
+    "text": "Turn your folder into a Python project\nIn the terminal, inside programming-course, one after the other:\nuv init\nuv python pin 3.13\n\nCheck: uv run python main.py prints Hello from programming-course!\n\nuv creates a few files: main.py, pyproject.toml and .python-version. Nobody needs to touch them."
+  },
+  {
+    "objectID": "lectures/lec_00_presentation.html#add-notebook-support",
+    "href": "lectures/lec_00_presentation.html#add-notebook-support",
+    "title": "Introduction",
+    "section": "Add notebook support",
+    "text": "Add notebook support\nuv add --dev ipykernel\nuv add jupyter\n\nThe first lets notebooks use the Python of your project, the second adds the notebook tools\n\n\nA new folder .venv appears: the project’s own Python environment. Done? Perfect, now we can start."
+  },
+  {
+    "objectID": "lectures/lec_00_presentation.html#your-first-notebook",
+    "href": "lectures/lec_00_presentation.html#your-first-notebook",
+    "title": "Introduction",
+    "section": "Your first notebook",
+    "text": "Your first notebook\n\nCmd + Shift + P (Mac) or Ctrl + Shift + P (Windows), then Create: New Jupyter Notebook\nSelect Kernel in the top right: .venv with Python 3.13\nType print(\"Hello\") and press Shift + Enter\n\n\n\n\n\n\n\n\nSomething not working yet? Ask us, or see “Something doesn’t work?” in the guide."
   },
   {
     "objectID": "lectures/lec_00_presentation.html#download-a-tutorial-and-open-it",
     "href": "lectures/lec_00_presentation.html#download-a-tutorial-and-open-it",
     "title": "Introduction",
     "section": "Download a tutorial and open it",
-    "text": "Download a tutorial and open it\n\nOpen a tutorial on the website and select Jupyter on the right\nSave the file to your course folder\nOpen it in VS Code and select “Open with Jupyter Notebook”\n\n\n\n\n\n\n\n\nThat was the hardest part today!"
+    "text": "Download a tutorial and open it\n\nOpen a tutorial on the website and click Jupyter under Other Formats\nMove the file into programming-course\nOpen it in VS Code and choose the .venv kernel\n\n\n\n\n\n\n\n\nThat was the hardest part today!"
   },
   {
     "objectID": "lectures/lec_00_presentation.html#what-we-covered",
