@@ -24,41 +24,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -80,9 +45,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e4a2caf7c18c942dede446ff828dd770.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-25060728d2783121a9f548b747010ca7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bbfa66a15a9fc65feba28109ac4ae0e4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-729440c607630a9e936cbfb342dc1451.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bbfa66a15a9fc65feba28109ac4ae0e4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -420,16 +385,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#roadmap-2" id="toc-roadmap-2" class="nav-link" data-scroll-target="#roadmap-2">Roadmap</a></li>
   <li><a href="#vs-code-is-where-you-write-code" id="toc-vs-code-is-where-you-write-code" class="nav-link" data-scroll-target="#vs-code-is-where-you-write-code">VS Code is where you write code</a></li>
-  <li><a href="#install-vs-code" id="toc-install-vs-code" class="nav-link" data-scroll-target="#install-vs-code">Install VS Code</a></li>
-  <li><a href="#add-the-python-and-jupyter-extensions" id="toc-add-the-python-and-jupyter-extensions" class="nav-link" data-scroll-target="#add-the-python-and-jupyter-extensions">Add the Python and Jupyter extensions</a></li>
-  <li><a href="#create-your-course-folder" id="toc-create-your-course-folder" class="nav-link" data-scroll-target="#create-your-course-folder">Create your course folder</a></li>
   <li><a href="#the-terminal-typing-instead-of-clicking" id="toc-the-terminal-typing-instead-of-clicking" class="nav-link" data-scroll-target="#the-terminal-typing-instead-of-clicking">The terminal: typing instead of clicking</a></li>
-  <li><a href="#install-uv" id="toc-install-uv" class="nav-link" data-scroll-target="#install-uv">Install <code>uv</code></a></li>
-  <li><a href="#install-python" id="toc-install-python" class="nav-link" data-scroll-target="#install-python">Install Python</a></li>
-  <li><a href="#turn-your-folder-into-a-python-project" id="toc-turn-your-folder-into-a-python-project" class="nav-link" data-scroll-target="#turn-your-folder-into-a-python-project">Turn your folder into a Python project</a></li>
-  <li><a href="#add-notebook-support" id="toc-add-notebook-support" class="nav-link" data-scroll-target="#add-notebook-support">Add notebook support</a></li>
-  <li><a href="#your-first-notebook" id="toc-your-first-notebook" class="nav-link" data-scroll-target="#your-first-notebook">Your first notebook</a></li>
-  <li><a href="#download-a-tutorial-and-open-it" id="toc-download-a-tutorial-and-open-it" class="nav-link" data-scroll-target="#download-a-tutorial-and-open-it">Download a tutorial and open it</a></li>
+  <li><a href="#uv-installs-python-for-us" id="toc-uv-installs-python-for-us" class="nav-link" data-scroll-target="#uv-installs-python-for-us"><code>uv</code> installs Python for us</a></li>
+  <li><a href="#notebooks-mix-text-and-code" id="toc-notebooks-mix-text-and-code" class="nav-link" data-scroll-target="#notebooks-mix-text-and-code">Notebooks mix text and code</a></li>
+  <li><a href="#now-we-install-together" id="toc-now-we-install-together" class="nav-link" data-scroll-target="#now-we-install-together">Now we install together</a></li>
+  <li><a href="#checkpoint-1-vs-code-is-open-with-both-extensions" id="toc-checkpoint-1-vs-code-is-open-with-both-extensions" class="nav-link" data-scroll-target="#checkpoint-1-vs-code-is-open-with-both-extensions">Checkpoint 1: VS Code is open with both extensions</a></li>
+  <li><a href="#checkpoint-2-the-terminal-shows-a-version-number-for-uv" id="toc-checkpoint-2-the-terminal-shows-a-version-number-for-uv" class="nav-link" data-scroll-target="#checkpoint-2-the-terminal-shows-a-version-number-for-uv">Checkpoint 2: The terminal shows a version number for <code>uv</code></a></li>
+  <li><a href="#checkpoint-3-you-see-hello-from-programming-course" id="toc-checkpoint-3-you-see-hello-from-programming-course" class="nav-link" data-scroll-target="#checkpoint-3-you-see-hello-from-programming-course">Checkpoint 3: You see Hello from programming-course!</a></li>
+  <li><a href="#checkpoint-4-your-first-notebook-shows-hello" id="toc-checkpoint-4-your-first-notebook-shows-hello" class="nav-link" data-scroll-target="#checkpoint-4-your-first-notebook-shows-hello">Checkpoint 4: Your first notebook shows Hello</a></li>
   <li><a href="#what-we-covered" id="toc-what-we-covered" class="nav-link" data-scroll-target="#what-we-covered">What we covered</a></li>
   <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters">Why it matters</a></li>
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
@@ -686,144 +649,110 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Other IDEs exist, for example PyCharm or Zed. We use VS Code because it is free, works on all systems and has good notebook support. Every step of the setup is in the Installation Guide on the website, with a check at the end of each step.</p>
 </div>
 </section>
-<section id="install-vs-code" class="level2">
-<h2 class="anchored" data-anchor-id="install-vs-code">Install VS Code</h2>
-<ul>
-<li>Download from <a href="https://code.visualstudio.com/">code.visualstudio.com</a>, for <strong>Windows and Mac</strong></li>
-<li>Open it once: you should see a <strong>welcome page</strong></li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Every step is in the <a href="../general/uv.html">Installation Guide</a>, with a check at the end.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="add-the-python-and-jupyter-extensions" class="level2">
-<h2 class="anchored" data-anchor-id="add-the-python-and-jupyter-extensions">Add the Python and Jupyter extensions</h2>
-<ul>
-<li>Out of the box, VS Code doesn’t know Python. Extensions <strong>teach it</strong></li>
-<li>Click the <strong>Extensions</strong> icon on the left (four small squares)</li>
-<li>Install <strong>Python</strong> and <strong>Jupyter</strong>, both by Microsoft</li>
-</ul>
-</section>
-<section id="create-your-course-folder" class="level2">
-<h2 class="anchored" data-anchor-id="create-your-course-folder">Create your course folder</h2>
-<ul>
-<li>One folder for everything, called <code>programming-course</code></li>
-<li>In your <strong>home folder</strong>, not in OneDrive</li>
-<li>In VS Code: <strong>File → Open Folder…</strong> and select it</li>
-</ul>
-<div class="lecture-notes">
-<p><span class="eyebrow">Notes</span></p>
-<p>Python works best when each project has its own folder. OneDrive syncing can break the setup on Windows.</p>
-</div>
-</section>
 <section id="the-terminal-typing-instead-of-clicking" class="level2">
 <h2 class="anchored" data-anchor-id="the-terminal-typing-instead-of-clicking">The terminal: typing instead of clicking</h2>
 <ul>
-<li>A window where you <strong>type commands</strong> and the computer answers with text</li>
-<li>Open it in VS Code: <strong>Terminal → New Terminal</strong></li>
-<li>Copy a command from the guide, paste it, press <strong>Enter</strong>, wait until the line is back</li>
+<li>A window where you <strong>type a command</strong>, press Enter, and the computer <strong>answers with text</strong></li>
+<li>No menus, no buttons: the computer does exactly what you typed</li>
+<li>We need it only for the <strong>setup</strong>: a handful of commands, all in the guide to copy</li>
 </ul>
 <div class="lecture-notes">
 <p><span class="eyebrow">Notes</span></p>
-<p>On a Mac the line ends with a percent sign, on Windows it starts with PS for PowerShell. We only need a handful of commands, all of them are on the guide page to copy.</p>
+<p>The terminal lives inside VS Code, as a panel at the bottom. On a Mac the line ends with a percent sign, on Windows it starts with PS for PowerShell. Nobody needs to memorise commands: during the setup, you copy them from the guide, paste them and wait until the line is back.</p>
 </div>
 </section>
-<section id="install-uv" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="install-uv">Install <code>uv</code></h2>
+<section id="uv-installs-python-for-us" class="level2">
+<h2 class="anchored" data-anchor-id="uv-installs-python-for-us"><code>uv</code> installs Python for us</h2>
 <ul>
-<li><code>uv</code> installs Python and everything Python needs, you install it <strong>once</strong></li>
+<li><code>uv</code> is a small <strong>helper tool</strong>: it installs Python and everything Python needs</li>
+<li>Everyone gets the <strong>same Python version</strong>, so code works the same on every laptop</li>
+<li>You install <code>uv</code> <strong>once</strong>, then it does the rest for you</li>
 </ul>
-<p><strong>macOS:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Windows:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>powershell <span class="op">-</span>ExecutionPolicy ByPass <span class="op">-</span>c <span class="st">"irm https://astral.sh/uv/install.ps1 | iex"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then <strong>close VS Code completely</strong>, open it again, and check: <code>uv --version</code></p>
 <div class="lecture-notes">
 <p><span class="eyebrow">Notes</span></p>
-<p>Closing and reopening is important: only then does the terminal know the new tool. If uv is “not found”, that is almost always the reason.</p>
+<p>Without a tool like uv, every laptop ends up with a slightly different Python, and we would spend the tutorials fixing setups instead of programming. uv also keeps each project in its own folder with its own packages, so nothing gets mixed up.</p>
 </div>
 </section>
-<section id="install-python" class="level2">
-<h2 class="anchored" data-anchor-id="install-python">Install Python</h2>
+<section id="notebooks-mix-text-and-code" class="level2">
+<h2 class="anchored" data-anchor-id="notebooks-mix-text-and-code">Notebooks mix text and code</h2>
 <ul>
-<li>Everyone uses the <strong>same version</strong>, so the code works the same for all</li>
+<li>A notebook is a document with <strong>text cells</strong> and <strong>code cells</strong></li>
+<li>You run a code cell, and the result appears <strong>right below it</strong></li>
+<li>All tutorials are notebooks: <strong>read, run, change, try again</strong></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python install 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="lecture-notes">
+<p><span class="eyebrow">Notes</span></p>
+<p>Notebooks are ideal for learning: you see a short explanation, run a few lines, and immediately see what happens. VS Code opens them with the Jupyter extension. The tutorials on the website can be downloaded as notebooks under “Other Formats”.</p>
+</div>
+</section>
+<section id="now-we-install-together" class="level2">
+<h2 class="anchored" data-anchor-id="now-we-install-together">Now we install together</h2>
+<p>Every step, every command, every click is in the guide:</p>
+<p><a href="../general/uv.html" class="guide-link"><strong>courses.nilsroemer.com/general/uv.html</strong></a></p>
+<div class="columns">
+<div class="column" style="width:62%;">
+<ul>
+<li>Follow the steps <strong>in order</strong>, don’t skip any</li>
+<li>After each step: a small <strong>check</strong></li>
+<li>We stop at four <strong>checkpoints</strong> and compare</li>
+</ul>
+</div><div class="column" style="width:38%;">
+<p><img src="../images/qr-installation-guide.svg" class="img-fluid" alt="QR code linking to the Installation Guide" width="250"></p>
+</div>
+</div>
+<div class="lecture-notes">
+<p><span class="eyebrow">Notes</span></p>
+<p>Open the guide now on your laptop, or scan the QR code with your phone. We go through the guide step by step and stop at the checkpoints. If you get stuck, raise your hand, and we help you before moving on.</p>
+</div>
+</section>
+<section id="checkpoint-1-vs-code-is-open-with-both-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-1-vs-code-is-open-with-both-extensions">Checkpoint 1: VS Code is open with both extensions</h2>
+<ul>
+<li>VS Code shows its <strong>welcome page</strong></li>
+<li>Under <strong>Extensions</strong>, both <strong>Python</strong> and <strong>Jupyter</strong> say “Installed”</li>
+</ul>
+<p><a href="../general/uv.html#step-1-install-vs-code" class="guide-ref">Guide: Steps 1 and 2</a></p>
+</section>
+<section id="checkpoint-2-the-terminal-shows-a-version-number-for-uv" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-2-the-terminal-shows-a-version-number-for-uv">Checkpoint 2: The terminal shows a version number for <code>uv</code></h2>
+<ul>
+<li>Your folder <code>programming-course</code> is open in VS Code</li>
+<li>A terminal is open at the bottom, and it answers to <code>uv</code> with a line like <code>uv 0.11.26</code></li>
+</ul>
+<p><a href="../general/uv.html#step-3-create-your-course-folder" class="guide-ref">Guide: Steps 3 to 5</a></p>
+<div class="lecture-notes">
+<p><span class="eyebrow">Notes</span></p>
+<p>Most common problem here: uv is “not found”. Almost always, VS Code was not closed and reopened after the installation.</p>
+</div>
+</section>
+<section id="checkpoint-3-you-see-hello-from-programming-course" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-3-you-see-hello-from-programming-course">Checkpoint 3: You see Hello from programming-course!</h2>
+<ul>
+<li>Python 3.13 is installed</li>
+<li>Your folder is a Python project, and the example program prints <code>Hello from programming-course!</code></li>
+</ul>
+<p><a href="../general/uv.html#step-6-install-python" class="guide-ref">Guide: Steps 6 and 7</a></p>
+</section>
+<section id="checkpoint-4-your-first-notebook-shows-hello" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint-4-your-first-notebook-shows-hello">Checkpoint 4: Your first notebook shows Hello</h2>
+<ul>
+<li>The notebook uses the <strong>.venv</strong> kernel with <strong>Python 3.13</strong></li>
+<li>Below the cell with <code>print("Hello")</code>, you see <code>Hello</code></li>
+</ul>
+<p><a href="../general/uv.html#step-8-add-notebook-support" class="guide-ref">Guide: Steps 8 and 9</a></p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>If the installation does not work, <strong>let us know!</strong></p>
+<p>That was the hardest part today! Step 10 of the guide: open a tutorial as a notebook.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="turn-your-folder-into-a-python-project" class="level2">
-<h2 class="anchored" data-anchor-id="turn-your-folder-into-a-python-project">Turn your folder into a Python project</h2>
-<p>In the terminal, inside <code>programming-course</code>, one after the other:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python pin 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Check:</strong> <code>uv run python main.py</code> prints <code>Hello from programming-course!</code></p>
 <div class="lecture-notes">
 <p><span class="eyebrow">Notes</span></p>
-<p>uv creates a few files: main.py, pyproject.toml and .python-version. Nobody needs to touch them.</p>
-</div>
-</section>
-<section id="add-notebook-support" class="level2">
-<h2 class="anchored" data-anchor-id="add-notebook-support">Add notebook support</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="at">--dev</span> ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>The first lets notebooks use <strong>the Python of your project</strong>, the second adds the <strong>notebook tools</strong></li>
-</ul>
-<div class="lecture-notes">
-<p><span class="eyebrow">Notes</span></p>
-<p>A new folder .venv appears: the project’s own Python environment. Done? Perfect, now we can start.</p>
-</div>
-</section>
-<section id="your-first-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="your-first-notebook">Your first notebook</h2>
-<ul>
-<li><strong>Cmd + Shift + P</strong> (Mac) or <strong>Ctrl + Shift + P</strong> (Windows), then <code>Create: New Jupyter Notebook</code></li>
-<li><strong>Select Kernel</strong> in the top right: <strong>.venv</strong> with <strong>Python 3.13</strong></li>
-<li>Type <code>print("Hello")</code> and press <strong>Shift + Enter</strong></li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Something not working yet? Ask us, or see “Something doesn’t work?” in the guide.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="download-a-tutorial-and-open-it" class="level2">
-<h2 class="anchored" data-anchor-id="download-a-tutorial-and-open-it">Download a tutorial and open it</h2>
-<ul>
-<li>Open a tutorial on the website and click <strong>Jupyter</strong> under <strong>Other Formats</strong></li>
-<li>Move the file into <code>programming-course</code></li>
-<li>Open it in VS Code and choose the <strong>.venv</strong> kernel</li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>That was the hardest part today!</p>
-</div>
-</div>
+<p>If the .venv kernel does not show up, reloading the VS Code window usually fixes it; the “Something doesn’t work?” table in the guide has the details. Whoever is done can already download the first tutorial, Step 10 in the guide.</p>
 </div>
 </section>
 <section id="what-we-covered" class="level2 lecture-closing">
@@ -839,7 +768,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="covered-item">
 <p><span class="eyebrow">Setting up Python</span></p>
-<p>Your laptop is ready: VS Code, Python with uv and notebooks.</p>
+<p>Your laptop is ready: VS Code, Python installed with uv, and notebooks. Every step is in the Installation Guide.</p>
 </div>
 </div>
 </section>

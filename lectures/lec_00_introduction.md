@@ -139,108 +139,67 @@ We will mostly **not cover Python during the lectures!**
 - Apps like this are called <span class="highlight">IDEs</span> (Integrated Development Environments)
 - We use VS Code for the **whole course**
 
-## Install VS Code
-
-- Download from [code.visualstudio.com](https://code.visualstudio.com/), for **Windows and Mac**
-- Open it once: you should see a **welcome page**
-
-> **Tip**
->
-> Every step is in the [Installation Guide](../general/uv.qmd), with a check at the end.
-
-## Add the Python and Jupyter extensions
-
-- Out of the box, VS Code doesn't know Python. Extensions **teach it**
-- Click the **Extensions** icon on the left (four small squares)
-- Install **Python** and **Jupyter**, both by Microsoft
-
-## Create your course folder
-
-- One folder for everything, called `programming-course`
-- In your **home folder**, not in OneDrive
-- In VS Code: **File → Open Folder...** and select it
-
 ## The terminal: typing instead of clicking
 
-- A window where you **type commands** and the computer answers with text
-- Open it in VS Code: **Terminal → New Terminal**
-- Copy a command from the guide, paste it, press **Enter**, wait until the line is back
+- A window where you **type a command**, press Enter, and the computer **answers with text**
+- No menus, no buttons: the computer does exactly what you typed
+- We need it only for the **setup**: a handful of commands, all in the guide to copy
 
-## Install `uv`
+## `uv` installs Python for us
 
-- `uv` installs Python and everything Python needs, you install it **once**
+- `uv` is a small **helper tool**: it installs Python and everything Python needs
+- Everyone gets the **same Python version**, so code works the same on every laptop
+- You install `uv` **once**, then it does the rest for you
 
-**macOS:**
+## Notebooks mix text and code
 
-``` bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
+- A notebook is a document with **text cells** and **code cells**
+- You run a code cell, and the result appears **right below it**
+- All tutorials are notebooks: **read, run, change, try again**
 
-**Windows:**
+## Now we install together
 
-``` powershell
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-```
+Every step, every command, every click is in the guide:
 
-Then **close VS Code completely**, open it again, and check: `uv --version`
+<a href="../general/uv.qmd" class="guide-link"><strong>courses.nilsroemer.com/general/uv.html</strong></a>
 
-## Install Python
+- Follow the steps **in order**, don't skip any
+- After each step: a small **check**
+- We stop at four **checkpoints** and compare
 
-- Everyone uses the **same version**, so the code works the same for all
+<img src="../images/qr-installation-guide.svg" data-fig-alt="QR code linking to the Installation Guide" width="250" />
 
-``` bash
-uv python install 3.13
-```
+## Checkpoint 1: VS Code is open with both extensions
 
-> **Tip**
->
-> If the installation does not work, **let us know!**
+- VS Code shows its **welcome page**
+- Under **Extensions**, both **Python** and **Jupyter** say "Installed"
 
-## Turn your folder into a Python project
+<a href="../general/uv.qmd#step-1-install-vs-code" class="guide-ref">Guide: Steps 1 and 2</a>
 
-In the terminal, inside `programming-course`, one after the other:
+## Checkpoint 2: The terminal shows a version number for `uv`
 
-``` bash
-uv init
-```
+- Your folder `programming-course` is open in VS Code
+- A terminal is open at the bottom, and it answers to `uv` with a line like `uv 0.11.26`
 
-``` bash
-uv python pin 3.13
-```
+<a href="../general/uv.qmd#step-3-create-your-course-folder" class="guide-ref">Guide: Steps 3 to 5</a>
 
-**Check:** `uv run python main.py` prints `Hello from programming-course!`
+## Checkpoint 3: You see Hello from programming-course!
 
-## Add notebook support
+- Python 3.13 is installed
+- Your folder is a Python project, and the example program prints `Hello from programming-course!`
 
-``` bash
-uv add --dev ipykernel
-```
+<a href="../general/uv.qmd#step-6-install-python" class="guide-ref">Guide: Steps 6 and 7</a>
 
-``` bash
-uv add jupyter
-```
+## Checkpoint 4: Your first notebook shows Hello
 
-- The first lets notebooks use **the Python of your project**, the second adds the **notebook tools**
+- The notebook uses the **.venv** kernel with **Python 3.13**
+- Below the cell with `print("Hello")`, you see `Hello`
 
-## Your first notebook
-
-- **Cmd + Shift + P** (Mac) or **Ctrl + Shift + P** (Windows), then `Create: New Jupyter Notebook`
-- **Select Kernel** in the top right: **.venv** with **Python 3.13**
-- Type `print("Hello")` and press **Shift + Enter**
+<a href="../general/uv.qmd#step-8-add-notebook-support" class="guide-ref">Guide: Steps 8 and 9</a>
 
 > **Tip**
 >
-> Something not working yet? Ask us, or see "Something doesn't work?" in the guide.
-
-## Download a tutorial and open it
-
-- Open a tutorial on the website and click **Jupyter** under **Other Formats**
-- Move the file into `programming-course`
-- Open it in VS Code and choose the **.venv** kernel
-
-> **Tip**
->
-> That was the hardest part today!
+> That was the hardest part today! Step 10 of the guide: open a tutorial as a notebook.
 
 ## What we covered
 
@@ -254,7 +213,7 @@ Programming is learned by doing: small steps, regular practice, and don't give u
 
 <span class="eyebrow">Setting up Python</span>
 
-Your laptop is ready: VS Code, Python with uv and notebooks.
+Your laptop is ready: VS Code, Python installed with uv, and notebooks. Every step is in the Installation Guide.
 
 ## Why it matters
 

@@ -4368,11 +4368,11 @@
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#ai-is-allowed-but-learn-yourself",
-    "href": "lectures/lec_00_introduction.html#ai-is-allowed-but-learn-yourself",
+    "objectID": "lectures/lec_00_introduction.html#learn-first-then-use-ai",
+    "href": "lectures/lec_00_introduction.html#learn-first-then-use-ai",
     "title": "Introduction",
-    "section": "AI is allowed, but learn yourself",
-    "text": "AI is allowed, but learn yourself\n\nYou are allowed to use AI, we use it as well\nAssistants such as Claude, ChatGPT or Gemini are great for learning Python\n\n\n\n\n\n\n\nBut don’t let them replace your learning.\n\n\n\n\nNotes\nCurrent AI assistants help you a lot to get started with programming. But you should not simply use them to replace your learning: read and understand what they suggest.",
+    "section": "Learn first, then use AI",
+    "text": "Learn first, then use AI\n\nIn the tutorials, write the code yourself: that’s how you learn\nAt the end of the course, you build a small project with AI support\nUntil then: if you use AI, ask it to explain, not to solve\n\n\nNotes\nAI assistants are powerful, but learning to program means struggling a bit yourself. We use AI deliberately in the final project phase.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
@@ -4434,110 +4434,88 @@
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#install-vs-code",
-    "href": "lectures/lec_00_introduction.html#install-vs-code",
-    "title": "Introduction",
-    "section": "Install VS Code",
-    "text": "Install VS Code\n\nDownload from code.visualstudio.com, for Windows and Mac\nOpen it once: you should see a welcome page\n\n\n\n\n\n\n\nEvery step is in the Installation Guide, with a check at the end.",
-    "crumbs": [
-      "01 Optimal Stopping",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_00_introduction.html#add-the-python-and-jupyter-extensions",
-    "href": "lectures/lec_00_introduction.html#add-the-python-and-jupyter-extensions",
-    "title": "Introduction",
-    "section": "Add the Python and Jupyter extensions",
-    "text": "Add the Python and Jupyter extensions\n\nOut of the box, VS Code doesn’t know Python. Extensions teach it\nClick the Extensions icon on the left (four small squares)\nInstall Python and Jupyter, both by Microsoft",
-    "crumbs": [
-      "01 Optimal Stopping",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_00_introduction.html#create-your-course-folder",
-    "href": "lectures/lec_00_introduction.html#create-your-course-folder",
-    "title": "Introduction",
-    "section": "Create your course folder",
-    "text": "Create your course folder\n\nOne folder for everything, called programming-course\nIn your home folder, not in OneDrive\nIn VS Code: File → Open Folder… and select it\n\n\nNotes\nPython works best when each project has its own folder. OneDrive syncing can break the setup on Windows.",
-    "crumbs": [
-      "01 Optimal Stopping",
-      "Introduction"
-    ]
-  },
-  {
     "objectID": "lectures/lec_00_introduction.html#the-terminal-typing-instead-of-clicking",
     "href": "lectures/lec_00_introduction.html#the-terminal-typing-instead-of-clicking",
     "title": "Introduction",
     "section": "The terminal: typing instead of clicking",
-    "text": "The terminal: typing instead of clicking\n\nA window where you type commands and the computer answers with text\nOpen it in VS Code: Terminal → New Terminal\nCopy a command from the guide, paste it, press Enter, wait until the line is back\n\n\nNotes\nOn a Mac the line ends with a percent sign, on Windows it starts with PS for PowerShell. We only need a handful of commands, all of them are on the guide page to copy.",
+    "text": "The terminal: typing instead of clicking\n\nA window where you type a command, press Enter, and the computer answers with text\nNo menus, no buttons: the computer does exactly what you typed\nWe need it only for the setup: a handful of commands, all in the guide to copy\n\n\nNotes\nThe terminal lives inside VS Code, as a panel at the bottom. On a Mac the line ends with a percent sign, on Windows it starts with PS for PowerShell. Nobody needs to memorise commands: during the setup, you copy them from the guide, paste them and wait until the line is back.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#install-uv",
-    "href": "lectures/lec_00_introduction.html#install-uv",
+    "objectID": "lectures/lec_00_introduction.html#uv-installs-python-for-us",
+    "href": "lectures/lec_00_introduction.html#uv-installs-python-for-us",
     "title": "Introduction",
-    "section": "Install uv",
-    "text": "Install uv\n\nuv installs Python and everything Python needs, you install it once\n\nmacOS:\ncurl -LsSf https://astral.sh/uv/install.sh | sh\nWindows:\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\nThen close VS Code completely, open it again, and check: uv --version\n\nNotes\nClosing and reopening is important: only then does the terminal know the new tool. If uv is “not found”, that is almost always the reason.",
+    "section": "uv installs Python for us",
+    "text": "uv installs Python for us\n\nuv is a small helper tool: it installs Python and everything Python needs\nEveryone gets the same Python version, so code works the same on every laptop\nYou install uv once, then it does the rest for you\n\n\nNotes\nWithout a tool like uv, every laptop ends up with a slightly different Python, and we would spend the tutorials fixing setups instead of programming. uv also keeps each project in its own folder with its own packages, so nothing gets mixed up.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#install-python",
-    "href": "lectures/lec_00_introduction.html#install-python",
+    "objectID": "lectures/lec_00_introduction.html#notebooks-mix-text-and-code",
+    "href": "lectures/lec_00_introduction.html#notebooks-mix-text-and-code",
     "title": "Introduction",
-    "section": "Install Python",
-    "text": "Install Python\n\nEveryone uses the same version, so the code works the same for all\n\nuv python install 3.13\n\n\n\n\n\n\nIf the installation does not work, let us know!",
+    "section": "Notebooks mix text and code",
+    "text": "Notebooks mix text and code\n\nA notebook is a document with text cells and code cells\nYou run a code cell, and the result appears right below it\nAll tutorials are notebooks: read, run, change, try again\n\n\nNotes\nNotebooks are ideal for learning: you see a short explanation, run a few lines, and immediately see what happens. VS Code opens them with the Jupyter extension. The tutorials on the website can be downloaded as notebooks under “Other Formats”.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#turn-your-folder-into-a-python-project",
-    "href": "lectures/lec_00_introduction.html#turn-your-folder-into-a-python-project",
+    "objectID": "lectures/lec_00_introduction.html#now-we-install-together",
+    "href": "lectures/lec_00_introduction.html#now-we-install-together",
     "title": "Introduction",
-    "section": "Turn your folder into a Python project",
-    "text": "Turn your folder into a Python project\nIn the terminal, inside programming-course, one after the other:\nuv init\nuv python pin 3.13\nCheck: uv run python main.py prints Hello from programming-course!\n\nNotes\nuv creates a few files: main.py, pyproject.toml and .python-version. Nobody needs to touch them.",
+    "section": "Now we install together",
+    "text": "Now we install together\nEvery step, every command, every click is in the guide:\ncourses.nilsroemer.com/general/uv.html\n\n\n\nFollow the steps in order, don’t skip any\nAfter each step: a small check\nWe stop at four checkpoints and compare\n\n\n\n\n\n\nNotes\nOpen the guide now on your laptop, or scan the QR code with your phone. We go through the guide step by step and stop at the checkpoints. If you get stuck, raise your hand, and we help you before moving on.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#add-notebook-support",
-    "href": "lectures/lec_00_introduction.html#add-notebook-support",
+    "objectID": "lectures/lec_00_introduction.html#checkpoint-1-vs-code-is-open-with-both-extensions",
+    "href": "lectures/lec_00_introduction.html#checkpoint-1-vs-code-is-open-with-both-extensions",
     "title": "Introduction",
-    "section": "Add notebook support",
-    "text": "Add notebook support\nuv add --dev ipykernel\nuv add jupyter\n\nThe first lets notebooks use the Python of your project, the second adds the notebook tools\n\n\nNotes\nA new folder .venv appears: the project’s own Python environment. Done? Perfect, now we can start.",
+    "section": "Checkpoint 1: VS Code is open with both extensions",
+    "text": "Checkpoint 1: VS Code is open with both extensions\n\nVS Code shows its welcome page\nUnder Extensions, both Python and Jupyter say “Installed”\n\nGuide: Steps 1 and 2",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#your-first-notebook",
-    "href": "lectures/lec_00_introduction.html#your-first-notebook",
+    "objectID": "lectures/lec_00_introduction.html#checkpoint-2-the-terminal-shows-a-version-number-for-uv",
+    "href": "lectures/lec_00_introduction.html#checkpoint-2-the-terminal-shows-a-version-number-for-uv",
     "title": "Introduction",
-    "section": "Your first notebook",
-    "text": "Your first notebook\n\nCmd + Shift + P (Mac) or Ctrl + Shift + P (Windows), then Create: New Jupyter Notebook\nSelect Kernel in the top right: .venv with Python 3.13\nType print(\"Hello\") and press Shift + Enter\n\n\n\n\n\n\n\nSomething not working yet? Ask us, or see “Something doesn’t work?” in the guide.",
+    "section": "Checkpoint 2: The terminal shows a version number for uv",
+    "text": "Checkpoint 2: The terminal shows a version number for uv\n\nYour folder programming-course is open in VS Code\nA terminal is open at the bottom, and it answers to uv with a line like uv 0.11.26\n\nGuide: Steps 3 to 5\n\nNotes\nMost common problem here: uv is “not found”. Almost always, VS Code was not closed and reopened after the installation.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
     ]
   },
   {
-    "objectID": "lectures/lec_00_introduction.html#download-a-tutorial-and-open-it",
-    "href": "lectures/lec_00_introduction.html#download-a-tutorial-and-open-it",
+    "objectID": "lectures/lec_00_introduction.html#checkpoint-3-you-see-hello-from-programming-course",
+    "href": "lectures/lec_00_introduction.html#checkpoint-3-you-see-hello-from-programming-course",
     "title": "Introduction",
-    "section": "Download a tutorial and open it",
-    "text": "Download a tutorial and open it\n\nOpen a tutorial on the website and click Jupyter under Other Formats\nMove the file into programming-course\nOpen it in VS Code and choose the .venv kernel\n\n\n\n\n\n\n\nThat was the hardest part today!",
+    "section": "Checkpoint 3: You see Hello from programming-course!",
+    "text": "Checkpoint 3: You see Hello from programming-course!\n\nPython 3.13 is installed\nYour folder is a Python project, and the example program prints Hello from programming-course!\n\nGuide: Steps 6 and 7",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_00_introduction.html#checkpoint-4-your-first-notebook-shows-hello",
+    "href": "lectures/lec_00_introduction.html#checkpoint-4-your-first-notebook-shows-hello",
+    "title": "Introduction",
+    "section": "Checkpoint 4: Your first notebook shows Hello",
+    "text": "Checkpoint 4: Your first notebook shows Hello\n\nThe notebook uses the .venv kernel with Python 3.13\nBelow the cell with print(\"Hello\"), you see Hello\n\nGuide: Steps 8 and 9\n\n\n\n\n\n\nThat was the hardest part today! Step 10 of the guide: open a tutorial as a notebook.\n\n\n\n\nNotes\nIf the .venv kernel does not show up, reloading the VS Code window usually fixes it; the “Something doesn’t work?” table in the guide has the details. Whoever is done can already download the first tutorial, Step 10 in the guide.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
@@ -4548,7 +4526,7 @@
     "href": "lectures/lec_00_introduction.html#what-we-covered",
     "title": "Introduction",
     "section": "What we covered",
-    "text": "What we covered\n\n\nAbout this course: topics, format and how you pass\nSix topics, each with a lecture and a Python session. You pass with 75% attendance, two assignments and a final presentation.\n\n\nHow to learn programming\nProgramming is learned by doing: small steps, regular practice, and don’t give up.\n\n\nSetting up Python\nYour laptop is ready: VS Code, Python with uv and notebooks.",
+    "text": "What we covered\n\n\nAbout this course: topics, format and how you pass\nSix topics, each with a lecture and a Python session. You pass with 75% attendance, two assignments and a final presentation.\n\n\nHow to learn programming\nProgramming is learned by doing: small steps, regular practice, and don’t give up.\n\n\nSetting up Python\nYour laptop is ready: VS Code, Python installed with uv, and notebooks. Every step is in the Installation Guide.",
     "crumbs": [
       "01 Optimal Stopping",
       "Introduction"
@@ -4720,11 +4698,11 @@
     "text": "Why Python?\n\nSimple syntax: easy to read and to learn\nVersatile: web, data analysis, artificial intelligence\nBig community: help and documentation everywhere\n\n\nOrigins: Python was conceived in the late 1980s as a teaching and scripting language. Its syntax is mostly straightforward and very easy to learn. It is used in web development, data analysis, artificial intelligence and more, and it has a large community of users worldwide with extensive documentation."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#ai-is-allowed-but-learn-yourself",
-    "href": "lectures/lec_00_presentation.html#ai-is-allowed-but-learn-yourself",
+    "objectID": "lectures/lec_00_presentation.html#learn-first-then-use-ai",
+    "href": "lectures/lec_00_presentation.html#learn-first-then-use-ai",
     "title": "Introduction",
-    "section": "AI is allowed, but learn yourself",
-    "text": "AI is allowed, but learn yourself\n\nYou are allowed to use AI, we use it as well\nAssistants such as Claude, ChatGPT or Gemini are great for learning Python\n\n\n\n\n\n\n\n\nBut don’t let them replace your learning.\n\n\n\n\nCurrent AI assistants help you a lot to get started with programming. But you should not simply use them to replace your learning: read and understand what they suggest."
+    "section": "Learn first, then use AI",
+    "text": "Learn first, then use AI\n\nIn the tutorials, write the code yourself: that’s how you learn\nAt the end of the course, you build a small project with AI support\nUntil then: if you use AI, ask it to explain, not to solve\n\n\nAI assistants are powerful, but learning to program means struggling a bit yourself. We use AI deliberately in the final project phase."
   },
   {
     "objectID": "lectures/lec_00_presentation.html#roadmap-1",
@@ -4762,81 +4740,67 @@
     "text": "VS Code is where you write code\n\nLike Word for text, but for code: an app to write, run and find mistakes in code\nApps like this are called IDEs (Integrated Development Environments)\nWe use VS Code for the whole course\n\n\nOther IDEs exist, for example PyCharm or Zed. We use VS Code because it is free, works on all systems and has good notebook support. Every step of the setup is in the Installation Guide on the website, with a check at the end of each step."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#install-vs-code",
-    "href": "lectures/lec_00_presentation.html#install-vs-code",
-    "title": "Introduction",
-    "section": "Install VS Code",
-    "text": "Install VS Code\n\nDownload from code.visualstudio.com, for Windows and Mac\nOpen it once: you should see a welcome page\n\n\n\n\n\n\n\n\nEvery step is in the Installation Guide, with a check at the end."
-  },
-  {
-    "objectID": "lectures/lec_00_presentation.html#add-the-python-and-jupyter-extensions",
-    "href": "lectures/lec_00_presentation.html#add-the-python-and-jupyter-extensions",
-    "title": "Introduction",
-    "section": "Add the Python and Jupyter extensions",
-    "text": "Add the Python and Jupyter extensions\n\nOut of the box, VS Code doesn’t know Python. Extensions teach it\nClick the Extensions icon on the left (four small squares)\nInstall Python and Jupyter, both by Microsoft"
-  },
-  {
-    "objectID": "lectures/lec_00_presentation.html#create-your-course-folder",
-    "href": "lectures/lec_00_presentation.html#create-your-course-folder",
-    "title": "Introduction",
-    "section": "Create your course folder",
-    "text": "Create your course folder\n\nOne folder for everything, called programming-course\nIn your home folder, not in OneDrive\nIn VS Code: File → Open Folder… and select it\n\n\nPython works best when each project has its own folder. OneDrive syncing can break the setup on Windows."
-  },
-  {
     "objectID": "lectures/lec_00_presentation.html#the-terminal-typing-instead-of-clicking",
     "href": "lectures/lec_00_presentation.html#the-terminal-typing-instead-of-clicking",
     "title": "Introduction",
     "section": "The terminal: typing instead of clicking",
-    "text": "The terminal: typing instead of clicking\n\nA window where you type commands and the computer answers with text\nOpen it in VS Code: Terminal → New Terminal\nCopy a command from the guide, paste it, press Enter, wait until the line is back\n\n\nOn a Mac the line ends with a percent sign, on Windows it starts with PS for PowerShell. We only need a handful of commands, all of them are on the guide page to copy."
+    "text": "The terminal: typing instead of clicking\n\nA window where you type a command, press Enter, and the computer answers with text\nNo menus, no buttons: the computer does exactly what you typed\nWe need it only for the setup: a handful of commands, all in the guide to copy\n\n\nThe terminal lives inside VS Code, as a panel at the bottom. On a Mac the line ends with a percent sign, on Windows it starts with PS for PowerShell. Nobody needs to memorise commands: during the setup, you copy them from the guide, paste them and wait until the line is back."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#install-uv",
-    "href": "lectures/lec_00_presentation.html#install-uv",
+    "objectID": "lectures/lec_00_presentation.html#uv-installs-python-for-us",
+    "href": "lectures/lec_00_presentation.html#uv-installs-python-for-us",
     "title": "Introduction",
-    "section": "Install uv",
-    "text": "Install uv\n\nuv installs Python and everything Python needs, you install it once\n\nmacOS:\ncurl -LsSf https://astral.sh/uv/install.sh | sh\nWindows:\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n\nThen close VS Code completely, open it again, and check: uv --version\n\nClosing and reopening is important: only then does the terminal know the new tool. If uv is “not found”, that is almost always the reason."
+    "section": "uv installs Python for us",
+    "text": "uv installs Python for us\n\nuv is a small helper tool: it installs Python and everything Python needs\nEveryone gets the same Python version, so code works the same on every laptop\nYou install uv once, then it does the rest for you\n\n\nWithout a tool like uv, every laptop ends up with a slightly different Python, and we would spend the tutorials fixing setups instead of programming. uv also keeps each project in its own folder with its own packages, so nothing gets mixed up."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#install-python",
-    "href": "lectures/lec_00_presentation.html#install-python",
+    "objectID": "lectures/lec_00_presentation.html#notebooks-mix-text-and-code",
+    "href": "lectures/lec_00_presentation.html#notebooks-mix-text-and-code",
     "title": "Introduction",
-    "section": "Install Python",
-    "text": "Install Python\n\nEveryone uses the same version, so the code works the same for all\n\nuv python install 3.13\n\n\n\n\n\n\n\nIf the installation does not work, let us know!"
+    "section": "Notebooks mix text and code",
+    "text": "Notebooks mix text and code\n\nA notebook is a document with text cells and code cells\nYou run a code cell, and the result appears right below it\nAll tutorials are notebooks: read, run, change, try again\n\n\nNotebooks are ideal for learning: you see a short explanation, run a few lines, and immediately see what happens. VS Code opens them with the Jupyter extension. The tutorials on the website can be downloaded as notebooks under “Other Formats”."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#turn-your-folder-into-a-python-project",
-    "href": "lectures/lec_00_presentation.html#turn-your-folder-into-a-python-project",
+    "objectID": "lectures/lec_00_presentation.html#now-we-install-together",
+    "href": "lectures/lec_00_presentation.html#now-we-install-together",
     "title": "Introduction",
-    "section": "Turn your folder into a Python project",
-    "text": "Turn your folder into a Python project\nIn the terminal, inside programming-course, one after the other:\nuv init\nuv python pin 3.13\n\nCheck: uv run python main.py prints Hello from programming-course!\n\nuv creates a few files: main.py, pyproject.toml and .python-version. Nobody needs to touch them."
+    "section": "Now we install together",
+    "text": "Now we install together\nEvery step, every command, every click is in the guide:\ncourses.nilsroemer.com/general/uv.html\n\n\n\nFollow the steps in order, don’t skip any\nAfter each step: a small check\nWe stop at four checkpoints and compare\n\n\n\n\n\nOpen the guide now on your laptop, or scan the QR code with your phone. We go through the guide step by step and stop at the checkpoints. If you get stuck, raise your hand, and we help you before moving on."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#add-notebook-support",
-    "href": "lectures/lec_00_presentation.html#add-notebook-support",
+    "objectID": "lectures/lec_00_presentation.html#checkpoint-1-vs-code-is-open-with-both-extensions",
+    "href": "lectures/lec_00_presentation.html#checkpoint-1-vs-code-is-open-with-both-extensions",
     "title": "Introduction",
-    "section": "Add notebook support",
-    "text": "Add notebook support\nuv add --dev ipykernel\nuv add jupyter\n\nThe first lets notebooks use the Python of your project, the second adds the notebook tools\n\n\nA new folder .venv appears: the project’s own Python environment. Done? Perfect, now we can start."
+    "section": "Checkpoint 1: VS Code is open with both extensions",
+    "text": "Checkpoint 1: VS Code is open with both extensions\n\nVS Code shows its welcome page\nUnder Extensions, both Python and Jupyter say “Installed”\n\n\nGuide: Steps 1 and 2"
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#your-first-notebook",
-    "href": "lectures/lec_00_presentation.html#your-first-notebook",
+    "objectID": "lectures/lec_00_presentation.html#checkpoint-2-the-terminal-shows-a-version-number-for-uv",
+    "href": "lectures/lec_00_presentation.html#checkpoint-2-the-terminal-shows-a-version-number-for-uv",
     "title": "Introduction",
-    "section": "Your first notebook",
-    "text": "Your first notebook\n\nCmd + Shift + P (Mac) or Ctrl + Shift + P (Windows), then Create: New Jupyter Notebook\nSelect Kernel in the top right: .venv with Python 3.13\nType print(\"Hello\") and press Shift + Enter\n\n\n\n\n\n\n\n\nSomething not working yet? Ask us, or see “Something doesn’t work?” in the guide."
+    "section": "Checkpoint 2: The terminal shows a version number for uv",
+    "text": "Checkpoint 2: The terminal shows a version number for uv\n\nYour folder programming-course is open in VS Code\nA terminal is open at the bottom, and it answers to uv with a line like uv 0.11.26\n\n\nGuide: Steps 3 to 5\n\nMost common problem here: uv is “not found”. Almost always, VS Code was not closed and reopened after the installation."
   },
   {
-    "objectID": "lectures/lec_00_presentation.html#download-a-tutorial-and-open-it",
-    "href": "lectures/lec_00_presentation.html#download-a-tutorial-and-open-it",
+    "objectID": "lectures/lec_00_presentation.html#checkpoint-3-you-see-hello-from-programming-course",
+    "href": "lectures/lec_00_presentation.html#checkpoint-3-you-see-hello-from-programming-course",
     "title": "Introduction",
-    "section": "Download a tutorial and open it",
-    "text": "Download a tutorial and open it\n\nOpen a tutorial on the website and click Jupyter under Other Formats\nMove the file into programming-course\nOpen it in VS Code and choose the .venv kernel\n\n\n\n\n\n\n\n\nThat was the hardest part today!"
+    "section": "Checkpoint 3: You see Hello from programming-course!",
+    "text": "Checkpoint 3: You see Hello from programming-course!\n\nPython 3.13 is installed\nYour folder is a Python project, and the example program prints Hello from programming-course!\n\n\nGuide: Steps 6 and 7"
+  },
+  {
+    "objectID": "lectures/lec_00_presentation.html#checkpoint-4-your-first-notebook-shows-hello",
+    "href": "lectures/lec_00_presentation.html#checkpoint-4-your-first-notebook-shows-hello",
+    "title": "Introduction",
+    "section": "Checkpoint 4: Your first notebook shows Hello",
+    "text": "Checkpoint 4: Your first notebook shows Hello\n\nThe notebook uses the .venv kernel with Python 3.13\nBelow the cell with print(\"Hello\"), you see Hello\n\n\nGuide: Steps 8 and 9\n\n\n\n\n\n\nThat was the hardest part today! Step 10 of the guide: open a tutorial as a notebook.\n\n\n\n\nIf the .venv kernel does not show up, reloading the VS Code window usually fixes it; the “Something doesn’t work?” table in the guide has the details. Whoever is done can already download the first tutorial, Step 10 in the guide."
   },
   {
     "objectID": "lectures/lec_00_presentation.html#what-we-covered",
     "href": "lectures/lec_00_presentation.html#what-we-covered",
     "title": "Introduction",
     "section": "What we covered",
-    "text": "What we covered\n\n\nAbout this course: topics, format and how you pass\nSix topics, each with a lecture and a Python session. You pass with 75% attendance, two assignments and a final presentation.\n\n\nHow to learn programming\nProgramming is learned by doing: small steps, regular practice, and don’t give up.\n\n\nSetting up Python\nYour laptop is ready: VS Code, Python with uv and notebooks."
+    "text": "What we covered\n\n\nAbout this course: topics, format and how you pass\nSix topics, each with a lecture and a Python session. You pass with 75% attendance, two assignments and a final presentation.\n\n\nHow to learn programming\nProgramming is learned by doing: small steps, regular practice, and don’t give up.\n\n\nSetting up Python\nYour laptop is ready: VS Code, Python installed with uv, and notebooks. Every step is in the Installation Guide."
   },
   {
     "objectID": "lectures/lec_00_presentation.html#why-it-matters",
@@ -8500,24 +8464,6 @@
     "crumbs": [
       "05 Randomness",
       "05-02: Recap"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_00_presentation.html#learn-first-then-use-ai",
-    "href": "lectures/lec_00_presentation.html#learn-first-then-use-ai",
-    "title": "Introduction",
-    "section": "Learn first, then use AI",
-    "text": "Learn first, then use AI\n\nIn the tutorials, write the code yourself: that’s how you learn\nAt the end of the course, you build a small project with AI support\nUntil then: if you use AI, ask it to explain, not to solve\n\n\nAI assistants are powerful, but learning to program means struggling a bit yourself. We use AI deliberately in the final project phase."
-  },
-  {
-    "objectID": "lectures/lec_00_introduction.html#learn-first-then-use-ai",
-    "href": "lectures/lec_00_introduction.html#learn-first-then-use-ai",
-    "title": "Introduction",
-    "section": "Learn first, then use AI",
-    "text": "Learn first, then use AI\n\nIn the tutorials, write the code yourself: that’s how you learn\nAt the end of the course, you build a small project with AI support\nUntil then: if you use AI, ask it to explain, not to solve\n\n\nNotes\nAI assistants are powerful, but learning to program means struggling a bit yourself. We use AI deliberately in the final project phase.",
-    "crumbs": [
-      "01 Optimal Stopping",
-      "Introduction"
     ]
   }
 ]
