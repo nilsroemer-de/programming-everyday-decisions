@@ -163,11 +163,11 @@ Every step, every command, every click is in the guide:
 
 <a href="../general/uv.qmd" class="guide-link"><strong>courses.nilsroemer.com/general/uv.html</strong></a>
 
+Also linked in Moodle and on the course website.
+
 - Follow the steps **in order**, don't skip any
 - After each step: a small **check**
 - We stop at four **checkpoints** and compare
-
-<img src="../images/qr-installation-guide.svg" data-fig-alt="QR code linking to the Installation Guide" width="250" />
 
 ## Checkpoint 1: VS Code is open with both extensions
 
