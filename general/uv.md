@@ -213,6 +213,14 @@ uv self update
 
 (If it ever errors, you can just reinstall using the same one-liner from earlier.)
 
+> **Note**
+>
+> If you installed `uv` with Homebrew on macOS, `uv self update` does not work. Update it with Homebrew instead:
+>
+> ``` bash
+> brew upgrade uv
+> ```
+
 ------------------------------------------------------------------------
 
 ## Best practices for this course
