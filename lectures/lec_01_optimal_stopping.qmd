@@ -198,65 +198,67 @@ print(f"Look at first {lookout_phase:.3f} candidates")
 No worries if you don't understand the code yet! It just applies the formula.
 :::
 
-## Simulation: looking at 7 of 20 candidates works best
+## Simulation: looking at 37 of 100 candidates works best
 
-20 candidates, 2,000 simulated runs per stopping point:
-
+100 candidates, 2,000 simulated runs per stopping point:
 
 ```{python}
 #| echo: false
-#| fig-width: 7
-#| fig-height: 4
+#| fig-width: 9
+#| fig-height: 4.2
+import sys
+sys.path.insert(0, "../helpers")
 import numpy as np
 import matplotlib.pyplot as plt
+from course_plots import use_course_style, PRIMARY, FG_2, FG_3, AMBER
 
+use_course_style()
 np.random.seed(42)  # reproducible figure
 
-def simulate_secretary_problem(n_candidates, stopping_position, n_trials=2000):
-    successes = 0
-
-    for _ in range(n_trials):
-        # Generate random rankings
-        candidates = np.random.permutation(n_candidates)
-        # Best candidate seen so far
-        best_so_far = float('-inf')
-        # Position of the best candidate overall
-        best_overall_pos = np.argmax(candidates)
-
-        # Look at the first stopping_position candidates
-        for i in range(stopping_position):
-            if candidates[i] > best_so_far:
-                best_so_far = candidates[i]
-
-        # Try to select the best candidate after stopping position
-        for i in range(stopping_position, n_candidates):
-            if candidates[i] > best_so_far:
-                if i == best_overall_pos:  # We found the best candidate
-                    successes += 1
-                break
-
-    return successes / n_trials
-
-# Parameters
-n_candidates = 20
+n_candidates = 100
 n_trials = 2000
+look_counts = np.arange(0, n_candidates)  # candidates we only look at
 
-# Calculate success rate for each stopping position
-stopping_positions = range(1, n_candidates + 1)
-success_rates = [simulate_secretary_problem(n_candidates, pos, n_trials)
-                for pos in stopping_positions]
 
-# Plotting
-plt.figure(figsize=(14, 6))
-plt.plot(stopping_positions, success_rates, 'b-', label='Simulated Success Rate')
-plt.axvline(x=n_candidates/np.e, color='r', linestyle='--',
-            label=f'Optimal stopping point (n/e ≈ {n_candidates/np.e:.0f})')
+def exact_success(n, k):
+    """Chance of hiring the best when we only look at the first k of n candidates."""
+    if k == 0:
+        return 1 / n
+    return k / n * sum(1 / j for j in range(k, n))
 
-plt.xlabel('Stopping Position')
-plt.ylabel('Success Rate')
-plt.title(f'Secretary Problem Success Rate\n(Based on {n_trials:,} trials per position)')
-plt.grid(True, alpha=0.3)
-plt.legend()
+
+def simulate_success(n, k, trials):
+    """Simulate the look-and-leap rule: skip the first k, then take the first one that beats them."""
+    rankings = np.argsort(np.random.random((trials, n)), axis=1)  # one random order per run
+    best_pos = rankings.argmax(axis=1)                             # where the best candidate sits
+    before_best = np.where(np.arange(n) < best_pos[:, None], rankings, -1)
+    runner_up_pos = before_best.argmax(axis=1)                    # best among those before the best
+    runner_up_pos[best_pos == 0] = -1
+    # success: the best comes after the look phase, and nobody between the
+    # look phase and the best beats the look-phase benchmark
+    return np.mean((best_pos >= k) & (runner_up_pos < k))
+
+
+exact = [exact_success(n_candidates, k) for k in look_counts]
+simulated = [simulate_success(n_candidates, k, n_trials) for k in look_counts]
+share = look_counts / n_candidates * 100
+
+fig, ax = plt.subplots(figsize=(9, 4.2))
+ax.plot(share, exact, color=PRIMARY, linewidth=2.2, label="Exact probability")
+ax.scatter(share, simulated, s=16, color=FG_3, zorder=3,
+           label=f"Simulation ({n_trials:,} runs per share)")
+ax.axvline(100 / np.e, color=AMBER, linestyle="--", linewidth=1.4)
+ax.text(100 / np.e + 1.2, 0.02, "37 % of candidates", color=AMBER, fontsize=12, va="bottom")
+ax.set_xlim(0, 100)
+ax.set_ylim(0, 0.45)
+ax.set_xticks(range(0, 101, 20), [f"{t} %" for t in range(0, 101, 20)])
+ax.set_yticks([0, 0.1, 0.2, 0.3, 0.4], ["0 %", "10 %", "20 %", "30 %", "40 %"])
+ax.set_xlabel("Share of candidates you only look at")
+ax.set_ylabel("Chance of picking the best")
+ax.grid(True, axis="y")
+ax.set_axisbelow(True)
+ax.legend(loc="upper right")
+fig.tight_layout()
 plt.show()
 ```
 
