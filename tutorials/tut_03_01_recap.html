@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
 
-<title>Tutorial III.I - Recap with Caching – Programming: Everyday Decision-Making Algorithms</title>
+<title>Tutorial III.I: Recap with Caching – Programming: Everyday Decision-Making Algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,9 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e4a2caf7c18c942dede446ff828dd770.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c79b9904990299345af33477e432e454.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-25060728d2783121a9f548b747010ca7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -123,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_03_01_recap.html">03-01 - Recap</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_03_01_recap.html">03-01: Recap</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,9 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
@@ -187,19 +186,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_01_variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-01 - Variables</span></a>
+ <span class="menu-text">01-01: Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_02_comparisons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-02 - Comparisons</span></a>
+ <span class="menu-text">01-02: Comparisons</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_03_stopping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-03 - Decisions</span></a>
+ <span class="menu-text">01-03: Decisions</span></a>
   </div>
 </li>
       </ul>
@@ -207,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">02 Explore/Exploit</span></a>
+ <span class="menu-text">02 Explore &amp; Exploit</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -222,19 +221,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_01_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-01 - Lists</span></a>
+ <span class="menu-text">02-01: Lists</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_02_loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-02 - Loops</span></a>
+ <span class="menu-text">02-02: Loops</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_03_explore_exploit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-03 - Exploration</span></a>
+ <span class="menu-text">02-03: Exploration</span></a>
   </div>
 </li>
       </ul>
@@ -257,19 +256,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_01_recap.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">03-01 - Recap</span></a>
+ <span class="menu-text">03-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_02_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-02 - Functions</span></a>
+ <span class="menu-text">03-02: Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_03_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-03 - Packages</span></a>
+ <span class="menu-text">03-03: Packages</span></a>
   </div>
 </li>
       </ul>
@@ -292,19 +291,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10 - Recap</span></a>
+ <span class="menu-text">04-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_02_dicts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11 - Dictionaries</span></a>
+ <span class="menu-text">04-02: Dictionaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_03_dataframes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 - DataFrames</span></a>
+ <span class="menu-text">04-03: DataFrames</span></a>
   </div>
 </li>
       </ul>
@@ -327,19 +326,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/tut_05_01_llm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13 - LLM</span></a>
+ <span class="menu-text">05-01: LLM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_02_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14 - Recap</span></a>
+ <span class="menu-text">05-02: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_03_free.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15 - Free Tasks</span></a>
+ <span class="menu-text">05-03: Free Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -361,9 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../general/faq.html" class="sidebar-item-text sidebar-link">
@@ -410,30 +407,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#section-3---lists-and-tuples" id="toc-section-3---lists-and-tuples" class="nav-link" data-scroll-target="#section-3---lists-and-tuples">Section 3 - Lists and Tuples</a>
   <ul class="collapse">
   <li><a href="#exercise-3.1-create-a-shopping-cart-cache" id="toc-exercise-3.1-create-a-shopping-cart-cache" class="nav-link" data-scroll-target="#exercise-3.1-create-a-shopping-cart-cache">Exercise 3.1: Create a shopping cart cache</a></li>
+  <li><a href="#exercise-3.2-one-step-of-an-lru-cache" id="toc-exercise-3.2-one-step-of-an-lru-cache" class="nav-link" data-scroll-target="#exercise-3.2-one-step-of-an-lru-cache">Exercise 3.2: One step of an LRU cache</a></li>
   </ul></li>
   <li><a href="#section-4---loops" id="toc-section-4---loops" class="nav-link" data-scroll-target="#section-4---loops">Section 4 - Loops</a>
   <ul class="collapse">
   <li><a href="#exercise-4.1-clean-up-a-browser-history-cache" id="toc-exercise-4.1-clean-up-a-browser-history-cache" class="nav-link" data-scroll-target="#exercise-4.1-clean-up-a-browser-history-cache">Exercise 4.1: Clean up a browser history cache</a></li>
+  <li><a href="#exercise-4.2-count-cache-hits" id="toc-exercise-4.2-count-cache-hits" class="nav-link" data-scroll-target="#exercise-4.2-count-cache-hits">Exercise 4.2: Count cache hits</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_03_01_recap.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_03_01_recap.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_03_01_recap.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_03_01_recap.ipynb" download="tut_03_01_recap.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_03_01_recap.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_03_01_recap.ipynb" download="tut_03_01_recap.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_03_01_recap.html">03-01 - Recap</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_03_01_recap.html">03-01: Recap</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tutorial III.I - Recap with Caching</h1>
+<h1 class="title">Tutorial III.I: Recap with Caching</h1>
 <p class="subtitle lead">Programming: Everyday Decision-Making Algorithms</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Lecturer</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Nils Roemer, External Lecturer </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Planningio GmbH
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
@@ -453,6 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Lists</strong> → Like cache storage (what we remember)</li>
 <li><strong>Loops</strong> → Like cache maintenance (how we update our knowledge)</li>
 </ul>
+<p>Throughout the three tutorials of this week, we build our <strong>own LRU cache</strong> step by step: today with lists and loops, in the next tutorial as functions, and in the last one we compare it with random eviction using Python packages.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -470,7 +483,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="section-1---variables-and-datatypes" class="level1">
 <h1>Section 1 - Variables and Datatypes</h1>
 <p>Just as a cache stores different types of data, Python variables can hold various datatypes. Let’s explore this through a simple caching system for a coffee shop.</p>
-<div id="e2154a39" class="cell" data-execution_count="1">
+<div id="7cfaff12" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic cache for coffee orders</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>last_order <span class="op">=</span> <span class="st">"Latte"</span> <span class="co"># String cache</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>drink_temperature <span class="op">=</span> <span class="fl">75.5</span> <span class="co"># Float cache</span></span>
@@ -503,10 +516,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Whether you would order it again in a variable <code>would_order_again</code> (as a boolean)</li>
 <li>How many times you’ve ordered it in the last month in a variable <code>num_orders</code> (as an integer)</li>
 </ol>
-<div id="358a1f5e" class="cell" data-execution_count="2">
+<div id="f4ec79d6" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="6ba2e12f" class="cell" data-execution_count="3">
+<div id="2f08f050" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
@@ -521,19 +534,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="section-2---comparisons" class="level1">
 <h1>Section 2 - Comparisons</h1>
-<p>Cache systems need to make decisions about what data to keep or remove. This is similar to how we use comparisons in Python. For example, the following code just checks a simple cache eviction policy based on the access count and when an item was last accessed.</p>
-<div id="bb511aa3" class="cell" data-execution_count="4">
+<p>Cache systems need to make decisions about what data to keep or remove. This is similar to how we use comparisons in Python. For example, the following code checks a simple eviction policy: items that were rarely used and not used for a while are removed. This is the idea behind <strong>Least Recently Used (LRU)</strong> from the lecture.</p>
+<div id="fcb0b6da" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple cache eviction policy</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>access_count <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>last_accessed_minutes <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>access_count <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>last_accessed_minutes <span class="op">=</span> <span class="dv">45</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>evict <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> access_count <span class="op">&gt;</span> <span class="dv">10</span> <span class="kw">and</span> last_accessed_minutes <span class="op">&lt;</span> <span class="dv">30</span>:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> access_count <span class="op">&lt;</span> <span class="dv">5</span> <span class="kw">and</span> last_accessed_minutes <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    evict <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Based on </span><span class="sc">{</span>access_count<span class="sc">}</span><span class="ss"> accesses and the last access </span><span class="sc">{</span>last_accessed_minutes<span class="sc">}</span><span class="ss"> minutes ago, should we evict? </span><span class="sc">{</span>evict<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Based on 15 accesses and the last access 25 minutes ago, should we evict? True</code></pre>
+<pre><code>Based on 2 accesses and the last access 45 minutes ago, should we evict? True</code></pre>
 </div>
 </div>
 <div class="callout callout-style-simple callout-warning callout-titled">
@@ -558,10 +571,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Save the result of the decision in a variable <code>should_evict</code></li>
 <li>Print the result of whether we should evict the song or not</li>
 </ol>
-<div id="59410c9f" class="cell" data-execution_count="5">
+<div id="19ccf479" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="6cc63846" class="cell" data-execution_count="6">
+<div id="777309de" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
@@ -576,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="section-3---lists-and-tuples" class="level1">
 <h1>Section 3 - Lists and Tuples</h1>
-<p>Lists work like a cache’s storage system, holding multiple items that we might need later. Tuples are similar, but they are immutable. This means that once a tuple is created, its contents cannot be changed. To measure the size of a list or tuple, we can use the <code>len()</code> function.</p>
+<p>Lists work like a cache’s storage system, holding multiple items that we might need later. For an LRU cache, we keep the list <strong>ordered by use</strong>: the most recently used item at the front, the least recently used item at the end. Tuples are similar, but they are immutable. This means that once a tuple is created, its contents cannot be changed. To measure the size of a list or tuple, we can use the <code>len()</code> function.</p>
 <div class="callout callout-style-simple callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -594,7 +607,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </div>
 </div>
-<div id="ee606340" class="cell" data-execution_count="7">
+<div id="a965f565" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recently played songs cache</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>recent_songs <span class="op">=</span> [<span class="st">"Lithonia"</span>, <span class="st">"Leon"</span>, <span class="st">"WHEN THE MUSIC STOPS"</span>, <span class="st">"Chop Suey"</span>, <span class="st">"Rain of Fire"</span>]</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>max_cache_size <span class="op">=</span> <span class="dv">5</span></span>
@@ -602,8 +615,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Cache maintenance</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(recent_songs) <span class="op">&gt;=</span> max_cache_size:</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    poped_song <span class="op">=</span> recent_songs.pop() <span class="co"># Remove oldest song</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Removed '</span><span class="sc">{</span>poped_song<span class="sc">}</span><span class="ss">' from cache"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    popped_song <span class="op">=</span> recent_songs.pop() <span class="co"># Remove the least recently used song</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Removed '</span><span class="sc">{</span>popped_song<span class="sc">}</span><span class="ss">' from cache"</span>)</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(recent_songs) <span class="op">&lt;</span> max_cache_size:</span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    recent_songs.insert(<span class="dv">0</span>, new_song) <span class="co"># Add new song at beginning</span></span>
@@ -621,12 +634,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>We can also use <strong>lists to store tuples</strong>, which is useful for storing multiple items with different properties. For example, we can store the name and price of items in a shopping cart.</p>
-<div id="2488928f" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shopping cart cache of a very expensive trip to the Apple store</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>shopping <span class="op">=</span> [(<span class="st">"MacBook Pro"</span>, <span class="fl">1999.99</span>), (<span class="st">"AirPods"</span>, <span class="fl">159.99</span>), (<span class="st">"Apple Watch"</span>, <span class="fl">399.99</span>)]</span>
+<p>What if we play a song that is <strong>already in the cache</strong>? This is called a <strong>cache hit</strong>. Then we do not add it again, but move it to the front, because it is now the most recently used song:</p>
+<div id="8577e4c8" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>recent_songs <span class="op">=</span> [<span class="st">"Carnival of Rust"</span>, <span class="st">"Lithonia"</span>, <span class="st">"Leon"</span>, <span class="st">"WHEN THE MUSIC STOPS"</span>, <span class="st">"Chop Suey"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>song <span class="op">=</span> <span class="st">"Leon"</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Current shopping cart: </span><span class="sc">{</span>shopping<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> song <span class="kw">in</span> recent_songs:  <span class="co"># cache hit</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    recent_songs.remove(song)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    recent_songs.insert(<span class="dv">0</span>, song)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Current cache: </span><span class="sc">{</span>recent_songs<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Current cache: ['Leon', 'Carnival of Rust', 'Lithonia', 'WHEN THE MUSIC STOPS', 'Chop Suey']</code></pre>
+</div>
+</div>
+<p>We can also use <strong>lists to store tuples</strong>, which is useful for storing multiple items with different properties. For example, we can store the name and price of items in a shopping cart.</p>
+<div id="86b76f23" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Shopping cart cache of a very expensive trip to the Apple store</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>shopping <span class="op">=</span> [(<span class="st">"MacBook Pro"</span>, <span class="fl">1999.99</span>), (<span class="st">"AirPods"</span>, <span class="fl">159.99</span>), (<span class="st">"Apple Watch"</span>, <span class="fl">399.99</span>)]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Current shopping cart: </span><span class="sc">{</span>shopping<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Current shopping cart: [('MacBook Pro', 1999.99), ('AirPods', 159.99), ('Apple Watch', 399.99)]</code></pre>
 </div>
@@ -648,18 +675,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="4bcb8f67" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="211b3154" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="43abbf0a" class="cell" data-execution_count="10">
+<div id="1f1082de" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(shopping_cart) <span class="op">==</span> <span class="dv">5</span>, <span class="st">"shopping_cart should have 5 items"</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">isinstance</span>(shopping_cart, <span class="bu">list</span>), <span class="st">"shopping_cart should be a list"</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">all</span>(<span class="bu">isinstance</span>(item, <span class="bu">tuple</span>) <span class="cf">for</span> item <span class="kw">in</span> shopping_cart), <span class="st">"All items in shopping_cart should be tuples"</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">all</span>(<span class="bu">isinstance</span>(item[<span class="dv">0</span>], <span class="bu">str</span>) <span class="kw">and</span> <span class="bu">isinstance</span>(item[<span class="dv">1</span>], (<span class="bu">int</span>, <span class="bu">float</span>)) <span class="cf">for</span> item <span class="kw">in</span> shopping_cart), <span class="st">"All items in shopping_cart should be tuples with a string and a number"</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great job! Your shopping cart is ready."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(shopping_cart) <span class="op">==</span> <span class="dv">5</span>, <span class="st">"shopping_cart should have 5 items"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">isinstance</span>(shopping_cart, <span class="bu">list</span>), <span class="st">"shopping_cart should be a list"</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">all</span>(<span class="bu">isinstance</span>(item, <span class="bu">tuple</span>) <span class="cf">for</span> item <span class="kw">in</span> shopping_cart), <span class="st">"All items in shopping_cart should be tuples"</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">all</span>(<span class="bu">isinstance</span>(item[<span class="dv">0</span>], <span class="bu">str</span>) <span class="kw">and</span> <span class="bu">isinstance</span>(item[<span class="dv">1</span>], (<span class="bu">int</span>, <span class="bu">float</span>)) <span class="cf">for</span> item <span class="kw">in</span> shopping_cart), <span class="st">"All items in shopping_cart should be tuples with a string and a number"</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great job! Your shopping cart is ready."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="exercise-3.2-one-step-of-an-lru-cache" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3.2-one-step-of-an-lru-cache">Exercise 3.2: One step of an LRU cache</h2>
+<p>Your phone keeps the three most recently used apps ready in memory. The list <code>cache</code> is ordered from most to least recently used. Now you open <code>requested_app</code>. Update the cache like an LRU cache:</p>
+<ol type="1">
+<li>If the app is already in the cache (hit), move it to the front</li>
+<li>If not (miss) and the cache is full, remove the least recently used app</li>
+<li>On a miss, add the requested app at the front</li>
+<li>Store whether it was a hit in a boolean variable <code>is_hit</code></li>
+</ol>
+<div id="4a29ad8b" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cache <span class="op">=</span> [<span class="st">"Spotify"</span>, <span class="st">"WhatsApp"</span>, <span class="st">"Maps"</span>]  <span class="co"># most recently used first</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>max_cache_size <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>requested_app <span class="op">=</span> <span class="st">"Camera"</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="93964ff5" class="cell" data-execution_count="13">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> is_hit <span class="op">==</span> <span class="va">False</span>, <span class="st">"Camera was not in the cache, so this is a miss"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> cache <span class="op">==</span> [<span class="st">"Camera"</span>, <span class="st">"Spotify"</span>, <span class="st">"WhatsApp"</span>], <span class="st">"Camera should be at the front and Maps should be evicted"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great job! Your cache works like an LRU cache."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -667,22 +719,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="section-4---loops" class="level1">
 <h1>Section 4 - Loops</h1>
 <p>Loops are essential for cache maintenance and updates, just like how we periodically clean up our browser cache. We know two types of loops: <code>for</code> and <code>while</code>. The <code>for</code> loop is used when we know the number of iterations beforehand, while the <code>while</code> loop is used when we don’t.</p>
-<div id="375c4508" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cache cleanup process</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>cached_items <span class="op">=</span> [(<span class="st">"fork"</span>, <span class="dv">5</span>), (<span class="st">"spoon"</span>, <span class="dv">0</span>), (<span class="st">"knife"</span>, <span class="dv">12</span>)] <span class="co"># (item, access_count)</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>min_access_count <span class="op">=</span> <span class="dv">10</span> <span class="co"># Minimum access count to keep an item</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>items_to_remove <span class="op">=</span> []</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item, count <span class="kw">in</span> cached_items:</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> count <span class="op">&lt;</span> min_access_count:</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>        items_to_remove.append((item, count))</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Items to remove: </span><span class="sc">{</span>items_to_remove<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> items_to_remove:</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    cached_items.remove(item)</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Cached items after cleanup: </span><span class="sc">{</span>cached_items<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="676cea95" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cache cleanup process</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>cached_items <span class="op">=</span> [(<span class="st">"fork"</span>, <span class="dv">5</span>), (<span class="st">"spoon"</span>, <span class="dv">0</span>), (<span class="st">"knife"</span>, <span class="dv">12</span>)] <span class="co"># (item, access_count)</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>min_access_count <span class="op">=</span> <span class="dv">10</span> <span class="co"># Minimum access count to keep an item</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>items_to_remove <span class="op">=</span> []</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item, count <span class="kw">in</span> cached_items:</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> count <span class="op">&lt;</span> min_access_count:</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        items_to_remove.append((item, count))</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Items to remove: </span><span class="sc">{</span>items_to_remove<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> items_to_remove:</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    cached_items.remove(item)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Cached items after cleanup: </span><span class="sc">{</span>cached_items<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Items to remove: [('fork', 5), ('spoon', 0)]
 Cached items after cleanup: [('knife', 12)]</code></pre>
@@ -705,23 +757,45 @@ Cached items after cleanup: [('knife', 12)]</code></pre>
 </div>
 </div>
 </div>
-<div id="41203e22" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>browser_history <span class="op">=</span> [</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"google.com"</span>, <span class="dv">10</span>),</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"youtube.de"</span>, <span class="dv">5</span>),</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"amazon.de"</span>, <span class="dv">1</span>),</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"netflix.de"</span>, <span class="dv">2</span>),</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"github.com"</span>, <span class="dv">15</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="acff09fa" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>browser_history <span class="op">=</span> [</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"google.com"</span>, <span class="dv">10</span>),</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"youtube.de"</span>, <span class="dv">5</span>),</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"amazon.de"</span>, <span class="dv">1</span>),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"netflix.de"</span>, <span class="dv">2</span>),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"github.com"</span>, <span class="dv">15</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="96eaa7b4" class="cell" data-execution_count="13">
+<div id="36a9338b" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(browser_history) <span class="op">==</span> <span class="dv">2</span>, <span class="st">"browser_history should have 2 items"</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">isinstance</span>(browser_history, <span class="bu">list</span>), <span class="st">"browser_history should be a list"</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">all</span>(<span class="bu">isinstance</span>(item, <span class="bu">tuple</span>) <span class="cf">for</span> item <span class="kw">in</span> browser_history), <span class="st">"All items in browser_history should be tuples"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(browser_history) <span class="op">==</span> <span class="dv">2</span>, <span class="st">"browser_history should have 2 items"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">isinstance</span>(browser_history, <span class="bu">list</span>), <span class="st">"browser_history should be a list"</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">all</span>(<span class="bu">isinstance</span>(item, <span class="bu">tuple</span>) <span class="cf">for</span> item <span class="kw">in</span> browser_history), <span class="st">"All items in browser_history should be tuples"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="exercise-4.2-count-cache-hits" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4.2-count-cache-hits">Exercise 4.2: Count cache hits</h2>
+<p>Now let’s run a whole sequence of app requests through our LRU cache with a loop. For every request, update the cache as in Exercise 3.2 and count the hits in <code>hits</code> and the misses in <code>misses</code>.</p>
+<div id="62d8aaa0" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>requests <span class="op">=</span> [<span class="st">"Maps"</span>, <span class="st">"Spotify"</span>, <span class="st">"Maps"</span>, <span class="st">"Mail"</span>, <span class="st">"Camera"</span>, <span class="st">"Maps"</span>, <span class="st">"Spotify"</span>, <span class="st">"Mail"</span>]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>cache <span class="op">=</span> []  <span class="co"># start with an empty cache</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>max_cache_size <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>hits <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>misses <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="0964e7d9" class="cell" data-execution_count="18">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assertions to verify your solution</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> hits <span class="op">==</span> <span class="dv">2</span>, <span class="st">"There should be 2 cache hits"</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> misses <span class="op">==</span> <span class="dv">6</span>, <span class="st">"There should be 6 cache misses"</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> cache <span class="op">==</span> [<span class="st">"Mail"</span>, <span class="st">"Spotify"</span>, <span class="st">"Maps"</span>], <span class="st">"Check the order of your cache"</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Great job! </span><span class="sc">{</span>hits<span class="sc">}</span><span class="ss"> hits and </span><span class="sc">{</span>misses<span class="sc">}</span><span class="ss"> misses, the hit rate is </span><span class="sc">{</span>hits <span class="op">/</span> <span class="bu">len</span>(requests)<span class="sc">:.0%}</span><span class="ss">."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -734,9 +808,9 @@ Cached items after cleanup: [('knife', 12)]</code></pre>
 <h1>Solutions</h1>
 <p>You will likely find solutions to most exercises online. However, we strongly encourage you to work on these exercises independently without searching explicitly for the exact answers to the exercises. Understanding someone else’s solution is very different from developing your own. Use the lecture notes and try to solve the exercises on your own. This approach will significantly enhance your learning and problem-solving skills.</p>
 <p>Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don’t hesitate to ask for clarification during class discussions.</p>
-<p>Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today’s lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.</p>
+<p>Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today’s lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.</p>
 <hr>
-<p><em>In the next tutorial, we’ll dive deeper into more advanced strategies and some new topics!</em></p>
+<p><em>In the next tutorial, we’ll turn our LRU cache into reusable functions!</em></p>
 
 
 </section>
@@ -1185,7 +1259,7 @@ Cached items after cleanup: [('knife', 12)]</code></pre>
     </div>   
     <div class="nav-footer-center">
 <p>Programming: Everyday Decision-Making Algorithms<br>Nils Roemer and Tobias Vlćek<br>CC BY-NC-SA 4.0</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_03_01_recap.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_03_01_recap.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

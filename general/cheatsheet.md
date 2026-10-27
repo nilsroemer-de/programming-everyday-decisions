@@ -1,10 +1,6 @@
 ---
 title: Cheatsheet
 subtitle: Useful commands and tips
-html:
-  theme:
-    - litera
-    - ../styles_html.scss
 ---
 
 
@@ -169,7 +165,7 @@ if (flat_rating >= 9) and (price < 1000):
 
 # Lists and Tuples
 
-# Lists
+## Lists
 
 - **Definition**: Ordered, mutable collections of items.
 - **Creation**: Use square brackets `[]`.
@@ -245,10 +241,10 @@ restaurant_data = [
     ["Pasta Place", 4.5, 3],
     ["Sushi Bar", 4.2, 1]
 ]
-print(restaurants[0][1])  # Access the second element of the first list
+print(restaurant_data[0][1])  # Access the second element of the first list
 ```
 
-    a
+    4.5
 
 ## Tuples
 
@@ -337,15 +333,19 @@ efficacy_scores = [45, 60, 75, 85, 90]
 for score in efficacy_scores:
     if score < 50:
         continue
-        print(f"Treatment efficacy: {score}%")
+    print(f"Treatment efficacy: {score}%")
     if score >= 85:
         break
 ```
 
+    Treatment efficacy: 60%
+    Treatment efficacy: 75%
+    Treatment efficacy: 85%
+
 ## Tuple unpacking
 
 - **Definition**: Assign elements of a tuple to variables.
-- **Structure**:
+- **Structure**: `a, b, c = some_tuple` (as many variables as elements)
 - **Example**:
 
 ``` python
@@ -506,7 +506,7 @@ random_number = rd.random()
 print(random_number)
 ```
 
-    0.7629559351988863
+    0.10241659543586756
 
 ## Installing Packages
 
@@ -516,8 +516,58 @@ print(random_number)
 uv add package_name
 ```
 
-- If you are using Miniconda, you can use `conda` instead.
+# Dictionaries
 
-``` {bash}
-conda install package_name
+- **Definition**: Collections of key-value pairs; keys are unique.
+- **Creation**: Use curly braces `{}`.
+
+``` python
+tasks = {"Check Emails": 1, "Team Meeting": 3}
+print(tasks["Check Emails"])   # access a value by its key
+tasks["Prepare Slides"] = 2     # add or change an entry
+del tasks["Team Meeting"]       # remove an entry
+print("Check Emails" in tasks)  # check if a key exists
 ```
+
+    1
+    True
+
+- **Looping**: `.keys()`, `.values()` and `.items()`.
+
+``` python
+for task, priority in tasks.items():
+    print(f"{task}: {priority}")
+```
+
+    Check Emails: 1
+    Prepare Slides: 2
+
+# DataFrames (pandas)
+
+- **Definition**: Tables with labeled rows and columns.
+- **Creation**: From a dictionary of lists.
+
+``` python
+import pandas as pd
+
+df = pd.DataFrame({"task": ["A", "B", "C"], "duration": [40, 30, 60], "deadline": [110, 90, 150]})
+print(df["duration"])                 # one column
+print(df.iloc[0])                     # first row by position
+print(df.sort_values("deadline"))     # sort, e.g. for EDD
+df["finish"] = df["duration"].cumsum()  # new column
+```
+
+    0    40
+    1    30
+    2    60
+    Name: duration, dtype: int64
+    task          A
+    duration     40
+    deadline    110
+    Name: 0, dtype: object
+      task  duration  deadline
+    1    B        30        90
+    0    A        40       110
+    2    C        60       150
+
+- **Looping**: `for index, row in df.iterrows():`

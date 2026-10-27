@@ -1,5 +1,5 @@
 ---
-title: Tutorial I.III - Making Decisions
+title: 'Tutorial I.III: Making Decisions'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
@@ -270,17 +270,18 @@ else:
 
 ## Exercise 5.1 - Implement the Rule
 
-Adjust the code below to change the variable `make_application` to True if:
+Create a variable `make_application` that is `True` if:
 
 - We've seen at least 37% of available flats (use 15 total flats), AND
 - The current flat is better than the best we've seen so far
 
+and `False` otherwise.
+
 ``` python
 flats_seen = 6  # We've seen 6 flats
 total_viewings = 15  # We plan to view 15 flats in total
-current_rating = 9
+current_rating = 7
 best_rating_so_far = 8
-make_application = False
 # YOUR CODE BELOW
 ```
 
@@ -289,7 +290,7 @@ make_application = False
 
 ``` python
 # Test your answer
-assert make_application == True, "The flat rating is 9 and we've been searching for 4 weeks, so we should apply"
+assert make_application == False, "We have seen enough flats (6 of 15), but 7 does not beat our best so far (8)"
 print(f"Should we apply for this flat? {make_application}")
 ```
 
@@ -315,6 +316,6 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
-*That's it for part I! Next week, we'll apply these skills exploration and exploitation!*
+*That's it for part I! Next week, we'll apply these skills to exploration and exploitation!*

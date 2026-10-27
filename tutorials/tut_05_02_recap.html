@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
 
-<title>Tutorial V.II - Recap with Randomness – Programming: Everyday Decision-Making Algorithms</title>
+<title>Tutorial V.II: Recap with Randomness – Programming: Everyday Decision-Making Algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,9 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e4a2caf7c18c942dede446ff828dd770.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c79b9904990299345af33477e432e454.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-25060728d2783121a9f548b747010ca7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -123,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_05_02_recap.html">14 - Recap</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_05_02_recap.html">05-02: Recap</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,9 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
@@ -187,19 +186,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_01_variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-01 - Variables</span></a>
+ <span class="menu-text">01-01: Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_02_comparisons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-02 - Comparisons</span></a>
+ <span class="menu-text">01-02: Comparisons</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_03_stopping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-03 - Decisions</span></a>
+ <span class="menu-text">01-03: Decisions</span></a>
   </div>
 </li>
       </ul>
@@ -207,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">02 Explore/Exploit</span></a>
+ <span class="menu-text">02 Explore &amp; Exploit</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -222,19 +221,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_01_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-01 - Lists</span></a>
+ <span class="menu-text">02-01: Lists</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_02_loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-02 - Loops</span></a>
+ <span class="menu-text">02-02: Loops</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_03_explore_exploit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-03 - Exploration</span></a>
+ <span class="menu-text">02-03: Exploration</span></a>
   </div>
 </li>
       </ul>
@@ -257,19 +256,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-01 - Recap</span></a>
+ <span class="menu-text">03-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_02_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-02 - Functions</span></a>
+ <span class="menu-text">03-02: Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_03_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-03 - Packages</span></a>
+ <span class="menu-text">03-03: Packages</span></a>
   </div>
 </li>
       </ul>
@@ -292,19 +291,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10 - Recap</span></a>
+ <span class="menu-text">04-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_02_dicts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11 - Dictionaries</span></a>
+ <span class="menu-text">04-02: Dictionaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_03_dataframes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 - DataFrames</span></a>
+ <span class="menu-text">04-03: DataFrames</span></a>
   </div>
 </li>
       </ul>
@@ -327,19 +326,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/tut_05_01_llm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13 - LLM</span></a>
+ <span class="menu-text">05-01: LLM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_02_recap.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">14 - Recap</span></a>
+ <span class="menu-text">05-02: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_03_free.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15 - Free Tasks</span></a>
+ <span class="menu-text">05-03: Free Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -361,9 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../general/faq.html" class="sidebar-item-text sidebar-link">
@@ -417,26 +414,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#section-5---randomness" id="toc-section-5---randomness" class="nav-link" data-scroll-target="#section-5---randomness">Section 5 - Randomness</a>
   <ul class="collapse">
-  <li><a href="#solving-your-travel-problem-by-brute-force" id="toc-solving-your-travel-problem-by-brute-force" class="nav-link" data-scroll-target="#solving-your-travel-problem-by-brute-force">Solving your travel problem by brute force</a></li>
+  <li><a href="#exercise-5.1---monte-carlo-route-planning" id="toc-exercise-5.1---monte-carlo-route-planning" class="nav-link" data-scroll-target="#exercise-5.1---monte-carlo-route-planning">Exercise 5.1 - Monte Carlo Route Planning</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_05_02_recap.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_05_02_recap.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_05_02_recap.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_05_02_recap.ipynb" download="tut_05_02_recap.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_05_02_recap.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_05_02_recap.ipynb" download="tut_05_02_recap.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_05_02_recap.html">14 - Recap</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_05_02_recap.html">05-02: Recap</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tutorial V.II - Recap with Randomness</h1>
+<h1 class="title">Tutorial V.II: Recap with Randomness</h1>
 <p class="subtitle lead">Programming: Everyday Decision-Making Algorithms</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Lecturer</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Nils Roemer, External Lecturer </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Planningio GmbH
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
@@ -448,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p><span class="highlight">From now on, it is rather difficult to give you tasks that you cannot solve within minutes by yourself with the help of AI</span>. Therefore, today’s tutorial will be more open-ended than usual. All tasks are designed to be solved together with AI, but you are nonetheless the human in the loop. Thus, your responsiblities are to control the AI and to learn how to use it by doing. Instructions and explanations will only be given sparsely, as you are encouraged to use AI to ask for help and explanations to explore the tasks on your own.</p>
+<p><span class="highlight">From now on, it is rather difficult to give you tasks that you cannot solve within minutes by yourself with the help of AI</span>. Therefore, today’s tutorial will be more open-ended than usual. All tasks are designed to be solved together with AI, but you are nonetheless the human in the loop. Thus, your responsibilities are to control the AI and to learn how to use it by doing. Instructions and explanations will only be given sparsely, as you are encouraged to use AI to ask for help and explanations to explore the tasks on your own.</p>
 <p>Let’s explore how randomness affects our daily decision-making. As always, we will use Python and simulate various scenarios where randomness plays a crucial role.</p>
 </section>
 <section id="section-1---optimal-stopping-with-random-candidates" class="level1">
@@ -458,40 +468,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="exercise-1.1---the-37-rule">Exercise 1.1 - The 37% Rule</h2>
 <p>Let’s implement the 37% rule from Optimal Stopping by using random candidates. Your task is to simulate the process of selecting the best candidate out of a list of random candidates. Remember, the 37% rule says that you should reject the first 37% of candidates and then select the next candidate who is better than all previous candidates.</p>
 <p>First, let’s import the necessary library:</p>
-<div id="a7f70711" class="cell" data-execution_count="1">
+<div id="4242da2d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>In total, you have 32 candidates. Screen the candidates one by one and compute the <code>best_candidate_index</code> to find the best candidate.</p>
+<p>In total, you have 32 candidates. Screen the candidates one by one and store the index of the candidate you select in <code>best_candidate_index</code>.</p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>How to start with AI pair programming
+<span class="screen-reader-only">Tip</span>How to work with AI coding assistants and agents
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>You can use any current AI coding assistant or agent, for example GitHub Copilot (free for students, see Tutorial V.I), Cursor or Claude Code.</p>
 <ol type="1">
-<li>In Cursor, you can select the code or text you want to work with and then press <code>Ctrl+L</code> to open the chat.</li>
-<li>In the chat, you can ask the AI to help you complete the task or ask it to explain the code, the task, or related concepts</li>
-<li>While writing code, you can press <code>Ctrl+K</code> to let the AI help you write the code directly in the editor.</li>
-<li>Furthermore, the AI will try to understand your code and might make suggestions on how to improve it or on how to continue. Just press <code>TAB</code> to accept a suggestion.</li>
+<li>Select the task or the code and ask the assistant in its chat to explain the task, the code or a concept.</li>
+<li>Let it suggest code directly in your notebook and read every suggestion before you accept it.</li>
+<li>Agents can work on whole files: describe the goal, review their changes and run the tests yourself.</li>
+<li>If a test fails, ask the assistant why, and make sure you understand the fix.</li>
 </ol>
 </div>
 </div>
-<div id="6147dd9b" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">42</span>) <span class="co"># Sets the random seed for reproducibility</span></span>
+<div id="5f1f1a23" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">13</span>) <span class="co"># Sets the random seed for reproducibility</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>candidates <span class="op">=</span> [random.random() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">32</span>)]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="115455ce" class="cell" data-execution_count="3">
+<div id="bd198cf6" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your solution with the following code</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> best_candidate_index <span class="op">==</span> <span class="dv">24</span>, <span class="st">"The selected candidate is not the best one"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"All tests passed, you have successfully implemented the 37% rule!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> best_candidate_index <span class="op">==</span> <span class="dv">19</span>, <span class="st">"The 37</span><span class="sc">% r</span><span class="st">ule should select candidate 19"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"All tests passed, you have successfully implemented the 37% rule!"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The very best candidate was number </span><span class="sc">{</span>candidates<span class="sc">.</span>index(<span class="bu">max</span>(candidates))<span class="sc">}</span><span class="ss">: the rule finds the best only about 37% of the time."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -503,7 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="exercise-2.1---visiting-restaurants">Exercise 2.1 - Visiting Restaurants</h2>
 <p>Imagine you’re new to a city with 10 restaurants. Each restaurant has a “true” quality rating (unknown to you) between 0 and 5 stars. Each time you visit a restaurant, you get to experience its rating. In total, you will visit restaurants 15 times.</p>
 <p>Your goal is to create a simulation that computes the average satisfaction over 15 days based on an explore vs.&nbsp;exploit strategy. First, you should try each restaurant once (pure exploration). Then, you should just exploit your favorite restaurant for the remaining visits. Save the average satisfaction in <code>average_satisfaction</code> and the index of the best restaurant in <code>best_restaurant_index</code>.</p>
-<div id="9eed6645" class="cell" data-execution_count="4">
+<div id="916297ce" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up the restaurants (true qualities are unknown to the visitor!)</span></span>
@@ -512,7 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="72650490" class="cell" data-execution_count="5">
+<div id="c0cc9e32" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your solution with the following code</span></span>
@@ -529,14 +541,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercise-3.1---random-menu-generator" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3.1---random-menu-generator">Exercise 3.1 - Random Menu Generator</h2>
 <p>Create a function <code>generate_daily_menu()</code> that generates a daily menu by randomly selecting items from different categories. As our “cache” - the daily menu - is rather small, we only want to receive one menu for each day as a list from the function.</p>
-<div id="ec48219f" class="cell" data-execution_count="6">
+<div id="471f9e72" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>appetizers <span class="op">=</span> [<span class="st">"Sorted Salad"</span>, <span class="st">"Binary Bruschetta"</span>, <span class="st">"Array of Antipasti"</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>mains <span class="op">=</span> [<span class="st">"Loop Lasagna"</span>, <span class="st">"Python Pasta"</span>, <span class="st">"Recursive Risotto"</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>desserts <span class="op">=</span> [<span class="st">"Binary Brownie"</span>, <span class="st">"Cache Cookie"</span>, <span class="st">"Stack Sundae"</span>]</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="54545d17" class="cell" data-execution_count="7">
+<div id="b78959b1" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your solution with the following code</span></span>
@@ -562,11 +574,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Your task is to create a function <code>schedule_tasks(tasks)</code> that:</p>
 <ul>
 <li>Sorts tasks by due date</li>
-<li>Creates a schedule with start and end times for each task</li>
-<li>Returns the complete schedule as an pandas DataFrame</li>
-<li>Keep the same column names as in the dictionary</li>
+<li>Adds the start and end time of each task in two new columns <code>start_time</code> and <code>end_time</code></li>
+<li>Keeps the original columns <code>name</code>, <code>duration</code> and <code>due_time</code></li>
+<li>Returns the complete schedule as a pandas DataFrame</li>
 </ul>
-<div id="d01d93c8" class="cell" data-execution_count="8">
+<div id="43a42d9d" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pre-generated tasks (don't modify this!)</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Times are represented in hours from start (hour 0)</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># For example, due_time: 24 means it's due 24 hours from start</span></span>
@@ -600,17 +612,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>]</span>
 <span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1a8313ad" class="cell" data-execution_count="9">
+<div id="60616ec1" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your solution with the following code</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>schedule_df <span class="op">=</span> schedule_tasks(tasks)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> schedule_df.shape <span class="op">==</span> (<span class="dv">5</span>, <span class="dv">4</span>), <span class="st">"The schedule should have 5 rows and 4 columns"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> schedule_df.iloc[<span class="dv">0</span>][<span class="st">'name'</span>] <span class="op">==</span> <span class="st">"Team Meeting"</span>, <span class="st">"First task should be 'Team Meeting'"</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> schedule_df.iloc[<span class="dv">4</span>][<span class="st">'name'</span>] <span class="op">==</span> <span class="st">"Project Review"</span>, <span class="st">"Fifth task should be 'Project Review'"</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"All tests passed, you have successfully implemented the task scheduler!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> schedule_df.shape <span class="op">==</span> (<span class="dv">5</span>, <span class="dv">5</span>), <span class="st">"The schedule should have 5 rows and 5 columns"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">set</span>(schedule_df.columns) <span class="op">==</span> {<span class="st">"name"</span>, <span class="st">"duration"</span>, <span class="st">"due_time"</span>, <span class="st">"start_time"</span>, <span class="st">"end_time"</span>}, <span class="st">"Check the column names"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> schedule_df.iloc[<span class="dv">4</span>][<span class="st">'end_time'</span>] <span class="op">==</span> <span class="dv">15</span>, <span class="st">"The last task should end after 15 hours"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> schedule_df.iloc[<span class="dv">0</span>][<span class="st">'name'</span>] <span class="op">==</span> <span class="st">"Team Meeting"</span>, <span class="st">"First task should be 'Team Meeting'"</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> schedule_df.iloc[<span class="dv">4</span>][<span class="st">'name'</span>] <span class="op">==</span> <span class="st">"Project Review"</span>, <span class="st">"Fifth task should be 'Project Review'"</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"All tests passed, you have successfully implemented the task scheduler!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -618,10 +632,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="section-5---randomness" class="level1">
 <h1>Section 5 - Randomness</h1>
 <p>In our daily lives, we often encounter situations where randomness plays a crucial role in decision-making. From choosing a restaurant for dinner to selecting which tasks to tackle first, incorporating some randomness can actually lead to better outcomes than strictly deterministic approaches.</p>
-<section id="solving-your-travel-problem-by-brute-force" class="level2">
-<h2 class="anchored" data-anchor-id="solving-your-travel-problem-by-brute-force">Solving your travel problem by brute force</h2>
-<p>Imagine you want to travel during the semester break and you want to visit 6 cities and then return to Hamburg. Your aim is to find the route that is the cheapest to travel. Implement a heuristic that randomly tries 10 different routes and picks the cheapest one. Save the costs in <code>min_cost</code>.</p>
-<div id="aa0fae3f" class="cell" data-execution_count="10">
+<section id="exercise-5.1---monte-carlo-route-planning" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5.1---monte-carlo-route-planning">Exercise 5.1 - Monte Carlo Route Planning</h2>
+<p>Imagine you want to travel during the semester break: starting in Hamburg, you want to visit the other 5 cities once and then return to Hamburg. Instead of checking all possible routes, use a <strong>Monte Carlo simulation</strong> as in the lecture:</p>
+<ol type="1">
+<li>Create 1,000 random routes (for example with <code>random.shuffle()</code> on the list of cities to visit)</li>
+<li>Compute the cost of each route, including the flights from and back to Hamburg</li>
+<li>Estimate the <strong>expected cost of a random route</strong> as the average of all simulated costs and save it in <code>average_cost</code></li>
+<li>Save the cost of the cheapest route you found in <code>min_cost</code></li>
+</ol>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The more random routes you simulate, the closer <code>average_cost</code> gets to the true average, and the more likely it is that you also find the cheapest route.</p>
+</div>
+</div>
+</div>
+<div id="53879eaf" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># City names and cost matrix</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
@@ -643,7 +673,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the DataFrame</span></span>
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cost_df)</span>
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE HERE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           New York  London  Tokyo  Sydney  Barcelona  Hamburg
 New York          0     700   1500    2000        800      900
@@ -654,12 +684,14 @@ Barcelona       800     300   1100    1700          0      600
 Hamburg         900     700   1400    1500        600        0</code></pre>
 </div>
 </div>
-<div id="60a8a822" class="cell" data-execution_count="11">
+<div id="dac981af" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your solution with the following code</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> min_cost <span class="op">&lt;</span> <span class="dv">6000</span>, <span class="st">"The cheapest route should be cheaper than 6000. Try again, if you think your algorithm works correctly."</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"All tests passed, you have successfully implemented the route planner!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">abs</span>(average_cost <span class="op">-</span> <span class="dv">6880</span>) <span class="op">&lt;</span> <span class="dv">150</span>, <span class="st">"The average cost of a random route should be close to 6880"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> min_cost <span class="op">==</span> <span class="dv">5500</span>, <span class="st">"With 1,000 random routes, you should find the cheapest route (5500)"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="vs">r"All tests passed, you have successfully simulated the route planner!"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A random route costs about </span><span class="sc">{</span>average_cost<span class="sc">:.0f}</span><span class="ss"> on average, the best one </span><span class="sc">{</span>min_cost<span class="sc">}</span><span class="ss">."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -672,7 +704,7 @@ Hamburg         900     700   1400    1500        600        0</code></pre>
 <li>Optimal stopping with random elements</li>
 <li>Caching a random subset of data</li>
 <li>Scheduling tasks with due dates</li>
-<li>Finding the cheapest route for a travel problem</li>
+<li>Monte Carlo simulation of a travel problem</li>
 </ul>
 <p>Remember that randomness isn’t always bad - sometimes it’s the best strategy we have!</p>
 <hr>
@@ -1125,7 +1157,7 @@ Hamburg         900     700   1400    1500        600        0</code></pre>
     </div>   
     <div class="nav-footer-center">
 <p>Programming: Everyday Decision-Making Algorithms<br>Nils Roemer and Tobias Vlćek<br>CC BY-NC-SA 4.0</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_05_02_recap.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_05_02_recap.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

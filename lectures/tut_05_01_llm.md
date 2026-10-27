@@ -1,10 +1,9 @@
 ---
-title: Tutorial V.I - Programming with AI
+title: 'Tutorial V.I: Programming with AI'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
-author: Dr. Nils Roemer
 format:
   revealjs:
-    footer: ' {{< meta title >}} | {{< meta author >}} | [Home](tut_05_01_llm.qmd)'
+    footer: ' {{< meta title >}} | Dr. Nils Roemer | [Home](tut_05_01_llm.qmd)'
     output-file: tut_05_01_presentation.html
 ---
 
@@ -16,11 +15,8 @@ format:
 - Coding by hand is <span class="highlight">not the only way to generate code</span>
 - Most likely, a lot of you have already used **ChatGPT**
 
-. . .
-
 <center>
 <img src="../images/gif/tut05-llm.gif" width="400" height="400" alt="">
-</p>
 </center>
 
 ## 
@@ -47,9 +43,7 @@ Models work?
 - Learns patterns in **how words and ideas connect** via tokens
 - Interconnected nodes with **weights representing patterns**
 - During training, these **weights are adjusted**
-- Once trained, **applying** them takes much less ressources
-
-. . .
+- Once trained, **applying** them takes much less resources
 
 > **Tip**
 >
@@ -63,8 +57,6 @@ Models work?
 - It can find **patterns between concepts** and your question
 - Knows only limited text at once (**context window**)
 
-. . .
-
 > **Warning**
 >
 > Managing **context windows** is crucial!
@@ -72,7 +64,7 @@ Models work?
 ## Probability based responses
 
 - After each written token, it predicts <span class="highlight">"what should come next?"</span>
-- Like a advanced version of the **word prediction** on your phone
+- Like an advanced version of the **word prediction** on your phone
 - Chooses the **most likely next token** based on training
 - <span class="highlight">But can't actually "think" or "understand" like humans</span>
 
@@ -89,15 +81,13 @@ Models work?
 - <span class="question">Question</span>: What are the implications for us?
 - <span class="question">Question</span>: Can we use them to our advantage?
 
-. . .
-
 > **Warning**
 >
-> If you use free models, be aware that your prompts are going to be used by the providers and are not private. But for learning and experimenting, this should be no issue.
+> Free models may use your prompts for training. Don't enter private or company data.
 
 ## A Great Overview by 3Blue1Brown
 
-- **Greg Sanderson provides an excellent explanation of LLMs**
+- **Grant Sanderson provides an excellent explanation of LLMs**
 - Great starting point to understand LLMs
 - Check out his [YouTube channel, 3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) for more
 
@@ -108,35 +98,19 @@ Models work?
 
 ## What is GitHub Copilot?
 
-<span class="highlight">GitHub Copilot</span> is an *AI pair programmer* that helps you write code faster and with less effort.
+<span class="highlight">GitHub Copilot</span> is an *AI pair programmer* inside your editor:
 
-. . .
-
-**Think of it as:**
-
-- An autocomplete for entire lines or blocks of code
-- A coding assistant that understands context
-- A learning tool that shows you coding patterns
-
-. . .
-
-> **Note**
->
-> Copilot uses AI trained on billions of lines of public code to suggest completions.
-
-. . .
+- Autocomplete for entire lines or blocks of code
+- A chat that knows your code
+- A tool to learn common coding patterns
 
 > **Tip**
 >
-> There are alternative like Zed or Cursor, but you can use Copilot for free as student.
+> Alternatives are Cursor, Zed or Claude Code. Copilot is free for students.
 
 ## Used autocomplete before?
 
-. . .
-
 When you type on your phone, it suggests the next word.
-
-. . .
 
 **GitHub Copilot does the same for code:**
 
@@ -144,9 +118,7 @@ When you type on your phone, it suggests the next word.
 - Copilot suggests the code to do it
 - You accept, modify, or reject the suggestion
 
-. . .
-
-<span class="highlight">It's autocomplete but much better then what you are used to</span>
+<span class="highlight">It's autocomplete but much better than what you are used to</span>
 
 ## Why Use Copilot?
 
@@ -157,15 +129,11 @@ When you type on your phone, it suggests the next word.
 - **Understand syntax:** Get correct syntax without memorizing
 - **Stay in flow:** Focus on logic, not syntax errors
 
-. . .
-
 > **Tip**
 >
 > Especially helpful when you know **WHAT** you want to do but forget **HOW** to do it.
 
 ## When should you use Copilot?
-
-. . .
 
 <span class="highlight">Good uses of Copilot</span>
 
@@ -176,8 +144,6 @@ When you type on your phone, it suggests the next word.
 
 ## What shouldn't you do with Copilot?
 
-. . .
-
 <span class="highlight">Not so good uses of Copilot</span>
 
 - Replacing learning fundamentals
@@ -185,31 +151,18 @@ When you type on your phone, it suggests the next word.
 - Skipping practice exercises
 - Copy-pasting without reading
 
-. . .
-
 <span class="highlight">Always understand what Copilot suggests before accepting!</span>
-
-. . .
 
 **But of course I know you will not do that ;)**
 
 ## Accept without reading?
 
-. . .
-
 <span class="highlight">Copilot might suggest code that:</span>
 
-- Works but uses concepts you haven't learned yet
-- Contains subtle bugs or edge cases
-- Doesn't match your specific requirements
-- Uses inefficient approaches
-- Introduce dangerous code in your project
-
-. . .
-
-> **Warning**
->
-> Dangerous code can lead to security vulnerabilities, data loss, or other issues. In the context of this lecture it should be no issue, but in companies it can be one!
+- Uses concepts you haven't learned yet
+- Contains subtle bugs or misses edge cases
+- Doesn't match your requirements
+- Introduces security risks (an issue in companies, less in this course)
 
 ## My take: Just be careful, ok?
 
@@ -219,8 +172,6 @@ When you type on your phone, it suggests the next word.
 2.  **Understand** what it does
 3.  **Test** it with examples
 4.  **Modify** if needed
-
-. . .
 
 > **Warning**
 >
@@ -232,15 +183,11 @@ When you type on your phone, it suggests the next word.
 
 **GitHub Student Developer Pack** gives you free Copilot access!
 
-. . .
-
 1.  Go to [education.github.com/pack](https://education.github.com/pack)
 2.  Sign up with your university email
 3.  Verify your student status
 4.  Wait for approval (usually 1-2 days)
-5.  Login into your account in VS Code
-
-. . .
+5.  Log in to your account in VS Code
 
 > **Note**
 >
@@ -251,19 +198,15 @@ When you type on your phone, it suggests the next word.
 1.  Create a new Python file (`.py`) and type something
 2.  Wait 1-2 seconds
 
-. . .
-
 **If working, you'll see:**
 
 - Gray "ghost text" suggesting code
 - Press `Tab` to accept
 - Press `Esc` to reject
 
-. . .
-
 > **Tip**
 >
-> Try to get copilot running on your own until next session.
+> Try to get Copilot running on your own until next session.
 
 # <span class="flow">Summary</span>
 

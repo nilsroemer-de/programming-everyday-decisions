@@ -9,8 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Dr.&nbsp;Nils Roemer">
-  <title>Programming: Everyday Decision-Making Algorithms – Tutorial V.I - Programming with AI</title>
+  <meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
+  <title>Programming: Everyday Decision-Making Algorithms – Tutorial V.I: Programming with AI</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b2296277df239b774fa479879ac923b5.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bb978de86abbef3b36a933764425996b.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -130,16 +130,16 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Tutorial V.I - Programming with AI</h1>
+  <h1 class="title">Tutorial V.I: Programming with AI</h1>
   <p class="subtitle">Programming: Everyday Decision-Making Algorithms</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Dr.&nbsp;Nils Roemer 
+Dr.&nbsp;Nils Roemer, External Lecturer 
 </div>
         <p class="quarto-title-affiliation">
-            Kühne Logistics University Hamburg
+            Planningio GmbH
           </p>
     </div>
 </div>
@@ -159,7 +159,6 @@ Dr.&nbsp;Nils Roemer
 <div class="fragment">
 <center>
 <img src="../images/gif/tut05-llm.gif" width="400" height="400" alt="">
-<p></p>
 </center>
 </div>
 </section>
@@ -191,7 +190,7 @@ Dr.&nbsp;Nils Roemer
 <li>Learns patterns in <strong>how words and ideas connect</strong> via tokens</li>
 <li>Interconnected nodes with <strong>weights representing patterns</strong></li>
 <li>During training, these <strong>weights are adjusted</strong></li>
-<li>Once trained, <strong>applying</strong> them takes much less ressources</li>
+<li>Once trained, <strong>applying</strong> them takes much less resources</li>
 </ul>
 <div class="fragment">
 <div class="callout callout-tip callout-style-simple">
@@ -232,7 +231,7 @@ Dr.&nbsp;Nils Roemer
 <h2>Probability based responses</h2>
 <ul>
 <li>After each written token, it predicts <span class="highlight">“what should come next?”</span></li>
-<li>Like a advanced version of the <strong>word prediction</strong> on your phone</li>
+<li>Like an advanced version of the <strong>word prediction</strong> on your phone</li>
 <li>Chooses the <strong>most likely next token</strong> based on training</li>
 <li><span class="highlight">But can’t actually “think” or “understand” like humans</span></li>
 </ul>
@@ -260,7 +259,7 @@ Dr.&nbsp;Nils Roemer
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>If you use free models, be aware that your prompts are going to be used by the providers and are not private. But for learning and experimenting, this should be no issue.</p>
+<p>Free models may use your prompts for training. Don’t enter private or company data.</p>
 </div>
 </div>
 </div>
@@ -269,7 +268,7 @@ Dr.&nbsp;Nils Roemer
 <section id="a-great-overview-by-3blue1brown" class="slide level2">
 <h2>A Great Overview by 3Blue1Brown</h2>
 <ul>
-<li><strong>Greg Sanderson provides an excellent explanation of LLMs</strong></li>
+<li><strong>Grant Sanderson provides an excellent explanation of LLMs</strong></li>
 <li>Great starting point to understand LLMs</li>
 <li>Check out his <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">YouTube channel, 3Blue1Brown</a> for more</li>
 </ul>
@@ -283,27 +282,12 @@ Dr.&nbsp;Nils Roemer
 </section>
 <section id="what-is-github-copilot" class="slide level2">
 <h2>What is GitHub Copilot?</h2>
-<p><span class="highlight">GitHub Copilot</span> is an <em>AI pair programmer</em> that helps you write code faster and with less effort.</p>
-<div class="fragment">
-<p><strong>Think of it as:</strong></p>
+<p><span class="highlight">GitHub Copilot</span> is an <em>AI pair programmer</em> inside your editor:</p>
 <ul>
-<li>An autocomplete for entire lines or blocks of code</li>
-<li>A coding assistant that understands context</li>
-<li>A learning tool that shows you coding patterns</li>
+<li>Autocomplete for entire lines or blocks of code</li>
+<li>A chat that knows your code</li>
+<li>A tool to learn common coding patterns</li>
 </ul>
-</div>
-<div class="fragment">
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Copilot uses AI trained on billions of lines of public code to suggest completions.</p>
-</div>
-</div>
-</div>
-</div>
 <div class="fragment">
 <div class="callout callout-tip callout-style-simple">
 <div class="callout-body">
@@ -311,7 +295,7 @@ Dr.&nbsp;Nils Roemer
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>There are alternative like Zed or Cursor, but you can use Copilot for free as student.</p>
+<p>Alternatives are Cursor, Zed or Claude Code. Copilot is free for students.</p>
 </div>
 </div>
 </div>
@@ -331,7 +315,7 @@ Dr.&nbsp;Nils Roemer
 </ul>
 </div>
 <div class="fragment">
-<p><span class="highlight">It’s autocomplete but much better then what you are used to</span></p>
+<p><span class="highlight">It’s autocomplete but much better than what you are used to</span></p>
 </div>
 </section>
 <section id="why-use-copilot" class="slide level2">
@@ -391,24 +375,11 @@ Dr.&nbsp;Nils Roemer
 <div class="fragment">
 <p><span class="highlight">Copilot might suggest code that:</span></p>
 <ul>
-<li>Works but uses concepts you haven’t learned yet</li>
-<li>Contains subtle bugs or edge cases</li>
-<li>Doesn’t match your specific requirements</li>
-<li>Uses inefficient approaches</li>
-<li>Introduce dangerous code in your project</li>
+<li>Uses concepts you haven’t learned yet</li>
+<li>Contains subtle bugs or misses edge cases</li>
+<li>Doesn’t match your requirements</li>
+<li>Introduces security risks (an issue in companies, less in this course)</li>
 </ul>
-</div>
-<div class="fragment">
-<div class="callout callout-warning callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Dangerous code can lead to security vulnerabilities, data loss, or other issues. In the context of this lecture it should be no issue, but in companies it can be one!</p>
-</div>
-</div>
-</div>
 </div>
 </section>
 <section id="my-take-just-be-careful-ok" class="slide level2">
@@ -447,7 +418,7 @@ Dr.&nbsp;Nils Roemer
 <li>Sign up with your university email</li>
 <li>Verify your student status</li>
 <li>Wait for approval (usually 1-2 days)</li>
-<li>Login into your account in VS Code</li>
+<li>Log in to your account in VS Code</li>
 </ol>
 </div>
 <div class="fragment">
@@ -484,7 +455,7 @@ Dr.&nbsp;Nils Roemer
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Try to get copilot running on your own until next session.</p>
+<p>Try to get Copilot running on your own until next session.</p>
 </div>
 </div>
 </div>
@@ -511,7 +482,7 @@ Dr.&nbsp;Nils Roemer
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Tutorial V.I - Programming with AI | Dr.&nbsp;Nils Roemer | <a href="../lectures/tut_05_01_llm.html">Home</a></p>
+<p>Tutorial V.I: Programming with AI | Dr.&nbsp;Nils Roemer | <a href="../lectures/tut_05_01_llm.html">Home</a></p>
 </div>
 </div></div>
 

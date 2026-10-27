@@ -1,24 +1,22 @@
 ---
 title: Frequently Asked Questions
 subtitle: Answers to common questions
-html:
-  theme:
-    - litera
-    - ../styles_html.scss
 ---
 
 
 ## Unanswered Questions
 
-If you have a question that is not answered here, please let me know by sending me an e-mail to [nils.roemer@planningio.com](mailto:nils.roemer@planningio.com?subject=ProgrammingEverydayDecisions) or by creating an issue on [GitHub](https://github.com/nilsroemer-de/programming-everyday-decisions/issues).
+If you have a question that is not answered here, please let me know by sending me an e-mail to [nils.roemer@planningio.com](mailto:nils.roemer@planningio.com?subject=ProgrammingEverydayDecisions).
 
 ## Contribution and Mistakes
 
-If you have found a mistake in the course material or if you have any suggestion on how to improve the course, please let me know by sending me an e-mail to [nils.roemer@planningio.com](mailto:nils.roemer@planningio.com?subject=ProgrammingEverydayDecisions) or by creating an issue on [GitHub](https://github.com/nilsroemer-de/programming-everyday-decisions/issues).
+If you have found a mistake in the course material or if you have any suggestion on how to improve the course, please let me know by sending me an e-mail to [nils.roemer@planningio.com](mailto:nils.roemer@planningio.com?subject=ProgrammingEverydayDecisions).
 
 ## FAQs
 
 ### How can I download PDF slides from the lecture?
+
+Each lecture page offers a PDF version of the lecture notes under **Other Formats**. To export the slides themselves as a PDF:
 
 1.  First, open the lecture you want to download the slides from.
 2.  Then, click on the `RevealJS` button in the top right corner.

@@ -1,5 +1,5 @@
 ---
-title: Tutorial IV.III - DataFrames
+title: 'Tutorial IV.III: DataFrames'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
@@ -13,11 +13,7 @@ Imagine you're planning a Mars mission. Every task, from equipment checks to cre
 > Before starting, ensure you have the `pandas` library installed.
 >
 > ``` {bash}
-> uv install pandas
-> ```
->
-> ``` {bash}
-> conda install pandas
+> uv add pandas
 > ```
 
 Let's begin by importing pandas:
@@ -47,7 +43,7 @@ print(tasks)
 
 > **Note**
 >
-> The `pd.DataFrame()` function is used to create a DataFrame. A DataFrame is a two-dimensional, size-mutable, and heterogeneous tabular data structure with labeled axes (rows and columns). Here, we've created a DataFrame with three rows and four columns: `task`, `duration`, and `deadline`.
+> The `pd.DataFrame()` function is used to create a DataFrame. A DataFrame is a two-dimensional, size-mutable, and heterogeneous tabular data structure with labeled axes (rows and columns). Here, we've created a DataFrame with three rows and three columns: `task`, `duration`, and `deadline`.
 
 ## Exercise 1.1 - Create Mission Tasks DataFrame
 
@@ -114,8 +110,8 @@ selected_cols = tasks[['task', 'duration']]
 print("\nSelected columns:\n", selected_cols)
 
 # Using dot notation (only works for simple column names)
-priorities = tasks.deadline
-print("\nPriorities:\n", priorities)
+deadlines = tasks.deadline
+print("\nDeadlines:\n", deadlines)
 ```
 
     Durations:
@@ -130,7 +126,7 @@ print("\nPriorities:\n", priorities)
     Task 2    Crew Training         3
     Task 3   Supply Loading         7
 
-    Priorities:
+    Deadlines:
      Task 1    10
     Task 2    15
     Task 3     8
@@ -178,7 +174,7 @@ print("\nSubset of data based on labels:\n", subset)
     Subset of data based on labels:
      Crew Training
 
-## Exercise 4.1 - Data Access Practice
+## Exercise 2.1 - Data Access Practice
 
 Using the `mission_tasks` DataFrame from earlier, complete these tasks:
 
@@ -246,7 +242,7 @@ print(tasks)
 
 Here, we've added a new column called `delayed_deadline` to the `tasks` DataFrame. The new column is calculated by adding 1 to the `deadline` column.
 
-## Exercise 2.1 - Apply EDD to Mission Tasks
+## Exercise 3.1 - Apply EDD to Mission Tasks
 
 Sort your `mission_tasks` using the EDD algorithm (sort by deadline).
 
@@ -259,16 +255,16 @@ Sort your `mission_tasks` using the EDD algorithm (sort by deadline).
 
 ``` python
 # Test your answer
-assert edd_schedule.iloc[0]['task'] == 'Communication Setup', "First task should be Communication Setup"
+assert list(edd_schedule['task']) == ['Communication Setup', 'Fuel Loading', 'Life Support Check', 'Navigation Systems'], "Sort the tasks by deadline"
 print("EDD Schedule created successfully!")
 print(edd_schedule)
 ```
 
 </details>
 
-## Exercise 2.2 - Calculate New Deadline
+## Exercise 3.2 - Calculate New Deadline
 
-Unfortuantely, the mission has been delayed as some tasks are rather complex. Add a new column to the `mission_tasks` DataFrame called `new_deadline`. The new deadline is the old deadline plus the duration of the task.
+Unfortunately, the mission has been delayed as some tasks are rather complex. Add a new column to the `mission_tasks` DataFrame called `new_deadline`. The new deadline is the old deadline plus the duration of the task.
 
 ``` python
 # YOUR CODE BELOW
@@ -287,7 +283,7 @@ print(mission_tasks)
 
 </details>
 
-# Section 3 - Looping over DataFrames
+# Section 4 - Looping over DataFrames
 
 Now, we want to apply the EDD algorithm to the `mission_tasks` DataFrame. We can do this sorting the rows by deadline and then looping over the rows, computing the completion time and the maximum delay.
 
@@ -339,7 +335,7 @@ print(sorted_tasks.iloc[-1].name)
 
     Task 2
 
-## Exercise 3.1 - Apply Earliest Due Date to Mission Tasks
+## Exercise 4.1 - Apply Earliest Due Date to Mission Tasks
 
 Now it is your turn: Apply the EDD algorithm to the `mission_tasks` DataFrame. Remember, that the EDD algorithm **sorts the tasks by the original deadline** and then loops over the rows, computing the completion time and maximum delay for each task (just like in the example above).
 
@@ -361,11 +357,11 @@ print(edd_schedule)
 
 </details>
 
-## Exercise 3.2 - Apply Shortest Processing Time to Mission Tasks
+## Exercise 4.2 - Apply Shortest Processing Time to Mission Tasks
 
 Now, apply the SPT algorithm to the `mission_tasks` DataFrame. Remember, that the SPT algorithm **sorts the tasks by duration** and then loops over the rows, computing the completion time and total waiting time for all tasks.
 
-Compute the sum of the waiting times for all tasks in a variabel called `total_waiting_time` and compute the completion time of the last task in a variable called `completion_time`.
+Compute the sum of the waiting times for all tasks in a variable called `total_waiting_time` and compute the completion time of the last task in a variable called `completion_time`.
 
 ``` python
 # YOUR CODE BELOW
@@ -401,8 +397,8 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 ------------------------------------------------------------------------
 
-*That's it for this weeks tutorials. Next week we are going to cover the topic of randomness in everyday life.*
+*That's it for this week's tutorials. Next week we are going to cover the topic of randomness in everyday life.*

@@ -12,7 +12,7 @@ This section provides a curated list of books and resources to enhance your unde
 
 - Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.
   - A book that inspired this lecture and will give you a good intuition for the principles of algorithmic thinking and how they can be applied to solve problems in everyday life.
-- Zingaro, D. (2024) Algorithmic thinking, 2nd edition: Unlock your programming potential. AU: No Starch Press.
+- Zingaro, D. (2024) Algorithmic thinking, 2nd edition: Unlock your programming potential. San Francisco: No Starch Press.
   - A book that introduces you to different algorithms and their reasoning. Written without any pseudocode, but with a lot of examples and explanations.
 
 # Python
@@ -43,22 +43,22 @@ This section provides a curated list of books and resources to enhance your unde
   - A book that is highly recommended to understand the principles of data visualization and how to create effective visualizations.
   - [Link to the free book website](https://clauswilke.com/dataviz/)
 - Thomas, D., & Hunt, A. (2019). The pragmatic programmer, 20th anniversary edition: Journey to mastery (Second edition). Addison-Wesley.
-  - A fantasticbook to understand the principles of software development and how to create effective software.
+  - A fantastic book to understand the principles of software development and how to create effective software.
 
 ## Resources
 
 - [Quarto](https://quarto.org)
   - A static website generator that is very powerful and flexible. Used to create the slides and the website for the course.
-- [Cursor](https://cursor.sh)
+- [Cursor](https://cursor.com)
   - A code editor based on VS Code that is very powerful and flexible. It uses AI to help you write code.
 - [Zed](https://zed.dev)
   - A young and lightweight code editor that is very fast and lightweight with built-in collaboration and AI features.
 - [Jupyter](https://jupyter.org)
   - A web application that allows you to create and share documents that contain code, equations, visualizations and text. It is very popular in the field of data science and academia and also part of Quarto.
 - [Advent of Code](https://adventofcode.com/)
-  - A wonderful website with daily challenges during the christmas time. Highly recommended to playfully improve your skills.
+  - A wonderful website with daily challenges during the Christmas time. Highly recommended to playfully improve your skills.
 - [Tiny Python Projects](http://tinypythonprojects.com)
-  - Interesting and fun projects to programm in order to improve your programming skills.
+  - Interesting and fun projects to program in order to improve your programming skills.
 - [Github](https://github.com)
   - The largest provider for git repositories owned by Microsoft. A lot of open source projects are hosted here and you can read the code.
 - [Codewars](https://codewars.com)

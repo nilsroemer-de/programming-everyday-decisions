@@ -1,5 +1,5 @@
 ---
-title: Tutorial III.III - Package Management
+title: 'Tutorial III.III: Package Management'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
@@ -12,7 +12,7 @@ Think of Python as your local library's main building. Just like a library has:
 
 - A main collection (Python's standard library)
 - Different sections (third-party packages)
-- A catalog system (a package manager --- we use `uv`)
+- A catalog system (a package manager, in our case `uv`)
 - Multiple branches (virtual environments / project folders)
 
 ## In more detail
@@ -77,7 +77,7 @@ a_random_number = random.random()
 print(f"A random number is {a_random_number}!")
 ```
 
-    A random number is 0.6094947512477988!
+    A random number is 0.42914009537412046!
 
 We can also use the library to choose a random element from a list. For example, the following code chooses a random element from the list `['book1', 'book2', 'book3']`. Try it out by executing the cell multiple times.
 
@@ -86,7 +86,7 @@ random_choice = random.choice(['book1', 'book2', 'book3'])
 print(f"We chose {random_choice}!")
 ```
 
-    We chose book3!
+    We chose book2!
 
 Sometimes, we only need one function from a library. In this case, we can use the `from` keyword to import only the specific function we need. For example, the following code imports only the `randint` function from the `random` library and uses it to generate a random integer between 1 and 10.
 
@@ -96,7 +96,7 @@ a_random_integer = randint(1, 10)
 print(f"A random integer between 1 and 10 is {a_random_integer}!")
 ```
 
-    A random integer between 1 and 10 is 10!
+    A random integer between 1 and 10 is 2!
 
 Other times, we might need to work with a library that has a rather long name. In this case, we can use the `as` keyword to give the library a shorter name. For example, the following code imports the `random` library and gives it the shorter name `rd`.
 
@@ -106,7 +106,7 @@ a_random_integer = rd.randint(1, 100)
 print(f"Now, a random integer between 1 and 100 is {a_random_integer}!")
 ```
 
-    Now, a random integer between 1 and 100 is 55!
+    Now, a random integer between 1 and 100 is 27!
 
 ## Exercise 1.1 - Use the math library
 
@@ -130,6 +130,10 @@ print(f"Great job! The square root of 256 is {square_root}!")
 
 Use the `random` library to generate a random number between 1 and 25. Call the result `random_number`.
 
+``` python
+# YOUR CODE BELOW
+```
+
 <details class="code-fold">
 <summary>Code</summary>
 
@@ -140,7 +144,104 @@ print(f"Good! You generated a random integer {random_number} between 1 and 25!")
 
 </details>
 
-# Section 2 - Using a package manager (`uv`)
+# Section 2 - LRU or Random?
+
+Now we can use the `random` package to answer a question from the lecture: is LRU really better than throwing out a random item? Here is the LRU function from the last tutorial:
+
+``` python
+def lru_access(cache, item, max_size):
+    if item in cache:            # hit: move to the front
+        cache.remove(item)
+        cache.insert(0, item)
+        return True
+    if len(cache) >= max_size:   # miss and full: evict least recently used
+        cache.pop()
+    cache.insert(0, item)
+    return False
+```
+
+To test both strategies, we need many requests. Real usage has **temporal locality**: for a while, we use a few apps again and again. The following code simulates 1000 app requests like this:
+
+``` python
+random.seed(42)  # makes the random numbers reproducible
+apps = ["Mail", "Maps", "Spotify", "Camera", "Notes", "Banking", "Weather", "News"]
+requests = []
+for i in range(1000):
+    if i % 100 == 0:
+        current_apps = random.sample(apps, 3)  # every 100 requests, we focus on 3 other apps
+    if random.random() < 0.8:
+        requests.append(random.choice(current_apps))
+    else:
+        requests.append(random.choice(apps))
+print(requests[:10])
+```
+
+    ['Maps', 'Maps', 'Banking', 'Mail', 'Maps', 'Banking', 'Banking', 'Banking', 'Mail', 'Banking']
+
+## Exercise 2.1 - Random Eviction
+
+Create a function `random_access(cache, item, max_size)` that works like `lru_access()`, but:
+
+- On a hit, it leaves the cache unchanged and returns `True`
+- On a miss with a full cache, it removes a **random** item with `random.choice()` before inserting the new item
+
+``` python
+# YOUR CODE BELOW
+```
+
+<details class="code-fold">
+<summary>Code</summary>
+
+``` python
+random.seed(1)
+test_cache = ["A", "B", "C"]
+assert random_access(test_cache, "B", 3) == True and test_cache == ["A", "B", "C"], "A hit should not change the cache"
+assert random_access(test_cache, "D", 3) == False and len(test_cache) == 3 and "D" in test_cache, "A miss should replace one item"
+print("Good! Your random eviction works.")
+```
+
+</details>
+
+## Exercise 2.2 - Compare the Strategies
+
+Send all `requests` through a cache with 3 slots, once with `lru_access()` and once with `random_access()`. Store the hit rates (hits divided by the number of requests) in `lru_rate` and `random_rate`. Which strategy wins?
+
+``` python
+# YOUR CODE BELOW
+```
+
+<details class="code-fold">
+<summary>Code</summary>
+
+``` python
+assert round(lru_rate, 3) == 0.719, "Check your LRU hit rate"
+assert 0 < random_rate < 1, "The random hit rate should be between 0 and 1"
+print(f"LRU: {lru_rate:.1%} hits, random: {random_rate:.1%} hits")
+```
+
+</details>
+
+> **Python ships an LRU cache**
+>
+> The standard library already contains an LRU cache: `functools.lru_cache`. It remembers the results of a function, so repeated calls with the same input are answered from the cache instead of being computed again.
+
+``` python
+from functools import lru_cache
+
+@lru_cache(maxsize=3)  # keep the results of the 3 most recent inputs
+def slow_square(n):
+    print(f"Computing {n} * {n} ...")
+    return n * n
+
+slow_square(4)  # computed
+slow_square(4)  # answered from the cache, no "Computing" message
+```
+
+    Computing 4 * 4 ...
+
+    16
+
+# Section 3 - Using a package manager (`uv`)
 
 Just as a library needs a system to track books (checkout system, catalog, etc.), Python projects need a tool to manage versions and dependencies. We use `uv` because it:
 
@@ -149,7 +250,7 @@ Just as a library needs a system to track books (checkout system, catalog, etc.)
 - Manages "returns" (uninstalling packages)
 - Ensures you have the right "edition" (version management)
 
-## Exercise 2.1 - Check your `uv` installation
+## Exercise 3.1 - Check your `uv` installation
 
 Open a terminal (not the Python REPL) and run:
 
@@ -165,7 +266,7 @@ Then confirm your Python version (after installing one via `uv` if needed):
 uv run python --version
 ```
 
-# Section 3 - Installing Packages
+# Section 4 - Installing Packages
 
 Installing packages is like ordering new books for your library branch. With `uv` you typically:
 
@@ -173,11 +274,11 @@ Installing packages is like ordering new books for your library branch. With `uv
 - Add dependencies (`uv add packagename`)
 - Remove them if not needed (`uv remove packagename`)
 - Sync a project copied from elsewhere (`uv sync`)
-- Update dependencies (`uv update`)
+- Update dependencies (`uv lock --upgrade`, then `uv sync`)
 
 Under the hood `uv` creates (and reuses) a virtual environment for the project. Luckily most of that is handled for you and not that important in this basic introduction to Python.
 
-## Exercise 3.1 - Add `pandas`
+## Exercise 4.1 - Add `pandas`
 
 Inside a `uv`-initialized project directory, run:
 
@@ -226,7 +327,7 @@ For now, you don't need to worry about virtual environments except for the one w
 
 Great work! You learned how Python projects organize and access code via:
 
-- The standard library
+- The standard library, for example `random` to test our LRU cache
 - Third-party packages
 - A modern package & environment manager (`uv`)
 - Isolated project environments for reliability
@@ -239,8 +340,8 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 ------------------------------------------------------------------------
 
-*That's it for this week! Next week, we'll take a look at how to read and write files in Python and work with tabular data!*
+*That's it for this week! Next week, we'll work with dictionaries and tabular data with pandas!*

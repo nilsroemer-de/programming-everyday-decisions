@@ -19,7 +19,7 @@ subtitle: A small guide using uv
 
 ## Install `uv`
 
-Choose the instructions for your operating system. To these, you need to work in your terminal.
+Choose the instructions for your operating system. For this, you need to work in your terminal.
 
 > **Tip**
 >
@@ -73,14 +73,14 @@ If you see a version number: great!
 > 2.  On Windows: make sure you used PowerShell (not Command Prompt).
 > 3.  Still broken? Ask for help, no need of guessing the error.
 
-## InstallPython
+## Install Python
 
-We want everyone on the **same** Python version for consistency. Thus, we'll use Python 3.12 for the course this year.
+We want everyone on the **same** Python version for consistency. Thus, we'll use Python 3.13 for the course this year.
 
 Install (you only need to do this once):
 
 ``` bash
-uv python install 3.12
+uv python install 3.13
 ```
 
 Check the installation:
@@ -91,7 +91,7 @@ uv run python --version
 
 Expected output starts with:
 
-    Python 3.12.
+    Python 3.13.
 
 ## Create your first project
 
@@ -102,12 +102,19 @@ uv init
 ```
 
 `uv init` creates:
+
 - `main.py` (starter script)
 - `pyproject.toml` (project + dependencies config)
-- `.python-version` (records the Python version we chose)
-- `.gitignore` (useful if you ever use Git)
+- `.python-version` (records the Python version of the project)
 - `README.md` (you can jot notes here)
-- (A `.venv` folder will appear later once packages are added or synced.)
+- a Git repository (`.git` folder and `.gitignore`), if Git is installed. You can ignore it for now.
+- (A `.venv` folder and a `uv.lock` file appear the first time you run `uv run` or add a package.)
+
+To make sure the project uses the course version, pin it once:
+
+``` bash
+uv python pin 3.13
+```
 
 You do **not** need to edit any of these (except maybe `README.md` for your notes and `main.py` if you want to run something different).
 
@@ -121,9 +128,9 @@ Inside the project folder **in your terminal**:
 uv run python main.py
 ```
 
-You should see something like:
+You should see a greeting with the name of your folder, for example for a folder called `programming-course`:
 
-    Hello World!
+    Hello from programming-course!
 
 (If you want, you can open `main.py` and change the message, then re-run.)
 
@@ -131,7 +138,7 @@ You should see something like:
 
 ``` python
 def main():
-    print("Hello, World!")
+    print("Hello from programming-course!")
 
 if __name__ == "__main__":
     main()
@@ -142,6 +149,35 @@ if __name__ == "__main__":
 - The line `if __name__ == "__main__":` ensures this only auto-runs when the file is executed directly.
 
 Don't worry about this yet, we'll gradually build up to it.
+
+## Add notebooks to your project
+
+The tutorials are notebooks. Inside the project folder **in your terminal**, run the two commands from the introduction, one after the other:
+
+``` bash
+uv add --dev ipykernel
+```
+
+``` bash
+uv add jupyter
+```
+
+The first command adds a kernel to the project, the second the Jupyter tools. Now notebooks can use the Python of your project.
+
+Quick check before you continue:
+
+- [ ] You have a folder for the course
+- [ ] You ran `uv init` inside the folder
+- [ ] You can see a file called `pyproject.toml` in the folder
+- [ ] You ran `uv add --dev ipykernel` and `uv add jupyter`
+
+## Download a tutorial and open it
+
+1.  Open a tutorial on the website and select `Jupyter` on the right.
+2.  Save the file **to your course folder**.
+3.  Open it in VS Code and select "Open with Jupyter Notebook".
+
+That was the hardest part. If something does not work, ask us.
 
 ## Adding packages (later in the course)
 
@@ -198,6 +234,7 @@ You can now:
 1. Install `uv`.
 2. Create a project.
 3. Run a script.
-4. Add/remove/sync packages.
+4. Add notebooks to your project and open a tutorial.
+5. Add/remove/sync packages.
 
 Now, you're set to continue the course.

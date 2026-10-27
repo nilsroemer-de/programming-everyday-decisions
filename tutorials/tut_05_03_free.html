@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
 
-<title>Tutorial V.III - Free Tasks – Programming: Everyday Decision-Making Algorithms</title>
+<title>Tutorial V.III: Free Tasks – Programming: Everyday Decision-Making Algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,9 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e4a2caf7c18c942dede446ff828dd770.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c79b9904990299345af33477e432e454.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-25060728d2783121a9f548b747010ca7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -123,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_05_03_free.html">15 - Free Tasks</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_05_03_free.html">05-03: Free Tasks</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,9 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
@@ -187,19 +186,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_01_variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-01 - Variables</span></a>
+ <span class="menu-text">01-01: Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_02_comparisons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-02 - Comparisons</span></a>
+ <span class="menu-text">01-02: Comparisons</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_03_stopping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-03 - Decisions</span></a>
+ <span class="menu-text">01-03: Decisions</span></a>
   </div>
 </li>
       </ul>
@@ -207,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">02 Explore/Exploit</span></a>
+ <span class="menu-text">02 Explore &amp; Exploit</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -222,19 +221,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_01_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-01 - Lists</span></a>
+ <span class="menu-text">02-01: Lists</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_02_loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-02 - Loops</span></a>
+ <span class="menu-text">02-02: Loops</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_03_explore_exploit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-03 - Exploration</span></a>
+ <span class="menu-text">02-03: Exploration</span></a>
   </div>
 </li>
       </ul>
@@ -257,19 +256,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-01 - Recap</span></a>
+ <span class="menu-text">03-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_02_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-02 - Functions</span></a>
+ <span class="menu-text">03-02: Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_03_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-03 - Packages</span></a>
+ <span class="menu-text">03-03: Packages</span></a>
   </div>
 </li>
       </ul>
@@ -292,19 +291,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10 - Recap</span></a>
+ <span class="menu-text">04-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_02_dicts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11 - Dictionaries</span></a>
+ <span class="menu-text">04-02: Dictionaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_03_dataframes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 - DataFrames</span></a>
+ <span class="menu-text">04-03: DataFrames</span></a>
   </div>
 </li>
       </ul>
@@ -327,19 +326,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/tut_05_01_llm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13 - LLM</span></a>
+ <span class="menu-text">05-01: LLM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_02_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14 - Recap</span></a>
+ <span class="menu-text">05-02: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_03_free.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">15 - Free Tasks</span></a>
+ <span class="menu-text">05-03: Free Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -361,9 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../general/faq.html" class="sidebar-item-text sidebar-link">
@@ -405,6 +402,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#snake-game" id="toc-snake-game" class="nav-link" data-scroll-target="#snake-game">2. Snake Game</a></li>
   <li><a href="#flappy-bird-clone" id="toc-flappy-bird-clone" class="nav-link" data-scroll-target="#flappy-bird-clone">3. Flappy Bird Clone</a></li>
   <li><a href="#space-invaders" id="toc-space-invaders" class="nav-link" data-scroll-target="#space-invaders">4. Space Invaders</a></li>
+  </ul></li>
+  <li><a href="#other-projects" id="toc-other-projects" class="nav-link" data-scroll-target="#other-projects">Other Projects</a>
+  <ul class="collapse">
   <li><a href="#tic-tac-toe-with-ai" id="toc-tic-tac-toe-with-ai" class="nav-link" data-scroll-target="#tic-tac-toe-with-ai">5. Tic-Tac-Toe with AI</a></li>
   <li><a href="#receipt-scanner-ocr" id="toc-receipt-scanner-ocr" class="nav-link" data-scroll-target="#receipt-scanner-ocr">6. Receipt Scanner (OCR)</a></li>
   <li><a href="#interactive-stock-dashboard" id="toc-interactive-stock-dashboard" class="nav-link" data-scroll-target="#interactive-stock-dashboard">7. Interactive Stock Dashboard</a></li>
@@ -413,22 +413,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#getting-started-tips" id="toc-getting-started-tips" class="nav-link" data-scroll-target="#getting-started-tips">Getting Started Tips</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_05_03_free.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_05_03_free.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_05_03_free.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_05_03_free.ipynb" download="tut_05_03_free.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_05_03_free.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_05_03_free.ipynb" download="tut_05_03_free.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_05_03_free.html">15 - Free Tasks</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_05_03_free.html">05-03: Free Tasks</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tutorial V.III - Free Tasks</h1>
+<h1 class="title">Tutorial V.III: Free Tasks</h1>
 <p class="subtitle lead">Programming: Everyday Decision-Making Algorithms</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Lecturer</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Nils Roemer, External Lecturer </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Planningio GmbH
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
@@ -440,7 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p><span class="highlight">This is the final tutorial of the course. You’ll have the opportunity to work on a project of your choice, implementing it with the tools learned throughout this course and leveraging AI assistance. Choose one of the projects below based on your interests! In the last session, you will then briefly demo your project in order to pass the course. We only expect prototypes here and it is perfectly fine if things still have bugs or are not fully functional. We just expect you to put some time 2-3 hours outside of class in your project in order to pass. Make it as good as you can!</span></p>
+<p><span class="highlight">This is the final tutorial of the course. You’ll have the opportunity to work on a project of your choice, implementing it with the tools learned throughout this course and leveraging AI assistance. Choose one of the projects below based on your interests! In the last session, you will then briefly demo your project in order to pass the course. We only expect prototypes here and it is perfectly fine if things still have bugs or are not fully functional. We just expect you to spend two to three hours outside of class on your project in order to pass. Make it as good as you can!</span></p>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -523,6 +536,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><strong>Key library:</strong> <code>pygame</code></p>
 </section>
+</section>
+<section id="other-projects" class="level1">
+<h1>Other Projects</h1>
+<p>These projects work in the terminal, with images or as a web dashboard.</p>
 <section id="tic-tac-toe-with-ai" class="level2">
 <h2 class="anchored" data-anchor-id="tic-tac-toe-with-ai">5. Tic-Tac-Toe with AI</h2>
 <p>Build a Tic-Tac-Toe game where you play against an unbeatable AI opponent.</p>
@@ -1055,7 +1072,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>   
     <div class="nav-footer-center">
 <p>Programming: Everyday Decision-Making Algorithms<br>Nils Roemer and Tobias Vlćek<br>CC BY-NC-SA 4.0</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_05_03_free.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_05_03_free.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

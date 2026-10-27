@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
 
-<title>Tutorial IV.II - Dictionaries – Programming: Everyday Decision-Making Algorithms</title>
+<title>Tutorial IV.II: Dictionaries – Programming: Everyday Decision-Making Algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,9 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e4a2caf7c18c942dede446ff828dd770.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c79b9904990299345af33477e432e454.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-25060728d2783121a9f548b747010ca7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -123,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_04_scheduling.html">04 Scheduling</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_04_02_dicts.html">11 - Dictionaries</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_04_scheduling.html">04 Scheduling</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_04_02_dicts.html">04-02: Dictionaries</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,9 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
@@ -187,19 +186,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_01_variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-01 - Variables</span></a>
+ <span class="menu-text">01-01: Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_02_comparisons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-02 - Comparisons</span></a>
+ <span class="menu-text">01-02: Comparisons</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_03_stopping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-03 - Decisions</span></a>
+ <span class="menu-text">01-03: Decisions</span></a>
   </div>
 </li>
       </ul>
@@ -207,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">02 Explore/Exploit</span></a>
+ <span class="menu-text">02 Explore &amp; Exploit</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -222,19 +221,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_01_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-01 - Lists</span></a>
+ <span class="menu-text">02-01: Lists</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_02_loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-02 - Loops</span></a>
+ <span class="menu-text">02-02: Loops</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_03_explore_exploit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-03 - Exploration</span></a>
+ <span class="menu-text">02-03: Exploration</span></a>
   </div>
 </li>
       </ul>
@@ -257,19 +256,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-01 - Recap</span></a>
+ <span class="menu-text">03-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_02_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-02 - Functions</span></a>
+ <span class="menu-text">03-02: Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_03_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-03 - Packages</span></a>
+ <span class="menu-text">03-03: Packages</span></a>
   </div>
 </li>
       </ul>
@@ -292,19 +291,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10 - Recap</span></a>
+ <span class="menu-text">04-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_02_dicts.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">11 - Dictionaries</span></a>
+ <span class="menu-text">04-02: Dictionaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_03_dataframes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 - DataFrames</span></a>
+ <span class="menu-text">04-03: DataFrames</span></a>
   </div>
 </li>
       </ul>
@@ -327,19 +326,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/tut_05_01_llm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13 - LLM</span></a>
+ <span class="menu-text">05-01: LLM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_02_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14 - Recap</span></a>
+ <span class="menu-text">05-02: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_03_free.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15 - Free Tasks</span></a>
+ <span class="menu-text">05-03: Free Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -361,9 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../general/faq.html" class="sidebar-item-text sidebar-link">
@@ -410,26 +407,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-2.1---compute-the-average-priority" id="toc-exercise-2.1---compute-the-average-priority" class="nav-link" data-scroll-target="#exercise-2.1---compute-the-average-priority">Exercise 2.1 - Compute the Average Priority</a></li>
   <li><a href="#exercise-2.2---get-the-task-with-the-highest-priority" id="toc-exercise-2.2---get-the-task-with-the-highest-priority" class="nav-link" data-scroll-target="#exercise-2.2---get-the-task-with-the-highest-priority">Exercise 2.2 - Get the Task with the Highest Priority</a></li>
   <li><a href="#exercise-2.3---remove-a-task" id="toc-exercise-2.3---remove-a-task" class="nav-link" data-scroll-target="#exercise-2.3---remove-a-task">Exercise 2.3 - Remove a Task</a></li>
+  </ul></li>
+  <li><a href="#section-3---back-to-our-lru-cache" id="toc-section-3---back-to-our-lru-cache" class="nav-link" data-scroll-target="#section-3---back-to-our-lru-cache">Section 3 - Back to our LRU Cache</a>
+  <ul class="collapse">
+  <li><a href="#exercise-3.1---lru-with-a-dictionary" id="toc-exercise-3.1---lru-with-a-dictionary" class="nav-link" data-scroll-target="#exercise-3.1---lru-with-a-dictionary">Exercise 3.1 - LRU with a Dictionary</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_04_02_dicts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_04_02_dicts.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_04_02_dicts.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_04_02_dicts.ipynb" download="tut_04_02_dicts.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_04_02_dicts.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_04_02_dicts.ipynb" download="tut_04_02_dicts.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_04_scheduling.html">04 Scheduling</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_04_02_dicts.html">11 - Dictionaries</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_04_scheduling.html">04 Scheduling</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_04_02_dicts.html">04-02: Dictionaries</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tutorial IV.II - Dictionaries</h1>
+<h1 class="title">Tutorial IV.II: Dictionaries</h1>
 <p class="subtitle lead">Programming: Everyday Decision-Making Algorithms</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Lecturer</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Nils Roemer, External Lecturer </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Planningio GmbH
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
@@ -454,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Dictionaries can grow and shrink as needed</li>
 </ul>
 <p>Let’s see some examples:</p>
-<div id="f7c2e447" class="cell" data-execution_count="1">
+<div id="1968f892" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a dictionary of tasks</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tasks <span class="op">=</span> {</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Check Emails"</span>: <span class="dv">1</span>,</span>
@@ -467,14 +481,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>To access the value associated with a key, you can use the following syntax:</p>
-<div id="a5a4435c" class="cell" data-execution_count="2">
+<div id="b6de63ee" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tasks[<span class="st">"Check Emails"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1</code></pre>
 </div>
 </div>
 <p>New entries can be added to the dictionary or existing entries can be modified using the following syntax:</p>
-<div id="456c7a2a" class="cell" data-execution_count="3">
+<div id="00bc6ea4" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tasks[<span class="st">"Team Meeting"</span>] <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tasks[<span class="st">"Answer Emails"</span>] <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tasks)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -482,9 +496,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>{'Check Emails': 1, 'Liquidity Planning': 2, 'Team Meeting': 4, 'Answer Emails': 7}</code></pre>
 </div>
 </div>
-<p>To delete entries, you can use the <code>del()</code> function:</p>
-<div id="415de343" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span>(tasks[<span class="st">"Answer Emails"</span>])</span>
+<p>To delete entries, you can use the <code>del</code> statement:</p>
+<div id="f02b28dd" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> tasks[<span class="st">"Answer Emails"</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tasks)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'Check Emails': 1, 'Liquidity Planning': 2, 'Team Meeting': 4}</code></pre>
@@ -501,55 +515,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>To check if a key exists in the dictionary, you can use the following syntax:</p>
-<div id="d052b154" class="cell" data-execution_count="5">
+<div id="7d8030c6" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Check Emails"</span> <span class="kw">in</span> tasks)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>Furthermore, we can nest a dictionary in a dictionary:</p>
-<div id="7f054f9f" class="cell" data-execution_count="6">
+<div id="45d4082e" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a dictionary of projects</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>projects <span class="op">=</span> {</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Project Alpha"</span>: {<span class="st">"status"</span>: <span class="st">"In Progress"</span>, <span class="st">"deadline"</span>: <span class="st">"2023-12-31"</span>},</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Project Beta"</span>: {<span class="st">"status"</span>: <span class="st">"Completed"</span>, <span class="st">"deadline"</span>: <span class="st">"2023-06-30"</span>}</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Project Alpha"</span>: {<span class="st">"status"</span>: <span class="st">"In Progress"</span>, <span class="st">"deadline"</span>: <span class="st">"2026-12-31"</span>},</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Project Beta"</span>: {<span class="st">"status"</span>: <span class="st">"Completed"</span>, <span class="st">"deadline"</span>: <span class="st">"2026-06-30"</span>}</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The deadline of Project Alpha is </span><span class="sc">{</span>projects[<span class="st">'Project Alpha'</span>][<span class="st">'deadline'</span>]<span class="sc">}</span><span class="ss">."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="exercise-1.1---create-and-modify-a-dictionary" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1.1---create-and-modify-a-dictionary">Exercise 1.1 - Create and Modify a Dictionary</h2>
 <p>Add a new task called “Prepare Presentation” with the priority level <code>5</code> to the existing <code>tasks</code> dictionary. Note, that you will have to execute the code cell above that creates the dictionary first before you can add the new task!</p>
-<div id="bbe92592" class="cell" data-execution_count="7">
+<div id="562ad680" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="7bfc64ef" class="cell" data-execution_count="8">
+<div id="142fcb54" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="st">"Prepare Presentation"</span> <span class="kw">in</span> tasks, <span class="st">"The task 'Prepare Presentation' was not added to the dictionary."</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great! You've successfully added a new task to the tasks dictionary."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="exercise-1.2---check-if-a-key-exists" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1.2---check-if-a-key-exists">Exercise 1.2 - Check if a Key Exists</h2>
 <p>Check if the key “Team Meeting” exists in the <code>tasks</code> dictionary using the <code>in</code> operator and a conditional statement. If it exists, save the message: <code>'Team Meeting is in the dictionary'</code> to the variable <code>message</code>. If it does not exist, save the message: <code>'Team Meeting is not in the dictionary'</code> to the variable <code>message</code>. Finally, print the value of the <code>message</code> variable.</p>
-<div id="cbac0b4f" class="cell" data-execution_count="9">
+<div id="c2f9bd3f" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b9112bff" class="cell" data-execution_count="10">
+<div id="201938b9" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> message <span class="op">==</span> <span class="st">"Team Meeting is in the dictionary"</span>, <span class="st">"The message is not correct. It should be 'Team Meeting is in the dictionary'."</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great! You've successfully checked if a key exists in the dictionary."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="exercise-1.3---change-the-value-of-a-key" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1.3---change-the-value-of-a-key">Exercise 1.3 - Change the Value of a Key</h2>
 <p>Change the value associated with the key “Check Emails” to <code>6</code>.</p>
-<div id="35cf5a59" class="cell" data-execution_count="11">
+<div id="5d15d04e" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="315a6dcd" class="cell" data-execution_count="12">
+<div id="7fd25d84" class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> tasks[<span class="st">"Check Emails"</span>] <span class="op">==</span> <span class="dv">6</span>, <span class="st">"The value associated with the key 'Check Emails' is not correct. It should be 6."</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great! You've successfully changed the value of a key in the dictionary."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 </section>
@@ -557,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Section 2 - Advanced Dictionary Operations</h1>
 <p>Dictionaries can do more than just store simple information. Let’s explore some features.</p>
 <p>With the <code>keys()</code> method, you can get all the keys of a dictionary as a dictionary view object. You can convert it to a list using the <code>list()</code> function.</p>
-<div id="dd92d74e" class="cell" data-execution_count="13">
+<div id="303c8837" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>task_names <span class="op">=</span> tasks.keys() <span class="co"># Get all keys</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tasks:"</span>, task_names) <span class="co"># Still a dictionary view object</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tasks as list:"</span>, <span class="bu">list</span>(task_names)) <span class="co"># Convert to a list</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -567,7 +590,7 @@ Tasks as list: ['Check Emails', 'Liquidity Planning', 'Team Meeting']</code></pr
 </div>
 </div>
 <p>To get all the values from a dictionary, you can use the <code>values()</code> method to get a dictionary view object. Again, you can convert it to a list using the <code>list()</code> function.</p>
-<div id="f0181298" class="cell" data-execution_count="14">
+<div id="ab03d312" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>all_deadlines <span class="op">=</span> tasks.values()</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All deadlines:"</span>, <span class="bu">list</span>(all_deadlines))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -575,7 +598,7 @@ Tasks as list: ['Check Emails', 'Liquidity Planning', 'Team Meeting']</code></pr
 </div>
 </div>
 <p>We can also loop through the dictionary using a <code>for</code> loop. To do so, we can use the <code>items()</code> method which returns a dictionary view object containing the individual key-value pairs of the dictionary.</p>
-<div id="75f65ca1" class="cell" data-execution_count="15">
+<div id="fb036ec3" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> task, priority <span class="kw">in</span> tasks.items():</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Task: </span><span class="sc">{</span>task<span class="sc">}</span><span class="ss">, Priority: </span><span class="sc">{</span>priority<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -585,7 +608,7 @@ Task: Team Meeting, Priority: 4</code></pre>
 </div>
 </div>
 <p>To check the length of a dictionary, you can use the <code>len()</code> function.</p>
-<div id="063b7f6d" class="cell" data-execution_count="16">
+<div id="cea7259e" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(tasks))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
@@ -594,26 +617,32 @@ Task: Team Meeting, Priority: 4</code></pre>
 <section id="exercise-2.1---compute-the-average-priority" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2.1---compute-the-average-priority">Exercise 2.1 - Compute the Average Priority</h2>
 <p>Compute the average priority of the tasks in the <code>tasks</code> dictionary. Save the result to the variable <code>average_priority</code>.</p>
-<div id="f80e911e" class="cell" data-execution_count="17">
+<div id="5275b963" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="714634bb" class="cell" data-execution_count="18">
+<div id="06253e1e" class="cell" data-execution_count="18">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(tasks) <span class="op">==</span> <span class="dv">4</span>, <span class="st">"The number of tasks is not correct. It should be 4 based on the previous excercises."</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">len</span>(tasks) <span class="op">==</span> <span class="dv">4</span>, <span class="st">"The number of tasks is not correct. It should be 4 based on the previous exercises."</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> average_priority <span class="op">==</span> <span class="fl">4.25</span>, <span class="st">"The average priority is not correct. It should be 4.25."</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great! You've successfully computed the average priority of the tasks."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="exercise-2.2---get-the-task-with-the-highest-priority" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2.2---get-the-task-with-the-highest-priority">Exercise 2.2 - Get the Task with the Highest Priority</h2>
 <p>Get the task with the highest priority from the <code>tasks</code> dictionary. Save the result to the variable <code>highest_priority_task</code>. Note, that a priority of 1 is the highest priority.</p>
-<div id="8ddce1d1" class="cell" data-execution_count="19">
+<div id="e2e90088" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="6e74fa54" class="cell" data-execution_count="20">
+<div id="03c56bf8" class="cell" data-execution_count="20">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> highest_priority_task <span class="op">==</span> <span class="st">"Liquidity Planning"</span>, <span class="ss">f"The task </span><span class="sc">{</span>highest_priority_task<span class="sc">}</span><span class="ss"> as the task with the highest priority is not correct. It should be 'Liquidity Planning'."</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great! You've successfully gotten the task with the highest priority."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="exercise-2.3---remove-a-task" class="level2">
@@ -625,17 +654,53 @@ Task: Team Meeting, Priority: 4</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>You can use the <code>del()</code> function to remove a key from a dictionary.</p>
+<p>You can use the <code>del</code> statement to remove a key from a dictionary, e.g.&nbsp;<code>del tasks["Team Meeting"]</code>.</p>
 </div>
 </div>
 </div>
-<div id="0c249e75" class="cell" data-execution_count="21">
+<div id="567324cb" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b621da46" class="cell" data-execution_count="22">
+<div id="1a51dde8" class="cell" data-execution_count="22">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="st">"Liquidity Planning"</span> <span class="kw">not</span> <span class="kw">in</span> tasks, <span class="st">"The task 'Liquidity Planning' was not removed from the dictionary."</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great! You've successfully removed a task from the dictionary."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+</section>
+<section id="section-3---back-to-our-lru-cache" class="level1">
+<h1>Section 3 - Back to our LRU Cache</h1>
+<p>Remember our LRU cache from Tutorials III? Real caches store a <strong>value</strong> for each key, for example the loaded data of an app. That’s exactly what dictionaries do. And since Python 3.7, dictionaries remember the order in which keys were inserted, so we can use the order for LRU: the <strong>first</strong> key is the least recently used one, the <strong>last</strong> key the most recently used one.</p>
+<div id="e3b52842" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>cache <span class="op">=</span> {<span class="st">"Maps"</span>: <span class="st">"map data"</span>, <span class="st">"Mail"</span>: <span class="st">"inbox"</span>, <span class="st">"Spotify"</span>: <span class="st">"playlist"</span>}  <span class="co"># oldest first</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> cache.pop(<span class="st">"Mail"</span>)   <span class="co"># a hit: take the entry out ...</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>cache[<span class="st">"Mail"</span>] <span class="op">=</span> value       <span class="co"># ... and put it back at the end</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(cache.keys()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Maps', 'Spotify', 'Mail']</code></pre>
+</div>
+</div>
+<section id="exercise-3.1---lru-with-a-dictionary" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3.1---lru-with-a-dictionary">Exercise 3.1 - LRU with a Dictionary</h2>
+<p>Open the app <code>new_app</code> with the value <code>new_value</code>. If the cache already holds 3 apps, first remove the least recently used one (the first key, e.g.&nbsp;<code>list(cache.keys())[0]</code>). Then add the new app at the end.</p>
+<div id="04feb469" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>cache <span class="op">=</span> {<span class="st">"Maps"</span>: <span class="st">"map data"</span>, <span class="st">"Mail"</span>: <span class="st">"inbox"</span>, <span class="st">"Spotify"</span>: <span class="st">"playlist"</span>}  <span class="co"># oldest first</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>new_app <span class="op">=</span> <span class="st">"Camera"</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>new_value <span class="op">=</span> <span class="st">"photos"</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>max_cache_size <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="087a48df" class="cell" data-execution_count="25">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">list</span>(cache.keys()) <span class="op">==</span> [<span class="st">"Mail"</span>, <span class="st">"Spotify"</span>, <span class="st">"Camera"</span>], <span class="st">"Maps should be evicted and Camera added at the end"</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> cache[<span class="st">"Camera"</span>] <span class="op">==</span> <span class="st">"photos"</span>, <span class="st">"The value of Camera should be 'photos'"</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Great! Your dictionary works as an LRU cache."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 <section id="conclusion" class="level2">
@@ -643,7 +708,7 @@ Task: Team Meeting, Priority: 4</code></pre>
 <p>Great! You’ve just navigated through the basics of dictionaries in Python. Dictionaries are powerful data structures that allow for efficient data organization and retrieval. Remember:</p>
 <ul>
 <li>Dictionaries can store information using key-value pairs</li>
-<li>Accessing them using keys is efficient and easier as accessing them using indices</li>
+<li>Accessing them using keys is efficient and easier than accessing them using indices</li>
 <li>Loops can iterate over dictionaries to perform operations on each key-value pair</li>
 </ul>
 </section>
@@ -652,7 +717,7 @@ Task: Team Meeting, Priority: 4</code></pre>
 <h1>Solutions</h1>
 <p>You will likely find solutions to most exercises online. However, we strongly encourage you to work on these exercises independently without searching explicitly for the exact answers to the exercises. Understanding someone else’s solution is very different from developing your own. Use the lecture notes and try to solve the exercises on your own. This approach will significantly enhance your learning and problem-solving skills.</p>
 <p>Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don’t hesitate to ask for clarification during class discussions.</p>
-<p>Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today’s lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.</p>
+<p>Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today’s lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.</p>
 <hr>
 <p><em>In the next tutorial, we’ll dive deeper into DataFrames and how to use them!</em></p>
 
@@ -1103,7 +1168,7 @@ Task: Team Meeting, Priority: 4</code></pre>
     </div>   
     <div class="nav-footer-center">
 <p>Programming: Everyday Decision-Making Algorithms<br>Nils Roemer and Tobias Vlćek<br>CC BY-NC-SA 4.0</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_04_02_dicts.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_04_02_dicts.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

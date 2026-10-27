@@ -9,8 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Dr.&nbsp;Nils Roemer">
-  <title>Programming: Everyday Decision-Making Algorithms – Lecture I - Optimal Stopping</title>
+  <meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
+  <title>Programming: Everyday Decision-Making Algorithms – Lecture I: Optimal Stopping</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -98,7 +98,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b2296277df239b774fa479879ac923b5.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bb978de86abbef3b36a933764425996b.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -196,67 +196,70 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture I - Optimal Stopping</h1>
+  <h1 class="title">Lecture I: Optimal Stopping</h1>
   <p class="subtitle">Programming: Everyday Decision-Making Algorithms</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Dr.&nbsp;Nils Roemer 
+Dr.&nbsp;Nils Roemer, External Lecturer 
 </div>
         <p class="quarto-title-affiliation">
-            Kühne Logistics University Hamburg
+            Planningio GmbH
           </p>
     </div>
 </div>
 
 </section>
-<section id="todays-topic-optimal-stopping" class="slide level2">
-<h2>Today’s Topic: Optimal Stopping</h2>
-<p><strong>Topic:</strong> Understanding optimal stopping problems and the famous “Secretary Problem”</p>
-<p><strong>Why this matters:</strong> Optimal stopping is everywhere in life - from hiring decisions to finding apartments to choosing when to sell stocks. Today we’ll learn the mathematical strategy that maximizes your chances of making the best choice.</p>
+<section id="today-in-one-sentence" class="slide level2 lecture-opening">
+<h2>Today in one sentence</h2>
+<div class="lecture-summary">
+<p><span class="statement">When options come one by one and you can’t go back, look at the first 37% without committing, then take the first one that beats them all.</span></p>
+</div>
+<div class="lecture-why">
+<p><span class="eyebrow">Why it matters</span></p>
+<p>You visit flats in Hamburg. Each viewing, you must decide on the spot, and if you say no, the flat is gone. Choose too early and you miss better ones; wait too long and the best is behind you. Companies face the same problem when hiring, choosing suppliers or accepting offers.</p>
+</div>
 </section>
-<section id="learning-objectives" class="slide level2">
-<h2>Learning Objectives</h2>
-<p>By the end of this lecture, you will be able to:</p>
+<section id="roadmap" class="slide level2 lecture-opening">
+<h2>Roadmap</h2>
+<div class="roadmap">
 <ol type="1">
-<li class="fragment"><strong>Define</strong> optimal stopping problems and identify them in real-world scenarios</li>
-<li class="fragment"><strong>Apply</strong> the 37% rule (look-and-leap strategy) to make better decisions</li>
-<li class="fragment"><strong>Connect</strong> optimal stopping principles to programming logic and algorithmic thinking</li>
+<li><span class="roadmap-item future">The problem: choosing the best when options come one at a time</span></li>
+<li><span class="roadmap-item future">The rule: look first, then leap</span></li>
+<li><span class="roadmap-item future">Real life: when the assumptions change</span></li>
 </ol>
-</section>
-<section id="todays-agenda" class="slide level2">
-<h2>Today’s Agenda</h2>
-<ol type="1">
-<li class="fragment"><strong>What is Optimal Stopping?</strong> - Definition and real-world examples</li>
-<li class="fragment"><strong>The Secretary Problem</strong> - The classic formulation and solution</li>
-<li class="fragment"><strong>The 37% Rule</strong> - Why it works and how to apply it</li>
-<li class="fragment"><strong>Variations &amp; Extensions</strong> - Rejection, time constraints, other scenarios</li>
-<li class="fragment"><strong>Connecting to Programming</strong> - How this builds our algorithmic mindset</li>
-</ol>
+</div>
 </section>
 <section>
-<section id="optimal-stopping" class="title-slide slide level1 title center">
-<h1><span class="flow">Optimal Stopping</span></h1>
 
-</section>
-<section id="what-is-optimal-stopping" class="slide level2">
-<h2>What is Optimal Stopping?</h2>
-<p><span class="question">Question:</span> Anybody know what optimal stopping is?</p>
+<section id="options-come-one-by-one-and-there-is-no-going-back" class="slide level2">
+<h2>Options come one by one, and there is no going back</h2>
+<p><span class="question">Question:</span> Does anybody know what optimal stopping is?</p>
 <ul>
-<li class="fragment"><span class="highlight">Optimal stopping</span> is the problem of:
-<ul>
-<li class="fragment">choosing the <strong>best option</strong></li>
+<li class="fragment"><span class="highlight">Optimal stopping</span> is the problem of choosing the <strong>best option</strong></li>
 <li class="fragment">from a <strong>sequence of options</strong></li>
-<li class="fragment">where the options are revealed <strong>one by one</strong></li>
-</ul></li>
+<li class="fragment">that are revealed <strong>one by one</strong></li>
 </ul>
+<aside class="notes">
+<p>Topic: understanding optimal stopping problems and the famous Secretary Problem. Why this matters: optimal stopping is everywhere in life, from hiring decisions to finding apartments to choosing when to sell stocks. Today we learn the mathematical strategy that maximizes the chance of making the best choice.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="section" class="slide level2 loud-slide">
 <h2></h2>
 <div class="r-fit-text">
-<p>Anybody an</p>
-<p>example of</p>
+<p>Does anybody have</p>
+<p>an example of</p>
 <p>optimal stopping?</p>
 </div>
 </section>
@@ -277,270 +280,415 @@ Dr.&nbsp;Nils Roemer
 <div class="footer">
 <p><span class="invert-font">Photo by <a href="https://unsplash.com/@shelbymary_">Shelby Deeter</a> on Unsplash</span></p>
 </div>
-</section></section>
-<section>
-<section id="secretary-problem" class="title-slide slide level1 title center">
-<h1><span class="flow">“Secretary Problem”</span></h1>
-
 </section>
-<section id="the-secretary-problem" class="slide level2">
-<h2>The Secretary Problem</h2>
+<section id="the-secretary-problem-hire-now-or-keep-looking" class="slide level2">
+<h2>The Secretary Problem: hire now or keep looking?</h2>
 <ul>
-<li class="fragment">Imagine you’re <strong>hiring a secretary</strong></li>
-<li class="fragment">You must interview candidates <strong>one by one</strong></li>
-<li class="fragment">Now, you must decide: <strong>hire or continue searching</strong></li>
+<li class="fragment">You are <strong>hiring a secretary</strong> and interview candidates <strong>one by one</strong></li>
+<li class="fragment">After each interview: <strong>hire or continue searching</strong></li>
 <li class="fragment">Once you reject a candidate, <strong>you cannot go back</strong></li>
-<li class="fragment">How to <span class="highlight">maximize chance of selecting the best candidate?</span></li>
+<li class="fragment">How to <span class="highlight">maximize the chance of hiring the best candidate?</span></li>
 </ul>
-<div class="fragment">
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>The name is a bit misleading, as the problem is not about hiring a secretary, but about finding the best candidate. It comes from the 1960s and thus a little outdated.</p>
-</div>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>The name comes from the 1960s. The problem is about finding the best candidate, not about secretaries. It is also known as the marriage problem or the dowry problem.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="basic-setup" class="slide level2">
-<h2>Basic Setup</h2>
+<section id="the-setup-in-three-lines" class="slide level2">
+<h2>The setup in three lines</h2>
 <ul>
-<li>We have <code>n</code> candidates</li>
-<li>We interview them <strong>one by one</strong></li>
-<li>We must decide to <strong>hire or continue searching</strong></li>
-<li><span class="highlight">Ordinal ranking</span> of candidates</li>
+<li>We have <code>n</code> candidates and interview them <strong>one by one</strong></li>
+<li>After each one: <strong>hire or continue searching</strong></li>
+<li>We can only <strong>rank</strong> candidates relative to those we have already seen (<span class="highlight">ordinal ranking</span>)</li>
 </ul>
 <div class="fragment">
-<p><span class="question">Question:</span> Anybody know what ordinal ranking is?</p>
+<p><span class="question">Question:</span> Where in your life can you say “this one is better than that one”, but not “this one is worth 7 out of 10”?</p>
+<aside class="notes">
+<p>Ordinal ranking: we can say which of two candidates is better, but we do not have a score or an absolute scale. This is what makes the problem hard, we never know how good the best candidate could be.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="ways-to-fail" class="slide level2">
-<h2>Ways to fail</h2>
-<p><span class="question">Question:</span> Anybody an idea how we can fail?</p>
+<section id="two-ways-to-fail" class="slide level2">
+<h2>Two ways to fail</h2>
+<p><span class="question">Question:</span> Any idea how we could fail?</p>
 <div class="fragment">
 <ol type="1">
-<li>Reject all candidates and never hire - <span class="highlight">stopping too late</span></li>
-<li>You hire someone too early - <span class="highlight">stopping too early</span></li>
+<li>Reject everyone and never hire: <span class="highlight">stopping too late</span></li>
+<li>Hire someone too early: <span class="highlight">stopping too early</span></li>
 </ol>
 </div>
 </section>
 <section id="section-1" class="slide level2 loud-slide">
 <h2></h2>
 <div class="r-fit-text">
-<p>Ideas?</p>
+<p>How would you</p>
+<p>decide when to stop?</p>
+</div>
+</section></section>
+<section>
+
+<section id="roadmap-1" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">The problem: choosing the best when options come one at a time</span></li>
+<li><span class="roadmap-item current">The rule: look first, then leap</span></li>
+<li><span class="roadmap-item future">Real life: when the assumptions change</span></li>
+</ol>
 </div>
 </section>
-<section id="look-and-leap-strategy" class="slide level2">
-<h2>Look-and-Leap Strategy</h2>
-<p>The optimal strategy is to:</p>
-<ol type="1">
-<li class="fragment">Look at the <span class="highlight">first 37 %</span> of options</li>
-<li class="fragment">Remember the <strong>best one seen so far</strong></li>
-<li class="fragment">Choose the next option that’s <strong>better than the best seen</strong></li>
-<li class="fragment">Chance of selecting the best candidate is <strong>37 %</strong><sup>1</sup></li>
-<li class="fragment">Thus, we can fail with <strong>63 %</strong>!</li>
-</ol>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Large number of candidates! With a small number of candidates, we can do even better.</p></li></ol></aside></section>
-<section id="look-and-leap-strategy-1" class="slide level2">
-<h2>Look-and-Leap Strategy</h2>
-<p>The mathematically optimal strategy:</p>
+<section id="look-at-the-first-37-then-leap" class="slide level2">
+<h2>Look at the first 37%, then leap</h2>
 <ol type="1">
 <li class="fragment"><strong>Look</strong> at the <span class="highlight">first 37%</span> of candidates without hiring anyone</li>
-<li class="fragment"><strong>Remember</strong> the best candidate from this observation phase</li>
-<li class="fragment"><strong>Leap:</strong> Hire the next candidate who is <strong>better than the best observed</strong></li>
-<li class="fragment"><strong>Success rate:</strong> 37% chance of selecting the absolute best candidate</li>
+<li class="fragment"><strong>Remember</strong> the best candidate so far</li>
+<li class="fragment"><strong>Leap:</strong> hire the next candidate who is <strong>better than that one</strong></li>
+<li class="fragment">This finds the very best candidate in <strong>37%</strong> of all cases</li>
 </ol>
-<div class="fragment">
-<p>This means we fail 63% of the time - but this is the <strong>best we can possibly do</strong>!</p>
-</div>
+<aside class="notes">
+<p>This is the mathematically optimal strategy. It means we still fail 63% of the time, but this is the best we can possibly do. The 37% holds for a large number of candidates; with only a few candidates, the chance is even higher.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="step-by-step-approximation" class="slide level2">
-<h2>Step-by-step Approximation</h2>
-<p>Why does the success probability decrease with more candidates?</p>
+<section id="picking-at-random-gets-worse-with-every-candidate" class="slide level2">
+<h2>Picking at random gets worse with every candidate</h2>
+<p>Chance of the best candidate if we <strong>pick one at random</strong>:</p>
 <ul>
-<li>1 candidate: 100% (no choice!)</li>
-<li>2 candidates: 50%</li>
-<li>3 candidates: 33%</li>
-<li>4 candidates: 25%</li>
-<li>5 candidates: 20%</li>
+<li>1 candidate: 100%, 2 candidates: 50%, 3 candidates: 33%</li>
+<li>4 candidates: 25%, 5 candidates: 20%</li>
 </ul>
 <div class="fragment">
 <p><span class="question">Question:</span> Do you see the pattern?</p>
 </div>
 <div class="fragment">
-<p><strong>Pattern:</strong> 1/n - as we have more options, each individual option is less likely to be the best.</p>
+<p><strong>Pattern:</strong> 1/n.&nbsp;Look-and-leap <strong>never drops below 37%</strong>, however many candidates there are.</p>
+<aside class="notes">
+<p>Random choice gets worse with every extra candidate, because each individual candidate is less likely to be the best. The look-and-leap strategy does not have this problem: its success chance never drops below 37%, however many candidates there are, and with few candidates it is even higher.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
 <section id="why-37" class="slide level2">
 <h2>Why 37%?</h2>
 <ul>
-<li>This is based on the <strong>geometric distribution</strong></li>
-<li>The <span class="highlight">optimal stopping point</span> is at <code>n/e</code><sup>1</sup></li>
-<li><code>e</code> is the base of the natural logarithm (≈ 2.718)</li>
-<li>This comes from maximizing the probability of success</li>
+<li>Look at the first share <span class="math inline">\(x\)</span> of candidates, then leap</li>
+<li>Chance of getting the best: about <span class="math inline">\(-x \ln x\)</span><sup>1</sup></li>
+<li>In words: look longer and your benchmark improves, but the best may already be gone</li>
+<li>Largest at <span class="math inline">\(x = 1/e \approx 37\%\)</span><sup>2</sup></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>This is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</p></li></ol></aside></section>
-<section id="computing-the-number" class="slide level2">
-<h2>Computing the number</h2>
-<div id="a240b82b" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> math</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>percentage <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>math.e</span>
-<span id="cb1-4"><a></a><span class="bu">print</span>(<span class="ss">f"Percentage of options to look at: </span><span class="sc">{</span>percentage<span class="sc">:.3f}</span><span class="ss">%"</span>)</span>
-<span id="cb1-5"><a></a></span>
-<span id="cb1-6"><a></a>candidates <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb1-7"><a></a>lookout_phase <span class="op">=</span> candidates<span class="op">/</span>math.e</span>
-<span id="cb1-8"><a></a><span class="bu">print</span>(<span class="ss">f"Look at first </span><span class="sc">{</span>lookout_phase<span class="sc">:.3f}</span><span class="ss"> candidates"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Where does this come from? You win if the best candidate comes after your look phase and nobody before them beats your benchmark. That happens exactly when the best of all earlier candidates was in your look phase. Adding up these chances for every position, with many candidates, gives about <span class="math inline">\(-x \ln x\)</span>, where <span class="math inline">\(x\)</span> is the share of candidates you only look at.</p></li><li id="fn2"><p>To find the best look phase, we only need to know where <span class="math inline">\(-x \ln x\)</span> reaches its maximum. Setting its derivative <span class="math inline">\(-\ln x - 1\)</span> to zero gives <span class="math inline">\(x = 1/e \approx 37\%\)</span>, where <span class="math inline">\(e \approx 2.718\)</span> is the base of the natural logarithm. For the full story, see Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3).</p></li></ol></aside></section>
+<section id="let-the-computer-try-it-out" class="slide level2">
+<h2>Let the computer try it out</h2>
+<ol type="1">
+<li class="fragment">Shuffle 100 candidates into a random order</li>
+<li class="fragment">Look at the first 37 and remember the best one</li>
+<li class="fragment">Hire the first candidate who beats that benchmark</li>
+<li class="fragment">Check: did we get the very best?</li>
+<li class="fragment">Repeat 10,000 times and count how often we won</li>
+</ol>
+</section>
+<section id="the-same-idea-in-code" class="slide level2">
+<h2>The same idea in code</h2>
+<div id="ea949da1" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> random</span>
+<span id="cb1-2"><a></a>random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="kw">def</span> one_round(n<span class="op">=</span><span class="dv">100</span>, look<span class="op">=</span><span class="dv">37</span>):</span>
+<span id="cb1-5"><a></a>    candidates <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(n))          <span class="co"># n - 1 is the best</span></span>
+<span id="cb1-6"><a></a>    random.shuffle(candidates)</span>
+<span id="cb1-7"><a></a>    benchmark <span class="op">=</span> <span class="bu">max</span>(candidates[:look])   <span class="co"># best of the look phase</span></span>
+<span id="cb1-8"><a></a>    <span class="cf">for</span> c <span class="kw">in</span> candidates[look:]:</span>
+<span id="cb1-9"><a></a>        <span class="cf">if</span> c <span class="op">&gt;</span> benchmark:                <span class="co"># first one who beats it</span></span>
+<span id="cb1-10"><a></a>            <span class="cf">return</span> c <span class="op">==</span> n <span class="op">-</span> <span class="dv">1</span>            <span class="co"># did we hire the best?</span></span>
+<span id="cb1-11"><a></a>    <span class="cf">return</span> <span class="va">False</span>                         <span class="co"># nobody beat the benchmark</span></span>
+<span id="cb1-12"><a></a></span>
+<span id="cb1-13"><a></a>wins <span class="op">=</span> <span class="bu">sum</span>(one_round() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10_000</span>))</span>
+<span id="cb1-14"><a></a><span class="bu">print</span>(<span class="ss">f"Best candidate found in </span><span class="sc">{</span>wins <span class="op">/</span> <span class="dv">10_000</span><span class="sc">:.1%}</span><span class="ss"> of rounds"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-execution_count="1">
 <div class="cell-output cell-output-stdout">
-<pre><code>Percentage of options to look at: 0.368%
-Look at first 7.358 candidates</code></pre>
+<pre><code>Best candidate found in 37.5% of rounds</code></pre>
 </div>
 </div>
-<div class="fragment">
 <div class="callout callout-note callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>No worries if you don’t understand the code! We are essentialy just using the formula to calculate the percentage of candidates to look at.</p>
-</div>
+<p>No worries if you don’t understand every line yet. By the end of the course, you will.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="geometric-distribution" class="slide level2">
-<h2>Geometric Distribution</h2>
-<p>Let’s visualize the success of a simulation with 20 candidates:</p>
-<div id="d47ba982" class="cell" data-fig-height="4" data-fig-width="7" data-execution_count="2">
+<section id="simulation-looking-at-37-of-100-candidates-works-best" class="slide level2">
+<h2>Simulation: looking at 37 of 100 candidates works best</h2>
+<p>100 candidates, 2,000 simulated runs per stopping point:</p>
+<div id="1546b20c" class="cell" data-fig-height="4.2" data-fig-width="9" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lec_01_optimal_stopping_files/figure-html/cell-3-output-1.png" width="1118" height="541"></p>
+<p><img data-src="lec_01_optimal_stopping_files/figure-html/cell-3-output-1.png" width="1320" height="601"></p>
 </figure>
 </div>
 </div>
 </div>
 </section></section>
 <section>
-<section id="variations" class="title-slide slide level1 title center">
-<h1><span class="flow">Variations</span></h1>
 
-</section>
-<section id="rejection" class="slide level2">
-<h2>Rejection</h2>
-<p><span class="question">Question:</span> Imagine a dating scenario, <span class="highlight">where the other person can also reject you</span>. <strong>Optimal stopping point?</strong></p>
-<ul>
-<li class="fragment">The optimal stopping point is now <strong>lower</strong></li>
-<li class="fragment">Because we can now <strong>fail more often</strong></li>
-<li class="fragment">With 50 % chance of rejection, we <strong>start leaping at 25 %</strong></li>
-<li class="fragment"><strong>Formula:</strong> <span class="math inline">\(q^{\frac{1}{1-q}}\)</span> with <span class="math inline">\(q\)</span> being the chance of rejection</li>
-</ul>
-</section>
-<section id="mutual-rejection" class="slide level2">
-<h2>Mutual Rejection</h2>
-<p><span class="question">Question:</span> What if in dating, <span class="highlight">the other person can also reject you</span>?</p>
-<ul>
-<li class="fragment">The optimal stopping point <strong>decreases</strong></li>
-<li class="fragment">We need to account for rejection risk</li>
-<li class="fragment">With 50% rejection probability: <strong>start accepting at 25%</strong></li>
-<li class="fragment"><strong>Formula:</strong> <span class="math inline">\(q^{\frac{1}{1-q}}\)</span> where <span class="math inline">\(q\)</span> = rejection probability</li>
-</ul>
-<div class="fragment">
-<p><strong>Life lesson:</strong> Higher risk of rejection means we should be less picky!</p>
+<section id="roadmap-2" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">The problem: choosing the best when options come one at a time</span></li>
+<li><span class="roadmap-item done">The rule: look first, then leap</span></li>
+<li><span class="roadmap-item current">Real life: when the assumptions change</span></li>
+</ol>
 </div>
 </section>
-<section id="time-constraints" class="slide level2">
-<h2>Time Constraints</h2>
-<p>What if we don’t have a fixed number of candidates, but a <span class="highlight">fixed amount of time</span>?</p>
+<section id="real-life-changes-the-assumptions" class="slide level2">
+<h2>Real life changes the assumptions</h2>
+<p>So far, we made some strong simplifications. Real life is messier.</p>
 <div class="fragment">
-<p><strong>Example:</strong> One year to find an apartment</p>
+<p><span class="question">Question:</span> What could be different in real life?</p>
 </div>
+<div class="fragment">
+<ul>
+<li class="fragment">The other person can <strong>say no</strong></li>
+<li class="fragment">You can <strong>go back</strong> to someone you passed</li>
+<li class="fragment">You <strong>know how good</strong> an option is, not just how it compares</li>
+<li class="fragment">You have <strong>a fixed time</strong>, not a fixed number of options</li>
+<li class="fragment">One failure can mean <strong>losing everything</strong></li>
+<li class="fragment">Looking <strong>costs time and effort</strong></li>
+</ul>
+</div>
+</section>
+<section id="if-you-can-be-rejected-leap-earlier" class="slide level2">
+<h2>If you can be rejected, leap earlier</h2>
+<p><span class="question">Question:</span> In dating, <span class="highlight">the other person can also say no</span>. <strong>When to leap?</strong></p>
+<ul>
+<li class="fragment">50% chance of rejection: <strong>leap at 25%</strong></li>
+<li class="fragment"><strong>Formula:</strong> <span class="math inline">\(q^{\frac{1}{1-q}}\)</span>, <span class="math inline">\(q\)</span> = chance that your offer is <strong>accepted</strong><sup>1</sup></li>
+<li class="fragment">In words: the more often you hear “no”, the earlier you leap</li>
+</ul>
+<aside class="notes">
+<p>Life lesson: higher risk of rejection means we should be less picky. With q = 0.5 the formula gives 0.5 to the power of 2, that is 25%. If offers are always accepted (q close to 1), the formula gives back the familiar 1/e.</p>
+<p>Example from Brian Christian: searching from age 18 to 40, the 37% rule says get serious at 26.1. With many rejections, start at 23.5.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>How it works: after the look phase, you ask everyone who beats all earlier candidates, and each says yes with chance <span class="math inline">\(q\)</span>. You get the best only if the best says yes and everyone you asked before said no. More rejections mean you use up more candidates after the look phase, so you have to start earlier. The stated formula is the best look phase, for example 25% when <span class="math inline">\(q = 50\%\)</span>. As in the basic problem, your chance of getting the best equals the look phase. With <span class="math inline">\(q\)</span> close to 1, it gives back 37%.</p></li></ol></aside></section>
+<section id="if-you-can-go-back-wait-longer" class="slide level2">
+<h2>If you can go back, wait longer</h2>
+<p><span class="question">Question:</span> What if you could <strong>return to someone you passed on</strong>, but they might say no?</p>
+<ul>
+<li class="fragment">Going back works only half the time: <strong>look at 61%</strong><sup>1</sup>, then leap</li>
+<li class="fragment">If nobody better comes, <strong>return to the best</strong> you passed</li>
+<li class="fragment">In words: a second chance makes it safe to look longer</li>
+</ul>
+<aside class="notes">
+<p>Example from the book: an immediate offer is always accepted, a belated one only with 50%. The safety net of going back shifts the look phase from 37% to 61%.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>Christian, B. &amp; Griffiths, T. (2016). Algorithms to Live By. Henry Holt, Chapter 1.</p></li></ol></aside></section>
+<section id="if-you-know-the-scale-use-a-threshold" class="slide level2">
+<h2>If you know the scale, use a threshold</h2>
+<p><span class="question">Question:</span> What if you <strong>know how good</strong> each option is, not just how it compares?</p>
+<ul>
+<li class="fragment">Example: you know test scores, or the price per square meter of a flat</li>
+<li class="fragment"><strong>No look phase needed:</strong> take the first option above a threshold</li>
+<li class="fragment">The threshold <strong>drops</strong> as fewer options remain</li>
+<li class="fragment">Chance of getting the very best rises to <strong>58%</strong><sup>1</sup></li>
+</ul>
+<aside class="notes">
+<p>This is the “full information” version. With absolute scores and a known distribution, you don’t need to learn a benchmark first. The threshold starts high and falls as you run out of options.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>Gilbert, J.P. &amp; Mosteller, F. (1966). Recognizing the maximum of a sequence. Journal of the American Statistical Association, 61(313), 35–73.</p></li></ol></aside></section>
+<section id="fixed-time-instead-of-a-fixed-number-of-options" class="slide level2">
+<h2>Fixed time instead of a fixed number of options</h2>
+<p><strong>Example:</strong> one year to find a flat, viewings come as they come</p>
 <div class="fragment">
 <p><span class="question">Question:</span> How should we adapt our strategy?</p>
 </div>
 <div class="fragment">
 <ul>
-<li class="fragment"><strong>Same principle applies!</strong> Observe for first 37% of available time</li>
-<li class="fragment">But now we also control the <strong>search intensity</strong></li>
-<li class="fragment">This connects to <strong>resource allocation</strong> problems in computer science</li>
+<li class="fragment"><strong>Same principle:</strong> look for the first 37% of the time<sup>1</sup>, then leap</li>
+<li class="fragment">The number of options is not fixed: <strong>the harder we search, the more options we see</strong></li>
 </ul>
+<aside class="notes">
+<p>This holds if options arrive evenly over time. We can also decide how intensively we search, for example by viewing more flats per week. Searching harder in the look phase improves the benchmark.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
-</section>
-<section id="other-versions" class="slide level2">
-<h2>Other versions</h2>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>Christian, B. &amp; Griffiths, T. (2016). Algorithms to Live By. Henry Holt, Chapter 1.</p></li></ol></aside></section>
+<section id="the-burglar-knowing-when-to-quit" class="slide level2">
+<h2>The burglar: knowing when to quit</h2>
+<p><strong>Example:</strong> each break-in succeeds with chance <span class="math inline">\(q\)</span>, one failure means losing everything</p>
+<div class="fragment">
+<p><span class="question">Question:</span> When should the burglar retire?</p>
+</div>
+<div class="fragment">
 <ul>
-<li>Selling a house for the <strong>best price</strong> (“Threshold Rule”)</li>
-<li>Stealing with a <strong>success probability</strong> (“Burglar’s Problem”)</li>
-<li><strong>Finding</strong> a parking spot (“Parking Lot Problem”)</li>
+<li class="fragment">Stop after about <span class="math inline">\(\frac{q}{1-q}\)</span> successes</li>
+<li class="fragment">With <span class="math inline">\(q = 90\%\)</span>: retire after <strong>9</strong> break-ins<sup>1</sup></li>
+<li class="fragment">Same logic for any streak that can end badly: a winning run in the casino, a project that keeps growing in risk</li>
 </ul>
-<div class="fragment">
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-content">
-<p>Side note for drivers: An increase in occupancy from 90 to 95% doubles the search time for all drivers!</p>
+<aside><ol class="aside-footnotes"><li id="fn7"><p>Ferguson, T.S. Optimal Stopping and Applications. Lecture notes, University of California, Los Angeles, https://www.math.ucla.edu/~tom/Stopping/. The rule assumes the same haul every time: stop once your total haul is worth more than what you would expect to gain from one more attempt.</p></li></ol></aside></section>
+<section id="in-practice-people-stop-too-early" class="slide level2">
+<h2>In practice, people stop too early</h2>
+<ul>
+<li class="fragment">In about a dozen experiments, people <strong>leap earlier</strong> than the 37% rule suggests<sup>1</sup></li>
+<li class="fragment"><span class="question">Question:</span> Why might that be?</li>
+<li class="fragment">Searching costs <strong>time and effort</strong>, and the rule ignores that</li>
+<li class="fragment">If looking is expensive, leaping earlier can be <strong>the right choice</strong></li>
+</ul>
+<aside class="notes">
+<p>Experiments by Seale and Rapoport (1997). The 37% rule assumes that looking is free. In real life, every viewing or interview costs time, so stopping a bit earlier is often rational, not a mistake.</p>
+<p>Side note for drivers: an increase in occupancy from 90 to 95% doubles the search time for all drivers. Each variation changes the rule a little, but the structure stays: options come one at a time, and you cannot go back.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><ol class="aside-footnotes"><li id="fn8"><p>Christian, B. &amp; Griffiths, T. (2016). Algorithms to Live By. Henry Holt, Chapter 1.</p></li></ol></aside></section>
+<section id="what-we-covered" class="slide level2 lecture-closing">
+<h2>What we covered</h2>
+<div class="covered-list">
+<div class="covered-item">
+<p><span class="eyebrow">The problem: choosing the best when options come one at a time</span></p>
+<p>Many decisions share one structure: options arrive one at a time, and there is no going back.</p>
 </div>
+<div class="covered-item">
+<p><span class="eyebrow">The rule: look first, then leap</span></p>
+<p>Looking at the first 37% and then taking the first better option gives the best possible chance of picking the very best: 37%.</p>
 </div>
+<div class="covered-item">
+<p><span class="eyebrow">Real life: when the assumptions change</span></p>
+<p>The rule adapts to real life: leap earlier if you can be rejected or looking is costly, wait longer if you can go back.</p>
 </div>
 </div>
 </section>
-<section id="building-your-technical-mindset" class="slide level2">
-<h2>Building Your Technical Mindset</h2>
-<p><span class="question">Question:</span> <strong>How does optimal stopping connect to programming?</strong></p>
-<div class="fragment">
-<ol type="1">
-<li class="fragment"><strong>Algorithmic thinking:</strong> Break complex decisions into logical steps</li>
-<li class="fragment"><strong>Trade-off analysis:</strong> Exploration vs.&nbsp;exploitation (fundamental in AI)</li>
-<li class="fragment"><strong>Mathematical optimization:</strong> Using formulas to find best solutions</li>
-</ol>
+<section id="why-it-matters" class="slide level2 lecture-closing">
+<h2>Why it matters</h2>
+<div class="lecture-why closing">
+<p>You visit flats in Hamburg. Each viewing, you must decide on the spot, and if you say no, the flat is gone. Choose too early and you miss better ones; wait too long and the best is behind you. Companies face the same problem when hiring, choosing suppliers or accepting offers.</p>
 </div>
 </section>
-<section id="key-takeaways" class="slide level2">
-<h2>Key Takeaways</h2>
-<p><strong>What we learned:</strong></p>
-<ol type="1">
-<li class="fragment"><strong>Optimal stopping problems</strong> are everywhere in life and business</li>
-<li class="fragment"><strong>The 37% rule</strong> provides a mathematically optimal strategy</li>
-<li class="fragment"><strong>Exploration vs.&nbsp;exploitation</strong> is a fundamental trade-off</li>
-<li class="fragment"><strong>Real-world variations</strong> require adapting the basic strategy</li>
-<li class="fragment"><strong>This thinking</strong> builds foundation for algorithmic problem-solving</li>
-</ol>
+<section id="section-2" class="slide level2 loud-slide lecture-key">
+<h2></h2>
+<div class="r-fit-text">
+<p>Look first.</p>
+<p>Then leap.</p>
+</div>
 </section>
-<section id="section-2" class="slide level2 loud-slide">
+<section id="section-3" class="slide level2 loud-slide">
 <h2></h2>
 <div class="r-fit-text">
 <p>Any questions</p>
 <p>so far?</p>
 </div>
 </section>
-<section id="after-the-break-optimal-stopping" class="slide level2">
-<h2>After the break — Optimal Stopping</h2>
+<section id="after-the-break-first-steps-in-python" class="slide level2">
+<h2>After the break: First Steps in Python</h2>
 <ul>
-<li>Gentle introduction to Python Programming</li>
-<li>We work in our notebooks on basics and optimal stopping</li>
-<li>How to translate the idea into code and experiments</li>
+<li>A gentle introduction to Python in our notebooks</li>
+<li>We turn today’s idea into <strong>code and experiments</strong></li>
+<li>This is how <strong>algorithmic thinking</strong> starts: break a decision into logical steps</li>
 </ul>
-<div class="fragment">
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><strong>That’s it for optimal stopping!</strong><br>
-Let’s have a short break and then continue with our first Python programming session.</p>
-</div>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>How does optimal stopping connect to programming? Algorithmic thinking: break complex decisions into logical steps. Trade-off analysis: exploration vs.&nbsp;exploitation, fundamental in AI and the topic of the next lecture. Mathematical optimization: using formulas to find the best solution.</p>
+<p>That’s it for optimal stopping! Let’s have a short break and then continue with our first Python programming session.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="literature" class="title-slide slide level1 title center">
@@ -551,13 +699,18 @@ Let’s have a short break and then continue with our first Python programming s
 <h2>Interesting literature to start</h2>
 <ul>
 <li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<sup>1</sup></li>
-<li>Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn9"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
+<section id="optimal-stopping-in-depth" class="slide level2">
+<h2>Optimal Stopping in Depth</h2>
+<ul>
+<li>Ferguson, T.S. (1989). Who solved the secretary problem? Statistical Science, 4(3). doi:10.1214/ss/1177012493.</li>
+</ul>
+</section>
 <section id="books-on-programming" class="slide level2">
 <h2>Books on Programming</h2>
 <ul>
-<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Free online</a></li>
 <li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
 </ul>
 <div class="fragment">
@@ -567,7 +720,7 @@ Let’s have a short break and then continue with our first Python programming s
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+<p>Think Python is free online and a great start. Schrödinger programmiert Python is a playful alternative in German.</p>
 </div>
 </div>
 </div>
@@ -583,7 +736,7 @@ Let’s have a short break and then continue with our first Python programming s
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Lecture I - Optimal Stopping | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_01_optimal_stopping.html">Home</a></p>
+<p>Lecture I: Optimal Stopping | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_01_optimal_stopping.html">Home</a></p>
 </div>
 </div></div>
 

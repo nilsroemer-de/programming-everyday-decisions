@@ -1,25 +1,30 @@
 ---
-title: Introduction - Programming
+title: Introduction
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
-author: Dr. Nils Roemer
 format:
   revealjs:
-    footer: ' {{< meta title >}} | {{< meta author >}} | [Home](lec_00_introduction.qmd)'
+    footer: ' {{< meta title >}} | Dr. Nils Roemer | [Home](lec_00_introduction.qmd)'
     output-file: lec_00_presentation.html
 ---
 
 
-# <span class="flow">About this Course</span>
+## Today in one sentence
 
-## Agenda
+<span class="statement">In this course you learn how computer scientists approach everyday decisions, and how to turn these ideas into Python code.</span>
 
-- About the course and expectations
-- How to learn programming (mindset and resources)
-- Setting up Python with uv and VS Code
-- Using notebooks with uv
-- Q&A and next steps
+<span class="eyebrow">Why it matters</span>
 
-## Course Outline
+More and more business decisions rely on data and algorithms. You don't need to become a programmer, but understanding how algorithms think, and writing a few lines of code yourself, makes you a better decision maker. No prior knowledge required.
+
+## Roadmap
+
+1.  <span class="roadmap-item future">About this course: topics, format and how you pass</span>
+2.  <span class="roadmap-item future">How to learn programming</span>
+3.  <span class="roadmap-item future">Setting up Python</span>
+
+# <span class="flow">About this course: topics, format and how you pass</span>
+
+## Six topics, one per session
 
 - **I:** Optimal Stopping
 - **II:** Explore & Exploit
@@ -28,122 +33,92 @@ format:
 - **V:** Randomness
 - **VI:** Computational Kindness
 
-## Participation
+## Take part, it pays off
 
-- Try **actively participating** in this course
-- You will find it much <span class="highlight">(!)</span> easier and more fun
-- Lecture based on the book <span class="highlight">Algorithms to live by</span>[^1]
-- Material and slides are hosted online: [courses.nilsroemer.com](https://courses.nilsroemer.com)
+- **Participate actively**: it makes the course easier and more fun
+- Inspired by the book <span class="highlight">Algorithms to Live By</span>[^1]
+- All material is online: [courses.nilsroemer.com](https://courses.nilsroemer.com)
 
-## Teaching
+## Each session: lecture, then tutorial
 
-- **Lecture:** Presentation and discussion of algorithms related to everyday decision-making
-- **Tutorial:** Step-by-step assignments to be solved and discussed together in groups
-- **Difficulty:** Strongly depends on your background and programming experience
-
-. . .
+- **Lecture:** we discuss an algorithm for everyday decisions
+- **Tutorial:** step-by-step assignments, solved together in groups
+- **Difficulty:** depends on your programming experience
 
 > **Tip**
 >
 > No worries, we will help you out if you have any questions!
 
-## Passing the Course
+## How you pass
 
 - **Pass/fail course** without exams
-- <span class="highlight">75% attendance</span> required for passing the course
-- Hand in the assignments of at least **two lectures**
-- **Short presentation** and discussion at the end
-- You work together in groups of **three students**
+- <span class="highlight">75% attendance</span> required
+- **Two assignments** on algorithmic problems from the course
+- **Short final presentation** of your prototype in the last lecture
+- You can work in groups of **up to three students**
 
-## Handing in Assignments
+## How to hand in assignments
 
-- Each student group submits **one solution**
-- Provide us **all** working notebooks of the lecture
-- Hand in is due at the **beginning of the next lecture**
-- At least **50 %** have to be correct to pass
-- <span class="highlight">You have to pass at least twice</span>
+- Each group submits **one solution** per assignment
+- Hand in your **working notebooks**
+- Due by the **end of the quarter**, earlier is better
+- At least **50%** of the solutions have to be correct
 
-. . .
-
-> **Tip**
->
-> This is just in order to provide you with working solutions after each deadline.
-
-## Learning Python
+## You learn Python in the tutorials
 
 We will mostly **not cover Python during the lectures!**
 
-. . .
+<span class="question">Question:</span> Does anybody know why?
 
-<span class="question">Question</span>: Anybody know why?
+- The best way to learn is by **doing**
+- Lectures focus on the decision-making algorithms
+- You learn Python by <span class="highlight">doing the tutorials</span>
 
-. . .
-
-- In our experience, the best way to learn is by **doing**!
-- Here, we will focus on decision-making algorithms
-- You will learn Python by <span class="highlight">doing the tutorials</span>
-
-. . .
-
-> **Tip**
->
-> Don't worry, we will help you out if you have any questions!
-
-## Difficulty of the Course
+## Programming is like a new language
 
 - At first it might be <span class="highlight">a little bit overwhelming</span>
-- Programming is similar to learning a **new language**
-- First, you have to **get used to it** and learn words
-- **Later**, you'll be able to apply it and see results
+- First you get used to it and learn words
+- Later you apply it and see results
 - Important: *Practice, practice, practice!*
 
-## Goals of the Course
+## What you take home
 
-- Learn the <span class="highlight">basics of programming</span>
-- Learn about **algorithmic thinking**
-- Be able to **apply** methods and concepts
-- **Solve practical problems** with algorithms
-
-> **Tip**
->
-> We are convinced that this course will be quite interesting and **teach you more for your daily life** than most other courses!
+- The <span class="highlight">basics of programming</span>
+- **Algorithmic thinking**: how computer scientists approach a problem
+- Methods you can **apply** to practical problems
 
 ## Why Python?
 
-- **Origins**: Conceived in late 1980s as a teaching and scripting language
-- **Simple Syntax**: Python's syntax is mostly straightforward and very easy to learn
-- **Versatility**: Used in web development, data analysis, artificial intelligence, and more
-- **Community Support**: A large community of users worldwide and extensive documentation
+- **Simple syntax**: easy to read and to learn
+- **Versatile**: web, data analysis, artificial intelligence
+- **Big community**: help and documentation everywhere
 
-## Help from AI
+## AI is allowed, but learn yourself
 
-- You are <span class="highlight">allowed to use AI</span> in the course, we use it as well (e.g., Claude, ChatGPT, LLama3 ...)
-- These **tools are great** for learning Python!
-- Can help you a lot **to get started** with programming
-
-. . .
+- You are <span class="highlight">allowed to use AI</span>, we use it as well
+- Assistants such as Claude, ChatGPT or Gemini are **great for learning Python**
 
 > **Warning**
 >
-> But you should *not* simply use them to *replace* your learning.
+> But don't let them *replace* your learning.
 
 # <span class="flow">How to learn programming</span>
 
-## Our Recommendation
+## Roadmap
 
-1.  <span class="highlight">Be present</span>: Attend the lecture and solve the tutorials
-2.  <span class="highlight">Put in some work</span>: Repeat code and try to understand it
-3.  <span class="highlight">Do coding</span>: Run code, play around, modify, and solve
+1.  <span class="roadmap-item done">About this course: topics, format and how you pass</span>
+2.  <span class="roadmap-item current">How to learn programming</span>
+3.  <span class="roadmap-item future">Setting up Python</span>
 
-. . .
+## Three habits that work
 
-> **Tip**
->
-> Great resources to start are books and small challenges. You can find a list of book recommendations at the end of the lecture. Small challenges to solve can for example be found on [Codewars](https://www.codewars.com/).
+1.  <span class="highlight">Be present</span>: attend the lecture and solve the tutorials
+2.  <span class="highlight">Put in some work</span>: repeat code and try to understand it
+3.  <span class="highlight">Do coding</span>: run code, play around, modify, and solve
 
 ## Don't give up!
 
-- Programming is <span class="highlight">problem solving</span>, don't get **frustrated**!
+- Programming is <span class="highlight">problem solving</span>, errors are normal
 - Expect to **stretch** your comfort zone
 
 <center>
@@ -151,82 +126,83 @@ We will mostly **not cover Python during the lectures!**
 <br>
 <img src="../images/gif/lec00-intro.gif" width="480" height="360" alt="">
 
-<center>
+</center>
 
 # <span class="flow">Setting up Python</span>
 
+## Roadmap
+
+1.  <span class="roadmap-item done">About this course: topics, format and how you pass</span>
+2.  <span class="roadmap-item done">How to learn programming</span>
+3.  <span class="roadmap-item current">Setting up Python</span>
+
 ## Install VS Code
 
-- Download and install from the [website](https://code.visualstudio.com/)
-- Built for **Windows, Linux and Mac**
-- Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extension
-- <span class="highlight">Now you are ready to go!</span>
+- Download and install from the [website](https://code.visualstudio.com/), for **Windows, Linux and Mac**
+- Add the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions
 
-. . .
+## VS Code is an IDE
 
-> **Tip**
->
-> Unsure on how to work with VS Code and notebooks?
-> Ask us! We are happy to help you out!
+- IDE = Integrated Development Environment, an app to **write, run and debug code**
+- Other IDEs: [PyCharm](https://www.jetbrains.com/pycharm/), [Zed](https://zed.dev/)
 
-## What is an IDE?
+## Install Python with `uv`
 
-- Integrated Development Environment `=` application
-- It allows you to write, run and debug code scripts
-- Other IDEs include for example:
-  - [PyCharm](https://www.jetbrains.com/pycharm/) from JetBrains
-  - [Zed](https://zed.dev/)
-
-## Installation of Python with `uv`
-
-- We will use `uv` to install and manage Python versions
+- `uv` installs Python and manages packages for us
 - It works on Windows, Mac and Linux
-- It helps us to manage packages and virtual environments
-- Now, we all [go here](../general/uv.qmd) and install `uv` and Python
-
-. . .
+- Now we all [go here](../general/uv.qmd) and install `uv` and Python
 
 > **Tip**
 >
 > If the installation does not work, **let us know!**
 
-# <span class="flow">Using Notebooks with uv</span>
+## Quick check
 
-## Quick Check
-
-- Have you installed `uv` and initialized the project?
-- Great! Before we continue, check the following:
-  - \[\] You have a folder for the course
-  - \[\] You have initialized `uv` with `uv init` inside the folder
-  - \[\] You can see a file called `pyproject.toml` in the folder
-
-  . . .
+- [ ] You have a folder for the course
+- [ ] You ran `uv init` inside the folder
+- [ ] You can see a file called `pyproject.toml` in the folder
 
 > **Tip**
 >
 > Something not working yet? Ask us!
 
-## Using Notebooks
+## Add notebooks to your project
 
-- Now we need to add a kernel to our project
-- Run `uv add --dev ipykernel` from your terminal
-- Now run `uv add jupyter` in the terminal
-- This allows us to use `uv` Python in notebooks
-- Done? Perfect. Now we can start!
+- Run `uv add --dev ipykernel` in your terminal
+- Then run `uv add jupyter`
+- Now notebooks can use the Python of your project
 
-## Working with Notebooks
+## Download a tutorial and open it
 
-- Now you can download the files from the website
-- Just click on one of the sessions and open it
-- Select `Jupyter` on the right side
-- Download and save the files **to your course folder**
-- Open them and select "Open with Jupyter Notebook"
-
-. . .
+- Open a tutorial on the website and select `Jupyter` on the right
+- Save the file **to your course folder**
+- Open it in VS Code and select "Open with Jupyter Notebook"
 
 > **Tip**
 >
 > That was the hardest part today!
+
+## What we covered
+
+<span class="eyebrow">About this course: topics, format and how you pass</span>
+
+Six topics, each with a lecture and a Python session. You pass with 75% attendance, two assignments and a final presentation.
+
+<span class="eyebrow">How to learn programming</span>
+
+Programming is learned by doing: small steps, regular practice, and don't give up.
+
+<span class="eyebrow">Setting up Python</span>
+
+Your laptop is ready: VS Code, Python with uv and notebooks.
+
+## Why it matters
+
+More and more business decisions rely on data and algorithms. You don't need to become a programmer, but understanding how algorithms think, and writing a few lines of code yourself, makes you a better decision maker.
+
+## 
+
+Learn by doing.
 
 ## 
 
@@ -234,11 +210,11 @@ Any questions
 
 so far?
 
-## After the break --- Optimal Stopping
+## After the break: Optimal Stopping
 
 - The "Secretary Problem" and the 37% rule
 - When to stop searching and make a decision
-- How to translate the idea into code and experiments
+- Testing the rule ourselves with a small simulation
 
 > **Note**
 >
@@ -250,18 +226,15 @@ so far?
 ## Interesting literature to start
 
 - Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^2]
-- Ferguson, T.S. (1989) 'Who solved the secretary problem?', Statistical Science, 4(3). doi:10.1214/ss/1177012493.
 
 ## Books on Programming
 
-- Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O'Reilly. [Here](https://greenteapress.com/wp/think-python-3rd-edition/)
+- Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O'Reilly. [Free online](https://greenteapress.com/wp/think-python-3rd-edition/)
 - Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.
-
-. . .
 
 > **Note**
 >
-> Think Python is a great book to start with. It's available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.
+> Think Python is free online and a great start. Schrödinger programmiert Python is a playful alternative in German.
 
 ## More Literature
 

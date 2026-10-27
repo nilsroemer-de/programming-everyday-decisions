@@ -12,6 +12,10 @@
  *      http://www.apache.org/licenses/LICENSE-2.0
  */
 
+// Course: only the bundled TeX web fonts; a locally installed STIX font would otherwise
+// make MathJax request fonts/STIX/fontdata.js, which is not shipped (404).
+MathJax.Hub.Config({"HTML-CSS": {availableFonts: ["TeX"], preferredFont: "TeX", webFont: "TeX"}});
+
 MathJax.Ajax.Preloading(
   "[MathJax]/jax/input/TeX/config.js",
   "[MathJax]/jax/output/HTML-CSS/config.js",

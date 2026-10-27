@@ -1,12 +1,12 @@
 ---
-title: Tutorial V.II - Recap with Randomness
+title: 'Tutorial V.II: Recap with Randomness'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
 
 # Introduction
 
-<span class="highlight">From now on, it is rather difficult to give you tasks that you cannot solve within minutes by yourself with the help of AI</span>. Therefore, today's tutorial will be more open-ended than usual. All tasks are designed to be solved together with AI, but you are nonetheless the human in the loop. Thus, your responsiblities are to control the AI and to learn how to use it by doing. Instructions and explanations will only be given sparsely, as you are encouraged to use AI to ask for help and explanations to explore the tasks on your own.
+<span class="highlight">From now on, it is rather difficult to give you tasks that you cannot solve within minutes by yourself with the help of AI</span>. Therefore, today's tutorial will be more open-ended than usual. All tasks are designed to be solved together with AI, but you are nonetheless the human in the loop. Thus, your responsibilities are to control the AI and to learn how to use it by doing. Instructions and explanations will only be given sparsely, as you are encouraged to use AI to ask for help and explanations to explore the tasks on your own.
 
 Let's explore how randomness affects our daily decision-making. As always, we will use Python and simulate various scenarios where randomness plays a crucial role.
 
@@ -24,17 +24,19 @@ First, let's import the necessary library:
 import random
 ```
 
-In total, you have 32 candidates. Screen the candidates one by one and compute the `best_candidate_index` to find the best candidate.
+In total, you have 32 candidates. Screen the candidates one by one and store the index of the candidate you select in `best_candidate_index`.
 
-> **How to start with AI pair programming**
+> **How to work with AI coding assistants and agents**
 >
-> 1.  In Cursor, you can select the code or text you want to work with and then press `Ctrl+L` to open the chat.
-> 2.  In the chat, you can ask the AI to help you complete the task or ask it to explain the code, the task, or related concepts
-> 3.  While writing code, you can press `Ctrl+K` to let the AI help you write the code directly in the editor.
-> 4.  Furthermore, the AI will try to understand your code and might make suggestions on how to improve it or on how to continue. Just press `TAB` to accept a suggestion.
+> You can use any current AI coding assistant or agent, for example GitHub Copilot (free for students, see Tutorial V.I), Cursor or Claude Code.
+>
+> 1.  Select the task or the code and ask the assistant in its chat to explain the task, the code or a concept.
+> 2.  Let it suggest code directly in your notebook and read every suggestion before you accept it.
+> 3.  Agents can work on whole files: describe the goal, review their changes and run the tests yourself.
+> 4.  If a test fails, ask the assistant why, and make sure you understand the fix.
 
 ``` python
-random.seed(42) # Sets the random seed for reproducibility
+random.seed(13) # Sets the random seed for reproducibility
 candidates = [random.random() for _ in range(32)]
 
 # YOUR CODE BELOW
@@ -45,8 +47,9 @@ candidates = [random.random() for _ in range(32)]
 
 ``` python
 # Test your solution with the following code
-assert best_candidate_index == 24, "The selected candidate is not the best one"
+assert best_candidate_index == 19, "The 37% rule should select candidate 19"
 print(r"All tests passed, you have successfully implemented the 37% rule!")
+print(f"The very best candidate was number {candidates.index(max(candidates))}: the rule finds the best only about 37% of the time.")
 ```
 
 </details>
@@ -96,7 +99,7 @@ appetizers = ["Sorted Salad", "Binary Bruschetta", "Array of Antipasti"]
 mains = ["Loop Lasagna", "Python Pasta", "Recursive Risotto"]
 desserts = ["Binary Brownie", "Cache Cookie", "Stack Sundae"]
 
-# YOUR CODE HERE
+# YOUR CODE BELOW
 ```
 
 <details class="code-fold">
@@ -128,9 +131,9 @@ Let's create a task scheduler that handles tasks with different due dates. The s
 Your task is to create a function `schedule_tasks(tasks)` that:
 
 - Sorts tasks by due date
-- Creates a schedule with start and end times for each task
-- Returns the complete schedule as an pandas DataFrame
-- Keep the same column names as in the dictionary
+- Adds the start and end time of each task in two new columns `start_time` and `end_time`
+- Keeps the original columns `name`, `duration` and `due_time`
+- Returns the complete schedule as a pandas DataFrame
 
 ``` python
 # Pre-generated tasks (don't modify this!)
@@ -166,7 +169,7 @@ tasks = [
     }
 ]
 
-# YOUR CODE HERE
+# YOUR CODE BELOW
 ```
 
 <details class="code-fold">
@@ -175,7 +178,9 @@ tasks = [
 ``` python
 # Test your solution with the following code
 schedule_df = schedule_tasks(tasks)
-assert schedule_df.shape == (5, 4), "The schedule should have 5 rows and 4 columns"
+assert schedule_df.shape == (5, 5), "The schedule should have 5 rows and 5 columns"
+assert set(schedule_df.columns) == {"name", "duration", "due_time", "start_time", "end_time"}, "Check the column names"
+assert schedule_df.iloc[4]['end_time'] == 15, "The last task should end after 15 hours"
 assert schedule_df.iloc[0]['name'] == "Team Meeting", "First task should be 'Team Meeting'"
 assert schedule_df.iloc[4]['name'] == "Project Review", "Fifth task should be 'Project Review'"
 print(r"All tests passed, you have successfully implemented the task scheduler!")
@@ -187,9 +192,18 @@ print(r"All tests passed, you have successfully implemented the task scheduler!"
 
 In our daily lives, we often encounter situations where randomness plays a crucial role in decision-making. From choosing a restaurant for dinner to selecting which tasks to tackle first, incorporating some randomness can actually lead to better outcomes than strictly deterministic approaches.
 
-## Solving your travel problem by brute force
+## Exercise 5.1 - Monte Carlo Route Planning
 
-Imagine you want to travel during the semester break and you want to visit 6 cities and then return to Hamburg. Your aim is to find the route that is the cheapest to travel. Implement a heuristic that randomly tries 10 different routes and picks the cheapest one. Save the costs in `min_cost`.
+Imagine you want to travel during the semester break: starting in Hamburg, you want to visit the other 5 cities once and then return to Hamburg. Instead of checking all possible routes, use a **Monte Carlo simulation** as in the lecture:
+
+1.  Create 1,000 random routes (for example with `random.shuffle()` on the list of cities to visit)
+2.  Compute the cost of each route, including the flights from and back to Hamburg
+3.  Estimate the **expected cost of a random route** as the average of all simulated costs and save it in `average_cost`
+4.  Save the cost of the cheapest route you found in `min_cost`
+
+> **Tip**
+>
+> The more random routes you simulate, the closer `average_cost` gets to the true average, and the more likely it is that you also find the cheapest route.
 
 ``` python
 # City names and cost matrix
@@ -213,7 +227,7 @@ cost_df = pd.DataFrame(cost_matrix, index=cities, columns=cities)
 # Display the DataFrame
 print(cost_df)
 
-# YOUR CODE HERE
+# YOUR CODE BELOW
 ```
 
                New York  London  Tokyo  Sydney  Barcelona  Hamburg
@@ -229,8 +243,10 @@ print(cost_df)
 
 ``` python
 # Test your solution with the following code
-assert min_cost < 6000, "The cheapest route should be cheaper than 6000. Try again, if you think your algorithm works correctly."
-print(r"All tests passed, you have successfully implemented the route planner!")
+assert abs(average_cost - 6880) < 150, "The average cost of a random route should be close to 6880"
+assert min_cost == 5500, "With 1,000 random routes, you should find the cheapest route (5500)"
+print(r"All tests passed, you have successfully simulated the route planner!")
+print(f"A random route costs about {average_cost:.0f} on average, the best one {min_cost}.")
 ```
 
 </details>
@@ -243,7 +259,7 @@ We've explored how randomness affects decision-making through:
 - Optimal stopping with random elements
 - Caching a random subset of data
 - Scheduling tasks with due dates
-- Finding the cheapest route for a travel problem
+- Monte Carlo simulation of a travel problem
 
 Remember that randomness isn't always bad - sometimes it's the best strategy we have!
 

@@ -9,8 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Dr.&nbsp;Nils Roemer">
-  <title>Programming: Everyday Decision-Making Algorithms – Lecture VI - Computational Kindness</title>
+  <meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
+  <title>Programming: Everyday Decision-Making Algorithms – Lecture VI: Computational Kindness</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b2296277df239b774fa479879ac923b5.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bb978de86abbef3b36a933764425996b.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -130,42 +130,86 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture VI - Computational Kindness</h1>
-  <p class="subtitle">Programming with Python</p>
+  <h1 class="title">Lecture VI: Computational Kindness</h1>
+  <p class="subtitle">Programming: Everyday Decision-Making Algorithms</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Dr.&nbsp;Nils Roemer 
+Dr.&nbsp;Nils Roemer, External Lecturer 
 </div>
         <p class="quarto-title-affiliation">
-            Kühne Logistics University Hamburg - Fall 2024
+            Planningio GmbH
           </p>
     </div>
 </div>
 
 </section>
-<section>
-<section id="key-concepts" class="title-slide slide level1 title center">
-<h1><span class="flow">Key Concepts</span></h1>
-
+<section id="today-in-one-sentence" class="slide level2 lecture-opening">
+<h2>Today in one sentence</h2>
+<div class="lecture-summary">
+<p><span class="statement">The best algorithms don’t just solve a problem, they make life easier and fairer for the people affected.</span></p>
+</div>
+<div class="lecture-why">
+<p><span class="eyebrow">Why it matters</span></p>
+<p>“When works for you?” sounds polite but hands the work to the other person. Proposing two concrete slots is kinder. Companies face the same question at scale: how to design processes, products and automated decisions that are easy and fair for customers and colleagues.</p>
+</div>
 </section>
-<section id="topics-from-the-lecture" class="slide level2">
-<h2>Topics from the Lecture</h2>
+<section id="roadmap" class="slide level2 lecture-opening">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item future">Looking back: five ideas for better decisions</span></li>
+<li><span class="roadmap-item future">Computational kindness: easy and fair for others</span></li>
+<li><span class="roadmap-item future">Looking ahead: where to go from here</span></li>
+</ol>
+</div>
+</section>
+<section>
+
+<section id="five-ideas-from-this-course" class="slide level2">
+<h2>Five ideas from this course</h2>
 <ul>
-<li><strong>Optimal Stopping</strong>: How to decide <span class="highlight">when to stop looking</span> for better options.</li>
-<li><strong>Explore/Exploit Tradeoff</strong>: <span class="highlight">Balancing</span> between trying new things and sticking with known options.</li>
-<li><strong>Caching</strong>: Storing and reusing information by <span class="highlight">sticking to a task</span> to improve performance.</li>
-<li><strong>Scheduling</strong>: Efficiently managing <span class="highlight">tasks and time.</span></li>
-<li><strong>Randomness</strong>: Understanding and working with <span class="highlight">uncertainty</span>.</li>
+<li><strong>Optimal stopping:</strong> <span class="highlight">when to stop looking</span></li>
+<li><strong>Explore and exploit:</strong> <span class="highlight">balance</span> the new and the known</li>
+<li><strong>Caching:</strong> keep what you use close, <span class="highlight">let go of the rest</span></li>
+<li><strong>Scheduling:</strong> your goal decides <span class="highlight">your order</span></li>
+<li><strong>Randomness:</strong> simulate what you <span class="highlight">can’t calculate</span></li>
 </ul>
+<aside class="notes">
+<p>Today we add a sixth idea, computational kindness: reducing the burden for others and designing fair algorithms.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="looking-back-five-ideas-for-better-decisions-1" class="slide level2 section-covered">
+<h2>Looking back: five ideas for better decisions</h2>
+<div class="section-covered">
+<p><span class="eyebrow">What we covered</span></p>
+<p><span class="statement">Optimal stopping, explore and exploit, caching, scheduling and randomness give you a toolkit for everyday decisions.</span></p>
+</div>
 </section></section>
 <section>
-<section id="computational-kindness" class="title-slide slide level1 title center">
-<h1><span class="flow">Computational Kindness</span></h1>
 
+<section id="roadmap-1" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">Looking back: five ideas for better decisions</span></li>
+<li><span class="roadmap-item current">Computational kindness: easy and fair for others</span></li>
+<li><span class="roadmap-item future">Looking ahead: where to go from here</span></li>
+</ol>
+</div>
 </section>
-<section id="computational-kindness-1" class="slide level2" data-background-color="#000000" data-background-image="../images/bg/lec06-kindness.jpg" data-background-size="cover" data-background-position="center">
+<section id="computational-kindness" class="slide level2" data-background-color="#000000" data-background-image="../images/bg/lec06-kindness.jpg" data-background-size="cover" data-background-position="center">
 <h2><span class="invert-font">Computational Kindness</span></h2>
 <div class="fragment">
 <p><span class="invert-font"><span class="highlight">Question:</span> <strong>An idea what that is?</strong></span></p>
@@ -184,8 +228,8 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </section>
-<section id="scheduling-meetings" class="slide level2">
-<h2>Scheduling Meetings</h2>
+<section id="propose-two-slots-instead-of-asking-when-are-you-free" class="slide level2">
+<h2>Propose two slots instead of asking “when are you free?”</h2>
 <ul>
 <li><span class="highlight">Propose specific times!</span></li>
 <li>Don’t ask “when are you free?”</li>
@@ -205,8 +249,8 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </section>
-<section id="communication" class="slide level2">
-<h2>Communication</h2>
+<section id="say-what-you-prefer" class="slide level2">
+<h2>Say what you prefer</h2>
 <ul>
 <li><span class="highlight">Be explicit rather than implicit</span></li>
 <li>Provide <strong>clear</strong> options instead</li>
@@ -226,8 +270,8 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </section>
-<section id="the-cost-of-flexibility" class="slide level2">
-<h2>The Cost of Flexibility</h2>
+<section id="im-free-whenever-is-not-helpful" class="slide level2">
+<h2>“I’m free whenever” is not helpful</h2>
 <ul>
 <li>“I’m free whenever” <span class="highlight">seems helpful</span></li>
 <li><span class="highlight">But it is not!</span></li>
@@ -240,8 +284,8 @@ Dr.&nbsp;Nils Roemer
 </ul>
 </div>
 </section>
-<section id="principles" class="slide level2">
-<h2>Principles</h2>
+<section id="four-principles-of-computational-kindness" class="slide level2">
+<h2>Four principles of computational kindness</h2>
 <ol type="1">
 <li><strong>Reduce Options</strong>: Fewer choices lead to <span class="highlight">better decisions</span></li>
 <li><strong>Be Explicit</strong>: Clear constraints <span class="highlight">help</span> others decide</li>
@@ -249,19 +293,77 @@ Dr.&nbsp;Nils Roemer
 <li><strong>Make Decisions</strong>: <span class="highlight">Taking responsibility</span> can be kind</li>
 </ol>
 </section>
-<section id="reflection" class="slide level2">
-<h2>Reflection</h2>
-<p><span class="highlight">Think about it:</span> <strong>How could you apply computational kindness in these scenarios?</strong></p>
+<section id="biased-data-leads-to-biased-decisions" class="slide level2">
+<h2>Biased data leads to biased decisions</h2>
+<ul>
+<li>Algorithms increasingly decide <strong>about people</strong>: credit, job ads, CV screening</li>
+<li>They learn from <strong>historical data</strong>, including its <span class="highlight">biases</span></li>
+<li>Amazon dropped a CV-screening tool that downgraded CVs mentioning “women’s”<sup>1</sup></li>
+</ul>
+<div class="fragment">
+<p>Kindness also means thinking about the <strong>people affected</strong> by our algorithms.</p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Dastin, J. (2018). Amazon scraps secret AI recruiting tool that showed bias against women. Reuters, 10 October 2018.</p></li></ol></aside></section>
+<section id="where-bias-comes-from" class="slide level2">
+<h2>Where bias comes from</h2>
+<ul>
+<li><strong>Data:</strong> some groups are missing (<span class="highlight">selection bias</span>, Lecture V)</li>
+<li><strong>Objective:</strong> optimizing only speed or profit ignores who bears the errors</li>
+<li><strong>Feedback loops:</strong> decisions shape the next data<sup>1</sup></li>
+</ul>
+<div class="fragment">
+<p>Fairness is a design decision: <strong>test</strong> outcomes for groups, <strong>explain</strong> decisions, keep a <strong>human</strong> in the loop.</p>
+<aside class="notes">
+<p>Feedback loops: decisions shape the next data, for example more checks where we already checked a lot, so the data confirms the earlier decision. Fairness is a design decision: test outcomes for different groups, explain decisions, and keep a human in the loop.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Ensign, D. et al.&nbsp;(2018). Runaway feedback loops in predictive policing. Proceedings of Machine Learning Research, 81, 160–171.</p></li></ol></aside></section>
+<section id="three-questions-before-you-deploy-an-algorithm" class="slide level2">
+<h2>Three questions before you deploy an algorithm</h2>
+<p><span class="question">Question:</span> <strong>Before you deploy an algorithm, ask:</strong></p>
+<ul>
+<li>Who is affected, and who is <strong>missing</strong> in the data?</li>
+<li>Can a person <strong>understand and contest</strong> the decision?</li>
+<li>Does it <strong>reduce or add burden</strong> for the people involved?</li>
+</ul>
+</section>
+<section id="your-turn-be-kind-in-three-situations" class="slide level2">
+<h2>Your turn: be kind in three situations</h2>
+<p><span class="highlight">Think about it:</span> <strong>How could you apply computational kindness here?</strong></p>
 <ul>
 <li>Planning a <strong>group dinner</strong> with friends</li>
 <li>Asking your professor for <strong>thesis feedback</strong></li>
 <li>Coordinating a <strong>team project</strong> at work</li>
 </ul>
+</section>
+<section id="computational-kindness-easy-and-fair-for-others-1" class="slide level2 section-covered">
+<h2>Computational kindness: easy and fair for others</h2>
+<div class="section-covered">
+<p><span class="eyebrow">What we covered</span></p>
+<p><span class="statement">Good algorithms reduce the burden for others and treat people fairly. Biased data leads to biased decisions.</span></p>
+</div>
 </section></section>
 <section>
-<section id="how-to-continue" class="title-slide slide level1 title center">
-<h1><span class="flow">How to continue?</span></h1>
 
+<section id="roadmap-2" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">Looking back: five ideas for better decisions</span></li>
+<li><span class="roadmap-item done">Computational kindness: easy and fair for others</span></li>
+<li><span class="roadmap-item current">Looking ahead: where to go from here</span></li>
+</ol>
+</div>
 </section>
 <section id="how-to-continue-learning" class="slide level2" data-background-color="#000000" data-background-image="../images/bg/lec06-learning.jpg" data-background-size="cover" data-background-position="center">
 <h2><span class="invert-font">How to continue learning?</span></h2>
@@ -272,8 +374,8 @@ Dr.&nbsp;Nils Roemer
 </ul>
 </div>
 </section>
-<section id="bayes-rule" class="slide level2">
-<h2>Bayes’ Rule</h2>
+<section id="bayes-rule-update-your-beliefs-with-new-evidence" class="slide level2">
+<h2>Bayes’ rule: update your beliefs with new evidence</h2>
 <ul>
 <li>Fundamental theorem in probability theory</li>
 <li>Updates probability of hypothesis based on <span class="highlight">new evidence</span></li>
@@ -292,8 +394,8 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </section>
-<section id="overfitting" class="slide level2">
-<h2>Overfitting</h2>
+<section id="overfitting-a-model-that-learned-the-past-too-well" class="slide level2">
+<h2>Overfitting: a model that learned the past too well</h2>
 <ul>
 <li>Occurs when a model <span class="highlight">learns the training data too well</span></li>
 <li><strong>Captures noise and outliers</strong> rather than pattern</li>
@@ -312,8 +414,8 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </section>
-<section id="game-theory" class="slide level2">
-<h2>Game Theory</h2>
+<section id="game-theory-decisions-when-others-decide-too" class="slide level2">
+<h2>Game theory: decisions when others decide too</h2>
 <ul>
 <li>Strategic interactions among <span class="highlight">rational decision-makers</span></li>
 <li>Analyzes situations with <strong>multiple agents</strong> and their strategies</li>
@@ -331,8 +433,8 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </section>
-<section id="networking" class="slide level2">
-<h2>Networking</h2>
+<section id="networking-how-information-travels" class="slide level2">
+<h2>Networking: how information travels</h2>
 <ul>
 <li>Study of <strong>information exchange</strong> over networks</li>
 <li>Includes <span class="highlight">understanding protocols and data transmission</span></li>
@@ -351,26 +453,37 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </section>
-<section id="relaxation" class="slide level2">
-<h2>Relaxation</h2>
+<section id="relaxation-solve-an-easier-version-first" class="slide level2">
+<h2>Relaxation: solve an easier version first</h2>
 <ul>
 <li>Simplifies <span class="highlight">complex problems</span> to make them more tractable</li>
 <li>Involves <strong>relaxing certain constraints</strong></li>
 <li>Provides insights or <strong>approximate</strong> solutions</li>
 </ul>
 </section>
-<section id="continue-programming" class="slide level2">
-<h2>Continue programming?</h2>
+<section id="keep-programming" class="slide level2">
+<h2>Keep programming</h2>
 <ul>
-<li>The best way to continue learning is to <span class="highlight">keep programming in the future</span></li>
-<li>Potentially, you will continue to do so during your studies</li>
-<li>Coding in your Thesis is another great way to improve</li>
-<li>Try to find a way to apply programming in your work</li>
+<li>The best way to keep learning is to <span class="highlight">keep programming</span></li>
+<li>In your studies, in your thesis, in your job</li>
 <li><strong>There are many interesting topics to explore!</strong></li>
 </ul>
+<aside class="notes">
+<p>Potentially you will continue programming during your studies. Coding in your thesis is another great way to improve. Try to find a way to apply programming in your work.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="advent-of-code" class="slide level2">
-<h2>Advent of Code</h2>
+<section id="advent-of-code-a-puzzle-a-day-in-december" class="slide level2">
+<h2>Advent of Code: a puzzle a day in December</h2>
 <ul>
 <li><a href="https://adventofcode.com/">Advent of Code</a> is a fun way to keep programming</li>
 <li>Here you can solve programming puzzles during Advent</li>
@@ -380,26 +493,69 @@ Dr.&nbsp;Nils Roemer
 <img src="../images/gif/lec06-first.gif" width="280" height="280" alt="">
 </center>
 </section>
-<section id="thats-it-for-the-lecture-series" class="slide level2">
-<h2>That’s it for the Lecture Series!</h2>
-<ul>
-<li>We now have covered the basics of Python</li>
-<li>I hope you enjoyed the lecture and found it helpful</li>
-<li>If you have questions or feedback, <span class="highlight">please let me know!</span></li>
-<li>I wish you all the best for your studies and your career!</li>
-</ul>
+<section id="looking-ahead-where-to-go-from-here-1" class="slide level2 section-covered">
+<h2>Looking ahead: where to go from here</h2>
+<div class="section-covered">
+<p><span class="eyebrow">What we covered</span></p>
+<p><span class="statement">Many more ideas from computer science help in everyday life, and the best way to keep learning is to keep programming.</span></p>
+</div>
 </section>
-<section id="section" class="slide level2" data-background-color="#000000">
+<section id="what-we-covered" class="slide level2 lecture-closing">
+<h2>What we covered</h2>
+<div class="covered-list">
+<div class="covered-item">
+<p><span class="eyebrow">Looking back: five ideas for better decisions</span></p>
+<p>Optimal stopping, explore and exploit, caching, scheduling and randomness give you a toolkit for everyday decisions.</p>
+</div>
+<div class="covered-item">
+<p><span class="eyebrow">Computational kindness: easy and fair for others</span></p>
+<p>Good algorithms reduce the burden for others and treat people fairly. Biased data leads to biased decisions.</p>
+</div>
+<div class="covered-item">
+<p><span class="eyebrow">Looking ahead: where to go from here</span></p>
+<p>Many more ideas from computer science help in everyday life, and the best way to keep learning is to keep programming.</p>
+</div>
+</div>
+</section>
+<section id="why-it-matters" class="slide level2 lecture-closing">
+<h2>Why it matters</h2>
+<div class="lecture-why closing">
+<p>“When works for you?” sounds polite but hands the work to the other person. Proposing two concrete slots is kinder. Companies face the same question at scale: how to design processes, products and automated decisions that are easy and fair for customers and colleagues.</p>
+</div>
+</section>
+<section id="section" class="slide level2 loud-slide lecture-key">
+<h2></h2>
+<div class="r-fit-text">
+<p>Make it easy for others.</p>
+</div>
+</section>
+<section id="thats-it-for-the-lecture-series" class="slide level2">
+<h2>That’s it for the lecture series!</h2>
+<ul>
+<li>We have covered the basics of Python and six ideas for better decisions</li>
+<li>If you have questions or feedback, <span class="highlight">please let me know!</span></li>
+<li>All the best for your studies and your career!</li>
+</ul>
+<aside class="notes">
+<p>I hope you enjoyed the lecture and found it helpful.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-1" class="slide level2" data-background-color="#000000">
 <h2></h2>
 <center>
 <img src="../images/gif/lec06-second.gif" width="480" height="355" alt="">
 </center>
 </section></section>
-<section id="qa" class="title-slide slide level1 center">
-<h1><span class="flow">Q&amp;A</span></h1>
-
-</section>
-
 <section>
 <section id="literature" class="title-slide slide level1 title center">
 <h1><span class="flow">Literature</span></h1>
@@ -410,11 +566,11 @@ Dr.&nbsp;Nils Roemer
 <ul>
 <li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<sup>1</sup></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
 <section id="books-on-programming" class="slide level2">
 <h2>Books on Programming</h2>
 <ul>
-<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Free online</a></li>
 <li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
 </ul>
 <div class="fragment">
@@ -424,7 +580,7 @@ Dr.&nbsp;Nils Roemer
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+<p>Think Python is free online and a great start. Schrödinger programmiert Python is a playful alternative in German.</p>
 </div>
 </div>
 </div>
@@ -440,7 +596,7 @@ Dr.&nbsp;Nils Roemer
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Lecture VI - Computational Kindness | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_06_kindness.html">Home</a></p>
+<p>Lecture VI: Computational Kindness | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_06_kindness.html">Home</a></p>
 </div>
 </div></div>
 

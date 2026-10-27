@@ -1,12 +1,12 @@
 ---
-title: Tutorial IV.I - Recap
+title: 'Tutorial IV.I: Recap'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
 
 # Introduction
 
-To get you started again on the topics of the last lecture, we'll go through a recap of th previous concepts before we start with some new concepts. In this tutorial, we'll apply Python programming concepts to solve common scheduling problems to make better scheduling decisions!
+To get you started again on the topics of the last lecture, we'll go through a recap of the previous concepts before we start with some new concepts. In this tutorial, we'll apply Python programming concepts to solve common scheduling problems to make better scheduling decisions!
 
 Imagine you're managing "The Python Café". Every day, you face these challenges:
 
@@ -34,7 +34,7 @@ Create two lists:
 2. `prep_times` containing the preparation time (in minutes) for each drink in the same order
 
 ``` python
-# YOUR CODE HERE
+# YOUR CODE BELOW
 ```
 
 <details class="code-fold">
@@ -54,7 +54,7 @@ print("Great! Your menu lists have been created.")
 
 # Section 2 - Shortest Processing Time
 
-One effective scheduling strategy is to handle the quickest tasks first. This minimizes average waiting time. To find the quickest drink, we can use a inbuilt function in Python, but let's try to do it by ourselves first with a loop. Remember how to loop through a list from the previous lecture? Loops are created using the `for` keyword. The `for` loop is used to iterate over a sequence (like a list) and execute a block of code for each item in the sequence.
+One effective scheduling strategy is to handle the quickest tasks first. This minimizes average waiting time. To find the quickest drink, we can use an inbuilt function in Python, but let's try to do it by ourselves first with a loop. Remember how to loop through a list from the previous lecture? Loops are created using the `for` keyword. The `for` loop is used to iterate over a sequence (like a list) and execute a block of code for each item in the sequence.
 
 > **Common Mistakes in Loops**
 >
@@ -137,11 +137,11 @@ The function should return a **list of lists** where each inner list contains `[
 
 ``` python
 # Test your answer
-names = ["Elio", "Mischa", "Nina"]
-drinks = ["Latte", "Espresso", "Cappuccino"]
-prices = [3.5, 2.5, 4.0]
-deadline = [10, 5, 15]
-result = create_order_list(names, drinks, prices, deadline)
+test_names = ["Elio", "Mischa", "Nina"]
+test_drinks = ["Latte", "Espresso", "Cappuccino"]
+test_prices = [3.5, 2.5, 4.0]
+test_deadlines = [10, 5, 15]
+result = create_order_list(test_names, test_drinks, test_prices, test_deadlines)
 assert isinstance(result, list), "Should return a list"
 assert len(result) == 3, "Should have one entry per customer"
 assert len(result[0]) == 4, "Each entry should have 4 elements"
@@ -207,7 +207,7 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 ------------------------------------------------------------------------
 

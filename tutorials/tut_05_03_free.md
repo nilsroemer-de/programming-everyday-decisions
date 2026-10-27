@@ -1,12 +1,12 @@
 ---
-title: Tutorial V.III - Free Tasks
+title: 'Tutorial V.III: Free Tasks'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
 
 # Introduction
 
-<span class="highlight">This is the final tutorial of the course. You'll have the opportunity to work on a project of your choice, implementing it with the tools learned throughout this course and leveraging AI assistance. Choose one of the projects below based on your interests! In the last session, you will then briefly demo your project in order to pass the course. We only expect prototypes here and it is perfectly fine if things still have bugs or are not fully functional. We just expect you to put some time 2-3 hours outside of class in your project in order to pass. Make it as good as you can!</span>
+<span class="highlight">This is the final tutorial of the course. You'll have the opportunity to work on a project of your choice, implementing it with the tools learned throughout this course and leveraging AI assistance. Choose one of the projects below based on your interests! In the last session, you will then briefly demo your project in order to pass the course. We only expect prototypes here and it is perfectly fine if things still have bugs or are not fully functional. We just expect you to spend two to three hours outside of class on your project in order to pass. Make it as good as you can!</span>
 
 > **Development Environment**
 >
@@ -75,6 +75,10 @@ Build a classic arcade shooter where you defend against descending alien invader
 - Multiple waves with increasing difficulty
 
 **Key library:** `pygame`
+
+# Other Projects
+
+These projects work in the terminal, with images or as a web dashboard.
 
 ## 5. Tic-Tac-Toe with AI
 

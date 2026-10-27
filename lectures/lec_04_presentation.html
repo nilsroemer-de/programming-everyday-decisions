@@ -9,8 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Dr.&nbsp;Nils Roemer">
-  <title>Programming: Everyday Decision-Making Algorithms – Lecture IV - Scheduling</title>
+  <meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
+  <title>Programming: Everyday Decision-Making Algorithms – Lecture IV: Scheduling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -98,7 +98,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b2296277df239b774fa479879ac923b5.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bb978de86abbef3b36a933764425996b.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -190,6 +190,7 @@
       margin-right: 0; 
     }
   </style>
+  <meta name="mermaid-theme" content="neutral">
   <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
   <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -199,55 +200,71 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture IV - Scheduling</h1>
+  <h1 class="title">Lecture IV: Scheduling</h1>
   <p class="subtitle">Programming: Everyday Decision-Making Algorithms</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Dr.&nbsp;Nils Roemer 
+Dr.&nbsp;Nils Roemer, External Lecturer 
 </div>
         <p class="quarto-title-affiliation">
-            Kühne Logistics University Hamburg
+            Planningio GmbH
           </p>
     </div>
 </div>
 
 </section>
-<section>
-<section id="introduction" class="title-slide slide level1 title center">
-<h1><span class="flow">Introduction</span></h1>
-
-</section>
-<section id="todays-topic-scheduling-algorithms" class="slide level2">
-<h2>Today’s Topic: Scheduling Algorithms</h2>
-<p><strong>Topic:</strong> Understanding scheduling problems and algorithmic solutions for optimal task ordering</p>
-<div class="fragment">
-<p><strong>Why this matters:</strong> Every day you make scheduling decisions, from organizing your to-do list to managing projects. Today we’ll learn the mathematical algorithms that can optimize these decisions and see how they connect to programming logic.</p>
+<section id="today-in-one-sentence" class="slide level2 lecture-opening">
+<h2>Today in one sentence</h2>
+<div class="lecture-summary">
+<p><span class="statement">There is no single best order for your tasks: first decide what you want to achieve, and the right rule follows.</span></p>
+</div>
+<div class="lecture-why">
+<p><span class="eyebrow">Why it matters</span></p>
+<p>Monday morning, ten tasks on your list: where do you start? Companies face the same question at scale: which order on the production line, which customer order first, which project gets the team this week.</p>
 </div>
 </section>
-<section id="todays-agenda" class="slide level2">
-<h2>Today’s Agenda</h2>
+<section id="roadmap" class="slide level2 lecture-opening">
+<h2>Roadmap</h2>
+<div class="roadmap">
 <ol type="1">
-<li class="fragment"><strong>Scheduling Fundamentals</strong> - Johnson’s Rule and two-machine problems</li>
-<li class="fragment"><strong>Historical Context</strong> - How scheduling theory developed</li>
-<li class="fragment"><strong>Core Algorithms</strong> - EDD for deadlines, SPT for efficiency</li>
-<li class="fragment"><strong>Advanced Topics</strong> - Dependencies, real-time scheduling, thrashing</li>
-<li class="fragment"><strong>Programming Connections</strong> - How this builds algorithmic problem-solving skills</li>
+<li><span class="roadmap-item future">The basics: when order matters, and when it doesn’t</span></li>
+<li><span class="roadmap-item future">Your goal decides the rule: deadlines, waiting time, value</span></li>
+<li><span class="roadmap-item future">Real life: dependencies, interruptions and thrashing</span></li>
 </ol>
-</section></section>
-<section>
-<section id="scheduling-fundamentals" class="title-slide slide level1 title center">
-<h1><span class="flow">Scheduling Fundamentals</span></h1>
-
+</div>
 </section>
-<section id="a-simple-scheduling-problem" class="slide level2">
-<h2>A Simple Scheduling Problem</h2>
+<section>
 
-<img data-src="../images/atlb/atlb_schedule-washdry.svg" class="r-stretch"></section>
-<section id="washing-machine-dryer" class="slide level2">
-<h2>Washing Machine &amp; Dryer</h2>
-<p>Let’s solve this simple scheduling problem:</p>
+<section id="four-loads-of-laundry-one-washer-one-dryer" class="slide level2">
+<h2>Four loads of laundry, one washer, one dryer</h2>
+<div id="ce6d6b9d" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-3-output-1.png" width="1321" height="451"></p>
+</figure>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Topic: understanding scheduling problems and algorithmic solutions for optimal task ordering. Why this matters: every day you make scheduling decisions, from organizing your to-do list to managing projects. Today we learn the mathematical algorithms that can optimize these decisions.</p>
+<p>Old agenda: scheduling fundamentals (Johnson’s rule and two-machine problems), historical context, core algorithms (EDD for deadlines, SPT for efficiency), advanced topics (dependencies, real-time scheduling, thrashing).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="goal-all-laundry-done-as-early-as-possible" class="slide level2">
+<h2>Goal: all laundry done as early as possible</h2>
 <div class="fragment">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>Task  Washing  Drying</span>
 <span id="cb1-2"><a></a>  A    <span class="dv">40</span><span class="er">min</span>   <span class="dv">60</span><span class="er">min</span></span>
@@ -262,8 +279,8 @@ Dr.&nbsp;Nils Roemer
 <p><span class="question">Question:</span> <strong>An idea how to solve this?</strong></p>
 </div>
 </section>
-<section id="johnsons-rule" class="slide level2">
-<h2>Johnson’s Rule</h2>
+<section id="johnsons-rule-shortest-job-first-or-last" class="slide level2">
+<h2>Johnson’s rule: shortest job first or last</h2>
 <p><span class="task">Rule:</span> To find the <span class="highlight">optimal solution</span>:</p>
 <ol type="1">
 <li>Find the job with <strong>shortest duration</strong>:
@@ -345,43 +362,16 @@ Dr.&nbsp;Nils Roemer
 <section id="optimal-solution" class="slide level2">
 <h2>Optimal Solution</h2>
 <p><strong>Optimal Solution: <span class="highlight">B A D C</span></strong></p>
-
-<!--
-
-::::::{.cell reveal=true layout-align="default"}
-
-:::::{.cell-output-display}
-
-::::{}
-`<figure class=''>`{=html}
-
-:::{}
-
-<pre class="mermaid mermaid-js">
-gantt
-    title Optimal Schedule
-    dateFormat HH:mm
-    axisFormat %H:%M
-
-    section Washing
-        Wash B : 00:00, 30m
-        Wash A : 40m
-        Wash D : 50m
-        Wash C : 60m
-
-    section Drying
-        Dry B : 00:30, 80m
-        Dry A : 60m
-        Dry D : 60m
-        Dry C : 20m
-</pre>
-:::
-`</figure>`{=html}
-::::
-:::::
-::::::
--->
-<img data-src="../images/atlb/atlb_schedule-johnson-optimal.svg" class="r-stretch"><p><strong>Total time:</strong> 4 hours 20 minutes</p>
+<div id="0e8f03c3" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-4-output-1.png" width="1471" height="361"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Total time:</strong> 4 hours 10 minutes</p>
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>Is there a worse solution?</strong></p>
 </div>
@@ -389,59 +379,28 @@ gantt
 <section id="suboptimal-solution" class="slide level2">
 <h2>Suboptimal Solution</h2>
 <p><strong>Suboptimal Solution: <span class="highlight">C D A B</span></strong></p>
-
-<!--
-
-::::::{.cell reveal=true layout-align="default"}
-
-:::::{.cell-output-display}
-
-::::{}
-`<figure class=''>`{=html}
-
-:::{}
-
-<pre class="mermaid mermaid-js">gantt
-    title Suboptimal Schedule
-    dateFormat HH:mm
-    axisFormat %H:%M
-
-    section Washing
-    Wash C : 00:00, 60m
-    Wash D : 50m
-    Wash A : 40m
-    Wash B : 60m
-
-    section Drying
-    Dry C : 01:00, 20m
-    Dry D : 01:50, 60m
-    Dry A : 60m
-    Dry B : 80m
-</pre>
-:::
-`</figure>`{=html}
-::::
-:::::
-::::::
--->
-<img data-src="../images/atlb/atlb_schedule-johnson-suboptimal.svg" class="r-stretch"><p><strong>Total time:</strong> 5 hours 10 minutes</p>
+<div id="9cc5bfb2" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-5-output-1.png" width="1475" height="361"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Total time:</strong> 5 hours 10 minutes</p>
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>What’s the difference?</strong></p>
 </div>
-</section></section>
-<section>
-<section id="history" class="title-slide slide level1 title center">
-<h1><span class="flow">History</span></h1>
-
 </section>
-<section id="industrial-revolution" class="slide level2" data-background-image="../images/bg/lec04-industrial.jpg">
-<h2><span class="invert-font">Industrial Revolution</span></h2>
+<section id="industrialization" class="slide level2" data-background-image="../images/bg/lec04-industrial.jpg">
+<h2><span class="invert-font">Industrialization</span></h2>
 <div class="fragment">
 <div class="invert-font">
 <ul>
 <li>First systematic visualization by Frederick Taylor</li>
 <li>Henry Gantt develops the Gantt Chart around 1910</li>
-<li>Key tool during Industrial Revolution</li>
+<li>Key tool of industrial production planning</li>
 <li>But no scheduling theory yet!</li>
 </ul>
 </div>
@@ -471,27 +430,31 @@ gantt
 </div>
 </div>
 </section>
-<section id="professional-applications" class="slide level2">
-<h2>Professional Applications</h2>
-<p><strong>Where do we see scheduling in professional practice?</strong></p>
+<section id="scheduling-is-everywhere-in-professional-practice" class="slide level2">
+<h2>Scheduling is everywhere in professional practice</h2>
 <ul>
-<li class="fragment"><strong>Project Management:</strong> Task dependencies, resource allocation</li>
-<li class="fragment"><strong>Software Development:</strong> CPU, thread management, job queues</li>
-<li class="fragment"><strong>Operations:</strong> Production, supply chain optimization</li>
-<li class="fragment"><strong>Healthcare:</strong> Patients, surgery planning, staff allocation</li>
-<li class="fragment"><strong>Transportation:</strong> Routes, crews, maintenance</li>
+<li class="fragment"><strong>Project management:</strong> task dependencies, resource allocation</li>
+<li class="fragment"><strong>Software:</strong> CPU, threads, job queues</li>
+<li class="fragment"><strong>Operations:</strong> production, supply chain</li>
+<li class="fragment"><strong>Healthcare:</strong> patients, surgeries, staff</li>
+<li class="fragment"><strong>Transportation:</strong> routes, crews, maintenance</li>
 </ul>
-<div class="fragment">
-<p><strong>Connection to Programming:</strong> These are the same optimization problems that algorithms solve!</p>
-</div>
-</section></section>
-<section>
-<section id="scheduling-tasks" class="title-slide slide level1 title center">
-<h1><span class="flow">Scheduling Tasks</span></h1>
-
+<aside class="notes">
+<p>Where do we see scheduling in professional practice? These are the same optimization problems that algorithms solve: in project management (task dependencies and resource allocation), software development (CPU, thread management, job queues), operations (production and supply chain optimization), healthcare (patients, surgery planning, staff allocation) and transportation (routes, crews, maintenance).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="task-classification" class="slide level2">
-<h2>Task Classification</h2>
+<section id="tasks-differ-in-time-and-in-relationships" class="slide level2">
+<h2>Tasks differ in time and in relationships</h2>
 <p><span class="question">Question:</span> <strong>What properties can scheduled tasks have?</strong></p>
 <div class="fragment">
 <div class="cell" data-reveal="true" data-layout-align="default">
@@ -521,27 +484,33 @@ gantt
 </div>
 </div>
 </div>
-<div class="fragment">
+</section>
+<section id="which-tasks-do-you-deal-with" class="slide level2">
+<h2>Which tasks do you deal with?</h2>
 <p><span class="question">Question:</span> <strong>What types of tasks do you deal with most often?</strong></p>
+</section>
+<section id="one-person-instead-of-two-machines" class="slide level2">
+<h2>One person instead of two machines</h2>
+<div id="4c4e8417" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-6-output-1.png" width="871" height="391"></p>
+</figure>
 </div>
+</div>
+</div>
+<p><span class="question">Question:</span> <strong>What is different from before?</strong></p>
 </section>
-<section id="single-machine-scheduling" class="slide level2">
-<h2>Single Machine Scheduling</h2>
-
-<img data-src="../images/atlb/atlb_schedule-human.svg" class="r-stretch"><p><span class="question">Question:</span> <strong>What is different from before?</strong></p>
-</section>
-<section id="order-is-irrelevant" class="slide level2">
-<h2>Order is Irrelevant</h2>
-<div class="callout callout-note callout-titled callout-style-simple">
+<section id="for-total-time-alone-the-order-doesnt-matter" class="slide level2">
+<h2>For total time alone, the order doesn’t matter</h2>
+<div class="callout callout-note callout-style-simple">
 <div class="callout-body">
-<div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Order is Irrelevant</strong></p>
-</div>
 <div class="callout-content">
-<p>Under simple minimization of total processing time, <strong>order doesn’t matter!</strong></p>
+<p>With one person and no deadlines, every order takes the same <strong>total time</strong>.</p>
 </div>
 </div>
 </div>
@@ -549,28 +518,52 @@ gantt
 <p><span class="question">Question:</span> <strong>But is it that simple?</strong></p>
 </div>
 <div class="fragment">
-<div class="callout callout-important callout-titled callout-style-simple">
+<div class="callout callout-important callout-style-simple">
 <div class="callout-body">
-<div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Order Matters</strong></p>
-</div>
 <div class="callout-content">
-<p>Order becomes crucial when we consider, <strong>Deadlines, Priorities and Dependencies!</strong></p>
+<p>Order becomes crucial with <strong>deadlines, priorities and dependencies</strong>.</p>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Under simple minimization of total processing time, order doesn’t matter: the total is the sum of all durations, whatever the order. As soon as we care about deadlines, waiting time, priorities or dependencies, the order matters a lot.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="the-basics-when-order-matters-and-when-it-doesnt-1" class="slide level2 section-covered">
+<h2>The basics: when order matters, and when it doesn’t</h2>
+<div class="section-covered">
+<p><span class="eyebrow">What we covered</span></p>
+<p><span class="statement">Sometimes the order of tasks changes the result, sometimes it doesn’t. Knowing which saves time.</span></p>
 </div>
 </section></section>
 <section>
-<section id="deadlines" class="title-slide slide level1 title center">
-<h1><span class="flow">Deadlines</span></h1>
 
+<section id="roadmap-1" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">The basics: when order matters, and when it doesn’t</span></li>
+<li><span class="roadmap-item current">Your goal decides the rule: deadlines, waiting time, value</span></li>
+<li><span class="roadmap-item future">Real life: dependencies, interruptions and thrashing</span></li>
+</ol>
+</div>
 </section>
-<section id="earliest-due-date-edd" class="slide level2">
-<h2>Earliest Due Date (EDD)</h2>
+<section id="goal-1-nobody-waits-too-long-past-the-deadline" class="slide level2">
+<h2>Goal 1: nobody waits too long past the deadline</h2>
 <p>Tasks with individual deadlines:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>Task  Duration  Deadline</span>
 <span id="cb7-2"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span></span>
@@ -585,9 +578,9 @@ gantt
 <p><span class="question">Question:</span> <strong>An idea how to solve this?</strong></p>
 </div>
 </section>
-<section id="edd-solution" class="slide level2">
-<h2>EDD Solution</h2>
-<p><span class="task">Rule:</span> Sort the tasks by deadline.</p>
+<section id="earliest-due-date-sort-by-deadline" class="slide level2">
+<h2>Earliest Due Date: sort by deadline</h2>
+<p><span class="task">Rule:</span> Sort the tasks by deadline (<strong>EDD</strong>).</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>Task  Duration  Deadline</span>
 <span id="cb8-2"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span></span>
 <span id="cb8-3"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span></span>
@@ -606,59 +599,35 @@ gantt
 <p><span class="highlight">Let’s visualize this!</span></p>
 </div>
 </section>
-<section id="edd-schedule" class="slide level2">
-<h2>EDD Schedule</h2>
-
-<!--
-
-::::::{.cell reveal=true layout-align="default"}
-
-:::::{.cell-output-display}
-
-::::{}
-`<figure class=''>`{=html}
-
-:::{}
-
-<pre class="mermaid mermaid-js">gantt
-    title EDD Schedule
-    dateFormat HH:mm
-    axisFormat %H:%M
-
-    section Tasks
-        D: 00:00, 50m
-        B: 30m
-        A: 40m
-        C: 60m
-        E: 30m
-
-    section Deadline
-        D: 00:00, 70m
-        B: 00:00, 90m
-        A: 00:00, 110m
-        C: 00:00, 150m
-        E: 00:00, 210m
-</pre>
-:::
-`</figure>`{=html}
-::::
-:::::
-::::::
--->
-<img data-src="../images/atlb/atlb_schedule-edd.svg" class="r-stretch"><div class="fragment">
+<section id="the-edd-schedule" class="slide level2">
+<h2>The EDD schedule</h2>
+<div id="e464ff18" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-7-output-1.png" width="1471" height="421"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Red marks: deadlines.</p>
+<div class="fragment">
 <p><span class="question">Question:</span> <strong>What’s the maximum delay here?</strong></p>
 </div>
-</section></section>
-<section>
-<section id="processing-time" class="title-slide slide level1 title center">
-<h1><span class="flow">Processing Time</span></h1>
-
 </section>
-<section id="shortest-processing-time-spt" class="slide level2">
-<h2>Shortest Processing Time (SPT)</h2>
+<section id="goal-2-as-little-waiting-as-possible" class="slide level2">
+<h2>Goal 2: as little waiting as possible</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="../images/atlb/atlb_schedule-human.svg"></p>
+<div id="3fde2f6a" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-8-output-1.png" width="721" height="481"></p>
+</figure>
+</div>
+</div>
+</div>
 </div><div class="column" style="width:50%;">
 <p>Instead of deadlines, we now have <strong>processing times.</strong></p>
 <p><span class="fragment"><span class="highlight">Goal:</span> Min. total waiting time</span></p>
@@ -666,8 +635,8 @@ gantt
 <p><span class="fragment"><span class="task">Rule:</span> Always schedule the shortest remaining task</span></p>
 </div></div>
 </section>
-<section id="shortest-processing-time-applied" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Shortest Processing Time Applied</h2>
+<section id="shortest-processing-time-shortest-task-first" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Shortest Processing Time: shortest task first</h2>
 <p><span class="task">Rule:</span> Always schedule the <strong>shortest remaining task</strong>. Choose random if multiple tasks are tied.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb10-1" class="hljs-ln-code"><a></a>Task  Duration  Schedule</span>
 <span id="cb10-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span></span>
@@ -679,8 +648,8 @@ gantt
 <p><span class="question">Question:</span> <strong>What’s the order of scheduled tasks?</strong></p>
 </div>
 </section>
-<section id="shortest-processing-time-applied-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Shortest Processing Time Applied</h2>
+<section id="shortest-processing-time-shortest-task-first-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Shortest Processing Time: shortest task first</h2>
 <p><span class="task">Rule:</span> Always schedule the <strong>shortest remaining task</strong>. Choose random if multiple tasks are tied.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb11-1" class="hljs-ln-code"><a></a>Task  Duration  Schedule</span>
 <span id="cb11-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>        <span class="dv">3</span></span>
@@ -692,56 +661,42 @@ gantt
 <p><strong>Final sequence: <span class="highlight">B E A D C</span> or <span class="highlight">E B A D C</span></strong></p>
 </div>
 </section>
-<section id="spt-solution" class="slide level2">
-<h2>SPT Solution</h2>
-<p><strong>Optimal sequence:</strong></p>
-
-<!--
-
-::::::{.cell reveal=true layout-align="default"}
-
-:::::{.cell-output-display}
-
-::::{}
-`<figure class=''>`{=html}
-
-:::{}
-
-<pre class="mermaid mermaid-js">gantt
-    title SPT Schedule
-    dateFormat HH:mm
-    axisFormat %H:%M
-
-    section Tasks
-    B (30min) : 00:00, 30m
-    E (30min) : 30m
-    A (40min) : 40m
-    D (50min) : 50m
-    C (60min) : 60m
-</pre>
-:::
-`</figure>`{=html}
-::::
-:::::
-::::::
--->
-<img data-src="../images/atlb/atlb_schedule-spt-1.svg" class="r-stretch"><div class="fragment">
+<section id="the-spt-schedule" class="slide level2">
+<h2>The SPT schedule</h2>
+<div id="87e8b005" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-9-output-1.png" width="1471" height="421"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
 <p><span class="question">Question:</span> <strong>Where can we see the waiting time?</strong></p>
 </div>
 </section>
-<section id="spt-waiting-time" class="slide level2">
-<h2>SPT Waiting Time</h2>
+<section id="waiting-time-adds-up-to-340-minutes" class="slide level2">
+<h2>Waiting time adds up to 340 minutes</h2>
 <p><span class="highlight">Total waiting time:</span> 340 minutes</p>
-
-<img data-src="../images/atlb/atlb_schedule-spt-2.svg" class="r-stretch"><div class="fragment">
+<div id="61142776" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-10-output-1.png" width="1471" height="421"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Grey: time a task waits before it starts.</p>
+<div class="fragment">
 <p><span class="question">Question:</span> <strong>Would this be applicable for your work?</strong></p>
 </div>
 </section>
-<section id="weighted-spt" class="slide level2">
-<h2>Weighted SPT</h2>
+<section id="goal-3-deliver-the-most-value" class="slide level2">
+<h2>Goal 3: deliver the most value</h2>
 <ul>
-<li><span class="highlight">Change:</span> Tasks with <strong>additional priorities</strong></li>
-<li>Priorities could be, e.g., revenue if we are consultants.</li>
+<li><span class="highlight">Change:</span> Tasks now have <strong>different values</strong>, e.g.&nbsp;revenue for a consultant</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>Task  Duration  Revenue</span>
 <span id="cb12-2"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span></span>
@@ -757,8 +712,8 @@ gantt
 <p><span class="question">Question:</span> <strong>Any ideas how to approach this?</strong></p>
 </div>
 </section>
-<section id="gainrevenue-per-minute" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb13-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb13-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span></span>
@@ -774,8 +729,8 @@ gantt
 <p><span class="question">Question:</span> <strong>What’s the order of scheduled tasks?</strong></p>
 </div>
 </section>
-<section id="gainrevenue-per-minute-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb14-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb14-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -788,8 +743,8 @@ gantt
 <span id="cb14-9" class="hljs-ln-code"><a></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span></span>
 <span id="cb14-10" class="hljs-ln-code"><a></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="gainrevenue-per-minute-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb15-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb15-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -802,8 +757,8 @@ gantt
 <span id="cb15-9" class="hljs-ln-code"><a></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span></span>
 <span id="cb15-10" class="hljs-ln-code"><a></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="gainrevenue-per-minute-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb16-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb16-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -816,8 +771,8 @@ gantt
 <span id="cb16-9" class="hljs-ln-code"><a></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span></span>
 <span id="cb16-10" class="hljs-ln-code"><a></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="gainrevenue-per-minute-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb17-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb17-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -830,8 +785,8 @@ gantt
 <span id="cb17-9" class="hljs-ln-code"><a></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span></span>
 <span id="cb17-10" class="hljs-ln-code"><a></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="gainrevenue-per-minute-5" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb18-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb18-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -844,8 +799,8 @@ gantt
 <span id="cb18-9" class="hljs-ln-code"><a></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span></span>
 <span id="cb18-10" class="hljs-ln-code"><a></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="gainrevenue-per-minute-6" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb19-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb19-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -858,8 +813,8 @@ gantt
 <span id="cb19-9" class="hljs-ln-code"><a></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span></span>
 <span id="cb19-10" class="hljs-ln-code"><a></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="gainrevenue-per-minute-7" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb20-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb20-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -872,8 +827,8 @@ gantt
 <span id="cb20-9" class="hljs-ln-code"><a></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span></span>
 <span id="cb20-10" class="hljs-ln-code"><a></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span>           <span class="dv">7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="gainrevenue-per-minute-8" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first-8" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb21-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb21-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -886,8 +841,8 @@ gantt
 <span id="cb21-9" class="hljs-ln-code"><a></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span>           <span class="dv">8</span></span>
 <span id="cb21-10" class="hljs-ln-code"><a></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span>           <span class="dv">7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="gainrevenue-per-minute-9" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Gain/Revenue Per Minute</h2>
+<section id="weighted-spt-highest-value-per-minute-first-9" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
 <p><span class="task">Rule:</span> Schedule by revenue per minute (descending)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb22-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb22-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -914,68 +869,28 @@ gantt
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="dependencies" class="title-slide slide level1 title center">
-<h1><span class="flow">Dependencies</span></h1>
-
 </section>
-<section id="priority-inversion" class="slide level2">
-<h2>Priority Inversion</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Setup:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>Task  Duration  Priority</span>
-<span id="cb23-2"><a></a>  A    <span class="dv">20</span><span class="er">min</span>     <span class="dv">3</span></span>
-<span id="cb23-3"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">1</span></span>
-<span id="cb23-4"><a></a>  C    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
-<span id="cb23-5"><a></a>  D    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
-<span id="cb23-6"><a></a>  E    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><img data-src="../images/atlb/atlb_schedule-inheritance.svg"></p>
-<p><span class="fragment"><strong>Challenge:</strong> High-priority tasks depend on low-priority tasks.</span></p>
-</div><div class="column" style="width:50%;">
-<p><span class="fragment"><span class="highlight">Risk:</span> Priority inversion can lead to significant delays!</span></p>
-<p><span class="fragment center"><img data-src="../images/bg/lec04-priority-inversion.jpg" style="width:90.0%"></span></p>
-</div></div>
-</section>
-<section id="priority-inheritance" class="slide level2">
-<h2>Priority Inheritance</h2>
-<p><span class="question">Question:</span> <strong>How to handle with shortest processing time?</strong></p>
-<ul>
-<li class="fragment"><span class="task">Rule:</span> Tasks inherit priority from their dependents.</li>
-<li class="fragment">A gets the highest priority from B</li>
-<li class="fragment">This ensures the <strong>critical path completion</strong></li>
-</ul>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>Task  Duration  Priority</span>
-<span id="cb24-2"><a></a>  A    <span class="dv">20</span><span class="er">min</span>     <span class="dv">3</span></span>
-<span id="cb24-3"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">3</span></span>
-<span id="cb24-4"><a></a>  C    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
-<span id="cb24-5"><a></a>  D    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
-<span id="cb24-6"><a></a>  E    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="edd-and-dependencies" class="slide level2">
-<h2>EDD and Dependencies</h2>
-<p><span class="question">Question:</span> <strong>What’s was earliest due date again?</strong></p>
+<section id="deadlines-with-dependencies" class="slide level2">
+<h2>Deadlines with dependencies</h2>
+<p><span class="question">Question:</span> <strong>What was earliest due date again?</strong></p>
 <div class="fragment">
 <ul>
-<li>Sort the tasks by deadline, schedule equal tasks randomly</li>
-<li>Things get more complex when we add dependencies</li>
+<li>Sort the tasks by deadline</li>
+<li>Now some tasks must <strong>wait for a predecessor</strong></li>
 </ul>
 </div>
 <div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>Task  Duration  Deadline  Predecessor</span>
-<span id="cb25-2"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span></span>
-<span id="cb25-3"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
-<span id="cb25-4"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A</span>
-<span id="cb25-5"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
-<span id="cb25-6"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>Task  Duration  Deadline  Predecessor</span>
+<span id="cb23-2"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb23-3"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
+<span id="cb23-4"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A</span>
+<span id="cb23-5"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb23-6"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><span class="question">Question:</span> <strong>Any ideas how to solve this?</strong></p>
 </div>
 </section>
-<section id="lawlers-algorithm" class="slide level2">
-<h2>Lawler’s Algorithm</h2>
+<section id="lawlers-algorithm-fill-the-schedule-from-the-back" class="slide level2">
+<h2>Lawler’s algorithm: fill the schedule from the back</h2>
 <p><span class="task">Rule:</span> We can use <strong>Lawler’s Algorithm</strong> (1968)</p>
 <ol type="1">
 <li>Consider all tasks <span class="highlight">without successors</span></li>
@@ -986,60 +901,60 @@ gantt
 </section>
 <section id="lawlers-applied" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Lawler’s Applied</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb26-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
-<span id="cb26-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span></span>
-<span id="cb26-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
-<span id="cb26-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A</span>
-<span id="cb26-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
-<span id="cb26-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb24-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
+<span id="cb24-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb24-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
+<span id="cb24-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A</span>
+<span id="cb24-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb24-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>What’s the schedule?</strong></p>
 </div>
 </section>
 <section id="lawlers-applied-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Lawler’s Applied</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb27-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
-<span id="cb27-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span></span>
-<span id="cb27-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
-<span id="cb27-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A</span>
-<span id="cb27-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
-<span id="cb27-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C             <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb25-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
+<span id="cb25-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb25-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
+<span id="cb25-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A</span>
+<span id="cb25-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb25-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C             <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="lawlers-applied-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Lawler’s Applied</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb26-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
+<span id="cb26-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb26-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
+<span id="cb26-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A             <span class="dv">4</span></span>
+<span id="cb26-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb26-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C             <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lawlers-applied-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Lawler’s Applied</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb27-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
+<span id="cb27-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span>          <span class="dv">3</span></span>
+<span id="cb27-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
+<span id="cb27-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A             <span class="dv">4</span></span>
+<span id="cb27-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb27-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C             <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lawlers-applied-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Lawler’s Applied</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb28-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
-<span id="cb28-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span></span>
-<span id="cb28-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
+<span id="cb28-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span>          <span class="dv">3</span></span>
+<span id="cb28-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D             <span class="dv">2</span></span>
 <span id="cb28-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A             <span class="dv">4</span></span>
 <span id="cb28-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
 <span id="cb28-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C             <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="lawlers-applied-3" class="slide level2" data-auto-animate="true">
+<section id="lawlers-applied-5" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Lawler’s Applied</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb29-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
 <span id="cb29-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span>          <span class="dv">3</span></span>
-<span id="cb29-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D</span>
+<span id="cb29-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D             <span class="dv">2</span></span>
 <span id="cb29-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A             <span class="dv">4</span></span>
-<span id="cb29-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
+<span id="cb29-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span>          <span class="dv">1</span></span>
 <span id="cb29-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C             <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="lawlers-applied-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Lawler’s Applied</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb30-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
-<span id="cb30-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span>          <span class="dv">3</span></span>
-<span id="cb30-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D             <span class="dv">2</span></span>
-<span id="cb30-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A             <span class="dv">4</span></span>
-<span id="cb30-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span></span>
-<span id="cb30-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C             <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="lawlers-applied-5" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Lawler’s Applied</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb31-1" class="hljs-ln-code"><a></a>Task  Duration  Deadline  Predecessor Schedule</span>
-<span id="cb31-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span>    <span class="va">None</span>          <span class="dv">3</span></span>
-<span id="cb31-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span>    D             <span class="dv">2</span></span>
-<span id="cb31-4" class="hljs-ln-code"><a></a>  C    <span class="dv">60</span><span class="er">min</span>    <span class="dv">150</span><span class="er">min</span>    A             <span class="dv">4</span></span>
-<span id="cb31-5" class="hljs-ln-code"><a></a>  D    <span class="dv">50</span><span class="er">min</span>     <span class="dv">70</span><span class="er">min</span>    <span class="va">None</span>          <span class="dv">1</span></span>
-<span id="cb31-6" class="hljs-ln-code"><a></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span>    C             <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-simple">
 <div class="callout-body">
@@ -1056,180 +971,248 @@ gantt
 </div>
 </div>
 </section>
-<section id="lawlers-solution" class="slide level2">
-<h2>Lawler’s Solution</h2>
-
-<img data-src="../images/atlb/atlb_schedule-edd-inheritance.svg" class="r-stretch"><div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Predecessor Tasks</strong></p>
-</div>
-<div class="callout-content">
-<p>Predecessor tasks are tasks that must be completed before the current task can start. They are marked in grey in the chart.</p>
+<section id="the-lawler-schedule" class="slide level2">
+<h2>The Lawler schedule</h2>
+<div id="941bf52d" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-11-output-1.png" width="1472" height="421"></p>
+</figure>
 </div>
 </div>
 </div>
+<p>The task in brackets must be finished first. Red marks: deadlines.</p>
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>What’s the maximum delay?</strong></p>
 </div>
-</section></section>
-<section>
-<section id="difficulty-of-scheduling" class="title-slide slide level1 title center">
-<h1><span class="flow">Difficulty of Scheduling</span></h1>
-
 </section>
-<section id="spt-with-predecessors" class="slide level2">
-<h2>SPT with Predecessors</h2>
+<section id="waiting-time-with-dependencies-has-no-fast-exact-solution" class="slide level2">
+<h2>Waiting time with dependencies has no fast exact solution</h2>
 <ul>
-<li>No solution in <strong>polynomial time</strong></li>
-<li><span class="highlight">NP-hard problem</span> (no efficient algorithm)</li>
-<li>True for <strong>most scheduling problems!</strong></li>
-<li>We can use <strong>heuristics</strong>, though</li>
+<li><span class="highlight">NP-hard</span>: no known algorithm solves it efficiently</li>
+<li>True for <strong>most scheduling problems</strong></li>
+<li>In practice we use <strong>heuristics</strong>, good rules without a guarantee</li>
 </ul>
-<div class="fragment">
-<p><span class="question">Question:</span> <strong>What have we missed so far?</strong></p>
+<aside class="notes">
+<p>Shortest processing time with predecessors cannot be solved in polynomial time, it is NP-hard. This is true for most scheduling problems. We can use heuristics, though: rules that give good, but not provably optimal schedules.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-goal-decides-the-rule-deadlines-waiting-time-value-1" class="slide level2 section-covered">
+<h2>Your goal decides the rule: deadlines, waiting time, value</h2>
+<div class="section-covered">
+<p><span class="eyebrow">What we covered</span></p>
+<p><span class="statement">Each goal has its own simple rule: earliest deadline first to avoid being late, shortest task first to cut waiting, highest value per minute first to maximize what you deliver.</span></p>
 </div>
 </section></section>
 <section>
-<section id="real-time-scheduling" class="title-slide slide level1 title center">
-<h1><span class="flow">Real-time Scheduling</span></h1>
 
+<section id="roadmap-2" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">The basics: when order matters, and when it doesn’t</span></li>
+<li><span class="roadmap-item done">Your goal decides the rule: deadlines, waiting time, value</span></li>
+<li><span class="roadmap-item current">Real life: dependencies, interruptions and thrashing</span></li>
+</ol>
+</div>
 </section>
-<section id="interruptions" class="slide level2">
-<h2>Interruptions</h2>
+<section id="priority-inversion-an-important-task-waits-for-an-unimportant-one" class="slide level2">
+<h2>Priority inversion: an important task waits for an unimportant one</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Setup</strong> (priority 1 = highest):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a>Task  Duration  Priority</span>
+<span id="cb30-2"><a></a>  A    <span class="dv">20</span><span class="er">min</span>     <span class="dv">3</span></span>
+<span id="cb30-3"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">1</span></span>
+<span id="cb30-4"><a></a>  C    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
+<span id="cb30-5"><a></a>  D    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
+<span id="cb30-6"><a></a>  E    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="f22ec035" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-12-output-1.png" width="751" height="166"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="fragment"><strong>Challenge:</strong> High-priority tasks depend on low-priority tasks.</span></p>
+</div><div class="column" style="width:50%;">
+<p><span class="fragment"><span class="highlight">Risk:</span> Priority inversion can lead to significant delays!</span></p>
+<p><span class="fragment center"><img data-src="../images/bg/lec04-priority-inversion.jpg" style="width:90.0%"></span></p>
+</div></div>
+</section>
+<section id="priority-inheritance-the-blocker-borrows-the-priority" class="slide level2">
+<h2>Priority inheritance: the blocker borrows the priority</h2>
+<p><span class="question">Question:</span> <strong>How do we prevent the inversion?</strong></p>
 <ul>
-<li>In reality, we <strong>cannot predict the future</strong></li>
-<li>We need to react to <strong>new tasks</strong> as they happen</li>
-<li>If we have a <strong>deadline</strong>, we might need to meet it</li>
+<li class="fragment"><span class="task">Rule:</span> Tasks inherit priority from their dependents.</li>
+<li class="fragment">A inherits priority 1 from B and is done first</li>
+<li class="fragment">B can start right after A, C to E follow</li>
+</ul>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a>Task  Duration  Priority</span>
+<span id="cb31-2"><a></a>  A    <span class="dv">20</span><span class="er">min</span>     <span class="dv">1</span></span>
+<span id="cb31-3"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">1</span></span>
+<span id="cb31-4"><a></a>  C    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
+<span id="cb31-5"><a></a>  D    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
+<span id="cb31-6"><a></a>  E    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="interruptions-new-tasks-arrive-while-you-work" class="slide level2">
+<h2>Interruptions: new tasks arrive while you work</h2>
+<ul>
+<li>In reality we <strong>cannot predict the future</strong></li>
+<li>New tasks arrive <strong>while we work</strong></li>
 <li>Let’s look at this for the <span class="highlight">earliest due date objective</span></li>
 </ul>
+<aside class="notes">
+<p>Quick reminder: an earliest due date is a specific point in time by which a task must be completed. Under this objective, we want to minimize the maximum delay. If we have a deadline, we might need to meet it even when new tasks come in.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="a-morning-with-seven-tasks" class="slide level2">
+<h2>A morning with seven tasks</h2>
+<p>8:00-12:00 Schedule, tasks arrive during the morning:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>Task           Arrives  Duration  Deadline</span>
+<span id="cb32-2"><a></a>Email A         <span class="dv">8</span>:<span class="dv">00</span>    <span class="dv">20</span><span class="er">min</span>      <span class="dv">9</span>:<span class="dv">00</span></span>
+<span id="cb32-3"><a></a>Create PPT      <span class="dv">8</span>:<span class="dv">00</span>    <span class="dv">60</span><span class="er">min</span>     <span class="dv">10</span>:<span class="dv">50</span></span>
+<span id="cb32-4"><a></a>Investor call   <span class="dv">8</span>:<span class="dv">30</span>    <span class="dv">10</span><span class="er">min</span>      <span class="dv">9</span>:<span class="dv">00</span></span>
+<span id="cb32-5"><a></a>Email B         <span class="dv">8</span>:<span class="dv">40</span>    <span class="dv">30</span><span class="er">min</span>     <span class="dv">10</span>:<span class="dv">20</span></span>
+<span id="cb32-6"><a></a>Liquidity       <span class="dv">9</span>:<span class="dv">00</span>    <span class="dv">40</span><span class="er">min</span>     <span class="dv">11</span>:<span class="dv">00</span></span>
+<span id="cb32-7"><a></a>Email C         <span class="dv">9</span>:<span class="dv">00</span>    <span class="dv">20</span><span class="er">min</span>     <span class="dv">11</span>:<span class="dv">20</span></span>
+<span id="cb32-8"><a></a>Email D         <span class="dv">9</span>:<span class="dv">20</span>    <span class="dv">40</span><span class="er">min</span>     <span class="dv">10</span>:<span class="dv">00</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Quick reminder</strong></p>
-</div>
-<div class="callout-content">
-<p>An earliest due date is a specific point in time by which a task must be completed. Under this objective, we want to minimize the <strong>maximum delay</strong>.</p>
-</div>
-</div>
-</div>
+<p><span class="question">Question:</span> <strong>How would you start, if the goal is to avoid being late?</strong></p>
 </div>
 </section>
-<section id="real-time-edd" class="slide level2">
-<h2>Real-time EDD</h2>
-<p>8:00-12:00 Schedule:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>Task           Duration  Deadline</span>
-<span id="cb32-2"><a></a>Email A        <span class="dv">20</span><span class="er">min</span>     <span class="dv">9</span>:<span class="dv">00</span></span>
-<span id="cb32-3"><a></a>Create PPT     <span class="dv">60</span><span class="er">min</span>    <span class="dv">10</span>:<span class="dv">50</span></span>
-<span id="cb32-4"><a></a>Investor call  <span class="dv">10</span><span class="er">min</span>     <span class="dv">9</span>:<span class="dv">00</span></span>
-<span id="cb32-5"><a></a>Email B        <span class="dv">30</span><span class="er">min</span>    <span class="dv">10</span>:<span class="dv">20</span></span>
-<span id="cb32-6"><a></a>Liquidity      <span class="dv">40</span><span class="er">min</span>    <span class="dv">11</span>:<span class="dv">00</span></span>
-<span id="cb32-7"><a></a>Email C        <span class="dv">20</span><span class="er">min</span>    <span class="dv">11</span>:<span class="dv">20</span></span>
-<span id="cb32-8"><a></a>Email D        <span class="dv">40</span><span class="er">min</span>    <span class="dv">10</span>:<span class="dv">00</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="fragment">
-<p><span class="question">Question:</span> <strong>Any ideas how to start with under the objective of the earliest due date?</strong></p>
-</div>
-</section>
-<section id="edd-rule-for-real-time" class="slide level2">
-<h2>EDD Rule for Real-time</h2>
+<section id="edd-in-real-time-switch-only-for-an-earlier-deadline" class="slide level2">
+<h2>EDD in real time: switch only for an earlier deadline</h2>
 <p><span class="task">Rule:</span></p>
 <ul>
-<li>Always schedule the task with the <strong>earliest deadline</strong></li>
-<li>If a new task with an earlier deadline comes in, <strong>re-schedule</strong></li>
-<li>Otherwise, stick to the original schedule.</li>
+<li>Always work on the task with the <strong>earliest deadline</strong></li>
+<li>A new task with an <strong>earlier</strong> deadline interrupts the current one</li>
+<li>Otherwise, stick to the current task</li>
 </ul>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Equal Deadline</strong></p>
-</div>
-<div class="callout-content">
-<p>If a new task has the same deadline as the current task, you can choose either. But due to the cost of context switching, you might want to stick with the current task.</p>
-</div>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>Equal deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="edd-solution-for-real-time" class="slide level2">
-<h2>EDD Solution for Real-time</h2>
-
-<img data-src="../images/atlb/atlb_schedule-edd-breaks.svg" class="r-stretch"><div class="fragment">
+<section id="the-real-time-edd-schedule" class="slide level2">
+<h2>The real-time EDD schedule</h2>
+<div id="56c051a0" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-13-output-1.png" width="1546" height="511"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Grey line: arrival, red mark: deadline.</p>
+<div class="fragment">
 <p><span class="question">Question:</span> <strong>What’s the maximum delay with this schedule?</strong></p>
 </div>
 </section>
-<section id="spt-for-real-time" class="slide level2">
-<h2>SPT for Real-time</h2>
-<div class="callout callout-tip callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Quick reminder</strong></p>
-</div>
-<div class="callout-content">
-<p>A shortest processing time is the task with the shortest duration. Under this objective, we want to minimize the <strong>total waiting time</strong>.</p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><span class="question">Question:</span> <strong>Any ideas how to start here?</strong></p>
-</div>
+<section id="same-morning-new-goal-as-little-waiting-as-possible" class="slide level2">
+<h2>Same morning, new goal: as little waiting as possible</h2>
+<p><span class="question">Question:</span> <strong>How would you start here?</strong></p>
+<aside class="notes">
+<p>Quick reminder: shortest processing time picks the task with the shortest duration. Under this objective, we want to minimize the total waiting time.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="spt-rule-for-real-time" class="slide level2">
-<h2>SPT Rule for Real-time</h2>
+<section id="spt-in-real-time-switch-only-for-a-shorter-task" class="slide level2">
+<h2>SPT in real time: switch only for a shorter task</h2>
 <p><span class="task">Rule:</span></p>
 <ul>
-<li>Always schedule the task with the <strong>shortest duration</strong></li>
-<li>If a new task with a shorter duration comes in, <strong>re-schedule</strong></li>
-<li>Otherwise, stick to the original schedule.</li>
+<li>Always work on the task with the <strong>shortest duration</strong></li>
+<li>A new task that is <strong>shorter</strong> interrupts the current one</li>
+<li>Otherwise, stick to the current task</li>
 </ul>
-<div class="fragment">
-<div class="callout callout-note callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Equal Duration</strong></p>
-</div>
-<div class="callout-content">
-<p>If a new task has the same duration as the current task, you can choose either. But due to the cost of context switching, you might again want to stick with the current task.</p>
-</div>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>Equal duration: if a new task has the same duration as the current task, you can choose either. But because of the cost of context switching, you should again stick with the current task.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="spt-solution-for-real-time" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">SPT Solution for Real-time</h2>
-
-<img data-src="../images/atlb/atlb_schedule-spt-breaks.svg" class="r-stretch"><div class="fragment">
+<section id="the-real-time-spt-schedule" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The real-time SPT schedule</h2>
+<div id="51b0b6fd" class="cell" data-execution_count="13">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-14-output-1.png" width="1546" height="511"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
 <p><span class="question">Question:</span> <strong>Where can we see the waiting time?</strong></p>
 </div>
 </section>
-<section id="spt-solution-for-real-time-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">SPT Solution for Real-time</h2>
-
-<img data-src="../images/atlb/atlb_schedule-spt-breaks-wait.svg" class="r-stretch"><p><span class="highlight">Total waiting time:</span> 260 minutes</p>
-</section></section>
-<section>
-<section id="thrashing" class="title-slide slide level1 title center">
-<h1><span class="flow">Thrashing</span></h1>
-
+<section id="the-real-time-spt-schedule-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">The real-time SPT schedule</h2>
+<div id="9e36a556" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_04_scheduling_files/figure-html/cell-15-output-1.png" width="1546" height="511"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><span class="highlight">Total waiting time:</span> 260 minutes</p>
 </section>
-<section id="what-is-thrashing" class="slide level2">
-<h2>What is Thrashing?</h2>
+<section id="thrashing-switching-so-much-that-nothing-gets-done" class="slide level2">
+<h2>Thrashing: switching so much that nothing gets done</h2>
 <ul>
 <li>Excessive <strong>context switching</strong></li>
 <li>Organization <span class="highlight">overhead exceeds productivity</span></li>
@@ -1239,8 +1222,8 @@ gantt
 <p><span class="question">Question:</span> <strong>Have you ever experienced this?</strong></p>
 </div>
 </section>
-<section id="thrashing-warning-signs" class="slide level2">
-<h2>Thrashing Warning Signs</h2>
+<section id="warning-signs-of-thrashing" class="slide level2">
+<h2>Warning signs of thrashing</h2>
 <ul>
 <li>Constant <strong>task switching</strong></li>
 <li><strong>Nothing</strong> getting completed</li>
@@ -1251,32 +1234,17 @@ gantt
 <p><span class="question">Question:</span> <strong>Any ideas how to prevent this?</strong></p>
 </div>
 </section>
-<section id="preventing-thrashing-strategic" class="slide level2">
-<h2>Preventing Thrashing Strategic</h2>
-<div class="callout callout-tip callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Strategic</strong></p>
-</div>
-<div class="callout-content">
-<p>Strategic solutions focus on <strong>long-term</strong> changes to prevent thrashing.</p>
-</div>
-</div>
-</div>
-<div class="fragment">
+<section id="preventing-thrashing-long-term-rules" class="slide level2">
+<h2>Preventing thrashing: long-term rules</h2>
 <ol type="1">
 <li>Task rejection/delegation threshold</li>
 <li>Simplified organization systems</li>
 <li>Minimum work period rules</li>
 <li>Reduced reactivity requirements</li>
 </ol>
-</div>
 </section>
-<section id="preventing-thrashing-tactical" class="slide level2">
-<h2>Preventing Thrashing Tactical</h2>
+<section id="preventing-thrashing-todays-tactics" class="slide level2">
+<h2>Preventing thrashing: today’s tactics</h2>
 <ol type="1">
 <li>Time blocking</li>
 <li>Focus periods</li>
@@ -1286,34 +1254,54 @@ gantt
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>What strategies have worked for you?</strong></p>
 </div>
-</section></section>
-<section>
-<section id="applying-this-knowledge" class="title-slide slide level1 title center">
-<h1><span class="flow">Applying This Knowledge</span></h1>
-
 </section>
-<section id="immediate-applications" class="slide level2">
-<h2>Immediate Applications</h2>
-<p><strong>How can you use these algorithms starting today?</strong></p>
+<section id="how-to-use-this-starting-today" class="slide level2">
+<h2>How to use this starting today</h2>
 <ul>
-<li class="fragment"><strong>Daily planning:</strong> Use SPT for your to-do list to minimize waiting time</li>
-<li class="fragment"><strong>Project management:</strong> Apply EDD when managing deadlines</li>
-<li class="fragment"><strong>Team coordination:</strong> Use Johnson’s Rule for two-stage processes</li>
-<li class="fragment"><strong>Time blocking:</strong> Prevent thrashing with strategic scheduling</li>
+<li class="fragment"><strong>Daily planning:</strong> SPT for your to-do list, less waiting</li>
+<li class="fragment"><strong>Project management:</strong> EDD when deadlines matter</li>
+<li class="fragment"><strong>Team coordination:</strong> Johnson’s rule for two-stage processes</li>
+<li class="fragment"><strong>Time blocking:</strong> prevent thrashing</li>
 </ul>
 </section>
-<section id="key-takeaways" class="slide level2">
-<h2>Key Takeaways</h2>
-<p><strong>What we learned today:</strong></p>
-<ol type="1">
-<li class="fragment"><strong>Scheduling algorithms</strong> provide optimal solutions to time management problems</li>
-<li class="fragment"><strong>Different objectives</strong> require different algorithms</li>
-<li class="fragment"><strong>Dependencies and constraints</strong> add complexity but have algorithmic solutions</li>
-<li class="fragment"><strong>Thrashing prevention</strong> is crucial for productivity</li>
-<li class="fragment"><strong>These principles</strong> directly translate to programming and system design</li>
-</ol>
+<section id="real-life-dependencies-interruptions-and-thrashing-1" class="slide level2 section-covered">
+<h2>Real life: dependencies, interruptions and thrashing</h2>
+<div class="section-covered">
+<p><span class="eyebrow">What we covered</span></p>
+<p><span class="statement">Dependencies make planning harder, and constant switching eats up your time. Protect blocks of focused work.</span></p>
+</div>
 </section>
-<section id="section" class="slide level2 loud-slide">
+<section id="what-we-covered" class="slide level2 lecture-closing">
+<h2>What we covered</h2>
+<div class="covered-list">
+<div class="covered-item">
+<p><span class="eyebrow">The basics: when order matters, and when it doesn’t</span></p>
+<p>Sometimes the order of tasks changes the result, sometimes it doesn’t. Knowing which saves time.</p>
+</div>
+<div class="covered-item">
+<p><span class="eyebrow">Your goal decides the rule: deadlines, waiting time, value</span></p>
+<p>Each goal has its own simple rule: earliest deadline first to avoid being late, shortest task first to cut waiting, highest value per minute first to maximize what you deliver.</p>
+</div>
+<div class="covered-item">
+<p><span class="eyebrow">Real life: dependencies, interruptions and thrashing</span></p>
+<p>Dependencies make planning harder, and constant switching eats up your time. Protect blocks of focused work.</p>
+</div>
+</div>
+</section>
+<section id="why-it-matters" class="slide level2 lecture-closing">
+<h2>Why it matters</h2>
+<div class="lecture-why closing">
+<p>Monday morning, ten tasks on your list: where do you start? Companies face the same question at scale: which order on the production line, which customer order first, which project gets the team this week.</p>
+</div>
+</section>
+<section id="section" class="slide level2 loud-slide lecture-key">
+<h2></h2>
+<div class="r-fit-text">
+<p>First choose your goal.</p>
+<p>Then choose your order.</p>
+</div>
+</section>
+<section id="section-1" class="slide level2 loud-slide">
 <h2></h2>
 <div class="r-fit-text">
 <p>Any questions</p>
@@ -1321,25 +1309,26 @@ gantt
 </div>
 </section>
 <section id="after-the-break-scheduling" class="slide level2">
-<h2>After the break — Scheduling</h2>
+<h2>After the break: Scheduling</h2>
 <ul>
 <li>Programming session in our new notebooks</li>
-<li>How to translate the idea into code and experiments</li>
+<li>Today’s rules in code: dictionaries and DataFrames</li>
 <li>Different scheduling algorithms applied to problems</li>
 </ul>
-<div class="fragment">
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><strong>That’s it for scheduling!</strong><br>
-Let’s have a short break and then continue with our fourth Python programming session.</p>
-</div>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>Key takeaways: scheduling algorithms provide optimal solutions to time management problems; different objectives require different algorithms; dependencies and constraints add complexity but have algorithmic solutions; thrashing prevention is crucial for productivity; these principles directly translate to programming and system design.</p>
+<p>That’s it for scheduling! Let’s have a short break and then continue with our fourth Python programming session.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="literature" class="title-slide slide level1 title center">
@@ -1355,19 +1344,18 @@ Let’s have a short break and then continue with our fourth Python programming 
 <section id="books-on-programming" class="slide level2">
 <h2>Books on Programming</h2>
 <ul>
-<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Free online</a></li>
 <li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
 </ul>
-</section>
-<section id="questions-discussion" class="slide level2">
-<h2>Questions &amp; Discussion</h2>
+<div class="fragment">
 <div class="callout callout-note callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+<p>Think Python is free online and a great start. Schrödinger programmiert Python is a playful alternative in German.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1382,7 +1370,7 @@ Let’s have a short break and then continue with our fourth Python programming 
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Lecture IV - Scheduling | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_04_scheduling.html">Home</a></p>
+<p>Lecture IV: Scheduling | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_04_scheduling.html">Home</a></p>
 </div>
 </div></div>
 

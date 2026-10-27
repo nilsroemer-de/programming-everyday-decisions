@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dr.&nbsp;Nils Roemer">
+<meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
 
-<title>Tutorial V.I - Programming with AI – Programming: Everyday Decision-Making Algorithms</title>
+<title>Tutorial V.I: Programming with AI – Programming: Everyday Decision-Making Algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -45,9 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e4a2caf7c18c942dede446ff828dd770.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c79b9904990299345af33477e432e454.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-25060728d2783121a9f548b747010ca7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -89,7 +89,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../lectures/tut_05_01_llm.html">13 - LLM</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../lectures/tut_05_01_llm.html">05-01: LLM</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -126,9 +126,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
@@ -153,19 +151,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_01_variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-01 - Variables</span></a>
+ <span class="menu-text">01-01: Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_02_comparisons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-02 - Comparisons</span></a>
+ <span class="menu-text">01-02: Comparisons</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_03_stopping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-03 - Decisions</span></a>
+ <span class="menu-text">01-03: Decisions</span></a>
   </div>
 </li>
       </ul>
@@ -173,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">02 Explore/Exploit</span></a>
+ <span class="menu-text">02 Explore &amp; Exploit</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -188,19 +186,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_01_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-01 - Lists</span></a>
+ <span class="menu-text">02-01: Lists</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_02_loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-02 - Loops</span></a>
+ <span class="menu-text">02-02: Loops</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_03_explore_exploit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-03 - Exploration</span></a>
+ <span class="menu-text">02-03: Exploration</span></a>
   </div>
 </li>
       </ul>
@@ -223,19 +221,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-01 - Recap</span></a>
+ <span class="menu-text">03-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_02_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-02 - Functions</span></a>
+ <span class="menu-text">03-02: Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_03_packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-03 - Packages</span></a>
+ <span class="menu-text">03-03: Packages</span></a>
   </div>
 </li>
       </ul>
@@ -258,19 +256,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10 - Recap</span></a>
+ <span class="menu-text">04-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_02_dicts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11 - Dictionaries</span></a>
+ <span class="menu-text">04-02: Dictionaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_03_dataframes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 - DataFrames</span></a>
+ <span class="menu-text">04-03: DataFrames</span></a>
   </div>
 </li>
       </ul>
@@ -293,19 +291,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/tut_05_01_llm.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">13 - LLM</span></a>
+ <span class="menu-text">05-01: LLM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_02_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14 - Recap</span></a>
+ <span class="menu-text">05-02: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_03_free.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15 - Free Tasks</span></a>
+ <span class="menu-text">05-03: Free Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -327,9 +325,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../general/faq.html" class="sidebar-item-text sidebar-link">
@@ -396,14 +392,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/lectures/tut_05_01_llm.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/lectures/tut_05_01_llm.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_05_01_llm.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_05_01_presentation.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_05_01_llm.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_05_01_presentation.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../lectures/tut_05_01_llm.html">13 - LLM</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_05_randomness.html">05 Randomness</a></li><li class="breadcrumb-item"><a href="../lectures/tut_05_01_llm.html">05-01: LLM</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tutorial V.I - Programming with AI</h1>
+<h1 class="title">Tutorial V.I: Programming with AI</h1>
 <p class="subtitle lead">Programming: Everyday Decision-Making Algorithms</p>
 </div>
 
@@ -413,11 +409,11 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Dr.&nbsp;Nils Roemer </p>
+    <p class="author">Dr.&nbsp;Nils Roemer, External Lecturer </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            Kühne Logistics University Hamburg
+            Planningio GmbH
           </p>
       </div>
   </div>
@@ -442,10 +438,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Coding by hand is <span class="highlight">not the only way to generate code</span></li>
 <li>Most likely, a lot of you have already used <strong>ChatGPT</strong></li>
 </ul>
-<p>. . .</p>
 <center>
 <img src="../images/gif/tut05-llm.gif" width="400" height="400" alt="">
-<p></p>
 </center>
 </section>
 <section id="section" class="level2" data-background-image="../images/bg/tut05-servers.jpg">
@@ -476,9 +470,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Learns patterns in <strong>how words and ideas connect</strong> via tokens</li>
 <li>Interconnected nodes with <strong>weights representing patterns</strong></li>
 <li>During training, these <strong>weights are adjusted</strong></li>
-<li>Once trained, <strong>applying</strong> them takes much less ressources</li>
+<li>Once trained, <strong>applying</strong> them takes much less resources</li>
 </ul>
-<p>. . .</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -499,7 +492,6 @@ ul.task-list li input[type="checkbox"] {
 <li>It can find <strong>patterns between concepts</strong> and your question</li>
 <li>Knows only limited text at once (<strong>context window</strong>)</li>
 </ul>
-<p>. . .</p>
 <div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -515,7 +507,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="probability-based-responses">Probability based responses</h2>
 <ul>
 <li>After each written token, it predicts <span class="highlight">“what should come next?”</span></li>
-<li>Like a advanced version of the <strong>word prediction</strong> on your phone</li>
+<li>Like an advanced version of the <strong>word prediction</strong> on your phone</li>
 <li>Chooses the <strong>most likely next token</strong> based on training</li>
 <li><span class="highlight">But can’t actually “think” or “understand” like humans</span></li>
 </ul>
@@ -538,14 +530,13 @@ ul.task-list li input[type="checkbox"] {
 <li><span class="question">Question</span>: Can we use them to our advantage?</li>
 </ul>
 </div>
-<p>. . .</p>
 <div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>If you use free models, be aware that your prompts are going to be used by the providers and are not private. But for learning and experimenting, this should be no issue.</p>
+<p>Free models may use your prompts for training. Don’t enter private or company data.</p>
 </div>
 </div>
 </div>
@@ -553,7 +544,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="a-great-overview-by-3blue1brown" class="level2">
 <h2 class="anchored" data-anchor-id="a-great-overview-by-3blue1brown">A Great Overview by 3Blue1Brown</h2>
 <ul>
-<li><strong>Greg Sanderson provides an excellent explanation of LLMs</strong></li>
+<li><strong>Grant Sanderson provides an excellent explanation of LLMs</strong></li>
 <li>Great starting point to understand LLMs</li>
 <li>Check out his <a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">YouTube channel, 3Blue1Brown</a> for more</li>
 </ul>
@@ -565,50 +556,33 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title"><span class="flow">AI Coding Partner</span></h1>
 <section id="what-is-github-copilot" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-github-copilot">What is GitHub Copilot?</h2>
-<p><span class="highlight">GitHub Copilot</span> is an <em>AI pair programmer</em> that helps you write code faster and with less effort.</p>
-<p>. . .</p>
-<p><strong>Think of it as:</strong></p>
+<p><span class="highlight">GitHub Copilot</span> is an <em>AI pair programmer</em> inside your editor:</p>
 <ul>
-<li>An autocomplete for entire lines or blocks of code</li>
-<li>A coding assistant that understands context</li>
-<li>A learning tool that shows you coding patterns</li>
+<li>Autocomplete for entire lines or blocks of code</li>
+<li>A chat that knows your code</li>
+<li>A tool to learn common coding patterns</li>
 </ul>
-<p>. . .</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Copilot uses AI trained on billions of lines of public code to suggest completions.</p>
-</div>
-</div>
-</div>
-<p>. . .</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>There are alternative like Zed or Cursor, but you can use Copilot for free as student.</p>
+<p>Alternatives are Cursor, Zed or Claude Code. Copilot is free for students.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="used-autocomplete-before" class="level2">
 <h2 class="anchored" data-anchor-id="used-autocomplete-before">Used autocomplete before?</h2>
-<p>. . .</p>
 <p>When you type on your phone, it suggests the next word.</p>
-<p>. . .</p>
 <p><strong>GitHub Copilot does the same for code:</strong></p>
 <ul>
 <li>You write a comment describing what you want</li>
 <li>Copilot suggests the code to do it</li>
 <li>You accept, modify, or reject the suggestion</li>
 </ul>
-<p>. . .</p>
-<p><span class="highlight">It’s autocomplete but much better then what you are used to</span></p>
+<p><span class="highlight">It’s autocomplete but much better than what you are used to</span></p>
 </section>
 <section id="why-use-copilot" class="level2">
 <h2 class="anchored" data-anchor-id="why-use-copilot">Why Use Copilot?</h2>
@@ -619,7 +593,6 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Understand syntax:</strong> Get correct syntax without memorizing</li>
 <li><strong>Stay in flow:</strong> Focus on logic, not syntax errors</li>
 </ul>
-<p>. . .</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -633,7 +606,6 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="when-should-you-use-copilot" class="level2">
 <h2 class="anchored" data-anchor-id="when-should-you-use-copilot">When should you use Copilot?</h2>
-<p>. . .</p>
 <p><span class="highlight">Good uses of Copilot</span></p>
 <ul>
 <li>Understanding Python syntax you forgot</li>
@@ -644,7 +616,6 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="what-shouldnt-you-do-with-copilot" class="level2">
 <h2 class="anchored" data-anchor-id="what-shouldnt-you-do-with-copilot">What shouldn’t you do with Copilot?</h2>
-<p>. . .</p>
 <p><span class="highlight">Not so good uses of Copilot</span></p>
 <ul>
 <li>Replacing learning fundamentals</li>
@@ -652,33 +623,18 @@ ul.task-list li input[type="checkbox"] {
 <li>Skipping practice exercises</li>
 <li>Copy-pasting without reading</li>
 </ul>
-<p>. . .</p>
 <p><span class="highlight">Always understand what Copilot suggests before accepting!</span></p>
-<p>. . .</p>
 <p><strong>But of course I know you will not do that ;)</strong></p>
 </section>
 <section id="accept-without-reading" class="level2">
 <h2 class="anchored" data-anchor-id="accept-without-reading">Accept without reading?</h2>
-<p>. . .</p>
 <p><span class="highlight">Copilot might suggest code that:</span></p>
 <ul>
-<li>Works but uses concepts you haven’t learned yet</li>
-<li>Contains subtle bugs or edge cases</li>
-<li>Doesn’t match your specific requirements</li>
-<li>Uses inefficient approaches</li>
-<li>Introduce dangerous code in your project</li>
+<li>Uses concepts you haven’t learned yet</li>
+<li>Contains subtle bugs or misses edge cases</li>
+<li>Doesn’t match your requirements</li>
+<li>Introduces security risks (an issue in companies, less in this course)</li>
 </ul>
-<p>. . .</p>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Dangerous code can lead to security vulnerabilities, data loss, or other issues. In the context of this lecture it should be no issue, but in companies it can be one!</p>
-</div>
-</div>
-</div>
 </section>
 <section id="my-take-just-be-careful-ok" class="level2">
 <h2 class="anchored" data-anchor-id="my-take-just-be-careful-ok">My take: Just be careful, ok?</h2>
@@ -689,7 +645,6 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Test</strong> it with examples</li>
 <li><strong>Modify</strong> if needed</li>
 </ol>
-<p>. . .</p>
 <div class="callout callout-style-simple callout-warning">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -707,15 +662,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="get-free-access" class="level2">
 <h2 class="anchored" data-anchor-id="get-free-access">Get Free Access</h2>
 <p><strong>GitHub Student Developer Pack</strong> gives you free Copilot access!</p>
-<p>. . .</p>
 <ol type="1">
 <li>Go to <a href="https://education.github.com/pack">education.github.com/pack</a></li>
 <li>Sign up with your university email</li>
 <li>Verify your student status</li>
 <li>Wait for approval (usually 1-2 days)</li>
-<li>Login into your account in VS Code</li>
+<li>Log in to your account in VS Code</li>
 </ol>
-<p>. . .</p>
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -733,21 +686,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Create a new Python file (<code>.py</code>) and type something</li>
 <li>Wait 1-2 seconds</li>
 </ol>
-<p>. . .</p>
 <p><strong>If working, you’ll see:</strong></p>
 <ul>
 <li>Gray “ghost text” suggesting code</li>
 <li>Press <code>Tab</code> to accept</li>
 <li>Press <code>Esc</code> to reject</li>
 </ul>
-<p>. . .</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Try to get copilot running on your own until next session.</p>
+<p>Try to get Copilot running on your own until next session.</p>
 </div>
 </div>
 </div>
@@ -1221,7 +1172,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
 <p>Programming: Everyday Decision-Making Algorithms<br>Nils Roemer and Tobias Vlćek<br>CC BY-NC-SA 4.0</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/lectures/tut_05_01_llm.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/lectures/tut_05_01_llm.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

@@ -1,5 +1,5 @@
 ---
-title: Tutorial III.II - Functions
+title: 'Tutorial III.II: Functions'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
@@ -8,7 +8,7 @@ subtitle: 'Programming: Everyday Decision-Making Algorithms'
 
 Imagine you're a librarian who needs to organize and retrieve books efficiently. Instead of explaining every step of finding a book each time, wouldn't it be nice to have a set of standard procedures? In programming, **these procedures are called functions!** They help us organize our code into **reusable blocks**, just like having standard procedures in a library.
 
-This tutorial will teach you about functions using a **library management system** and **a coffee machine** as an example. We'll create functions to help us manage books, track their popularity, and implement a simple caching system.
+This tutorial will teach you about functions using a **library management system** and **a coffee machine** as an example. We'll create functions to help us manage books, track their popularity, and at the end turn the LRU cache from the last tutorial into reusable functions.
 
 > **Real-World Example**
 >
@@ -290,6 +290,61 @@ print("Excellent! Your title formatting function works correctly!")
 
 </details>
 
+# Section 5 - Your Own LRU Cache
+
+In the last tutorial, we wrote the LRU logic step by step. With functions, we can write it once and reuse it for any cache and any request.
+
+> **Lists inside functions**
+>
+> Lists are mutable. If a function changes a list that was passed in (for example with `insert()` or `pop()`), the change is visible outside the function as well. We use this here: the function updates the cache and returns whether the request was a hit.
+
+## Exercise 5.1 - An LRU Access Function
+
+Create a function `lru_access(cache, item, max_size)` that:
+
+- Moves `item` to the front of `cache` and returns `True` if it is already in the cache (hit)
+- Otherwise removes the last item if the cache is full, inserts `item` at the front and returns `False` (miss)
+
+``` python
+# YOUR CODE BELOW
+```
+
+<details class="code-fold">
+<summary>Code</summary>
+
+``` python
+# Test your answer
+cache = ["B", "A"]
+assert lru_access(cache, "A", 2) == True and cache == ["A", "B"], "A hit should move the item to the front"
+assert lru_access(cache, "C", 2) == False and cache == ["C", "A"], "A miss in a full cache should evict the last item"
+assert lru_access(cache, "D", 3) == False and cache == ["D", "C", "A"], "A miss in a cache with free space should not evict"
+print("Excellent! Your LRU cache function works.")
+```
+
+</details>
+
+## Exercise 5.2 - Measure the Hit Rate
+
+Create a function `hit_rate(requests, max_size)` that starts with an empty cache, sends every request through `lru_access()` and returns the share of hits (hits divided by the number of requests).
+
+``` python
+requests = ["Maps", "Spotify", "Maps", "Mail", "Camera", "Maps", "Spotify", "Mail"]
+# YOUR CODE BELOW
+```
+
+<details class="code-fold">
+<summary>Code</summary>
+
+``` python
+# Test your answer
+assert hit_rate(requests, 3) == 0.25, "With 3 slots, 2 of 8 requests are hits"
+assert hit_rate(requests, 4) == 0.5, "With 4 slots, 4 of 8 requests are hits"
+assert hit_rate(requests, 1) == 0, "With 1 slot, no request is a hit here"
+print("Great! A bigger cache gives more hits, but it also costs more space.")
+```
+
+</details>
+
 # Conclusion
 
 Excellent work! You've learned how to create and use functions in Python through the lens of library management. You now know how to:
@@ -306,7 +361,7 @@ Remember:
 - They can take inputs (parameters) and produce outputs (return values)
 - They can have default values for parameters
 
-In a real library system, functions like these would be part of a larger caching system that helps optimize book retrieval times and improve user experience!
+With `lru_access()` and `hit_rate()`, you have built your own small LRU cache. In the next tutorial, we'll compare it with random eviction using Python packages.
 
 # Solutions
 
@@ -314,8 +369,8 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 ------------------------------------------------------------------------
 
-*In the next tutorial, we'll take a look on how to import packages and libraries to extend our functionality!*
+*In the next tutorial, we'll take a look at how to import packages and libraries to extend our functionality!*

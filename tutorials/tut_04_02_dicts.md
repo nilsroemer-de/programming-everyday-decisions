@@ -1,5 +1,5 @@
 ---
-title: Tutorial IV.II - Dictionaries
+title: 'Tutorial IV.II: Dictionaries'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
@@ -50,10 +50,10 @@ print(tasks)
 
     {'Check Emails': 1, 'Liquidity Planning': 2, 'Team Meeting': 4, 'Answer Emails': 7}
 
-To delete entries, you can use the `del()` function:
+To delete entries, you can use the `del` statement:
 
 ``` python
-del(tasks["Answer Emails"])
+del tasks["Answer Emails"]
 print(tasks)
 ```
 
@@ -76,8 +76,8 @@ Furthermore, we can nest a dictionary in a dictionary:
 ``` python
 # Creating a dictionary of projects
 projects = {
-    "Project Alpha": {"status": "In Progress", "deadline": "2023-12-31"},
-    "Project Beta": {"status": "Completed", "deadline": "2023-06-30"}
+    "Project Alpha": {"status": "In Progress", "deadline": "2026-12-31"},
+    "Project Beta": {"status": "Completed", "deadline": "2026-06-30"}
 }
 print(f"The deadline of Project Alpha is {projects['Project Alpha']['deadline']}.")
 ```
@@ -90,11 +90,16 @@ Add a new task called "Prepare Presentation" with the priority level `5` to the 
 # YOUR CODE BELOW
 ```
 
+<details class="code-fold">
+<summary>Code</summary>
+
 ``` python
 # Test your answer
 assert "Prepare Presentation" in tasks, "The task 'Prepare Presentation' was not added to the dictionary."
 print("Great! You've successfully added a new task to the tasks dictionary.")
 ```
+
+</details>
 
 ## Exercise 1.2 - Check if a Key Exists
 
@@ -104,11 +109,16 @@ Check if the key "Team Meeting" exists in the `tasks` dictionary using the `in` 
 # YOUR CODE BELOW
 ```
 
+<details class="code-fold">
+<summary>Code</summary>
+
 ``` python
 # Test your answer
 assert message == "Team Meeting is in the dictionary", "The message is not correct. It should be 'Team Meeting is in the dictionary'."
 print("Great! You've successfully checked if a key exists in the dictionary.")
 ```
+
+</details>
 
 ## Exercise 1.3 - Change the Value of a Key
 
@@ -118,11 +128,16 @@ Change the value associated with the key "Check Emails" to `6`.
 # YOUR CODE BELOW
 ```
 
+<details class="code-fold">
+<summary>Code</summary>
+
 ``` python
 # Test your answer
 assert tasks["Check Emails"] == 6, "The value associated with the key 'Check Emails' is not correct. It should be 6."
 print("Great! You've successfully changed the value of a key in the dictionary.")
 ```
+
+</details>
 
 # Section 2 - Advanced Dictionary Operations
 
@@ -175,12 +190,17 @@ Compute the average priority of the tasks in the `tasks` dictionary. Save the re
 # YOUR CODE BELOW
 ```
 
+<details class="code-fold">
+<summary>Code</summary>
+
 ``` python
 # Test your answer
-assert len(tasks) == 4, "The number of tasks is not correct. It should be 4 based on the previous excercises."
+assert len(tasks) == 4, "The number of tasks is not correct. It should be 4 based on the previous exercises."
 assert average_priority == 4.25, "The average priority is not correct. It should be 4.25."
 print("Great! You've successfully computed the average priority of the tasks.")
 ```
+
+</details>
 
 ## Exercise 2.2 - Get the Task with the Highest Priority
 
@@ -190,11 +210,16 @@ Get the task with the highest priority from the `tasks` dictionary. Save the res
 # YOUR CODE BELOW
 ```
 
+<details class="code-fold">
+<summary>Code</summary>
+
 ``` python
 # Test your answer
 assert highest_priority_task == "Liquidity Planning", f"The task {highest_priority_task} as the task with the highest priority is not correct. It should be 'Liquidity Planning'."
 print("Great! You've successfully gotten the task with the highest priority.")
 ```
+
+</details>
 
 ## Exercise 2.3 - Remove a Task
 
@@ -202,11 +227,14 @@ First, check if the key `"Liquidity Planning"` exists in the `tasks` dictionary.
 
 > **Tip**
 >
-> You can use the `del()` function to remove a key from a dictionary.
+> You can use the `del` statement to remove a key from a dictionary, e.g. `del tasks["Team Meeting"]`.
 
 ``` python
 # YOUR CODE BELOW
 ```
+
+<details class="code-fold">
+<summary>Code</summary>
 
 ``` python
 # Test your answer
@@ -214,12 +242,51 @@ assert "Liquidity Planning" not in tasks, "The task 'Liquidity Planning' was not
 print("Great! You've successfully removed a task from the dictionary.")
 ```
 
+</details>
+
+# Section 3 - Back to our LRU Cache
+
+Remember our LRU cache from Tutorials III? Real caches store a **value** for each key, for example the loaded data of an app. That's exactly what dictionaries do. And since Python 3.7, dictionaries remember the order in which keys were inserted, so we can use the order for LRU: the **first** key is the least recently used one, the **last** key the most recently used one.
+
+``` python
+cache = {"Maps": "map data", "Mail": "inbox", "Spotify": "playlist"}  # oldest first
+value = cache.pop("Mail")   # a hit: take the entry out ...
+cache["Mail"] = value       # ... and put it back at the end
+print(list(cache.keys()))
+```
+
+    ['Maps', 'Spotify', 'Mail']
+
+## Exercise 3.1 - LRU with a Dictionary
+
+Open the app `new_app` with the value `new_value`. If the cache already holds 3 apps, first remove the least recently used one (the first key, e.g. `list(cache.keys())[0]`). Then add the new app at the end.
+
+``` python
+cache = {"Maps": "map data", "Mail": "inbox", "Spotify": "playlist"}  # oldest first
+new_app = "Camera"
+new_value = "photos"
+max_cache_size = 3
+# YOUR CODE BELOW
+```
+
+<details class="code-fold">
+<summary>Code</summary>
+
+``` python
+# Test your answer
+assert list(cache.keys()) == ["Mail", "Spotify", "Camera"], "Maps should be evicted and Camera added at the end"
+assert cache["Camera"] == "photos", "The value of Camera should be 'photos'"
+print("Great! Your dictionary works as an LRU cache.")
+```
+
+</details>
+
 ## Conclusion
 
 Great! You've just navigated through the basics of dictionaries in Python. Dictionaries are powerful data structures that allow for efficient data organization and retrieval. Remember:
 
 - Dictionaries can store information using key-value pairs
-- Accessing them using keys is efficient and easier as accessing them using indices
+- Accessing them using keys is efficient and easier than accessing them using indices
 - Loops can iterate over dictionaries to perform operations on each key-value pair
 
 # Solutions
@@ -228,7 +295,7 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 ------------------------------------------------------------------------
 

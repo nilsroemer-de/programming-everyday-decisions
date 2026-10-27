@@ -9,8 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Dr.&nbsp;Nils Roemer">
-  <title>Programming: Everyday Decision-Making Algorithms – Introduction - Programming</title>
+  <meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
+  <title>Programming: Everyday Decision-Making Algorithms – Introduction</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b2296277df239b774fa479879ac923b5.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bb978de86abbef3b36a933764425996b.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -130,38 +130,45 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction - Programming</h1>
+  <h1 class="title">Introduction</h1>
   <p class="subtitle">Programming: Everyday Decision-Making Algorithms</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Dr.&nbsp;Nils Roemer 
+Dr.&nbsp;Nils Roemer, External Lecturer 
 </div>
         <p class="quarto-title-affiliation">
-            Kühne Logistics University Hamburg
+            Planningio GmbH
           </p>
     </div>
 </div>
 
 </section>
+<section id="today-in-one-sentence" class="slide level2 lecture-opening">
+<h2>Today in one sentence</h2>
+<div class="lecture-summary">
+<p><span class="statement">In this course you learn how computer scientists approach everyday decisions, and how to turn these ideas into Python code.</span></p>
+</div>
+<div class="lecture-why">
+<p><span class="eyebrow">Why it matters</span></p>
+<p>More and more business decisions rely on data and algorithms. You don’t need to become a programmer, but understanding how algorithms think, and writing a few lines of code yourself, makes you a better decision maker. No prior knowledge required.</p>
+</div>
+</section>
+<section id="roadmap" class="slide level2 lecture-opening">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item future">About this course: topics, format and how you pass</span></li>
+<li><span class="roadmap-item future">How to learn programming</span></li>
+<li><span class="roadmap-item future">Setting up Python</span></li>
+</ol>
+</div>
+</section>
 <section>
-<section id="about-this-course" class="title-slide slide level1 title center">
-<h1><span class="flow">About this Course</span></h1>
 
-</section>
-<section id="agenda" class="slide level2">
-<h2>Agenda</h2>
-<ul>
-<li>About the course and expectations</li>
-<li>How to learn programming (mindset and resources)</li>
-<li>Setting up Python with uv and VS Code</li>
-<li>Using notebooks with uv</li>
-<li>Q&amp;A and next steps</li>
-</ul>
-</section>
-<section id="course-outline" class="slide level2">
-<h2>Course Outline</h2>
+<section id="six-topics-one-per-session" class="slide level2">
+<h2>Six topics, one per session</h2>
 <ul>
 <li><strong>I:</strong> Optimal Stopping</li>
 <li><strong>II:</strong> Explore &amp; Exploit</li>
@@ -171,21 +178,33 @@ Dr.&nbsp;Nils Roemer
 <li><strong>VI:</strong> Computational Kindness</li>
 </ul>
 </section>
-<section id="participation" class="slide level2">
-<h2>Participation</h2>
+<section id="take-part-it-pays-off" class="slide level2">
+<h2>Take part, it pays off</h2>
 <ul>
-<li>Try <strong>actively participating</strong> in this course</li>
-<li>You will find it much <span class="highlight">(!)</span> easier and more fun</li>
-<li>Lecture based on the book <span class="highlight">Algorithms to live by</span><sup>1</sup></li>
-<li>Material and slides are hosted online: <a href="https://courses.nilsroemer.com">courses.nilsroemer.com</a></li>
+<li><strong>Participate actively</strong>: it makes the course easier and more fun</li>
+<li>Inspired by the book <span class="highlight">Algorithms to Live By</span><sup>1</sup></li>
+<li>All material is online: <a href="https://courses.nilsroemer.com">courses.nilsroemer.com</a></li>
 </ul>
+<aside class="notes">
+<p>Today’s agenda in detail: about the course and expectations, how to learn programming (mindset and resources), setting up Python with uv and VS Code, using notebooks with uv, Q&amp;A and next steps.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.</p></li></ol></aside></section>
-<section id="teaching" class="slide level2">
-<h2>Teaching</h2>
+<section id="each-session-lecture-then-tutorial" class="slide level2">
+<h2>Each session: lecture, then tutorial</h2>
 <ul>
-<li><strong>Lecture:</strong> Presentation and discussion of algorithms related to everyday decision-making</li>
-<li><strong>Tutorial:</strong> Step-by-step assignments to be solved and discussed together in groups</li>
-<li><strong>Difficulty:</strong> Strongly depends on your background and programming experience</li>
+<li><strong>Lecture:</strong> we discuss an algorithm for everyday decisions</li>
+<li><strong>Tutorial:</strong> step-by-step assignments, solved together in groups</li>
+<li><strong>Difficulty:</strong> depends on your programming experience</li>
 </ul>
 <div class="fragment">
 <div class="callout callout-tip callout-style-simple">
@@ -198,110 +217,123 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Lecture: presentation and discussion of algorithms related to everyday decision-making. Tutorial: step-by-step assignments to be solved and discussed together in groups. Difficulty: strongly depends on your background and programming experience.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="passing-the-course" class="slide level2">
-<h2>Passing the Course</h2>
+<section id="how-you-pass" class="slide level2">
+<h2>How you pass</h2>
 <ul>
 <li><strong>Pass/fail course</strong> without exams</li>
-<li><span class="highlight">75% attendance</span> required for passing the course</li>
-<li>Hand in the assignments of at least <strong>two lectures</strong></li>
-<li><strong>Short presentation</strong> and discussion at the end</li>
-<li>You work together in groups of <strong>three students</strong></li>
+<li><span class="highlight">75% attendance</span> required</li>
+<li><strong>Two assignments</strong> on algorithmic problems from the course</li>
+<li><strong>Short final presentation</strong> of your prototype in the last lecture</li>
+<li>You can work in groups of <strong>up to three students</strong></li>
 </ul>
 </section>
-<section id="handing-in-assignments" class="slide level2">
-<h2>Handing in Assignments</h2>
+<section id="how-to-hand-in-assignments" class="slide level2">
+<h2>How to hand in assignments</h2>
 <ul>
-<li>Each student group submits <strong>one solution</strong></li>
-<li>Provide us <strong>all</strong> working notebooks of the lecture</li>
-<li>Hand in is due at the <strong>beginning of the next lecture</strong></li>
-<li>At least <strong>50 %</strong> have to be correct to pass</li>
-<li><span class="highlight">You have to pass at least twice</span></li>
+<li>Each group submits <strong>one solution</strong> per assignment</li>
+<li>Hand in your <strong>working notebooks</strong></li>
+<li>Due by the <strong>end of the quarter</strong>, earlier is better</li>
+<li>At least <strong>50%</strong> of the solutions have to be correct</li>
 </ul>
-<div class="fragment">
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>This is just in order to provide you with working solutions after each deadline.</p>
-</div>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>Earlier submissions are highly encouraged: you get feedback while the topic is still fresh.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="learning-python" class="slide level2">
-<h2>Learning Python</h2>
+<section id="you-learn-python-in-the-tutorials" class="slide level2">
+<h2>You learn Python in the tutorials</h2>
 <p>We will mostly <strong>not cover Python during the lectures!</strong></p>
 <div class="fragment">
-<p><span class="question">Question</span>: Anybody know why?</p>
+<p><span class="question">Question:</span> Does anybody know why?</p>
 </div>
 <div class="fragment">
 <ul>
-<li>In our experience, the best way to learn is by <strong>doing</strong>!</li>
-<li>Here, we will focus on decision-making algorithms</li>
-<li>You will learn Python by <span class="highlight">doing the tutorials</span></li>
+<li>The best way to learn is by <strong>doing</strong></li>
+<li>Lectures focus on the decision-making algorithms</li>
+<li>You learn Python by <span class="highlight">doing the tutorials</span></li>
 </ul>
-</div>
-<div class="fragment">
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Don’t worry, we will help you out if you have any questions!</p>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>In our experience, the best way to learn programming is by doing. Don’t worry, we will help you out if you have any questions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="difficulty-of-the-course" class="slide level2">
-<h2>Difficulty of the Course</h2>
+<section id="programming-is-like-a-new-language" class="slide level2">
+<h2>Programming is like a new language</h2>
 <ul>
 <li>At first it might be <span class="highlight">a little bit overwhelming</span></li>
-<li>Programming is similar to learning a <strong>new language</strong></li>
-<li>First, you have to <strong>get used to it</strong> and learn words</li>
-<li><strong>Later</strong>, you’ll be able to apply it and see results</li>
+<li>First you get used to it and learn words</li>
+<li>Later you apply it and see results</li>
 <li>Important: <em>Practice, practice, practice!</em></li>
 </ul>
 </section>
-<section id="goals-of-the-course" class="slide level2">
-<h2>Goals of the Course</h2>
+<section id="what-you-take-home" class="slide level2">
+<h2>What you take home</h2>
 <ul>
-<li>Learn the <span class="highlight">basics of programming</span></li>
-<li>Learn about <strong>algorithmic thinking</strong></li>
-<li>Be able to <strong>apply</strong> methods and concepts</li>
-<li><strong>Solve practical problems</strong> with algorithms</li>
+<li>The <span class="highlight">basics of programming</span></li>
+<li><strong>Algorithmic thinking</strong>: how computer scientists approach a problem</li>
+<li>Methods you can <strong>apply</strong> to practical problems</li>
 </ul>
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>We are convinced that this course will be quite interesting and <strong>teach you more for your daily life</strong> than most other courses!</p>
-</div>
-</div>
-</div>
 </section>
 <section id="why-python" class="slide level2">
 <h2>Why Python?</h2>
 <ul>
-<li><strong>Origins</strong>: Conceived in late 1980s as a teaching and scripting language</li>
-<li><strong>Simple Syntax</strong>: Python’s syntax is mostly straightforward and very easy to learn</li>
-<li><strong>Versatility</strong>: Used in web development, data analysis, artificial intelligence, and more</li>
-<li><strong>Community Support</strong>: A large community of users worldwide and extensive documentation</li>
+<li><strong>Simple syntax</strong>: easy to read and to learn</li>
+<li><strong>Versatile</strong>: web, data analysis, artificial intelligence</li>
+<li><strong>Big community</strong>: help and documentation everywhere</li>
 </ul>
+<aside class="notes">
+<p>Origins: Python was conceived in the late 1980s as a teaching and scripting language. Its syntax is mostly straightforward and very easy to learn. It is used in web development, data analysis, artificial intelligence and more, and it has a large community of users worldwide with extensive documentation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="help-from-ai" class="slide level2">
-<h2>Help from AI</h2>
+<section id="ai-is-allowed-but-learn-yourself" class="slide level2">
+<h2>AI is allowed, but learn yourself</h2>
 <ul>
-<li>You are <span class="highlight">allowed to use AI</span> in the course, we use it as well (e.g., Claude, ChatGPT, LLama3 …)</li>
-<li>These <strong>tools are great</strong> for learning Python!</li>
-<li>Can help you a lot <strong>to get started</strong> with programming</li>
+<li>You are <span class="highlight">allowed to use AI</span>, we use it as well</li>
+<li>Assistants such as Claude, ChatGPT or Gemini are <strong>great for learning Python</strong></li>
 </ul>
 <div class="fragment">
 <div class="callout callout-warning callout-style-simple">
@@ -310,92 +342,113 @@ Dr.&nbsp;Nils Roemer
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>But you should <em>not</em> simply use them to <em>replace</em> your learning.</p>
+<p>But don’t let them <em>replace</em> your learning.</p>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Current AI assistants help you a lot to get started with programming. But you should not simply use them to replace your learning: read and understand what they suggest.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section></section>
 <section>
-<section id="how-to-learn-programming" class="title-slide slide level1 title center">
-<h1><span class="flow">How to learn programming</span></h1>
 
-</section>
-<section id="our-recommendation" class="slide level2">
-<h2>Our Recommendation</h2>
+<section id="roadmap-1" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
 <ol type="1">
-<li><span class="highlight">Be present</span>: Attend the lecture and solve the tutorials</li>
-<li><span class="highlight">Put in some work</span>: Repeat code and try to understand it</li>
-<li><span class="highlight">Do coding</span>: Run code, play around, modify, and solve</li>
+<li><span class="roadmap-item done">About this course: topics, format and how you pass</span></li>
+<li><span class="roadmap-item current">How to learn programming</span></li>
+<li><span class="roadmap-item future">Setting up Python</span></li>
 </ol>
-<div class="fragment">
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<div class="callout-content">
-<p>Great resources to start are books and small challenges. You can find a list of book recommendations at the end of the lecture. Small challenges to solve can for example be found on <a href="https://www.codewars.com/">Codewars</a>.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+<section id="three-habits-that-work" class="slide level2">
+<h2>Three habits that work</h2>
+<ol type="1">
+<li><span class="highlight">Be present</span>: attend the lecture and solve the tutorials</li>
+<li><span class="highlight">Put in some work</span>: repeat code and try to understand it</li>
+<li><span class="highlight">Do coding</span>: run code, play around, modify, and solve</li>
+</ol>
+<aside class="notes">
+<p>Great resources to start are books (see the list at the end of the lecture) and small challenges, for example on <a href="https://www.codewars.com/">Codewars</a>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="dont-give-up" class="slide level2">
 <h2>Don’t give up!</h2>
 <ul>
-<li>Programming is <span class="highlight">problem solving</span>, don’t get <strong>frustrated</strong>!</li>
+<li>Programming is <span class="highlight">problem solving</span>, errors are normal</li>
 <li>Expect to <strong>stretch</strong> your comfort zone</li>
 </ul>
 <center>
 <p><br> <img src="../images/gif/lec00-intro.gif" width="480" height="360" alt=""></p>
-<center>
-</center></center></section></section>
+</center>
+</section></section>
 <section>
-<section id="setting-up-python" class="title-slide slide level1 title center">
-<h1><span class="flow">Setting up Python</span></h1>
 
+<section id="roadmap-2" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">About this course: topics, format and how you pass</span></li>
+<li><span class="roadmap-item done">How to learn programming</span></li>
+<li><span class="roadmap-item current">Setting up Python</span></li>
+</ol>
+</div>
 </section>
 <section id="install-vs-code" class="slide level2">
 <h2>Install VS Code</h2>
 <ul>
-<li>Download and install from the <a href="https://code.visualstudio.com/">website</a></li>
-<li>Built for <strong>Windows, Linux and Mac</strong></li>
-<li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a> and <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter">Jupyter</a> extension</li>
-<li><span class="highlight">Now you are ready to go!</span></li>
+<li>Download and install from the <a href="https://code.visualstudio.com/">website</a>, for <strong>Windows, Linux and Mac</strong></li>
+<li>Add the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a> and <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter">Jupyter</a> extensions</li>
 </ul>
-<div class="fragment">
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Unsure on how to work with VS Code and notebooks? Ask us! We are happy to help you out!</p>
-</div>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>Unsure how to work with VS Code and notebooks? Ask us, we are happy to help you out.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="what-is-an-ide" class="slide level2">
-<h2>What is an IDE?</h2>
+<section id="vs-code-is-an-ide" class="slide level2">
+<h2>VS Code is an IDE</h2>
 <ul>
-<li>Integrated Development Environment <code>=</code> application</li>
-<li>It allows you to write, run and debug code scripts</li>
-<li>Other IDEs include for example:
-<ul>
-<li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a> from JetBrains</li>
-<li><a href="https://zed.dev/">Zed</a></li>
-</ul></li>
+<li>IDE = Integrated Development Environment, an app to <strong>write, run and debug code</strong></li>
+<li>Other IDEs: <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, <a href="https://zed.dev/">Zed</a></li>
 </ul>
 </section>
-<section id="installation-of-python-with-uv" class="slide level2">
-<h2>Installation of Python with <code>uv</code></h2>
+<section id="install-python-with-uv" class="slide level2">
+<h2>Install Python with <code>uv</code></h2>
 <ul>
-<li>We will use <code>uv</code> to install and manage Python versions</li>
+<li><code>uv</code> installs Python and manages packages for us</li>
 <li>It works on Windows, Mac and Linux</li>
-<li>It helps us to manage packages and virtual environments</li>
-<li>Now, we all <a href="../general/uv.html">go here</a> and install <code>uv</code> and Python</li>
+<li>Now we all <a href="../general/uv.html">go here</a> and install <code>uv</code> and Python</li>
 </ul>
 <div class="fragment">
 <div class="callout callout-tip callout-style-simple">
@@ -409,24 +462,15 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="using-notebooks-with-uv" class="title-slide slide level1 title center">
-<h1><span class="flow">Using Notebooks with uv</span></h1>
-
 </section>
 <section id="quick-check" class="slide level2">
-<h2>Quick Check</h2>
-<ul>
-<li>Have you installed <code>uv</code> and initialized the project?</li>
-<li>Great! Before we continue, check the following:
-<ul>
-<li>[] You have a folder for the course</li>
-<li>[] You have initialized <code>uv</code> with <code>uv init</code> inside the folder</li>
-<li>[] You can see a file called <code>pyproject.toml</code> in the folder</li>
+<h2>Quick check</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">You have a folder for the course</label></li>
+<li><label><input type="checkbox">You ran <code>uv init</code> inside the folder</label></li>
+<li><label><input type="checkbox">You can see a file called <code>pyproject.toml</code> in the folder</label></li>
 </ul>
-. . .</li>
-</ul>
+<div class="fragment">
 <div class="callout callout-tip callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
@@ -437,25 +481,35 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </div>
+</div>
 </section>
-<section id="using-notebooks" class="slide level2">
-<h2>Using Notebooks</h2>
+<section id="add-notebooks-to-your-project" class="slide level2">
+<h2>Add notebooks to your project</h2>
 <ul>
-<li>Now we need to add a kernel to our project</li>
-<li>Run <code>uv add --dev ipykernel</code> from your terminal</li>
-<li>Now run <code>uv add jupyter</code> in the terminal</li>
-<li>This allows us to use <code>uv</code> Python in notebooks</li>
-<li>Done? Perfect. Now we can start!</li>
+<li>Run <code>uv add --dev ipykernel</code> in your terminal</li>
+<li>Then run <code>uv add jupyter</code></li>
+<li>Now notebooks can use the Python of your project</li>
 </ul>
+<aside class="notes">
+<p>The first command adds a kernel to the project, the second the Jupyter tools. Done? Perfect, now we can start.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="working-with-notebooks" class="slide level2">
-<h2>Working with Notebooks</h2>
+<section id="download-a-tutorial-and-open-it" class="slide level2">
+<h2>Download a tutorial and open it</h2>
 <ul>
-<li>Now you can download the files from the website</li>
-<li>Just click on one of the sessions and open it</li>
-<li>Select <code>Jupyter</code> on the right side</li>
-<li>Download and save the files <strong>to your course folder</strong></li>
-<li>Open them and select “Open with Jupyter Notebook”</li>
+<li>Open a tutorial on the website and select <code>Jupyter</code> on the right</li>
+<li>Save the file <strong>to your course folder</strong></li>
+<li>Open it in VS Code and select “Open with Jupyter Notebook”</li>
 </ul>
 <div class="fragment">
 <div class="callout callout-tip callout-style-simple">
@@ -470,7 +524,36 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </section>
-<section id="section" class="slide level2 loud-slide">
+<section id="what-we-covered" class="slide level2 lecture-closing">
+<h2>What we covered</h2>
+<div class="covered-list">
+<div class="covered-item">
+<p><span class="eyebrow">About this course: topics, format and how you pass</span></p>
+<p>Six topics, each with a lecture and a Python session. You pass with 75% attendance, two assignments and a final presentation.</p>
+</div>
+<div class="covered-item">
+<p><span class="eyebrow">How to learn programming</span></p>
+<p>Programming is learned by doing: small steps, regular practice, and don’t give up.</p>
+</div>
+<div class="covered-item">
+<p><span class="eyebrow">Setting up Python</span></p>
+<p>Your laptop is ready: VS Code, Python with uv and notebooks.</p>
+</div>
+</div>
+</section>
+<section id="why-it-matters" class="slide level2 lecture-closing">
+<h2>Why it matters</h2>
+<div class="lecture-why closing">
+<p>More and more business decisions rely on data and algorithms. You don’t need to become a programmer, but understanding how algorithms think, and writing a few lines of code yourself, makes you a better decision maker.</p>
+</div>
+</section>
+<section id="section" class="slide level2 loud-slide lecture-key">
+<h2></h2>
+<div class="r-fit-text">
+<p>Learn by doing.</p>
+</div>
+</section>
+<section id="section-1" class="slide level2 loud-slide">
 <h2></h2>
 <div class="r-fit-text">
 <p>Any questions</p>
@@ -478,11 +561,11 @@ Dr.&nbsp;Nils Roemer
 </div>
 </section>
 <section id="after-the-break-optimal-stopping" class="slide level2">
-<h2>After the break — Optimal Stopping</h2>
+<h2>After the break: Optimal Stopping</h2>
 <ul>
 <li>The “Secretary Problem” and the 37% rule</li>
 <li>When to stop searching and make a decision</li>
-<li>How to translate the idea into code and experiments</li>
+<li>Testing the rule ourselves with a small simulation</li>
 </ul>
 <div class="callout callout-note callout-style-simple">
 <div class="callout-body">
@@ -505,13 +588,12 @@ Let’s have a short break and then continue with our first topic.</p>
 <h2>Interesting literature to start</h2>
 <ul>
 <li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<sup>1</sup></li>
-<li>Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn2"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
 <section id="books-on-programming" class="slide level2">
 <h2>Books on Programming</h2>
 <ul>
-<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Free online</a></li>
 <li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
 </ul>
 <div class="fragment">
@@ -521,7 +603,7 @@ Let’s have a short break and then continue with our first topic.</p>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+<p>Think Python is free online and a great start. Schrödinger programmiert Python is a playful alternative in German.</p>
 </div>
 </div>
 </div>
@@ -537,7 +619,7 @@ Let’s have a short break and then continue with our first topic.</p>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Introduction - Programming | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_00_introduction.html">Home</a></p>
+<p>Introduction | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_00_introduction.html">Home</a></p>
 </div>
 </div></div>
 

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
 
-<title>Tutorial III.III - Package Management – Programming: Everyday Decision-Making Algorithms</title>
+<title>Tutorial III.III: Package Management – Programming: Everyday Decision-Making Algorithms</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,9 +80,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e4a2caf7c18c942dede446ff828dd770.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c79b9904990299345af33477e432e454.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-6c3c78467d80389e653a49bf033474ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-25060728d2783121a9f548b747010ca7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5764a10aaa6016f2d1506c9a1b8aa28d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -123,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_03_03_packages.html">03-03 - Packages</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_03_03_packages.html">03-03: Packages</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,9 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
@@ -187,19 +186,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_01_variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-01 - Variables</span></a>
+ <span class="menu-text">01-01: Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_02_comparisons.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-02 - Comparisons</span></a>
+ <span class="menu-text">01-02: Comparisons</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_01_03_stopping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">01-03 - Decisions</span></a>
+ <span class="menu-text">01-03: Decisions</span></a>
   </div>
 </li>
       </ul>
@@ -207,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">02 Explore/Exploit</span></a>
+ <span class="menu-text">02 Explore &amp; Exploit</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -222,19 +221,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_01_lists.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-01 - Lists</span></a>
+ <span class="menu-text">02-01: Lists</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_02_loops.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-02 - Loops</span></a>
+ <span class="menu-text">02-02: Loops</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_02_03_explore_exploit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02-03 - Exploration</span></a>
+ <span class="menu-text">02-03: Exploration</span></a>
   </div>
 </li>
       </ul>
@@ -257,19 +256,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-01 - Recap</span></a>
+ <span class="menu-text">03-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_02_functions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03-02 - Functions</span></a>
+ <span class="menu-text">03-02: Functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_03_03_packages.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">03-03 - Packages</span></a>
+ <span class="menu-text">03-03: Packages</span></a>
   </div>
 </li>
       </ul>
@@ -292,19 +291,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_01_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">10 - Recap</span></a>
+ <span class="menu-text">04-01: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_02_dicts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">11 - Dictionaries</span></a>
+ <span class="menu-text">04-02: Dictionaries</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_04_03_dataframes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">12 - DataFrames</span></a>
+ <span class="menu-text">04-03: DataFrames</span></a>
   </div>
 </li>
       </ul>
@@ -327,19 +326,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/tut_05_01_llm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">13 - LLM</span></a>
+ <span class="menu-text">05-01: LLM</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_02_recap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">14 - Recap</span></a>
+ <span class="menu-text">05-02: Recap</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tutorials/tut_05_03_free.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">15 - Free Tasks</span></a>
+ <span class="menu-text">05-03: Free Tasks</span></a>
   </div>
 </li>
       </ul>
@@ -361,9 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
- <span class="menu-text">***</span>
-  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../general/faq.html" class="sidebar-item-text sidebar-link">
@@ -407,33 +404,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-1.1---use-the-math-library" id="toc-exercise-1.1---use-the-math-library" class="nav-link" data-scroll-target="#exercise-1.1---use-the-math-library">Exercise 1.1 - Use the math library</a></li>
   <li><a href="#exercise-1.2---use-the-random-library" id="toc-exercise-1.2---use-the-random-library" class="nav-link" data-scroll-target="#exercise-1.2---use-the-random-library">Exercise 1.2 - Use the random library</a></li>
   </ul></li>
-  <li><a href="#section-2---using-a-package-manager-uv" id="toc-section-2---using-a-package-manager-uv" class="nav-link" data-scroll-target="#section-2---using-a-package-manager-uv">Section 2 - Using a package manager (<code>uv</code>)</a>
+  <li><a href="#section-2---lru-or-random" id="toc-section-2---lru-or-random" class="nav-link" data-scroll-target="#section-2---lru-or-random">Section 2 - LRU or Random?</a>
   <ul class="collapse">
-  <li><a href="#exercise-2.1---check-your-uv-installation" id="toc-exercise-2.1---check-your-uv-installation" class="nav-link" data-scroll-target="#exercise-2.1---check-your-uv-installation">Exercise 2.1 - Check your <code>uv</code> installation</a></li>
+  <li><a href="#exercise-2.1---random-eviction" id="toc-exercise-2.1---random-eviction" class="nav-link" data-scroll-target="#exercise-2.1---random-eviction">Exercise 2.1 - Random Eviction</a></li>
+  <li><a href="#exercise-2.2---compare-the-strategies" id="toc-exercise-2.2---compare-the-strategies" class="nav-link" data-scroll-target="#exercise-2.2---compare-the-strategies">Exercise 2.2 - Compare the Strategies</a></li>
   </ul></li>
-  <li><a href="#section-3---installing-packages" id="toc-section-3---installing-packages" class="nav-link" data-scroll-target="#section-3---installing-packages">Section 3 - Installing Packages</a>
+  <li><a href="#section-3---using-a-package-manager-uv" id="toc-section-3---using-a-package-manager-uv" class="nav-link" data-scroll-target="#section-3---using-a-package-manager-uv">Section 3 - Using a package manager (<code>uv</code>)</a>
   <ul class="collapse">
-  <li><a href="#exercise-3.1---add-pandas" id="toc-exercise-3.1---add-pandas" class="nav-link" data-scroll-target="#exercise-3.1---add-pandas">Exercise 3.1 - Add <code>pandas</code></a></li>
+  <li><a href="#exercise-3.1---check-your-uv-installation" id="toc-exercise-3.1---check-your-uv-installation" class="nav-link" data-scroll-target="#exercise-3.1---check-your-uv-installation">Exercise 3.1 - Check your <code>uv</code> installation</a></li>
+  </ul></li>
+  <li><a href="#section-4---installing-packages" id="toc-section-4---installing-packages" class="nav-link" data-scroll-target="#section-4---installing-packages">Section 4 - Installing Packages</a>
+  <ul class="collapse">
+  <li><a href="#exercise-4.1---add-pandas" id="toc-exercise-4.1---add-pandas" class="nav-link" data-scroll-target="#exercise-4.1---add-pandas">Exercise 4.1 - Add <code>pandas</code></a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_03_03_packages.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_03_03_packages.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_03_03_packages.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_03_03_packages.ipynb" download="tut_03_03_packages.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_03_03_packages.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_03_03_packages.ipynb" download="tut_03_03_packages.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_03_03_packages.html">03-03 - Packages</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lectures/lec_03_caching.html">03 Caching</a></li><li class="breadcrumb-item"><a href="../tutorials/tut_03_03_packages.html">03-03: Packages</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Tutorial III.III - Package Management</h1>
+<h1 class="title">Tutorial III.III: Package Management</h1>
 <p class="subtitle lead">Programming: Everyday Decision-Making Algorithms</p>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Lecturer</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Dr.&nbsp;Nils Roemer, External Lecturer </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Planningio GmbH
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
   
     
   </div>
@@ -450,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>A main collection (Python’s standard library)</li>
 <li>Different sections (third-party packages)</li>
-<li>A catalog system (a package manager — we use <code>uv</code>)</li>
+<li>A catalog system (a package manager, in our case <code>uv</code>)</li>
 <li>Multiple branches (virtual environments / project folders)</li>
 </ul>
 <section id="in-more-detail" class="level2">
@@ -501,12 +516,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="section-1---using-standard-libraries" class="level1">
 <h1>Section 1 - Using Standard Libraries</h1>
 <p>Before we start using external packages, let’s take a look at Python’s standard libraries. Python comes with a set of <strong>standard libraries that are always available</strong>. You can use these libraries by simply importing them. For example, the <code>math</code> library provides mathematical functions like <code>sqrt</code> and <code>sin</code> and the <code>random</code> library provides functions to generate random numbers. You can import these libraries using the following syntax:</p>
-<div id="ab13e91a" class="cell" data-execution_count="1">
+<div id="986d8cd1" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can then use the functions provided by these libraries by calling them with the library name as a prefix. For example, the following code calculates the square root of 16.</p>
-<div id="d7bb0123" class="cell" data-execution_count="2">
+<div id="a6e32708" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a_square_root <span class="op">=</span> math.sqrt(<span class="dv">16</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The square root of 16 is </span><span class="sc">{</span>a_square_root<span class="sc">}</span><span class="ss">!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -514,46 +529,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The following code generates a random number between 0 and 1.</p>
-<div id="bf6a9819" class="cell" data-execution_count="3">
+<div id="8a40605b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a_random_number <span class="op">=</span> random.random()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A random number is </span><span class="sc">{</span>a_random_number<span class="sc">}</span><span class="ss">!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A random number is 0.01277621811706886!</code></pre>
+<pre><code>A random number is 0.7267231181063484!</code></pre>
 </div>
 </div>
 <p>We can also use the library to choose a random element from a list. For example, the following code chooses a random element from the list <code>['book1', 'book2', 'book3']</code>. Try it out by executing the cell multiple times.</p>
-<div id="6d356275" class="cell" data-execution_count="4">
+<div id="e9f945c7" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>random_choice <span class="op">=</span> random.choice([<span class="st">'book1'</span>, <span class="st">'book2'</span>, <span class="st">'book3'</span>])</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"We chose </span><span class="sc">{</span>random_choice<span class="sc">}</span><span class="ss">!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>We chose book2!</code></pre>
+<pre><code>We chose book1!</code></pre>
 </div>
 </div>
 <p>Sometimes, we only need one function from a library. In this case, we can use the <code>from</code> keyword to import only the specific function we need. For example, the following code imports only the <code>randint</code> function from the <code>random</code> library and uses it to generate a random integer between 1 and 10.</p>
-<div id="5af4b0d7" class="cell" data-execution_count="5">
+<div id="78e8ae2f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randint</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>a_random_integer <span class="op">=</span> randint(<span class="dv">1</span>, <span class="dv">10</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A random integer between 1 and 10 is </span><span class="sc">{</span>a_random_integer<span class="sc">}</span><span class="ss">!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A random integer between 1 and 10 is 3!</code></pre>
+<pre><code>A random integer between 1 and 10 is 4!</code></pre>
 </div>
 </div>
 <p>Other times, we might need to work with a library that has a rather long name. In this case, we can use the <code>as</code> keyword to give the library a shorter name. For example, the following code imports the <code>random</code> library and gives it the shorter name <code>rd</code>.</p>
-<div id="b5c73d15" class="cell" data-execution_count="6">
+<div id="172d304c" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rd</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>a_random_integer <span class="op">=</span> rd.randint(<span class="dv">1</span>, <span class="dv">100</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Now, a random integer between 1 and 100 is </span><span class="sc">{</span>a_random_integer<span class="sc">}</span><span class="ss">!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Now, a random integer between 1 and 100 is 66!</code></pre>
+<pre><code>Now, a random integer between 1 and 100 is 69!</code></pre>
 </div>
 </div>
 <section id="exercise-1.1---use-the-math-library" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1.1---use-the-math-library">Exercise 1.1 - Use the math library</h2>
 <p>Use the <code>math</code> library to calculate the square root of 256. Call the result <code>square_root</code>.</p>
-<div id="19a2077f" class="cell" data-execution_count="7">
+<div id="555ca3df" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="d819b31f" class="cell" data-execution_count="8">
+<div id="8b0313ec" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> square_root <span class="op">==</span> <span class="dv">16</span></span>
@@ -564,17 +579,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercise-1.2---use-the-random-library" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1.2---use-the-random-library">Exercise 1.2 - Use the random library</h2>
 <p>Use the <code>random</code> library to generate a random number between 1 and 25. Call the result <code>random_number</code>.</p>
-<div id="483aabef" class="cell" data-execution_count="10">
+<div id="dcd5cb0a" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="c68728b8" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> random_number <span class="op">&gt;=</span> <span class="dv">1</span> <span class="kw">and</span> random_number <span class="op">&lt;=</span> <span class="dv">25</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Good! You generated a random integer </span><span class="sc">{</span>random_number<span class="sc">}</span><span class="ss"> between 1 and 25!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> random_number <span class="op">&gt;=</span> <span class="dv">1</span> <span class="kw">and</span> random_number <span class="op">&lt;=</span> <span class="dv">25</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Good! You generated a random integer </span><span class="sc">{</span>random_number<span class="sc">}</span><span class="ss"> between 1 and 25!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
 </section>
-<section id="section-2---using-a-package-manager-uv" class="level1">
-<h1>Section 2 - Using a package manager (<code>uv</code>)</h1>
+<section id="section-2---lru-or-random" class="level1">
+<h1>Section 2 - LRU or Random?</h1>
+<p>Now we can use the <code>random</code> package to answer a question from the lecture: is LRU really better than throwing out a random item? Here is the LRU function from the last tutorial:</p>
+<div id="0b45313b" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lru_access(cache, item, max_size):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="kw">in</span> cache:            <span class="co"># hit: move to the front</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        cache.remove(item)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        cache.insert(<span class="dv">0</span>, item)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(cache) <span class="op">&gt;=</span> max_size:   <span class="co"># miss and full: evict least recently used</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        cache.pop()</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    cache.insert(<span class="dv">0</span>, item)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>To test both strategies, we need many requests. Real usage has <strong>temporal locality</strong>: for a while, we use a few apps again and again. The following code simulates 1000 app requests like this:</p>
+<div id="3bb46f42" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">42</span>)  <span class="co"># makes the random numbers reproducible</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>apps <span class="op">=</span> [<span class="st">"Mail"</span>, <span class="st">"Maps"</span>, <span class="st">"Spotify"</span>, <span class="st">"Camera"</span>, <span class="st">"Notes"</span>, <span class="st">"Banking"</span>, <span class="st">"Weather"</span>, <span class="st">"News"</span>]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>requests <span class="op">=</span> []</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        current_apps <span class="op">=</span> random.sample(apps, <span class="dv">3</span>)  <span class="co"># every 100 requests, we focus on 3 other apps</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> random.random() <span class="op">&lt;</span> <span class="fl">0.8</span>:</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        requests.append(random.choice(current_apps))</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>        requests.append(random.choice(apps))</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(requests[:<span class="dv">10</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Maps', 'Maps', 'Banking', 'Mail', 'Maps', 'Banking', 'Banking', 'Banking', 'Mail', 'Banking']</code></pre>
+</div>
+</div>
+<section id="exercise-2.1---random-eviction" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2.1---random-eviction">Exercise 2.1 - Random Eviction</h2>
+<p>Create a function <code>random_access(cache, item, max_size)</code> that works like <code>lru_access()</code>, but:</p>
+<ul>
+<li>On a hit, it leaves the cache unchanged and returns <code>True</code></li>
+<li>On a miss with a full cache, it removes a <strong>random</strong> item with <code>random.choice()</code> before inserting the new item</li>
+</ul>
+<div id="1160c7ac" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="660f1efc" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">1</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>test_cache <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> random_access(test_cache, <span class="st">"B"</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="va">True</span> <span class="kw">and</span> test_cache <span class="op">==</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>], <span class="st">"A hit should not change the cache"</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> random_access(test_cache, <span class="st">"D"</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="va">False</span> <span class="kw">and</span> <span class="bu">len</span>(test_cache) <span class="op">==</span> <span class="dv">3</span> <span class="kw">and</span> <span class="st">"D"</span> <span class="kw">in</span> test_cache, <span class="st">"A miss should replace one item"</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Good! Your random eviction works."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="exercise-2.2---compare-the-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2.2---compare-the-strategies">Exercise 2.2 - Compare the Strategies</h2>
+<p>Send all <code>requests</code> through a cache with 3 slots, once with <code>lru_access()</code> and once with <code>random_access()</code>. Store the hit rates (hits divided by the number of requests) in <code>lru_rate</code> and <code>random_rate</code>. Which strategy wins?</p>
+<div id="30ada335" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="9a5d9be8" class="cell" data-execution_count="16">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">round</span>(lru_rate, <span class="dv">3</span>) <span class="op">==</span> <span class="fl">0.719</span>, <span class="st">"Check your LRU hit rate"</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="dv">0</span> <span class="op">&lt;</span> random_rate <span class="op">&lt;</span> <span class="dv">1</span>, <span class="st">"The random hit rate should be between 0 and 1"</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"LRU: </span><span class="sc">{</span>lru_rate<span class="sc">:.1%}</span><span class="ss"> hits, random: </span><span class="sc">{</span>random_rate<span class="sc">:.1%}</span><span class="ss"> hits"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Python ships an LRU cache
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The standard library already contains an LRU cache: <code>functools.lru_cache</code>. It remembers the results of a function, so repeated calls with the same input are answered from the cache instead of being computed again.</p>
+</div>
+</div>
+<div id="21615c80" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> lru_cache</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="at">@lru_cache</span>(maxsize<span class="op">=</span><span class="dv">3</span>)  <span class="co"># keep the results of the 3 most recent inputs</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> slow_square(n):</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Computing </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> * </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> ..."</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n <span class="op">*</span> n</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>slow_square(<span class="dv">4</span>)  <span class="co"># computed</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>slow_square(<span class="dv">4</span>)  <span class="co"># answered from the cache, no "Computing" message</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Computing 4 * 4 ...</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>16</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="section-3---using-a-package-manager-uv" class="level1">
+<h1>Section 3 - Using a package manager (<code>uv</code>)</h1>
 <p>Just as a library needs a system to track books (checkout system, catalog, etc.), Python projects need a tool to manage versions and dependencies. We use <code>uv</code> because it:</p>
 <ul>
 <li>Keeps track of what’s available (like searching the catalog)</li>
@@ -582,8 +698,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Manages “returns” (uninstalling packages)</li>
 <li>Ensures you have the right “edition” (version management)</li>
 </ul>
-<section id="exercise-2.1---check-your-uv-installation" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-2.1---check-your-uv-installation">Exercise 2.1 - Check your <code>uv</code> installation</h2>
+<section id="exercise-3.1---check-your-uv-installation" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3.1---check-your-uv-installation">Exercise 3.1 - Check your <code>uv</code> installation</h2>
 <p>Open a terminal (not the Python REPL) and run:</p>
 <pre class="{bash}"><code>uv --version</code></pre>
 <p>You should see a version number.</p>
@@ -591,32 +707,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre class="{bash}"><code>uv run python --version</code></pre>
 </section>
 </section>
-<section id="section-3---installing-packages" class="level1">
-<h1>Section 3 - Installing Packages</h1>
+<section id="section-4---installing-packages" class="level1">
+<h1>Section 4 - Installing Packages</h1>
 <p>Installing packages is like ordering new books for your library branch. With <code>uv</code> you typically:</p>
 <ul>
 <li>Initialize a project once (<code>uv init</code>)</li>
 <li>Add dependencies (<code>uv add packagename</code>)</li>
 <li>Remove them if not needed (<code>uv remove packagename</code>)</li>
 <li>Sync a project copied from elsewhere (<code>uv sync</code>)</li>
-<li>Update dependencies (<code>uv update</code>)</li>
+<li>Update dependencies (<code>uv lock --upgrade</code>, then <code>uv sync</code>)</li>
 </ul>
 <p>Under the hood <code>uv</code> creates (and reuses) a virtual environment for the project. Luckily most of that is handled for you and not that important in this basic introduction to Python.</p>
-<section id="exercise-3.1---add-pandas" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-3.1---add-pandas">Exercise 3.1 - Add <code>pandas</code></h2>
+<section id="exercise-4.1---add-pandas" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4.1---add-pandas">Exercise 4.1 - Add <code>pandas</code></h2>
 <p>Inside a <code>uv</code>-initialized project directory, run:</p>
 <pre class="{bash}"><code>uv add pandas</code></pre>
 <p>This: - Resolves dependencies - Adds <code>pandas</code> to <code>pyproject.toml</code> - Installs it into the project’s virtual environment</p>
 <p>You can test if the installation was successful by running:</p>
-<div id="9e94959d" class="cell" data-execution_count="11">
+<div id="8a4f79c3" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> pandas</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"pandas installed successfully!"</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ImportError</span>:</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"pandas was not installed correctly"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> pandas</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"pandas installed successfully!"</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ImportError</span>:</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"pandas was not installed correctly"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>(If you see an import error, verify you are inside the project folder you initialized with <code>uv init</code>.)</p>
@@ -639,7 +755,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Conclusion</h1>
 <p>Great work! You learned how Python projects organize and access code via:</p>
 <ul>
-<li>The standard library</li>
+<li>The standard library, for example <code>random</code> to test our LRU cache</li>
 <li>Third-party packages</li>
 <li>A modern package &amp; environment manager (<code>uv</code>)</li>
 <li>Isolated project environments for reliability</li>
@@ -650,9 +766,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Solutions</h1>
 <p>You will likely find solutions to most exercises online. However, we strongly encourage you to work on these exercises independently without searching explicitly for the exact answers to the exercises. Understanding someone else’s solution is very different from developing your own. Use the lecture notes and try to solve the exercises on your own. This approach will significantly enhance your learning and problem-solving skills.</p>
 <p>Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don’t hesitate to ask for clarification during class discussions.</p>
-<p>Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today’s lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.</p>
+<p>Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today’s lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.</p>
 <hr>
-<p><em>That’s it for this week! Next week, we’ll take a look at how to read and write files in Python and work with tabular data!</em></p>
+<p><em>That’s it for this week! Next week, we’ll work with dictionaries and tabular data with pandas!</em></p>
 
 
 </section>
@@ -1101,7 +1217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>   
     <div class="nav-footer-center">
 <p>Programming: Everyday Decision-Making Algorithms<br>Nils Roemer and Tobias Vlćek<br>CC BY-NC-SA 4.0</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/edit/main/tutorials/tut_03_03_packages.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/blob/main/tutorials/tut_03_03_packages.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/nilsroemer-de/programming-everyday-decisions/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

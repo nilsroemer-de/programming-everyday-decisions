@@ -1,52 +1,42 @@
 ---
-title: Lecture I - Optimal Stopping
+title: 'Lecture I: Optimal Stopping'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
-author: Dr. Nils Roemer
 format:
   revealjs:
-    footer: ' {{< meta title >}} | {{< meta author >}} | [Home](lec_01_optimal_stopping.qmd)'
+    footer: ' {{< meta title >}} | Dr. Nils Roemer | [Home](lec_01_optimal_stopping.qmd)'
     output-file: lec_01_presentation.html
 ---
 
 
-## Today's Topic: Optimal Stopping
+## Today in one sentence
 
-**Topic:** Understanding optimal stopping problems and the famous "Secretary Problem"
+<span class="statement">When options come one by one and you can't go back, look at the first 37% without committing, then take the first one that beats them all.</span>
 
-**Why this matters:** Optimal stopping is everywhere in life - from hiring decisions to finding apartments to choosing when to sell stocks. Today we'll learn the mathematical strategy that maximizes your chances of making the best choice.
+<span class="eyebrow">Why it matters</span>
 
-## Learning Objectives
+You visit flats in Hamburg. Each viewing, you must decide on the spot, and if you say no, the flat is gone. Choose too early and you miss better ones; wait too long and the best is behind you. Companies face the same problem when hiring, choosing suppliers or accepting offers.
 
-By the end of this lecture, you will be able to:
+## Roadmap
 
-1.  **Define** optimal stopping problems and identify them in real-world scenarios
-2.  **Apply** the 37% rule (look-and-leap strategy) to make better decisions
-3.  **Connect** optimal stopping principles to programming logic and algorithmic thinking
+1.  <span class="roadmap-item future">The problem: choosing the best when options come one at a time</span>
+2.  <span class="roadmap-item future">The rule: look first, then leap</span>
+3.  <span class="roadmap-item future">Real life: when the assumptions change</span>
 
-## Today's Agenda
+# <span class="flow">The problem: choosing the best when options come one at a time</span>
 
-1.  **What is Optimal Stopping?** - Definition and real-world examples
-2.  **The Secretary Problem** - The classic formulation and solution
-3.  **The 37% Rule** - Why it works and how to apply it
-4.  **Variations & Extensions** - Rejection, time constraints, other scenarios
-5.  **Connecting to Programming** - How this builds our algorithmic mindset
+## Options come one by one, and there is no going back
 
-# <span class="flow">Optimal Stopping</span>
+<span class="question">Question:</span> Does anybody know what optimal stopping is?
 
-## What is Optimal Stopping?
-
-<span class="question">Question:</span> Anybody know what optimal stopping is?
-
-- <span class="highlight">Optimal stopping</span> is the problem of:
-  - choosing the **best option**
-  - from a **sequence of options**
-  - where the options are revealed **one by one**
+- <span class="highlight">Optimal stopping</span> is the problem of choosing the **best option**
+- from a **sequence of options**
+- that are revealed **one by one**
 
 ## 
 
-Anybody an
+Does anybody have
 
-example of
+an example of
 
 optimal stopping?
 
@@ -62,197 +52,201 @@ optimal stopping?
 
 <span class="invert-font">Photo by <a href="https://unsplash.com/@shelbymary_">Shelby Deeter</a> on Unsplash</span>
 
-# <span class="flow">"Secretary Problem"</span>
+## The Secretary Problem: hire now or keep looking?
 
-## The Secretary Problem
-
-- Imagine you're **hiring a secretary**
-- You must interview candidates **one by one**
-- Now, you must decide: **hire or continue searching**
+- You are **hiring a secretary** and interview candidates **one by one**
+- After each interview: **hire or continue searching**
 - Once you reject a candidate, **you cannot go back**
-- How to <span class="highlight">maximize chance of selecting the best candidate?</span>
+- How to <span class="highlight">maximize the chance of hiring the best candidate?</span>
 
-. . .
+## The setup in three lines
 
-> **Note**
->
-> The name is a bit misleading, as the problem is not about hiring a secretary, but about finding the best candidate. It comes from the 1960s and thus a little outdated.
+- We have `n` candidates and interview them **one by one**
+- After each one: **hire or continue searching**
+- We can only **rank** candidates relative to those we have already seen (<span class="highlight">ordinal ranking</span>)
 
-## Basic Setup
+<span class="question">Question:</span> Where in your life can you say "this one is better than that one", but not "this one is worth 7 out of 10"?
 
-- We have `n` candidates
-- We interview them **one by one**
-- We must decide to **hire or continue searching**
-- <span class="highlight">Ordinal ranking</span> of candidates
+## Two ways to fail
 
-. . .
+<span class="question">Question:</span> Any idea how we could fail?
 
-<span class="question">Question:</span> Anybody know what ordinal ranking is?
-
-## Ways to fail
-
-<span class="question">Question:</span> Anybody an idea how we can fail?
-
-. . .
-
-1.  Reject all candidates and never hire - <span class="highlight">stopping too late</span>
-2.  You hire someone too early - <span class="highlight">stopping too early</span>
+1.  Reject everyone and never hire: <span class="highlight">stopping too late</span>
+2.  Hire someone too early: <span class="highlight">stopping too early</span>
 
 ## 
 
-Ideas?
+How would you
 
-## Look-and-Leap Strategy
+decide when to stop?
 
-The optimal strategy is to:
+# <span class="flow">The rule: look first, then leap</span>
 
-1.  Look at the <span class="highlight">first 37 %</span> of options
-2.  Remember the **best one seen so far**
-3.  Choose the next option that's **better than the best seen**
-4.  Chance of selecting the best candidate is **37 %**[^1]
-5.  Thus, we can fail with **63 %**!
+## Roadmap
 
-## Look-and-Leap Strategy
+1.  <span class="roadmap-item done">The problem: choosing the best when options come one at a time</span>
+2.  <span class="roadmap-item current">The rule: look first, then leap</span>
+3.  <span class="roadmap-item future">Real life: when the assumptions change</span>
 
-The mathematically optimal strategy:
+## Look at the first 37%, then leap
 
 1.  **Look** at the <span class="highlight">first 37%</span> of candidates without hiring anyone
-2.  **Remember** the best candidate from this observation phase
-3.  **Leap:** Hire the next candidate who is **better than the best observed**
-4.  **Success rate:** 37% chance of selecting the absolute best candidate
+2.  **Remember** the best candidate so far
+3.  **Leap:** hire the next candidate who is **better than that one**
+4.  This finds the very best candidate in **37%** of all cases
 
-. . .
+## Picking at random gets worse with every candidate
 
-This means we fail 63% of the time - but this is the **best we can possibly do**!
+Chance of the best candidate if we **pick one at random**:
 
-## Step-by-step Approximation
-
-Why does the success probability decrease with more candidates?
-
-- 1 candidate: 100% (no choice!)
-- 2 candidates: 50%
-- 3 candidates: 33%
-- 4 candidates: 25%
-- 5 candidates: 20%
-
-. . .
+- 1 candidate: 100%, 2 candidates: 50%, 3 candidates: 33%
+- 4 candidates: 25%, 5 candidates: 20%
 
 <span class="question">Question:</span> Do you see the pattern?
 
-. . .
-
-**Pattern:** 1/n - as we have more options, each individual option is less likely to be the best.
+**Pattern:** 1/n. Look-and-leap **never drops below 37%**, however many candidates there are.
 
 ## Why 37%?
 
-- This is based on the **geometric distribution**
-- The <span class="highlight">optimal stopping point</span> is at `n/e`[^2]
-- `e` is the base of the natural logarithm (≈ 2.718)
-- This comes from maximizing the probability of success
+- Look at the first share $x$ of candidates, then leap
+- Chance of getting the best: about $-x \ln x$[^1]
+- In words: look longer and your benchmark improves, but the best may already be gone
+- Largest at $x = 1/e \approx 37\%$[^2]
 
-. . .
+## Let the computer try it out
 
-## Computing the number
+1.  Shuffle 100 candidates into a random order
+2.  Look at the first 37 and remember the best one
+3.  Hire the first candidate who beats that benchmark
+4.  Check: did we get the very best?
+5.  Repeat 10,000 times and count how often we won
+
+## The same idea in code
 
 ``` python
-import math
+import random
+random.seed(42)
 
-percentage = 1/math.e
-print(f"Percentage of options to look at: {percentage:.3f}%")
+def one_round(n=100, look=37):
+    candidates = list(range(n))          # n - 1 is the best
+    random.shuffle(candidates)
+    benchmark = max(candidates[:look])   # best of the look phase
+    for c in candidates[look:]:
+        if c > benchmark:                # first one who beats it
+            return c == n - 1            # did we hire the best?
+    return False                         # nobody beat the benchmark
 
-candidates = 20
-lookout_phase = candidates/math.e
-print(f"Look at first {lookout_phase:.3f} candidates")
+wins = sum(one_round() for _ in range(10_000))
+print(f"Best candidate found in {wins / 10_000:.1%} of rounds")
 ```
 
-    Percentage of options to look at: 0.368%
-    Look at first 7.358 candidates
-
-. . .
+    Best candidate found in 37.5% of rounds
 
 > **Note**
 >
-> No worries if you don't understand the code! We are essentialy just using the formula to calculate the percentage of candidates to look at.
+> No worries if you don't understand every line yet. By the end of the course, you will.
 
-## Geometric Distribution
+## Simulation: looking at 37 of 100 candidates works best
 
-Let's visualize the success of a simulation with 20 candidates:
+100 candidates, 2,000 simulated runs per stopping point:
 
-<img src="lec_01_optimal_stopping_files/figure-markdown_strict/cell-3-output-1.png" width="1118" height="541" />
+<img src="lec_01_optimal_stopping_files/figure-markdown_strict/cell-3-output-1.png" width="1320" height="601" />
 
-# <span class="flow">Variations</span>
+# <span class="flow">Real life: when the assumptions change</span>
 
-## Rejection
+## Roadmap
 
-<span class="question">Question:</span> Imagine a dating scenario, <span class="highlight">where the other person can also reject you</span>. **Optimal stopping point?**
+1.  <span class="roadmap-item done">The problem: choosing the best when options come one at a time</span>
+2.  <span class="roadmap-item done">The rule: look first, then leap</span>
+3.  <span class="roadmap-item current">Real life: when the assumptions change</span>
 
-- The optimal stopping point is now **lower**
-- Because we can now **fail more often**
-- With 50 % chance of rejection, we **start leaping at 25 %**
-- **Formula:** $q^{\frac{1}{1-q}}$ with $q$ being the chance of rejection
+## Real life changes the assumptions
 
-## Mutual Rejection
+So far, we made some strong simplifications. Real life is messier.
 
-<span class="question">Question:</span> What if in dating, <span class="highlight">the other person can also reject you</span>?
+<span class="question">Question:</span> What could be different in real life?
 
-- The optimal stopping point **decreases**
-- We need to account for rejection risk
-- With 50% rejection probability: **start accepting at 25%**
-- **Formula:** $q^{\frac{1}{1-q}}$ where $q$ = rejection probability
+- The other person can **say no**
+- You can **go back** to someone you passed
+- You **know how good** an option is, not just how it compares
+- You have **a fixed time**, not a fixed number of options
+- One failure can mean **losing everything**
+- Looking **costs time and effort**
 
-. . .
+## If you can be rejected, leap earlier
 
-**Life lesson:** Higher risk of rejection means we should be less picky!
+<span class="question">Question:</span> In dating, <span class="highlight">the other person can also say no</span>. **When to leap?**
 
-## Time Constraints
+- 50% chance of rejection: **leap at 25%**
+- **Formula:** $q^{\frac{1}{1-q}}$, $q$ = chance that your offer is **accepted**[^3]
+- In words: the more often you hear "no", the earlier you leap
 
-What if we don't have a fixed number of candidates, but a <span class="highlight">fixed amount of time</span>?
+## If you can go back, wait longer
 
-. . .
+<span class="question">Question:</span> What if you could **return to someone you passed on**, but they might say no?
 
-**Example:** One year to find an apartment
+- Going back works only half the time: **look at 61%**[^4], then leap
+- If nobody better comes, **return to the best** you passed
+- In words: a second chance makes it safe to look longer
 
-. . .
+## If you know the scale, use a threshold
+
+<span class="question">Question:</span> What if you **know how good** each option is, not just how it compares?
+
+- Example: you know test scores, or the price per square meter of a flat
+- **No look phase needed:** take the first option above a threshold
+- The threshold **drops** as fewer options remain
+- Chance of getting the very best rises to **58%**[^5]
+
+## Fixed time instead of a fixed number of options
+
+**Example:** one year to find a flat, viewings come as they come
 
 <span class="question">Question:</span> How should we adapt our strategy?
 
-. . .
+- **Same principle:** look for the first 37% of the time[^6], then leap
+- The number of options is not fixed: **the harder we search, the more options we see**
 
-- **Same principle applies!** Observe for first 37% of available time
-- But now we also control the **search intensity**
-- This connects to **resource allocation** problems in computer science
+## The burglar: knowing when to quit
 
-## Other versions
+**Example:** each break-in succeeds with chance $q$, one failure means losing everything
 
-- Selling a house for the **best price** ("Threshold Rule")
-- Stealing with a **success probability** ("Burglar's Problem")
-- **Finding** a parking spot ("Parking Lot Problem")
+<span class="question">Question:</span> When should the burglar retire?
 
-. . .
+- Stop after about $\frac{q}{1-q}$ successes
+- With $q = 90\%$: retire after **9** break-ins[^7]
+- Same logic for any streak that can end badly: a winning run in the casino, a project that keeps growing in risk
 
-> **Note**
->
-> Side note for drivers: An increase in occupancy from 90 to 95% doubles the search time for all drivers!
+## In practice, people stop too early
 
-## Building Your Technical Mindset
+- In about a dozen experiments, people **leap earlier** than the 37% rule suggests[^8]
+- <span class="question">Question:</span> Why might that be?
+- Searching costs **time and effort**, and the rule ignores that
+- If looking is expensive, leaping earlier can be **the right choice**
 
-<span class="question">Question:</span> **How does optimal stopping connect to programming?**
+## What we covered
 
-. . .
+<span class="eyebrow">The problem: choosing the best when options come one at a time</span>
 
-1.  **Algorithmic thinking:** Break complex decisions into logical steps
-2.  **Trade-off analysis:** Exploration vs. exploitation (fundamental in AI)
-3.  **Mathematical optimization:** Using formulas to find best solutions
+Many decisions share one structure: options arrive one at a time, and there is no going back.
 
-## Key Takeaways
+<span class="eyebrow">The rule: look first, then leap</span>
 
-**What we learned:**
+Looking at the first 37% and then taking the first better option gives the best possible chance of picking the very best: 37%.
 
-1.  **Optimal stopping problems** are everywhere in life and business
-2.  **The 37% rule** provides a mathematically optimal strategy
-3.  **Exploration vs. exploitation** is a fundamental trade-off
-4.  **Real-world variations** require adapting the basic strategy
-5.  **This thinking** builds foundation for algorithmic problem-solving
+<span class="eyebrow">Real life: when the assumptions change</span>
+
+The rule adapts to real life: leap earlier if you can be rejected or looking is costly, wait longer if you can go back.
+
+## Why it matters
+
+You visit flats in Hamburg. Each viewing, you must decide on the spot, and if you say no, the flat is gone. Choose too early and you miss better ones; wait too long and the best is behind you. Companies face the same problem when hiring, choosing suppliers or accepting offers.
+
+## 
+
+Look first.
+
+Then leap.
 
 ## 
 
@@ -260,43 +254,49 @@ Any questions
 
 so far?
 
-## After the break --- Optimal Stopping
+## After the break: First Steps in Python
 
-- Gentle introduction to Python Programming
-- We work in our notebooks on basics and optimal stopping
-- How to translate the idea into code and experiments
-
-. . .
-
-> **Note**
->
-> **That's it for optimal stopping!**  
-> Let's have a short break and then continue with our first Python programming session.
+- A gentle introduction to Python in our notebooks
+- We turn today's idea into **code and experiments**
+- This is how **algorithmic thinking** starts: break a decision into logical steps
 
 # <span class="flow">Literature</span>
 
 ## Interesting literature to start
 
-- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^3]
-- Ferguson, T.S. (1989) 'Who solved the secretary problem?', Statistical Science, 4(3). doi:10.1214/ss/1177012493.
+- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^9]
+
+## Optimal Stopping in Depth
+
+- Ferguson, T.S. (1989). Who solved the secretary problem? Statistical Science, 4(3). doi:10.1214/ss/1177012493.
 
 ## Books on Programming
 
-- Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O'Reilly. [Here](https://greenteapress.com/wp/think-python-3rd-edition/)
+- Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O'Reilly. [Free online](https://greenteapress.com/wp/think-python-3rd-edition/)
 - Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.
-
-. . .
 
 > **Note**
 >
-> Think Python is a great book to start with. It's available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.
+> Think Python is free online and a great start. Schrödinger programmiert Python is a playful alternative in German.
 
 ## More Literature
 
 For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.
 
-[^1]: Large number of candidates! With a small number of candidates, we can do even better.
+[^1]: Where does this come from? You win if the best candidate comes after your look phase and nobody before them beats your benchmark. That happens exactly when the best of all earlier candidates was in your look phase. Adding up these chances for every position, with many candidates, gives about $-x \ln x$, where $x$ is the share of candidates you only look at.
 
-[^2]: This is a bit more advanced. We will not go into the details of the math here and focus more on the insights. For more details see Ferguson, T.S. (1989) 'Who solved the secretary problem?', Statistical Science, 4(3). doi:10.1214/ss/1177012493.
+[^2]: To find the best look phase, we only need to know where $-x \ln x$ reaches its maximum. Setting its derivative $-\ln x - 1$ to zero gives $x = 1/e \approx 37\%$, where $e \approx 2.718$ is the base of the natural logarithm. For the full story, see Ferguson, T.S. (1989) 'Who solved the secretary problem?', Statistical Science, 4(3).
 
-[^3]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
+[^3]: How it works: after the look phase, you ask everyone who beats all earlier candidates, and each says yes with chance $q$. You get the best only if the best says yes and everyone you asked before said no. More rejections mean you use up more candidates after the look phase, so you have to start earlier. The stated formula is the best look phase, for example 25% when $q = 50\%$. As in the basic problem, your chance of getting the best equals the look phase. With $q$ close to 1, it gives back 37%.
+
+[^4]: Christian, B. & Griffiths, T. (2016). Algorithms to Live By. Henry Holt, Chapter 1.
+
+[^5]: Gilbert, J.P. & Mosteller, F. (1966). Recognizing the maximum of a sequence. Journal of the American Statistical Association, 61(313), 35--73.
+
+[^6]: Christian, B. & Griffiths, T. (2016). Algorithms to Live By. Henry Holt, Chapter 1.
+
+[^7]: Ferguson, T.S. Optimal Stopping and Applications. Lecture notes, University of California, Los Angeles, https://www.math.ucla.edu/~tom/Stopping/. The rule assumes the same haul every time: stop once your total haul is worth more than what you would expect to gain from one more attempt.
+
+[^8]: Christian, B. & Griffiths, T. (2016). Algorithms to Live By. Henry Holt, Chapter 1.
+
+[^9]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.

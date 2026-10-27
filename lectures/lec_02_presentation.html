@@ -9,8 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Dr.&nbsp;Nils Roemer">
-  <title>Programming: Everyday Decision-Making Algorithms – Lecture II - Explore Vs. Exploit</title>
+  <meta name="author" content="Dr.&nbsp;Nils Roemer, External Lecturer">
+  <title>Programming: Everyday Decision-Making Algorithms – Lecture II: Explore &amp; Exploit</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-b2296277df239b774fa479879ac923b5.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bb978de86abbef3b36a933764425996b.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -130,41 +130,68 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lecture II - Explore Vs. Exploit</h1>
+  <h1 class="title">Lecture II: Explore &amp; Exploit</h1>
   <p class="subtitle">Programming: Everyday Decision-Making Algorithms</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Dr.&nbsp;Nils Roemer 
+Dr.&nbsp;Nils Roemer, External Lecturer 
 </div>
         <p class="quarto-title-affiliation">
-            Kühne Logistics University Hamburg
+            Planningio GmbH
           </p>
     </div>
 </div>
 
 </section>
-<section>
-<section id="explore-vs.-exploit" class="title-slide slide level1 title center">
-<h1><span class="flow">Explore Vs. Exploit</span></h1>
-
+<section id="today-in-one-sentence" class="slide level2 lecture-opening">
+<h2>Today in one sentence</h2>
+<div class="lecture-summary">
+<p><span class="statement">Whether to try something new or stick with what you know depends mostly on how much time you have left.</span></p>
+</div>
+<div class="lecture-why">
+<p><span class="eyebrow">Why it matters</span></p>
+<p>You have 45 minutes for lunch: the new restaurant or your reliable favorite? Companies face the same choice every day: a new supplier or the proven one, a new marketing channel or the one that works, a new film or another sequel.</p>
+</div>
 </section>
+<section id="roadmap" class="slide level2 lecture-opening">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item future">The dilemma: try something new or stick with what works</span></li>
+<li><span class="roadmap-item future">Time decides: why the end of the interval changes everything</span></li>
+<li><span class="roadmap-item future">Smart strategies: from rules of thumb to the Gittins index</span></li>
+</ol>
+</div>
+</section>
+<section>
+
 <section id="section" class="slide level2" data-background-image="../images/bg/lec02-title.jpg" data-background-opacity="0.95">
 <h2></h2>
 <p><span class="invert-font">You have 45 minutes for lunch. Do you try the new restaurant or go to your reliable favorite?</span></p>
 <div class="fragment">
 <p><span class="invert-font">🗳️ Quick Poll: Raise your hand, who would try the new restaurant?</span></p>
-</div>
-<div class="fragment">
-<p><span class="invert-font">This decision happens hundreds of times daily — and there’s optimal math behind it!</span></p>
+<aside class="notes">
+<p>This decision happens hundreds of times daily, and there’s optimal math behind it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="footer">
 <p><span class="invert-font">Photo by <a href="https://unsplash.com/de/@jillamatt">Jillian Amatt</a> on Unsplash</span></p>
 </div>
 </div>
 </section>
-<section id="core-concepts" class="slide level2 smaller">
-<h2>Core Concepts</h2>
+<section id="explore-gathers-information-exploit-uses-it" class="slide level2 smaller">
+<h2>Explore gathers information, exploit uses it</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="explore">🔍 Explore</h3>
@@ -186,23 +213,34 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div></div>
 <div class="fragment fade-in">
-<div class="callout callout-important callout-titled callout-style-simple">
+<div class="callout callout-important callout-style-simple">
 <div class="callout-body">
-<div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>⚖️ The Fundamental Trade-off</strong></p>
-</div>
 <div class="callout-content">
-<p>These are <strong>mutually exclusive</strong> choices in any given moment. You can’t have your cake and eat it (too).</p>
+<p>In any given moment you can only do <strong>one of the two</strong>.</p>
 </div>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>The fundamental trade-off: explore and exploit are mutually exclusive choices in any given moment. You can’t have your cake and eat it too. Exploring means gathering new information with unknown outcomes, for example trying that new sushi place. Exploiting means using known information, with the risk of missing better options, for example your go-to pizza joint.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="question-do-you-have-any-examples-of-explore-vs-exploit-in-your-life" class="slide level2">
-<h2><span class="question">Question:</span> Do you have any examples of explore vs exploit in your life?</h2>
+<section id="examples-from-your-life" class="slide level2">
+<h2>Examples from Your Life</h2>
+<p><span class="question">Question:</span> <strong>Where do you face explore vs.&nbsp;exploit decisions?</strong></p>
 </section>
 <section id="medical-clinical-trials" class="slide level2">
 <h2>🏥 Medical: Clinical Trials</h2>
@@ -268,51 +306,45 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div></div>
 <div class="fragment fade-in">
-<div class="callout callout-tip callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p><span class="question">Question:</span> <strong>What is the optimal balance?</strong></p>
 </div>
-<p><strong>The Million Dollar Question</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>What is the optimal balance?</strong> Science has been asking this for <strong>over 50 years!</strong></p>
-</div>
-</div>
-</div>
-</div>
+<aside class="notes">
+<p>The million dollar question: what is the optimal balance between exploring and exploiting? Science has been asking this for over 50 years.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="the-problem-with-exploitation" class="slide level2">
-<h2>The problem with exploitation</h2>
+<section id="only-exploiting-you-miss-better-options" class="slide level2">
+<h2>Only exploiting: you miss better options</h2>
 <h3 id="question-any-ideas-what-it-might-be"><span class="question">Question:</span> Any ideas what it might be?</h3>
 <ul>
-<li class="fragment">Exploitation is <span class="highlight">not always the best strategy.</span></li>
-<li class="fragment">Especially when you have <strong>very limited information.</strong></li>
-<li class="fragment">When you <strong>stop exploring</strong>, you might <strong>miss better options</strong>.</li>
-<li class="fragment">Imagine you are not able to gather new information and could <strong>only choose known alternatives.</strong></li>
+<li class="fragment">Exploitation is <span class="highlight">not always the best strategy</span></li>
+<li class="fragment">Especially with <strong>very limited information</strong></li>
+<li class="fragment">If you <strong>stop exploring</strong>, you <strong>miss better options</strong></li>
 </ul>
 </section>
-<section id="the-problem-with-exploration" class="slide level2">
-<h2>The problem with exploration</h2>
+<section id="only-exploring-you-never-enjoy-the-results" class="slide level2">
+<h2>Only exploring: you never enjoy the results</h2>
 <h3 id="question-any-ideas-what-it-might-be-1"><span class="question">Question:</span> Any ideas what it might be?</h3>
 <ul>
-<li class="fragment">Exploration is <span class="highlight">not always the best strategy.</span></li>
-<li class="fragment">Especially when you are <strong>limited in using new information.</strong></li>
-<li class="fragment">When you <strong>constantly explore</strong>, you might <strong>never enjoy the fruits of your exploration.</strong></li>
-<li class="fragment">Imagine you could only <strong>eat each meal only once, hear each song only once, talk to each person only once…</strong></li>
+<li class="fragment">Exploration is <span class="highlight">not always the best strategy</span></li>
+<li class="fragment">If you <strong>constantly explore</strong>, you <strong>never enjoy the results</strong></li>
+<li class="fragment">Imagine eating each meal, hearing each song, meeting each person <strong>only once</strong></li>
 </ul>
-</section></section>
-<section>
-<section id="multi-armed-bandit-problem" class="title-slide slide level1 title center">
-<h1><span class="flow">Multi-Armed Bandit Problem</span></h1>
-
 </section>
-<section id="decision-support" class="slide level2">
-<h2>Decision Support</h2>
+<section id="computer-scientists-call-it-the-multi-armed-bandit" class="slide level2">
+<h2>Computer scientists call it the multi-armed bandit</h2>
 <ul>
-<li class="fragment">To provide support, computer scientists formulated the explore-exploit trade-off.</li>
-<li class="fragment">It is known as the <span class="highlight">multi-armed bandit problem</span>.</li>
+<li class="fragment">Computer scientists formalized the explore-exploit trade-off</li>
+<li class="fragment">It is known as the <span class="highlight">multi-armed bandit problem</span></li>
 <li class="fragment"><span class="question">Question:</span> What is a one-armed bandit?</li>
 </ul>
 </section>
@@ -322,8 +354,8 @@ Dr.&nbsp;Nils Roemer
 <p><span class="invert-font">Photo by <a href="https://unsplash.com/de/@evoknow">Kabir M</a> on Unsplash</span></p>
 </div>
 </section>
-<section id="multi-armed-bandit-problem-1" class="slide level2">
-<h2>Multi-Armed Bandit Problem</h2>
+<section id="three-slot-machines-20-pulls-which-do-you-play" class="slide level2">
+<h2>Three slot machines, 20 pulls: which do you play?</h2>
 <p><strong>Imagine:</strong> You walk into a casino with <strong>3 slot machines</strong></p>
 <ul>
 <li>Each machine has a <strong>different</strong> (unknown) win rate</li>
@@ -331,30 +363,37 @@ Dr.&nbsp;Nils Roemer
 <li><strong>Goal:</strong> Maximize your winnings</li>
 </ul>
 <div class="fragment fade-in">
-<p><strong>How is this related to explore vs.&nbsp;exploit?</strong></p>
-</div>
-<div class="fragment fade-in">
 <ul>
-<li><strong>Explore:</strong> Try different machines</li>
-<li><strong>Exploit:</strong> Play the best-performing machine</li>
+<li><strong>Explore:</strong> try different machines. <strong>Exploit:</strong> play the best one so far</li>
 </ul>
 </div>
+<aside class="notes">
+<p>How is this related to explore vs.&nbsp;exploit? Exploring means trying different machines to learn their win rates; exploiting means playing the machine that has performed best so far.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="multi-armed-bandit-problem-ii" class="slide level2">
-<h2>Multi-Armed Bandit Problem II</h2>
+<section id="every-pull-costs-money-and-gives-information" class="slide level2">
+<h2>Every pull costs money and gives information</h2>
 <ul>
-<li class="fragment">By playing a slot machine, the gambler can gather information about the probability of winning.</li>
-<li class="fragment">But each pull of a lever comes with a certain cost.</li>
-<li class="fragment">It’s the aim of the gambler to maximize his winnings.</li>
+<li class="fragment">Each pull tells us more about a machine’s chance of winning</li>
+<li class="fragment">But each pull also <strong>costs</strong> money</li>
+<li class="fragment">Goal: maximize the total winnings</li>
 </ul>
-<div class="fragment fade-in">
-<h3 id="the-core-question">The Core Question</h3>
-<p><strong>How do you decide which machine to play next?</strong></p>
+<div class="fragment">
+<p><span class="question">Question:</span> <strong>How do you decide which machine to play next?</strong></p>
 </div>
 </section>
 <section id="interactive-casino-challenge" class="slide level2">
 <h2>Interactive Casino Challenge</h2>
-<h3 id="your-current-situation">Your Current Situation</h3>
 <p><strong>You’ve been playing for a while. Here’s what you know:</strong></p>
 <table class="caption-top">
 <thead>
@@ -397,57 +436,14 @@ Dr.&nbsp;Nils Roemer
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Class Vote: Raise your hand for your choice!</strong></p>
+<p><strong>Class Vote: A (known performer), B (limited data) or C (complete unknown)?</strong></p>
 </div>
 <div class="callout-content">
-<ul>
-<li><strong>Machine A</strong> (known performer)</li>
-<li><strong>Machine B</strong> (limited data)</li>
-<li><strong>Machine C</strong> (complete unknown)</li>
-</ul>
+
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="casino-challenge-follow-up" class="slide level2">
-<h2>Casino Challenge Follow-up</h2>
-<h3 id="your-current-situation-1">Your Current Situation</h3>
-<p><strong>You’ve been playing for a while. Here’s what you know:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Machine</th>
-<th>Pulls</th>
-<th>Wins</th>
-<th>Win Rate</th>
-<th>Your Choice?</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>A</strong> 🎰</td>
-<td>15</td>
-<td>9</td>
-<td>60%</td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>B</strong> 🎰</td>
-<td>2</td>
-<td>1</td>
-<td>50%</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>C</strong> 🎰</td>
-<td>0</td>
-<td>0</td>
-<td>???</td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <div class="fragment fade-in">
 <div class="callout callout-note callout-titled callout-style-simple">
 <div class="callout-body">
@@ -455,43 +451,68 @@ Dr.&nbsp;Nils Roemer
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Follow-up Questions</strong></p>
+<p><strong>Follow-up: What if you only had <strong>2 pulls</strong> left? Or <strong>100</strong>?</strong></p>
 </div>
 <div class="callout-content">
-<ul>
-<li>What if you only had <strong>2 pulls left</strong>?</li>
-<li>What if you had <strong>100 pulls left</strong>?</li>
-<li>How does this change your strategy?</li>
-</ul>
+
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="expected-value-for-a-decision" class="slide level2">
-<h2>Expected value for a decision</h2>
+<section id="machine-a-has-the-higher-average-but-few-pulls" class="slide level2">
+<h2>Machine A has the higher average, but few pulls</h2>
 <ul>
-<li class="fragment">The expected value of a slot machine is the average number of wins per pull.</li>
-<li class="fragment">Expected value of machine A = E(A) = 9/15 = 0.6</li>
-<li class="fragment">Expected value of machine B = E(B) = 1/2 = 0.5</li>
-<li class="fragment">Machine A has the higher expected value.</li>
-<li class="fragment">But 2 and even 15 pulls are not a large number (considering standard deviation).</li>
+<li class="fragment">Expected value = average wins per pull</li>
+<li class="fragment">E(A) = 9/15 = 0.6 and E(B) = 1/2 = 0.5</li>
+<li class="fragment">But 2 and even 15 pulls are <strong>few observations</strong></li>
+</ul>
+<aside class="notes">
+<p>The expected value is the average number of wins per pull. Machine A has the higher expected value, but with so few pulls the estimates are uncertain: machine B could easily be the better machine.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-best-choice-now-is-not-always-the-best-choice-overall" class="slide level2">
+<h2>The best choice now is not always the best choice overall</h2>
+<ul>
+<li class="fragment">The bandit problem stands for many real-world decisions</li>
+<li class="fragment">The best choice <strong>now</strong> can differ from the best choice <strong>in the long run</strong></li>
+<li class="fragment">Which lever to pull next depends on one more thing:</li>
 </ul>
 </section>
-<section id="multi-armed-bandit-iii" class="slide level2">
-<h2>Multi-Armed Bandit III</h2>
-<ul>
-<li class="fragment">The multi-armed bandit problem represents a lot of different real-world decisions.</li>
-<li class="fragment">It shows us, that there might be a difference between the optimal long-term average performance and the optimal immediate performance.</li>
-<li class="fragment">Which lever to pull next depends completely on something we haven’t discussed yet:</li>
-</ul>
+<section id="the-dilemma-try-something-new-or-stick-with-what-works-1" class="slide level2 section-covered">
+<h2>The dilemma: try something new or stick with what works</h2>
+<div class="section-covered">
+<p><span class="eyebrow">What we covered</span></p>
+<p><span class="statement">Every choice between the new and the known trades information against reward.</span></p>
+</div>
+</section></section>
+<section>
+
+<section id="roadmap-1" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">The dilemma: try something new or stick with what works</span></li>
+<li><span class="roadmap-item current">Time decides: why the end of the interval changes everything</span></li>
+<li><span class="roadmap-item future">Smart strategies: from rules of thumb to the Gittins index</span></li>
+</ol>
+</div>
 </section>
-<section id="multi-armed-bandit-iv" class="slide level2">
-<h2>Multi-Armed Bandit IV</h2>
+<section id="how-long-will-you-stay-in-the-casino" class="slide level2">
+<h2>How long will you stay in the casino?</h2>
 <ul>
-<li class="fragment">How long you plan to be in the casino?</li>
-<li class="fragment"><span class="question">Question:</span> Why is this important?</li>
-<li class="fragment"><span class="question">Question:</span> How does this influence our decision on taking machine A or machine B?</li>
+<li class="fragment"><span class="question">Question:</span> Why does this matter?</li>
+<li class="fragment"><span class="question">Question:</span> How does it change our choice between machine A and B?</li>
 </ul>
 <div class="fragment">
 <blockquote>
@@ -499,18 +520,29 @@ Dr.&nbsp;Nils Roemer
 </blockquote>
 </div>
 </section>
-<section id="the-influence-of-the-interval" class="slide level2">
-<h2>The influence of the interval</h2>
+<section id="long-interval-explore.-short-interval-exploit." class="slide level2">
+<h2>Long interval: explore. Short interval: exploit.</h2>
 <ul>
-<li class="fragment">Let’s call the time you plan to be in the casino “the interval”.</li>
-<li class="fragment">The longer the interval, the more (in general) you should explore, since you will have more opportunities to exploit the gathered information.</li>
-<li class="fragment">The shorter the interval, the more you should exploit your current knowledge.</li>
-<li class="fragment">The optimal strategy depends on the length of the interval.</li>
+<li class="fragment">The time you plan to stay in the casino is <strong>the interval</strong></li>
+<li class="fragment"><strong>Long interval:</strong> explore more, you have time to use what you learn</li>
+<li class="fragment"><strong>Short interval:</strong> exploit what you already know</li>
 </ul>
+<aside class="notes">
+<p>The optimal strategy depends on the length of the interval. This is the single most important idea of today: the same decision can be right at the start of an interval and wrong at its end.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="interval-and-exploration" class="slide level2">
-<h2>Interval and Exploration</h2>
-<p>Explore when you have the time to use the resulting knowledge.</p>
+<section id="explore-while-you-still-have-time-to-use-what-you-learn" class="slide level2">
+<h2>Explore while you still have time to use what you learn</h2>
 <blockquote>
 <p>“I moved to Pune, India, and I just […] eat everywhere that didn’t look like it was gonna kill me” (Chris Stucchio)</p>
 </blockquote>
@@ -521,9 +553,8 @@ Dr.&nbsp;Nils Roemer
 <p><span class="invert-font">Photo by <a href="https://unsplash.com/de/@invent">Colin Maynard</a> on Unsplash</span></p>
 </div>
 </section>
-<section id="interval-and-exploitation" class="slide level2">
-<h2>Interval and Exploitation</h2>
-<p>Exploit when you are ready to cash in.</p>
+<section id="exploit-when-you-are-ready-to-cash-in" class="slide level2">
+<h2>Exploit when you are ready to cash in</h2>
 <blockquote>
 <p>“And as I was leaving the city I went back to all my old favorites, rather than trying out new stuff […]. Even if I find a slightly better place, I’m only going to go there once or twice, so why take the risk?” (Chris Stucchio)</p>
 </blockquote>
@@ -534,8 +565,8 @@ Dr.&nbsp;Nils Roemer
 <p><span class="invert-font">Photo by <a href="https://unsplash.com/de/@cristina_gottardi">Cristina Gottardi</a> on Unsplash</span></p>
 </div>
 </section>
-<section id="hollywoods-strategy" class="slide level2">
-<h2>Hollywood’s Strategy</h2>
+<section id="hollywood-exploits-9-of-the-top-10-films-are-sequels" class="slide level2">
+<h2>Hollywood exploits: 9 of the top 10 films are sequels</h2>
 <div class="fragment fade-in">
 <div class="callout callout-note callout-titled callout-style-simple">
 <div class="callout-body">
@@ -543,7 +574,7 @@ Dr.&nbsp;Nils Roemer
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Sequels in Top 10 Highest-Grossing Movies</strong></p>
+<p><strong>Sequels among the 10 highest-grossing films</strong></p>
 </div>
 <div class="callout-content">
 <table class="caption-top">
@@ -570,6 +601,10 @@ Dr.&nbsp;Nils Roemer
 <td>2011</td>
 <td>8</td>
 </tr>
+<tr class="odd">
+<td>2024</td>
+<td>9<sup>1</sup></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -577,26 +612,22 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 <div class="fragment fade-in">
-<div class="callout callout-tip callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p><span class="question">Question:</span> <strong>What explains this trend, and what does it say about Hollywood’s interval?</strong></p>
 </div>
-<p><strong>💭 Class Discussion</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>What do you think:</strong></p>
-<ul>
-<li>What explains this trend?</li>
-<li>How does this relate to explore vs.&nbsp;exploit?</li>
-<li>What does this suggest about Hollywood’s “time horizon”?</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section>
+<aside class="notes">
+<p>Class discussion: What explains this trend? How does this relate to explore vs.&nbsp;exploit? What does this suggest about Hollywood’s time horizon?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Box Office Mojo, top 10 by US domestic gross 2024 (boxofficemojo.com/year/2024). Counted as sequels: all except <em>Wicked</em>; <em>Twisters</em> counted as a sequel.</p></li></ol></aside></section>
 <section id="sequels" class="slide level2" data-background-image="../images/bg/lec02-fast-x-logo.png" data-background-size="contain" data-background-position="center" data-background-repeat="no-repeat">
 <h2><span class="invert-font">Sequels…</span></h2>
 <div class="fragment">
@@ -606,117 +637,114 @@ Dr.&nbsp;Nils Roemer
 </div>
 </div>
 </section>
-<section id="a-possible-explanation" class="slide level2">
-<h2>A Possible Explanation</h2>
+<section id="studios-behave-as-if-their-interval-is-ending" class="slide level2">
+<h2>Studios behave as if their interval is ending</h2>
 <ul>
-<li class="fragment">Making a brand new movie is risky but has the potential to create a new fan base. (explore)</li>
-<li class="fragment">From a Studio’s perspective, a sequel is a movie with a guaranteed fan base, a cash cow, a sure thing, an exploit.</li>
-<li class="fragment">One possible explanation for the numbers is that the studios think they are approaching the end of their interval.</li>
-<li class="fragment">They are pulling the arms of the best machines they’ve got before the casino turns them out.</li>
+<li class="fragment">A new movie is risky, but can create a new fan base (<strong>explore</strong>)</li>
+<li class="fragment">A sequel has a guaranteed fan base, a sure thing (<strong>exploit</strong>)</li>
+<li class="fragment">Studios may believe they are near the <strong>end of their interval</strong></li>
+<li class="fragment">So they pull the best arms before the casino turns them out</li>
 </ul>
 </section>
-<section id="multi-armed-bandit-vi" class="slide level2">
-<h2>Multi-Armed Bandit VI</h2>
+<section id="anecdotes-are-not-a-strategy" class="slide level2">
+<h2>Anecdotes are not a strategy</h2>
 <ul>
-<li class="fragment">While the so far provided anecdotes are helping us to understand the explore-exploit trade-off, they are far away from beeing a satisfying “optimal” solution.</li>
-<li class="fragment">Actually, finding an algorithm that tells us exactly how to to handle the trade-off is a very hard problem.</li>
-<li class="fragment">On the way there were many interesting approaches…</li>
+<li class="fragment">Anecdotes help us understand the trade-off, but they are no solution</li>
+<li class="fragment">An exact algorithm for the trade-off is <strong>very hard</strong> to find</li>
+<li class="fragment">On the way, there were many interesting approaches…</li>
 </ul>
+</section>
+<section id="time-decides-why-the-end-of-the-interval-changes-everything-1" class="slide level2 section-covered">
+<h2>Time decides: why the end of the interval changes everything</h2>
+<div class="section-covered">
+<p><span class="eyebrow">What we covered</span></p>
+<p><span class="statement">The more time is left, the more exploring pays off; near the end, exploit what you know.</span></p>
+</div>
 </section></section>
 <section>
-<section id="win-stay-lose-shift" class="title-slide slide level1 title center">
-<h1><span class="flow">Win-Stay Lose-Shift</span></h1>
 
+<section id="roadmap-2" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">The dilemma: try something new or stick with what works</span></li>
+<li><span class="roadmap-item done">Time decides: why the end of the interval changes everything</span></li>
+<li><span class="roadmap-item current">Smart strategies: from rules of thumb to the Gittins index</span></li>
+</ol>
+</div>
 </section>
-<section id="win-stay-lose-shiftmore" class="slide level2">
-<h2>Win-Stay Lose-Shift<sup>1</sup></h2>
+<section id="rule-of-thumb-win-stay-lose-shiftmore" class="slide level2">
+<h2>Rule of thumb: win-stay, lose-shift<sup>1</sup></h2>
 <ul>
-<li class="fragment"><span class="question">Question:</span> What do you think, what the win-stay lose-shift strategy does?</li>
-<li class="fragment">The win-stay lose-shift strategy is a simple strategy that is often used in multi-armed bandit problems.</li>
-<li class="fragment">Based on the idea that if you have won, you should stay. If you have lost, you should switch.</li>
-<li class="fragment">This strategy is not always the best strategy, but it is simple and proven better than choose an arm at random.</li>
+<li class="fragment"><span class="question">Question:</span> What do you think this strategy does?</li>
+<li class="fragment"><strong>Won?</strong> Stay with the same arm. <strong>Lost?</strong> Switch to another arm.</li>
+<li class="fragment">Simple, and proven better than choosing an arm at random</li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>For more details see Robbins, H. (1952) ‘Some aspects of the sequential design of experiments’, Bulletin of the American Mathematical Society, 58.</p></li></ol></aside></section>
-<section id="win-stay-no-brainer" class="slide level2">
-<h2>Win-Stay = No Brainer?</h2>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>For more details see Robbins, H. (1952) ‘Some aspects of the sequential design of experiments’, Bulletin of the American Mathematical Society, 58.</p></li></ol></aside></section>
+<section id="win-stay-makes-sense" class="slide level2">
+<h2>Win-stay makes sense</h2>
 <ul>
 <li class="fragment"><span class="question">Question:</span> What do you think about win-stay?</li>
-<li class="fragment">If you decide to pull an arm and you win, you should pull the same arm again.</li>
-<li class="fragment">Nothing changes, except the attractiveness of the arm you just pulled is higher.</li>
+<li class="fragment">If you win, pull the same arm again</li>
+<li class="fragment">The arm has just become more attractive</li>
 </ul>
 </section>
-<section id="lose-shift-is-another-story" class="slide level2">
-<h2>Lose-Shift is another story</h2>
+<section id="lose-shift-is-too-hasty" class="slide level2">
+<h2>Lose-shift is too hasty</h2>
 <ul>
 <li class="fragment"><span class="question">Question:</span> What do you think about lose-shift?</li>
-<li class="fragment">Changing arms each time you lose might be a prety rush move.</li>
-<li class="fragment">Imagine you’re eating at your favorite restaurant for the tenth time in a row.</li>
-<li class="fragment">You have always been very satisfied (win), but today you are disappointed (loose).</li>
-<li class="fragment">Should you turn your back on the restaurant?</li>
+<li class="fragment">Switching after every loss is a rash move</li>
+<li class="fragment">Your favorite restaurant, tenth visit: always great, today disappointing</li>
+<li class="fragment">Should you never go back?</li>
 </ul>
 </section>
-<section id="like-most-of-the-time-easy-answers-comes-with-problems" class="slide level2">
-<h2>Like most of the time, easy answers comes with problems</h2>
+<section id="easy-answers-come-with-problems" class="slide level2">
+<h2>Easy answers come with problems</h2>
 <ul>
-<li class="fragment">The win-stay lose-shift strategy penalizes losses too much.</li>
-<li class="fragment">The strategy does not take into account the interval.</li>
-<li class="fragment">But the strategy was good start to develop better approaches.</li>
+<li class="fragment">Win-stay lose-shift <strong>penalizes losses too much</strong></li>
+<li class="fragment">It ignores <strong>the interval</strong></li>
+<li class="fragment">But it was a good start for better approaches</li>
 </ul>
-</section></section>
-<section>
-<section id="the-bellman-approach" class="title-slide slide level1 title center">
-<h1><span class="flow">The Bellman Approach</span></h1>
-
 </section>
-<section id="the-bellman-approach-i" class="slide level2">
-<h2>The Bellman approach I</h2>
+<section id="a-fair-estimate-laplaces-rule-of-succession" class="slide level2">
+<h2>A fair estimate: Laplace’s rule of succession</h2>
 <ul>
-<li class="fragment">Few years later, Richard Bellman, found an exact solution for all cases with finite and known intervals.</li>
-<li class="fragment">Bellman found that under assumptions, exploit vs explore can be seen as an optimal stopping problem.</li>
-<li class="fragment">The question is, when to stop exploring and start exploiting.</li>
-<li class="fragment">The solution is based on dynamic programming and backward calculation starting from the final pull (analogous to the secretary problem with full information).</li>
+<li class="fragment">First we need a fair estimate of each machine</li>
+<li class="fragment">Laplace (18th century): after <span class="math inline">\(w\)</span> wins and <span class="math inline">\(l\)</span> losses, the chance of a win is about</li>
 </ul>
+<div class="fragment">
+<p><span class="math display">\[\mathbb{E}[\text{win}] = \frac{w + 1}{w + l + 2}\]</span></p>
+</div>
+<div class="fragment">
+<ul>
+<li>In words: add one imagined win and one imagined loss, then take the share of wins</li>
+</ul>
+<aside class="notes">
+<p>Pierre-Simon Laplace suggested this rule in the 18th century. The two added pulls keep the estimate away from 0 and 1 when we have seen very few pulls. The rule estimates how good a machine is; it does not tell us when to stop exploring.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
-<section id="the-bellman-approach-ii" class="slide level2">
-<h2>The Bellman approach II</h2>
-<p>Bellman found that the <strong>following equation</strong> provides the optimal strategy (when the assumptions hold):</p>
-<p><span class="math display">\[\mathbb{E}[⋅] = \frac{w + 1}{w + l + 2}\]</span></p>
-<p>where w is the number of wins and l is the number of loses.</p>
-</section>
-<section id="question-time" class="slide level2">
-<h2>Question time</h2>
-<p><span class="math display">\[\mathbb{E}[⋅] = \frac{w + 1}{w + l + 2}\]</span></p>
+<section id="try-it-machine-a-and-b-by-laplace" class="slide level2">
+<h2>Try it: machine A and B by Laplace</h2>
+<p><span class="math display">\[\mathbb{E}[\text{win}] = \frac{w + 1}{w + l + 2}\]</span></p>
 <ul>
 <li class="fragment"><span class="question">Question:</span> What is E[B]?</li>
 <li class="fragment"><span class="question">Question:</span> What is E[A]?</li>
-<li class="fragment"><span class="question">Question:</span> What machine shall we play according to the Bellman approach?</li>
+<li class="fragment"><span class="question">Question:</span> Which machine looks better by this estimate?</li>
 </ul>
 </section>
-<section id="the-bellman-approach-iii" class="slide level2">
-<h2>The Bellman approach III</h2>
-<p>The following table shows the expected value for different win-lose scenarios.</p>
-<div class="cell" style="display: flex; justify-content: center;">
-<style>
-table {
-    border-collapse: collapse;
-    font-size: 24px;
-    font-family: "Courier New", Courier, monospace;
-}
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: right;
-    min-width: 60px;
-}
-th {
-    background-color: #f4f4f4;
-    text-align: center;
-}
-th:first-child, td:first-child {
-    text-align: center;
-    font-weight: bold;
-}
-</style>
+<section id="laplace-estimates-for-wins-and-losses" class="slide level2 smaller">
+<h2>Laplace estimates for wins and losses</h2>
 <table class="caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 19%">
@@ -733,7 +761,7 @@ th:first-child, td:first-child {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Loses/Wins</th>
+<th>Losses/Wins</th>
 <th>1</th>
 <th>2</th>
 <th>3</th>
@@ -879,92 +907,87 @@ th:first-child, td:first-child {
 </tr>
 </tbody>
 </table>
-</div>
 </section>
-<section id="the-bellman-approach-iv" class="slide level2">
-<h2>The Bellman approach IV</h2>
+<section id="bellman-calculate-backwards-from-the-last-pull" class="slide level2">
+<h2>Bellman: calculate backwards from the last pull</h2>
 <ul>
-<li class="fragment">The calculation of the optimal strategy is very extensive when there are many arms and a long interval.</li>
-<li class="fragment">And yet the approach does not help us in many scenarios because we do not know the exact length of the interval (time in the casino).</li>
-<li class="fragment">At this point, it looked like the multi-armed bandit problem would remain a problem without a solution.</li>
+<li class="fragment">Richard Bellman found the exact solution for a <strong>known interval</strong></li>
+<li class="fragment">Start at the <strong>final pull</strong>: with no future left, simply exploit</li>
+<li class="fragment">Then calculate <strong>backwards</strong> the best choice in every earlier situation</li>
 </ul>
-</section></section>
-<section>
-<section id="the-gittins-index" class="title-slide slide level1 title center">
-<h1><span class="flow">The Gittins Index</span></h1>
-
+<aside class="notes">
+<p>A few years after win-stay lose-shift, Richard Bellman found an exact solution for all cases with finite and known intervals. The question is when to stop exploring and start exploiting. The solution uses dynamic programming: start at the final pull and calculate backwards what the best choice is in every possible situation. This works because the last pull is easy.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="the-gittins-index-igittins" class="slide level2">
-<h2>The Gittins Index I<sup>1</sup></h2>
+<section id="bellman-needs-to-know-how-long-you-stay" class="slide level2">
+<h2>Bellman needs to know how long you stay</h2>
 <ul>
-<li class="fragment">In the 1970s Unilever asked a young mathematician, John Gittins, to help optimize their drug trials.</li>
-<li class="fragment">Given different compounds, what is the quickest way to determine which is likely to be effective?</li>
-<li class="fragment">Gittins found an optimal strategy and abstracted the problem to a general level.</li>
-<li class="fragment">He found the solution to the multi-armed bandit problem.</li>
+<li class="fragment">The calculation grows fast with many arms and a long interval</li>
+<li class="fragment">Worse: we usually <strong>don’t know</strong> how long we stay in the casino</li>
+<li class="fragment">So the bandit problem seemed to have no practical solution</li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>For more details see Gittins, J. (1979) ‘Bandit Processes and Dynamic Allocation Indices’, Journal of the Royal Statistical Society. Series B (Methodological).</p></li></ol></aside></section>
-<section id="the-gittins-index-ii" class="slide level2">
-<h2>The Gittins Index II</h2>
+<aside class="notes">
+<p>The calculation of the optimal strategy is very extensive when there are many arms and a long interval. And the approach does not help in many scenarios, because we do not know the exact length of the interval. At this point it looked like the multi-armed bandit problem would remain a problem without a solution.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="gittins-a-drug-trial-problem-at-unilevergittins" class="slide level2">
+<h2>Gittins: a drug-trial problem at Unilever<sup>1</sup></h2>
 <ul>
-<li class="fragment">A major problem with the multi-armed banded problem is that previous solutions made very critical assumptions about the underlying interval.</li>
-<li class="fragment">For example, that the length of the interval is known at the beginning of the analysis.</li>
-<li class="fragment">In his approach, future wins (e.g., cash flows) are discounted so that any interval length (including infinity) can be considered.</li>
-<li class="fragment">Geometric discounting assumption, but the approach can be extended to other discounting assumptions.</li>
+<li class="fragment">1970s: Unilever asks the mathematician John Gittins to optimize its drug trials</li>
+<li class="fragment">Which compound is effective, found out as quickly as possible?</li>
+<li class="fragment">Gittins generalized the problem and found its <strong>optimal solution</strong></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>For more details see Gittins, J. (1979) ‘Bandit Processes and Dynamic Allocation Indices’, Journal of the Royal Statistical Society. Series B (Methodological).</p></li></ol></aside></section>
+<section id="gittins-discounts-the-future-instead-of-fixing-the-interval" class="slide level2">
+<h2>Gittins discounts the future instead of fixing the interval</h2>
+<ul>
+<li class="fragment">Earlier solutions needed a <strong>known interval</strong></li>
+<li class="fragment">Gittins instead <strong>discounts</strong> future wins, like future cash flows</li>
+<li class="fragment">So any interval length works, even an endless one</li>
 </ul>
 </section>
-<section id="what-is-discounting" class="slide level2">
-<h2>What is Discounting?</h2>
+<section id="discounting-tomorrow-counts-less-than-today" class="slide level2">
+<h2>Discounting: tomorrow counts less than today</h2>
 <ul>
-<li class="fragment">Future rewards are valued less than immediate rewards.</li>
-<li class="fragment">Future rewards are weighted by a discount factor.</li>
-<li class="fragment"><strong>Monetary context:</strong> Easy to justify discounting:
+<li class="fragment">Future rewards count less than immediate ones (<strong>discount factor</strong>)</li>
+<li class="fragment"><strong>Money:</strong> Money today can earn interest</li>
+<li class="fragment"><strong>Everyday life:</strong> Tonight’s dinner beats the same dinner next week</li>
+</ul>
+</section>
+<section id="back-to-machine-a-and-b" class="slide level2">
+<h2>Back to machine A and B</h2>
 <ul>
-<li class="fragment">Interest rates: Money today can earn interest.</li>
-<li class="fragment">Opportunity costs: Immediate use of money has value.</li>
+<li class="fragment">The Gittins index works for every multi-armed bandit problem</li>
+<li class="fragment">Let’s consider our two machines one last time:
+<ul>
+<li class="fragment">Machine A: 15 pulls, 9 wins, 6 losses</li>
+<li class="fragment">Machine B: 2 pulls, 1 win, 1 loss</li>
 </ul></li>
-<li class="fragment"><strong>Non-monetary context:</strong> Discounting also makes sense:
-<ul>
-<li class="fragment">Time: Immediate gratification often preferred.</li>
-<li class="fragment">Example: Tonight’s dinner vs.&nbsp;the same dinner in a week’s time.</li>
-</ul></li>
 </ul>
 </section>
-<section id="the-gittins-index-iii" class="slide level2">
-<h2>The Gittins Index III</h2>
-<ul>
-<li class="fragment">The Gittins index can be used for any problems of the form of the multi-armed bandit problem.</li>
-<li class="fragment">That means it solves the explore-exploit trade-off.</li>
-<li class="fragment">Let’s consider our machine A and B example one last time.
-<ul>
-<li class="fragment">Machine A: 15 pulls, 9 wins, 6 loses.</li>
-<li class="fragment">Machine B: 2 pulls, 1 win, 1 lose.</li>
-</ul></li>
-</ul>
-</section>
-<section id="the-gittins-index-iv" class="slide level2">
-<h2>The Gittins Index IV</h2>
-<div class="cell" style="display: flex; justify-content: center;">
-<style>
-table {
-    border-collapse: collapse;
-    font-size: 24px;
-    font-family: "Courier New", Courier, monospace;
-}
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: right;
-    min-width: 60px;
-}
-th {
-    background-color: #f4f4f4;
-    text-align: center;
-}
-th:first-child, td:first-child {
-    text-align: center;
-    font-weight: bold;
-}
-</style>
+<section id="the-gittins-index-as-a-lookup-table" class="slide level2 smaller">
+<h2>The Gittins index as a lookup table</h2>
+<p>Gittins index for different numbers of wins and losses (discount factor 0.9).</p>
 <table class="caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 19%">
@@ -981,7 +1004,7 @@ th:first-child, td:first-child {
 </colgroup>
 <thead>
 <tr class="header">
-<th>Loses/Wins</th>
+<th>Losses/Wins</th>
 <th>0</th>
 <th>1</th>
 <th>2</th>
@@ -1127,30 +1150,20 @@ th:first-child, td:first-child {
 </tr>
 </tbody>
 </table>
-</div>
 </section>
-<section id="question" class="slide level2">
-<h2>Question</h2>
+<section id="by-the-gittins-index-machine-b-wins" class="slide level2">
+<h2>By the Gittins index, machine B wins</h2>
 <p><strong>Choose machine A or B according to the Gittins index?</strong></p>
 <ul>
-<li class="fragment">The index for machine B (0.6346) is higher than for machine A (0.6300).</li>
-<li class="fragment">The index shows a clear win-stay pattern.</li>
-<li class="fragment">There is a relaxed lose-shift pattern.</li>
-<li class="fragment">At the (0,0) point we see the exploration bonus (premium).</li>
-<li class="fragment">The index converges to 1/2 for a 50/50 chance game.</li>
+<li class="fragment">Machine B (0.6346) beats machine A (0.6300)</li>
+<li class="fragment">Clear <strong>win-stay</strong> pattern, relaxed <strong>lose-shift</strong> pattern</li>
+<li class="fragment">At (0,0) we see the <strong>exploration bonus</strong></li>
 </ul>
 </section>
 <section id="gittins-index-the-scary-math" class="slide level2">
 <h2>Gittins Index: The Scary Math</h2>
-<h3 id="the-complex-formula">😱 The Complex Formula</h3>
 <p><span class="math display">\[G_i(s_i, f_i) := \sup_{\tau \geq 1} \frac{\mathbb{E}\left[\sum_{t=0}^{\tau-1} \beta^t \cdot r_i^t \middle| s_i, f_i\right]}{\mathbb{E}\left[\sum_{t=0}^{\tau-1} \beta^t\right]}\]</span></p>
-<div class="fragment fade-in">
-<ul>
-<li><strong>Extremely complex</strong> to calculate by hand</li>
-<li><strong>Requires advanced mathematics</strong> (optimization theory)</li>
-<li><strong>Calculation not practical</strong> for everyday decisions</li>
-</ul>
-</div>
+<p>In words: the best average reward you can expect from this arm if you may stop playing it whenever you like.</p>
 <div class="fragment fade-in">
 <div class="callout callout-important callout-style-simple">
 <div class="callout-body">
@@ -1158,95 +1171,105 @@ th:first-child, td:first-child {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p><strong>You don’t need to understand the math</strong> - just use the lookup table!</p>
+<p><strong>Too complex to calculate by hand</strong>, and you don’t need to: just use the lookup table!</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="what-it-actually-means" class="slide level2">
-<h2>What It Actually Means</h2>
+<section id="higher-index-better-choice" class="slide level2">
+<h2>Higher index, better choice</h2>
 <ul>
 <li class="fragment"><strong>Core idea:</strong> “What’s the best possible average reward from this option?”</li>
-<li class="fragment"><strong>Higher Index = Better Choice</strong></li>
-<li class="fragment"><strong>Example:</strong> Machine A (9 wins, 6 losses): Index = 0.6300; Machine B (1 win, 1 loss): Index = 0.6346</li>
-<li class="fragment"><strong>Machine B wins</strong> due to exploration bonus for less-tested options</li>
-<li class="fragment">The Gittins Index automatically balances exploration and exploitation</li>
-</ul>
-</section></section>
-<section>
-<section id="explore-vs-exploit-summary" class="title-slide slide level1 title center">
-<h1><span class="flow">Explore vs Exploit: Summary</span></h1>
-
-</section>
-<section id="explore-vs-exploit-summary-1" class="slide level2">
-<h2>Explore vs Exploit: Summary</h2>
-<ul>
-<li class="fragment">Consider an explore vs exploit decision situation.</li>
-<li class="fragment">As you learned exploiting comes with a known (expected) outcome for example E(exploit) = X</li>
-<li class="fragment">Exploring comes with an unknown outcome E(explore) = ?</li>
-<li class="fragment">What should you do according to decision science?</li>
+<li class="fragment"><strong>Higher index = better choice</strong></li>
+<li class="fragment">Less-tested options get an <strong>exploration bonus</strong>, that’s why machine B wins</li>
+<li class="fragment">The index balances exploration and exploitation automatically</li>
 </ul>
 </section>
-<section id="explore-vs-exploit-anecdotally" class="slide level2">
-<h2>Explore vs Exploit: Anecdotally</h2>
+<section id="which-rule-when" class="slide level2">
+<h2>Which rule when?</h2>
 <ul>
-<li class="fragment">If you have a long interval, you should explore, choose B untill you are sure about E(explore).</li>
-<li class="fragment">If you have a short interval, you should exploit, choose A.</li>
+<li class="fragment">Both outcomes known: choose the higher expected value</li>
+<li class="fragment">E(explore) unknown, interval known: <strong>Bellman</strong> (backward calculation)</li>
+<li class="fragment">E(explore) unknown, interval unknown: <strong>Gittins index</strong></li>
 </ul>
-</section>
-<section id="explore-vs-exploit-mathematically" class="slide level2">
-<h2>Explore vs Exploit: Mathematically</h2>
-<ul>
-<li class="fragment">If E(exploit) and E(explore) are known, choose higher expected value.</li>
-<li class="fragment">If E(explore) is unknown, but you know the length of the interval, the Bellman-approach provides the optimal strategy.</li>
-<li class="fragment">If E(explore) is unknown, and you do not know the length of the interval, the Gittins index provides the optimal strategy.</li>
-</ul>
+<aside class="notes">
+<p>The situation: exploiting has a known expected outcome, E(exploit) = X. Exploring has an unknown outcome, E(explore) = ?. What should you do according to decision science?</p>
+<p>Anecdotally: if you have a long interval, explore, choose B until you are sure about E(explore). If you have a short interval, exploit, choose A.</p>
+<p>Takeaway: be sensitive to how much time you have left in the casino, and explore, explore, explore.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="your-personal-action-plan" class="slide level2">
 <h2>🎯 Your Personal Action Plan</h2>
-<div class="callout callout-tip callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Rate yourself (1-10) on each:</strong></p>
-</div>
-<div class="callout-content">
+<p><span class="question">Question:</span> <strong>Rate yourself from 1 (exploit) to 10 (explore):</strong></p>
 <ul>
-<li><strong>Career exploration:</strong> Trying new skills/roles vs.&nbsp;deepening current expertise</li>
-<li><strong>Social exploration:</strong> Meeting new people vs.&nbsp;investing in current relationships</li>
-<li><strong>Learning exploration:</strong> New subjects vs.&nbsp;mastering current interests</li>
-<li><strong>Life exploration:</strong> New experiences vs.&nbsp;enjoying familiar pleasures</li>
+<li><strong>Career:</strong> new skills and roles vs.&nbsp;deepening your expertise</li>
+<li><strong>Social life:</strong> meeting new people vs.&nbsp;investing in friendships</li>
+<li><strong>Learning:</strong> new subjects vs.&nbsp;mastering current interests</li>
 </ul>
+<div class="fragment">
+<p><strong>Time horizon matters:</strong> more time left, more exploring.</p>
+<aside class="notes">
+<p>Rate yourself honestly. The point is not that exploring is always better: the more time you have left in a phase of your life, the more exploring pays off. Near the end of a phase, exploiting what you know is the better choice.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
+</section>
+<section id="smart-strategies-from-rules-of-thumb-to-the-gittins-index-1" class="slide level2 section-covered">
+<h2>Smart strategies: from rules of thumb to the Gittins index</h2>
+<div class="section-covered">
+<p><span class="eyebrow">What we covered</span></p>
+<p><span class="statement">Simple rules like win-stay, lose-shift help, but better strategies weigh both what you know and how uncertain you still are.</span></p>
 </div>
+</section>
+<section id="what-we-covered" class="slide level2 lecture-closing">
+<h2>What we covered</h2>
+<div class="covered-list">
+<div class="covered-item">
+<p><span class="eyebrow">The dilemma: try something new or stick with what works</span></p>
+<p>Every choice between the new and the known trades information against reward.</p>
 </div>
-<div class="fragment fade-in">
-<div class="callout callout-important callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="covered-item">
+<p><span class="eyebrow">Time decides: why the end of the interval changes everything</span></p>
+<p>The more time is left, the more exploring pays off; near the end, exploit what you know.</p>
 </div>
-<p><strong>Key Insights to Remember</strong></p>
-</div>
-<div class="callout-content">
-<ol type="1">
-<li><strong>Exploration has inherent value</strong> - it increases your chance of finding the best</li>
-<li><strong>Time horizon matters</strong> - more time left = more exploration optimal</li>
-<li><strong>Age affects strategy</strong> - younger people should explore more</li>
-<li><strong>Don’t stop exploring completely</strong> - even experts need some exploration</li>
-</ol>
-</div>
-</div>
+<div class="covered-item">
+<p><span class="eyebrow">Smart strategies: from rules of thumb to the Gittins index</span></p>
+<p>Simple rules like win-stay, lose-shift help, but better strategies weigh both what you know and how uncertain you still are.</p>
 </div>
 </div>
 </section>
-<section id="takeaways" class="slide level2">
-<h2>Takeaways</h2>
-<p>Your todays takeaway from the lecture should be: Be sensitive to how much time you have left in the casino and <strong>explore, explore, explore</strong>…</p>
+<section id="why-it-matters" class="slide level2 lecture-closing">
+<h2>Why it matters</h2>
+<div class="lecture-why closing">
+<p>You have 45 minutes for lunch: the new restaurant or your reliable favorite? Companies face the same choice every day: a new supplier or the proven one, a new marketing channel or the one that works, a new film or another sequel.</p>
+</div>
+</section>
+<section id="section-1" class="slide level2 loud-slide lecture-key">
+<h2></h2>
+<div class="r-fit-text">
+<p>Explore early.</p>
+<p>Exploit late.</p>
+</div>
 </section></section>
 <section>
 <section id="literature" class="title-slide slide level1 title center">
@@ -1257,13 +1280,12 @@ th:first-child, td:first-child {
 <h2>Interesting literature to start</h2>
 <ul>
 <li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<sup>1</sup></li>
-<li>Ferguson, T.S. (1989) ‘Who solved the secretary problem?’, Statistical Science, 4(3). doi:10.1214/ss/1177012493.</li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
 <section id="books-on-programming" class="slide level2">
 <h2>Books on Programming</h2>
 <ul>
-<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Here</a></li>
+<li>Downey, A. B. (2024). Think Python: How to think like a computer scientist (Third edition). O’Reilly. <a href="https://greenteapress.com/wp/think-python-3rd-edition/">Free online</a></li>
 <li>Elter, S. (2021). Schrödinger programmiert Python: Das etwas andere Fachbuch (1. Auflage). Rheinwerk Verlag.</li>
 </ul>
 <div class="fragment">
@@ -1273,7 +1295,7 @@ th:first-child, td:first-child {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Think Python is a great book to start with. It’s available online for free. Schrödinger Programmiert Python is a great alternative for German students, as it is a very playful introduction to programming with lots of examples.</p>
+<p>Think Python is free online and a great start. Schrödinger programmiert Python is a playful alternative in German.</p>
 </div>
 </div>
 </div>
@@ -1289,7 +1311,7 @@ th:first-child, td:first-child {
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Lecture II - Explore Vs. Exploit | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_02_explore_exploit.html">Home</a></p>
+<p>Lecture II: Explore &amp; Exploit | Dr.&nbsp;Nils Roemer | <a href="../lectures/lec_02_explore_exploit.html">Home</a></p>
 </div>
 </div></div>
 

@@ -1,5 +1,5 @@
 ---
-title: Tutorial I.I - Variables and Types
+title: 'Tutorial I.I: Variables and Types'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
@@ -14,7 +14,7 @@ The question is thus: **When should you stop dating and commit to someone?**
 
 Known academically as the "Optimal Stopping Problem" or "The Marriage Problem", it asks: If you want to find the best possible partner, and you can only date one person at a time (no going back to previous dates!), when should you stop dating and propose?
 
-Let's learn how to use Python to help us in order to make better dating decisions!
+Let's learn how to use Python to make better dating decisions!
 
 # 1 - Variables
 
@@ -25,10 +25,10 @@ date_name = "Alexander" # Current date's name
 red_flags = 0 # Count of red flags noticed
 butterflies_felt = True # Do I feel butterflies?
 compatibility_score = 8.5 # On a scale of 1-10, how compatible are we?
-print("We have defined a some variables based on tonight's date.")
+print("We have defined some variables based on tonight's date.")
 ```
 
-    We have defined a some variables based on tonight's date.
+    We have defined some variables based on tonight's date.
 
 > **Tip**
 >
@@ -248,7 +248,7 @@ We have already defined the variables `name` and `minimum_rating`. Now we want t
 ``` python
 # Test your answer
 assert profile_message == "Hello, Casey! Nice to meet you. I hope you are at least 7.0/10 compatible with me!", "Format your first message to Casey correctly!"
-print("Your message is send - good luck!")
+print("Your message is sent - good luck!")
 ```
 
 </details>
@@ -274,7 +274,7 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 ------------------------------------------------------------------------
 

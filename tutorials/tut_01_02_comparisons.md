@@ -1,12 +1,12 @@
 ---
-title: Tutorial I.II - Comparison Operators
+title: 'Tutorial I.II: Comparison Operators'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
 
 # Introduction
 
-You're teaching a computer to make decisions. Just like we compare things in everyday life ("Is it raining?", "Do I have enough money?"), computers need ways to compare values and make choices. Let's look at this in the context of hiring decisions to help us how to make decisions in the context of optimal stopping problems.
+You're teaching a computer to make decisions. Just like we compare things in everyday life ("Is it raining?", "Do I have enough money?"), computers need ways to compare values and make choices. Let's look at this in the context of hiring decisions to help us make decisions in the context of optimal stopping problems.
 
 Imagine you're helping a company make hiring decisions. You need to look at different candidates and decide if they meet certain requirements. To make these decisions with Python, we need to learn how to make comparisons!
 
@@ -287,16 +287,16 @@ candidate_has_degree = True
 ``` python
 # Test your answer
 assert final_decision == False, "The candidate should not meet all requirements"
-print("Good job! You correctly identified that the candidate does not meet all requirements as his salary expectation is too high.")
+print("Good job! You correctly identified that the candidate does not meet all requirements as their salary expectation is too high.")
 ```
 
 </details>
 
-## Exercise 2.3 - Optimal Stopping Decision
+## Exercise 3.2 - Optimal Stopping Decision
 
 We have:
 
-- Seen 18 out of 40 candidates
+- Seen 12 out of 40 candidates
 - Current candidate score: 90
 - Best score so far: 85
 
@@ -306,7 +306,7 @@ Store the result in `make_offer`.
 
 ``` python
 # Candidate information
-candidates_seen = 18
+candidates_seen = 12
 total_candidates = 40
 current_score = 90
 best_score_so_far = 85
@@ -318,8 +318,8 @@ best_score_so_far = 85
 
 ``` python
 # Test your answer
-assert make_offer == True, "We should hire this candidate"
-print("Good job! You correctly identified that we should hire this candidate")
+assert make_offer == False, "12 of 40 is only 30%, we are still in the observation phase"
+print("Good job! The candidate is better than everyone so far, but we are still in the observation phase.")
 ```
 
 </details>
@@ -342,6 +342,6 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 *Continue to the next tutorial to learn how to apply these skills to the optimal stopping problem!*

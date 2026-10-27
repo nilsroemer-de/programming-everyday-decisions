@@ -1,5 +1,5 @@
 ---
-title: Tutorial II.I - Lists and Tuples
+title: 'Tutorial II.I: Lists and Tuples'
 subtitle: 'Programming: Everyday Decision-Making Algorithms'
 ---
 
@@ -96,7 +96,7 @@ some_choices = restaurants[0:2] # Gets ["Pasta Place", "Sushi Bar"]
 
 ## Exercise 1.1 - Create a Restaurant List
 
-reate a list `favorite_spots` with your top three favorite restaurants. Remember to:
+Create a list `favorite_spots` with your top three favorite restaurants. Remember to:
 
 - Use square brackets `[]`
 - Put restaurant names in quotes (they're strings!)
@@ -183,15 +183,16 @@ first_restaurant_visits = restaurant_data[0][2] # 3
 
 ## Exercise 2.1 - Access Restaurant Info
 
-Using the `restaurant_data` list above, create variables `best_restaurant` and `best_rating` containing the name and rating of the restaurant with the highest rating. You'll need to:
+Using the `restaurant_data` list below, create variables `best_restaurant` and `best_rating` containing the name and rating of the restaurant with the highest rating. You'll need to:
 
 1.  Look at each restaurant's rating (position 1 in each inner list)
-2.  Keep track of the highest rating and its restaurant name
+2.  Compare the three ratings with `>` or use `max()` (loops follow in the next tutorial)
+3.  Store the name and rating of the best restaurant
 
 ``` python
 restaurant_data = [
-    ["Pasta Place", 4.5, 3],
     ["Sushi Bar", 4.2, 1],
+    ["Pasta Place", 4.5, 3],
     ["Burger Joint", 3.8, 2]
 ]
 # YOUR CODE BELOW
@@ -209,7 +210,7 @@ print(f"The best restaurant is {best_restaurant} with a rating of {best_rating}"
 
 </details>
 
-# Exercise 2.2 - Create a Categorized Restaurant List
+## Exercise 2.2 - Create a Categorized Restaurant List
 
 Create a nested list `categorized_restaurants` where each inner list contains:
 1. Two cuisine categories - here `"Italian"` and `"Japanese"`
@@ -304,7 +305,7 @@ You will likely find solutions to most exercises online. However, we strongly en
 
 Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
 
-Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask ChatGPT or Claude to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
+Later, you will find the solutions to these exercises online in the associated GitHub repository, but we will also quickly go over them next week. To access the solutions, click on the Github button on the lower right and search for the folder with today's lecture and tutorial. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 ------------------------------------------------------------------------
 
