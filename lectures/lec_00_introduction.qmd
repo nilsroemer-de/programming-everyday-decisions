@@ -41,7 +41,7 @@ More and more business decisions rely on data and algorithms. You don't need to 
 ## Take part, it pays off
 
 - **Participate actively**: it makes the course easier and more fun
-- Inspired by the book [Algorithms to live by]{.highlight}[^3]
+- Inspired by the book [Algorithms to Live By]{.highlight}[^3]
 - All material is online: [courses.nilsroemer.com](https://courses.nilsroemer.com)
 
 ::: {.notes}
@@ -79,7 +79,7 @@ Lecture: presentation and discussion of algorithms related to everyday decision-
 - Each group submits **one solution** per assignment
 - Hand in your **working notebooks**
 - Due by the **end of the quarter**, earlier is better
-- At least **50 %** of the solutions have to be correct
+- At least **50%** of the solutions have to be correct
 
 ::: {.notes}
 Earlier submissions are highly encouraged: you get feedback while the topic is still fresh.
@@ -91,7 +91,7 @@ We will mostly **not cover Python during the lectures!**
 
 . . .
 
-[Question]{.question}: Anybody know why?
+[Question:]{.question} Does anybody know why?
 
 . . .
 
@@ -146,7 +146,7 @@ Current AI assistants help you a lot to get started with programming. But you sh
 ::: {.section-covered}
 [What we covered]{.eyebrow}
 
-[Five topics, each with a lecture and a Python session. You pass with 75 % attendance, two assignments and a final presentation.]{.statement}
+[Six topics, each with a lecture and a Python session. You pass with 75% attendance, two assignments and a final presentation.]{.statement}
 :::
 
 # [How to learn programming]{.flow} {.title visibility="hidden"}
@@ -273,7 +273,7 @@ That was the hardest part today!
 ::: {.covered-item}
 [About this course: topics, format and how you pass]{.eyebrow}
 
-Five topics, each with a lecture and a Python session. You pass with 75 % attendance, two assignments and a final presentation.
+Six topics, each with a lecture and a Python session. You pass with 75% attendance, two assignments and a final presentation.
 :::
 
 ::: {.covered-item}

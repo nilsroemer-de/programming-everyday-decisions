@@ -46,9 +46,9 @@ Topic: understanding optimal stopping problems and the famous Secretary Problem.
 
 ## {.loud-slide}
 ::: {.r-fit-text}
-Anybody an
+Does anybody have
 
-example of
+an example of
 
 optimal stopping?
 :::
@@ -388,6 +388,8 @@ This holds if options arrive evenly over time. We can also decide how intensivel
 
 ::: {.notes}
 Experiments by Seale and Rapoport (1997). The 37% rule assumes that looking is free. In real life, every viewing or interview costs time, so stopping a bit earlier is often rational, not a mistake.
+
+Side note for drivers: an increase in occupancy from 90 to 95% doubles the search time for all drivers. Each variation changes the rule a little, but the structure stays: options come one at a time, and you cannot go back.
 :::
 
 ## What we covered {.lecture-closing}
