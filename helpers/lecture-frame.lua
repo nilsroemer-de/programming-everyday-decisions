@@ -7,9 +7,10 @@
 --   lecture-covered   list of three sentences, one per roadmap point
 --   lecture-key       key message
 -- and generates from them
---   revealjs: "Today in one sentence" (summary + why), "Roadmap", the roadmap on
---             every section slide (current point highlighted), a short slide with the
---             covered sentence at the end of every section, and the closing slides
+--   revealjs: "Today in one sentence" (summary + why), "Roadmap", then the content of
+--             section 1 directly; sections 2 and 3 start with one roadmap slide (current
+--             point highlighted) that replaces the section title slide; a short slide
+--             with the covered sentence at the end of every section, and the closing slides
 --             "What we covered", "Why it matters" and the key message. The closing
 --             slides replace an empty div `::: {.lecture-closing}` in the source.
 --   other formats (HTML page, PDF, md): summary, why and roadmap as text at the top,
@@ -155,8 +156,16 @@ function Pandoc(doc)
         if current then covered_slide(current) end
         current = idx
         seen[idx] = true
-        blocks:insert(b)
-        if reveal then blocks:insert(roadmap_block(roadmap, idx)) end
+        if reveal then
+          -- Section 1 follows the opening roadmap directly; sections 2 and 3 get one
+          -- roadmap slide with the current point highlighted instead of a title slide.
+          if idx > 1 then
+            blocks:insert(pandoc.Header(2, pandoc.Inlines(pandoc.Str("Roadmap")), { class = "section-roadmap" }))
+            blocks:insert(roadmap_block(roadmap, idx))
+          end
+        else
+          blocks:insert(b)
+        end
       else
         blocks:insert(b)
       end

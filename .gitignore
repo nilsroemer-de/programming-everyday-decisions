@@ -182,3 +182,4 @@ screenshots-review/
 /lectures/*_files/
 /tutorials/*_files/
 /general/*_files/
+**/*.quarto_ipynb_*

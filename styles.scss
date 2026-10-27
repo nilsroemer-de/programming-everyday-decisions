@@ -928,16 +928,6 @@ html.reveal-print .reveal .r-fit-text {
 .reveal .roadmap .roadmap-item.future {
   color: var(--fg-3);
 }
-// roadmap under a section title: smaller, with a quiet line above
-.reveal .slides section.title .roadmap {
-  margin-top: 1em;
-  padding-top: .8em;
-  border-top: 1px solid var(--border);
-  font-size: .8em;
-}
-.reveal .slides section.title .roadmap li {
-  margin-bottom: .4em;
-}
 .reveal .section-covered {
   margin-top: .8em;
 }
