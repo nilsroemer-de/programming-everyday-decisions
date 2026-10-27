@@ -163,7 +163,7 @@ Every step, every command, every click is in the guide:
 
 <a href="../general/uv.qmd" class="guide-link"><strong>courses.nilsroemer.com/general/uv.html</strong></a>
 
-Also linked in Moodle and on the course website.
+Also linked on the course website, under Installation Guide.
 
 - Follow the steps **in order**, don't skip any
 - After each step: a small **check**
