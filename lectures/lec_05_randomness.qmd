@@ -5,20 +5,29 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_05_randomness.qmd)"
     output-file: lec_05_presentation.html
-lecture-summary: "When a problem is too big to solve exactly, a bit of randomness often gets you a good answer fast."
-lecture-why: "Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes and allocate scarce places fairly."
-lecture-roadmap:
-  - "Randomness everywhere: why chance is useful"
-  - "Simulate instead of calculate: Monte Carlo"
-  - "Let chance help you decide: smarter searches, fairer choices"
-lecture-covered:
-  - "Randomness is more than gambling: it makes algorithms faster, systems secure and discoveries possible."
-  - "Running many random simulations gives reliable estimates where exact calculation is out of reach."
-  - "Random steps help a search escape bad solutions, and random choices can make decisions fairer."
-lecture-key: "When you can't calculate it, simulate it."
 ---
 
-# [Randomness everywhere: why chance is useful]{.flow} {.title}
+## Today in one sentence {.lecture-opening}
+
+::: {.lecture-summary}
+[When a problem is too big to solve exactly, a bit of randomness often gets you a good answer fast.]{.statement}
+:::
+
+::: {.lecture-why}
+[Why it matters]{.eyebrow}
+
+Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes and allocate scarce places fairly.
+:::
+
+## Roadmap {.lecture-opening}
+
+::: {.roadmap}
+1. [Randomness everywhere: why chance is useful]{.roadmap-item .future}
+2. [Simulate instead of calculate: Monte Carlo]{.roadmap-item .future}
+3. [Let chance help you decide: smarter searches, fairer choices]{.roadmap-item .future}
+:::
+
+# [Randomness everywhere: why chance is useful]{.flow} {.title visibility="hidden"}
 
 ## What comes to your mind?
 
@@ -276,7 +285,23 @@ The key trade-off of this lecture: perfect vs. "good enough" solutions. Randomne
 :::
 :::
 
-# [Simulate instead of calculate: Monte Carlo]{.flow} {.title}
+## Randomness everywhere: why chance is useful {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Randomness is more than gambling: it makes algorithms faster, systems secure and discoveries possible.]{.statement}
+:::
+
+# [Simulate instead of calculate: Monte Carlo]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [Randomness everywhere: why chance is useful]{.roadmap-item .done}
+2. [Simulate instead of calculate: Monte Carlo]{.roadmap-item .current}
+3. [Let chance help you decide: smarter searches, fairer choices]{.roadmap-item .future}
+:::
 
 ## Some things are too big to count
 
@@ -441,7 +466,23 @@ with plt.rc_context():
 ```
 
 
-# [Let chance help you decide: smarter searches, fairer choices]{.flow} {.title}
+## Simulate instead of calculate: Monte Carlo {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Running many random simulations gives reliable estimates where exact calculation is out of reach.]{.statement}
+:::
+
+# [Let chance help you decide: smarter searches, fairer choices]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [Randomness everywhere: why chance is useful]{.roadmap-item .done}
+2. [Simulate instead of calculate: Monte Carlo]{.roadmap-item .done}
+3. [Let chance help you decide: smarter searches, fairer choices]{.roadmap-item .current}
+:::
 
 ## Ten cities, one trip: which order is shortest?
 
@@ -926,7 +967,47 @@ Answer depends on your **risk aversion**!
 Remember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Consider the opportunity costs: quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration. Many problems benefit from fast, good-enough solutions rather than perfect ones.
 :::
 
-::: {.lecture-closing}
+## Let chance help you decide: smarter searches, fairer choices {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Random steps help a search escape bad solutions, and random choices can make decisions fairer.]{.statement}
+:::
+
+## What we covered {.lecture-closing}
+
+::: {.covered-list}
+::: {.covered-item}
+[Randomness everywhere: why chance is useful]{.eyebrow}
+
+Randomness is more than gambling: it makes algorithms faster, systems secure and discoveries possible.
+:::
+
+::: {.covered-item}
+[Simulate instead of calculate: Monte Carlo]{.eyebrow}
+
+Running many random simulations gives reliable estimates where exact calculation is out of reach.
+:::
+
+::: {.covered-item}
+[Let chance help you decide: smarter searches, fairer choices]{.eyebrow}
+
+Random steps help a search escape bad solutions, and random choices can make decisions fairer.
+:::
+
+:::
+
+## Why it matters {.lecture-closing}
+
+::: {.lecture-why .closing}
+Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes and allocate scarce places fairly.
+:::
+
+## {.loud-slide .lecture-key}
+
+::: {.r-fit-text}
+When you can't calculate it, simulate it.
 :::
 
 ## {.loud-slide}

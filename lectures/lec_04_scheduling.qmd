@@ -10,17 +10,6 @@ format:
   html:
     mermaid:
       theme: neutral
-lecture-summary: "There is no single best order for your tasks: first decide what you want to achieve, and the right rule follows."
-lecture-why: "Monday morning, ten tasks on your list: where do you start? Companies face the same question at scale: which order on the production line, which customer order first, which project gets the team this week."
-lecture-roadmap:
-  - "The basics: when order matters, and when it doesn't"
-  - "Your goal decides the rule: deadlines, waiting time, value"
-  - "Real life: dependencies, interruptions and thrashing"
-lecture-covered:
-  - "Sometimes the order of tasks changes the result, sometimes it doesn't. Knowing which saves time."
-  - "Each goal has its own simple rule: earliest deadline first to avoid being late, shortest task first to cut waiting, highest value per minute first to maximize what you deliver."
-  - "Dependencies make planning harder, and constant switching eats up your time. Protect blocks of focused work."
-lecture-key: "First choose your goal. Then choose your order."
 ---
 
 ```{python}
@@ -52,7 +41,27 @@ realtime_tasks = [
 ]
 ```
 
-# [The basics: when order matters, and when it doesn't]{.flow} {.title}
+## Today in one sentence {.lecture-opening}
+
+::: {.lecture-summary}
+[There is no single best order for your tasks: first decide what you want to achieve, and the right rule follows.]{.statement}
+:::
+
+::: {.lecture-why}
+[Why it matters]{.eyebrow}
+
+Monday morning, ten tasks on your list: where do you start? Companies face the same question at scale: which order on the production line, which customer order first, which project gets the team this week.
+:::
+
+## Roadmap {.lecture-opening}
+
+::: {.roadmap}
+1. [The basics: when order matters, and when it doesn't]{.roadmap-item .future}
+2. [Your goal decides the rule: deadlines, waiting time, value]{.roadmap-item .future}
+3. [Real life: dependencies, interruptions and thrashing]{.roadmap-item .future}
+:::
+
+# [The basics: when order matters, and when it doesn't]{.flow} {.title visibility="hidden"}
 
 ## Four loads of laundry, one washer, one dryer
 
@@ -324,7 +333,23 @@ Order becomes crucial with **deadlines, priorities and dependencies**.
 Under simple minimization of total processing time, order doesn't matter: the total is the sum of all durations, whatever the order. As soon as we care about deadlines, waiting time, priorities or dependencies, the order matters a lot.
 :::
 
-# [Your goal decides the rule: deadlines, waiting time, value]{.flow} {.title}
+## The basics: when order matters, and when it doesn't {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Sometimes the order of tasks changes the result, sometimes it doesn't. Knowing which saves time.]{.statement}
+:::
+
+# [Your goal decides the rule: deadlines, waiting time, value]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [The basics: when order matters, and when it doesn't]{.roadmap-item .done}
+2. [Your goal decides the rule: deadlines, waiting time, value]{.roadmap-item .current}
+3. [Real life: dependencies, interruptions and thrashing]{.roadmap-item .future}
+:::
 
 ## Goal 1: nobody waits too long past the deadline
 
@@ -819,7 +844,23 @@ The task in brackets must be finished first. Red marks: deadlines.
 Shortest processing time with predecessors cannot be solved in polynomial time, it is NP-hard. This is true for most scheduling problems. We can use heuristics, though: rules that give good, but not provably optimal schedules.
 :::
 
-# [Real life: dependencies, interruptions and thrashing]{.flow} {.title}
+## Your goal decides the rule: deadlines, waiting time, value {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Each goal has its own simple rule: earliest deadline first to avoid being late, shortest task first to cut waiting, highest value per minute first to maximize what you deliver.]{.statement}
+:::
+
+# [Real life: dependencies, interruptions and thrashing]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [The basics: when order matters, and when it doesn't]{.roadmap-item .done}
+2. [Your goal decides the rule: deadlines, waiting time, value]{.roadmap-item .done}
+3. [Real life: dependencies, interruptions and thrashing]{.roadmap-item .current}
+:::
 
 ## Priority inversion: an important task waits for an unimportant one
 
@@ -1027,7 +1068,49 @@ plt.show()
 - **Time blocking:** prevent thrashing
 :::
 
-::: {.lecture-closing}
+## Real life: dependencies, interruptions and thrashing {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Dependencies make planning harder, and constant switching eats up your time. Protect blocks of focused work.]{.statement}
+:::
+
+## What we covered {.lecture-closing}
+
+::: {.covered-list}
+::: {.covered-item}
+[The basics: when order matters, and when it doesn't]{.eyebrow}
+
+Sometimes the order of tasks changes the result, sometimes it doesn't. Knowing which saves time.
+:::
+
+::: {.covered-item}
+[Your goal decides the rule: deadlines, waiting time, value]{.eyebrow}
+
+Each goal has its own simple rule: earliest deadline first to avoid being late, shortest task first to cut waiting, highest value per minute first to maximize what you deliver.
+:::
+
+::: {.covered-item}
+[Real life: dependencies, interruptions and thrashing]{.eyebrow}
+
+Dependencies make planning harder, and constant switching eats up your time. Protect blocks of focused work.
+:::
+
+:::
+
+## Why it matters {.lecture-closing}
+
+::: {.lecture-why .closing}
+Monday morning, ten tasks on your list: where do you start? Companies face the same question at scale: which order on the production line, which customer order first, which project gets the team this week.
+:::
+
+## {.loud-slide .lecture-key}
+
+::: {.r-fit-text}
+First choose your goal.
+
+Then choose your order.
 :::
 
 ## {.loud-slide}

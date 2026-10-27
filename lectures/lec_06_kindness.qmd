@@ -5,20 +5,29 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_06_kindness.qmd)"
     output-file: lec_06_presentation.html
-lecture-summary: "The best algorithms don't just solve a problem, they make life easier and fairer for the people affected."
-lecture-why: "\"When works for you?\" sounds polite but hands the work to the other person. Proposing two concrete slots is kinder. Companies face the same question at scale: how to design processes, products and automated decisions that are easy and fair for customers and colleagues."
-lecture-roadmap:
-  - "Looking back: five ideas for better decisions"
-  - "Computational kindness: easy and fair for others"
-  - "Looking ahead: where to go from here"
-lecture-covered:
-  - "Optimal stopping, explore and exploit, caching, scheduling and randomness give you a toolkit for everyday decisions."
-  - "Good algorithms reduce the burden for others and treat people fairly. Biased data leads to biased decisions."
-  - "Many more ideas from computer science help in everyday life, and the best way to keep learning is to keep programming."
-lecture-key: "Make it easy for others."
 ---
 
-# [Looking back: five ideas for better decisions]{.flow} {.title}
+## Today in one sentence {.lecture-opening}
+
+::: {.lecture-summary}
+[The best algorithms don't just solve a problem, they make life easier and fairer for the people affected.]{.statement}
+:::
+
+::: {.lecture-why}
+[Why it matters]{.eyebrow}
+
+"When works for you?" sounds polite but hands the work to the other person. Proposing two concrete slots is kinder. Companies face the same question at scale: how to design processes, products and automated decisions that are easy and fair for customers and colleagues.
+:::
+
+## Roadmap {.lecture-opening}
+
+::: {.roadmap}
+1. [Looking back: five ideas for better decisions]{.roadmap-item .future}
+2. [Computational kindness: easy and fair for others]{.roadmap-item .future}
+3. [Looking ahead: where to go from here]{.roadmap-item .future}
+:::
+
+# [Looking back: five ideas for better decisions]{.flow} {.title visibility="hidden"}
 
 ## Five ideas from this course
 
@@ -32,7 +41,23 @@ lecture-key: "Make it easy for others."
 Today we add a sixth idea, computational kindness: reducing the burden for others and designing fair algorithms.
 :::
 
-# [Computational kindness: easy and fair for others]{.flow} {.title}
+## Looking back: five ideas for better decisions {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Optimal stopping, explore and exploit, caching, scheduling and randomness give you a toolkit for everyday decisions.]{.statement}
+:::
+
+# [Computational kindness: easy and fair for others]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [Looking back: five ideas for better decisions]{.roadmap-item .done}
+2. [Computational kindness: easy and fair for others]{.roadmap-item .current}
+3. [Looking ahead: where to go from here]{.roadmap-item .future}
+:::
 
 
 ## [Computational Kindness]{.invert-font} {background-color="#000000" background-image="../images/bg/lec06-kindness.jpg" background-size="cover" background-position="center"}
@@ -143,7 +168,23 @@ Feedback loops: decisions shape the next data, for example more checks where we 
 - Asking your professor for **thesis feedback**
 - Coordinating a **team project** at work
 
-# [Looking ahead: where to go from here]{.flow} {.title}
+## Computational kindness: easy and fair for others {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Good algorithms reduce the burden for others and treat people fairly. Biased data leads to biased decisions.]{.statement}
+:::
+
+# [Looking ahead: where to go from here]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [Looking back: five ideas for better decisions]{.roadmap-item .done}
+2. [Computational kindness: easy and fair for others]{.roadmap-item .done}
+3. [Looking ahead: where to go from here]{.roadmap-item .current}
+:::
 
 ## [How to continue learning?]{.invert-font} {background-color="#000000" background-image="../images/bg/lec06-learning.jpg" background-size="cover" background-position="center"}
 
@@ -227,7 +268,47 @@ Potentially you will continue programming during your studies. Coding in your th
 <img src="../images/gif/lec06-first.gif" width="280" height="280" alt="">
 </center>
 
-::: {.lecture-closing}
+## Looking ahead: where to go from here {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Many more ideas from computer science help in everyday life, and the best way to keep learning is to keep programming.]{.statement}
+:::
+
+## What we covered {.lecture-closing}
+
+::: {.covered-list}
+::: {.covered-item}
+[Looking back: five ideas for better decisions]{.eyebrow}
+
+Optimal stopping, explore and exploit, caching, scheduling and randomness give you a toolkit for everyday decisions.
+:::
+
+::: {.covered-item}
+[Computational kindness: easy and fair for others]{.eyebrow}
+
+Good algorithms reduce the burden for others and treat people fairly. Biased data leads to biased decisions.
+:::
+
+::: {.covered-item}
+[Looking ahead: where to go from here]{.eyebrow}
+
+Many more ideas from computer science help in everyday life, and the best way to keep learning is to keep programming.
+:::
+
+:::
+
+## Why it matters {.lecture-closing}
+
+::: {.lecture-why .closing}
+"When works for you?" sounds polite but hands the work to the other person. Proposing two concrete slots is kinder. Companies face the same question at scale: how to design processes, products and automated decisions that are easy and fair for customers and colleagues.
+:::
+
+## {.loud-slide .lecture-key}
+
+::: {.r-fit-text}
+Make it easy for others.
 :::
 
 ## That's it for the lecture series!

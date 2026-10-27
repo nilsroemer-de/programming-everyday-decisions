@@ -1,24 +1,33 @@
 ---
-title: "Introduction: Programming"
+title: "Introduction"
 subtitle: "Programming: Everyday Decision-Making Algorithms"
 format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_00_introduction.qmd)"
     output-file: lec_00_presentation.html
-lecture-summary: "In this course you learn how computer scientists approach everyday decisions, and how to turn these ideas into Python code."
-lecture-why: "More and more business decisions rely on data and algorithms. You don't need to become a programmer, but understanding how algorithms think, and writing a few lines of code yourself, makes you a better decision maker. No prior knowledge required."
-lecture-roadmap:
-  - "About this course: topics, format and how you pass"
-  - "How to learn programming"
-  - "Setting up Python"
-lecture-covered:
-  - "Five topics, each with a lecture and a Python session. You pass with 75 % attendance, two assignments and a final presentation."
-  - "Programming is learned by doing: small steps, regular practice, and don't give up."
-  - "Your laptop is ready: VS Code, Python with uv and notebooks."
-lecture-key: "Learn by doing."
 ---
 
-# [About this course: topics, format and how you pass]{.flow} {.title}
+## Today in one sentence {.lecture-opening}
+
+::: {.lecture-summary}
+[In this course you learn how computer scientists approach everyday decisions, and how to turn these ideas into Python code.]{.statement}
+:::
+
+::: {.lecture-why}
+[Why it matters]{.eyebrow}
+
+More and more business decisions rely on data and algorithms. You don't need to become a programmer, but understanding how algorithms think, and writing a few lines of code yourself, makes you a better decision maker. No prior knowledge required.
+:::
+
+## Roadmap {.lecture-opening}
+
+::: {.roadmap}
+1. [About this course: topics, format and how you pass]{.roadmap-item .future}
+2. [How to learn programming]{.roadmap-item .future}
+3. [Setting up Python]{.roadmap-item .future}
+:::
+
+# [About this course: topics, format and how you pass]{.flow} {.title visibility="hidden"}
 
 ## Six topics, one per session
 
@@ -107,10 +116,6 @@ In our experience, the best way to learn programming is by doing. Don't worry, w
 - **Algorithmic thinking**: how computer scientists approach a problem
 - Methods you can **apply** to practical problems
 
-:::{.callout-tip}
-We are convinced that this course will **teach you more for your daily life** than most other courses!
-:::
-
 ## Why Python?
 
 - **Simple syntax**: easy to read and to learn
@@ -136,7 +141,23 @@ But don't let them *replace* your learning.
 Current AI assistants help you a lot to get started with programming. But you should not simply use them to replace your learning: read and understand what they suggest.
 :::
 
-# [How to learn programming]{.flow} {.title}
+## About this course: topics, format and how you pass {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Five topics, each with a lecture and a Python session. You pass with 75 % attendance, two assignments and a final presentation.]{.statement}
+:::
+
+# [How to learn programming]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [About this course: topics, format and how you pass]{.roadmap-item .done}
+2. [How to learn programming]{.roadmap-item .current}
+3. [Setting up Python]{.roadmap-item .future}
+:::
 
 ## Three habits that work
 
@@ -160,7 +181,23 @@ Great resources to start are books (see the list at the end of the lecture) and 
 
 </center>
 
-# [Setting up Python]{.flow} {.title}
+## How to learn programming {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Programming is learned by doing: small steps, regular practice, and don't give up.]{.statement}
+:::
+
+# [Setting up Python]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [About this course: topics, format and how you pass]{.roadmap-item .done}
+2. [How to learn programming]{.roadmap-item .done}
+3. [Setting up Python]{.roadmap-item .current}
+:::
 
 ## Install VS Code
 
@@ -222,7 +259,47 @@ The first command adds a kernel to the project, the second the Jupyter tools. Do
 That was the hardest part today!
 :::
 
-::: {.lecture-closing}
+## Setting up Python {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Your laptop is ready: VS Code, Python with uv and notebooks.]{.statement}
+:::
+
+## What we covered {.lecture-closing}
+
+::: {.covered-list}
+::: {.covered-item}
+[About this course: topics, format and how you pass]{.eyebrow}
+
+Five topics, each with a lecture and a Python session. You pass with 75 % attendance, two assignments and a final presentation.
+:::
+
+::: {.covered-item}
+[How to learn programming]{.eyebrow}
+
+Programming is learned by doing: small steps, regular practice, and don't give up.
+:::
+
+::: {.covered-item}
+[Setting up Python]{.eyebrow}
+
+Your laptop is ready: VS Code, Python with uv and notebooks.
+:::
+
+:::
+
+## Why it matters {.lecture-closing}
+
+::: {.lecture-why .closing}
+More and more business decisions rely on data and algorithms. You don't need to become a programmer, but understanding how algorithms think, and writing a few lines of code yourself, makes you a better decision maker. No prior knowledge required.
+:::
+
+## {.loud-slide .lecture-key}
+
+::: {.r-fit-text}
+Learn by doing.
 :::
 
 ## {.loud-slide}

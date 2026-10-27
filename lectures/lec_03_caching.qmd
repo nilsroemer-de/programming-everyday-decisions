@@ -5,17 +5,6 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_03_caching.qmd)"
     output-file: lec_03_presentation.html
-lecture-summary: "When space is limited, keep close what you are likely to need next, and the best guide to that is what you used most recently."
-lecture-why: "Your cupboard is full, your desk is cluttered, your inbox overflows. Companies have the same problem: which goods sit next to the loading dock, which files stay on the fast server, which tasks get your attention today."
-lecture-roadmap:
-  - "The problem: limited space, too much stuff"
-  - "The solution: keep what you need close, clear out the rest"
-  - "Your mind is a cache: protecting your attention"
-lecture-covered:
-  - "Every storage system faces the same question: what to keep close and what to clear out."
-  - "Fast storage is always small, so we need a rule for clearing out. Least Recently Used works because the recent past predicts the near future."
-  - "Your attention works like a cache: small, valuable and easily flooded, so protect it."
-lecture-key: "What you used last, you'll need next."
 ---
 
 ```{python}
@@ -38,7 +27,27 @@ memory_levels = [
 ]
 ```
 
-# [The problem: limited space, too much stuff]{.flow} {.title}
+## Today in one sentence {.lecture-opening}
+
+::: {.lecture-summary}
+[When space is limited, keep close what you are likely to need next, and the best guide to that is what you used most recently.]{.statement}
+:::
+
+::: {.lecture-why}
+[Why it matters]{.eyebrow}
+
+Your cupboard is full, your desk is cluttered, your inbox overflows. Companies have the same problem: which goods sit next to the loading dock, which files stay on the fast server, which tasks get your attention today.
+:::
+
+## Roadmap {.lecture-opening}
+
+::: {.roadmap}
+1. [The problem: limited space, too much stuff]{.roadmap-item .future}
+2. [The solution: keep what you need close, clear out the rest]{.roadmap-item .future}
+3. [Your mind is a cache: protecting your attention]{.roadmap-item .future}
+:::
+
+# [The problem: limited space, too much stuff]{.flow} {.title visibility="hidden"}
 
 ## A quick question first
 
@@ -225,7 +234,23 @@ The evolution of computer memory: computer science faced the same storage proble
 
 [^hierarchy]: Burks, A. W., Goldstine, H. H., & von Neumann, J. (1946). Preliminary discussion of the logical design of an electronic computing instrument. Wilkes, M. V. (1965). Slave memories and dynamic storage allocation. Wulf, W. A., & McKee, S. A. (1995). Hitting the memory wall. See also Christian & Griffiths (2016), ch. 4.
 
-# [The solution: keep what you need close, clear out the rest]{.flow} {.title}
+## The problem: limited space, too much stuff {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Every storage system faces the same question: what to keep close and what to clear out.]{.statement}
+:::
+
+# [The solution: keep what you need close, clear out the rest]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [The problem: limited space, too much stuff]{.roadmap-item .done}
+2. [The solution: keep what you need close, clear out the rest]{.roadmap-item .current}
+3. [Your mind is a cache: protecting your attention]{.roadmap-item .future}
+:::
 
 ## The cache: a hierarchy of memories
 
@@ -373,7 +398,23 @@ Physical limits: larger memory sits further from the CPU, signals take longer to
 :::
 :::
 
-# [Your mind is a cache: protecting your attention]{.flow} {.title}
+## The solution: keep what you need close, clear out the rest {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Fast storage is always small, so we need a rule for clearing out. Least Recently Used works because the recent past predicts the near future.]{.statement}
+:::
+
+# [Your mind is a cache: protecting your attention]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [The problem: limited space, too much stuff]{.roadmap-item .done}
+2. [The solution: keep what you need close, clear out the rest]{.roadmap-item .done}
+3. [Your mind is a cache: protecting your attention]{.roadmap-item .current}
+:::
 
 ## Our brains are caches
 
@@ -501,7 +542,47 @@ Prioritization: what deserves to be in your mental cache? Structure and schedule
 :::
 :::
 
-::: {.lecture-closing}
+## Your mind is a cache: protecting your attention {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Your attention works like a cache: small, valuable and easily flooded, so protect it.]{.statement}
+:::
+
+## What we covered {.lecture-closing}
+
+::: {.covered-list}
+::: {.covered-item}
+[The problem: limited space, too much stuff]{.eyebrow}
+
+Every storage system faces the same question: what to keep close and what to clear out.
+:::
+
+::: {.covered-item}
+[The solution: keep what you need close, clear out the rest]{.eyebrow}
+
+Fast storage is always small, so we need a rule for clearing out. Least Recently Used works because the recent past predicts the near future.
+:::
+
+::: {.covered-item}
+[Your mind is a cache: protecting your attention]{.eyebrow}
+
+Your attention works like a cache: small, valuable and easily flooded, so protect it.
+:::
+
+:::
+
+## Why it matters {.lecture-closing}
+
+::: {.lecture-why .closing}
+Your cupboard is full, your desk is cluttered, your inbox overflows. Companies have the same problem: which goods sit next to the loading dock, which files stay on the fast server, which tasks get your attention today.
+:::
+
+## {.loud-slide .lecture-key}
+
+::: {.r-fit-text}
+What you used last, you'll need next.
 :::
 
 ::: {.notes}

@@ -991,16 +991,35 @@ html.reveal-print .reveal .r-fit-text {
 #quarto-document-content section.loud-slide > h2:empty {
   display: none;
 }
-/* Lecture frame on the HTML page (helpers/lecture-frame.lua) */
-#quarto-document-content .lecture-intro {
-  margin-bottom: var(--space-6);
+/* Frame slides on the HTML page (opening, roadmap, covered, closing; written out in each lecture) */
+#quarto-document-content .eyebrow {
+  @include eyebrow;
+  display: block;
+  margin-bottom: var(--space-2);
 }
-#quarto-document-content .lecture-intro > p:first-child {
+#quarto-document-content .statement {
+  font-family: "Poppins", system-ui, sans-serif;
   font-size: 1.15rem;
+  font-weight: 600;
   line-height: 1.5;
+  color: var(--ink);
+}
+#quarto-document-content .lecture-why p,
+#quarto-document-content .covered-item p {
+  color: var(--fg-2);
 }
 #quarto-document-content .roadmap ol {
   padding-left: 1.4rem;
+}
+#quarto-document-content .roadmap-item.done,
+#quarto-document-content .roadmap-item.future {
+  color: var(--fg-3);
+}
+#quarto-document-content .roadmap-item.current {
+  font-weight: 600;
+}
+#quarto-document-content .covered-item {
+  margin-bottom: var(--space-3);
 }
 #quarto-document-content .lecture-notes {
   margin: var(--space-4) 0;

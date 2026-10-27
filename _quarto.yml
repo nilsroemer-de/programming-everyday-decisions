@@ -147,7 +147,7 @@ brand: _brand.yml
 # Pausenmarker ". . ." nur in RevealJS wirken lassen (helpers/strip-pauses.lua)
 filters:
   - helpers/strip-pauses.lua
-  - helpers/lecture-frame.lua
+  - helpers/speaker-notes.lua
 
 execute:
   freeze: auto

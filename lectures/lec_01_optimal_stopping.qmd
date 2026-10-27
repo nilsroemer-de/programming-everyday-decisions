@@ -5,21 +5,30 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](lec_01_optimal_stopping.qmd)"
     output-file: lec_01_presentation.html
-lecture-summary: "When options come one by one and you can't go back, look at the first 37 % without committing, then take the first one that beats them all."
-lecture-why: "You visit flats in Hamburg. Each viewing, you must decide on the spot, and if you say no, the flat is gone. Choose too early and you miss better ones; wait too long and the best is behind you. Companies face the same problem when hiring, choosing suppliers or accepting offers."
-lecture-roadmap:
-  - "The problem: choosing the best when options come one at a time"
-  - "The rule: look first, then leap"
-  - "Real life: rejection and time pressure"
-lecture-covered:
-  - "Many decisions share one structure: options arrive one at a time, and there is no going back."
-  - "Looking at the first 37 % and then taking the first better option gives the best possible chance of picking the very best: 37 %."
-  - "If you can be rejected or time is short, start leaping earlier."
-lecture-key: "Look first. Then leap."
 ---
 
 
-# [The problem: choosing the best when options come one at a time]{.flow} {.title}
+## Today in one sentence {.lecture-opening}
+
+::: {.lecture-summary}
+[When options come one by one and you can't go back, look at the first 37 % without committing, then take the first one that beats them all.]{.statement}
+:::
+
+::: {.lecture-why}
+[Why it matters]{.eyebrow}
+
+You visit flats in Hamburg. Each viewing, you must decide on the spot, and if you say no, the flat is gone. Choose too early and you miss better ones; wait too long and the best is behind you. Companies face the same problem when hiring, choosing suppliers or accepting offers.
+:::
+
+## Roadmap {.lecture-opening}
+
+::: {.roadmap}
+1. [The problem: choosing the best when options come one at a time]{.roadmap-item .future}
+2. [The rule: look first, then leap]{.roadmap-item .future}
+3. [Real life: rejection and time pressure]{.roadmap-item .future}
+:::
+
+# [The problem: choosing the best when options come one at a time]{.flow} {.title visibility="hidden"}
 
 ## Options come one by one, and there is no going back
 
@@ -104,7 +113,23 @@ Ordinal ranking: we can say which of two candidates is better, but we do not hav
 Ideas?
 :::
 
-# [The rule: look first, then leap]{.flow} {.title}
+## The problem: choosing the best when options come one at a time {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Many decisions share one structure: options arrive one at a time, and there is no going back.]{.statement}
+:::
+
+# [The rule: look first, then leap]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [The problem: choosing the best when options come one at a time]{.roadmap-item .done}
+2. [The rule: look first, then leap]{.roadmap-item .current}
+3. [Real life: rejection and time pressure]{.roadmap-item .future}
+:::
 
 ## Look at the first 37 %, then leap
 
@@ -235,7 +260,23 @@ plt.legend()
 plt.show()
 ```
 
-# [Real life: rejection and time pressure]{.flow} {.title}
+## The rule: look first, then leap {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[Looking at the first 37 % and then taking the first better option gives the best possible chance of picking the very best: 37 %.]{.statement}
+:::
+
+# [Real life: rejection and time pressure]{.flow} {.title visibility="hidden"}
+
+## Roadmap {.section-roadmap}
+
+::: {.roadmap}
+1. [The problem: choosing the best when options come one at a time]{.roadmap-item .done}
+2. [The rule: look first, then leap]{.roadmap-item .done}
+3. [Real life: rejection and time pressure]{.roadmap-item .current}
+:::
 
 ## If you can be rejected, leap earlier
 
@@ -280,7 +321,49 @@ This holds if options arrive evenly over time. We can also decide how intensivel
 Side note for drivers: an increase in occupancy from 90 to 95 % doubles the search time for all drivers. Each variation changes the rule a little, but the structure stays: options come one at a time, and you cannot go back.
 :::
 
-::: {.lecture-closing}
+## Real life: rejection and time pressure {.section-covered}
+
+::: {.section-covered}
+[What we covered]{.eyebrow}
+
+[If you can be rejected or time is short, start leaping earlier.]{.statement}
+:::
+
+## What we covered {.lecture-closing}
+
+::: {.covered-list}
+::: {.covered-item}
+[The problem: choosing the best when options come one at a time]{.eyebrow}
+
+Many decisions share one structure: options arrive one at a time, and there is no going back.
+:::
+
+::: {.covered-item}
+[The rule: look first, then leap]{.eyebrow}
+
+Looking at the first 37 % and then taking the first better option gives the best possible chance of picking the very best: 37 %.
+:::
+
+::: {.covered-item}
+[Real life: rejection and time pressure]{.eyebrow}
+
+If you can be rejected or time is short, start leaping earlier.
+:::
+
+:::
+
+## Why it matters {.lecture-closing}
+
+::: {.lecture-why .closing}
+You visit flats in Hamburg. Each viewing, you must decide on the spot, and if you say no, the flat is gone. Choose too early and you miss better ones; wait too long and the best is behind you. Companies face the same problem when hiring, choosing suppliers or accepting offers.
+:::
+
+## {.loud-slide .lecture-key}
+
+::: {.r-fit-text}
+Look first.
+
+Then leap.
 :::
 
 ## {.loud-slide}
