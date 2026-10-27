@@ -60,8 +60,8 @@ styles.scss          # @font-face (self-hosted), Design-Tokens, Seitenkopf, Link
 _typst/              # typst-template.typ: Vorlage für den PDF-Export (Titelblock, Überschriften, Code), in _quarto.yml registriert
 index.qmd            # Startseite: Kursbeschreibung, Learning Outcomes, Struktur, AI Policy, Kontakt
 general/             # Syllabus, FAQ, Installation (uv.qmd), Literatur, Cheatsheet, Imprint, Privacy, header.html (leer)
-lectures/            # Vorlesungen als .qmd (HTML-Seite + RevealJS-Folien + PDF); tut_05_01_llm.qmd ist ein Tutorial im Lecture-Ordner
-tutorials/           # Interaktive Python-Tutorials (HTML, ipynb, PDF)
+lectures/            # Vorlesungen als .qmd (HTML-Seite + RevealJS-Folien + PDF)
+tutorials/           # Interaktive Python-Tutorials (HTML, ipynb, PDF); tut_05_01_llm.qmd ist ein Foliensatz und trägt die RevealJS-Einstellungen aus lectures/_metadata.yml im eigenen Kopf
 include/             # Wiederverwendbare Includes (tutorial_end.qmd: Abschnitt „Solutions"; lecture_literature_start/_books.qmd: Literaturfolien aller Lectures)
 helpers/             # speaker-notes.lua (Sprechernotizen auf der HTML-Seite als Notes-Block, im PDF weg), check_lecture_frame.py (Prüfskript Rahmen), course_plots.py (Grafiken im Website-Stil), strip_polyfill.py (Post-Render, entfernt cdnjs-Polyfill), strip-pauses.lua (Pausenmarker nur in RevealJS), Konvertierungsskripte
 assets/              # Self-hosted MathJax: assets/mathjax (v3, HTML) und assets/mathjax2 (v2, RevealJS-Plugin braucht v2-API)
@@ -85,8 +85,8 @@ Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`
 ## Konventionen
 
 - **Titel:** Inhaltsseiten mit Quarto-Title-Block nutzen `title:` und `subtitle:`. Die Rechtstexte (`general/imprint.qmd`, `general/privacy.qmd`) nutzen `pagetitle:` und setzen die sichtbare Überschrift als `# …` im Body. Nummer und Thema werden in Seitentiteln und Sidebar mit Doppelpunkt getrennt (`Lecture I: Optimal Stopping`, `Tutorial I.I: Variables and Types`, `01-01: Variables`), nicht mit ` - `.
-- **Kontakt nur per E-Mail** (nils.roemer@planningio.com). Keine Verweise auf GitHub-Issues, keine Repo-Actions. Der GitHub-Link im Footer bleibt (Quelle der Lösungen, siehe `include/tutorial_end.qmd`).
-- **Keine Requests an Dritte:** Fonts self-hosted (`fonts/`, `@font-face` in `styles.scss`, `$web-font-path: false`), MathJax self-hosted (`assets/`), alle Bilder und GIFs lokal (`images/`, `animations/`), der von Pandoc injizierte cdnjs-Polyfill wird per Post-Render-Skript entfernt. Keine Analytics, keine Cookies, keine CDN-Skripte. Einzige Ausnahme: ein YouTube-Embed im privacy-enhanced Mode (youtube-nocookie.com) in `lectures/tut_05_01_llm.qmd`, der in der Datenschutzerklärung erfasst ist. Die Datenschutzerklärung sichert genau diesen Stand zu, jede neue Abhängigkeit muss dagegen geprüft werden.
+- **Kontakt nur per E-Mail** (nils.roemer@planningio.com). Keine Verweise auf GitHub-Issues, keine Repo-Actions, kein Link auf das GitHub-Repo (seit Oktober 2026 auch nicht mehr im Footer; `repo-url` ist entfernt). Lösungen verteilt Nils separat (`include/tutorial_end.qmd`). GitHub als Inhalt (Copilot in Tutorial V.I, Ressource auf der Literaturseite) ist davon nicht betroffen.
+- **Keine Requests an Dritte:** Fonts self-hosted (`fonts/`, `@font-face` in `styles.scss`, `$web-font-path: false`), MathJax self-hosted (`assets/`), alle Bilder und GIFs lokal (`images/`, `animations/`), der von Pandoc injizierte cdnjs-Polyfill wird per Post-Render-Skript entfernt. Keine Analytics, keine Cookies, keine CDN-Skripte. Einzige Ausnahme: ein YouTube-Embed im privacy-enhanced Mode (youtube-nocookie.com) in `tutorials/tut_05_01_llm.qmd`, der in der Datenschutzerklärung erfasst ist. Die Datenschutzerklärung sichert genau diesen Stand zu, jede neue Abhängigkeit muss dagegen geprüft werden.
 - **Rechtstexte (`general/imprint.qmd`, `general/privacy.qmd`):**
   - Keine sichtbaren Datumsangaben („Stand: …", „Last updated …") einfügen.
   - Änderungen an Rechtstexten vor dem Einarbeiten als Vorschlag zeigen und von Nils freigeben lassen. Das gilt auch für scheinbar triviale Korrekturen.

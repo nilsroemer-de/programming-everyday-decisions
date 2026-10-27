@@ -15,7 +15,6 @@ project:
 
 website:
   title: "Programming: Everyday Decision-Making Algorithms"
-  repo-url: https://github.com/nilsroemer-de/programming-everyday-decisions
   site-url: https://courses.nilsroemer.com
   bread-crumbs: true
   sidebar:
@@ -75,7 +74,7 @@ website:
           - text: "Lecture"
             href: lectures/lec_05_randomness.qmd
           - text: "05-01: LLM"
-            href: lectures/tut_05_01_llm.qmd
+            href: tutorials/tut_05_01_llm.qmd
           - text: "05-02: Recap"
             href: tutorials/tut_05_02_recap.qmd
           - text: "05-03: Free Tasks"
@@ -96,8 +95,6 @@ website:
   page-footer:
     center: "Programming: Everyday Decision-Making Algorithms</br>Nils Roemer and Tobias Vlćek</br>CC BY-NC-SA 4.0"
     left:
-      - icon: github
-        href: https://github.com/nilsroemer-de/programming-everyday-decisions
       - icon: linkedin
         href: https://www.linkedin.com/in/nroemer/
       - icon: envelope

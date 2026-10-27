@@ -5,6 +5,28 @@ format:
   revealjs:
     footer: " {{< meta title >}} | Dr. Nils Roemer | [Home](tut_05_01_llm.qmd)"
     output-file: tut_05_01_presentation.html
+    # slide settings as in lectures/_metadata.yml (this tutorial is a slide deck)
+    html-math-method:
+      method: mathjax
+      url: "/assets/mathjax2/MathJax.js"
+    theme:
+      - default
+      - ../styles.scss
+      - brand
+    transition: slide
+    callout-appearance: simple
+    transition-speed: fast
+    highlight-style: github
+    slide-number: true
+    code-copy: true
+    code-link: true
+    preview-links: auto
+format-links:
+  - html
+  - format: typst
+    text: PDF
+    icon: file-pdf
+  - revealjs
 ---
 
 # [Programming with AI]{.flow} {.title}

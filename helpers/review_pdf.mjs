@@ -38,7 +38,7 @@ const evaluate = async (expression) => (await s('Runtime.evaluate', { expression
 
 for (const d of decks) {
   const loaded = new Promise((res) => { const l = (m) => { if (m.method === 'Page.loadEventFired' && m.sessionId === sessionId) { listeners.delete(l); res(); } }; listeners.add(l); });
-  await s('Page.navigate', { url: `http://127.0.0.1:${port}/lectures/${d}_presentation.html?print-pdf&showNotes=separate-page` });
+  await s('Page.navigate', { url: `http://127.0.0.1:${port}/${d.startsWith('tut_') ? 'tutorials' : 'lectures'}/${d}_presentation.html?print-pdf&showNotes=separate-page` });
   await loaded;
   // wait until reveal has laid out the print pages and the fonts are ready
   await evaluate(`(async () => { for (let i = 0; i < 100; i++) { if (document.querySelectorAll('.pdf-page').length > 0 && document.fonts.status === 'loaded') break; await new Promise(r => setTimeout(r, 200)); } await new Promise(r => setTimeout(r, 1500)); })()`);
