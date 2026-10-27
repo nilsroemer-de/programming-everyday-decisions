@@ -77,7 +77,7 @@ a_random_number = random.random()
 print(f"A random number is {a_random_number}!")
 ```
 
-    A random number is 0.7551099213458505!
+    A random number is 0.8324480643170571!
 
 We can also use the library to choose a random element from a list. For example, the following code chooses a random element from the list `['book1', 'book2', 'book3']`. Try it out by executing the cell multiple times.
 
@@ -106,7 +106,7 @@ a_random_integer = rd.randint(1, 100)
 print(f"Now, a random integer between 1 and 100 is {a_random_integer}!")
 ```
 
-    Now, a random integer between 1 and 100 is 31!
+    Now, a random integer between 1 and 100 is 52!
 
 ## Exercise 1.1 - Use the math library
 
@@ -333,14 +333,6 @@ Great work! You learned how Python projects organize and access code via:
 - Isolated project environments for reliability
 
 Treat each project like its own library branch: well‑labeled, independent, and easy to maintain.
-
-# Solutions
-
-You will likely find solutions to most exercises online. However, we strongly encourage you to work on these exercises independently without searching explicitly for the exact answers to the exercises. Understanding someone else's solution is very different from developing your own. Use the lecture notes and try to solve the exercises on your own. This approach will significantly enhance your learning and problem-solving skills.
-
-Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don't hesitate to ask for clarification during class discussions.
-
-Later, we will share the solutions to these exercises with you, and we will also quickly go over them next week. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.
 
 ------------------------------------------------------------------------
 

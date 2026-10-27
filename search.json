@@ -566,7 +566,7 @@
     "href": "tutorials/tut_04_02_dicts.html#conclusion",
     "title": "Tutorial IV.II: Dictionaries",
     "section": "Conclusion",
-    "text": "Conclusion\nGreat! You’ve just navigated through the basics of dictionaries in Python. Dictionaries are powerful data structures that allow for efficient data organization and retrieval. Remember:\n\nDictionaries can store information using key-value pairs\nAccessing them using keys is efficient and easier than accessing them using indices\nLoops can iterate over dictionaries to perform operations on each key-value pair",
+    "text": "Conclusion\nGreat! You’ve just navigated through the basics of dictionaries in Python. Dictionaries are powerful data structures that allow for efficient data organization and retrieval. Remember:\n\nDictionaries can store information using key-value pairs\nAccessing them using keys is efficient and easier than accessing them using indices\nLoops can iterate over dictionaries to perform operations on each key-value pair\n\n\nIn the next tutorial, we’ll dive deeper into DataFrames and how to use them!",
     "crumbs": [
       "04 Scheduling",
       "04-02: Dictionaries"

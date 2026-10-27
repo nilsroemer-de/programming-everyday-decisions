@@ -417,7 +417,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-5.1---implement-the-rule" id="toc-exercise-5.1---implement-the-rule" class="nav-link" data-scroll-target="#exercise-5.1---implement-the-rule">Exercise 5.1 - Implement the Rule</a></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tut_01_03_stopping.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="tut_01_03_stopping.ipynb" download="tut_01_03_stopping.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -465,7 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="understanding-if-statements" class="level1">
 <h1>1 - Understanding If Statements</h1>
 <p>An <code>if</code> statement is like asking a yes/no question and doing something based on the answer. For example:</p>
-<div id="b648b891" class="cell" data-execution_count="1">
+<div id="8503340f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>flat_rating <span class="op">=</span> <span class="dv">8</span>  <span class="co"># Rate the flat from 0-10</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> flat_rating <span class="op">&gt;=</span> <span class="dv">7</span>:</span>
@@ -516,7 +515,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercise-1.1---your-first-decision" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1.1---your-first-decision">Exercise 1.1 - Your First Decision</h2>
 <p>Create an <code>if</code> statement that prints “Perfect flat!” if the <code>flat_rating</code> is 10.</p>
-<div id="1ebcbb6f" class="cell" data-execution_count="2">
+<div id="8cc38729" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>flat_rating <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -527,7 +526,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="adding-else-statements" class="level1">
 <h1>2 - Adding Else Statements</h1>
 <p>But what if we want to do something different when the condition is False? That’s where <code>else</code> comes in:</p>
-<div id="7f8d8e03" class="cell" data-execution_count="3">
+<div id="366b3d09" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>flat_rating <span class="op">=</span> <span class="dv">4</span>  <span class="co"># Not a great flat!</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> flat_rating <span class="op">&gt;=</span> <span class="dv">7</span>:</span>
@@ -564,12 +563,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercise-2.1---complete-decision" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2.1---complete-decision">Exercise 2.1 - Complete Decision</h2>
 <p>Write an if-else statement that sets <code>decision</code> to “Apply now” if <code>flat_rating</code> is at least 7, and “Keep searching” otherwise.</p>
-<div id="9507b158" class="cell" data-execution_count="4">
+<div id="0a7fc7b3" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>flat_rating <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>decision <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="fbb24a95" class="cell" data-execution_count="5">
+<div id="371f7cf4" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
@@ -598,7 +597,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="adding-elif-else-if" class="level1">
 <h1>3 - Adding Elif (Else If)</h1>
 <p>Sometimes we need more than two options. That’s where <code>elif</code> comes in:</p>
-<div id="fc59980f" class="cell" data-execution_count="6">
+<div id="31a5bf6b" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>flat_rating <span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> flat_rating <span class="op">&gt;=</span> <span class="dv">9</span>:</span>
@@ -661,12 +660,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>“Standard” if rating is 5 or 6</li>
 <li>“Basic” for anything lower</li>
 </ul>
-<div id="72cb0582" class="cell" data-execution_count="7">
+<div id="13633002" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>flat_rating <span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>flat_category <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ac71be5d" class="cell" data-execution_count="8">
+<div id="acacf63f" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
@@ -679,7 +678,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="complex-decisions" class="level1">
 <h1>4 - Complex Decisions</h1>
 <p>In real life, we often need to check multiple conditions at once. We can combine conditions using <code>and</code> and <code>or</code>:</p>
-<div id="b80b1ea3" class="cell" data-execution_count="9">
+<div id="5073ae17" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>flat_rating <span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>weeks_searching <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>max_search_time <span class="op">=</span> <span class="dv">4</span></span>
@@ -716,13 +715,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The flat rating is at least 8, OR</li>
 <li>The flat rating is at least 6 AND we’ve been searching for 3 weeks or more</li>
 </ul>
-<div id="ba71971a" class="cell" data-execution_count="10">
+<div id="f3b2c83f" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>flat_rating <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>weeks_searching <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>should_apply <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="181ec2e6" class="cell" data-execution_count="11">
+<div id="18f3a3ad" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
@@ -735,7 +734,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-37-rule-with-decisions" class="level1">
 <h1>5 - The 37% Rule with Decisions</h1>
 <p>Remember the optimal stopping rule? Let’s apply it to apartment hunting:</p>
-<div id="791fd19a" class="cell" data-execution_count="12">
+<div id="619035b2" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>flats_seen <span class="op">=</span> <span class="dv">6</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>total_viewings <span class="op">=</span> <span class="dv">15</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>current_rating <span class="op">=</span> <span class="dv">8</span></span>
@@ -762,14 +761,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The current flat is better than the best we’ve seen so far</li>
 </ul>
 <p>and <code>False</code> otherwise.</p>
-<div id="2e35a476" class="cell" data-execution_count="13">
+<div id="ae619eb3" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>flats_seen <span class="op">=</span> <span class="dv">6</span>  <span class="co"># We've seen 6 flats</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>total_viewings <span class="op">=</span> <span class="dv">15</span>  <span class="co"># We plan to view 15 flats in total</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>current_rating <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>best_rating_so_far <span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># YOUR CODE BELOW</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e738eb4f" class="cell" data-execution_count="14">
+<div id="0ed2b255" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test your answer</span></span>
@@ -791,12 +790,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Remember, just like in apartment hunting, these tools help us make better decisions in any situation where we need to decide whether to take what we have or keep looking for something better!</p>
 <hr>
-</section>
-<section id="solutions" class="level1">
-<h1>Solutions</h1>
-<p>You will likely find solutions to most exercises online. However, we strongly encourage you to work on these exercises independently without searching explicitly for the exact answers to the exercises. Understanding someone else’s solution is very different from developing your own. Use the lecture notes and try to solve the exercises on your own. This approach will significantly enhance your learning and problem-solving skills.</p>
-<p>Remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities. If you encounter difficulties, review the lecture materials, experiment with different approaches, and don’t hesitate to ask for clarification during class discussions.</p>
-<p>Later, we will share the solutions to these exercises with you, and we will also quickly go over them next week. Alternatively, you can ask a current AI assistant such as Claude, ChatGPT or Gemini to explain them to you. But please remember, the goal is not just to complete the exercises, but to understand the concepts and improve your programming abilities.</p>
 <p><em>That’s it for part I! Next week, we’ll apply these skills to exploration and exploitation!</em></p>
 
 
