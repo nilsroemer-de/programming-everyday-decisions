@@ -224,14 +224,14 @@ Every step, every command, every click is in the guide:
 
 [**courses.nilsroemer.com/general/uv.html**](../general/uv.qmd){.guide-link}
 
-Also linked in Moodle and on the course website.
+Also linked on the course website, under Installation Guide.
 
 - Follow the steps **in order**, don't skip any
 - After each step: a small **check**
 - We stop at four **checkpoints** and compare
 
 ::: {.notes}
-Open the guide now on your laptop, from Moodle or the course website. We go through the guide step by step and stop at the checkpoints. If you get stuck, raise your hand, and we help you before moving on.
+Open the guide now on your laptop, from the course website under Installation Guide. We go through the guide step by step and stop at the checkpoints. If you get stuck, raise your hand, and we help you before moving on.
 :::
 
 ## Checkpoint 1: VS Code is open with both extensions
