@@ -291,9 +291,9 @@ So far, we made some strong simplifications. Real life is messier.
 - Looking **costs time and effort**
 :::
 
-## If you can be rejected, leap earlier
+## What if you can be rejected?
 
-[Question:]{.question} In dating, [the other person can also say no]{.highlight}. **When to leap?**
+[Question:]{.question} In dating, [the other person can also say no]{.highlight}. **Earlier or later than 37%?**
 
 :::{.incremental}
 - 50% chance of rejection: **leap at 25%**
@@ -309,9 +309,9 @@ Life lesson: higher risk of rejection means we should be less picky. With q = 0.
 Example from Brian Christian: searching from age 18 to 40, the 37% rule says get serious at 26.1. With many rejections, start at 23.5.
 :::
 
-## If you can go back, wait longer
+## What if you can go back?
 
-[Question:]{.question} What if you could **return to someone you passed on**, but they might say no?
+[Question:]{.question} You can **return to someone you passed on**, but they might say no. **Look longer or shorter?**
 
 :::{.incremental}
 - Going back works only half the time: **look at 61%**[^book], then leap
@@ -325,9 +325,9 @@ Example from Brian Christian: searching from age 18 to 40, the 37% rule says get
 Example from the book: an immediate offer is always accepted, a belated one only with 50%. The safety net of going back shifts the look phase from 37% to 61%.
 :::
 
-## If you know the scale, use a threshold
+## What if you know how good an option is?
 
-[Question:]{.question} What if you **know how good** each option is, not just how it compares?
+[Question:]{.question} Test scores, prices per square meter: **do we still need a look phase?**
 
 :::{.incremental}
 - Example: you know test scores, or the price per square meter of a flat
@@ -342,7 +342,7 @@ Example from the book: an immediate offer is always accepted, a belated one only
 This is the "full information" version. With absolute scores and a known distribution, you don't need to learn a benchmark first. The threshold starts high and falls as you run out of options.
 :::
 
-## Fixed time instead of a fixed number of options
+## What if time is fixed?
 
 **Example:** one year to find a flat, viewings come as they come
 
@@ -361,13 +361,13 @@ This is the "full information" version. With absolute scores and a known distrib
 This holds if options arrive evenly over time. We can also decide how intensively we search, for example by viewing more flats per week. Searching harder in the look phase improves the benchmark.
 :::
 
-## The burglar: knowing when to quit
+## The burglar: when to retire?
 
 **Example:** each break-in succeeds with chance $q$, one failure means losing everything
 
 . . .
 
-[Question:]{.question} When should the burglar retire?
+[Question:]{.question} Does the answer depend on $q$, and how?
 
 . . .
 
@@ -379,7 +379,7 @@ This holds if options arrive evenly over time. We can also decide how intensivel
 
 [^burglar]: Ferguson, T.S. Optimal Stopping and Applications. Lecture notes, University of California, Los Angeles, https://www.math.ucla.edu/~tom/Stopping/. The rule assumes the same haul every time: stop once your total haul is worth more than what you would expect to gain from one more attempt.
 
-## In practice, people stop too early
+## What do people actually do?
 
 :::{.incremental}
 - In about a dozen experiments, people **leap earlier** than the 37% rule suggests[^book]
