@@ -173,32 +173,32 @@ So far, we made some strong simplifications. Real life is messier.
 - One failure can mean **losing everything**
 - Looking **costs time and effort**
 
-## If you can be rejected, leap earlier
+## What if you can be rejected?
 
-<span class="question">Question:</span> In dating, <span class="highlight">the other person can also say no</span>. **When to leap?**
+<span class="question">Question:</span> In dating, <span class="highlight">the other person can also say no</span>. **Earlier or later than 37%?**
 
 - 50% chance of rejection: **leap at 25%**
 - **Formula:** $q^{\frac{1}{1-q}}$, $q$ = chance that your offer is **accepted**[^3]
 - In words: the more often you hear "no", the earlier you leap
 
-## If you can go back, wait longer
+## What if you can go back?
 
-<span class="question">Question:</span> What if you could **return to someone you passed on**, but they might say no?
+<span class="question">Question:</span> You can **return to someone you passed on**, but they might say no. **Look longer or shorter?**
 
 - Going back works only half the time: **look at 61%**[^4], then leap
 - If nobody better comes, **return to the best** you passed
 - In words: a second chance makes it safe to look longer
 
-## If you know the scale, use a threshold
+## What if you know how good an option is?
 
-<span class="question">Question:</span> What if you **know how good** each option is, not just how it compares?
+<span class="question">Question:</span> Test scores, prices per square meter: **do we still need a look phase?**
 
 - Example: you know test scores, or the price per square meter of a flat
 - **No look phase needed:** take the first option above a threshold
 - The threshold **drops** as fewer options remain
 - Chance of getting the very best rises to **58%**[^5]
 
-## Fixed time instead of a fixed number of options
+## What if time is fixed?
 
 **Example:** one year to find a flat, viewings come as they come
 
@@ -207,17 +207,17 @@ So far, we made some strong simplifications. Real life is messier.
 - **Same principle:** look for the first 37% of the time[^6], then leap
 - The number of options is not fixed: **the harder we search, the more options we see**
 
-## The burglar: knowing when to quit
+## The burglar: when to retire?
 
 **Example:** each break-in succeeds with chance $q$, one failure means losing everything
 
-<span class="question">Question:</span> When should the burglar retire?
+<span class="question">Question:</span> Does the answer depend on $q$, and how?
 
 - Stop after about $\frac{q}{1-q}$ successes
 - With $q = 90\%$: retire after **9** break-ins[^7]
 - Same logic for any streak that can end badly: a winning run in the casino, a project that keeps growing in risk
 
-## In practice, people stop too early
+## What do people actually do?
 
 - In about a dozen experiments, people **leap earlier** than the 37% rule suggests[^8]
 - <span class="question">Question:</span> Why might that be?

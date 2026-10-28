@@ -588,7 +588,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Now <strong>close VS Code completely</strong> and open it again. This is important: only then does the terminal know the new tool. Open a new terminal again with <strong>Terminal → New Terminal</strong>.</p>
+<p>Now <strong>close VS Code completely</strong> and open it again. This is important: only then does the terminal know the new tool.</p>
+<p><strong>Check:</strong> After the restart, the top left of VS Code must show <code>PROGRAMMING-COURSE</code> again. If it doesn’t, click <strong>File → Open Recent → programming-course</strong>. Then open a new terminal with <strong>Terminal → New Terminal</strong>.</p>
 <p><strong>Check:</strong> Type this and press <strong>Enter</strong>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see something like <code>uv 0.11.26</code>. The exact number doesn’t matter.</p>
@@ -605,9 +606,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="step-7-turn-your-folder-into-a-python-project">Step 7: Turn your folder into a Python project</h2>
 <p><strong>Where:</strong> the terminal in VS Code, inside <code>programming-course</code></p>
 <p><strong>Why:</strong> This tells uv: “this folder is a Python project”. uv creates a few files it needs to keep track of things.</p>
-<p><strong>Do:</strong> Run these two commands, one after the other:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python pin 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Check first:</strong> The terminal must be inside your course folder. Type this and press <strong>Enter</strong>:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Location</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<p>The answer must end with <code>programming-course</code>. If it doesn’t: close the terminal (the bin icon in the terminal panel), open the folder with <strong>File → Open Recent → programming-course</strong>, and open a new terminal with <strong>Terminal → New Terminal</strong>.</p>
+<p><strong>Do:</strong> Run this command:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init <span class="at">--python</span> 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>--python 3.13</code> part tells uv that this project uses Python 3.13, and that 3.13 is the minimum version it needs.</p>
 <p>New files appear on the left in VS Code. You don’t need to touch them:</p>
 <ul>
 <li><code>main.py</code>: a tiny example program</li>
@@ -615,7 +629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>.python-version</code>: which Python version the project uses</li>
 </ul>
 <p><strong>Check:</strong> Run the example program:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run python main.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run python main.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see <code>Hello from programming-course!</code>. Congratulations, you just ran your first Python program!</p>
 </section>
 <section id="step-8-add-notebook-support" class="level2">
@@ -623,8 +637,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Where:</strong> the terminal in VS Code</p>
 <p><strong>Why:</strong> Notebooks need two extra helpers. The first one lets notebooks use the Python of your project, the second one adds the notebook tools.</p>
 <p><strong>Do:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="at">--dev</span> ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="at">--dev</span> ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Check:</strong> The terminal lists a lot of installed packages and ends without an error. A new folder <code>.venv</code> appears on the left. That’s your project’s own Python environment.</p>
 </section>
 <section id="step-9-your-first-notebook" class="level2">
@@ -694,6 +708,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Close VS Code completely and open it again. On Windows, check that the terminal says <code>PS</code>.</td>
 </tr>
 <tr class="even">
+<td><code>main.py</code> can’t be found</td>
+<td>Check the folder and the terminal as in Step 7, then run <code>uv init --python 3.13</code> again in the right folder. If <code>uv init</code> ran in a different folder by mistake: don’t delete anything, ask us.</td>
+</tr>
+<tr class="odd">
+<td>uv says the Python version is incompatible with the project</td>
+<td>Open <code>pyproject.toml</code> in VS Code and change the line <code>requires-python</code> to <code>requires-python = "&gt;=3.13"</code>. Save the file, then run <code>uv python pin 3.13</code> and <code>uv sync</code>.</td>
+</tr>
+<tr class="even">
 <td>Windows says scripts are disabled</td>
 <td>Run <code>Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process</code>, then repeat Step 5.</td>
 </tr>
@@ -719,7 +741,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="later-in-the-course-adding-packages" class="level2">
 <h2 class="anchored" data-anchor-id="later-in-the-course-adding-packages">Later in the course: adding packages</h2>
 <p>Sometimes a tutorial needs an extra package, for example <code>pandas</code>. Then run this in the terminal of your course folder:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

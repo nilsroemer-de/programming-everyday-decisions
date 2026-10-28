@@ -451,12 +451,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#roadmap-2" id="toc-roadmap-2" class="nav-link" data-scroll-target="#roadmap-2">Roadmap</a></li>
   <li><a href="#real-life-changes-the-assumptions" id="toc-real-life-changes-the-assumptions" class="nav-link" data-scroll-target="#real-life-changes-the-assumptions">Real life changes the assumptions</a></li>
-  <li><a href="#if-you-can-be-rejected-leap-earlier" id="toc-if-you-can-be-rejected-leap-earlier" class="nav-link" data-scroll-target="#if-you-can-be-rejected-leap-earlier">If you can be rejected, leap earlier</a></li>
-  <li><a href="#if-you-can-go-back-wait-longer" id="toc-if-you-can-go-back-wait-longer" class="nav-link" data-scroll-target="#if-you-can-go-back-wait-longer">If you can go back, wait longer</a></li>
-  <li><a href="#if-you-know-the-scale-use-a-threshold" id="toc-if-you-know-the-scale-use-a-threshold" class="nav-link" data-scroll-target="#if-you-know-the-scale-use-a-threshold">If you know the scale, use a threshold</a></li>
-  <li><a href="#fixed-time-instead-of-a-fixed-number-of-options" id="toc-fixed-time-instead-of-a-fixed-number-of-options" class="nav-link" data-scroll-target="#fixed-time-instead-of-a-fixed-number-of-options">Fixed time instead of a fixed number of options</a></li>
-  <li><a href="#the-burglar-knowing-when-to-quit" id="toc-the-burglar-knowing-when-to-quit" class="nav-link" data-scroll-target="#the-burglar-knowing-when-to-quit">The burglar: knowing when to quit</a></li>
-  <li><a href="#in-practice-people-stop-too-early" id="toc-in-practice-people-stop-too-early" class="nav-link" data-scroll-target="#in-practice-people-stop-too-early">In practice, people stop too early</a></li>
+  <li><a href="#what-if-you-can-be-rejected" id="toc-what-if-you-can-be-rejected" class="nav-link" data-scroll-target="#what-if-you-can-be-rejected">What if you can be rejected?</a></li>
+  <li><a href="#what-if-you-can-go-back" id="toc-what-if-you-can-go-back" class="nav-link" data-scroll-target="#what-if-you-can-go-back">What if you can go back?</a></li>
+  <li><a href="#what-if-you-know-how-good-an-option-is" id="toc-what-if-you-know-how-good-an-option-is" class="nav-link" data-scroll-target="#what-if-you-know-how-good-an-option-is">What if you know how good an option is?</a></li>
+  <li><a href="#what-if-time-is-fixed" id="toc-what-if-time-is-fixed" class="nav-link" data-scroll-target="#what-if-time-is-fixed">What if time is fixed?</a></li>
+  <li><a href="#the-burglar-when-to-retire" id="toc-the-burglar-when-to-retire" class="nav-link" data-scroll-target="#the-burglar-when-to-retire">The burglar: when to retire?</a></li>
+  <li><a href="#what-do-people-actually-do" id="toc-what-do-people-actually-do" class="nav-link" data-scroll-target="#what-do-people-actually-do">What do people actually do?</a></li>
   <li><a href="#what-we-covered" id="toc-what-we-covered" class="nav-link" data-scroll-target="#what-we-covered">What we covered</a></li>
   <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link" data-scroll-target="#why-it-matters">Why it matters</a></li>
   <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
@@ -680,7 +680,7 @@ window.Quarto = {
 </section>
 <section id="the-same-idea-in-code" class="level2">
 <h2 class="anchored" data-anchor-id="the-same-idea-in-code">The same idea in code</h2>
-<div id="ea949da1" class="cell" data-output-location="fragment" data-execution_count="1">
+<div id="38282c19" class="cell" data-output-location="fragment" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">42</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -713,7 +713,7 @@ window.Quarto = {
 <section id="simulation-looking-at-37-of-100-candidates-works-best" class="level2">
 <h2 class="anchored" data-anchor-id="simulation-looking-at-37-of-100-candidates-works-best">Simulation: looking at 37 of 100 candidates works best</h2>
 <p>100 candidates, 2,000 simulated runs per stopping point:</p>
-<div id="1546b20c" class="cell" data-fig-height="4.2" data-fig-width="9" data-execution_count="2">
+<div id="599abedb" class="cell" data-fig-height="4.2" data-fig-width="9" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -751,9 +751,9 @@ window.Quarto = {
 </ul>
 </div>
 </section>
-<section id="if-you-can-be-rejected-leap-earlier" class="level2">
-<h2 class="anchored" data-anchor-id="if-you-can-be-rejected-leap-earlier">If you can be rejected, leap earlier</h2>
-<p><span class="question">Question:</span> In dating, <span class="highlight">the other person can also say no</span>. <strong>When to leap?</strong></p>
+<section id="what-if-you-can-be-rejected" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-you-can-be-rejected">What if you can be rejected?</h2>
+<p><span class="question">Question:</span> In dating, <span class="highlight">the other person can also say no</span>. <strong>Earlier or later than 37%?</strong></p>
 <div class="incremental">
 <ul class="incremental">
 <li>50% chance of rejection: <strong>leap at 25%</strong></li>
@@ -767,9 +767,9 @@ window.Quarto = {
 <p>Example from Brian Christian: searching from age 18 to 40, the 37% rule says get serious at 26.1. With many rejections, start at 23.5.</p>
 </div>
 </section>
-<section id="if-you-can-go-back-wait-longer" class="level2">
-<h2 class="anchored" data-anchor-id="if-you-can-go-back-wait-longer">If you can go back, wait longer</h2>
-<p><span class="question">Question:</span> What if you could <strong>return to someone you passed on</strong>, but they might say no?</p>
+<section id="what-if-you-can-go-back" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-you-can-go-back">What if you can go back?</h2>
+<p><span class="question">Question:</span> You can <strong>return to someone you passed on</strong>, but they might say no. <strong>Look longer or shorter?</strong></p>
 <div class="incremental">
 <ul class="incremental">
 <li>Going back works only half the time: <strong>look at 61%</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, then leap</li>
@@ -782,9 +782,9 @@ window.Quarto = {
 <p>Example from the book: an immediate offer is always accepted, a belated one only with 50%. The safety net of going back shifts the look phase from 37% to 61%.</p>
 </div>
 </section>
-<section id="if-you-know-the-scale-use-a-threshold" class="level2">
-<h2 class="anchored" data-anchor-id="if-you-know-the-scale-use-a-threshold">If you know the scale, use a threshold</h2>
-<p><span class="question">Question:</span> What if you <strong>know how good</strong> each option is, not just how it compares?</p>
+<section id="what-if-you-know-how-good-an-option-is" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-you-know-how-good-an-option-is">What if you know how good an option is?</h2>
+<p><span class="question">Question:</span> Test scores, prices per square meter: <strong>do we still need a look phase?</strong></p>
 <div class="incremental">
 <ul class="incremental">
 <li>Example: you know test scores, or the price per square meter of a flat</li>
@@ -798,8 +798,8 @@ window.Quarto = {
 <p>This is the “full information” version. With absolute scores and a known distribution, you don’t need to learn a benchmark first. The threshold starts high and falls as you run out of options.</p>
 </div>
 </section>
-<section id="fixed-time-instead-of-a-fixed-number-of-options" class="level2">
-<h2 class="anchored" data-anchor-id="fixed-time-instead-of-a-fixed-number-of-options">Fixed time instead of a fixed number of options</h2>
+<section id="what-if-time-is-fixed" class="level2">
+<h2 class="anchored" data-anchor-id="what-if-time-is-fixed">What if time is fixed?</h2>
 <p><strong>Example:</strong> one year to find a flat, viewings come as they come</p>
 <p><span class="question">Question:</span> How should we adapt our strategy?</p>
 <div class="incremental">
@@ -813,10 +813,10 @@ window.Quarto = {
 <p>This holds if options arrive evenly over time. We can also decide how intensively we search, for example by viewing more flats per week. Searching harder in the look phase improves the benchmark.</p>
 </div>
 </section>
-<section id="the-burglar-knowing-when-to-quit" class="level2">
-<h2 class="anchored" data-anchor-id="the-burglar-knowing-when-to-quit">The burglar: knowing when to quit</h2>
+<section id="the-burglar-when-to-retire" class="level2">
+<h2 class="anchored" data-anchor-id="the-burglar-when-to-retire">The burglar: when to retire?</h2>
 <p><strong>Example:</strong> each break-in succeeds with chance <span class="math inline">\(q\)</span>, one failure means losing everything</p>
-<p><span class="question">Question:</span> When should the burglar retire?</p>
+<p><span class="question">Question:</span> Does the answer depend on <span class="math inline">\(q\)</span>, and how?</p>
 <div class="incremental">
 <ul class="incremental">
 <li>Stop after about <span class="math inline">\(\frac{q}{1-q}\)</span> successes</li>
@@ -825,8 +825,8 @@ window.Quarto = {
 </ul>
 </div>
 </section>
-<section id="in-practice-people-stop-too-early" class="level2">
-<h2 class="anchored" data-anchor-id="in-practice-people-stop-too-early">In practice, people stop too early</h2>
+<section id="what-do-people-actually-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-do-people-actually-do">What do people actually do?</h2>
 <div class="incremental">
 <ul class="incremental">
 <li>In about a dozen experiments, people <strong>leap earlier</strong> than the 37% rule suggests<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></li>

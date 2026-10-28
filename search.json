@@ -3586,7 +3586,7 @@
     "href": "general/uv.html#step-5-install-uv",
     "title": "Installation Guide",
     "section": "Step 5: Install uv",
-    "text": "Step 5: Install uv\nWhere: the terminal in VS Code\nWhy: uv is a helper that installs Python for you and keeps each project clean. You only install it once.\nDo: Copy the command for your system and press Enter.\n\nmacOSWindows\n\n\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n\n\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n\n\n\nNow close VS Code completely and open it again. This is important: only then does the terminal know the new tool. Open a new terminal again with Terminal → New Terminal.\nCheck: Type this and press Enter:\nuv --version\nYou should see something like uv 0.11.26. The exact number doesn’t matter.",
+    "text": "Step 5: Install uv\nWhere: the terminal in VS Code\nWhy: uv is a helper that installs Python for you and keeps each project clean. You only install it once.\nDo: Copy the command for your system and press Enter.\n\nmacOSWindows\n\n\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n\n\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n\n\n\nNow close VS Code completely and open it again. This is important: only then does the terminal know the new tool.\nCheck: After the restart, the top left of VS Code must show PROGRAMMING-COURSE again. If it doesn’t, click File → Open Recent → programming-course. Then open a new terminal with Terminal → New Terminal.\nCheck: Type this and press Enter:\nuv --version\nYou should see something like uv 0.11.26. The exact number doesn’t matter.",
     "crumbs": [
       "Installation Guide"
     ]
@@ -3606,7 +3606,7 @@
     "href": "general/uv.html#step-7-turn-your-folder-into-a-python-project",
     "title": "Installation Guide",
     "section": "Step 7: Turn your folder into a Python project",
-    "text": "Step 7: Turn your folder into a Python project\nWhere: the terminal in VS Code, inside programming-course\nWhy: This tells uv: “this folder is a Python project”. uv creates a few files it needs to keep track of things.\nDo: Run these two commands, one after the other:\nuv init\nuv python pin 3.13\nNew files appear on the left in VS Code. You don’t need to touch them:\n\nmain.py: a tiny example program\npyproject.toml: the list of what your project needs\n.python-version: which Python version the project uses\n\nCheck: Run the example program:\nuv run python main.py\nYou should see Hello from programming-course!. Congratulations, you just ran your first Python program!",
+    "text": "Step 7: Turn your folder into a Python project\nWhere: the terminal in VS Code, inside programming-course\nWhy: This tells uv: “this folder is a Python project”. uv creates a few files it needs to keep track of things.\nCheck first: The terminal must be inside your course folder. Type this and press Enter:\n\nmacOSWindows\n\n\npwd\n\n\nGet-Location\n\n\n\nThe answer must end with programming-course. If it doesn’t: close the terminal (the bin icon in the terminal panel), open the folder with File → Open Recent → programming-course, and open a new terminal with Terminal → New Terminal.\nDo: Run this command:\nuv init --python 3.13\nThe --python 3.13 part tells uv that this project uses Python 3.13, and that 3.13 is the minimum version it needs.\nNew files appear on the left in VS Code. You don’t need to touch them:\n\nmain.py: a tiny example program\npyproject.toml: the list of what your project needs\n.python-version: which Python version the project uses\n\nCheck: Run the example program:\nuv run python main.py\nYou should see Hello from programming-course!. Congratulations, you just ran your first Python program!",
     "crumbs": [
       "Installation Guide"
     ]
@@ -3666,7 +3666,7 @@
     "href": "general/uv.html#something-doesnt-work",
     "title": "Installation Guide",
     "section": "Something doesn’t work?",
-    "text": "Something doesn’t work?\n\n\n\n\n\n\n\nProblem\nWhat to do\n\n\n\n\nuv is “not found” or “not recognized”\nClose VS Code completely and open it again. On Windows, check that the terminal says PS.\n\n\nWindows says scripts are disabled\nRun Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process, then repeat Step 5.\n\n\n.venv doesn’t appear under Select Kernel\nPress Cmd/Ctrl + Shift + P, type Developer: Reload Window, press Enter, try again.\n\n\nThe notebook shows a different Python than 3.13\nClick on the kernel name in the top right and choose the .venv one.\n\n\nuv self update fails on a Mac\nIf you installed uv with Homebrew, use brew upgrade uv instead.\n\n\nAnything else\nAsk us! Guessing usually takes longer than asking.",
+    "text": "Something doesn’t work?\n\n\n\n\n\n\n\nProblem\nWhat to do\n\n\n\n\nuv is “not found” or “not recognized”\nClose VS Code completely and open it again. On Windows, check that the terminal says PS.\n\n\nmain.py can’t be found\nCheck the folder and the terminal as in Step 7, then run uv init --python 3.13 again in the right folder. If uv init ran in a different folder by mistake: don’t delete anything, ask us.\n\n\nuv says the Python version is incompatible with the project\nOpen pyproject.toml in VS Code and change the line requires-python to requires-python = \"&gt;=3.13\". Save the file, then run uv python pin 3.13 and uv sync.\n\n\nWindows says scripts are disabled\nRun Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process, then repeat Step 5.\n\n\n.venv doesn’t appear under Select Kernel\nPress Cmd/Ctrl + Shift + P, type Developer: Reload Window, press Enter, try again.\n\n\nThe notebook shows a different Python than 3.13\nClick on the kernel name in the top right and choose the .venv one.\n\n\nuv self update fails on a Mac\nIf you installed uv with Homebrew, use brew upgrade uv instead.\n\n\nAnything else\nAsk us! Guessing usually takes longer than asking.",
     "crumbs": [
       "Installation Guide"
     ]
@@ -8464,6 +8464,114 @@
     "crumbs": [
       "05 Randomness",
       "05-02: Recap"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_01_presentation.html#what-if-you-can-be-rejected",
+    "href": "lectures/lec_01_presentation.html#what-if-you-can-be-rejected",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What if you can be rejected?",
+    "text": "What if you can be rejected?\nQuestion: In dating, the other person can also say no. Earlier or later than 37%?\n\n50% chance of rejection: leap at 25%\nFormula: \\(q^{\\frac{1}{1-q}}\\), \\(q\\) = chance that your offer is accepted1\nIn words: the more often you hear “no”, the earlier you leap\n\n\nLife lesson: higher risk of rejection means we should be less picky. With q = 0.5 the formula gives 0.5 to the power of 2, that is 25%. If offers are always accepted (q close to 1), the formula gives back the familiar 1/e.\nExample from Brian Christian: searching from age 18 to 40, the 37% rule says get serious at 26.1. With many rejections, start at 23.5.\n\nHow it works: after the look phase, you ask everyone who beats all earlier candidates, and each says yes with chance \\(q\\). You get the best only if the best says yes and everyone you asked before said no. More rejections mean you use up more candidates after the look phase, so you have to start earlier. The stated formula is the best look phase, for example 25% when \\(q = 50\\%\\). As in the basic problem, your chance of getting the best equals the look phase. With \\(q\\) close to 1, it gives back 37%."
+  },
+  {
+    "objectID": "lectures/lec_01_presentation.html#what-if-you-can-go-back",
+    "href": "lectures/lec_01_presentation.html#what-if-you-can-go-back",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What if you can go back?",
+    "text": "What if you can go back?\nQuestion: You can return to someone you passed on, but they might say no. Look longer or shorter?\n\nGoing back works only half the time: look at 61%1, then leap\nIf nobody better comes, return to the best you passed\nIn words: a second chance makes it safe to look longer\n\n\nExample from the book: an immediate offer is always accepted, a belated one only with 50%. The safety net of going back shifts the look phase from 37% to 61%.\n\nChristian, B. & Griffiths, T. (2016). Algorithms to Live By. Henry Holt, Chapter 1."
+  },
+  {
+    "objectID": "lectures/lec_01_presentation.html#what-if-you-know-how-good-an-option-is",
+    "href": "lectures/lec_01_presentation.html#what-if-you-know-how-good-an-option-is",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What if you know how good an option is?",
+    "text": "What if you know how good an option is?\nQuestion: Test scores, prices per square meter: do we still need a look phase?\n\nExample: you know test scores, or the price per square meter of a flat\nNo look phase needed: take the first option above a threshold\nThe threshold drops as fewer options remain\nChance of getting the very best rises to 58%1\n\n\nThis is the “full information” version. With absolute scores and a known distribution, you don’t need to learn a benchmark first. The threshold starts high and falls as you run out of options.\n\nGilbert, J.P. & Mosteller, F. (1966). Recognizing the maximum of a sequence. Journal of the American Statistical Association, 61(313), 35–73."
+  },
+  {
+    "objectID": "lectures/lec_01_presentation.html#what-if-time-is-fixed",
+    "href": "lectures/lec_01_presentation.html#what-if-time-is-fixed",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What if time is fixed?",
+    "text": "What if time is fixed?\nExample: one year to find a flat, viewings come as they come\n\nQuestion: How should we adapt our strategy?\n\n\n\nSame principle: look for the first 37% of the time1, then leap\nThe number of options is not fixed: the harder we search, the more options we see\n\n\nThis holds if options arrive evenly over time. We can also decide how intensively we search, for example by viewing more flats per week. Searching harder in the look phase improves the benchmark.\n\n\nChristian, B. & Griffiths, T. (2016). Algorithms to Live By. Henry Holt, Chapter 1."
+  },
+  {
+    "objectID": "lectures/lec_01_presentation.html#the-burglar-when-to-retire",
+    "href": "lectures/lec_01_presentation.html#the-burglar-when-to-retire",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "The burglar: when to retire?",
+    "text": "The burglar: when to retire?\nExample: each break-in succeeds with chance \\(q\\), one failure means losing everything\n\nQuestion: Does the answer depend on \\(q\\), and how?\n\n\n\nStop after about \\(\\frac{q}{1-q}\\) successes\nWith \\(q = 90\\%\\): retire after 9 break-ins1\nSame logic for any streak that can end badly: a winning run in the casino, a project that keeps growing in risk\n\n\nFerguson, T.S. Optimal Stopping and Applications. Lecture notes, University of California, Los Angeles, https://www.math.ucla.edu/~tom/Stopping/. The rule assumes the same haul every time: stop once your total haul is worth more than what you would expect to gain from one more attempt."
+  },
+  {
+    "objectID": "lectures/lec_01_presentation.html#what-do-people-actually-do",
+    "href": "lectures/lec_01_presentation.html#what-do-people-actually-do",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What do people actually do?",
+    "text": "What do people actually do?\n\nIn about a dozen experiments, people leap earlier than the 37% rule suggests1\nQuestion: Why might that be?\nSearching costs time and effort, and the rule ignores that\nIf looking is expensive, leaping earlier can be the right choice\n\n\nExperiments by Seale and Rapoport (1997). The 37% rule assumes that looking is free. In real life, every viewing or interview costs time, so stopping a bit earlier is often rational, not a mistake.\nSide note for drivers: an increase in occupancy from 90 to 95% doubles the search time for all drivers. Each variation changes the rule a little, but the structure stays: options come one at a time, and you cannot go back.\n\nChristian, B. & Griffiths, T. (2016). Algorithms to Live By. Henry Holt, Chapter 1."
+  },
+  {
+    "objectID": "lectures/lec_01_optimal_stopping.html#what-if-you-can-be-rejected",
+    "href": "lectures/lec_01_optimal_stopping.html#what-if-you-can-be-rejected",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What if you can be rejected?",
+    "text": "What if you can be rejected?\nQuestion: In dating, the other person can also say no. Earlier or later than 37%?\n\n\n50% chance of rejection: leap at 25%\nFormula: \\(q^{\\frac{1}{1-q}}\\), \\(q\\) = chance that your offer is accepted3\nIn words: the more often you hear “no”, the earlier you leap\n\n\n\nNotes\nLife lesson: higher risk of rejection means we should be less picky. With q = 0.5 the formula gives 0.5 to the power of 2, that is 25%. If offers are always accepted (q close to 1), the formula gives back the familiar 1/e.\nExample from Brian Christian: searching from age 18 to 40, the 37% rule says get serious at 26.1. With many rejections, start at 23.5.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_01_optimal_stopping.html#what-if-you-can-go-back",
+    "href": "lectures/lec_01_optimal_stopping.html#what-if-you-can-go-back",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What if you can go back?",
+    "text": "What if you can go back?\nQuestion: You can return to someone you passed on, but they might say no. Look longer or shorter?\n\n\nGoing back works only half the time: look at 61%4, then leap\nIf nobody better comes, return to the best you passed\nIn words: a second chance makes it safe to look longer\n\n\n\nNotes\nExample from the book: an immediate offer is always accepted, a belated one only with 50%. The safety net of going back shifts the look phase from 37% to 61%.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_01_optimal_stopping.html#what-if-you-know-how-good-an-option-is",
+    "href": "lectures/lec_01_optimal_stopping.html#what-if-you-know-how-good-an-option-is",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What if you know how good an option is?",
+    "text": "What if you know how good an option is?\nQuestion: Test scores, prices per square meter: do we still need a look phase?\n\n\nExample: you know test scores, or the price per square meter of a flat\nNo look phase needed: take the first option above a threshold\nThe threshold drops as fewer options remain\nChance of getting the very best rises to 58%5\n\n\n\nNotes\nThis is the “full information” version. With absolute scores and a known distribution, you don’t need to learn a benchmark first. The threshold starts high and falls as you run out of options.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_01_optimal_stopping.html#what-if-time-is-fixed",
+    "href": "lectures/lec_01_optimal_stopping.html#what-if-time-is-fixed",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What if time is fixed?",
+    "text": "What if time is fixed?\nExample: one year to find a flat, viewings come as they come\nQuestion: How should we adapt our strategy?\n\n\nSame principle: look for the first 37% of the time6, then leap\nThe number of options is not fixed: the harder we search, the more options we see\n\n\n\nNotes\nThis holds if options arrive evenly over time. We can also decide how intensively we search, for example by viewing more flats per week. Searching harder in the look phase improves the benchmark.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_01_optimal_stopping.html#the-burglar-when-to-retire",
+    "href": "lectures/lec_01_optimal_stopping.html#the-burglar-when-to-retire",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "The burglar: when to retire?",
+    "text": "The burglar: when to retire?\nExample: each break-in succeeds with chance \\(q\\), one failure means losing everything\nQuestion: Does the answer depend on \\(q\\), and how?\n\n\nStop after about \\(\\frac{q}{1-q}\\) successes\nWith \\(q = 90\\%\\): retire after 9 break-ins7\nSame logic for any streak that can end badly: a winning run in the casino, a project that keeps growing in risk",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_01_optimal_stopping.html#what-do-people-actually-do",
+    "href": "lectures/lec_01_optimal_stopping.html#what-do-people-actually-do",
+    "title": "Lecture I: Optimal Stopping",
+    "section": "What do people actually do?",
+    "text": "What do people actually do?\n\n\nIn about a dozen experiments, people leap earlier than the 37% rule suggests8\nQuestion: Why might that be?\nSearching costs time and effort, and the rule ignores that\nIf looking is expensive, leaping earlier can be the right choice\n\n\n\nNotes\nExperiments by Seale and Rapoport (1997). The 37% rule assumes that looking is free. In real life, every viewing or interview costs time, so stopping a bit earlier is often rational, not a mistake.\nSide note for drivers: an increase in occupancy from 90 to 95% doubles the search time for all drivers. Each variation changes the rule a little, but the structure stays: options come one at a time, and you cannot go back.",
+    "crumbs": [
+      "01 Optimal Stopping",
+      "Lecture"
     ]
   }
 ]

@@ -127,7 +127,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-Now **close VS Code completely** and open it again. This is important: only then does the terminal know the new tool. Open a new terminal again with **Terminal → New Terminal**.
+Now **close VS Code completely** and open it again. This is important: only then does the terminal know the new tool.
+
+**Check:** After the restart, the top left of VS Code must show `PROGRAMMING-COURSE` again. If it doesn't, click **File → Open Recent → programming-course**. Then open a new terminal with **Terminal → New Terminal**.
 
 **Check:** Type this and press **Enter**:
 
@@ -157,15 +159,29 @@ uv python install 3.13
 
 **Why:** This tells uv: "this folder is a Python project". uv creates a few files it needs to keep track of things.
 
-**Do:** Run these two commands, one after the other:
+**Check first:** The terminal must be inside your course folder. Type this and press **Enter**:
+
+## macOS
 
 ``` bash
-uv init
+pwd
 ```
 
-``` bash
-uv python pin 3.13
+## Windows
+
+``` powershell
+Get-Location
 ```
+
+The answer must end with `programming-course`. If it doesn't: close the terminal (the bin icon in the terminal panel), open the folder with **File → Open Recent → programming-course**, and open a new terminal with **Terminal → New Terminal**.
+
+**Do:** Run this command:
+
+``` bash
+uv init --python 3.13
+```
+
+The `--python 3.13` part tells uv that this project uses Python 3.13, and that 3.13 is the minimum version it needs.
 
 New files appear on the left in VS Code. You don't need to touch them:
 
@@ -253,6 +269,8 @@ You don't need to install anything again. Just:
 | Problem | What to do |
 |------------------------------------|------------------------------------|
 | `uv` is "not found" or "not recognized" | Close VS Code completely and open it again. On Windows, check that the terminal says `PS`. |
+| `main.py` can't be found | Check the folder and the terminal as in Step 7, then run `uv init --python 3.13` again in the right folder. If `uv init` ran in a different folder by mistake: don't delete anything, ask us. |
+| uv says the Python version is incompatible with the project | Open `pyproject.toml` in VS Code and change the line `requires-python` to `requires-python = ">=3.13"`. Save the file, then run `uv python pin 3.13` and `uv sync`. |
 | Windows says scripts are disabled | Run `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process`, then repeat Step 5. |
 | `.venv` doesn't appear under Select Kernel | Press **Cmd/Ctrl + Shift + P**, type `Developer: Reload Window`, press **Enter**, try again. |
 | The notebook shows a different Python than 3.13 | Click on the kernel name in the top right and choose the **.venv** one. |
