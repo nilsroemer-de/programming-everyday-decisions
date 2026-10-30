@@ -126,7 +126,7 @@ Sonstige Dateien im Root (`klu_syllabus.md`, `manual.md`, `main.py`, `messages/`
 
 - Zwei Wochen vorher den Installation Guide (`general/uv.qmd`) auf einem frischen macOS und einem frischen Windows mit der aktuellen uv-Version komplett durchspielen, Schritt für Schritt wie Studierende.
 - Die uv-Release-Notes seit dem letzten Test auf geänderte Standardwerte prüfen (Beispiel: seit uv 0.12 legt `uv init` ein Paket mit `src/` ohne `main.py` an, deshalb `uv init --no-package --python 3.13` im Guide) und den Guide anpassen.
-- Das Testdatum im Abschnitt „Tested with" am Ende des Guides aktualisieren (nur Testdatum, kein Änderungsdatum).
+- Danach den Abschnitt „Tested with" am Ende des Guides mit uv-Version und Testdatum (nur Testdatum, kein Änderungsdatum) einfügen bzw. aktualisieren. Das Testdatum darf **nur nach einem echten Durchlauf auf frischen Systemen** gesetzt werden, nie auf Basis von Dokumentation oder Release-Notes. Solange kein Durchlauf stattgefunden hat, gibt es keinen Abschnitt „Tested with" (Stand Oktober 2026: entfernt).
 
 **Offene Punkte**
 
