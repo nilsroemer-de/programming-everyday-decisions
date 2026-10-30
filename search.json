@@ -3516,7 +3516,7 @@
     "href": "general/uv.html",
     "title": "Installation Guide",
     "section": "",
-    "text": "You don’t need any prior knowledge. Follow the steps in order and don’t skip any.\nYou need:\n\nYour laptop (Windows or macOS) with internet access\nThe password of your laptop, because installing software sometimes asks for it\n\nAt the end, you will have everything you need for the tutorials.",
+    "text": "ImportantmacOS or Windows?\n\n\n\nThis guide is different for macOS and Windows. Choose your system in the tabs below, and the whole page follows.",
     "crumbs": [
       "Installation Guide"
     ]
@@ -3525,8 +3525,8 @@
     "objectID": "general/uv.html#before-you-start",
     "href": "general/uv.html#before-you-start",
     "title": "Installation Guide",
-    "section": "",
-    "text": "You don’t need any prior knowledge. Follow the steps in order and don’t skip any.\nYou need:\n\nYour laptop (Windows or macOS) with internet access\nThe password of your laptop, because installing software sometimes asks for it\n\nAt the end, you will have everything you need for the tutorials.",
+    "section": "Before you start",
+    "text": "Before you start\nYou don’t need any prior knowledge. Follow the steps in order and don’t skip any.\nYou need:\n\nYour laptop (Windows or macOS) with internet access\nThe password of your laptop, because installing software sometimes asks for it\n\nAt the end, you will have everything you need for the tutorials.",
     "crumbs": [
       "Installation Guide"
     ]
@@ -3586,7 +3586,7 @@
     "href": "general/uv.html#step-5-install-uv",
     "title": "Installation Guide",
     "section": "Step 5: Install uv",
-    "text": "Step 5: Install uv\nWhere: the terminal in VS Code\nWhy: uv is a helper that installs Python for you and keeps each project clean. You only install it once.\nDo: Copy the command for your system and press Enter.\n\nmacOSWindows\n\n\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n\n\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n\n\n\nNow close VS Code completely and open it again. This is important: only then does the terminal know the new tool.\nCheck: After the restart, the top left of VS Code must show PROGRAMMING-COURSE again. If it doesn’t, click File → Open Recent → programming-course. Then open a new terminal with Terminal → New Terminal.\nCheck: Type this and press Enter:\nuv --version\nYou should see something like uv 0.11.26. The exact number doesn’t matter.",
+    "text": "Step 5: Install uv\nWhere: the terminal in VS Code\nWhy: uv is a helper that installs Python for you and keeps each project clean. You only install it once.\nDo: Copy the command for your system and press Enter.\n\nmacOSWindows\n\n\ncurl -LsSf https://astral.sh/uv/install.sh | sh\n\n\npowershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\"\n\n\n\n\n\n\n\n\n\nWarningRestart required\n\n\n\nThe terminal only learns about new tools when VS Code starts fresh.\n\nmacOSWindows\n\n\nQuit VS Code with Cmd + Q. Closing the window is not enough.\n\n\nClose all VS Code windows.\n\n\n\n\n\nOpen VS Code again. Check: The top left must show PROGRAMMING-COURSE again. If it doesn’t, click File → Open Recent → programming-course. Then open a new terminal with Terminal → New Terminal.\nCheck: Type this and press Enter:\nuv --version\nYou should see something like uv 0.12.0. The exact number doesn’t matter.",
     "crumbs": [
       "Installation Guide"
     ]
@@ -3606,7 +3606,7 @@
     "href": "general/uv.html#step-7-turn-your-folder-into-a-python-project",
     "title": "Installation Guide",
     "section": "Step 7: Turn your folder into a Python project",
-    "text": "Step 7: Turn your folder into a Python project\nWhere: the terminal in VS Code, inside programming-course\nWhy: This tells uv: “this folder is a Python project”. uv creates a few files it needs to keep track of things.\nCheck first: The terminal must be inside your course folder. Type this and press Enter:\n\nmacOSWindows\n\n\npwd\n\n\nGet-Location\n\n\n\nThe answer must end with programming-course. If it doesn’t: close the terminal (the bin icon in the terminal panel), open the folder with File → Open Recent → programming-course, and open a new terminal with Terminal → New Terminal.\nDo: Run this command:\nuv init --python 3.13\nThe --python 3.13 part tells uv that this project uses Python 3.13, and that 3.13 is the minimum version it needs.\nNew files appear on the left in VS Code. You don’t need to touch them:\n\nmain.py: a tiny example program\npyproject.toml: the list of what your project needs\n.python-version: which Python version the project uses\n\nCheck: Run the example program:\nuv run python main.py\nYou should see Hello from programming-course!. Congratulations, you just ran your first Python program!",
+    "text": "Step 7: Turn your folder into a Python project\nWhere: the terminal in VS Code, inside programming-course\nWhy: This tells uv: “this folder is a Python project”. uv creates a few files it needs to keep track of things.\nCheck first: The terminal must be inside your course folder. Type this and press Enter:\n\nmacOSWindows\n\n\npwd\n\n\nGet-Location\n\n\n\nThe answer must end with programming-course. If it doesn’t: close the terminal (the bin icon in the terminal panel), open the folder with File → Open Recent → programming-course, and open a new terminal with Terminal → New Terminal.\nDo: Run this command:\nuv init --no-package --python 3.13\nThis creates a simple project with a main.py and Python 3.13 as its minimum version. (--no-package matters: since uv 0.12, plain uv init creates a src/ folder without main.py instead.)\nNew files appear on the left in VS Code. You don’t need to touch them:\n\nmain.py: a tiny example program\npyproject.toml: the list of what your project needs\n.python-version: which Python version the project uses\n\nCheck: Run the example program:\nuv run python main.py\nYou should see Hello from programming-course!. Congratulations, you just ran your first Python program!",
     "crumbs": [
       "Installation Guide"
     ]
@@ -3666,7 +3666,7 @@
     "href": "general/uv.html#something-doesnt-work",
     "title": "Installation Guide",
     "section": "Something doesn’t work?",
-    "text": "Something doesn’t work?\n\n\n\n\n\n\n\nProblem\nWhat to do\n\n\n\n\nuv is “not found” or “not recognized”\nClose VS Code completely and open it again. On Windows, check that the terminal says PS.\n\n\nmain.py can’t be found\nCheck the folder and the terminal as in Step 7, then run uv init --python 3.13 again in the right folder. If uv init ran in a different folder by mistake: don’t delete anything, ask us.\n\n\nuv says the Python version is incompatible with the project\nOpen pyproject.toml in VS Code and change the line requires-python to requires-python = \"&gt;=3.13\". Save the file, then run uv python pin 3.13 and uv sync.\n\n\nWindows says scripts are disabled\nRun Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process, then repeat Step 5.\n\n\n.venv doesn’t appear under Select Kernel\nPress Cmd/Ctrl + Shift + P, type Developer: Reload Window, press Enter, try again.\n\n\nThe notebook shows a different Python than 3.13\nClick on the kernel name in the top right and choose the .venv one.\n\n\nuv self update fails on a Mac\nIf you installed uv with Homebrew, use brew upgrade uv instead.\n\n\nAnything else\nAsk us! Guessing usually takes longer than asking.",
+    "text": "Something doesn’t work?\n\n\n\n\n\n\n\nProblem\nWhat to do\n\n\n\n\nuv is “not found” or “not recognized”\nRestart VS Code as in Step 5 (macOS: Cmd + Q, Windows: close all windows). On Windows, check that the terminal says PS.\n\n\nmain.py can’t be found\nCheck the folder and the terminal as in Step 7, then run uv init --no-package --python 3.13 again in the right folder. If uv init ran in a different folder by mistake: don’t delete anything, ask us.\n\n\nThere is a folder src/ but no main.py\nYou ran uv init without --no-package. That’s fine: test with uv run programming-course instead. It should print Hello from programming-course!. Then continue with Step 8.\n\n\nuv says the Python version is incompatible with the project\nOpen pyproject.toml in VS Code and change the line requires-python to requires-python = \"&gt;=3.13\". Save the file, then run uv python pin 3.13 and uv sync.\n\n\nWindows says scripts are disabled\nRun Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process, then repeat Step 5.\n\n\n.venv doesn’t appear under Select Kernel\nPress Cmd/Ctrl + Shift + P, type Developer: Reload Window, press Enter, try again.\n\n\nThe notebook shows a different Python than 3.13\nClick on the kernel name in the top right and choose the .venv one.\n\n\nuv self update fails on a Mac\nIf you installed uv with Homebrew, use brew upgrade uv instead.\n\n\nAnything else\nAsk us! Guessing usually takes longer than asking.",
     "crumbs": [
       "Installation Guide"
     ]
@@ -8572,6 +8572,16 @@
     "crumbs": [
       "01 Optimal Stopping",
       "Lecture"
+    ]
+  },
+  {
+    "objectID": "general/uv.html#tested-with",
+    "href": "general/uv.html#tested-with",
+    "title": "Installation Guide",
+    "section": "Tested with",
+    "text": "Tested with\nuv 0.12 and VS Code on macOS and Windows, 30 October 2026.",
+    "crumbs": [
+      "Installation Guide"
     ]
   }
 ]

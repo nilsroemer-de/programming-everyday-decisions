@@ -4,6 +4,10 @@ subtitle: From zero to your first notebook, step by step
 ---
 
 
+> **macOS or Windows?**
+>
+> This guide is different for macOS and Windows. Choose your system in the tabs below, and the whole page follows.
+
 ## Before you start
 
 You don't need any prior knowledge. Follow the steps in order and don't skip any.
@@ -127,9 +131,19 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-Now **close VS Code completely** and open it again. This is important: only then does the terminal know the new tool.
+> **Restart required**
+>
+> The terminal only learns about new tools when VS Code starts fresh.
+>
+> ## macOS
+>
+> Quit VS Code with **Cmd + Q**. Closing the window is not enough.
+>
+> ## Windows
+>
+> Close **all** VS Code windows.
 
-**Check:** After the restart, the top left of VS Code must show `PROGRAMMING-COURSE` again. If it doesn't, click **File → Open Recent → programming-course**. Then open a new terminal with **Terminal → New Terminal**.
+Open VS Code again. **Check:** The top left must show `PROGRAMMING-COURSE` again. If it doesn't, click **File → Open Recent → programming-course**. Then open a new terminal with **Terminal → New Terminal**.
 
 **Check:** Type this and press **Enter**:
 
@@ -137,7 +151,7 @@ Now **close VS Code completely** and open it again. This is important: only then
 uv --version
 ```
 
-You should see something like `uv 0.11.26`. The exact number doesn't matter.
+You should see something like `uv 0.12.0`. The exact number doesn't matter.
 
 ## Step 6: Install Python
 
@@ -178,10 +192,10 @@ The answer must end with `programming-course`. If it doesn't: close the terminal
 **Do:** Run this command:
 
 ``` bash
-uv init --python 3.13
+uv init --no-package --python 3.13
 ```
 
-The `--python 3.13` part tells uv that this project uses Python 3.13, and that 3.13 is the minimum version it needs.
+This creates a simple project with a `main.py` and Python 3.13 as its minimum version. (`--no-package` matters: since uv 0.12, plain `uv init` creates a `src/` folder without `main.py` instead.)
 
 New files appear on the left in VS Code. You don't need to touch them:
 
@@ -268,8 +282,9 @@ You don't need to install anything again. Just:
 
 | Problem | What to do |
 |------------------------------------|------------------------------------|
-| `uv` is "not found" or "not recognized" | Close VS Code completely and open it again. On Windows, check that the terminal says `PS`. |
-| `main.py` can't be found | Check the folder and the terminal as in Step 7, then run `uv init --python 3.13` again in the right folder. If `uv init` ran in a different folder by mistake: don't delete anything, ask us. |
+| `uv` is "not found" or "not recognized" | Restart VS Code as in Step 5 (macOS: **Cmd + Q**, Windows: close all windows). On Windows, check that the terminal says `PS`. |
+| `main.py` can't be found | Check the folder and the terminal as in Step 7, then run `uv init --no-package --python 3.13` again in the right folder. If `uv init` ran in a different folder by mistake: don't delete anything, ask us. |
+| There is a folder `src/` but no `main.py` | You ran `uv init` without `--no-package`. That's fine: test with `uv run programming-course` instead. It should print `Hello from programming-course!`. Then continue with Step 8. |
 | uv says the Python version is incompatible with the project | Open `pyproject.toml` in VS Code and change the line `requires-python` to `requires-python = ">=3.13"`. Save the file, then run `uv python pin 3.13` and `uv sync`. |
 | Windows says scripts are disabled | Run `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process`, then repeat Step 5. |
 | `.venv` doesn't appear under Select Kernel | Press **Cmd/Ctrl + Shift + P**, type `Developer: Reload Window`, press **Enter**, try again. |
@@ -284,3 +299,7 @@ Sometimes a tutorial needs an extra package, for example `pandas`. Then run this
 ``` bash
 uv add pandas
 ```
+
+## Tested with
+
+uv 0.12 and VS Code on macOS and Windows, 30 October 2026.

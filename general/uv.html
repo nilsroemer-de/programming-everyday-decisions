@@ -410,6 +410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#every-next-session" id="toc-every-next-session" class="nav-link" data-scroll-target="#every-next-session">Every next session</a></li>
   <li><a href="#something-doesnt-work" id="toc-something-doesnt-work" class="nav-link" data-scroll-target="#something-doesnt-work">Something doesn’t work?</a></li>
   <li><a href="#later-in-the-course-adding-packages" id="toc-later-in-the-course-adding-packages" class="nav-link" data-scroll-target="#later-in-the-course-adding-packages">Later in the course: adding packages</a></li>
+  <li><a href="#tested-with" id="toc-tested-with" class="nav-link" data-scroll-target="#tested-with">Tested with</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="uv.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -436,6 +437,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="callout callout-style-simple callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>macOS or Windows?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This guide is different for macOS and Windows. Choose your system in the tabs below, and the whole page follows.</p>
+</div>
+</div>
 <section id="before-you-start" class="level2">
 <h2 class="anchored" data-anchor-id="before-you-start">Before you start</h2>
 <p>You don’t need any prior knowledge. Follow the steps in order and don’t skip any.</p>
@@ -496,9 +510,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Where:</strong> your web browser</p>
 <p><strong>Why:</strong> VS Code is the app you will work in for the whole course. Apps like this are called IDEs (Integrated Development Environments): one place to write code, run it and find mistakes.</p>
 <p><strong>Do:</strong> Go to <a href="https://code.visualstudio.com/">code.visualstudio.com</a> and download VS Code for your system.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
+<div class="tab-content" data-group="os">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ol type="1">
 <li>Open the downloaded file. A file called <strong>Visual Studio Code</strong> appears.</li>
@@ -533,9 +547,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="step-3-create-your-course-folder">Step 3: Create your course folder</h2>
 <p><strong>Where:</strong> Finder (macOS) or File Explorer (Windows)</p>
 <p><strong>Why:</strong> Everything for this course lives in one folder. That keeps things tidy, and Python works best when each project has its own folder.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
+<div class="tab-content" data-group="os">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>Open <strong>Finder</strong>, go to your <strong>home folder</strong> (the one with the house icon) and create a new folder called <code>programming-course</code>.</p>
 </div>
@@ -553,9 +567,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Where:</strong> VS Code</p>
 <p><strong>Why:</strong> The terminal is where you type commands. You type a command, press <strong>Enter</strong>, and the computer answers with text. We only need a few commands, and you can copy them from this page.</p>
 <p><strong>Do:</strong> In the menu bar, click <strong>Terminal → New Terminal</strong>. A panel opens at the bottom of VS Code.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
+<div class="tab-content" data-group="os">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>The terminal shows a line ending with <code>%</code>. That’s where you type.</p>
 </div>
@@ -577,9 +591,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Where:</strong> the terminal in VS Code</p>
 <p><strong>Why:</strong> uv is a helper that installs Python for you and keeps each project clean. You only install it once.</p>
 <p><strong>Do:</strong> Copy the command for your system and press <strong>Enter</strong>.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
+<div class="tab-content" data-group="os">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -588,11 +602,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Now <strong>close VS Code completely</strong> and open it again. This is important: only then does the terminal know the new tool.</p>
-<p><strong>Check:</strong> After the restart, the top left of VS Code must show <code>PROGRAMMING-COURSE</code> again. If it doesn’t, click <strong>File → Open Recent → programming-course</strong>. Then open a new terminal with <strong>Terminal → New Terminal</strong>.</p>
+<div class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Restart required
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The terminal only learns about new tools when VS Code starts fresh.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>Quit VS Code with <strong>Cmd + Q</strong>. Closing the window is not enough.</p>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>Close <strong>all</strong> VS Code windows.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Open VS Code again. <strong>Check:</strong> The top left must show <code>PROGRAMMING-COURSE</code> again. If it doesn’t, click <strong>File → Open Recent → programming-course</strong>. Then open a new terminal with <strong>Terminal → New Terminal</strong>.</p>
 <p><strong>Check:</strong> Type this and press <strong>Enter</strong>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You should see something like <code>uv 0.11.26</code>. The exact number doesn’t matter.</p>
+<p>You should see something like <code>uv 0.12.0</code>. The exact number doesn’t matter.</p>
 </section>
 <section id="step-6-install-python" class="level2">
 <h2 class="anchored" data-anchor-id="step-6-install-python">Step 6: Install Python</h2>
@@ -607,21 +644,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Where:</strong> the terminal in VS Code, inside <code>programming-course</code></p>
 <p><strong>Why:</strong> This tells uv: “this folder is a Python project”. uv creates a few files it needs to keep track of things.</p>
 <p><strong>Check first:</strong> The terminal must be inside your course folder. Type this and press <strong>Enter</strong>:</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href="">macOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href="">Windows</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Location</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 <p>The answer must end with <code>programming-course</code>. If it doesn’t: close the terminal (the bin icon in the terminal panel), open the folder with <strong>File → Open Recent → programming-course</strong>, and open a new terminal with <strong>Terminal → New Terminal</strong>.</p>
 <p><strong>Do:</strong> Run this command:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init <span class="at">--python</span> 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The <code>--python 3.13</code> part tells uv that this project uses Python 3.13, and that 3.13 is the minimum version it needs.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init <span class="at">--no-package</span> <span class="at">--python</span> 3.13</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This creates a simple project with a <code>main.py</code> and Python 3.13 as its minimum version. (<code>--no-package</code> matters: since uv 0.12, plain <code>uv init</code> creates a <code>src/</code> folder without <code>main.py</code> instead.)</p>
 <p>New files appear on the left in VS Code. You don’t need to touch them:</p>
 <ul>
 <li><code>main.py</code>: a tiny example program</li>
@@ -705,33 +742,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td><code>uv</code> is “not found” or “not recognized”</td>
-<td>Close VS Code completely and open it again. On Windows, check that the terminal says <code>PS</code>.</td>
+<td>Restart VS Code as in Step 5 (macOS: <strong>Cmd + Q</strong>, Windows: close all windows). On Windows, check that the terminal says <code>PS</code>.</td>
 </tr>
 <tr class="even">
 <td><code>main.py</code> can’t be found</td>
-<td>Check the folder and the terminal as in Step 7, then run <code>uv init --python 3.13</code> again in the right folder. If <code>uv init</code> ran in a different folder by mistake: don’t delete anything, ask us.</td>
+<td>Check the folder and the terminal as in Step 7, then run <code>uv init --no-package --python 3.13</code> again in the right folder. If <code>uv init</code> ran in a different folder by mistake: don’t delete anything, ask us.</td>
 </tr>
 <tr class="odd">
+<td>There is a folder <code>src/</code> but no <code>main.py</code></td>
+<td>You ran <code>uv init</code> without <code>--no-package</code>. That’s fine: test with <code>uv run programming-course</code> instead. It should print <code>Hello from programming-course!</code>. Then continue with Step 8.</td>
+</tr>
+<tr class="even">
 <td>uv says the Python version is incompatible with the project</td>
 <td>Open <code>pyproject.toml</code> in VS Code and change the line <code>requires-python</code> to <code>requires-python = "&gt;=3.13"</code>. Save the file, then run <code>uv python pin 3.13</code> and <code>uv sync</code>.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Windows says scripts are disabled</td>
 <td>Run <code>Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process</code>, then repeat Step 5.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>.venv</code> doesn’t appear under Select Kernel</td>
 <td>Press <strong>Cmd/Ctrl + Shift + P</strong>, type <code>Developer: Reload Window</code>, press <strong>Enter</strong>, try again.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>The notebook shows a different Python than 3.13</td>
 <td>Click on the kernel name in the top right and choose the <strong>.venv</strong> one.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>uv self update</code> fails on a Mac</td>
 <td>If you installed uv with Homebrew, use <code>brew upgrade uv</code> instead.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Anything else</td>
 <td>Ask us! Guessing usually takes longer than asking.</td>
 </tr>
@@ -742,6 +783,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="later-in-the-course-adding-packages">Later in the course: adding packages</h2>
 <p>Sometimes a tutorial needs an extra package, for example <code>pandas</code>. Then run this in the terminal of your course folder:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="tested-with" class="level2">
+<h2 class="anchored" data-anchor-id="tested-with">Tested with</h2>
+<p>uv 0.12 and VS Code on macOS and Windows, 30 October 2026.</p>
 
 
 </section>
