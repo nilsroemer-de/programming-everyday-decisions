@@ -410,7 +410,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#every-next-session" id="toc-every-next-session" class="nav-link" data-scroll-target="#every-next-session">Every next session</a></li>
   <li><a href="#something-doesnt-work" id="toc-something-doesnt-work" class="nav-link" data-scroll-target="#something-doesnt-work">Something doesn’t work?</a></li>
   <li><a href="#later-in-the-course-adding-packages" id="toc-later-in-the-course-adding-packages" class="nav-link" data-scroll-target="#later-in-the-course-adding-packages">Later in the course: adding packages</a></li>
-  <li><a href="#tested-with" id="toc-tested-with" class="nav-link" data-scroll-target="#tested-with">Tested with</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="uv.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -554,7 +553,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Open <strong>Finder</strong>, go to your <strong>home folder</strong> (the one with the house icon) and create a new folder called <code>programming-course</code>.</p>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Open <strong>File Explorer</strong>, go to <code>C:\Users\YourName</code> and create a new folder called <code>programming-course</code>.</p>
+<p>Open <strong>File Explorer</strong>, click into the address bar at the top, type <code>%USERPROFILE%</code> and press <strong>Enter</strong>. This opens your user folder. Create a new folder there called <code>programming-course</code>.</p>
 <p>Please <strong>don’t</strong> put it in a OneDrive folder. Syncing can break the setup.</p>
 </div>
 </div>
@@ -676,7 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Do:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="at">--dev</span> ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Check:</strong> The terminal lists a lot of installed packages and ends without an error. A new folder <code>.venv</code> appears on the left. That’s your project’s own Python environment.</p>
+<p><strong>Check:</strong> The terminal lists a lot of installed packages and ends without an error. You see a folder <code>.venv</code> on the left. That’s your project’s own Python environment.</p>
 </section>
 <section id="step-9-your-first-notebook" class="level2">
 <h2 class="anchored" data-anchor-id="step-9-your-first-notebook">Step 9: Your first notebook</h2>
@@ -687,7 +686,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Press <strong>Cmd + Shift + P</strong> (macOS) or <strong>Ctrl + Shift + P</strong> (Windows). A search bar opens at the top.</li>
 <li>Type <code>Create: New Jupyter Notebook</code> and press <strong>Enter</strong>.</li>
 <li>Click <strong>Select Kernel</strong> in the top right corner. The kernel is the Python that runs your notebook.</li>
-<li>Choose <strong>Python Environments</strong>, then the one that says <strong>.venv</strong> and <strong>Python 3.13</strong>.</li>
+<li>Choose <strong>Python Environments</strong>, then the one that says <strong>.venv</strong> and <strong>Python 3.13</strong>. If you don’t see Python Environments, click <strong>Select Another Kernel…</strong> first.</li>
 <li>Click into the first cell, type <code>print("Hello")</code> and press <strong>Shift + Enter</strong>.</li>
 </ol>
 <p><strong>Check:</strong> Below the cell, you see <code>Hello</code>. Everything works!</p>
@@ -746,33 +745,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 <tr class="even">
 <td><code>main.py</code> can’t be found</td>
-<td>Check the folder and the terminal as in Step 7, then run <code>uv init --no-package --python 3.13</code> again in the right folder. If <code>uv init</code> ran in a different folder by mistake: don’t delete anything, ask us.</td>
+<td>Your terminal is probably in the wrong folder. Check the folder and the terminal as in Step 7, then run <code>uv init --no-package --python 3.13</code> again in the right folder. If uv then says the project is already initialized, see the next row. If <code>uv init</code> ran in a different folder by mistake: don’t delete anything, ask us.</td>
 </tr>
 <tr class="odd">
+<td>uv says the project is already initialized</td>
+<td>Your project already exists, don’t run <code>uv init</code> again. If you see <code>main.py</code>, continue with <code>uv run python main.py</code>. If there is a <code>src/</code> folder, see the row below. If neither exists, create a new file <code>main.py</code> on the left (New File icon) with the line <code>print("Hello from programming-course!")</code>, save it and run <code>uv run python main.py</code>.</td>
+</tr>
+<tr class="even">
 <td>There is a folder <code>src/</code> but no <code>main.py</code></td>
 <td>You ran <code>uv init</code> without <code>--no-package</code>. That’s fine: test with <code>uv run programming-course</code> instead. It should print <code>Hello from programming-course!</code>. Then continue with Step 8.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>uv says the Python version is incompatible with the project</td>
 <td>Open <code>pyproject.toml</code> in VS Code and change the line <code>requires-python</code> to <code>requires-python = "&gt;=3.13"</code>. Save the file, then run <code>uv python pin 3.13</code> and <code>uv sync</code>.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Windows says scripts are disabled</td>
 <td>Run <code>Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process</code>, then repeat Step 5.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>.venv</code> doesn’t appear under Select Kernel</td>
 <td>Press <strong>Cmd/Ctrl + Shift + P</strong>, type <code>Developer: Reload Window</code>, press <strong>Enter</strong>, try again.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>The notebook shows a different Python than 3.13</td>
 <td>Click on the kernel name in the top right and choose the <strong>.venv</strong> one.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>uv self update</code> fails on a Mac</td>
 <td>If you installed uv with Homebrew, use <code>brew upgrade uv</code> instead.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Anything else</td>
 <td>Ask us! Guessing usually takes longer than asking.</td>
 </tr>
@@ -783,10 +786,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="later-in-the-course-adding-packages">Later in the course: adding packages</h2>
 <p>Sometimes a tutorial needs an extra package, for example <code>pandas</code>. Then run this in the terminal of your course folder:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="tested-with" class="level2">
-<h2 class="anchored" data-anchor-id="tested-with">Tested with</h2>
-<p>uv 0.12 and VS Code on macOS and Windows, 30 October 2026.</p>
 
 
 </section>

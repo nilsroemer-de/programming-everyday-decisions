@@ -79,7 +79,7 @@ Open **Finder**, go to your **home folder** (the one with the house icon) and cr
 
 ## Windows
 
-Open **File Explorer**, go to `C:\Users\YourName` and create a new folder called `programming-course`.
+Open **File Explorer**, click into the address bar at the top, type `%USERPROFILE%` and press **Enter**. This opens your user folder. Create a new folder there called `programming-course`.
 
 Please **don't** put it in a OneDrive folder. Syncing can break the setup.
 
@@ -227,7 +227,7 @@ uv add --dev ipykernel
 uv add jupyter
 ```
 
-**Check:** The terminal lists a lot of installed packages and ends without an error. A new folder `.venv` appears on the left. That's your project's own Python environment.
+**Check:** The terminal lists a lot of installed packages and ends without an error. You see a folder `.venv` on the left. That's your project's own Python environment.
 
 ## Step 9: Your first notebook
 
@@ -240,7 +240,7 @@ uv add jupyter
 1.  Press **Cmd + Shift + P** (macOS) or **Ctrl + Shift + P** (Windows). A search bar opens at the top.
 2.  Type `Create: New Jupyter Notebook` and press **Enter**.
 3.  Click **Select Kernel** in the top right corner. The kernel is the Python that runs your notebook.
-4.  Choose **Python Environments**, then the one that says **.venv** and **Python 3.13**.
+4.  Choose **Python Environments**, then the one that says **.venv** and **Python 3.13**. If you don't see Python Environments, click **Select Another Kernel...** first.
 5.  Click into the first cell, type `print("Hello")` and press **Shift + Enter**.
 
 **Check:** Below the cell, you see `Hello`. Everything works!
@@ -283,7 +283,8 @@ You don't need to install anything again. Just:
 | Problem | What to do |
 |------------------------------------|------------------------------------|
 | `uv` is "not found" or "not recognized" | Restart VS Code as in Step 5 (macOS: **Cmd + Q**, Windows: close all windows). On Windows, check that the terminal says `PS`. |
-| `main.py` can't be found | Check the folder and the terminal as in Step 7, then run `uv init --no-package --python 3.13` again in the right folder. If `uv init` ran in a different folder by mistake: don't delete anything, ask us. |
+| `main.py` can't be found | Your terminal is probably in the wrong folder. Check the folder and the terminal as in Step 7, then run `uv init --no-package --python 3.13` again in the right folder. If uv then says the project is already initialized, see the next row. If `uv init` ran in a different folder by mistake: don't delete anything, ask us. |
+| uv says the project is already initialized | Your project already exists, don't run `uv init` again. If you see `main.py`, continue with `uv run python main.py`. If there is a `src/` folder, see the row below. If neither exists, create a new file `main.py` on the left (New File icon) with the line `print("Hello from programming-course!")`, save it and run `uv run python main.py`. |
 | There is a folder `src/` but no `main.py` | You ran `uv init` without `--no-package`. That's fine: test with `uv run programming-course` instead. It should print `Hello from programming-course!`. Then continue with Step 8. |
 | uv says the Python version is incompatible with the project | Open `pyproject.toml` in VS Code and change the line `requires-python` to `requires-python = ">=3.13"`. Save the file, then run `uv python pin 3.13` and `uv sync`. |
 | Windows says scripts are disabled | Run `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process`, then repeat Step 5. |
@@ -299,7 +300,3 @@ Sometimes a tutorial needs an extra package, for example `pandas`. Then run this
 ``` bash
 uv add pandas
 ```
-
-## Tested with
-
-uv 0.12 and VS Code on macOS and Windows, 30 October 2026.
