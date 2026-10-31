@@ -163,7 +163,6 @@ Great resources to start are books (see the list at the end of the lecture) and 
 
 <center>
 
-<br>
 <img src="../images/gif/lec00-intro.gif" width="480" height="360" alt="">
 
 </center>
