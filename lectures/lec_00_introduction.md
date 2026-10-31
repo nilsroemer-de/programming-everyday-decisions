@@ -120,7 +120,6 @@ We will mostly **not cover Python during the lectures!**
 
 <center>
 
-<br>
 <img src="../images/gif/lec00-intro.gif" width="480" height="360" alt="">
 
 </center>

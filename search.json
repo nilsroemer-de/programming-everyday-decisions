@@ -4889,7 +4889,7 @@
     "href": "lectures/lec_02_explore_exploit.html#section",
     "title": "Lecture II: Explore & Exploit",
     "section": "",
-    "text": "You have 45 minutes for lunch. Do you try the new restaurant or go to your reliable favorite?\n🗳️ Quick Poll: Raise your hand, who would try the new restaurant?\n\nNotes\nThis decision happens hundreds of times daily, and there’s optimal math behind it.\n\n\nPhoto by Jillian Amatt on Unsplash",
+    "text": "You have 45 minutes for lunch. Do you try the new restaurant or go to your reliable favorite?\nQuick Poll: Raise your hand, who would try the new restaurant?\n\nNotes\nThis decision happens hundreds of times daily, and there’s optimal math behind it.\n\n\nPhoto by Jillian Amatt on Unsplash",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -4900,7 +4900,7 @@
     "href": "lectures/lec_02_explore_exploit.html#explore-gathers-information-exploit-uses-it",
     "title": "Lecture II: Explore & Exploit",
     "section": "Explore gathers information, exploit uses it",
-    "text": "Explore gathers information, exploit uses it\n\n\n\n🔍 Explore\n\n\nDefinition: Gathering new information\nRisk: Unknown outcomes\nExample: Trying that new sushi place\n\n\n\n\n\n🎯 Exploit\n\n\nDefinition: Using known information\nRisk: Missing better options\nExample: Your go-to pizza joint\n\n\n\n\n\n\n\n\n\n\n\n\nIn any given moment you can only do one of the two.\n\n\n\n\n\nNotes\nThe fundamental trade-off: explore and exploit are mutually exclusive choices in any given moment. You can’t have your cake and eat it too. Exploring means gathering new information with unknown outcomes, for example trying that new sushi place. Exploiting means using known information, with the risk of missing better options, for example your go-to pizza joint.",
+    "text": "Explore gathers information, exploit uses it\n\n\n\nExplore\n\n\nDefinition: Gathering new information\nRisk: Unknown outcomes\nExample: Trying that new sushi place\n\n\n\n\n\nExploit\n\n\nDefinition: Using known information\nRisk: Missing better options\nExample: Your go-to pizza joint\n\n\n\n\n\n\n\n\n\n\n\n\nIn any given moment you can only do one of the two.\n\n\n\n\n\nNotes\nThe fundamental trade-off: explore and exploit are mutually exclusive choices in any given moment. You can’t have your cake and eat it too. Exploring means gathering new information with unknown outcomes, for example trying that new sushi place. Exploiting means using known information, with the risk of missing better options, for example your go-to pizza joint.",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5021,7 +5021,7 @@
     "href": "lectures/lec_02_explore_exploit.html#every-pull-costs-money-and-gives-information",
     "title": "Lecture II: Explore & Exploit",
     "section": "Every pull costs money and gives information",
-    "text": "Every pull costs money and gives information\n\n\nEach pull tells us more about a machine’s chance of winning\nBut each pull also costs money\nGoal: maximize the total winnings\n\n\nQuestion: How do you decide which machine to play next?",
+    "text": "Every pull costs money and gives information\n\n\nEach pull tells us more about a machine’s chance of winning\nBut each pull also costs money\n\n\nQuestion: How do you decide which machine to play next?",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5032,7 +5032,7 @@
     "href": "lectures/lec_02_explore_exploit.html#interactive-casino-challenge",
     "title": "Lecture II: Explore & Exploit",
     "section": "Interactive Casino Challenge",
-    "text": "Interactive Casino Challenge\nYou’ve been playing for a while. Here’s what you know:\n\n\n\nMachine\nPulls\nWins\nWin Rate\nYour Choice?\n\n\n\n\nA 🎰\n15\n9\n60%\n\n\n\nB 🎰\n2\n1\n50%\n\n\n\nC 🎰\n0\n0\n???\n\n\n\n\n\n\n\n\n\n\n\nTipClass Vote: A (known performer), B (limited data) or C (complete unknown)?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteFollow-up: What if you only had 2 pulls left? Or 100?",
+    "text": "Interactive Casino Challenge\nYou’ve been playing for a while. Here’s what you know:\n\n\n\nMachine\nPulls\nWins\nWin Rate1\nYour Choice?\n\n\n\n\nA\n15\n9\n60%\n\n\n\nB\n2\n1\n50%\n\n\n\nC\n0\n0\n???\n\n\n\n\n\n\n\n\n\n\n\nTipClass Vote: A (known performer), B (limited data) or C (complete unknown)?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteFollow-up: What if you only had 2 pulls left? Or 100?",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5054,7 +5054,7 @@
     "href": "lectures/lec_02_explore_exploit.html#the-best-choice-now-is-not-always-the-best-choice-overall",
     "title": "Lecture II: Explore & Exploit",
     "section": "The best choice now is not always the best choice overall",
-    "text": "The best choice now is not always the best choice overall\n\n\nThe bandit problem stands for many real-world decisions\nThe best choice now can differ from the best choice in the long run\nWhich lever to pull next depends on one more thing:",
+    "text": "The best choice now is not always the best choice overall\n\n\nThe bandit problem stands for many real-world decisions\nThe best choice now can differ from the best choice in the long run\nWhich lever to pull next depends on one more thing. Question: Any idea what it is?",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5153,7 +5153,7 @@
     "href": "lectures/lec_02_explore_exploit.html#hollywood-exploits-9-of-the-top-10-films-are-sequels",
     "title": "Lecture II: Explore & Exploit",
     "section": "Hollywood exploits: 9 of the top 10 films are sequels",
-    "text": "Hollywood exploits: 9 of the top 10 films are sequels\n\n\n\n\n\n\n\nNoteSequels among the 10 highest-grossing films\n\n\n\n\n\n\nYear\nNumber of Sequels\n\n\n\n\n1981\n2\n\n\n1991\n3\n\n\n2001\n5\n\n\n2011\n8\n\n\n2024\n91\n\n\n\n\n\n\n\nQuestion: What explains this trend, and what does it say about Hollywood’s interval?\n\n\nNotes\nClass discussion: What explains this trend? How does this relate to explore vs. exploit? What does this suggest about Hollywood’s time horizon?",
+    "text": "Hollywood exploits: 9 of the top 10 films are sequels\n\n\n\n\n\n\n\nNoteSequels among the 10 highest-grossing films\n\n\n\n\n\n\nYear\nNumber of Sequels\n\n\n\n\n1981\n2\n\n\n1991\n3\n\n\n2001\n5\n\n\n2011\n8\n\n\n2024\n92\n\n\n\n\n\n\n\nQuestion: What explains this trend, and what does it say about Hollywood’s interval?\n\n\nNotes\nClass discussion: What explains this trend? How does this relate to explore vs. exploit? What does this suggest about Hollywood’s time horizon?",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5164,7 +5164,7 @@
     "href": "lectures/lec_02_explore_exploit.html#sequels",
     "title": "Lecture II: Explore & Exploit",
     "section": "Sequels…",
-    "text": "Sequels…\nThe Insight: Studios are exploiting proven franchises because they think they’re approaching the “end of their interval” (streaming disruption, changing audience preferences).\n\nPhoto by Universal Pictures on Wikipedia",
+    "text": "Sequels…\n\nPhoto by Universal Pictures on Wikipedia",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5218,8 +5218,8 @@
     "objectID": "lectures/lec_02_explore_exploit.html#rule-of-thumb-win-stay-lose-shiftmore",
     "href": "lectures/lec_02_explore_exploit.html#rule-of-thumb-win-stay-lose-shiftmore",
     "title": "Lecture II: Explore & Exploit",
-    "section": "Rule of thumb: win-stay, lose-shift2",
-    "text": "Rule of thumb: win-stay, lose-shift2\n\n\nQuestion: What do you think this strategy does?\nWon? Stay with the same arm. Lost? Switch to another arm.\nSimple, and proven better than choosing an arm at random",
+    "section": "Rule of thumb: win-stay, lose-shift3",
+    "text": "Rule of thumb: win-stay, lose-shift3\n\n\nQuestion: What do you think this strategy does?\nWon? Stay with the same arm. Lost? Switch to another arm.\nSimple, and proven better than choosing an arm at random",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5263,7 +5263,7 @@
     "href": "lectures/lec_02_explore_exploit.html#a-fair-estimate-laplaces-rule-of-succession",
     "title": "Lecture II: Explore & Exploit",
     "section": "A fair estimate: Laplace’s rule of succession",
-    "text": "A fair estimate: Laplace’s rule of succession\n\n\nFirst we need a fair estimate of each machine\nLaplace (18th century): after \\(w\\) wins and \\(l\\) losses, the chance of a win is about\n\n\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\n\nIn words: add one imagined win and one imagined loss, then take the share of wins\n\n\nNotes\nPierre-Simon Laplace suggested this rule in the 18th century. The two added pulls keep the estimate away from 0 and 1 when we have seen very few pulls. The rule estimates how good a machine is; it does not tell us when to stop exploring.",
+    "text": "A fair estimate: Laplace’s rule of succession\n\n\nFirst we need a fair estimate of each machine\nThe plain win rate is extreme after few pulls: 1 win out of 1 pull looks like 100%, 0 out of 0 is undefined\nLaplace (18th century) suggested a fairer estimate: after \\(w\\) wins and \\(l\\) losses, the chance of a win is about\n\n\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\n\nIn words: add one imagined win and one imagined loss, then take the share of wins\n\n\nNotes\nPierre-Simon Laplace suggested this rule in the 18th century. The two added pulls keep the estimate away from 0 and 1 when we have seen very few pulls. The rule estimates how good a machine is; it does not tell us when to stop exploring.",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5274,7 +5274,7 @@
     "href": "lectures/lec_02_explore_exploit.html#try-it-machine-a-and-b-by-laplace",
     "title": "Lecture II: Explore & Exploit",
     "section": "Try it: machine A and B by Laplace",
-    "text": "Try it: machine A and B by Laplace\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\n\n\nQuestion: What is E[B]?\nQuestion: What is E[A]?\nQuestion: Which machine looks better by this estimate?",
+    "text": "Try it: machine A and B by Laplace\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\n\n\nQuestion: What is E[B]? What is E[A]? Which machine looks better by this estimate?\n\n\n\n\nE[B] = (1 + 1) / (2 + 2) = 0.50\nE[A] = (9 + 1) / (15 + 2) = 10/17 ≈ 0.59\nE[C] = (0 + 1) / (0 + 2) = 0.50, even though C was never played\n\nLaplace gives unknown options a fair chance and avoids estimates of 0% or 100% after a few pulls.",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5317,8 +5317,8 @@
     "objectID": "lectures/lec_02_explore_exploit.html#gittins-a-drug-trial-problem-at-unilevergittins",
     "href": "lectures/lec_02_explore_exploit.html#gittins-a-drug-trial-problem-at-unilevergittins",
     "title": "Lecture II: Explore & Exploit",
-    "section": "Gittins: a drug-trial problem at Unilever3",
-    "text": "Gittins: a drug-trial problem at Unilever3\n\n\n1970s: Unilever asks the mathematician John Gittins to optimize its drug trials\nWhich compound is effective, found out as quickly as possible?\nGittins generalized the problem and found its optimal solution",
+    "section": "Gittins: a drug-trial problem at Unilever4",
+    "text": "Gittins: a drug-trial problem at Unilever4\n\n\nIn the 1970s, Unilever had several new compounds that might work as drugs\nOne test = one patient. Improvement = win, no improvement = loss\nTesting costs time and money, and nobody knows in advance which compound is best\nUnilever asked the mathematician John Gittins: which compound should we test next, and when should we stop testing?\nGittins saw that this is exactly our casino: each compound is a slot machine with an unknown win rate",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5362,7 +5362,7 @@
     "href": "lectures/lec_02_explore_exploit.html#the-gittins-index-as-a-lookup-table",
     "title": "Lecture II: Explore & Exploit",
     "section": "The Gittins index as a lookup table",
-    "text": "The Gittins index as a lookup table\nGittins index for different numbers of wins and losses (discount factor 0.9).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLosses/Wins\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\n\n0\n.7029\n.8001\n.8452\n.8723\n.8905\n.9039\n.9141\n.9221\n.9287\n.9342\n\n\n1\n.5001\n.6346\n.7072\n.7539\n.7869\n.8115\n.8307\n.8461\n.8588\n.8695\n\n\n2\n.3796\n.5163\n.6010\n.6579\n.6996\n.7318\n.7573\n.7782\n.7956\n.8103\n\n\n3\n.3021\n.4342\n.5184\n.5809\n.6276\n.6642\n.6940\n.7187\n.7396\n.7573\n\n\n4\n.2488\n.3720\n.4561\n.5179\n.5676\n.6071\n.6395\n.6666\n.6899\n.7101\n\n\n5\n.2103\n.3245\n.4058\n.4677\n.5168\n.5581\n.5923\n.6212\n.6461\n.6677\n\n\n6\n.1815\n.2871\n.3647\n.4257\n.4748\n.5156\n.5510\n.5811\n.6071\n.6300\n\n\n7\n.1591\n.2569\n.3308\n.3900\n.4387\n.4795\n.5144\n.5454\n.5723\n.5960\n\n\n8\n.1413\n.2323\n.3025\n.3595\n.4073\n.4479\n.4828\n.5134\n.5409\n.5652\n\n\n9\n.1269\n.2116\n.2784\n.3332\n.3799\n.4200\n.4548\n.4853\n.5125\n.5373",
+    "text": "The Gittins index as a lookup table\nGittins index for different numbers of wins and losses (discount factor 0.95).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLosses/Wins\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\n\n0\n.7029\n.8001\n.8452\n.8723\n.8905\n.9039\n.9141\n.9221\n.9287\n.9342\n\n\n1\n.5001\n.6346\n.7072\n.7539\n.7869\n.8115\n.8307\n.8461\n.8588\n.8695\n\n\n2\n.3796\n.5163\n.6010\n.6579\n.6996\n.7318\n.7573\n.7782\n.7956\n.8103\n\n\n3\n.3021\n.4342\n.5184\n.5809\n.6276\n.6642\n.6940\n.7187\n.7396\n.7573\n\n\n4\n.2488\n.3720\n.4561\n.5179\n.5676\n.6071\n.6395\n.6666\n.6899\n.7101\n\n\n5\n.2103\n.3245\n.4058\n.4677\n.5168\n.5581\n.5923\n.6212\n.6461\n.6677\n\n\n6\n.1815\n.2871\n.3647\n.4257\n.4748\n.5156\n.5510\n.5811\n.6071\n.6300\n\n\n7\n.1591\n.2569\n.3308\n.3900\n.4387\n.4795\n.5144\n.5454\n.5723\n.5960\n\n\n8\n.1413\n.2323\n.3025\n.3595\n.4073\n.4479\n.4828\n.5134\n.5409\n.5652\n\n\n9\n.1269\n.2116\n.2784\n.3332\n.3799\n.4200\n.4548\n.4853\n.5125\n.5373",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5406,7 +5406,7 @@
     "href": "lectures/lec_02_explore_exploit.html#which-rule-when",
     "title": "Lecture II: Explore & Exploit",
     "section": "Which rule when?",
-    "text": "Which rule when?\n\n\nBoth outcomes known: choose the higher expected value\nE(explore) unknown, interval known: Bellman (backward calculation)\nE(explore) unknown, interval unknown: Gittins index\n\n\n\nNotes\nThe situation: exploiting has a known expected outcome, E(exploit) = X. Exploring has an unknown outcome, E(explore) = ?. What should you do according to decision science?\nAnecdotally: if you have a long interval, explore, choose B until you are sure about E(explore). If you have a short interval, exploit, choose A.\nTakeaway: be sensitive to how much time you have left in the casino, and explore, explore, explore.",
+    "text": "Which rule when?\n\n\nBoth outcomes known: choose the higher expected value\nE(explore) unknown, interval known: Bellman (backward calculation)\nE(explore) unknown, interval unknown: Gittins index\n\n\n\nNotes\nThree situations, three tools. If both outcomes are known, there is nothing to explore. If the interval is known, Bellman’s backward calculation gives the exact answer. If the interval is unknown, the Gittins index does.",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5416,8 +5416,8 @@
     "objectID": "lectures/lec_02_explore_exploit.html#your-personal-action-plan",
     "href": "lectures/lec_02_explore_exploit.html#your-personal-action-plan",
     "title": "Lecture II: Explore & Exploit",
-    "section": "🎯 Your Personal Action Plan",
-    "text": "🎯 Your Personal Action Plan\nQuestion: Rate yourself from 1 (exploit) to 10 (explore):\n\nCareer: new skills and roles vs. deepening your expertise\nSocial life: meeting new people vs. investing in friendships\nLearning: new subjects vs. mastering current interests\n\nTime horizon matters: more time left, more exploring.\n\nNotes\nRate yourself honestly. The point is not that exploring is always better: the more time you have left in a phase of your life, the more exploring pays off. Near the end of a phase, exploiting what you know is the better choice.",
+    "section": "Your Personal Action Plan",
+    "text": "Your Personal Action Plan\nQuestion: Rate yourself from 1 (exploit) to 10 (explore):\n\nCareer: new skills and roles vs. deepening your expertise\nSocial life: meeting new people vs. investing in friendships\nLearning: new subjects vs. mastering current interests\n\nTime horizon matters: more time left, more exploring.\n\nNotes\nRate yourself honestly. The point is not that exploring is always better: the more time you have left in a phase of your life, the more exploring pays off. Near the end of a phase, exploiting what you know is the better choice.",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5472,7 +5472,7 @@
     "href": "lectures/lec_02_explore_exploit.html#interesting-literature-to-start",
     "title": "Lecture II: Explore & Exploit",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.4",
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.6",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5505,7 +5505,7 @@
     "href": "lectures/lec_02_explore_exploit.html#footnotes",
     "title": "Lecture II: Explore & Exploit",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nBox Office Mojo, top 10 by US domestic gross 2024 (boxofficemojo.com/year/2024). Counted as sequels: all except Wicked; Twisters counted as a sequel.↩︎\nFor more details see Robbins, H. (1952) ‘Some aspects of the sequential design of experiments’, Bulletin of the American Mathematical Society, 58.↩︎\nFor more details see Gittins, J. (1979) ‘Bandit Processes and Dynamic Allocation Indices’, Journal of the Royal Statistical Society. Series B (Methodological).↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nThe win rate is the share of pulls that paid out: wins divided by pulls. Machine A: 9 / 15 = 60%.↩︎\nBox Office Mojo, top 10 by US domestic gross 2024 (boxofficemojo.com/year/2024). Counted as sequels: all except Wicked; Twisters counted as a sequel.↩︎\nFor more details see Robbins, H. (1952) ‘Some aspects of the sequential design of experiments’, Bulletin of the American Mathematical Society, 58.↩︎\nFor more details see Gittins, J. (1979) ‘Bandit Processes and Dynamic Allocation Indices’, Journal of the Royal Statistical Society. Series B (Methodological).↩︎\nThe discount factor says how much a win in the next round is worth compared to a win now. 0.9 roughly means we expect about ten more pulls. The longer you expect to stay, the closer the factor to 1, and the more exploring pays off.↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5530,14 +5530,14 @@
     "href": "lectures/lec_02_presentation.html#section",
     "title": "Lecture II: Explore & Exploit",
     "section": "",
-    "text": "You have 45 minutes for lunch. Do you try the new restaurant or go to your reliable favorite?\n\n🗳️ Quick Poll: Raise your hand, who would try the new restaurant?\n\nThis decision happens hundreds of times daily, and there’s optimal math behind it.\n\n\nPhoto by Jillian Amatt on Unsplash"
+    "text": "You have 45 minutes for lunch. Do you try the new restaurant or go to your reliable favorite?\n\nQuick Poll: Raise your hand, who would try the new restaurant?\n\nThis decision happens hundreds of times daily, and there’s optimal math behind it.\n\n\nPhoto by Jillian Amatt on Unsplash"
   },
   {
     "objectID": "lectures/lec_02_presentation.html#explore-gathers-information-exploit-uses-it",
     "href": "lectures/lec_02_presentation.html#explore-gathers-information-exploit-uses-it",
     "title": "Lecture II: Explore & Exploit",
     "section": "Explore gathers information, exploit uses it",
-    "text": "Explore gathers information, exploit uses it\n\n\n🔍 Explore\n\n\nDefinition: Gathering new information\nRisk: Unknown outcomes\nExample: Trying that new sushi place\n\n\n\n🎯 Exploit\n\n\nDefinition: Using known information\nRisk: Missing better options\nExample: Your go-to pizza joint\n\n\n\n\n\n\n\n\n\n\nIn any given moment you can only do one of the two.\n\n\n\n\n\nThe fundamental trade-off: explore and exploit are mutually exclusive choices in any given moment. You can’t have your cake and eat it too. Exploring means gathering new information with unknown outcomes, for example trying that new sushi place. Exploiting means using known information, with the risk of missing better options, for example your go-to pizza joint."
+    "text": "Explore gathers information, exploit uses it\n\n\nExplore\n\n\nDefinition: Gathering new information\nRisk: Unknown outcomes\nExample: Trying that new sushi place\n\n\n\nExploit\n\n\nDefinition: Using known information\nRisk: Missing better options\nExample: Your go-to pizza joint\n\n\n\n\n\n\n\n\n\n\nIn any given moment you can only do one of the two.\n\n\n\n\n\nThe fundamental trade-off: explore and exploit are mutually exclusive choices in any given moment. You can’t have your cake and eat it too. Exploring means gathering new information with unknown outcomes, for example trying that new sushi place. Exploiting means using known information, with the risk of missing better options, for example your go-to pizza joint."
   },
   {
     "objectID": "lectures/lec_02_presentation.html#examples-from-your-life",
@@ -5614,14 +5614,14 @@
     "href": "lectures/lec_02_presentation.html#every-pull-costs-money-and-gives-information",
     "title": "Lecture II: Explore & Exploit",
     "section": "Every pull costs money and gives information",
-    "text": "Every pull costs money and gives information\n\nEach pull tells us more about a machine’s chance of winning\nBut each pull also costs money\nGoal: maximize the total winnings\n\n\nQuestion: How do you decide which machine to play next?"
+    "text": "Every pull costs money and gives information\n\nEach pull tells us more about a machine’s chance of winning\nBut each pull also costs money\n\n\nQuestion: How do you decide which machine to play next?"
   },
   {
     "objectID": "lectures/lec_02_presentation.html#interactive-casino-challenge",
     "href": "lectures/lec_02_presentation.html#interactive-casino-challenge",
     "title": "Lecture II: Explore & Exploit",
     "section": "Interactive Casino Challenge",
-    "text": "Interactive Casino Challenge\nYou’ve been playing for a while. Here’s what you know:\n\n\n\nMachine\nPulls\nWins\nWin Rate\nYour Choice?\n\n\n\n\nA 🎰\n15\n9\n60%\n\n\n\nB 🎰\n2\n1\n50%\n\n\n\nC 🎰\n0\n0\n???\n\n\n\n\n\n\n\n\n\n\n\nClass Vote: A (known performer), B (limited data) or C (complete unknown)?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFollow-up: What if you only had 2 pulls left? Or 100?"
+    "text": "Interactive Casino Challenge\nYou’ve been playing for a while. Here’s what you know:\n\n\n\nMachine\nPulls\nWins\nWin Rate1\nYour Choice?\n\n\n\n\nA\n15\n9\n60%\n\n\n\nB\n2\n1\n50%\n\n\n\nC\n0\n0\n???\n\n\n\n\n\n\n\n\n\n\n\nClass Vote: A (known performer), B (limited data) or C (complete unknown)?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFollow-up: What if you only had 2 pulls left? Or 100?\n\n\n\n\n\n\n\nThe win rate is the share of pulls that paid out: wins divided by pulls. Machine A: 9 / 15 = 60%."
   },
   {
     "objectID": "lectures/lec_02_presentation.html#machine-a-has-the-higher-average-but-few-pulls",
@@ -5635,7 +5635,7 @@
     "href": "lectures/lec_02_presentation.html#the-best-choice-now-is-not-always-the-best-choice-overall",
     "title": "Lecture II: Explore & Exploit",
     "section": "The best choice now is not always the best choice overall",
-    "text": "The best choice now is not always the best choice overall\n\nThe bandit problem stands for many real-world decisions\nThe best choice now can differ from the best choice in the long run\nWhich lever to pull next depends on one more thing:"
+    "text": "The best choice now is not always the best choice overall\n\nThe bandit problem stands for many real-world decisions\nThe best choice now can differ from the best choice in the long run\nWhich lever to pull next depends on one more thing. Question: Any idea what it is?"
   },
   {
     "objectID": "lectures/lec_02_presentation.html#the-dilemma-try-something-new-or-stick-with-what-works-1",
@@ -5705,7 +5705,7 @@
     "href": "lectures/lec_02_presentation.html#sequels",
     "title": "Lecture II: Explore & Exploit",
     "section": "Sequels…",
-    "text": "Sequels…\n\nThe Insight: Studios are exploiting proven franchises because they think they’re approaching the “end of their interval” (streaming disruption, changing audience preferences).\n\nPhoto by Universal Pictures on Wikipedia"
+    "text": "Sequels…\n\nPhoto by Universal Pictures on Wikipedia"
   },
   {
     "objectID": "lectures/lec_02_presentation.html#studios-behave-as-if-their-interval-is-ending",
@@ -5768,14 +5768,14 @@
     "href": "lectures/lec_02_presentation.html#a-fair-estimate-laplaces-rule-of-succession",
     "title": "Lecture II: Explore & Exploit",
     "section": "A fair estimate: Laplace’s rule of succession",
-    "text": "A fair estimate: Laplace’s rule of succession\n\nFirst we need a fair estimate of each machine\nLaplace (18th century): after \\(w\\) wins and \\(l\\) losses, the chance of a win is about\n\n\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\n\n\n\nIn words: add one imagined win and one imagined loss, then take the share of wins\n\n\nPierre-Simon Laplace suggested this rule in the 18th century. The two added pulls keep the estimate away from 0 and 1 when we have seen very few pulls. The rule estimates how good a machine is; it does not tell us when to stop exploring."
+    "text": "A fair estimate: Laplace’s rule of succession\n\nFirst we need a fair estimate of each machine\nThe plain win rate is extreme after few pulls: 1 win out of 1 pull looks like 100%, 0 out of 0 is undefined\nLaplace (18th century) suggested a fairer estimate: after \\(w\\) wins and \\(l\\) losses, the chance of a win is about\n\n\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\n\n\n\nIn words: add one imagined win and one imagined loss, then take the share of wins\n\n\nPierre-Simon Laplace suggested this rule in the 18th century. The two added pulls keep the estimate away from 0 and 1 when we have seen very few pulls. The rule estimates how good a machine is; it does not tell us when to stop exploring."
   },
   {
     "objectID": "lectures/lec_02_presentation.html#try-it-machine-a-and-b-by-laplace",
     "href": "lectures/lec_02_presentation.html#try-it-machine-a-and-b-by-laplace",
     "title": "Lecture II: Explore & Exploit",
     "section": "Try it: machine A and B by Laplace",
-    "text": "Try it: machine A and B by Laplace\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\n\nQuestion: What is E[B]?\nQuestion: What is E[A]?\nQuestion: Which machine looks better by this estimate?"
+    "text": "Try it: machine A and B by Laplace\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\n\nQuestion: What is E[B]? What is E[A]? Which machine looks better by this estimate?\n\n\n\nE[B] = (1 + 1) / (2 + 2) = 0.50\nE[A] = (9 + 1) / (15 + 2) = 10/17 ≈ 0.59\nE[C] = (0 + 1) / (0 + 2) = 0.50, even though C was never played\n\nLaplace gives unknown options a fair chance and avoids estimates of 0% or 100% after a few pulls."
   },
   {
     "objectID": "lectures/lec_02_presentation.html#laplace-estimates-for-wins-and-losses",
@@ -5803,7 +5803,7 @@
     "href": "lectures/lec_02_presentation.html#gittins-a-drug-trial-problem-at-unilevergittins",
     "title": "Lecture II: Explore & Exploit",
     "section": "Gittins: a drug-trial problem at Unilever1",
-    "text": "Gittins: a drug-trial problem at Unilever1\n\n1970s: Unilever asks the mathematician John Gittins to optimize its drug trials\nWhich compound is effective, found out as quickly as possible?\nGittins generalized the problem and found its optimal solution\n\nFor more details see Gittins, J. (1979) ‘Bandit Processes and Dynamic Allocation Indices’, Journal of the Royal Statistical Society. Series B (Methodological)."
+    "text": "Gittins: a drug-trial problem at Unilever1\n\nIn the 1970s, Unilever had several new compounds that might work as drugs\nOne test = one patient. Improvement = win, no improvement = loss\nTesting costs time and money, and nobody knows in advance which compound is best\nUnilever asked the mathematician John Gittins: which compound should we test next, and when should we stop testing?\nGittins saw that this is exactly our casino: each compound is a slot machine with an unknown win rate\n\nFor more details see Gittins, J. (1979) ‘Bandit Processes and Dynamic Allocation Indices’, Journal of the Royal Statistical Society. Series B (Methodological)."
   },
   {
     "objectID": "lectures/lec_02_presentation.html#gittins-discounts-the-future-instead-of-fixing-the-interval",
@@ -5831,7 +5831,7 @@
     "href": "lectures/lec_02_presentation.html#the-gittins-index-as-a-lookup-table",
     "title": "Lecture II: Explore & Exploit",
     "section": "The Gittins index as a lookup table",
-    "text": "The Gittins index as a lookup table\nGittins index for different numbers of wins and losses (discount factor 0.9).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLosses/Wins\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\n\n0\n.7029\n.8001\n.8452\n.8723\n.8905\n.9039\n.9141\n.9221\n.9287\n.9342\n\n\n1\n.5001\n.6346\n.7072\n.7539\n.7869\n.8115\n.8307\n.8461\n.8588\n.8695\n\n\n2\n.3796\n.5163\n.6010\n.6579\n.6996\n.7318\n.7573\n.7782\n.7956\n.8103\n\n\n3\n.3021\n.4342\n.5184\n.5809\n.6276\n.6642\n.6940\n.7187\n.7396\n.7573\n\n\n4\n.2488\n.3720\n.4561\n.5179\n.5676\n.6071\n.6395\n.6666\n.6899\n.7101\n\n\n5\n.2103\n.3245\n.4058\n.4677\n.5168\n.5581\n.5923\n.6212\n.6461\n.6677\n\n\n6\n.1815\n.2871\n.3647\n.4257\n.4748\n.5156\n.5510\n.5811\n.6071\n.6300\n\n\n7\n.1591\n.2569\n.3308\n.3900\n.4387\n.4795\n.5144\n.5454\n.5723\n.5960\n\n\n8\n.1413\n.2323\n.3025\n.3595\n.4073\n.4479\n.4828\n.5134\n.5409\n.5652\n\n\n9\n.1269\n.2116\n.2784\n.3332\n.3799\n.4200\n.4548\n.4853\n.5125\n.5373"
+    "text": "The Gittins index as a lookup table\nGittins index for different numbers of wins and losses (discount factor 0.91).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLosses/Wins\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\n\n0\n.7029\n.8001\n.8452\n.8723\n.8905\n.9039\n.9141\n.9221\n.9287\n.9342\n\n\n1\n.5001\n.6346\n.7072\n.7539\n.7869\n.8115\n.8307\n.8461\n.8588\n.8695\n\n\n2\n.3796\n.5163\n.6010\n.6579\n.6996\n.7318\n.7573\n.7782\n.7956\n.8103\n\n\n3\n.3021\n.4342\n.5184\n.5809\n.6276\n.6642\n.6940\n.7187\n.7396\n.7573\n\n\n4\n.2488\n.3720\n.4561\n.5179\n.5676\n.6071\n.6395\n.6666\n.6899\n.7101\n\n\n5\n.2103\n.3245\n.4058\n.4677\n.5168\n.5581\n.5923\n.6212\n.6461\n.6677\n\n\n6\n.1815\n.2871\n.3647\n.4257\n.4748\n.5156\n.5510\n.5811\n.6071\n.6300\n\n\n7\n.1591\n.2569\n.3308\n.3900\n.4387\n.4795\n.5144\n.5454\n.5723\n.5960\n\n\n8\n.1413\n.2323\n.3025\n.3595\n.4073\n.4479\n.4828\n.5134\n.5409\n.5652\n\n\n9\n.1269\n.2116\n.2784\n.3332\n.3799\n.4200\n.4548\n.4853\n.5125\n.5373\n\n\n\nThe discount factor says how much a win in the next round is worth compared to a win now. 0.9 roughly means we expect about ten more pulls. The longer you expect to stay, the closer the factor to 1, and the more exploring pays off."
   },
   {
     "objectID": "lectures/lec_02_presentation.html#by-the-gittins-index-machine-b-wins",
@@ -5859,14 +5859,14 @@
     "href": "lectures/lec_02_presentation.html#which-rule-when",
     "title": "Lecture II: Explore & Exploit",
     "section": "Which rule when?",
-    "text": "Which rule when?\n\nBoth outcomes known: choose the higher expected value\nE(explore) unknown, interval known: Bellman (backward calculation)\nE(explore) unknown, interval unknown: Gittins index\n\n\nThe situation: exploiting has a known expected outcome, E(exploit) = X. Exploring has an unknown outcome, E(explore) = ?. What should you do according to decision science?\nAnecdotally: if you have a long interval, explore, choose B until you are sure about E(explore). If you have a short interval, exploit, choose A.\nTakeaway: be sensitive to how much time you have left in the casino, and explore, explore, explore."
+    "text": "Which rule when?\n\nBoth outcomes known: choose the higher expected value\nE(explore) unknown, interval known: Bellman (backward calculation)\nE(explore) unknown, interval unknown: Gittins index\n\n\nThree situations, three tools. If both outcomes are known, there is nothing to explore. If the interval is known, Bellman’s backward calculation gives the exact answer. If the interval is unknown, the Gittins index does."
   },
   {
     "objectID": "lectures/lec_02_presentation.html#your-personal-action-plan",
     "href": "lectures/lec_02_presentation.html#your-personal-action-plan",
     "title": "Lecture II: Explore & Exploit",
-    "section": "🎯 Your Personal Action Plan",
-    "text": "🎯 Your Personal Action Plan\nQuestion: Rate yourself from 1 (exploit) to 10 (explore):\n\nCareer: new skills and roles vs. deepening your expertise\nSocial life: meeting new people vs. investing in friendships\nLearning: new subjects vs. mastering current interests\n\n\nTime horizon matters: more time left, more exploring.\n\nRate yourself honestly. The point is not that exploring is always better: the more time you have left in a phase of your life, the more exploring pays off. Near the end of a phase, exploiting what you know is the better choice."
+    "section": "Your Personal Action Plan",
+    "text": "Your Personal Action Plan\nQuestion: Rate yourself from 1 (exploit) to 10 (explore):\n\nCareer: new skills and roles vs. deepening your expertise\nSocial life: meeting new people vs. investing in friendships\nLearning: new subjects vs. mastering current interests\n\n\nTime horizon matters: more time left, more exploring.\n\nRate yourself honestly. The point is not that exploring is always better: the more time you have left in a phase of your life, the more exploring pays off. Near the end of a phase, exploiting what you know is the better choice."
   },
   {
     "objectID": "lectures/lec_02_presentation.html#smart-strategies-from-rules-of-thumb-to-the-gittins-index-1",
@@ -8582,6 +8582,168 @@
     "text": "Tested with\nuv 0.12 and VS Code on macOS and Windows, 30 October 2026.",
     "crumbs": [
       "Installation Guide"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#explore-or-exploit-three-examples",
+    "href": "lectures/lec_02_presentation.html#explore-or-exploit-three-examples",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Explore or exploit: three examples",
+    "text": "Explore or exploit: three examples\n\n\nMedical\nExplore: Test a new drug on patients.\nExploit: Use the proven treatment.\n\nTech\nExplore: Test a new website design.\nExploit: Keep the current design.\n\nDating\nExplore: Meet someone new.\nExploit: See someone you already know.\n\n\nQuestion: What is the optimal balance?\n\n\nExploring brings information at a price: unknown side effects, development time and lost conversions, bad dates. Exploiting brings a predictable result at the risk of missing something better. The million dollar question: what is the optimal balance between exploring and exploiting? Science has been asking this for over 50 years."
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#what-if-you-only-exploit",
+    "href": "lectures/lec_02_presentation.html#what-if-you-only-exploit",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "What if you only exploit?",
+    "text": "What if you only exploit?\nQuestion: What happens then?\n\nExploitation is not always the best strategy\nEspecially with very limited information\nIf you stop exploring, you miss better options"
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#what-if-you-only-explore",
+    "href": "lectures/lec_02_presentation.html#what-if-you-only-explore",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "What if you only explore?",
+    "text": "What if you only explore?\nQuestion: What happens then?\n\nExploration is not always the best strategy\nIf you constantly explore, you never enjoy the results\nImagine eating each meal, hearing each song, meeting each person only once"
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#machine-a-looks-better-but-both-estimates-are-shaky",
+    "href": "lectures/lec_02_presentation.html#machine-a-looks-better-but-both-estimates-are-shaky",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Machine A looks better, but both estimates are shaky",
+    "text": "Machine A looks better, but both estimates are shaky\n\nExpected value = average wins per pull\nE(A) = 9/15 = 0.6 and E(B) = 1/2 = 0.5\nBut 2 and even 15 pulls are few observations\n\n\nThe expected value is the average number of wins per pull. Machine A has the higher expected value, but with so few pulls the estimates are uncertain: machine B could easily be the better machine."
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#win-stay-makes-sense-lose-shift-is-too-hasty",
+    "href": "lectures/lec_02_presentation.html#win-stay-makes-sense-lose-shift-is-too-hasty",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Win-stay makes sense, lose-shift is too hasty",
+    "text": "Win-stay makes sense, lose-shift is too hasty\n\n\nWin-stay\n\nIf you win, pull the same arm again\nThe arm has just become more attractive\n\n\nLose-shift\n\nSwitching after every loss is a rash move\nYour favorite restaurant, tenth visit: always great, today disappointing\nShould you never go back?"
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#gittins-discounts-the-future",
+    "href": "lectures/lec_02_presentation.html#gittins-discounts-the-future",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Gittins discounts the future",
+    "text": "Gittins discounts the future\n\nHis answer: give every machine a single number, computed only from its own wins and losses, and always play the machine with the highest number. That number is the Gittins index.\nEarlier solutions needed a known interval\nGittins instead counts future wins less than immediate ones (discount factor), like future cash flows\nMoney: Money today can earn interest\nEveryday life: Tonight’s dinner beats the same dinner next week\nSo any interval length works, even an endless one"
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#machine-a-or-b-by-the-gittins-index",
+    "href": "lectures/lec_02_presentation.html#machine-a-or-b-by-the-gittins-index",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Machine A or B by the Gittins index?",
+    "text": "Machine A or B by the Gittins index?\n\nMachine B (0.6346) beats machine A (0.6300)\nClear win-stay pattern, relaxed lose-shift pattern\nAt (0,0) we see the exploration bonus"
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#gittins-index-the-math-behind-the-table",
+    "href": "lectures/lec_02_presentation.html#gittins-index-the-math-behind-the-table",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Gittins Index: the math behind the table",
+    "text": "Gittins Index: the math behind the table\n\\[G_i(s_i, f_i) := \\sup_{\\tau \\geq 1} \\frac{\\mathbb{E}\\left[\\sum_{t=0}^{\\tau-1} \\beta^t \\cdot r_i^t \\middle| s_i, f_i\\right]}{\\mathbb{E}\\left[\\sum_{t=0}^{\\tau-1} \\beta^t\\right]}\\]\nIn words: imagine a second machine that pays out at a fixed, known rate. The index is the rate that machine would need, so that you’d be indifferent between the two. The more uncertain a machine, the higher its index, because it might turn out great.\n\n\n\n\n\n\n\nToo complex to calculate by hand, and you don’t need to: just use the lookup table!"
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#where-bandits-run-today",
+    "href": "lectures/lec_02_presentation.html#where-bandits-run-today",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Where bandits run today",
+    "text": "Where bandits run today\n\nOnline advertising: which ad to show next, learning from every click\nStreaming services: which thumbnail or recommendation to show, tested on millions of viewers\nE-commerce and A/B testing: shifting traffic to the better version while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy."
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#explore-or-exploit-three-examples",
+    "href": "lectures/lec_02_explore_exploit.html#explore-or-exploit-three-examples",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Explore or exploit: three examples",
+    "text": "Explore or exploit: three examples\n\n\nMedical\nExplore: Test a new drug on patients.\nExploit: Use the proven treatment.\n\nTech\nExplore: Test a new website design.\nExploit: Keep the current design.\n\nDating\nExplore: Meet someone new.\nExploit: See someone you already know.\n\n\n\nQuestion: What is the optimal balance?\n\n\nNotes\nExploring brings information at a price: unknown side effects, development time and lost conversions, bad dates. Exploiting brings a predictable result at the risk of missing something better. The million dollar question: what is the optimal balance between exploring and exploiting? Science has been asking this for over 50 years.",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#what-if-you-only-exploit",
+    "href": "lectures/lec_02_explore_exploit.html#what-if-you-only-exploit",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "What if you only exploit?",
+    "text": "What if you only exploit?\n\nQuestion: What happens then?\n\n\nExploitation is not always the best strategy\nEspecially with very limited information\nIf you stop exploring, you miss better options",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#what-if-you-only-explore",
+    "href": "lectures/lec_02_explore_exploit.html#what-if-you-only-explore",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "What if you only explore?",
+    "text": "What if you only explore?\n\nQuestion: What happens then?\n\n\nExploration is not always the best strategy\nIf you constantly explore, you never enjoy the results\nImagine eating each meal, hearing each song, meeting each person only once",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#machine-a-looks-better-but-both-estimates-are-shaky",
+    "href": "lectures/lec_02_explore_exploit.html#machine-a-looks-better-but-both-estimates-are-shaky",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Machine A looks better, but both estimates are shaky",
+    "text": "Machine A looks better, but both estimates are shaky\n\n\nExpected value = average wins per pull\nE(A) = 9/15 = 0.6 and E(B) = 1/2 = 0.5\nBut 2 and even 15 pulls are few observations\n\n\nNotes\nThe expected value is the average number of wins per pull. Machine A has the higher expected value, but with so few pulls the estimates are uncertain: machine B could easily be the better machine.",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#win-stay-makes-sense-lose-shift-is-too-hasty",
+    "href": "lectures/lec_02_explore_exploit.html#win-stay-makes-sense-lose-shift-is-too-hasty",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Win-stay makes sense, lose-shift is too hasty",
+    "text": "Win-stay makes sense, lose-shift is too hasty\n\n\nWin-stay\n\nIf you win, pull the same arm again\nThe arm has just become more attractive\n\n\nLose-shift\n\nSwitching after every loss is a rash move\nYour favorite restaurant, tenth visit: always great, today disappointing\nShould you never go back?",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#gittins-discounts-the-future",
+    "href": "lectures/lec_02_explore_exploit.html#gittins-discounts-the-future",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Gittins discounts the future",
+    "text": "Gittins discounts the future\n\n\nHis answer: give every machine a single number, computed only from its own wins and losses, and always play the machine with the highest number. That number is the Gittins index.\nEarlier solutions needed a known interval\nGittins instead counts future wins less than immediate ones (discount factor), like future cash flows\nMoney: Money today can earn interest\nEveryday life: Tonight’s dinner beats the same dinner next week\nSo any interval length works, even an endless one",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#machine-a-or-b-by-the-gittins-index",
+    "href": "lectures/lec_02_explore_exploit.html#machine-a-or-b-by-the-gittins-index",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Machine A or B by the Gittins index?",
+    "text": "Machine A or B by the Gittins index?\n\n\nMachine B (0.6346) beats machine A (0.6300)\nClear win-stay pattern, relaxed lose-shift pattern\nAt (0,0) we see the exploration bonus",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#gittins-index-the-math-behind-the-table",
+    "href": "lectures/lec_02_explore_exploit.html#gittins-index-the-math-behind-the-table",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Gittins Index: the math behind the table",
+    "text": "Gittins Index: the math behind the table\n\\[G_i(s_i, f_i) := \\sup_{\\tau \\geq 1} \\frac{\\mathbb{E}\\left[\\sum_{t=0}^{\\tau-1} \\beta^t \\cdot r_i^t \\middle| s_i, f_i\\right]}{\\mathbb{E}\\left[\\sum_{t=0}^{\\tau-1} \\beta^t\\right]}\\]\nIn words: imagine a second machine that pays out at a fixed, known rate. The index is the rate that machine would need, so that you’d be indifferent between the two. The more uncertain a machine, the higher its index, because it might turn out great.\n\n\n\n\n\n\n\nToo complex to calculate by hand, and you don’t need to: just use the lookup table!",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#where-bandits-run-today",
+    "href": "lectures/lec_02_explore_exploit.html#where-bandits-run-today",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Where bandits run today",
+    "text": "Where bandits run today\n\n\nOnline advertising: which ad to show next, learning from every click\nStreaming services: which thumbnail or recommendation to show, tested on millions of viewers\nE-commerce and A/B testing: shifting traffic to the better version while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nNotes\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy.",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
     ]
   }
 ]
