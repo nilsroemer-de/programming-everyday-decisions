@@ -8745,5 +8745,23 @@
       "02 Explore & Exploit",
       "Lecture"
     ]
+  },
+  {
+    "objectID": "lectures/lec_02_presentation.html#try-it-machines-a-b-and-c-by-laplace",
+    "href": "lectures/lec_02_presentation.html#try-it-machines-a-b-and-c-by-laplace",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Try it: machines A, B and C by Laplace",
+    "text": "Try it: machines A, B and C by Laplace\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\nQuestion: What is E[B], E[A] and E[C]? Which machine looks better by this estimate?\n\nE[B] = (1 + 1) / (2 + 2) = 0.50\nE[A] = (9 + 1) / (15 + 2) = 10/17 ≈ 0.59\nE[C] = (0 + 1) / (0 + 2) = 0.50, even though C was never played\n\n\nLaplace gives unknown options a fair chance and avoids estimates of 0% or 100% after a few pulls."
+  },
+  {
+    "objectID": "lectures/lec_02_explore_exploit.html#try-it-machines-a-b-and-c-by-laplace",
+    "href": "lectures/lec_02_explore_exploit.html#try-it-machines-a-b-and-c-by-laplace",
+    "title": "Lecture II: Explore & Exploit",
+    "section": "Try it: machines A, B and C by Laplace",
+    "text": "Try it: machines A, B and C by Laplace\n\\[\\mathbb{E}[\\text{win}] = \\frac{w + 1}{w + l + 2}\\]\nQuestion: What is E[B], E[A] and E[C]? Which machine looks better by this estimate?\n\n\nE[B] = (1 + 1) / (2 + 2) = 0.50\nE[A] = (9 + 1) / (15 + 2) = 10/17 ≈ 0.59\nE[C] = (0 + 1) / (0 + 2) = 0.50, even though C was never played\n\n\n\nLaplace gives unknown options a fair chance and avoids estimates of 0% or 100% after a few pulls.",
+    "crumbs": [
+      "02 Explore & Exploit",
+      "Lecture"
+    ]
   }
 ]
