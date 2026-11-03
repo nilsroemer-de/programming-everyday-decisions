@@ -5054,7 +5054,7 @@
     "href": "lectures/lec_02_explore_exploit.html#the-best-choice-now-is-not-always-the-best-choice-overall",
     "title": "Lecture II: Explore & Exploit",
     "section": "The best choice now is not always the best choice overall",
-    "text": "The best choice now is not always the best choice overall\n\n\nThe bandit problem stands for many real-world decisions\nThe best choice now can differ from the best choice in the long run\nWhich lever to pull next depends on one more thing. Question: Any idea what it is?",
+    "text": "The best choice now is not always the best choice overall\n\n\nThe bandit problem stands for many real-world decisions\nThe best choice now can differ from the best choice in the long run\nWhich lever to pull next depends on one more thing\n\n\n\nQuestion: Any idea what it is?",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
@@ -5635,7 +5635,7 @@
     "href": "lectures/lec_02_presentation.html#the-best-choice-now-is-not-always-the-best-choice-overall",
     "title": "Lecture II: Explore & Exploit",
     "section": "The best choice now is not always the best choice overall",
-    "text": "The best choice now is not always the best choice overall\n\nThe bandit problem stands for many real-world decisions\nThe best choice now can differ from the best choice in the long run\nWhich lever to pull next depends on one more thing. Question: Any idea what it is?"
+    "text": "The best choice now is not always the best choice overall\n\nThe bandit problem stands for many real-world decisions\nThe best choice now can differ from the best choice in the long run\nWhich lever to pull next depends on one more thing\n\n\nQuestion: Any idea what it is?"
   },
   {
     "objectID": "lectures/lec_02_presentation.html#the-dilemma-try-something-new-or-stick-with-what-works-1",
@@ -8645,7 +8645,7 @@
     "href": "lectures/lec_02_presentation.html#where-bandits-run-today",
     "title": "Lecture II: Explore & Exploit",
     "section": "Where bandits run today",
-    "text": "Where bandits run today\n\nOnline advertising: which ad to show next, learning from every click\nStreaming services: which thumbnail or recommendation to show, tested on millions of viewers\nE-commerce and A/B testing: shifting traffic to the better version while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy."
+    "text": "Where bandits run today\n\nOnline advertising: which of thousands of ads to show to this visitor, learning from every click\nWebsite testing: two versions of a page, and the better one gets more visitors while the test is still running\nE-commerce and A/B testing: shifting traffic to the better version while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy."
   },
   {
     "objectID": "lectures/lec_02_explore_exploit.html#explore-or-exploit-three-examples",
@@ -8740,7 +8740,7 @@
     "href": "lectures/lec_02_explore_exploit.html#where-bandits-run-today",
     "title": "Lecture II: Explore & Exploit",
     "section": "Where bandits run today",
-    "text": "Where bandits run today\n\n\nOnline advertising: which ad to show next, learning from every click\nStreaming services: which thumbnail or recommendation to show, tested on millions of viewers\nE-commerce and A/B testing: shifting traffic to the better version while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nNotes\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy.",
+    "text": "Where bandits run today\n\n\nOnline advertising: which of thousands of ads to show to this visitor, learning from every click\nWebsite testing: two versions of a page, and the better one gets more visitors while the test is still running\nE-commerce and A/B testing: shifting traffic to the better version while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nNotes\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy.",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
