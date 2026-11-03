@@ -8645,7 +8645,7 @@
     "href": "lectures/lec_02_presentation.html#where-bandits-run-today",
     "title": "Lecture II: Explore & Exploit",
     "section": "Where bandits run today",
-    "text": "Where bandits run today\n\nOnline advertising: which of thousands of ads to show to this visitor, learning from every click\nWebsite testing: two versions of a page, and the better one gets more visitors while the test is still running\nE-commerce and A/B testing: shifting traffic to the better version while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy."
+    "text": "Where bandits run today\n\nOnline advertising: which of thousands of ads to show to this visitor, learning from every click\nStreaming services: which thumbnail or recommendation to show, tested on millions of viewers\nWebsite testing: two versions of a page, and the better one gets more visitors while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy."
   },
   {
     "objectID": "lectures/lec_02_explore_exploit.html#explore-or-exploit-three-examples",
@@ -8740,7 +8740,7 @@
     "href": "lectures/lec_02_explore_exploit.html#where-bandits-run-today",
     "title": "Lecture II: Explore & Exploit",
     "section": "Where bandits run today",
-    "text": "Where bandits run today\n\n\nOnline advertising: which of thousands of ads to show to this visitor, learning from every click\nWebsite testing: two versions of a page, and the better one gets more visitors while the test is still running\nE-commerce and A/B testing: shifting traffic to the better version while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nNotes\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy.",
+    "text": "Where bandits run today\n\n\nOnline advertising: which of thousands of ads to show to this visitor, learning from every click\nStreaming services: which thumbnail or recommendation to show, tested on millions of viewers\nWebsite testing: two versions of a page, and the better one gets more visitors while the test is still running\nClinical trials: adaptive trials assign more patients to the treatment that works best so far\n\n\nThe same trade-off as in our casino, decided millions of times a day.\n\nNotes\nThese systems use bandit algorithms in the spirit of Gittins, often simpler variants such as Thompson sampling or UCB. The point for us: explore and exploit is not a thought experiment, it runs the digital economy.",
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
