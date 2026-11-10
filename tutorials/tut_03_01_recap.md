@@ -67,7 +67,7 @@ print(f"Last meal: {last_meal}, price: {price}, would order again: {would_order_
 
 # Section 2 - Comparisons
 
-Cache systems need to make decisions about what data to keep or remove. This is similar to how we use comparisons in Python. For example, the following code checks a simple eviction policy: items that were rarely used and not used for a while are removed. This is the idea behind **Least Recently Used (LRU)** from the lecture.
+Cache systems need to make decisions about what data to keep or remove. This is similar to how we use comparisons in Python. For example, the following code checks a simple eviction policy that combines two questions: how often was an item used, and how long ago? **Least Recently Used (LRU)** from the lecture only asks the second question.
 
 ``` python
 # Simple cache eviction policy

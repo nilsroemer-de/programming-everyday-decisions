@@ -361,8 +361,8 @@ Remember:
 - They can take inputs (parameters) and produce outputs (return values)
 - They can have default values for parameters
 
-With `lru_access()` and `hit_rate()`, you have built your own small LRU cache. In the next tutorial, we'll compare it with random eviction using Python packages.
+With `lru_access()` and `hit_rate()`, you have built your own small LRU cache.
 
 ------------------------------------------------------------------------
 
-*In the next tutorial, we'll take a look at how to import packages and libraries to extend our functionality!*
+*In the next tutorial, we'll compare our LRU cache with random eviction using Python packages!*

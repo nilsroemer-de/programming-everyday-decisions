@@ -175,8 +175,39 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <div class="fragment">
 <p>Today’s lecture will explain why that matters more than you think…</p>
 </div>
+</section>
+<section id="a-messy-cupboard" class="slide level2">
+<h2>A messy cupboard</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><span class="question">Question:</span> What would you do?</p>
+<ul>
+<li class="fragment">Sort it: similar things together</li>
+<li class="fragment">Keep what you use often within easy reach</li>
+<li class="fragment">Now you find things faster</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><img data-src="../images/caching/cupboard_messy.svg" height="420"></p>
+</div>
+</div></div>
+</section>
+<section id="organized-but-full" class="slide level2">
+<h2>Organized, but full</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><span class="question">Question:</span> And now?</p>
+<ul>
+<li class="fragment">Get more space</li>
+<li class="fragment">Clear out</li>
+</ul>
+</div><div class="column" style="width:45%;">
+<div style="text-align: center;">
+<p><img data-src="../images/caching/cupboard_full.svg" height="420"></p>
+</div>
+</div></div>
 <aside class="notes">
-<p>Learning objectives: explain the fundamental concepts of caching and its importance; compare different cache replacement strategies; identify caching principles in everyday life; apply caching concepts to personal productivity; understand the relationship between caching and attention management.</p>
+<p>Better organization helps, but every storage has a finite capacity. More space helps, but it has limits too. Sooner or later we are left with the second option: clearing out. The rest of the lecture is about how to do that well.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -189,159 +220,61 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </section>
-<section id="an-everyday-problem-the-cupboard-is-full" class="slide level2">
-<h2>An everyday problem: the cupboard is full</h2>
-<div class="quarto-layout-panel" data-layout="[[50,50]]">
-<div class="quarto-layout-row">
-<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="why-not-just-buy-more-space" class="slide level2">
+<h2>Why not just buy more space?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li class="fragment">We have a problem: Our cupboard.</li>
-<li class="fragment">It’s time to put things in order.</li>
+<li class="fragment">It costs money</li>
+<li class="fragment">Bigger storage is slower to search</li>
+<li class="fragment">Sooner or later it fills up again</li>
 </ul>
-</div><div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+</div><div class="column" style="width:50%;">
 <div style="text-align: center;">
-<p><img data-src="../images/caching/closet_1.png"></p>
+<p><img data-src="../images/caching/lec03-caching-photo.jpg"></p>
 </div>
 </div></div>
-</div>
+<aside class="notes">
+<p>The trade-off behind the second point: size versus speed. The larger a storage, the longer it takes to find a thing in it. That holds for a cupboard, a warehouse and, as we will see, for computer memory.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="organize-better-or-clear-out" class="slide level2">
-<h2>Organize better, or clear out?</h2>
-<p><span class="question">Question:</span> What could we do?</p>
-<div class="quarto-layout-panel" data-layout="[[50,50]]">
-<div class="quarto-layout-row">
-<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="who-else-has-this-problem" class="slide level2">
+<h2>Who else has this problem?</h2>
 <ul>
-<li class="fragment">Better organization</li>
-<li class="fragment">Clearing out things we no longer need</li>
-<li class="fragment">Now we have two problems:
-<ul>
-<li class="fragment">Storing?</li>
-<li class="fragment">Clearing out?</li>
-</ul></li>
-</ul>
-</div><div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div style="text-align: center;">
-<p><img data-src="../images/caching/closet_2.png"></p>
-</div>
-</div></div>
-</div>
-</section>
-<section id="two-ways-out-better-organization-or-more-space" class="slide level2">
-<h2>Two ways out: better organization or more space</h2>
-<div class="quarto-layout-panel" data-layout="[[50,50]]">
-<div class="quarto-layout-row">
-<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ul>
-<li class="fragment"><strong>Better Organization:</strong>
-<ul>
-<li class="fragment">Subdivide storage</li>
-<li class="fragment">Efficient sorting</li>
-</ul></li>
-<li class="fragment"><strong>More Space:</strong>
-<ul>
-<li class="fragment">Increase capacity</li>
-</ul></li>
-<li class="fragment"><span class="question">Question:</span> Which approach is better?</li>
-</ul>
-</div><div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div style="text-align: center;">
-<p><img data-src="../images/caching/closet_2.png"></p>
-</div>
-</div></div>
-</div>
-</section>
-<section id="even-the-best-organization-has-limits" class="slide level2">
-<h2>Even the best organization has limits</h2>
-<div class="quarto-layout-panel" data-layout="[[50,50]]">
-<div class="quarto-layout-row">
-<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ul>
-<li class="fragment">Organization helps, but takes time.</li>
-<li class="fragment">More space helps, but has limits.</li>
-<li class="fragment"><strong>Every storage has a finite capacity.</strong></li>
-</ul>
-</div><div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div style="text-align: center;">
-<p><img data-src="../images/caching/closet_2.png"></p>
-</div>
-</div></div>
-</div>
-</section>
-<section id="when-storage-is-full-we-could-buy-more" class="slide level2">
-<h2>When storage is full, we could buy more</h2>
-<p><span class="question">Question:</span> What do we do when the storage is full?</p>
-<div class="fragment">
-<div style="text-align: center;">
-<p><img data-src="../images/caching/lec03-caching-photo.jpg" style="width:60.0%"></p>
-<p><strong>We could increase the capacity</strong></p>
-</div>
-</div>
-</section>
-<section id="but-more-space-is-costly-and-slow" class="slide level2">
-<h2>But more space is costly and slow</h2>
-<div class="quarto-layout-panel" data-layout="[[50,50]]">
-<div class="quarto-layout-row">
-<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<ul>
-<li class="fragment">Increasing capacity costs money</li>
-<li class="fragment"><strong>Trade-off:</strong> size vs.&nbsp;speed, larger is slower to search</li>
-<li class="fragment">Sooner or later it still fills up</li>
-</ul>
-</div><div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div style="text-align: center;">
-<p><img data-src="../images/caching/closet_3.png"></p>
-</div>
-</div></div>
-</div>
-</section>
-<section id="every-storage-has-this-problem" class="slide level2">
-<h2>Every storage has this problem</h2>
-<p><span class="question">Question:</span> What else faces this problem?</p>
-<ul>
-<li class="fragment">Cupboards</li>
-<li class="fragment">Computers</li>
-<li class="fragment">Email inbox</li>
-<li class="fragment">Smartphones</li>
 <li class="fragment">Warehouses</li>
+<li class="fragment">Computers</li>
+<li class="fragment">Email inboxes</li>
+<li class="fragment">Smartphones</li>
 <li class="fragment"><strong>Our brain?!</strong></li>
 </ul>
 </section>
-<section id="full-storage-slows-everything-down" class="slide level2">
-<h2>Full storage slows everything down</h2>
-<p><span class="question">Question:</span> What is the impact of full storage?</p>
-<div class="quarto-layout-panel" data-layout="[[50,50]]">
-<div class="quarto-layout-row">
-<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="a-fast-processor-waiting-for-slow-memory" class="slide level2">
+<h2>A fast processor waiting for slow memory</h2>
 <ul>
-<li class="fragment">Access speed drops</li>
-<li class="fragment">Processing time up</li>
-<li class="fragment">Performance down</li>
+<li class="fragment">Processors got faster much more quickly than memory</li>
+<li class="fragment">Modern CPUs: billions of operations per second</li>
+<li class="fragment">But the data doesn’t arrive fast enough</li>
+<li class="fragment"><span class="question">Question:</span> How would you solve this?</li>
 </ul>
-</div><div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div style="text-align: center;">
-<p><img data-src="../images/caching/closet_3.png"></p>
+<ul>
+<li class="fragment">Make all memory fast? Far too expensive.</li>
+<li class="fragment">Better: keep the data you need most <strong>right next to the processor</strong>.</li>
+</ul>
+<div class="fragment fade-in">
+<p>That small, fast memory is called a <strong>cache</strong>.<sup>1</sup></p>
 </div>
-</div></div>
-</div>
-</section>
-<section id="so-we-have-to-clear-out-but-what-goes" class="slide level2">
-<h2>So we have to clear out, but what goes?</h2>
-<ul>
-<li class="fragment">True for cupboards, computers, brains…</li>
-<li class="fragment"><strong>But what stays and what goes?</strong></li>
-</ul>
-</section>
-<section id="computers-hit-the-same-wall" class="slide level2">
-<h2>Computers hit the same wall</h2>
-<ul>
-<li class="fragment">1946: von Neumann’s team expects a <strong>hierarchy of memories</strong><sup>1</sup></li>
-<li class="fragment">Processors got faster much quicker than memory (Moore’s Law, 1965)</li>
-<li class="fragment">1965: Maurice Wilkes proposes a small, fast memory, the first <strong>cache</strong></li>
-<li class="fragment">1995: Wulf and McKee call the growing gap the <strong>Memory Wall</strong></li>
-</ul>
 <aside class="notes">
-<p>The evolution of computer memory: computer science faced the same storage problem as our cupboard. Processors became faster much more quickly than memory, so a small, fast memory close to the processor (Wilkes called it a “slave memory”) became necessary.</p>
+<p>The evolution of computer memory: computer science faced the same storage problem as our cupboard. In 1946 von Neumann’s team already expected a hierarchy of memories. Processors then became faster much more quickly than memory (Moore’s Law, 1965), so in 1965 Maurice Wilkes proposed a small, fast memory close to the processor (he called it a “slave memory”), the first cache. In 1995 Wulf and McKee called the growing gap the “Memory Wall”. The waiting itself is often called the von Neumann bottleneck, a term coined by John Backus in 1977.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -354,36 +287,6 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Burks, A. W., Goldstine, H. H., &amp; von Neumann, J. (1946). Preliminary discussion of the logical design of an electronic computing instrument. Wilkes, M. V. (1965). Slave memories and dynamic storage allocation. Wulf, W. A., &amp; McKee, S. A. (1995). Hitting the memory wall. See also Christian &amp; Griffiths (2016), ch.&nbsp;4.</p></li></ol></aside></section>
-<section id="a-fast-processor-waiting-for-slow-memory" class="slide level2">
-<h2>A fast processor waiting for slow memory</h2>
-<ul>
-<li class="fragment"><strong>Modern CPUs:</strong> billions of operations per second</li>
-<li class="fragment"><strong>Problem:</strong> data doesn’t arrive fast enough</li>
-<li class="fragment"><span class="question">Question:</span> What’s the point of a fast CPU that waits for slow memory?</li>
-</ul>
-<div class="fragment">
-<p><strong>→ The Von Neumann bottleneck</strong><sup>1</sup></p>
-</div>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>Term coined by John Backus (1977).</p></li></ol></aside></section>
-<section id="the-problem-limited-space-too-much-stuff-1" class="slide level2 section-covered">
-<h2>The problem: limited space, too much stuff</h2>
-<div class="section-covered">
-<p><span class="eyebrow">What we covered</span></p>
-<p><span class="statement">Every storage system faces the same question: what to keep close and what to clear out.</span></p>
-</div>
-</section></section>
-<section>
-
-<section id="roadmap-1" class="slide level2 section-roadmap">
-<h2>Roadmap</h2>
-<div class="roadmap">
-<ol type="1">
-<li><span class="roadmap-item done">The problem: limited space, too much stuff</span></li>
-<li><span class="roadmap-item current">The solution: keep what you need close, clear out the rest</span></li>
-<li><span class="roadmap-item future">Your mind is a cache: protecting your attention</span></li>
-</ol>
-</div>
-</section>
 <section id="the-cache-a-hierarchy-of-memories" class="slide level2">
 <h2>The cache: a hierarchy of memories</h2>
 <div class="fragment">
@@ -420,11 +323,11 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </section>
 <section id="fast-memory-is-small-big-memory-is-slow" class="slide level2">
 <h2>Fast memory is small, big memory is slow</h2>
-<div id="3ff8ca2c" class="cell" data-execution_count="2">
+<div id="edd7a112" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lec_03_caching_files/figure-html/cell-3-output-1.png" width="1485" height="569"></p>
+<p><img data-src="lec_03_caching_files/figure-revealjs/cell-3-output-1.png" width="1485" height="569"></p>
 </figure>
 </div>
 </div>
@@ -452,32 +355,204 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </section>
-<section id="small-and-fast-means-clearing-out-regularly" class="slide level2">
-<h2>Small and fast means clearing out regularly</h2>
-<div class="quarto-layout-panel" data-layout="[[50,50]]">
-<div class="quarto-layout-row">
-<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<section id="so-we-have-to-clear-out.-but-what-goes" class="slide level2">
+<h2>So we have to clear out. But what goes?</h2>
 <ul>
-<li class="fragment">L1 and L2 cache only contain most necessary data.</li>
-<li class="fragment">The same should apply to your desk.</li>
-<li class="fragment">Therefore, both must be cleared regularly.</li>
+<li class="fragment">True for cupboards, computers, brains…</li>
+<li class="fragment"><strong>But what stays and what goes?</strong></li>
 </ul>
-</div><div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div style="text-align: center;">
-<p><img data-src="../images/caching/Desk_full.png" style="width:70.0%"></p>
-</div>
-</div></div>
+</section></section>
+<section>
+
+<section id="roadmap-1" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">The problem: limited space, too much stuff</span></li>
+<li><span class="roadmap-item current">The solution: keep what you need close, clear out the rest</span></li>
+<li><span class="roadmap-item future">Your mind is a cache: protecting your attention</span></li>
+</ol>
 </div>
 </section>
-<section id="four-ways-to-decide-what-goes" class="slide level2">
-<h2>Four ways to decide what goes</h2>
-<p><span class="question">Question:</span> Which eviction strategies can you think of?</p>
+<section id="a-desk-for-three-books" class="slide level2">
+<h2>A desk for three books</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
 <ul>
-<li class="fragment">Random</li>
-<li class="fragment">First-In, First-Out (FIFO)</li>
-<li class="fragment">Least Frequently Used (LFU)</li>
-<li class="fragment">Least Recently Used (LRU)</li>
+<li class="fragment">You study at a desk with room for <strong>three books</strong></li>
+<li class="fragment">All other books are on a shelf across the room</li>
+<li class="fragment">Every trip to the shelf costs time</li>
+<li class="fragment">When the desk is full and you need another book, one has to go back</li>
+<li class="fragment"><span class="question">Question:</span> Which one?</li>
 </ul>
+</div><div class="column" style="width:45%;">
+<p><img data-src="../images/caching/desk_three_books.svg"></p>
+</div></div>
+<aside class="notes">
+<p>This desk is our model for the whole lecture. The desk is the cache: small and fast. The shelf is the big, slow storage. A trip to the shelf is a cache miss. The question “which book goes back?” is the eviction problem.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="three-ways-to-decide-what-goes" class="slide level2">
+<h2>Three ways to decide what goes</h2>
+<ul>
+<li class="fragment"><strong>Random:</strong> put back any book</li>
+<li class="fragment"><strong>First-In, First-Out (FIFO):</strong> put back the book that has been on the desk the longest</li>
+<li class="fragment"><strong>Least Recently Used (LRU):</strong> put back the book you haven’t touched for the longest time</li>
+</ul>
+</section>
+<section id="try-it-which-book-leaves-the-desk" class="slide level2">
+<h2>Try it: which book leaves the desk?</h2>
+<p>The desk is empty. You need these books, in this order:</p>
+<p><strong>A, B, C, A, D, A, B</strong></p>
+<div class="fragment">
+<p>In pairs, 3 minutes: play it through with <strong>FIFO</strong> and with <strong>LRU</strong>. Count your trips to the shelf.</p>
+</div>
+</section>
+<section id="fifo-six-trips-to-the-shelf" class="slide level2">
+<h2>FIFO: six trips to the shelf</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Request</th>
+<th data-quarto-table-cell-role="th">Desk afterwards</th>
+<th data-quarto-table-cell-role="th">Trip?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="fragment odd">
+<td>A</td>
+<td>A</td>
+<td>yes</td>
+</tr>
+<tr class="fragment even">
+<td>B</td>
+<td>A B</td>
+<td>yes</td>
+</tr>
+<tr class="fragment odd">
+<td>C</td>
+<td>A B C</td>
+<td>yes</td>
+</tr>
+<tr class="fragment even">
+<td>A</td>
+<td>A B C</td>
+<td>no</td>
+</tr>
+<tr class="fragment odd">
+<td>D</td>
+<td>B C D (A leaves)</td>
+<td>yes</td>
+</tr>
+<tr class="fragment even">
+<td>A</td>
+<td>C D A (B leaves)</td>
+<td>yes</td>
+</tr>
+<tr class="fragment odd">
+<td>B</td>
+<td>D A B (C leaves)</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment fade-in">
+<p>FIFO throws out A, the book we use all the time.</p>
+</div>
+</section>
+<section id="lru-five-trips-to-the-shelf" class="slide level2">
+<h2>LRU: five trips to the shelf</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Request</th>
+<th data-quarto-table-cell-role="th">Desk afterwards</th>
+<th data-quarto-table-cell-role="th">Trip?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="fragment odd">
+<td>A</td>
+<td>A</td>
+<td>yes</td>
+</tr>
+<tr class="fragment even">
+<td>B</td>
+<td>A B</td>
+<td>yes</td>
+</tr>
+<tr class="fragment odd">
+<td>C</td>
+<td>A B C</td>
+<td>yes</td>
+</tr>
+<tr class="fragment even">
+<td>A</td>
+<td>A B C</td>
+<td>no</td>
+</tr>
+<tr class="fragment odd">
+<td>D</td>
+<td>A C D (B leaves)</td>
+<td>yes</td>
+</tr>
+<tr class="fragment even">
+<td>A</td>
+<td>A C D</td>
+<td>no</td>
+</tr>
+<tr class="fragment odd">
+<td>B</td>
+<td>A D B (C leaves)</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment fade-in">
+<p>LRU keeps A, because we just used it.</p>
+</div>
+</section>
+<section id="and-random" class="slide level2">
+<h2>And Random?</h2>
+<p><span class="question">Question:</span> Would you clear out your cupboard by throwing out things at random?</p>
+<div id="c11c21ac" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_03_caching_files/figure-revealjs/cell-4-output-1.png" width="1396" height="251"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>Computer scientists call a trip to the shelf a <strong>miss</strong>, and finding the book on the desk a <strong>hit</strong>.</p>
+</div>
+<div class="fragment">
+<p>In the tutorial, you build this yourself.</p>
+<aside class="notes">
+<p>Simulation: a desk for three books, 20 different books, 10,000 requests. A book that was used recently is requested again with higher probability, like in real life. Random eviction needs the most trips to the shelf, FIFO fewer, LRU the fewest. Random is not terrible, but it ignores everything we know about what comes next.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="the-perfect-strategy-needs-a-crystal-ball" class="slide level2">
 <h2>The perfect strategy needs a crystal ball</h2>
@@ -493,52 +568,59 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <p><strong>→ Requires knowledge of the future!</strong></p>
 </div>
 </section>
-<section id="in-practice-throw-out-what-you-used-longest-ago" class="slide level2">
-<h2>In practice: throw out what you used longest ago</h2>
-<ul>
-<li class="fragment"><strong>Least Recently Used (LRU)</strong> is the dominant strategy</li>
-<li class="fragment">When space is needed, evict the item that was <strong>not used for the longest time</strong></li>
-<li class="fragment">On average much better than, for example, random eviction</li>
-<li class="fragment"><span class="question">Question:</span> Why is this the better strategy?</li>
-</ul>
-</section>
 <section id="lru-works-because-the-recent-past-predicts-the-near-future" class="slide level2">
 <h2>LRU works because the recent past predicts the near future</h2>
 <ul>
+<li class="fragment"><strong>Least Recently Used (LRU)</strong> is the dominant strategy</li>
+<li class="fragment"><span class="question">Question:</span> Why is this the better strategy?</li>
 <li class="fragment"><strong>Temporal locality:</strong> what you used recently, you will likely need again soon</li>
 <li class="fragment">Books on your desk, apps opened today, people texted this morning</li>
 <li class="fragment">In Belady’s classic comparison, LRU came closest to the crystal ball<sup>1</sup></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn3"><p>Belady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian &amp; Griffiths (2016), ch.&nbsp;4. In Tutorial III.III you measure LRU against random eviction yourself.</p></li></ol></aside></section>
-<section id="marie-kondo-is-lru-for-your-home" class="slide level2">
-<h2>Marie Kondo is LRU for your home</h2>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Belady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian &amp; Griffiths (2016), ch.&nbsp;4. In Tutorial III.III you measure LRU against random eviction yourself.</p></li></ol></aside></section>
+<section id="the-pile-on-your-desk-is-not-a-mess" class="slide level2">
+<h2>The pile on your desk is not a mess</h2>
 <ul>
-<li class="fragment"><strong>Let go of unused things</strong> → LRU principle</li>
-<li class="fragment"><strong>Keep things where used</strong> → Spatial locality</li>
-<li class="fragment"><strong>Result:</strong> Significant productivity increase</li>
+<li class="fragment">The economist Yukio Noguchi files everything in one row: whatever he used goes back to the <strong>left end</strong></li>
+<li class="fragment">So the most recently used files are always in front</li>
+<li class="fragment">A pile does the same: what you used last lies on top</li>
+<li class="fragment">Proven: searching such a row from the front never takes more than <strong>twice as long</strong> as the best possible order<sup>1</sup></li>
 </ul>
-<div class="fragment">
-<p><strong>Marie Kondo = LRU for physical objects!</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/caching/noguchi_row.svg" class="quarto-figure quarto-figure-center" height="180"></p>
+</figure>
 </div>
-</section>
-<section id="spatial-locality-keep-things-where-you-use-them" class="slide level2">
-<h2>Spatial locality: keep things where you use them</h2>
-<div class="fragment">
-<p><span class="question">Question:</span> Can you think of examples where spatial locality is applied in your daily life?</p>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Sleator, D. D. &amp; Tarjan, R. E. (1985). Amortized efficiency of list update and paging rules. Communications of the ACM, 28(2); see also Christian &amp; Griffiths (2016), ch.&nbsp;4.</p></li></ol></aside></section>
+<section id="keep-it-close-caching-in-logistics" class="slide level2">
+<h2>Keep it close: caching in logistics</h2>
+<p><span class="question">Question:</span> Where do you see this in a warehouse or a supermarket?</p>
+<div class="columns">
+<div class="column" style="width:58%;">
+<ul>
+<li class="fragment"><strong>Warehouses:</strong> fast-moving goods sit next to the dispatch area</li>
+<li class="fragment"><strong>Retail:</strong> goods are stored in regional warehouses close to the customer</li>
+<li class="fragment"><strong>Streaming:</strong> popular films are kept on servers in your region</li>
+</ul>
+</div><div class="column" style="width:42%;">
+<p><img data-src="../images/caching/warehouse_top.svg"></p>
+</div></div>
+<div class="fragment fade-in">
+<p>This is <strong>spatial locality</strong>: keep things where they are used.</p>
 </div>
-<div class="fragment">
-<div style="text-align: center;">
-<p><img data-src="../images/alg/Bed.png" style="width:30.0%"></p>
-<p><strong>Mathematically optimal</strong></p>
-</div>
-</div>
-</section>
-<section id="the-solution-keep-what-you-need-close-clear-out-the-rest-1" class="slide level2 section-covered">
-<h2>The solution: keep what you need close, clear out the rest</h2>
-<div class="section-covered">
-<p><span class="eyebrow">What we covered</span></p>
-<p><span class="statement">Fast storage is always small, so we need a rule for clearing out. Least Recently Used works because the recent past predicts the near future.</span></p>
-</div>
+<aside class="notes">
+<p>Examples from Christian &amp; Griffiths (2016), ch.&nbsp;4.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 
@@ -552,24 +634,38 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </ol>
 </div>
 </section>
-<section id="our-brains-are-caches" class="slide level2">
-<h2>Our brains are caches</h2>
+<section id="forgetting-is-a-feature" class="slide level2">
+<h2>Forgetting is a feature</h2>
 <ul>
-<li class="fragment"><strong>Why does this matter for humans?</strong></li>
-<li class="fragment">Your brain works like a cache: <strong>limited capacity</strong> for active information</li>
-<li class="fragment"><strong>Fast access</strong> to what you used recently</li>
-<li class="fragment">It constantly decides <strong>what to keep and what to forget</strong></li>
+<li class="fragment">Hermann Ebbinghaus measured how memory fades over time: the <strong>forgetting curve</strong></li>
+<li class="fragment">One reading: the brain runs out of space</li>
+<li class="fragment">A better one: the brain keeps close what you will likely need again</li>
+<li class="fragment">What you haven’t used for a long time gets harder to reach, just like LRU<sup>1</sup></li>
 </ul>
-</section>
-<section id="caches-can-be-flooded-and-poisoned" class="slide level2">
-<h2>Caches can be flooded and poisoned</h2>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>Anderson, J. R. &amp; Schooler, L. J. (1991). Reflections of the environment in memory. Psychological Science, 2(6); see also Christian &amp; Griffiths (2016), ch.&nbsp;4.</p></li></ol></aside></section>
+<section id="your-attention-is-a-desk-for-three-books" class="slide level2">
+<h2>Your attention is a desk for three books</h2>
 <ul>
-<li class="fragment"><strong>Cache flooding:</strong> overload the cache, so important data gets evicted and everything slows down</li>
-<li class="fragment"><strong>Cache poisoning:</strong> plant <strong>false data</strong>, so later requests get wrong answers</li>
-<li class="fragment">Both exploit that a cache is <strong>small</strong> and <strong>trusted</strong> without checking</li>
+<li class="fragment">Only a few things fit into your attention at once</li>
+<li class="fragment">Every notification puts a new book on the desk</li>
+<li class="fragment">And pushes another one off</li>
+<li class="fragment">You did not choose which one</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../images/caching/attention_desk.svg" class="quarto-figure quarto-figure-center" height="260"></p>
+</figure>
+</div>
+</section>
+<section id="flooding-and-poisoning" class="slide level2">
+<h2>Flooding and poisoning</h2>
+<ul>
+<li class="fragment"><strong>Flooding:</strong> so many notifications that what matters gets pushed out. That is distraction.</li>
+<li class="fragment"><strong>Poisoning:</strong> false information lands on your desk and you rely on it without checking. That is misinformation.</li>
+<li class="fragment">Both work because attention is small and we trust what is right in front of us.</li>
 </ul>
 <aside class="notes">
-<p>Cache flooding is a form of Denial-of-Service attack: the system is overloaded with requests, important data is evicted, the system slows down or crashes. Cache poisoning plants false data in a cache, so later requests are answered with wrong content; DNS cache poisoning, for example, sends users to a fake website. Both exploit that a cache is small and is trusted without checking the original source.</p>
+<p>The terms come from computer security. Cache flooding is a form of Denial-of-Service attack: the system is overloaded with requests, important data is evicted, the system slows down or crashes. Cache poisoning plants false data in a cache, so later requests are answered with wrong content; DNS cache poisoning, for example, sends users to a fake website. Both exploit that a cache is small and is trusted without checking the original source.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -582,50 +678,18 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </section>
-<section id="five-productivity-killers" class="slide level2">
-<h2>Five productivity killers</h2>
+<section id="getting-it-back-is-expensive" class="slide level2">
+<h2>Getting it back is expensive</h2>
 <ul>
-<li class="fragment"><strong>Overload:</strong> too much information at once</li>
-<li class="fragment"><strong>Exhaustion:</strong> too long without clearing out</li>
-<li class="fragment"><strong>Context switching:</strong> often 20+ minutes to get back on track<sup>1</sup></li>
-<li class="fragment"><strong>Distraction:</strong> cache flooding by notifications and social media</li>
-<li class="fragment"><strong>Misinformation:</strong> cache poisoning by fake news</li>
+<li class="fragment">After an interruption, it often takes <strong>20+ minutes</strong> to get back on track<sup>1</sup></li>
+<li class="fragment">Like a trip to the slowest memory: millions of times more expensive than staying at the desk</li>
+<li class="fragment">Technology and social media are <strong>designed</strong> to capture attention</li>
 </ul>
-<aside class="notes">
-<p>Overload: too much information, the cache capacity is exceeded. Exhaustion: too long without “cache clearing”. Context switching: every interruption of flow costs often 20 minutes or more to get back on track. Distraction is cache flooding by constant notifications and social media. Misinformation is cache poisoning by fake news and misleading information.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<aside><ol class="aside-footnotes"><li id="fn4"><p>Order of magnitude from Gloria Mark’s workplace studies, e.g.&nbsp;Mark, G., Gonzalez, V. M., &amp; Harris, J. (2005). No task left behind? Examining the nature of fragmented work. CHI 2005.</p></li></ol></aside></section>
-<section id="your-attention-is-under-attack" class="slide level2">
-<h2>Your attention is under attack</h2>
-<ul>
-<li class="fragment"><strong>Technology and social media</strong> are designed to capture attention (cache flooding)</li>
-<li class="fragment"><strong>Constant interruptions:</strong> every notification is a forced eviction</li>
-<li class="fragment"><strong>Result:</strong> less creativity, critical thinking and productivity</li>
-</ul>
-<div class="fragment">
+<div class="fragment fade-in">
 <p><span class="question">Reflection:</span> How many times did you check your phone during this lecture?</p>
 </div>
-</section>
-<section id="manage-your-mental-cache" class="slide level2">
-<h2>Manage your mental cache</h2>
-<ul>
-<li class="fragment">Limit screen time and practice “monotasking”</li>
-<li class="fragment">Prioritize sleep, nutrition and mindful habits</li>
-<li class="fragment">Create protected time for deep work</li>
-<li class="fragment">Be selective about what enters your attention</li>
-</ul>
 <aside class="notes">
-<p>In cache terms: monotasking reduces cache thrashing, sleep and nutrition maintain cache performance, protected time for deep work prevents cache flooding, and being selective is smart cache management.</p>
+<p>Five productivity killers, in cache terms. Overload: too much information at once, the cache capacity is exceeded. Exhaustion: too long without clearing out. Context switching: every interruption of flow costs often 20 minutes or more to get back on track. Distraction: cache flooding by constant notifications and social media. Misinformation: cache poisoning by fake news and misleading information. The result is less creativity, less critical thinking and less productivity.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -637,82 +701,54 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="distraction-cant-be-avoided-but-it-can-be-reduced" class="slide level2">
-<h2>Distraction can’t be avoided, but it can be reduced</h2>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>Order of magnitude from Gloria Mark’s workplace studies, e.g.&nbsp;Mark, G., Gonzalez, V. M., &amp; Harris, J. (2005). No task left behind? Examining the nature of fragmented work. CHI 2005.</p></li></ol></aside></section>
+<section id="what-gets-evicted-first-the-task-then-your-goals-then-your-values" class="slide level2">
+<h2>What gets evicted: first the task, then your goals, then your values</h2>
 <ul>
-<li class="fragment">Distraction is everywhere, especially for managers</li>
-<li class="fragment">Awareness is the first step to keep your brain working well</li>
-<li class="fragment"><strong>Want to dive deeper? Read “Stolen Focus” by Johann Hari</strong></li>
+<li class="fragment"><strong>Spotlight:</strong> what you are doing right now</li>
+<li class="fragment"><strong>Starlight:</strong> your goals for this year</li>
+<li class="fragment"><strong>Daylight:</strong> your values, who you want to be<sup>1</sup></li>
 </ul>
-<aside class="notes">
-<p>Distraction can hardly be avoided in today’s world, but it can be mitigated. This is particularly important for managers. This part of the lecture is designed to raise your awareness of what you can do to keep your brain working efficiently.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="three-levels-of-attention-spotlight-starlight-daylight" class="slide level2">
-<h2>Three levels of attention: spotlight, starlight, daylight</h2>
-<ul>
-<li class="fragment"><strong>Spotlight:</strong> what you work on right now (your L1 cache)</li>
-<li class="fragment"><strong>Starlight:</strong> your goals for this week or month (your L2 cache)</li>
-<li class="fragment"><strong>Daylight:</strong> your long-term values and direction (your storage)</li>
-</ul>
-<aside class="notes">
-<p>The three levels come from Johann Hari’s “Stolen Focus”. Spotlight: immediate goals, your focus, what are you working on right now? Starlight: medium-term goals, your wishes, what matters this week or month? Daylight: long-term goals, your values, what defines your life direction?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="five-practical-strategies" class="slide level2">
-<h2>Five practical strategies</h2>
-<ul>
-<li class="fragment"><strong>Prioritize:</strong> what deserves a place in your mental cache?</li>
-<li class="fragment"><strong>Time-box:</strong> structure prevents overflow</li>
-<li class="fragment"><strong>Take breaks:</strong> regular clearing out prevents exhaustion</li>
-<li class="fragment"><strong>Enable flow:</strong> dedicated workspace, fewer notifications</li>
-<li class="fragment"><strong>Meditation and exercise:</strong> maintenance for your cache</li>
-</ul>
-<aside class="notes">
-<p>Prioritization: what deserves to be in your mental cache? Structure and schedule: time-boxing prevents cache overflow. Breaks: regular cache clearing prevents exhaustion. Enable flow: dedicated workspace, manage notifications, clear communication. Meditation and exercise: maintenance routines for optimal cache performance.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="your-desk-as-a-cache-hierarchy" class="slide level2">
-<h2>Your desk as a cache hierarchy</h2>
-<ul>
-<li class="fragment"><strong>Hot cache (on your desk):</strong> only today’s tasks</li>
-<li class="fragment"><strong>Warm cache (nearby shelf or drawer):</strong> this week’s projects</li>
-<li class="fragment"><strong>Cold storage (archive or closet):</strong> everything else</li>
-</ul>
-<div class="fragment">
-<p><strong>Key principle:</strong> if you haven’t used it recently, move it away!</p>
+<div class="fragment fade-in">
+<p>LRU evicts what you haven’t touched for a long time. If your attention always goes to notifications, you first lose the task, then your goals, and in the end, Williams argues, yourself.</p>
 </div>
+<aside class="notes">
+<p>The three levels come from James Williams, a former Google strategist, quoted in Johann Hari’s “Stolen Focus”. Spotlight: immediate goals, your focus, what are you working on right now? Starlight: medium-term goals, your wishes, what matters this year? Daylight: long-term goals, your values, what defines your life direction?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>Williams, J. (2018). Stand Out of Our Light. Cambridge University Press; quoted in Hari, J. (2022). Stolen Focus.</p></li></ol></aside></section>
+<section id="what-to-do-about-it" class="slide level2">
+<h2>What to do about it</h2>
+<ul>
+<li class="fragment"><strong>Fewer interruptions:</strong> notifications off while you work, one thing at a time</li>
+<li class="fragment"><strong>Choose what gets in:</strong> be selective with news and feeds</li>
+<li class="fragment"><strong>Touch what matters:</strong> revisit your goals regularly, so they don’t get evicted</li>
+</ul>
+<div class="fragment fade-in">
+<p><strong>Want to dive deeper?</strong> Rolf Dobelli, <em>The Not To-Do List</em>, chapters 15, 46, 51 and 52. Johann Hari, <em>Stolen Focus</em>. And because news is a big source of distraction: Rolf Dobelli, <em>Stop Reading the News</em>.</p>
+</div>
+<aside class="notes">
+<p>More tips, in cache terms. Prioritize sleep, nutrition and mindful habits: they maintain cache performance. Take breaks: regular clearing out prevents exhaustion. Time-box your work: structure prevents overflow. Create protected time for deep work and a dedicated workspace: that prevents cache flooding. Meditation and exercise are maintenance routines for the cache. Treat your desk as a cache hierarchy: hot cache on the desk with only today’s tasks, warm cache in a nearby shelf or drawer with this week’s projects, cold storage in the archive or closet for everything else. If you haven’t used it recently, move it away. Distraction can hardly be avoided in today’s world, especially for managers, but it can be reduced, and awareness is the first step.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="self-assessment" class="slide level2">
 <h2>Self-assessment</h2>
@@ -726,11 +762,14 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <p><strong>Do you see any risks of cache flooding?</strong></p>
 </div>
 </section>
-<section id="your-mind-is-a-cache-protecting-your-attention-1" class="slide level2 section-covered">
-<h2>Your mind is a cache: protecting your attention</h2>
-<div class="section-covered">
-<p><span class="eyebrow">What we covered</span></p>
-<p><span class="statement">Your attention works like a cache: small, valuable and easily flooded, so protect it.</span></p>
+<section id="one-last-check" class="slide level2">
+<h2>One last check</h2>
+<p>Your desk holds three books. You need <strong>C, A, B, C, D</strong>.</p>
+<div class="fragment">
+<p><span class="question">Question:</span> Which book leaves the desk under LRU when D arrives?</p>
+<div class="fragment fade-in">
+<p><strong>A.</strong> C was just used, B came after A, so A is the one you haven’t touched for the longest time.</p>
+</div>
 </div>
 </section>
 <section id="what-we-covered" class="slide level2 lecture-closing">
@@ -785,7 +824,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <ul>
 <li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<sup>1</sup></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn5"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn7"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
 <section id="books-on-programming" class="slide level2">
 <h2>Books on Programming</h2>
 <ul>

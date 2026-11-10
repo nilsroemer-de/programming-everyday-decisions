@@ -1,0 +1,20 @@
+---
+title: Final Project
+---
+
+
+**The task:** Build a small Python tool that solves a problem in your own life. Show it live in the last session.
+
+**How:** Work with an AI assistant of your choice, in three steps.
+
+1.  **Find:** Brainstorm with the AI what annoys you or costs you time. Result: one sentence that says what your tool does.
+2.  **Plan:** Work out the concept with the AI: what goes in, what comes out, and what is the smallest version that already helps?
+3.  **Build:** Build that smallest version with the AI, try it, then improve it.
+
+**The presentation:** 5 minutes per team.
+
+1.  The problem, on one slide
+2.  Live demo
+3.  One thing that worked well with AI, one that didn't
+
+**Teams:** up to three people, or solo.

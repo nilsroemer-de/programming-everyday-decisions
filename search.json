@@ -2028,7 +2028,7 @@
     "href": "lectures/lec_03_presentation.html#a-quick-question-first",
     "title": "Lecture III: Caching",
     "section": "A quick question first",
-    "text": "A quick question first\n\nQuestion: How many of you have a messy desktop right now? Raise your hand!\n\n\nToday’s lecture will explain why that matters more than you think…\n\n\nLearning objectives: explain the fundamental concepts of caching and its importance; compare different cache replacement strategies; identify caching principles in everyday life; apply caching concepts to personal productivity; understand the relationship between caching and attention management."
+    "text": "A quick question first\n\nQuestion: How many of you have a messy desktop right now? Raise your hand!\n\n\nToday’s lecture will explain why that matters more than you think…"
   },
   {
     "objectID": "lectures/lec_03_presentation.html#an-everyday-problem-the-cupboard-is-full",
@@ -2105,7 +2105,7 @@
     "href": "lectures/lec_03_presentation.html#a-fast-processor-waiting-for-slow-memory",
     "title": "Lecture III: Caching",
     "section": "A fast processor waiting for slow memory",
-    "text": "A fast processor waiting for slow memory\n\nModern CPUs: billions of operations per second\nProblem: data doesn’t arrive fast enough\nQuestion: What’s the point of a fast CPU that waits for slow memory?\n\n\n→ The Von Neumann bottleneck1\n\nTerm coined by John Backus (1977)."
+    "text": "A fast processor waiting for slow memory\n\nProcessors got faster much more quickly than memory\nModern CPUs: billions of operations per second\nBut the data doesn’t arrive fast enough\nQuestion: How would you solve this?\n\n\nMake all memory fast? Far too expensive.\nBetter: keep the data you need most right next to the processor.\n\n\nThat small, fast memory is called a cache.1\n\n\nThe evolution of computer memory: computer science faced the same storage problem as our cupboard. In 1946 von Neumann’s team already expected a hierarchy of memories. Processors then became faster much more quickly than memory (Moore’s Law, 1965), so in 1965 Maurice Wilkes proposed a small, fast memory close to the processor (he called it a “slave memory”), the first cache. In 1995 Wulf and McKee called the growing gap the “Memory Wall”. The waiting itself is often called the von Neumann bottleneck, a term coined by John Backus in 1977.\n\nBurks, A. W., Goldstine, H. H., & von Neumann, J. (1946). Preliminary discussion of the logical design of an electronic computing instrument. Wilkes, M. V. (1965). Slave memories and dynamic storage allocation. Wulf, W. A., & McKee, S. A. (1995). Hitting the memory wall. See also Christian & Griffiths (2016), ch. 4."
   },
   {
     "objectID": "lectures/lec_03_presentation.html#the-problem-limited-space-too-much-stuff-1",
@@ -2182,14 +2182,14 @@
     "href": "lectures/lec_03_presentation.html#lru-works-because-the-recent-past-predicts-the-near-future",
     "title": "Lecture III: Caching",
     "section": "LRU works because the recent past predicts the near future",
-    "text": "LRU works because the recent past predicts the near future\n\nTemporal locality: what you used recently, you will likely need again soon\nBooks on your desk, apps opened today, people texted this morning\nIn Belady’s classic comparison, LRU came closest to the crystal ball1\n\nBelady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian & Griffiths (2016), ch. 4. In Tutorial III.III you measure LRU against random eviction yourself."
+    "text": "LRU works because the recent past predicts the near future\n\nLeast Recently Used (LRU) is the dominant strategy\nQuestion: Why is this the better strategy?\nTemporal locality: what you used recently, you will likely need again soon\nBooks on your desk, apps opened today, people texted this morning\nIn Belady’s classic comparison, LRU came closest to the crystal ball1\n\nBelady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian & Griffiths (2016), ch. 4. In Tutorial III.III you measure LRU against random eviction yourself."
   },
   {
     "objectID": "lectures/lec_03_presentation.html#marie-kondo-is-lru-for-your-home",
     "href": "lectures/lec_03_presentation.html#marie-kondo-is-lru-for-your-home",
     "title": "Lecture III: Caching",
     "section": "Marie Kondo is LRU for your home",
-    "text": "Marie Kondo is LRU for your home\n\nLet go of unused things → LRU principle\nKeep things where used → Spatial locality\nResult: Significant productivity increase\n\n\nMarie Kondo = LRU for physical objects!"
+    "text": "Marie Kondo is LRU for your home\n\nLet go of unused things → LRU principle\nKeep things where used → Spatial locality\n\n\nMarie Kondo = LRU for physical objects!"
   },
   {
     "objectID": "lectures/lec_03_presentation.html#spatial-locality-keep-things-where-you-use-them",
@@ -2369,7 +2369,7 @@
     "href": "lectures/lec_03_caching.html#a-quick-question-first",
     "title": "Lecture III: Caching",
     "section": "A quick question first",
-    "text": "A quick question first\n\nQuestion: How many of you have a messy desktop right now? Raise your hand!\n\n\nToday’s lecture will explain why that matters more than you think…\n\n\nNotes\nLearning objectives: explain the fundamental concepts of caching and its importance; compare different cache replacement strategies; identify caching principles in everyday life; apply caching concepts to personal productivity; understand the relationship between caching and attention management.",
+    "text": "A quick question first\n\nQuestion: How many of you have a messy desktop right now? Raise your hand!\n\n\nToday’s lecture will explain why that matters more than you think…",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -2490,7 +2490,7 @@
     "href": "lectures/lec_03_caching.html#a-fast-processor-waiting-for-slow-memory",
     "title": "Lecture III: Caching",
     "section": "A fast processor waiting for slow memory",
-    "text": "A fast processor waiting for slow memory\n\n\nModern CPUs: billions of operations per second\nProblem: data doesn’t arrive fast enough\nQuestion: What’s the point of a fast CPU that waits for slow memory?\n\n\n→ The Von Neumann bottleneck2",
+    "text": "A fast processor waiting for slow memory\n\n\nProcessors got faster much more quickly than memory\nModern CPUs: billions of operations per second\nBut the data doesn’t arrive fast enough\nQuestion: How would you solve this?\n\n\n\n\nMake all memory fast? Far too expensive.\nBetter: keep the data you need most right next to the processor.\n\n\n\nThat small, fast memory is called a cache.1\n\n\nNotes\nThe evolution of computer memory: computer science faced the same storage problem as our cupboard. In 1946 von Neumann’s team already expected a hierarchy of memories. Processors then became faster much more quickly than memory (Moore’s Law, 1965), so in 1965 Maurice Wilkes proposed a small, fast memory close to the processor (he called it a “slave memory”), the first cache. In 1995 Wulf and McKee called the growing gap the “Memory Wall”. The waiting itself is often called the von Neumann bottleneck, a term coined by John Backus in 1977.",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -2611,7 +2611,7 @@
     "href": "lectures/lec_03_caching.html#lru-works-because-the-recent-past-predicts-the-near-future",
     "title": "Lecture III: Caching",
     "section": "LRU works because the recent past predicts the near future",
-    "text": "LRU works because the recent past predicts the near future\n\n\nTemporal locality: what you used recently, you will likely need again soon\nBooks on your desk, apps opened today, people texted this morning\nIn Belady’s classic comparison, LRU came closest to the crystal ball3",
+    "text": "LRU works because the recent past predicts the near future\n\n\nLeast Recently Used (LRU) is the dominant strategy\nQuestion: Why is this the better strategy?\nTemporal locality: what you used recently, you will likely need again soon\nBooks on your desk, apps opened today, people texted this morning\nIn Belady’s classic comparison, LRU came closest to the crystal ball2",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -2622,7 +2622,7 @@
     "href": "lectures/lec_03_caching.html#marie-kondo-is-lru-for-your-home",
     "title": "Lecture III: Caching",
     "section": "Marie Kondo is LRU for your home",
-    "text": "Marie Kondo is LRU for your home\n\n\nLet go of unused things → LRU principle\nKeep things where used → Spatial locality\nResult: Significant productivity increase\n\n\nMarie Kondo = LRU for physical objects!",
+    "text": "Marie Kondo is LRU for your home\n\n\nLet go of unused things → LRU principle\nKeep things where used → Spatial locality\n\n\nMarie Kondo = LRU for physical objects!",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -2820,7 +2820,7 @@
     "href": "lectures/lec_03_caching.html#interesting-literature-to-start",
     "title": "Lecture III: Caching",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.5",
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.7",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -2853,7 +2853,7 @@
     "href": "lectures/lec_03_caching.html#footnotes",
     "title": "Lecture III: Caching",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nBurks, A. W., Goldstine, H. H., & von Neumann, J. (1946). Preliminary discussion of the logical design of an electronic computing instrument. Wilkes, M. V. (1965). Slave memories and dynamic storage allocation. Wulf, W. A., & McKee, S. A. (1995). Hitting the memory wall. See also Christian & Griffiths (2016), ch. 4.↩︎\nTerm coined by John Backus (1977).↩︎\nBelady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian & Griffiths (2016), ch. 4. In Tutorial III.III you measure LRU against random eviction yourself.↩︎\nOrder of magnitude from Gloria Mark’s workplace studies, e.g. Mark, G., Gonzalez, V. M., & Harris, J. (2005). No task left behind? Examining the nature of fragmented work. CHI 2005.↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nBurks, A. W., Goldstine, H. H., & von Neumann, J. (1946). Preliminary discussion of the logical design of an electronic computing instrument. Wilkes, M. V. (1965). Slave memories and dynamic storage allocation. Wulf, W. A., & McKee, S. A. (1995). Hitting the memory wall. See also Christian & Griffiths (2016), ch. 4.↩︎\nBelady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian & Griffiths (2016), ch. 4. In Tutorial III.III you measure LRU against random eviction yourself.↩︎\nSleator, D. D. & Tarjan, R. E. (1985). Amortized efficiency of list update and paging rules. Communications of the ACM, 28(2); see also Christian & Griffiths (2016), ch. 4.↩︎\nAnderson, J. R. & Schooler, L. J. (1991). Reflections of the environment in memory. Psychological Science, 2(6); see also Christian & Griffiths (2016), ch. 4.↩︎\nOrder of magnitude from Gloria Mark’s workplace studies, e.g. Mark, G., Gonzalez, V. M., & Harris, J. (2005). No task left behind? Examining the nature of fragmented work. CHI 2005.↩︎\nWilliams, J. (2018). Stand Out of Our Light. Cambridge University Press; quoted in Hari, J. (2022). Stolen Focus.↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -8762,6 +8762,394 @@
     "crumbs": [
       "02 Explore & Exploit",
       "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#the-cupboard-is-full.-what-now",
+    "href": "lectures/lec_03_presentation.html#the-cupboard-is-full.-what-now",
+    "title": "Lecture III: Caching",
+    "section": "The cupboard is full. What now?",
+    "text": "The cupboard is full. What now?\n\n\nQuestion: What could we do?\n\nOrganize better\nGet more space\nClear out\n\n\n\n\n\n\n\nBetter organization helps, but it takes time, and every storage has a finite capacity. More space helps, but it has limits too. Sooner or later we are left with the third option: clearing out. The rest of the lecture is about how to do that well."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#why-not-just-buy-more-space",
+    "href": "lectures/lec_03_presentation.html#why-not-just-buy-more-space",
+    "title": "Lecture III: Caching",
+    "section": "Why not just buy more space?",
+    "text": "Why not just buy more space?\n\n\n\nIt costs money\nBigger storage is slower to search\nSooner or later it fills up again\n\n\n\n\n\n\n\nThe trade-off behind the second point: size versus speed. The larger a storage, the longer it takes to find a thing in it. That holds for a cupboard, a warehouse and, as we will see, for computer memory."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#who-else-has-this-problem",
+    "href": "lectures/lec_03_presentation.html#who-else-has-this-problem",
+    "title": "Lecture III: Caching",
+    "section": "Who else has this problem?",
+    "text": "Who else has this problem?\n\nWarehouses\nComputers\nEmail inboxes\nSmartphones\nOur brain?!"
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#so-we-have-to-clear-out.-but-what-goes",
+    "href": "lectures/lec_03_presentation.html#so-we-have-to-clear-out.-but-what-goes",
+    "title": "Lecture III: Caching",
+    "section": "So we have to clear out. But what goes?",
+    "text": "So we have to clear out. But what goes?\n\nTrue for cupboards, computers, brains…\nBut what stays and what goes?"
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#a-desk-for-three-books",
+    "href": "lectures/lec_03_presentation.html#a-desk-for-three-books",
+    "title": "Lecture III: Caching",
+    "section": "A desk for three books",
+    "text": "A desk for three books\n\n\n\nYou study at a desk with room for three books\nAll other books are on a shelf across the room\nEvery trip to the shelf costs time\nWhen the desk is full and you need another book, one has to go back\nQuestion: Which one?\n\n\n\n\n\nThis desk is our model for the whole lecture. The desk is the cache: small and fast. The shelf is the big, slow storage. A trip to the shelf is a cache miss. The question “which book goes back?” is the eviction problem."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#three-ways-to-decide-what-goes",
+    "href": "lectures/lec_03_presentation.html#three-ways-to-decide-what-goes",
+    "title": "Lecture III: Caching",
+    "section": "Three ways to decide what goes",
+    "text": "Three ways to decide what goes\n\nRandom: put back any book\nFirst-In, First-Out (FIFO): put back the book that has been on the desk the longest\nLeast Recently Used (LRU): put back the book you haven’t touched for the longest time"
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#try-it-which-book-leaves-the-desk",
+    "href": "lectures/lec_03_presentation.html#try-it-which-book-leaves-the-desk",
+    "title": "Lecture III: Caching",
+    "section": "Try it: which book leaves the desk?",
+    "text": "Try it: which book leaves the desk?\nThe desk is empty. You need these books, in this order:\nA, B, C, A, D, A, B\n\nIn pairs, 3 minutes: play it through with FIFO and with LRU. Count your trips to the shelf."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#fifo-six-trips-to-the-shelf",
+    "href": "lectures/lec_03_presentation.html#fifo-six-trips-to-the-shelf",
+    "title": "Lecture III: Caching",
+    "section": "FIFO: six trips to the shelf",
+    "text": "FIFO: six trips to the shelf\n\n\n\nRequest\nDesk afterwards\nTrip?\n\n\n\n\nA\nA\nyes\n\n\nB\nA B\nyes\n\n\nC\nA B C\nyes\n\n\nA\nA B C\nno\n\n\nD\nB C D (A leaves)\nyes\n\n\nA\nC D A (B leaves)\nyes\n\n\nB\nD A B (C leaves)\nyes\n\n\n\n\nFIFO throws out A, the book we use all the time."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#lru-five-trips-to-the-shelf",
+    "href": "lectures/lec_03_presentation.html#lru-five-trips-to-the-shelf",
+    "title": "Lecture III: Caching",
+    "section": "LRU: five trips to the shelf",
+    "text": "LRU: five trips to the shelf\n\n\n\nRequest\nDesk afterwards\nTrip?\n\n\n\n\nA\nA\nyes\n\n\nB\nA B\nyes\n\n\nC\nA B C\nyes\n\n\nA\nA B C\nno\n\n\nD\nA C D (B leaves)\nyes\n\n\nA\nA C D\nno\n\n\nB\nA D B (C leaves)\nyes\n\n\n\n\nLRU keeps A, because we just used it."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#the-pile-on-your-desk-is-not-a-mess",
+    "href": "lectures/lec_03_presentation.html#the-pile-on-your-desk-is-not-a-mess",
+    "title": "Lecture III: Caching",
+    "section": "The pile on your desk is not a mess",
+    "text": "The pile on your desk is not a mess\n\nThe economist Yukio Noguchi files everything in one row: whatever he used goes back to the left end\nSo the most recently used files are always in front\nA pile does the same: what you used last lies on top\nProven: searching such a row from the front never takes more than twice as long as the best possible order1\n\n\n\n\n\n\nSleator, D. D. & Tarjan, R. E. (1985). Amortized efficiency of list update and paging rules. Communications of the ACM, 28(2); see also Christian & Griffiths (2016), ch. 4."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#keep-it-close-caching-in-logistics",
+    "href": "lectures/lec_03_presentation.html#keep-it-close-caching-in-logistics",
+    "title": "Lecture III: Caching",
+    "section": "Keep it close: caching in logistics",
+    "text": "Keep it close: caching in logistics\nQuestion: Where do you see this in a warehouse or a supermarket?\n\n\n\nWarehouses: fast-moving goods sit next to the dispatch area\nRetail: goods are stored in regional warehouses close to the customer\nStreaming: popular films are kept on servers in your region\n\n\n\n\n\nThis is spatial locality: keep things where they are used.\n\n\nExamples from Christian & Griffiths (2016), ch. 4."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#forgetting-is-a-feature",
+    "href": "lectures/lec_03_presentation.html#forgetting-is-a-feature",
+    "title": "Lecture III: Caching",
+    "section": "Forgetting is a feature",
+    "text": "Forgetting is a feature\n\nHermann Ebbinghaus measured how memory fades over time: the forgetting curve\nOne reading: the brain runs out of space\nA better one: the brain keeps close what you will likely need again\nWhat you haven’t used for a long time gets harder to reach, just like LRU1\n\nAnderson, J. R. & Schooler, L. J. (1991). Reflections of the environment in memory. Psychological Science, 2(6); see also Christian & Griffiths (2016), ch. 4."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#your-attention-is-a-desk-for-three-books",
+    "href": "lectures/lec_03_presentation.html#your-attention-is-a-desk-for-three-books",
+    "title": "Lecture III: Caching",
+    "section": "Your attention is a desk for three books",
+    "text": "Your attention is a desk for three books\n\nOnly a few things fit into your attention at once\nEvery notification puts a new book on the desk\nAnd pushes another one off\nYou did not choose which one"
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#flooding-and-poisoning",
+    "href": "lectures/lec_03_presentation.html#flooding-and-poisoning",
+    "title": "Lecture III: Caching",
+    "section": "Flooding and poisoning",
+    "text": "Flooding and poisoning\n\nFlooding: so many notifications that what matters gets pushed out. That is distraction.\nPoisoning: false information lands on your desk and you rely on it without checking. That is misinformation.\nBoth work because attention is small and we trust what is right in front of us.\n\n\nThe terms come from computer security. Cache flooding is a form of Denial-of-Service attack: the system is overloaded with requests, important data is evicted, the system slows down or crashes. Cache poisoning plants false data in a cache, so later requests are answered with wrong content; DNS cache poisoning, for example, sends users to a fake website. Both exploit that a cache is small and is trusted without checking the original source."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#getting-it-back-is-expensive",
+    "href": "lectures/lec_03_presentation.html#getting-it-back-is-expensive",
+    "title": "Lecture III: Caching",
+    "section": "Getting it back is expensive",
+    "text": "Getting it back is expensive\n\nAfter an interruption, it often takes 20+ minutes to get back on track1\nLike a trip to the slowest memory: millions of times more expensive than staying at the desk\nTechnology and social media are designed to capture attention\n\n\nReflection: How many times did you check your phone during this lecture?\n\n\nFive productivity killers, in cache terms. Overload: too much information at once, the cache capacity is exceeded. Exhaustion: too long without clearing out. Context switching: every interruption of flow costs often 20 minutes or more to get back on track. Distraction: cache flooding by constant notifications and social media. Misinformation: cache poisoning by fake news and misleading information. The result is less creativity, less critical thinking and less productivity.\n\nOrder of magnitude from Gloria Mark’s workplace studies, e.g. Mark, G., Gonzalez, V. M., & Harris, J. (2005). No task left behind? Examining the nature of fragmented work. CHI 2005."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#what-gets-evicted-first-the-task-then-your-goals-then-your-values",
+    "href": "lectures/lec_03_presentation.html#what-gets-evicted-first-the-task-then-your-goals-then-your-values",
+    "title": "Lecture III: Caching",
+    "section": "What gets evicted: first the task, then your goals, then your values",
+    "text": "What gets evicted: first the task, then your goals, then your values\n\nSpotlight: what you are doing right now\nStarlight: your goals for this year\nDaylight: your values, who you want to be1\n\n\nLRU evicts what you haven’t touched for a long time. If your attention always goes to notifications, you first lose the task, then your goals, and in the end, Williams argues, yourself.\n\n\nThe three levels come from James Williams, a former Google strategist, quoted in Johann Hari’s “Stolen Focus”. Spotlight: immediate goals, your focus, what are you working on right now? Starlight: medium-term goals, your wishes, what matters this year? Daylight: long-term goals, your values, what defines your life direction?\n\nWilliams, J. (2018). Stand Out of Our Light. Cambridge University Press; quoted in Hari, J. (2022). Stolen Focus."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#what-to-do-about-it",
+    "href": "lectures/lec_03_presentation.html#what-to-do-about-it",
+    "title": "Lecture III: Caching",
+    "section": "What to do about it",
+    "text": "What to do about it\n\nFewer interruptions: notifications off while you work, one thing at a time\nChoose what gets in: be selective with news and feeds\nTouch what matters: revisit your goals regularly, so they don’t get evicted\n\n\nWant to dive deeper? Rolf Dobelli, The Not To-Do List, chapters 15, 46, 51 and 52. Johann Hari, Stolen Focus. And because news is a big source of distraction: Rolf Dobelli, Stop Reading the News.\n\n\nMore tips, in cache terms. Prioritize sleep, nutrition and mindful habits: they maintain cache performance. Take breaks: regular clearing out prevents exhaustion. Time-box your work: structure prevents overflow. Create protected time for deep work and a dedicated workspace: that prevents cache flooding. Meditation and exercise are maintenance routines for the cache. Treat your desk as a cache hierarchy: hot cache on the desk with only today’s tasks, warm cache in a nearby shelf or drawer with this week’s projects, cold storage in the archive or closet for everything else. If you haven’t used it recently, move it away. Distraction can hardly be avoided in today’s world, especially for managers, but it can be reduced, and awareness is the first step."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#one-last-check",
+    "href": "lectures/lec_03_presentation.html#one-last-check",
+    "title": "Lecture III: Caching",
+    "section": "One last check",
+    "text": "One last check\nYour desk holds three books. You need C, A, B, C, D.\n\nQuestion: Which book leaves the desk under LRU when D arrives?\n\nA. C was just used, B came after A, so A is the one you haven’t touched for the longest time."
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#the-cupboard-is-full.-what-now",
+    "href": "lectures/lec_03_caching.html#the-cupboard-is-full.-what-now",
+    "title": "Lecture III: Caching",
+    "section": "The cupboard is full. What now?",
+    "text": "The cupboard is full. What now?\n\n\nQuestion: What could we do?\n\n\nOrganize better\nGet more space\nClear out\n\n\n\n\n\n\n\n\n\nNotes\nBetter organization helps, but it takes time, and every storage has a finite capacity. More space helps, but it has limits too. Sooner or later we are left with the third option: clearing out. The rest of the lecture is about how to do that well.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#why-not-just-buy-more-space",
+    "href": "lectures/lec_03_caching.html#why-not-just-buy-more-space",
+    "title": "Lecture III: Caching",
+    "section": "Why not just buy more space?",
+    "text": "Why not just buy more space?\n\n\n\n\nIt costs money\nBigger storage is slower to search\nSooner or later it fills up again\n\n\n\n\n\n\n\n\n\nNotes\nThe trade-off behind the second point: size versus speed. The larger a storage, the longer it takes to find a thing in it. That holds for a cupboard, a warehouse and, as we will see, for computer memory.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#who-else-has-this-problem",
+    "href": "lectures/lec_03_caching.html#who-else-has-this-problem",
+    "title": "Lecture III: Caching",
+    "section": "Who else has this problem?",
+    "text": "Who else has this problem?\n\n\nWarehouses\nComputers\nEmail inboxes\nSmartphones\nOur brain?!",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#so-we-have-to-clear-out.-but-what-goes",
+    "href": "lectures/lec_03_caching.html#so-we-have-to-clear-out.-but-what-goes",
+    "title": "Lecture III: Caching",
+    "section": "So we have to clear out. But what goes?",
+    "text": "So we have to clear out. But what goes?\n\n\nTrue for cupboards, computers, brains…\nBut what stays and what goes?",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#a-desk-for-three-books",
+    "href": "lectures/lec_03_caching.html#a-desk-for-three-books",
+    "title": "Lecture III: Caching",
+    "section": "A desk for three books",
+    "text": "A desk for three books\n\n\n\n\nYou study at a desk with room for three books\nAll other books are on a shelf across the room\nEvery trip to the shelf costs time\nWhen the desk is full and you need another book, one has to go back\nQuestion: Which one?\n\n\n\n\n\n\n\nNotes\nThis desk is our model for the whole lecture. The desk is the cache: small and fast. The shelf is the big, slow storage. A trip to the shelf is a cache miss. The question “which book goes back?” is the eviction problem.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#three-ways-to-decide-what-goes",
+    "href": "lectures/lec_03_caching.html#three-ways-to-decide-what-goes",
+    "title": "Lecture III: Caching",
+    "section": "Three ways to decide what goes",
+    "text": "Three ways to decide what goes\n\n\nRandom: put back any book\nFirst-In, First-Out (FIFO): put back the book that has been on the desk the longest\nLeast Recently Used (LRU): put back the book you haven’t touched for the longest time",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#try-it-which-book-leaves-the-desk",
+    "href": "lectures/lec_03_caching.html#try-it-which-book-leaves-the-desk",
+    "title": "Lecture III: Caching",
+    "section": "Try it: which book leaves the desk?",
+    "text": "Try it: which book leaves the desk?\nThe desk is empty. You need these books, in this order:\nA, B, C, A, D, A, B\nIn pairs, 3 minutes: play it through with FIFO and with LRU. Count your trips to the shelf.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#fifo-six-trips-to-the-shelf",
+    "href": "lectures/lec_03_caching.html#fifo-six-trips-to-the-shelf",
+    "title": "Lecture III: Caching",
+    "section": "FIFO: six trips to the shelf",
+    "text": "FIFO: six trips to the shelf\n\n\n\nRequest\nDesk afterwards\nTrip?\n\n\n\n\nA\nA\nyes\n\n\nB\nA B\nyes\n\n\nC\nA B C\nyes\n\n\nA\nA B C\nno\n\n\nD\nB C D (A leaves)\nyes\n\n\nA\nC D A (B leaves)\nyes\n\n\nB\nD A B (C leaves)\nyes\n\n\n\n\nFIFO throws out A, the book we use all the time.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#lru-five-trips-to-the-shelf",
+    "href": "lectures/lec_03_caching.html#lru-five-trips-to-the-shelf",
+    "title": "Lecture III: Caching",
+    "section": "LRU: five trips to the shelf",
+    "text": "LRU: five trips to the shelf\n\n\n\nRequest\nDesk afterwards\nTrip?\n\n\n\n\nA\nA\nyes\n\n\nB\nA B\nyes\n\n\nC\nA B C\nyes\n\n\nA\nA B C\nno\n\n\nD\nA C D (B leaves)\nyes\n\n\nA\nA C D\nno\n\n\nB\nA D B (C leaves)\nyes\n\n\n\n\nLRU keeps A, because we just used it.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#the-pile-on-your-desk-is-not-a-mess",
+    "href": "lectures/lec_03_caching.html#the-pile-on-your-desk-is-not-a-mess",
+    "title": "Lecture III: Caching",
+    "section": "The pile on your desk is not a mess",
+    "text": "The pile on your desk is not a mess\n\n\nThe economist Yukio Noguchi files everything in one row: whatever he used goes back to the left end\nSo the most recently used files are always in front\nA pile does the same: what you used last lies on top\nProven: searching such a row from the front never takes more than twice as long as the best possible order3",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#keep-it-close-caching-in-logistics",
+    "href": "lectures/lec_03_caching.html#keep-it-close-caching-in-logistics",
+    "title": "Lecture III: Caching",
+    "section": "Keep it close: caching in logistics",
+    "text": "Keep it close: caching in logistics\nQuestion: Where do you see this in a warehouse or a supermarket?\n\n\n\n\nWarehouses: fast-moving goods sit next to the dispatch area\nRetail: goods are stored in regional warehouses close to the customer\nStreaming: popular films are kept on servers in your region\n\n\n\n\n\n\n\nThis is spatial locality: keep things where they are used.\n\n\nNotes\nExamples from Christian & Griffiths (2016), ch. 4.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#forgetting-is-a-feature",
+    "href": "lectures/lec_03_caching.html#forgetting-is-a-feature",
+    "title": "Lecture III: Caching",
+    "section": "Forgetting is a feature",
+    "text": "Forgetting is a feature\n\n\nHermann Ebbinghaus measured how memory fades over time: the forgetting curve\nOne reading: the brain runs out of space\nA better one: the brain keeps close what you will likely need again\nWhat you haven’t used for a long time gets harder to reach, just like LRU4",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#your-attention-is-a-desk-for-three-books",
+    "href": "lectures/lec_03_caching.html#your-attention-is-a-desk-for-three-books",
+    "title": "Lecture III: Caching",
+    "section": "Your attention is a desk for three books",
+    "text": "Your attention is a desk for three books\n\n\nOnly a few things fit into your attention at once\nEvery notification puts a new book on the desk\nAnd pushes another one off\nYou did not choose which one",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#flooding-and-poisoning",
+    "href": "lectures/lec_03_caching.html#flooding-and-poisoning",
+    "title": "Lecture III: Caching",
+    "section": "Flooding and poisoning",
+    "text": "Flooding and poisoning\n\n\nFlooding: so many notifications that what matters gets pushed out. That is distraction.\nPoisoning: false information lands on your desk and you rely on it without checking. That is misinformation.\nBoth work because attention is small and we trust what is right in front of us.\n\n\n\nNotes\nThe terms come from computer security. Cache flooding is a form of Denial-of-Service attack: the system is overloaded with requests, important data is evicted, the system slows down or crashes. Cache poisoning plants false data in a cache, so later requests are answered with wrong content; DNS cache poisoning, for example, sends users to a fake website. Both exploit that a cache is small and is trusted without checking the original source.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#getting-it-back-is-expensive",
+    "href": "lectures/lec_03_caching.html#getting-it-back-is-expensive",
+    "title": "Lecture III: Caching",
+    "section": "Getting it back is expensive",
+    "text": "Getting it back is expensive\n\n\nAfter an interruption, it often takes 20+ minutes to get back on track5\nLike a trip to the slowest memory: millions of times more expensive than staying at the desk\nTechnology and social media are designed to capture attention\n\n\n\nReflection: How many times did you check your phone during this lecture?\n\n\nNotes\nFive productivity killers, in cache terms. Overload: too much information at once, the cache capacity is exceeded. Exhaustion: too long without clearing out. Context switching: every interruption of flow costs often 20 minutes or more to get back on track. Distraction: cache flooding by constant notifications and social media. Misinformation: cache poisoning by fake news and misleading information. The result is less creativity, less critical thinking and less productivity.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#what-gets-evicted-first-the-task-then-your-goals-then-your-values",
+    "href": "lectures/lec_03_caching.html#what-gets-evicted-first-the-task-then-your-goals-then-your-values",
+    "title": "Lecture III: Caching",
+    "section": "What gets evicted: first the task, then your goals, then your values",
+    "text": "What gets evicted: first the task, then your goals, then your values\n\n\nSpotlight: what you are doing right now\nStarlight: your goals for this year\nDaylight: your values, who you want to be6\n\n\n\nLRU evicts what you haven’t touched for a long time. If your attention always goes to notifications, you first lose the task, then your goals, and in the end, Williams argues, yourself.\n\n\nNotes\nThe three levels come from James Williams, a former Google strategist, quoted in Johann Hari’s “Stolen Focus”. Spotlight: immediate goals, your focus, what are you working on right now? Starlight: medium-term goals, your wishes, what matters this year? Daylight: long-term goals, your values, what defines your life direction?",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#what-to-do-about-it",
+    "href": "lectures/lec_03_caching.html#what-to-do-about-it",
+    "title": "Lecture III: Caching",
+    "section": "What to do about it",
+    "text": "What to do about it\n\n\nFewer interruptions: notifications off while you work, one thing at a time\nChoose what gets in: be selective with news and feeds\nTouch what matters: revisit your goals regularly, so they don’t get evicted\n\n\n\nWant to dive deeper? Rolf Dobelli, The Not To-Do List, chapters 15, 46, 51 and 52. Johann Hari, Stolen Focus. And because news is a big source of distraction: Rolf Dobelli, Stop Reading the News.\n\n\nNotes\nMore tips, in cache terms. Prioritize sleep, nutrition and mindful habits: they maintain cache performance. Take breaks: regular clearing out prevents exhaustion. Time-box your work: structure prevents overflow. Create protected time for deep work and a dedicated workspace: that prevents cache flooding. Meditation and exercise are maintenance routines for the cache. Treat your desk as a cache hierarchy: hot cache on the desk with only today’s tasks, warm cache in a nearby shelf or drawer with this week’s projects, cold storage in the archive or closet for everything else. If you haven’t used it recently, move it away. Distraction can hardly be avoided in today’s world, especially for managers, but it can be reduced, and awareness is the first step.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#one-last-check",
+    "href": "lectures/lec_03_caching.html#one-last-check",
+    "title": "Lecture III: Caching",
+    "section": "One last check",
+    "text": "One last check\nYour desk holds three books. You need C, A, B, C, D.\nQuestion: Which book leaves the desk under LRU when D arrives?\n\nA. C was just used, B came after A, so A is the one you haven’t touched for the longest time.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#a-messy-cupboard",
+    "href": "lectures/lec_03_presentation.html#a-messy-cupboard",
+    "title": "Lecture III: Caching",
+    "section": "A messy cupboard",
+    "text": "A messy cupboard\n\n\nQuestion: What would you do?\n\nSort it: similar things together\nKeep what you use often within easy reach\nNow you find things faster"
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#organized-but-full",
+    "href": "lectures/lec_03_presentation.html#organized-but-full",
+    "title": "Lecture III: Caching",
+    "section": "Organized, but full",
+    "text": "Organized, but full\n\n\nQuestion: And now?\n\nGet more space\nClear out\n\n\n\n\n\n\n\nBetter organization helps, but every storage has a finite capacity. More space helps, but it has limits too. Sooner or later we are left with the second option: clearing out. The rest of the lecture is about how to do that well."
+  },
+  {
+    "objectID": "lectures/lec_03_presentation.html#and-random",
+    "href": "lectures/lec_03_presentation.html#and-random",
+    "title": "Lecture III: Caching",
+    "section": "And Random?",
+    "text": "And Random?\nQuestion: Would you clear out your cupboard by throwing out things at random?\n\n\n\n\n\n\n\n\n\n\nComputer scientists call a trip to the shelf a miss, and finding the book on the desk a hit.\n\n\nIn the tutorial, you build this yourself.\n\nSimulation: a desk for three books, 20 different books, 10,000 requests. A book that was used recently is requested again with higher probability, like in real life. Random eviction needs the most trips to the shelf, FIFO fewer, LRU the fewest. Random is not terrible, but it ignores everything we know about what comes next."
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#a-messy-cupboard",
+    "href": "lectures/lec_03_caching.html#a-messy-cupboard",
+    "title": "Lecture III: Caching",
+    "section": "A messy cupboard",
+    "text": "A messy cupboard\n\n\nQuestion: What would you do?\n\n\nSort it: similar things together\nKeep what you use often within easy reach\nNow you find things faster",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#organized-but-full",
+    "href": "lectures/lec_03_caching.html#organized-but-full",
+    "title": "Lecture III: Caching",
+    "section": "Organized, but full",
+    "text": "Organized, but full\n\n\nQuestion: And now?\n\n\nGet more space\nClear out\n\n\n\n\n\n\n\n\n\nNotes\nBetter organization helps, but every storage has a finite capacity. More space helps, but it has limits too. Sooner or later we are left with the second option: clearing out. The rest of the lecture is about how to do that well.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_03_caching.html#and-random",
+    "href": "lectures/lec_03_caching.html#and-random",
+    "title": "Lecture III: Caching",
+    "section": "And Random?",
+    "text": "And Random?\nQuestion: Would you clear out your cupboard by throwing out things at random?\n\n\n\n\n\n\n\n\n\nComputer scientists call a trip to the shelf a miss, and finding the book on the desk a hit.\nIn the tutorial, you build this yourself.\n\nNotes\nSimulation: a desk for three books, 20 different books, 10,000 requests. A book that was used recently is requested again with higher probability, like in real life. Random eviction needs the most trips to the shelf, FIFO fewer, LRU the fewest. Random is not terrible, but it ignores everything we know about what comes next.",
+    "crumbs": [
+      "03 Caching",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "general/final_project.html",
+    "href": "general/final_project.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "The task: Build a small Python tool that solves a problem in your own life. Show it live in the last session.\nHow: Work with an AI assistant of your choice, in three steps.\n\nFind: Brainstorm with the AI what annoys you or costs you time. Result: one sentence that says what your tool does.\nPlan: Work out the concept with the AI: what goes in, what comes out, and what is the smallest version that already helps?\nBuild: Build that smallest version with the AI, try it, then improve it.\n\nThe presentation: 5 minutes per team.\n\nThe problem, on one slide\nLive demo\nOne thing that worked well with AI, one that didn’t\n\nTeams: up to three people, or solo.",
+    "crumbs": [
+      "Final Project"
     ]
   }
 ]
