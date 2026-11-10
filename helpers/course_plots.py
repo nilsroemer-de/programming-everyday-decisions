@@ -351,3 +351,25 @@ def _fmt_ns(v: float) -> str:
     if v < 1e6:
         return f"{v / 1e3:g} µs"
     return f"{v / 1e6:g} ms"
+
+
+# --- Eviction strategies (Lecture III) --------------------------------------
+def trips_bar_chart(trips: dict[str, int], ylabel: str = "Trips to the shelf",
+                    title: str | None = None, width=7.5, height=3.4):
+    """Vertical bars, one per eviction strategy, value printed above each bar."""
+    fig, ax = plt.subplots(figsize=(width, height))
+    names = list(trips)
+    values = [trips[n] for n in names]
+    best = min(values)
+    colors = [PRIMARY if v == best else SKY_500 for v in values]
+    ax.bar(names, values, color=colors, width=0.55)
+    for x, v in enumerate(values):
+        ax.text(x, v + max(values) * 0.02, f"{v:,}", ha="center", va="bottom", fontsize=12, color=INK)
+    ax.set_ylim(0, max(values) * 1.15)
+    ax.set_ylabel(ylabel)
+    ax.set_yticks([])
+    ax.spines["left"].set_visible(False)
+    ax.tick_params(axis="x", length=0, labelsize=13)
+    _title(ax, title)
+    fig.tight_layout()
+    return fig

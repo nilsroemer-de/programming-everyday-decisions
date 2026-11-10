@@ -60,27 +60,45 @@ Your cupboard is full, your desk is cluttered, your inbox overflows. Companies h
 Today's lecture will explain why that matters more than you think...
 :::
 
-## The cupboard is full. What now?
+## A messy cupboard
 
 ::: {.columns}
 ::: {.column width="55%"}
-[Question:]{.question} What could we do?
+[Question:]{.question} What would you do?
 
 :::{.incremental}
-- Organize better
+- Sort it: similar things together
+- Keep what you use often within easy reach
+- Now you find things faster
+:::
+:::
+::: {.column width="45%"}
+::: {style="text-align: center;"}
+![](../images/caching/cupboard_messy.svg){height="420"}
+:::
+:::
+:::
+
+## Organized, but full
+
+::: {.columns}
+::: {.column width="55%"}
+[Question:]{.question} And now?
+
+:::{.incremental}
 - Get more space
 - Clear out
 :::
 :::
 ::: {.column width="45%"}
 ::: {style="text-align: center;"}
-![](../images/caching/closet_1.png){height="400"}
+![](../images/caching/cupboard_full.svg){height="420"}
 :::
 :::
 :::
 
 ::: {.notes}
-Better organization helps, but it takes time, and every storage has a finite capacity. More space helps, but it has limits too. Sooner or later we are left with the third option: clearing out. The rest of the lecture is about how to do that well.
+Better organization helps, but every storage has a finite capacity. More space helps, but it has limits too. Sooner or later we are left with the second option: clearing out. The rest of the lecture is about how to do that well.
 :::
 
 ## Why not just buy more space?
@@ -120,11 +138,16 @@ The trade-off behind the second point: size versus speed. The larger a storage, 
 - Processors got faster much more quickly than memory
 - Modern CPUs: billions of operations per second
 - But the data doesn't arrive fast enough
-- [Question:]{.question} What's the point of a fast CPU that waits for slow memory?
+- [Question:]{.question} How would you solve this?
+:::
+
+:::{.incremental}
+- Make all memory fast? Far too expensive.
+- Better: keep the data you need most **right next to the processor**.
 :::
 
 ::: {.fragment .fade-in}
-The trick: a small, fast memory right next to the processor. We call it a **cache**.[^hierarchy]
+That small, fast memory is called a **cache**.[^hierarchy]
 :::
 
 [^hierarchy]: Burks, A. W., Goldstine, H. H., & von Neumann, J. (1946). Preliminary discussion of the logical design of an electronic computing instrument. Wilkes, M. V. (1965). Slave memories and dynamic storage allocation. Wulf, W. A., & McKee, S. A. (1995). Hitting the memory wall. See also Christian & Griffiths (2016), ch. 4.
@@ -211,12 +234,19 @@ Physical limits: larger memory sits further from the CPU, signals take longer to
 
 ## A desk for three books
 
+::: {.columns}
+::: {.column width="55%"}
 :::{.incremental}
 - You study at a desk with room for **three books**
 - All other books are on a shelf across the room
 - Every trip to the shelf costs time
 - When the desk is full and you need another book, one has to go back
 - [Question:]{.question} Which one?
+:::
+:::
+::: {.column width="45%"}
+![](../images/caching/desk_three_books.svg)
+:::
 :::
 
 ::: {.notes}
@@ -315,6 +345,61 @@ FIFO throws out A, the book we use all the time.
 LRU keeps A, because we just used it.
 :::
 
+## And Random?
+
+[Question:]{.question} Would you clear out your cupboard by throwing out things at random?
+
+```{python}
+#| echo: false
+import numpy as np
+from course_plots import trips_bar_chart
+
+# A desk for 3 books, 20 different books, 10,000 requests. Recently used books
+# are requested again with higher probability (temporal locality).
+BOOKS, CAPACITY, REQUESTS, RECENT_SHARE, RECENT_MEMORY, DECAY = 20, 3, 10_000, 0.75, 6, 0.5
+rng = np.random.default_rng(42)
+recent, requests = [], []
+for _ in range(REQUESTS):
+    if recent and rng.random() < RECENT_SHARE:
+        weights = np.array([DECAY ** i for i in range(len(recent))])
+        book = int(rng.choice(recent, p=weights / weights.sum()))  # recent[0] = most recent
+    else:
+        book = int(rng.integers(BOOKS))
+    requests.append(book)
+    if book in recent:
+        recent.remove(book)
+    recent.insert(0, book)
+    recent = recent[:RECENT_MEMORY]
+
+def trips_to_shelf(policy):
+    evict_rng = np.random.default_rng(42)
+    desk, trips = [], 0
+    for book in requests:
+        if book in desk:
+            if policy == "LRU":
+                desk.remove(book)
+                desk.append(book)
+            continue
+        trips += 1
+        if len(desk) == CAPACITY:
+            desk.pop(int(evict_rng.integers(CAPACITY)) if policy == "Random" else 0)
+        desk.append(book)
+    return trips
+
+trips = {p: trips_to_shelf(p) for p in ("Random", "FIFO", "LRU")}
+assert trips["LRU"] < trips["FIFO"] < trips["Random"]
+fig = trips_bar_chart(trips, height=2.4)
+plt.show()
+```
+
+. . .
+
+In the tutorial, you build this yourself.
+
+::: {.notes}
+Simulation: a desk for three books, 20 different books, 10,000 requests. A book that was used recently is requested again with higher probability, like in real life. Random eviction needs the most trips to the shelf, FIFO fewer, LRU the fewest. Random is not terrible, but it ignores everything we know about what comes next.
+:::
+
 ## The perfect strategy needs a crystal ball
 
 :::{.incremental}
@@ -340,17 +425,6 @@ LRU keeps A, because we just used it.
 
 [^belady]: Belady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian & Griffiths (2016), ch. 4. In Tutorial III.III you measure LRU against random eviction yourself.
 
-## Marie Kondo is LRU for your home
-
-:::{.incremental}
-- **Let go of unused things** → LRU principle
-- **Keep things where used** → Spatial locality
-
-:::{.fragment}
-**Marie Kondo = LRU for physical objects!**
-:::
-:::
-
 ## The pile on your desk is not a mess
 
 :::{.incremental}
@@ -360,16 +434,25 @@ LRU keeps A, because we just used it.
 - Proven: searching such a row from the front never takes more than **twice as long** as the best possible order[^sleator]
 :::
 
+![](../images/caching/noguchi_row.svg){fig-align="center" height="180"}
+
 [^sleator]: Sleator, D. D. & Tarjan, R. E. (1985). Amortized efficiency of list update and paging rules. Communications of the ACM, 28(2); see also Christian & Griffiths (2016), ch. 4.
 
 ## Keep it close: caching in logistics
 
 [Question:]{.question} Where do you see this in a warehouse or a supermarket?
 
+::: {.columns}
+::: {.column width="58%"}
 :::{.incremental}
 - **Warehouses:** fast-moving goods sit next to the dispatch area
 - **Retail:** goods are stored in regional warehouses close to the customer
 - **Streaming:** popular films are kept on servers in your region
+:::
+:::
+::: {.column width="42%"}
+![](../images/caching/warehouse_top.svg)
+:::
 :::
 
 ::: {.fragment .fade-in}
@@ -409,6 +492,8 @@ Examples from Christian & Griffiths (2016), ch. 4.
 - And pushes another one off
 - You did not choose which one
 :::
+
+![](../images/caching/attention_desk.svg){fig-align="center" height="260"}
 
 ## Flooding and poisoning
 

@@ -88,6 +88,8 @@ website:
         href: general/faq.qmd
       - text: "Installation Guide"
         href: general/uv.qmd
+      - text: "Final Project"
+        href: general/final_project.qmd
       - text: "Literature"
         href: general/literature.qmd
       - text: "Cheatsheet"
