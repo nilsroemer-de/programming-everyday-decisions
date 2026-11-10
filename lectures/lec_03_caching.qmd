@@ -388,9 +388,13 @@ def trips_to_shelf(policy):
 
 trips = {p: trips_to_shelf(p) for p in ("Random", "FIFO", "LRU")}
 assert trips["LRU"] < trips["FIFO"] < trips["Random"]
-fig = trips_bar_chart(trips, height=2.4)
+fig = trips_bar_chart(trips, width=9.5, height=1.7)
 plt.show()
 ```
+
+. . .
+
+Computer scientists call a trip to the shelf a **miss**, and finding the book on the desk a **hit**.
 
 . . .
 
