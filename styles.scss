@@ -478,6 +478,16 @@ body.entries #quarto-document-content {
 .reveal li {
   margin-bottom: .22em;
 }
+/* Einzelne Listenpunkte als eigene Fragmente (fragment-index): Abstand wie in einer Liste */
+.reveal .slides section .list-fragments ul, .reveal .slides section .list-fragments ol {
+  margin-bottom: 0;
+}
+.reveal .slides section .list-fragments li {
+  margin: 0 0 .4em 0;
+}
+.reveal .slides section .list-fragments > div:first-child li {
+  margin-top: .4em;
+}
 .reveal li::marker {
   color: var(--fg-3);
 }

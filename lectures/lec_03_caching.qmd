@@ -261,15 +261,13 @@ This desk is our model for the whole lecture. The desk is the cache: small and f
 - **Least Recently Used (LRU):** put back the book you haven't touched for the longest time
 :::
 
-## Try it: which book leaves the desk?
+## Which book leaves the desk?
 
-The desk is empty. You need these books, in this order:
-
-**A, B, C, A, D, A, B**
+The desk is empty. You need these books, in this order: **A, B, C, A, D, A, B**.
 
 . . .
 
-In pairs, 3 minutes: play it through with **FIFO** and with **LRU**. Count your trips to the shelf.
+Let's play it through together, first with **FIFO**, then with **LRU**, and count the trips to the shelf.
 
 ## FIFO: six trips to the shelf
 
@@ -417,11 +415,12 @@ Simulation: a desk for three books, 20 different books, 10,000 requests. A book 
 :::
 :::
 
-## LRU works because the recent past predicts the near future
+## LRU in practice
 
 :::{.incremental}
 - **Least Recently Used (LRU)** is the dominant strategy
 - [Question:]{.question} Why is this the better strategy?
+- Because the recent past predicts the near future
 - **Temporal locality:** what you used recently, you will likely need again soon
 - Books on your desk, apps opened today, people texted this morning
 - In Belady's classic comparison, LRU came closest to the crystal ball[^belady]
@@ -444,22 +443,30 @@ Simulation: a desk for three books, 20 different books, 10,000 requests. A book 
 
 ## Keep it close: caching in logistics
 
-[Question:]{.question} Where do you see this in a warehouse or a supermarket?
+[Question:]{.question} Where do you see this in a warehouse?
 
 ::: {.columns}
 ::: {.column width="58%"}
-:::{.incremental}
-- **Warehouses:** fast-moving goods sit next to the dispatch area
-- **Retail:** goods are stored in regional warehouses close to the customer
-- **Streaming:** popular films are kept on servers in your region
+::: {.list-fragments}
+::: {.fragment fragment-index=1}
+- **Fast movers** sit next to the dispatch area, slow movers at the back
+:::
+::: {.fragment fragment-index=2}
+- A small **forward pick area** holds what is needed today and is refilled from the large reserve storage: a cache for the warehouse
+:::
+::: {.fragment fragment-index=3}
+- **Regional warehouses** keep goods close to the customer
+:::
 :::
 :::
 ::: {.column width="42%"}
+::: {.fragment fragment-index=1}
 ![](../images/caching/warehouse_top.svg)
 :::
 :::
+:::
 
-::: {.fragment .fade-in}
+::: {.fragment .fade-in fragment-index=4}
 This is **spatial locality**: keep things where they are used.
 :::
 
@@ -570,23 +577,17 @@ More tips, in cache terms. Prioritize sleep, nutrition and mindful habits: they 
 :::{.incremental}
 1. How many browser tabs do you have open? ___
 2. How many notifications did you receive in the last hour? ___
-3. How many unread emails in your inbox? ___
-
-:::{.fragment}
-**Do you see any risks of cache flooding?**
-:::
+3. Check the **screen time** on your phone.
 :::
 
-## One last check
+:::{.incremental}
+- 4 hours a day is **25%** of your waking time
+- That is **3 months** of every year
+- [Question:]{.question} Is that time well invested?
+:::
 
-Your desk holds three books. You need **C, A, B, C, D**.
-
-. . .
-
-[Question:]{.question} Which book leaves the desk under LRU when D arrives?
-
-::: {.fragment .fade-in}
-**A.** C was just used, B came after A, so A is the one you haven't touched for the longest time.
+::: {.notes}
+16 waking hours per day. 4 of 16 hours is a quarter, and a quarter of a year is three months of waking time.
 :::
 
 ## What we covered {.lecture-closing}
