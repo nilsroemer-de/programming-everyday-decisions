@@ -156,13 +156,11 @@ A register is roughly **ten million times faster** than a hard disk. <span class
 - **First-In, First-Out (FIFO):** put back the book that has been on the desk the longest
 - **Least Recently Used (LRU):** put back the book you haven't touched for the longest time
 
-## Try it: which book leaves the desk?
+## Which book leaves the desk?
 
-The desk is empty. You need these books, in this order:
+The desk is empty. You need these books, in this order: **A, B, C, A, D, A, B**.
 
-**A, B, C, A, D, A, B**
-
-In pairs, 3 minutes: play it through with **FIFO** and with **LRU**. Count your trips to the shelf.
+Let's play it through together, first with **FIFO**, then with **LRU**, and count the trips to the shelf.
 
 ## FIFO: six trips to the shelf
 
@@ -211,10 +209,11 @@ In the tutorial, you build this yourself.
 
 **→ Requires knowledge of the future!**
 
-## LRU works because the recent past predicts the near future
+## LRU in practice
 
 - **Least Recently Used (LRU)** is the dominant strategy
 - <span class="question">Question:</span> Why is this the better strategy?
+- Because the recent past predicts the near future
 - **Temporal locality:** what you used recently, you will likely need again soon
 - Books on your desk, apps opened today, people texted this morning
 - In Belady's classic comparison, LRU came closest to the crystal ball[^2]
@@ -230,11 +229,13 @@ In the tutorial, you build this yourself.
 
 ## Keep it close: caching in logistics
 
-<span class="question">Question:</span> Where do you see this in a warehouse or a supermarket?
+<span class="question">Question:</span> Where do you see this in a warehouse?
 
-- **Warehouses:** fast-moving goods sit next to the dispatch area
-- **Retail:** goods are stored in regional warehouses close to the customer
-- **Streaming:** popular films are kept on servers in your region
+- **Fast movers** sit next to the dispatch area, slow movers at the back
+
+- A small **forward pick area** holds what is needed today and is refilled from the large reserve storage: a cache for the warehouse
+
+- **Regional warehouses** keep goods close to the customer
 
 ![](../images/caching/warehouse_top.svg)
 
@@ -300,17 +301,11 @@ LRU evicts what you haven't touched for a long time. If your attention always go
 
 1.  How many browser tabs do you have open? \_\_\_
 2.  How many notifications did you receive in the last hour? \_\_\_
-3.  How many unread emails in your inbox? \_\_\_
+3.  Check the **screen time** on your phone.
 
-**Do you see any risks of cache flooding?**
-
-## One last check
-
-Your desk holds three books. You need **C, A, B, C, D**.
-
-<span class="question">Question:</span> Which book leaves the desk under LRU when D arrives?
-
-**A.** C was just used, B came after A, so A is the one you haven't touched for the longest time.
+- 4 hours a day is **25%** of your waking time
+- That is **3 months** of every year
+- <span class="question">Question:</span> Is that time well invested?
 
 ## What we covered
 

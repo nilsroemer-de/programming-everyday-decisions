@@ -2122,11 +2122,11 @@
     "text": "Three ways to decide what goes\n\nRandom: put back any book\nFirst-In, First-Out (FIFO): put back the book that has been on the desk the longest\nLeast Recently Used (LRU): put back the book you haven’t touched for the longest time"
   },
   {
-    "objectID": "lectures/lec_03_presentation.html#try-it-which-book-leaves-the-desk",
-    "href": "lectures/lec_03_presentation.html#try-it-which-book-leaves-the-desk",
+    "objectID": "lectures/lec_03_presentation.html#which-book-leaves-the-desk",
+    "href": "lectures/lec_03_presentation.html#which-book-leaves-the-desk",
     "title": "Lecture III: Caching",
-    "section": "Try it: which book leaves the desk?",
-    "text": "Try it: which book leaves the desk?\nThe desk is empty. You need these books, in this order:\nA, B, C, A, D, A, B\n\nIn pairs, 3 minutes: play it through with FIFO and with LRU. Count your trips to the shelf."
+    "section": "Which book leaves the desk?",
+    "text": "Which book leaves the desk?\nThe desk is empty. You need these books, in this order: A, B, C, A, D, A, B.\n\nLet’s play it through together, first with FIFO, then with LRU, and count the trips to the shelf."
   },
   {
     "objectID": "lectures/lec_03_presentation.html#fifo-six-trips-to-the-shelf",
@@ -2157,11 +2157,11 @@
     "text": "The perfect strategy needs a crystal ball\n\nOptimal: Clairvoyance\n\nKeep what you’ll need\nRemove what you won’t\n\nQuestion: What’s the problem?\n\n\n→ Requires knowledge of the future!"
   },
   {
-    "objectID": "lectures/lec_03_presentation.html#lru-works-because-the-recent-past-predicts-the-near-future",
-    "href": "lectures/lec_03_presentation.html#lru-works-because-the-recent-past-predicts-the-near-future",
+    "objectID": "lectures/lec_03_presentation.html#lru-in-practice",
+    "href": "lectures/lec_03_presentation.html#lru-in-practice",
     "title": "Lecture III: Caching",
-    "section": "LRU works because the recent past predicts the near future",
-    "text": "LRU works because the recent past predicts the near future\n\nLeast Recently Used (LRU) is the dominant strategy\nQuestion: Why is this the better strategy?\nTemporal locality: what you used recently, you will likely need again soon\nBooks on your desk, apps opened today, people texted this morning\nIn Belady’s classic comparison, LRU came closest to the crystal ball1\n\nBelady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian & Griffiths (2016), ch. 4. In Tutorial III.III you measure LRU against random eviction yourself."
+    "section": "LRU in practice",
+    "text": "LRU in practice\n\nLeast Recently Used (LRU) is the dominant strategy\nQuestion: Why is this the better strategy?\nBecause the recent past predicts the near future\nTemporal locality: what you used recently, you will likely need again soon\nBooks on your desk, apps opened today, people texted this morning\nIn Belady’s classic comparison, LRU came closest to the crystal ball1\n\nBelady, L. A. (1966). A study of replacement algorithms for a virtual-storage computer. IBM Systems Journal, 5(2), 78–101; see also Christian & Griffiths (2016), ch. 4. In Tutorial III.III you measure LRU against random eviction yourself."
   },
   {
     "objectID": "lectures/lec_03_presentation.html#the-pile-on-your-desk-is-not-a-mess",
@@ -2175,7 +2175,7 @@
     "href": "lectures/lec_03_presentation.html#keep-it-close-caching-in-logistics",
     "title": "Lecture III: Caching",
     "section": "Keep it close: caching in logistics",
-    "text": "Keep it close: caching in logistics\nQuestion: Where do you see this in a warehouse or a supermarket?\n\n\n\nWarehouses: fast-moving goods sit next to the dispatch area\nRetail: goods are stored in regional warehouses close to the customer\nStreaming: popular films are kept on servers in your region\n\n\n\n\n\nThis is spatial locality: keep things where they are used.\n\n\nExamples from Christian & Griffiths (2016), ch. 4."
+    "text": "Keep it close: caching in logistics\nQuestion: Where do you see this in a warehouse?\n\n\n\n\n\nFast movers sit next to the dispatch area, slow movers at the back\n\n\n\n\nA small forward pick area holds what is needed today and is refilled from the large reserve storage: a cache for the warehouse\n\n\n\n\nRegional warehouses keep goods close to the customer\n\n\n\n\n\n\n\n\n\nThis is spatial locality: keep things where they are used.\n\n\nExamples from Christian & Griffiths (2016), ch. 4."
   },
   {
     "objectID": "lectures/lec_03_presentation.html#roadmap-2",
@@ -2231,14 +2231,7 @@
     "href": "lectures/lec_03_presentation.html#self-assessment",
     "title": "Lecture III: Caching",
     "section": "Self-assessment",
-    "text": "Self-assessment\nQuestion: Right now:\n\nHow many browser tabs do you have open? ___\nHow many notifications did you receive in the last hour? ___\nHow many unread emails in your inbox? ___\n\n\nDo you see any risks of cache flooding?"
-  },
-  {
-    "objectID": "lectures/lec_03_presentation.html#one-last-check",
-    "href": "lectures/lec_03_presentation.html#one-last-check",
-    "title": "Lecture III: Caching",
-    "section": "One last check",
-    "text": "One last check\nYour desk holds three books. You need C, A, B, C, D.\n\nQuestion: Which book leaves the desk under LRU when D arrives?\n\nA. C was just used, B came after A, so A is the one you haven’t touched for the longest time."
+    "text": "Self-assessment\nQuestion: Right now:\n\nHow many browser tabs do you have open? ___\nHow many notifications did you receive in the last hour? ___\nCheck the screen time on your phone.\n\n\n4 hours a day is 25% of your waking time\nThat is 3 months of every year\nQuestion: Is that time well invested?\n\n\n16 waking hours per day. 4 of 16 hours is a quarter, and a quarter of a year is three months of waking time."
   },
   {
     "objectID": "lectures/lec_03_presentation.html#what-we-covered",
@@ -2470,11 +2463,11 @@
     ]
   },
   {
-    "objectID": "lectures/lec_03_caching.html#try-it-which-book-leaves-the-desk",
-    "href": "lectures/lec_03_caching.html#try-it-which-book-leaves-the-desk",
+    "objectID": "lectures/lec_03_caching.html#which-book-leaves-the-desk",
+    "href": "lectures/lec_03_caching.html#which-book-leaves-the-desk",
     "title": "Lecture III: Caching",
-    "section": "Try it: which book leaves the desk?",
-    "text": "Try it: which book leaves the desk?\nThe desk is empty. You need these books, in this order:\nA, B, C, A, D, A, B\nIn pairs, 3 minutes: play it through with FIFO and with LRU. Count your trips to the shelf.",
+    "section": "Which book leaves the desk?",
+    "text": "Which book leaves the desk?\nThe desk is empty. You need these books, in this order: A, B, C, A, D, A, B.\nLet’s play it through together, first with FIFO, then with LRU, and count the trips to the shelf.",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -2525,11 +2518,11 @@
     ]
   },
   {
-    "objectID": "lectures/lec_03_caching.html#lru-works-because-the-recent-past-predicts-the-near-future",
-    "href": "lectures/lec_03_caching.html#lru-works-because-the-recent-past-predicts-the-near-future",
+    "objectID": "lectures/lec_03_caching.html#lru-in-practice",
+    "href": "lectures/lec_03_caching.html#lru-in-practice",
     "title": "Lecture III: Caching",
-    "section": "LRU works because the recent past predicts the near future",
-    "text": "LRU works because the recent past predicts the near future\n\n\nLeast Recently Used (LRU) is the dominant strategy\nQuestion: Why is this the better strategy?\nTemporal locality: what you used recently, you will likely need again soon\nBooks on your desk, apps opened today, people texted this morning\nIn Belady’s classic comparison, LRU came closest to the crystal ball2",
+    "section": "LRU in practice",
+    "text": "LRU in practice\n\n\nLeast Recently Used (LRU) is the dominant strategy\nQuestion: Why is this the better strategy?\nBecause the recent past predicts the near future\nTemporal locality: what you used recently, you will likely need again soon\nBooks on your desk, apps opened today, people texted this morning\nIn Belady’s classic comparison, LRU came closest to the crystal ball2",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -2551,7 +2544,7 @@
     "href": "lectures/lec_03_caching.html#keep-it-close-caching-in-logistics",
     "title": "Lecture III: Caching",
     "section": "Keep it close: caching in logistics",
-    "text": "Keep it close: caching in logistics\nQuestion: Where do you see this in a warehouse or a supermarket?\n\n\n\n\nWarehouses: fast-moving goods sit next to the dispatch area\nRetail: goods are stored in regional warehouses close to the customer\nStreaming: popular films are kept on servers in your region\n\n\n\n\n\n\n\nThis is spatial locality: keep things where they are used.\n\n\nNotes\nExamples from Christian & Griffiths (2016), ch. 4.",
+    "text": "Keep it close: caching in logistics\nQuestion: Where do you see this in a warehouse?\n\n\n\n\n\nFast movers sit next to the dispatch area, slow movers at the back\n\n\n\n\nA small forward pick area holds what is needed today and is refilled from the large reserve storage: a cache for the warehouse\n\n\n\n\nRegional warehouses keep goods close to the customer\n\n\n\n\n\n\n\n\n\n\nThis is spatial locality: keep things where they are used.\n\n\nNotes\nExamples from Christian & Griffiths (2016), ch. 4.",
     "crumbs": [
       "03 Caching",
       "Lecture"
@@ -2639,18 +2632,7 @@
     "href": "lectures/lec_03_caching.html#self-assessment",
     "title": "Lecture III: Caching",
     "section": "Self-assessment",
-    "text": "Self-assessment\nQuestion: Right now:\n\n\nHow many browser tabs do you have open? ___\nHow many notifications did you receive in the last hour? ___\nHow many unread emails in your inbox? ___\n\n\nDo you see any risks of cache flooding?",
-    "crumbs": [
-      "03 Caching",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_03_caching.html#one-last-check",
-    "href": "lectures/lec_03_caching.html#one-last-check",
-    "title": "Lecture III: Caching",
-    "section": "One last check",
-    "text": "One last check\nYour desk holds three books. You need C, A, B, C, D.\nQuestion: Which book leaves the desk under LRU when D arrives?\n\nA. C was just used, B came after A, so A is the one you haven’t touched for the longest time.",
+    "text": "Self-assessment\nQuestion: Right now:\n\n\nHow many browser tabs do you have open? ___\nHow many notifications did you receive in the last hour? ___\nCheck the screen time on your phone.\n\n\n\n\n4 hours a day is 25% of your waking time\nThat is 3 months of every year\nQuestion: Is that time well invested?\n\n\n\nNotes\n16 waking hours per day. 4 of 16 hours is a quarter, and a quarter of a year is three months of waking time.",
     "crumbs": [
       "03 Caching",
       "Lecture"
