@@ -4086,7 +4086,7 @@
     "href": "general/syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "In our lectures, we mostly refrain from showing you any code. Instead, we will focus on explaining the concepts and how they can be used to solve problems. The tutorials will then show you step-by-step how to implement the concepts in Python.\nWe were rather ambitious in the design of the course in the course module, thus we will not be able to cover all topics there. However, we have chosen the most important topics from our perspective that will lay a good foundation for interested students to continue learning on their own.\n\n\nLecture I\n\nOverview of the course and its objectives\nIntroduction to algorithmic thinking\nOptimal Stopping\nProgramming: First Steps in Python\n\n\n\n\nLecture II\n\nMulti-armed Bandit Problem\nBalancing exploration and exploitation (Laplace’s rule, Bellman, Gittins index)\nProgramming: Lists, loops and simulating slot machines\n\n\n\n\nLecture III\n\nPrinciples of caching and memory management\nLeast Recently Used (LRU) and other caching strategies\nCaching for personal productivity and attention\nProgramming: Implementing an LRU cache with lists, functions and packages\n\n\n\n\nLecture IV\n\nTask scheduling algorithms (Johnson’s rule, EDD, SPT, Lawler)\nDifferent objectives: deadlines, waiting time, priorities and dependencies\nReal-time scheduling and thrashing\nProgramming: Implementing scheduling algorithms with dictionaries and DataFrames\n\n\n\n\nLecture V\n\nRole of randomness in algorithms\nMonte Carlo methods and their applications in business\nSimulated annealing and the traveling salesman problem\nProgramming: Working with AI coding assistants and Monte Carlo simulation\n\n\n\n\nLecture VI\n\nComputational kindness: algorithms that reduce the burden for others\nFairness and bias in algorithms\nQuick review of key concepts and outlook (Bayes’ rule, overfitting, game theory, networking)\nBrief student presentations\nOpen discussion and Q&A",
+    "text": "In our lectures, we mostly refrain from showing you any code. Instead, we will focus on explaining the concepts and how they can be used to solve problems. The tutorials will then show you step-by-step how to implement the concepts in Python.\nWe were rather ambitious in the design of the course in the course module, thus we will not be able to cover all topics there. However, we have chosen the most important topics from our perspective that will lay a good foundation for interested students to continue learning on their own.\n\n\nLecture I\n\nOverview of the course and its objectives\nIntroduction to algorithmic thinking\nOptimal Stopping\nProgramming: First Steps in Python\n\n\n\n\nLecture II\n\nMulti-armed Bandit Problem\nBalancing exploration and exploitation (Laplace’s rule, Bellman, Gittins index)\nProgramming: Lists, loops and simulating slot machines\n\n\n\n\nLecture III\n\nPrinciples of caching and memory management\nLeast Recently Used (LRU) and other caching strategies\nCaching for personal productivity and attention\nProgramming: Implementing an LRU cache with lists, functions and packages\n\n\n\n\nLecture IV\n\nTask scheduling algorithms (Johnson’s rule, EDD, SPT)\nDifferent objectives: deadlines, waiting time, priorities and dependencies\nReal-time scheduling and thrashing\nProgramming: Implementing scheduling algorithms with dictionaries and DataFrames\n\n\n\n\nLecture V\n\nRole of randomness in algorithms\nMonte Carlo methods and their applications in business\nSimulated annealing and the traveling salesman problem\nProgramming: Working with AI coding assistants and Monte Carlo simulation\n\n\n\n\nLecture VI\n\nComputational kindness: algorithms that reduce the burden for others\nFairness and bias in algorithms\nQuick review of key concepts and outlook (Bayes’ rule, overfitting, game theory, networking)\nBrief student presentations\nOpen discussion and Q&A",
     "crumbs": [
       "Syllabus"
     ]
@@ -4096,7 +4096,7 @@
     "href": "general/syllabus.html#lectures",
     "title": "Syllabus",
     "section": "",
-    "text": "In our lectures, we mostly refrain from showing you any code. Instead, we will focus on explaining the concepts and how they can be used to solve problems. The tutorials will then show you step-by-step how to implement the concepts in Python.\nWe were rather ambitious in the design of the course in the course module, thus we will not be able to cover all topics there. However, we have chosen the most important topics from our perspective that will lay a good foundation for interested students to continue learning on their own.\n\n\nLecture I\n\nOverview of the course and its objectives\nIntroduction to algorithmic thinking\nOptimal Stopping\nProgramming: First Steps in Python\n\n\n\n\nLecture II\n\nMulti-armed Bandit Problem\nBalancing exploration and exploitation (Laplace’s rule, Bellman, Gittins index)\nProgramming: Lists, loops and simulating slot machines\n\n\n\n\nLecture III\n\nPrinciples of caching and memory management\nLeast Recently Used (LRU) and other caching strategies\nCaching for personal productivity and attention\nProgramming: Implementing an LRU cache with lists, functions and packages\n\n\n\n\nLecture IV\n\nTask scheduling algorithms (Johnson’s rule, EDD, SPT, Lawler)\nDifferent objectives: deadlines, waiting time, priorities and dependencies\nReal-time scheduling and thrashing\nProgramming: Implementing scheduling algorithms with dictionaries and DataFrames\n\n\n\n\nLecture V\n\nRole of randomness in algorithms\nMonte Carlo methods and their applications in business\nSimulated annealing and the traveling salesman problem\nProgramming: Working with AI coding assistants and Monte Carlo simulation\n\n\n\n\nLecture VI\n\nComputational kindness: algorithms that reduce the burden for others\nFairness and bias in algorithms\nQuick review of key concepts and outlook (Bayes’ rule, overfitting, game theory, networking)\nBrief student presentations\nOpen discussion and Q&A",
+    "text": "In our lectures, we mostly refrain from showing you any code. Instead, we will focus on explaining the concepts and how they can be used to solve problems. The tutorials will then show you step-by-step how to implement the concepts in Python.\nWe were rather ambitious in the design of the course in the course module, thus we will not be able to cover all topics there. However, we have chosen the most important topics from our perspective that will lay a good foundation for interested students to continue learning on their own.\n\n\nLecture I\n\nOverview of the course and its objectives\nIntroduction to algorithmic thinking\nOptimal Stopping\nProgramming: First Steps in Python\n\n\n\n\nLecture II\n\nMulti-armed Bandit Problem\nBalancing exploration and exploitation (Laplace’s rule, Bellman, Gittins index)\nProgramming: Lists, loops and simulating slot machines\n\n\n\n\nLecture III\n\nPrinciples of caching and memory management\nLeast Recently Used (LRU) and other caching strategies\nCaching for personal productivity and attention\nProgramming: Implementing an LRU cache with lists, functions and packages\n\n\n\n\nLecture IV\n\nTask scheduling algorithms (Johnson’s rule, EDD, SPT)\nDifferent objectives: deadlines, waiting time, priorities and dependencies\nReal-time scheduling and thrashing\nProgramming: Implementing scheduling algorithms with dictionaries and DataFrames\n\n\n\n\nLecture V\n\nRole of randomness in algorithms\nMonte Carlo methods and their applications in business\nSimulated annealing and the traveling salesman problem\nProgramming: Working with AI coding assistants and Monte Carlo simulation\n\n\n\n\nLecture VI\n\nComputational kindness: algorithms that reduce the burden for others\nFairness and bias in algorithms\nQuick review of key concepts and outlook (Bayes’ rule, overfitting, game theory, networking)\nBrief student presentations\nOpen discussion and Q&A",
     "crumbs": [
       "Syllabus"
     ]
@@ -5673,11 +5673,22 @@
     ]
   },
   {
+    "objectID": "lectures/lec_04_scheduling.html#ten-tasks-one-day-where-do-you-start",
+    "href": "lectures/lec_04_scheduling.html#ten-tasks-one-day-where-do-you-start",
+    "title": "Lecture IV: Scheduling",
+    "section": "Ten tasks, one day: where do you start?",
+    "text": "Ten tasks, one day: where do you start?\nQuestion: How do you decide?\n\n\nWith the most urgent one\nWith the quickest one\nWith the most important one\n\n\nKeep your answer in mind. We come back to it.\n\nNotes\nAnswer: Most students say the most urgent, the quickest or the most important one. All three are rules, and each one serves a different goal: not being late, waiting less, delivering more value. Which rule is right depends on the goal, and that is today’s topic.",
+    "crumbs": [
+      "04 Scheduling",
+      "Lecture"
+    ]
+  },
+  {
     "objectID": "lectures/lec_04_scheduling.html#four-loads-of-laundry-one-washer-one-dryer",
     "href": "lectures/lec_04_scheduling.html#four-loads-of-laundry-one-washer-one-dryer",
     "title": "Lecture IV: Scheduling",
     "section": "Four loads of laundry, one washer, one dryer",
-    "text": "Four loads of laundry, one washer, one dryer\n\n\n\n\n\n\n\n\n\n\nNotes\nTopic: understanding scheduling problems and algorithmic solutions for optimal task ordering. Why this matters: every day you make scheduling decisions, from organizing your to-do list to managing projects. Today we learn the mathematical algorithms that can optimize these decisions.\nOld agenda: scheduling fundamentals (Johnson’s rule and two-machine problems), historical context, core algorithms (EDD for deadlines, SPT for efficiency), advanced topics (dependencies, real-time scheduling, thrashing).",
+    "text": "Four loads of laundry, one washer, one dryer\nEvery load is washed first, then dried.\nEach machine handles one load at a time.\n\n\n\n\n\n\n\n\n\n\nNotes\nOur first example is as simple as it gets: four loads, two machines, and the only question is the order.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5688,18 +5699,18 @@
     "href": "lectures/lec_04_scheduling.html#goal-all-laundry-done-as-early-as-possible",
     "title": "Lecture IV: Scheduling",
     "section": "Goal: all laundry done as early as possible",
-    "text": "Goal: all laundry done as early as possible\nTask  Washing  Drying\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min\n  D    50min   60min\nGoal: Minimize total time for washing and drying all loads\nQuestion: An idea how to solve this?",
+    "text": "Goal: all laundry done as early as possible\nLoad  Washing  Drying\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min\n  D    50min   60min\nGoal: Finish all four loads as early as possible\nQuestion: In which order would you wash?\n\nNotes\nAnswer: Start with the loads that wash quickly, so the dryer can start early, and end with the loads that dry quickly, so little is left once the washer is done. That is Johnson’s rule, and it gives the order B, A, D, C with a total of 250 minutes. Let students suggest orders first, then compare.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#johnsons-rule-shortest-job-first-or-last",
-    "href": "lectures/lec_04_scheduling.html#johnsons-rule-shortest-job-first-or-last",
+    "objectID": "lectures/lec_04_scheduling.html#johnsons-rule",
+    "href": "lectures/lec_04_scheduling.html#johnsons-rule",
     "title": "Lecture IV: Scheduling",
-    "section": "Johnson’s rule: shortest job first or last",
-    "text": "Johnson’s rule: shortest job first or last\nRule: To find the optimal solution:\n\nFind the job with shortest duration:\n\nIf on Machine 1 → Schedule First\nIf on Machine 2 → Schedule Last\nIf equal → Choose randomly\n\nRemove job from list and repeat",
+    "section": "Johnson’s rule",
+    "text": "Johnson’s rule\nRule:1\n\nFind the shortest time in the whole table\nIs it a wash? Put that load as early as possible\nIs it a dry? Put that load as late as possible\nCross out the load and repeat\n\nIn words: short washes go first, so the dryer can start early. Short dries go last, so little is left to do once the washer has finished.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5709,8 +5720,8 @@
     "objectID": "lectures/lec_04_scheduling.html#applying-johnsons-rule",
     "href": "lectures/lec_04_scheduling.html#applying-johnsons-rule",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min\n  D    50min   60min\nQuestion: What’s the first scheduled task?",
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min\n  D    50min   60min\nQuestion: Which load do we place first, and where?\n\nNotes\nAnswer: Load C, and it goes last. The shortest time in the table is C’s dry, 20 minutes. It is a dry, so C goes as late as possible. Point out that the rule fills the schedule from both ends.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5720,8 +5731,8 @@
     "objectID": "lectures/lec_04_scheduling.html#applying-johnsons-rule-1",
     "href": "lectures/lec_04_scheduling.html#applying-johnsons-rule-1",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min        4\n  D    50min   60min\n\nIn Task C, the dryer is the shortest task.\nIt is on Machine 2 → Schedule Last\n\nQuestion: What’s the next task?",
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min        4\n  D    50min   60min\n\nThe shortest time is C’s dry, 20 minutes\nIt is a dry, so C goes last\n\nQuestion: Which load is next?\n\nNotes\nAnswer: B. Without C, the shortest time left is B’s wash, 30 minutes. It is a wash, so B goes first.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5731,8 +5742,8 @@
     "objectID": "lectures/lec_04_scheduling.html#applying-johnsons-rule-2",
     "href": "lectures/lec_04_scheduling.html#applying-johnsons-rule-2",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min\n\nIn Task B, the washing machine is the shortest task.\nIt is on Machine 1 → Schedule First\n\nQuestion: What’s the next task?",
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min\n\nThe shortest time is B’s wash, 30 minutes\nIt is a wash, so B goes first\n\nQuestion: Which load is next?\n\nNotes\nAnswer: A. The shortest time left is A’s wash, 40 minutes. It is a wash, so A takes the next free place from the front, position 2.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5742,8 +5753,8 @@
     "objectID": "lectures/lec_04_scheduling.html#applying-johnsons-rule-3",
     "href": "lectures/lec_04_scheduling.html#applying-johnsons-rule-3",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min        2\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min\n\nIn Task A, the washing machine is the shortest task.\nIt is on Machine 1 → Schedule Second\n\nNow, we only have one task left!",
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min        2\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min\n\nThe shortest time is A’s wash, 40 minutes\nIt is a wash, so A goes second\n\nNow, we only have one load left!",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5753,85 +5764,74 @@
     "objectID": "lectures/lec_04_scheduling.html#applying-johnsons-rule-4",
     "href": "lectures/lec_04_scheduling.html#applying-johnsons-rule-4",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min        2\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min        3\nFinal sequence: B A D C",
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min        2\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min        3\nFinal sequence: B A D C",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#optimal-solution",
-    "href": "lectures/lec_04_scheduling.html#optimal-solution",
+    "objectID": "lectures/lec_04_scheduling.html#the-best-order-takes-4-hours-10-minutes",
+    "href": "lectures/lec_04_scheduling.html#the-best-order-takes-4-hours-10-minutes",
     "title": "Lecture IV: Scheduling",
-    "section": "Optimal Solution",
-    "text": "Optimal Solution\nOptimal Solution: B A D C\n\n\n\n\n\n\n\n\n\nTotal time: 4 hours 10 minutes\nQuestion: Is there a worse solution?",
+    "section": "The best order takes 4 hours 10 minutes",
+    "text": "The best order takes 4 hours 10 minutes\nBest order: B A D C",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#suboptimal-solution",
-    "href": "lectures/lec_04_scheduling.html#suboptimal-solution",
+    "objectID": "lectures/lec_04_scheduling.html#how-to-read-this-chart",
+    "href": "lectures/lec_04_scheduling.html#how-to-read-this-chart",
     "title": "Lecture IV: Scheduling",
-    "section": "Suboptimal Solution",
-    "text": "Suboptimal Solution\nSuboptimal Solution: C D A B\n\n\n\n\n\n\n\n\n\nTotal time: 5 hours 10 minutes\nQuestion: What’s the difference?",
+    "section": "How to read this chart",
+    "text": "How to read this chart\n\n\n\n\n\n\n\n\n\n\n\nOne row per machine\nOne bar per load\nTime runs from left to right\nIt is called a Gantt chart, after Henry Gantt, who drew such charts around 1910 for factory planning.\n\n\nQuestion: How much worse can it get?\n\nNotes\nAnswer: One hour worse. The reverse order C, D, A, B takes 310 minutes instead of 250. Any order that starts with a long wash or ends with a long dry is worse.\nFrederick Taylor made the first systematic time studies, Gantt turned them into charts for factory planning. Gantt charts show who does what, and when. Johnson’s rule from 1954, published at the RAND Corporation, was the first scheduling rule with a proof, and modern scheduling theory grew from there.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#industrialization",
-    "href": "lectures/lec_04_scheduling.html#industrialization",
+    "objectID": "lectures/lec_04_scheduling.html#a-bad-order-takes-one-hour-longer",
+    "href": "lectures/lec_04_scheduling.html#a-bad-order-takes-one-hour-longer",
     "title": "Lecture IV: Scheduling",
-    "section": "Industrialization",
-    "text": "Industrialization\n\n\nFirst systematic visualization by Frederick Taylor\nHenry Gantt develops the Gantt Chart around 1910\nKey tool of industrial production planning\nBut no scheduling theory yet!\n\n\n\nQuestion: Who knows what a Gantt Chart is?",
+    "section": "A bad order takes one hour longer",
+    "text": "A bad order takes one hour longer\nA bad order: C D A B\n\n\n\n\n\n\n\n\n\nQuestion: Why is this order worse?\nThe dryer waits a full hour for the first wash, and the longest dry comes at the very end.\n\nNotes\nAnswer: The dryer idles for the first 60 minutes while C is washing, and B’s 80-minute dry starts only after the last wash, so everything ends at 310 minutes instead of 250. Both ends of the schedule are wasted: a long wash in front, a long dry at the back.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#modern-scheduling-theory",
-    "href": "lectures/lec_04_scheduling.html#modern-scheduling-theory",
+    "objectID": "lectures/lec_04_scheduling.html#johnsons-rule-beyond-laundry",
+    "href": "lectures/lec_04_scheduling.html#johnsons-rule-beyond-laundry",
     "title": "Lecture IV: Scheduling",
-    "section": "Modern Scheduling Theory",
-    "text": "Modern Scheduling Theory\n\n\nRAND Corporation founded (1948)\nSelmer Johnson publishes Johnson’s Rule in 1954\nBeginning of modern scheduling theory\nMany more algorithms and methods developed since",
+    "section": "Johnson’s rule beyond laundry",
+    "text": "Johnson’s rule beyond laundry\n\n\nAny work in two steps, where the second step waits for the first\nYou: when cooking, start with what is quick to prepare and long in the oven\nCompanies: a report goes from the analyst to the reviewer. Start with the report that is quick to write and long to review\n\n\nOrder the work so that the second step never stands idle.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#scheduling-is-everywhere-in-professional-practice",
-    "href": "lectures/lec_04_scheduling.html#scheduling-is-everywhere-in-professional-practice",
+    "objectID": "lectures/lec_04_scheduling.html#scheduling-is-everywhere",
+    "href": "lectures/lec_04_scheduling.html#scheduling-is-everywhere",
     "title": "Lecture IV: Scheduling",
-    "section": "Scheduling is everywhere in professional practice",
-    "text": "Scheduling is everywhere in professional practice\n\n\nProject management: task dependencies, resource allocation\nSoftware: CPU, threads, job queues\nOperations: production, supply chain\nHealthcare: patients, surgeries, staff\nTransportation: routes, crews, maintenance\n\n\n\nNotes\nWhere do we see scheduling in professional practice? These are the same optimization problems that algorithms solve: in project management (task dependencies and resource allocation), software development (CPU, thread management, job queues), operations (production and supply chain optimization), healthcare (patients, surgery planning, staff allocation) and transportation (routes, crews, maintenance).",
+    "section": "Scheduling is everywhere",
+    "text": "Scheduling is everywhere\nQuestion: Where do companies schedule?\n\n\nProjects: which task first, who works on what\nProduction: which order on the line\nHospitals: patients, surgeries, staff\nTransport: routes, crews, maintenance\nSoftware: which program gets the processor\n\n\n\nNotes\nAnswer: Almost everywhere: projects (which task first, who gets the resource), software (which program gets the processor), operations (which order on the production line), healthcare (patients, surgeries, staff), transportation (routes, crews, maintenance). The same rules we see today are used in all of them.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#tasks-differ-in-time-and-in-relationships",
-    "href": "lectures/lec_04_scheduling.html#tasks-differ-in-time-and-in-relationships",
+    "objectID": "lectures/lec_04_scheduling.html#what-do-we-know-about-a-task",
+    "href": "lectures/lec_04_scheduling.html#what-do-we-know-about-a-task",
     "title": "Lecture IV: Scheduling",
-    "section": "Tasks differ in time and in relationships",
-    "text": "Tasks differ in time and in relationships\nQuestion: What properties can scheduled tasks have?\n\n\n\n\n\nmindmap\n  root((Task Properties))\n    Time-Related\n      Time windows\n      Deadlines\n      Start constraints\n      Deterministic durations\n      Variable durations\n      Stochastic durations\n    Relationship-Based\n      Predecessor relationships\n      Successor relationships\n      Dependencies\n      Priority levels\n      Resource constraints",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#which-tasks-do-you-deal-with",
-    "href": "lectures/lec_04_scheduling.html#which-tasks-do-you-deal-with",
-    "title": "Lecture IV: Scheduling",
-    "section": "Which tasks do you deal with?",
-    "text": "Which tasks do you deal with?\nQuestion: What types of tasks do you deal with most often?",
+    "section": "What do we know about a task?",
+    "text": "What do we know about a task?\n\n\nDuration: how long does it take?\nDeadline: when is it due?\nValue: how much is it worth?\nDependency: what must be done before?\n\n\nWhich of these we look at depends on our goal.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5842,29 +5842,18 @@
     "href": "lectures/lec_04_scheduling.html#one-person-instead-of-two-machines",
     "title": "Lecture IV: Scheduling",
     "section": "One person instead of two machines",
-    "text": "One person instead of two machines\n\n\n\n\n\n\n\n\n\nQuestion: What is different from before?",
+    "text": "One person instead of two machines\n\n\n\n\n\n\n\n\n\nQuestion: What is different from before?\n\nNotes\nAnswer: There is only one resource, so nothing runs in parallel and nothing waits for a second step. The total time is the sum of all durations, 180 minutes for A to D, whatever the order.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#for-total-time-alone-the-order-doesnt-matter",
-    "href": "lectures/lec_04_scheduling.html#for-total-time-alone-the-order-doesnt-matter",
+    "objectID": "lectures/lec_04_scheduling.html#one-person-does-the-order-matter",
+    "href": "lectures/lec_04_scheduling.html#one-person-does-the-order-matter",
     "title": "Lecture IV: Scheduling",
-    "section": "For total time alone, the order doesn’t matter",
-    "text": "For total time alone, the order doesn’t matter\n\n\n\n\n\n\nWith one person and no deadlines, every order takes the same total time.\n\n\n\nQuestion: But is it that simple?\n\n\n\n\n\n\nOrder becomes crucial with deadlines, priorities and dependencies.\n\n\n\n\nNotes\nUnder simple minimization of total processing time, order doesn’t matter: the total is the sum of all durations, whatever the order. As soon as we care about deadlines, waiting time, priorities or dependencies, the order matters a lot.",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#the-basics-when-order-matters-and-when-it-doesnt-1",
-    "href": "lectures/lec_04_scheduling.html#the-basics-when-order-matters-and-when-it-doesnt-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "The basics: when order matters, and when it doesn’t",
-    "text": "The basics: when order matters, and when it doesn’t\n\nWhat we covered\nSometimes the order of tasks changes the result, sometimes it doesn’t. Knowing which saves time.",
+    "section": "One person: does the order matter?",
+    "text": "One person: does the order matter?\nQuestion: Does the order change how long we need?\n\n\n\n\n\n\nWith one person and no deadlines, every order takes the same total time.\n\n\n\nQuestion: So the order is irrelevant?\n\n\n\n\n\n\nNo. Order becomes crucial with deadlines, priorities and dependencies.\n\n\n\nReordering your to-do list does not make it shorter. Order only matters once you say what you want.\n\nNotes\nAnswer: First question: no, the total is always 180 minutes. Second question: no, the total is the same, but who waits how long, what is late and what is worth the most all depend on the order. Under simple minimization of total processing time, order doesn’t matter: the total is the sum of all durations, whatever the order. As soon as we care about deadlines, waiting time, priorities or dependencies, the order matters a lot.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5882,11 +5871,22 @@
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#goal-1-nobody-waits-too-long-past-the-deadline",
-    "href": "lectures/lec_04_scheduling.html#goal-1-nobody-waits-too-long-past-the-deadline",
+    "objectID": "lectures/lec_04_scheduling.html#what-do-you-want",
+    "href": "lectures/lec_04_scheduling.html#what-do-you-want",
     "title": "Lecture IV: Scheduling",
-    "section": "Goal 1: nobody waits too long past the deadline",
-    "text": "Goal 1: nobody waits too long past the deadline\nTasks with individual deadlines:\nTask  Duration  Deadline\n  A    40min    110min\n  B    30min     90min\n  C    60min    150min\n  D    50min     70min\n  E    30min    210min\nGoal: Minimize maximum deadline violation\nQuestion: An idea how to solve this?",
+    "section": "What do you want?",
+    "text": "What do you want?\n\n\nNot be late\nWait as little as possible\nDeliver the most value\n\n\nEach goal has its own rule.\nCompanies know this conflict: sales wants every order on time, production wants as much output as possible.",
+    "crumbs": [
+      "04 Scheduling",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_04_scheduling.html#goal-1-dont-be-too-late",
+    "href": "lectures/lec_04_scheduling.html#goal-1-dont-be-too-late",
+    "title": "Lecture IV: Scheduling",
+    "section": "Goal 1: don’t be too late",
+    "text": "Goal 1: don’t be too late\nTasks with individual deadlines:\nTask  Duration  Deadline\n  A    40min    110min\n  B    30min     90min\n  C    60min    150min\n  D    50min     70min\n  E    30min    210min\nAll times count from now: task D is due in 70 minutes.\nGoal: Keep the worst delay as small as possible\nQuestion: In which order would you work?\n\nNotes\nAnswer: Sort the tasks by deadline and work through them in that order: D, B, A, C, E. This is the earliest due date rule, and for this goal it is the best possible order.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5908,7 +5908,18 @@
     "href": "lectures/lec_04_scheduling.html#the-edd-schedule",
     "title": "Lecture IV: Scheduling",
     "section": "The EDD schedule",
-    "text": "The EDD schedule\n\n\n\n\n\n\n\n\n\nRed marks: deadlines.\nQuestion: What’s the maximum delay here?",
+    "text": "The EDD schedule\n\n\n\n\n\n\n\n\n\nRed marks: deadlines.\nQuestion: What is the worst delay here?\n30 minutes, for task C. Task A is 10 minutes late.\nIn the order A to E, task D would be 110 minutes late.\n\nNotes\nAnswer: 30 minutes, for task C, which finishes at 180 minutes with a deadline of 150. Task A finishes at 120 with a deadline of 110, so it is 10 minutes late. D, B and E are on time. No other order gets the worst delay below 30 minutes. Without the rule, in the order A to E, D would finish at 180 minutes with a deadline of 70, so 110 minutes late.",
+    "crumbs": [
+      "04 Scheduling",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_04_scheduling.html#earliest-due-date-in-real-life",
+    "href": "lectures/lec_04_scheduling.html#earliest-due-date-in-real-life",
+    "title": "Lecture IV: Scheduling",
+    "section": "Earliest due date in real life",
+    "text": "Earliest due date in real life\n\n\nYou: work on assignments in the order they are due\nCompanies: produce customer orders in the order of the promised delivery date\nWatch out: the rule ignores how long a task takes and how important it is",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5919,7 +5930,7 @@
     "href": "lectures/lec_04_scheduling.html#goal-2-as-little-waiting-as-possible",
     "title": "Lecture IV: Scheduling",
     "section": "Goal 2: as little waiting as possible",
-    "text": "Goal 2: as little waiting as possible\n\n\n\n\n\n\n\n\n\n\n\n\nInstead of deadlines, we now have processing times.\nGoal: Min. total waiting time\nQuestion: Any ideas?\nRule: Always schedule the shortest remaining task",
+    "text": "Goal 2: as little waiting as possible\n\n\n\n\n\n\n\n\n\n\n\n\nNo deadlines this time. For each task, someone is waiting.\nGoal: Keep the total waiting time as small as possible\nQuestion: Which task first?\n\n\n\nNotes\nAnswer: Shortest task first. Every task that is done early stops waiting, and everything behind it waits only a little. This is the shortest processing time rule, and it gives the smallest total waiting time.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5930,7 +5941,7 @@
     "href": "lectures/lec_04_scheduling.html#shortest-processing-time-shortest-task-first",
     "title": "Lecture IV: Scheduling",
     "section": "Shortest Processing Time: shortest task first",
-    "text": "Shortest Processing Time: shortest task first\nRule: Always schedule the shortest remaining task. Choose random if multiple tasks are tied.\nTask  Duration  Schedule\n  A    40min\n  B    30min\n  C    60min\n  D    50min\n  E    30min\nQuestion: What’s the order of scheduled tasks?",
+    "text": "Shortest Processing Time: shortest task first\nRule: Always do the shortest remaining task next (SPT). If two are equally short, pick either.\nTask  Duration  Schedule\n  A    40min\n  B    30min\n  C    60min\n  D    50min\n  E    30min\nQuestion: In which order do we work?\n\nNotes\nAnswer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. Both orders give the same total waiting time.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5941,7 +5952,7 @@
     "href": "lectures/lec_04_scheduling.html#shortest-processing-time-shortest-task-first-1",
     "title": "Lecture IV: Scheduling",
     "section": "Shortest Processing Time: shortest task first",
-    "text": "Shortest Processing Time: shortest task first\nRule: Always schedule the shortest remaining task. Choose random if multiple tasks are tied.\nTask  Duration  Schedule\n  A    40min        3\n  B    30min        1\n  C    60min        5\n  D    50min        4\n  E    30min        2\nFinal sequence: B E A D C or E B A D C",
+    "text": "Shortest Processing Time: shortest task first\nRule: Always do the shortest remaining task next (SPT). If two are equally short, pick either.\nTask  Duration  Schedule\n  A    40min        3\n  B    30min        1\n  C    60min        5\n  D    50min        4\n  E    30min        2\nFinal sequence: B E A D C or E B A D C",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5952,7 +5963,7 @@
     "href": "lectures/lec_04_scheduling.html#the-spt-schedule",
     "title": "Lecture IV: Scheduling",
     "section": "The SPT schedule",
-    "text": "The SPT schedule\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?",
+    "text": "The SPT schedule\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?\n\nNotes\nAnswer: In the empty space before each bar. A task waits from the start until its bar begins, so B waits 0 minutes, E 30, A 60, D 100 and C 150 minutes. The later a bar starts, the longer that task has waited.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5963,7 +5974,18 @@
     "href": "lectures/lec_04_scheduling.html#waiting-time-adds-up-to-340-minutes",
     "title": "Lecture IV: Scheduling",
     "section": "Waiting time adds up to 340 minutes",
-    "text": "Waiting time adds up to 340 minutes\nTotal waiting time: 340 minutes\n\n\n\n\n\n\n\n\n\nGrey: time a task waits before it starts.\nQuestion: Would this be applicable for your work?",
+    "text": "Waiting time adds up to 340 minutes\nTotal waiting time: 340 minutes\n\n\n\n\n\n\n\n\n\nGrey: time a task waits before it starts.\nThe other way round, longest task first: 500 minutes.",
+    "crumbs": [
+      "04 Scheduling",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_04_scheduling.html#shortest-task-first-in-real-life",
+    "href": "lectures/lec_04_scheduling.html#shortest-task-first-in-real-life",
+    "title": "Lecture IV: Scheduling",
+    "section": "Shortest task first in real life",
+    "text": "Shortest task first in real life\n\n\nYou: if it takes less than two minutes, do it now\nCompanies: a help desk that answers quick requests first makes the average customer wait less\nWhy it works: a short task makes everyone behind it wait only a little\nWatch out: the big task keeps getting pushed back",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5974,7 +5996,7 @@
     "href": "lectures/lec_04_scheduling.html#goal-3-deliver-the-most-value",
     "title": "Lecture IV: Scheduling",
     "section": "Goal 3: deliver the most value",
-    "text": "Goal 3: deliver the most value\n\nChange: Tasks now have different values, e.g. revenue for a consultant\n\nTask  Duration  Revenue\n  A    20min    €240\n  B    30min    €200\n  C    60min    €120\n  D    50min    €70\n  E    30min    €130\n  F    40min    €120\n  G    20min    €100\n  H    70min    €110\n  I    50min    €90\nQuestion: Any ideas how to approach this?",
+    "text": "Goal 3: deliver the most value\n\nChange: Tasks now have different values, e.g. revenue for a consultant\n\nTask  Duration  Revenue\n  A    20min    €240\n  B    30min    €200\n  C    60min    €120\n  D    50min    €70\n  E    30min    €130\n  F    40min    €120\n  G    20min    €100\n  H    70min    €110\n  I    50min    €90\nQuestion: Which task first?\n\nNotes\nAnswer: Neither the highest revenue nor the shortest task alone, but revenue per minute, highest first. A earns 12 euros per minute, D only 1.40. The order is A, B, G, E, F, C, I, H, D. Students often propose “highest revenue first”. That would move G, 20 minutes for 100 euros, from third to seventh place.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5985,7 +6007,7 @@
     "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first",
     "title": "Lecture IV: Scheduling",
     "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8\nQuestion: What’s the order of scheduled tasks?",
+    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8\nRevenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes = 12 euros per minute.\nQuestion: In which order do we work?\n\nNotes\nAnswer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5996,7 +6018,7 @@
     "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-1",
     "title": "Lecture IV: Scheduling",
     "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8",
+    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6007,205 +6029,18 @@
     "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-2",
     "title": "Lecture IV: Scheduling",
     "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8",
+    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4           9\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-3",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-3",
+    "objectID": "lectures/lec_04_scheduling.html#value-per-minute-in-real-life",
+    "href": "lectures/lec_04_scheduling.html#value-per-minute-in-real-life",
     "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-4",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-4",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-5",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-5",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-6",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-6",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-7",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-7",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8           7",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-8",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-8",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-9",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-9",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4           9\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7\n\n\n\n\n\n\nTipMetric Priorities\n\n\n\nWithout revenues, we can use the same approach with metric priorities!",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#deadlines-with-dependencies",
-    "href": "lectures/lec_04_scheduling.html#deadlines-with-dependencies",
-    "title": "Lecture IV: Scheduling",
-    "section": "Deadlines with dependencies",
-    "text": "Deadlines with dependencies\nQuestion: What was earliest due date again?\n\nSort the tasks by deadline\nNow some tasks must wait for a predecessor\n\nTask  Duration  Deadline  Predecessor\n  A    40min    110min    None\n  B    30min     90min    D\n  C    60min    150min    A\n  D    50min     70min    None\n  E    30min    210min    C\nQuestion: Any ideas how to solve this?",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#lawlers-algorithm-fill-the-schedule-from-the-back",
-    "href": "lectures/lec_04_scheduling.html#lawlers-algorithm-fill-the-schedule-from-the-back",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s algorithm: fill the schedule from the back",
-    "text": "Lawler’s algorithm: fill the schedule from the back\nRule: We can use Lawler’s Algorithm (1968)\n\nConsider all tasks without successors\nChoose the one with latest deadline\nSchedule the task last\nRemove it from the network and start again",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#lawlers-applied",
-    "href": "lectures/lec_04_scheduling.html#lawlers-applied",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None\n  B    30min     90min    D\n  C    60min    150min    A\n  D    50min     70min    None\n  E    30min    210min    C\nQuestion: What’s the schedule?",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#lawlers-applied-1",
-    "href": "lectures/lec_04_scheduling.html#lawlers-applied-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None\n  B    30min     90min    D\n  C    60min    150min    A\n  D    50min     70min    None\n  E    30min    210min    C             5",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#lawlers-applied-2",
-    "href": "lectures/lec_04_scheduling.html#lawlers-applied-2",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None\n  B    30min     90min    D\n  C    60min    150min    A             4\n  D    50min     70min    None\n  E    30min    210min    C             5",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#lawlers-applied-3",
-    "href": "lectures/lec_04_scheduling.html#lawlers-applied-3",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None          3\n  B    30min     90min    D\n  C    60min    150min    A             4\n  D    50min     70min    None\n  E    30min    210min    C             5",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#lawlers-applied-4",
-    "href": "lectures/lec_04_scheduling.html#lawlers-applied-4",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None          3\n  B    30min     90min    D             2\n  C    60min    150min    A             4\n  D    50min     70min    None\n  E    30min    210min    C             5",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#lawlers-applied-5",
-    "href": "lectures/lec_04_scheduling.html#lawlers-applied-5",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None          3\n  B    30min     90min    D             2\n  C    60min    150min    A             4\n  D    50min     70min    None          1\n  E    30min    210min    C             5\n\n\n\n\n\n\nTipSuccessor Tasks\n\n\n\nNote, how all tasks become tasks without successors at some point.",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#the-lawler-schedule",
-    "href": "lectures/lec_04_scheduling.html#the-lawler-schedule",
-    "title": "Lecture IV: Scheduling",
-    "section": "The Lawler schedule",
-    "text": "The Lawler schedule\n\n\n\n\n\n\n\n\n\nThe task in brackets must be finished first. Red marks: deadlines.\nQuestion: What’s the maximum delay?",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#waiting-time-with-dependencies-has-no-fast-exact-solution",
-    "href": "lectures/lec_04_scheduling.html#waiting-time-with-dependencies-has-no-fast-exact-solution",
-    "title": "Lecture IV: Scheduling",
-    "section": "Waiting time with dependencies has no fast exact solution",
-    "text": "Waiting time with dependencies has no fast exact solution\n\nNP-hard: no known algorithm solves it efficiently\nTrue for most scheduling problems\nIn practice we use heuristics, good rules without a guarantee\n\n\nNotes\nShortest processing time with predecessors cannot be solved in polynomial time, it is NP-hard. This is true for most scheduling problems. We can use heuristics, though: rules that give good, but not provably optimal schedules.",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#your-goal-decides-the-rule-deadlines-waiting-time-value-1",
-    "href": "lectures/lec_04_scheduling.html#your-goal-decides-the-rule-deadlines-waiting-time-value-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "Your goal decides the rule: deadlines, waiting time, value",
-    "text": "Your goal decides the rule: deadlines, waiting time, value\n\nWhat we covered\nEach goal has its own simple rule: earliest deadline first to avoid being late, shortest task first to cut waiting, highest value per minute first to maximize what you deliver.",
+    "section": "Value per minute in real life",
+    "text": "Value per minute in real life\n\n\nYou: before an exam, study first what brings the most points per hour\nCompanies: when machine time is scarce, produce the order that earns the most per machine hour\n\n\nYou may know this from cost accounting: contribution margin per unit of the bottleneck.\nNo money involved? Rate the importance from 1 to 10 instead.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6223,22 +6058,55 @@
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#priority-inversion-an-important-task-waits-for-an-unimportant-one",
-    "href": "lectures/lec_04_scheduling.html#priority-inversion-an-important-task-waits-for-an-unimportant-one",
+    "objectID": "lectures/lec_04_scheduling.html#a-spacecraft-that-kept-restarting",
+    "href": "lectures/lec_04_scheduling.html#a-spacecraft-that-kept-restarting",
     "title": "Lecture IV: Scheduling",
-    "section": "Priority inversion: an important task waits for an unimportant one",
-    "text": "Priority inversion: an important task waits for an unimportant one\n\n\nSetup (priority 1 = highest):\nTask  Duration  Priority\n  A    20min     3\n  B    30min     1\n  C    30min     2\n  D    30min     2\n  E    30min     2\n\n\n\n\n\n\n\n\n\nChallenge: High-priority tasks depend on low-priority tasks.\n\nRisk: Priority inversion can lead to significant delays!",
+    "section": "A spacecraft that kept restarting",
+    "text": "A spacecraft that kept restarting\n\n\nIn July 1997, NASA’s Pathfinder landed on Mars\nThen its computer started to restart again and again\nThe cause: an important task was waiting for an unimportant one2\n\n\nQuestion: How can that happen?\n\nNotes\nAnswer: The important task needed something that a low-priority task was holding. Medium-priority tasks kept the low-priority one from running, so the important task could not continue, and a safety timer restarted the computer. This is called priority inversion, and the next slide shows it with numbers. NASA fixed it from Earth by switching on priority inheritance.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#priority-inheritance-the-blocker-borrows-the-priority",
-    "href": "lectures/lec_04_scheduling.html#priority-inheritance-the-blocker-borrows-the-priority",
+    "objectID": "lectures/lec_04_scheduling.html#priority-inversion-an-important-task-waits-for-an-unimportant-one",
+    "href": "lectures/lec_04_scheduling.html#priority-inversion-an-important-task-waits-for-an-unimportant-one",
     "title": "Lecture IV: Scheduling",
-    "section": "Priority inheritance: the blocker borrows the priority",
-    "text": "Priority inheritance: the blocker borrows the priority\nQuestion: How do we prevent the inversion?\n\n\nRule: Tasks inherit priority from their dependents.\nA inherits priority 1 from B and is done first\nB can start right after A, C to E follow\n\n\nTask  Duration  Priority\n  A    20min     1\n  B    30min     1\n  C    30min     2\n  D    30min     2\n  E    30min     2",
+    "section": "Priority inversion: an important task waits for an unimportant one",
+    "text": "Priority inversion: an important task waits for an unimportant one\n\n\nSetup (priority 1 = highest):\nTask  Duration  Priority\n  A    20min     3\n  B    30min     1\n  C    30min     2\n  D    30min     2\n  E    30min     2\n\n\n\n\n\n\n\n\n\n\n\n\nB is the most important task, but it needs A first\nA has the lowest priority, so C, D and E go first\nB waits 110 minutes for its turn\n\n\n\n\n\n\nNotes\nStrictly by priority, C, D and E run first (90 minutes), then A (20 minutes), and only then B can start, at minute 110. The challenge: high-priority tasks depend on low-priority tasks, and the priority order alone ignores that. Priority inversion can lead to significant delays.",
+    "crumbs": [
+      "04 Scheduling",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_04_scheduling.html#how-do-we-prevent-this",
+    "href": "lectures/lec_04_scheduling.html#how-do-we-prevent-this",
+    "title": "Lecture IV: Scheduling",
+    "section": "How do we prevent this?",
+    "text": "How do we prevent this?\nQuestion: What should happen with task A?\nRule: A task takes over the priority of the task that waits for it\nTask  Duration  Priority\n  A    20min     1\n  B    30min     1\n  C    30min     2\n  D    30min     2\n  E    30min     2\nB now starts after 20 minutes instead of 110\nThis is called priority inheritance. It is how NASA fixed Pathfinder, from Earth.\n\nNotes\nAnswer: A should be treated as important as B, because B waits for it. A takes over priority 1, runs first, and B starts after 20 minutes instead of 110. C, D and E follow, nothing changes for them except that they come later.",
+    "crumbs": [
+      "04 Scheduling",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_04_scheduling.html#priority-inheritance-in-real-life",
+    "href": "lectures/lec_04_scheduling.html#priority-inheritance-in-real-life",
+    "title": "Lecture IV: Scheduling",
+    "section": "Priority inheritance in real life",
+    "text": "Priority inheritance in real life\n\n\nYou: shopping has the priority of the dinner it is for\nCompanies: a 5 euro spare part that stops a machine has the priority of the machine\n\n\nA task is as important as what waits for it.",
+    "crumbs": [
+      "04 Scheduling",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_04_scheduling.html#with-dependencies-there-is-often-no-quick-recipe",
+    "href": "lectures/lec_04_scheduling.html#with-dependencies-there-is-often-no-quick-recipe",
+    "title": "Lecture IV: Scheduling",
+    "section": "With dependencies, there is often no quick recipe",
+    "text": "With dependencies, there is often no quick recipe\n\n\nFor deadlines, waiting time and value, sorting is enough\nAdd dependencies, and for many goals nobody knows a fast way to find the best plan\nIn practice: good rules of thumb, or software that searches for a good plan\n\n\nA good plan now beats a perfect plan too late.\n\nNotes\nIn computer science terms these problems are NP-hard: no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6249,7 +6117,7 @@
     "href": "lectures/lec_04_scheduling.html#interruptions-new-tasks-arrive-while-you-work",
     "title": "Lecture IV: Scheduling",
     "section": "Interruptions: new tasks arrive while you work",
-    "text": "Interruptions: new tasks arrive while you work\n\nIn reality we cannot predict the future\nNew tasks arrive while we work\nLet’s look at this for the earliest due date objective\n\n\nNotes\nQuick reminder: an earliest due date is a specific point in time by which a task must be completed. Under this objective, we want to minimize the maximum delay. If we have a deadline, we might need to meet it even when new tasks come in.",
+    "text": "Interruptions: new tasks arrive while you work\n\nIn reality we cannot predict the future\nNew tasks arrive while we work\nWe look at it with our first goal: don’t be too late\n\n\nNotes\nQuick reminder: an earliest due date is a specific point in time by which a task must be completed. Under this goal, we want to keep the worst delay as small as possible. If we have a deadline, we might need to meet it even when new tasks come in.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6260,7 +6128,7 @@
     "href": "lectures/lec_04_scheduling.html#a-morning-with-seven-tasks",
     "title": "Lecture IV: Scheduling",
     "section": "A morning with seven tasks",
-    "text": "A morning with seven tasks\n8:00-12:00 Schedule, tasks arrive during the morning:\nTask           Arrives  Duration  Deadline\nEmail A         8:00    20min      9:00\nCreate PPT      8:00    60min     10:50\nInvestor call   8:30    10min      9:00\nEmail B         8:40    30min     10:20\nLiquidity       9:00    40min     11:00\nEmail C         9:00    20min     11:20\nEmail D         9:20    40min     10:00\nQuestion: How would you start, if the goal is to avoid being late?",
+    "text": "A morning with seven tasks\nIt is 8:00. These tasks arrive during the morning:\nTask              Arrives  Duration  Deadline\nEmail A            8:00    20min      9:00\nPresentation       8:00    60min     10:50\nInvestor call      8:30    10min      9:00\nEmail B            8:40    30min     10:20\nLiquidity report   9:00    40min     11:00\nEmail C            9:00    20min     11:20\nEmail D            9:20    40min     10:00\nQuestion: How would you start, if the goal is to avoid being late?\n\nNotes\nAnswer: With Email A. At 8:00 only Email A and the presentation are there, and Email A has the earlier deadline, 9:00. We cannot plan the whole morning in advance, because we do not know yet what arrives later.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6271,7 +6139,7 @@
     "href": "lectures/lec_04_scheduling.html#edd-in-real-time-switch-only-for-an-earlier-deadline",
     "title": "Lecture IV: Scheduling",
     "section": "EDD in real time: switch only for an earlier deadline",
-    "text": "EDD in real time: switch only for an earlier deadline\nRule:\n\nAlways work on the task with the earliest deadline\nA new task with an earlier deadline interrupts the current one\nOtherwise, stick to the current task\n\n\nNotes\nEqual deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task.",
+    "text": "EDD in real time: switch only for an earlier deadline\nRule:\n\nAlways work on the task with the earliest deadline\nA new task with an earlier deadline interrupts the current one\nOtherwise, stick to the current task\n\nThis works for any goal: switch only if the new task beats the current one.\n\nNotes\nEqual deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6282,51 +6150,18 @@
     "href": "lectures/lec_04_scheduling.html#the-real-time-edd-schedule",
     "title": "Lecture IV: Scheduling",
     "section": "The real-time EDD schedule",
-    "text": "The real-time EDD schedule\n\n\n\n\n\n\n\n\n\nGrey line: arrival, red mark: deadline.\nQuestion: What’s the maximum delay with this schedule?",
+    "text": "The real-time EDD schedule\n\n\n\n\n\n\n\n\n\nGrey line: arrival, red mark: deadline.\nQuestion: What is the worst delay with this plan?\n20 minutes, for the liquidity report and Email C.\nNo plan does better here: there is simply more work than time.\n\nNotes\nAnswer: 20 minutes. The liquidity report finishes at 11:20 with a deadline of 11:00, and Email C finishes at 11:40 with a deadline of 11:20. Everything else is on time, Email D exactly at 10:00. The presentation is interrupted twice, so it is done in three pieces, and still finishes at 10:40, before its deadline.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#same-morning-new-goal-as-little-waiting-as-possible",
-    "href": "lectures/lec_04_scheduling.html#same-morning-new-goal-as-little-waiting-as-possible",
+    "objectID": "lectures/lec_04_scheduling.html#every-switch-costs",
+    "href": "lectures/lec_04_scheduling.html#every-switch-costs",
     "title": "Lecture IV: Scheduling",
-    "section": "Same morning, new goal: as little waiting as possible",
-    "text": "Same morning, new goal: as little waiting as possible\nQuestion: How would you start here?\n\nNotes\nQuick reminder: shortest processing time picks the task with the shortest duration. Under this objective, we want to minimize the total waiting time.",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#spt-in-real-time-switch-only-for-a-shorter-task",
-    "href": "lectures/lec_04_scheduling.html#spt-in-real-time-switch-only-for-a-shorter-task",
-    "title": "Lecture IV: Scheduling",
-    "section": "SPT in real time: switch only for a shorter task",
-    "text": "SPT in real time: switch only for a shorter task\nRule:\n\nAlways work on the task with the shortest duration\nA new task that is shorter interrupts the current one\nOtherwise, stick to the current task\n\n\nNotes\nEqual duration: if a new task has the same duration as the current task, you can choose either. But because of the cost of context switching, you should again stick with the current task.",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#the-real-time-spt-schedule",
-    "href": "lectures/lec_04_scheduling.html#the-real-time-spt-schedule",
-    "title": "Lecture IV: Scheduling",
-    "section": "The real-time SPT schedule",
-    "text": "The real-time SPT schedule\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#the-real-time-spt-schedule-1",
-    "href": "lectures/lec_04_scheduling.html#the-real-time-spt-schedule-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "The real-time SPT schedule",
-    "text": "The real-time SPT schedule\n\n\n\n\n\n\n\n\n\nTotal waiting time: 260 minutes",
+    "section": "Every switch costs",
+    "text": "Every switch costs\n\n\nEvery time you switch tasks, you clear your desk for three books and set it up again\nThe switch itself produces nothing\nSwitch often enough, and switching is all you do\n\n\n\nNotes\nBack to the desk from Lecture III: the three books on the desk are what we have in mind for the current task. A switch means putting them back and fetching the books for the next task. The book calls this a context switch, and its cost is the time spent on the switch itself.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6337,62 +6172,29 @@
     "href": "lectures/lec_04_scheduling.html#thrashing-switching-so-much-that-nothing-gets-done",
     "title": "Lecture IV: Scheduling",
     "section": "Thrashing: switching so much that nothing gets done",
-    "text": "Thrashing: switching so much that nothing gets done\n\nExcessive context switching\nOrganization overhead exceeds productivity\nMaximum activity, minimum output\n\nQuestion: Have you ever experienced this?",
+    "text": "Thrashing: switching so much that nothing gets done\n\n\nYou switch tasks all the time\nNothing gets finished\nStress goes up, quality goes down\n\n\nQuestion: Have you ever experienced this?\n\nNotes\nAnswer: Open question, most say yes. Typical examples: exam week with several group chats open, or a workday that is only answering messages. Thrashing is the state in which the overhead of organizing and switching exceeds the productive work: maximum activity, minimum output.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#warning-signs-of-thrashing",
-    "href": "lectures/lec_04_scheduling.html#warning-signs-of-thrashing",
+    "objectID": "lectures/lec_04_scheduling.html#bundle-your-interruptions",
+    "href": "lectures/lec_04_scheduling.html#bundle-your-interruptions",
     "title": "Lecture IV: Scheduling",
-    "section": "Warning signs of thrashing",
-    "text": "Warning signs of thrashing\n\nConstant task switching\nNothing getting completed\nIncreasing stress levels\nDeclining quality\n\nQuestion: Any ideas how to prevent this?",
+    "section": "Bundle your interruptions",
+    "text": "Bundle your interruptions\n\n\nYou: check email and messages at set times, not as they arrive\nCompanies: one weekly approval round instead of requests at any time\nHow fast must you respond? It is rarely “immediately”\nToo much on the list? Say no or hand over\n\n\n\nNotes\nCollecting interruptions and handling them in one go is called interrupt coalescing in computing. Long-term rules: a threshold for rejecting or delegating tasks, simplified organization systems, minimum work period rules, reduced reactivity requirements. Today’s tactics: time blocking, focus periods, task batching, priority freezes.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#preventing-thrashing-long-term-rules",
-    "href": "lectures/lec_04_scheduling.html#preventing-thrashing-long-term-rules",
+    "objectID": "lectures/lec_04_scheduling.html#which-rule-when",
+    "href": "lectures/lec_04_scheduling.html#which-rule-when",
     "title": "Lecture IV: Scheduling",
-    "section": "Preventing thrashing: long-term rules",
-    "text": "Preventing thrashing: long-term rules\n\nTask rejection/delegation threshold\nSimplified organization systems\nMinimum work period rules\nReduced reactivity requirements",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#preventing-thrashing-todays-tactics",
-    "href": "lectures/lec_04_scheduling.html#preventing-thrashing-todays-tactics",
-    "title": "Lecture IV: Scheduling",
-    "section": "Preventing thrashing: today’s tactics",
-    "text": "Preventing thrashing: today’s tactics\n\nTime blocking\nFocus periods\nTask batching\nPriority freezes\n\nQuestion: What strategies have worked for you?",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#how-to-use-this-starting-today",
-    "href": "lectures/lec_04_scheduling.html#how-to-use-this-starting-today",
-    "title": "Lecture IV: Scheduling",
-    "section": "How to use this starting today",
-    "text": "How to use this starting today\n\n\nDaily planning: SPT for your to-do list, less waiting\nProject management: EDD when deadlines matter\nTeam coordination: Johnson’s rule for two-stage processes\nTime blocking: prevent thrashing",
-    "crumbs": [
-      "04 Scheduling",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_04_scheduling.html#real-life-dependencies-interruptions-and-thrashing-1",
-    "href": "lectures/lec_04_scheduling.html#real-life-dependencies-interruptions-and-thrashing-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "Real life: dependencies, interruptions and thrashing",
-    "text": "Real life: dependencies, interruptions and thrashing\n\nWhat we covered\nDependencies make planning harder, and constant switching eats up your time. Protect blocks of focused work.",
+    "section": "Which rule when?",
+    "text": "Which rule when?\n\n\n\n\n\n\n\nSituation\nRule\n\n\n\n\nWork in two steps\nJohnson: quick first step early, quick second step late\n\n\nDeadlines count\nEarliest due date first\n\n\nPeople are waiting\nShortest task first\n\n\nTasks differ in value\nHighest value per minute first\n\n\nOne task blocks another\nThe blocker gets the priority of what waits for it\n\n\nNew tasks keep arriving\nSwitch only for a better task, bundle the rest\n\n\n\nUrgent, quick or important? It depends on your goal.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6443,11 +6245,11 @@
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#after-the-break-scheduling",
-    "href": "lectures/lec_04_scheduling.html#after-the-break-scheduling",
+    "objectID": "lectures/lec_04_scheduling.html#after-the-break-dictionaries-and-dataframes",
+    "href": "lectures/lec_04_scheduling.html#after-the-break-dictionaries-and-dataframes",
     "title": "Lecture IV: Scheduling",
-    "section": "After the break: Scheduling",
-    "text": "After the break: Scheduling\n\nProgramming session in our new notebooks\nToday’s rules in code: dictionaries and DataFrames\nDifferent scheduling algorithms applied to problems\n\n\nNotes\nKey takeaways: scheduling algorithms provide optimal solutions to time management problems; different objectives require different algorithms; dependencies and constraints add complexity but have algorithmic solutions; thrashing prevention is crucial for productivity; these principles directly translate to programming and system design.\nThat’s it for scheduling! Let’s have a short break and then continue with our fourth Python programming session.",
+    "section": "After the break: dictionaries and DataFrames",
+    "text": "After the break: dictionaries and DataFrames\n\nProgramming session in our new notebooks\nToday’s rules in code: dictionaries and DataFrames\nDifferent scheduling algorithms applied to problems\n\n\nNotes\nThat’s it for scheduling! Let’s have a short break and then continue with our fourth Python programming session.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6458,7 +6260,7 @@
     "href": "lectures/lec_04_scheduling.html#interesting-literature-to-start",
     "title": "Lecture IV: Scheduling",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.1",
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.3",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6491,7 +6293,7 @@
     "href": "lectures/lec_04_scheduling.html#footnotes",
     "title": "Lecture IV: Scheduling",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nJohnson, S. M. (1954). Optimal two- and three-stage production schedules with setup times included. Naval Research Logistics Quarterly, 1(1). Johnson proved that this rule gives the best possible order.↩︎\nChristian & Griffiths (2016), ch. 5.↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6512,130 +6314,123 @@
     "text": "Roadmap\n\n\nThe basics: when order matters, and when it doesn’t\nYour goal decides the rule: deadlines, waiting time, value\nReal life: dependencies, interruptions and thrashing"
   },
   {
+    "objectID": "lectures/lec_04_presentation.html#ten-tasks-one-day-where-do-you-start",
+    "href": "lectures/lec_04_presentation.html#ten-tasks-one-day-where-do-you-start",
+    "title": "Lecture IV: Scheduling",
+    "section": "Ten tasks, one day: where do you start?",
+    "text": "Ten tasks, one day: where do you start?\nQuestion: How do you decide?\n\nWith the most urgent one\nWith the quickest one\nWith the most important one\n\n\nKeep your answer in mind. We come back to it.\n\nAnswer: Most students say the most urgent, the quickest or the most important one. All three are rules, and each one serves a different goal: not being late, waiting less, delivering more value. Which rule is right depends on the goal, and that is today’s topic."
+  },
+  {
     "objectID": "lectures/lec_04_presentation.html#four-loads-of-laundry-one-washer-one-dryer",
     "href": "lectures/lec_04_presentation.html#four-loads-of-laundry-one-washer-one-dryer",
     "title": "Lecture IV: Scheduling",
     "section": "Four loads of laundry, one washer, one dryer",
-    "text": "Four loads of laundry, one washer, one dryer\n\n\n\n\n\n\n\n\n\n\nTopic: understanding scheduling problems and algorithmic solutions for optimal task ordering. Why this matters: every day you make scheduling decisions, from organizing your to-do list to managing projects. Today we learn the mathematical algorithms that can optimize these decisions.\nOld agenda: scheduling fundamentals (Johnson’s rule and two-machine problems), historical context, core algorithms (EDD for deadlines, SPT for efficiency), advanced topics (dependencies, real-time scheduling, thrashing)."
+    "text": "Four loads of laundry, one washer, one dryer\n\nEvery load is washed first, then dried.\n\n\nEach machine handles one load at a time.\n\n\n\n\n\n\n\n\n\n\nOur first example is as simple as it gets: four loads, two machines, and the only question is the order."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#goal-all-laundry-done-as-early-as-possible",
     "href": "lectures/lec_04_presentation.html#goal-all-laundry-done-as-early-as-possible",
     "title": "Lecture IV: Scheduling",
     "section": "Goal: all laundry done as early as possible",
-    "text": "Goal: all laundry done as early as possible\n\nTask  Washing  Drying\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min\n  D    50min   60min\n\n\nGoal: Minimize total time for washing and drying all loads\n\n\nQuestion: An idea how to solve this?"
+    "text": "Goal: all laundry done as early as possible\n\nLoad  Washing  Drying\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min\n  D    50min   60min\n\n\nGoal: Finish all four loads as early as possible\n\n\nQuestion: In which order would you wash?\n\nAnswer: Start with the loads that wash quickly, so the dryer can start early, and end with the loads that dry quickly, so little is left once the washer is done. That is Johnson’s rule, and it gives the order B, A, D, C with a total of 250 minutes. Let students suggest orders first, then compare."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#johnsons-rule-shortest-job-first-or-last",
-    "href": "lectures/lec_04_presentation.html#johnsons-rule-shortest-job-first-or-last",
+    "objectID": "lectures/lec_04_presentation.html#johnsons-rule",
+    "href": "lectures/lec_04_presentation.html#johnsons-rule",
     "title": "Lecture IV: Scheduling",
-    "section": "Johnson’s rule: shortest job first or last",
-    "text": "Johnson’s rule: shortest job first or last\nRule: To find the optimal solution:\n\nFind the job with shortest duration:\n\nIf on Machine 1 → Schedule First\nIf on Machine 2 → Schedule Last\nIf equal → Choose randomly\n\nRemove job from list and repeat"
+    "section": "Johnson’s rule",
+    "text": "Johnson’s rule\nRule:1\n\nFind the shortest time in the whole table\nIs it a wash? Put that load as early as possible\nIs it a dry? Put that load as late as possible\nCross out the load and repeat\n\n\nIn words: short washes go first, so the dryer can start early. Short dries go last, so little is left to do once the washer has finished.\n\nJohnson, S. M. (1954). Optimal two- and three-stage production schedules with setup times included. Naval Research Logistics Quarterly, 1(1). Johnson proved that this rule gives the best possible order."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#applying-johnsons-rule",
     "href": "lectures/lec_04_presentation.html#applying-johnsons-rule",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min\n  D    50min   60min\n\nQuestion: What’s the first scheduled task?"
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min\n  D    50min   60min\n\nQuestion: Which load do we place first, and where?\n\nAnswer: Load C, and it goes last. The shortest time in the table is C’s dry, 20 minutes. It is a dry, so C goes as late as possible. Point out that the rule fills the schedule from both ends."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#applying-johnsons-rule-1",
     "href": "lectures/lec_04_presentation.html#applying-johnsons-rule-1",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min        4\n  D    50min   60min\n\nIn Task C, the dryer is the shortest task.\nIt is on Machine 2 → Schedule Last\n\n\nQuestion: What’s the next task?"
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min\n  C    60min   20min        4\n  D    50min   60min\n\nThe shortest time is C’s dry, 20 minutes\nIt is a dry, so C goes last\n\n\nQuestion: Which load is next?\n\nAnswer: B. Without C, the shortest time left is B’s wash, 30 minutes. It is a wash, so B goes first."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#applying-johnsons-rule-2",
     "href": "lectures/lec_04_presentation.html#applying-johnsons-rule-2",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min\n\nIn Task B, the washing machine is the shortest task.\nIt is on Machine 1 → Schedule First\n\n\nQuestion: What’s the next task?"
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min\n\nThe shortest time is B’s wash, 30 minutes\nIt is a wash, so B goes first\n\n\nQuestion: Which load is next?\n\nAnswer: A. The shortest time left is A’s wash, 40 minutes. It is a wash, so A takes the next free place from the front, position 2."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#applying-johnsons-rule-3",
     "href": "lectures/lec_04_presentation.html#applying-johnsons-rule-3",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min        2\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min\n\nIn Task A, the washing machine is the shortest task.\nIt is on Machine 1 → Schedule Second\n\n\nNow, we only have one task left!"
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min        2\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min\n\nThe shortest time is A’s wash, 40 minutes\nIt is a wash, so A goes second\n\n\nNow, we only have one load left!"
   },
   {
     "objectID": "lectures/lec_04_presentation.html#applying-johnsons-rule-4",
     "href": "lectures/lec_04_presentation.html#applying-johnsons-rule-4",
     "title": "Lecture IV: Scheduling",
-    "section": "Applying Johnson’s Rule",
-    "text": "Applying Johnson’s Rule\nTask  Washing  Drying  Schedule\n  A    40min   60min        2\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min        3\n\nFinal sequence: B A D C"
+    "section": "Applying Johnson’s rule",
+    "text": "Applying Johnson’s rule\nLoad  Washing  Drying  Schedule\n  A    40min   60min        2\n  B    30min   80min        1\n  C    60min   20min        4\n  D    50min   60min        3\n\nFinal sequence: B A D C"
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#optimal-solution",
-    "href": "lectures/lec_04_presentation.html#optimal-solution",
+    "objectID": "lectures/lec_04_presentation.html#the-best-order-takes-4-hours-10-minutes",
+    "href": "lectures/lec_04_presentation.html#the-best-order-takes-4-hours-10-minutes",
     "title": "Lecture IV: Scheduling",
-    "section": "Optimal Solution",
-    "text": "Optimal Solution\nOptimal Solution: B A D C\n\n\n\n\n\n\n\n\n\nTotal time: 4 hours 10 minutes\n\nQuestion: Is there a worse solution?"
+    "section": "The best order takes 4 hours 10 minutes",
+    "text": "The best order takes 4 hours 10 minutes\nBest order: B A D C"
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#suboptimal-solution",
-    "href": "lectures/lec_04_presentation.html#suboptimal-solution",
+    "objectID": "lectures/lec_04_presentation.html#how-to-read-this-chart",
+    "href": "lectures/lec_04_presentation.html#how-to-read-this-chart",
     "title": "Lecture IV: Scheduling",
-    "section": "Suboptimal Solution",
-    "text": "Suboptimal Solution\nSuboptimal Solution: C D A B\n\n\n\n\n\n\n\n\n\nTotal time: 5 hours 10 minutes\n\nQuestion: What’s the difference?"
+    "section": "How to read this chart",
+    "text": "How to read this chart\n\n\n\n\n\n\n\n\n\n\nOne row per machine\nOne bar per load\nTime runs from left to right\nIt is called a Gantt chart, after Henry Gantt, who drew such charts around 1910 for factory planning.\n\n\nQuestion: How much worse can it get?\n\nAnswer: One hour worse. The reverse order C, D, A, B takes 310 minutes instead of 250. Any order that starts with a long wash or ends with a long dry is worse.\nFrederick Taylor made the first systematic time studies, Gantt turned them into charts for factory planning. Gantt charts show who does what, and when. Johnson’s rule from 1954, published at the RAND Corporation, was the first scheduling rule with a proof, and modern scheduling theory grew from there."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#industrialization",
-    "href": "lectures/lec_04_presentation.html#industrialization",
+    "objectID": "lectures/lec_04_presentation.html#a-bad-order-takes-one-hour-longer",
+    "href": "lectures/lec_04_presentation.html#a-bad-order-takes-one-hour-longer",
     "title": "Lecture IV: Scheduling",
-    "section": "Industrialization",
-    "text": "Industrialization\n\n\n\nFirst systematic visualization by Frederick Taylor\nHenry Gantt develops the Gantt Chart around 1910\nKey tool of industrial production planning\nBut no scheduling theory yet!\n\n\n\n\n\nQuestion: Who knows what a Gantt Chart is?"
+    "section": "A bad order takes one hour longer",
+    "text": "A bad order takes one hour longer\nA bad order: C D A B\n\n\n\n\n\n\n\n\n\n\nQuestion: Why is this order worse?\n\n\nThe dryer waits a full hour for the first wash, and the longest dry comes at the very end.\n\nAnswer: The dryer idles for the first 60 minutes while C is washing, and B’s 80-minute dry starts only after the last wash, so everything ends at 310 minutes instead of 250. Both ends of the schedule are wasted: a long wash in front, a long dry at the back."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#modern-scheduling-theory",
-    "href": "lectures/lec_04_presentation.html#modern-scheduling-theory",
+    "objectID": "lectures/lec_04_presentation.html#johnsons-rule-beyond-laundry",
+    "href": "lectures/lec_04_presentation.html#johnsons-rule-beyond-laundry",
     "title": "Lecture IV: Scheduling",
-    "section": "Modern Scheduling Theory",
-    "text": "Modern Scheduling Theory\n\n\n\nRAND Corporation founded (1948)\nSelmer Johnson publishes Johnson’s Rule in 1954\nBeginning of modern scheduling theory\nMany more algorithms and methods developed since"
+    "section": "Johnson’s rule beyond laundry",
+    "text": "Johnson’s rule beyond laundry\n\nAny work in two steps, where the second step waits for the first\nYou: when cooking, start with what is quick to prepare and long in the oven\nCompanies: a report goes from the analyst to the reviewer. Start with the report that is quick to write and long to review\n\n\nOrder the work so that the second step never stands idle."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#scheduling-is-everywhere-in-professional-practice",
-    "href": "lectures/lec_04_presentation.html#scheduling-is-everywhere-in-professional-practice",
+    "objectID": "lectures/lec_04_presentation.html#scheduling-is-everywhere",
+    "href": "lectures/lec_04_presentation.html#scheduling-is-everywhere",
     "title": "Lecture IV: Scheduling",
-    "section": "Scheduling is everywhere in professional practice",
-    "text": "Scheduling is everywhere in professional practice\n\nProject management: task dependencies, resource allocation\nSoftware: CPU, threads, job queues\nOperations: production, supply chain\nHealthcare: patients, surgeries, staff\nTransportation: routes, crews, maintenance\n\n\nWhere do we see scheduling in professional practice? These are the same optimization problems that algorithms solve: in project management (task dependencies and resource allocation), software development (CPU, thread management, job queues), operations (production and supply chain optimization), healthcare (patients, surgery planning, staff allocation) and transportation (routes, crews, maintenance)."
+    "section": "Scheduling is everywhere",
+    "text": "Scheduling is everywhere\nQuestion: Where do companies schedule?\n\nProjects: which task first, who works on what\nProduction: which order on the line\nHospitals: patients, surgeries, staff\nTransport: routes, crews, maintenance\nSoftware: which program gets the processor\n\n\nAnswer: Almost everywhere: projects (which task first, who gets the resource), software (which program gets the processor), operations (which order on the production line), healthcare (patients, surgeries, staff), transportation (routes, crews, maintenance). The same rules we see today are used in all of them."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#tasks-differ-in-time-and-in-relationships",
-    "href": "lectures/lec_04_presentation.html#tasks-differ-in-time-and-in-relationships",
+    "objectID": "lectures/lec_04_presentation.html#what-do-we-know-about-a-task",
+    "href": "lectures/lec_04_presentation.html#what-do-we-know-about-a-task",
     "title": "Lecture IV: Scheduling",
-    "section": "Tasks differ in time and in relationships",
-    "text": "Tasks differ in time and in relationships\nQuestion: What properties can scheduled tasks have?\n\n\n\n\n\n\nmindmap\n  root((Task Properties))\n    Time-Related\n      Time windows\n      Deadlines\n      Start constraints\n      Deterministic durations\n      Variable durations\n      Stochastic durations\n    Relationship-Based\n      Predecessor relationships\n      Successor relationships\n      Dependencies\n      Priority levels\n      Resource constraints"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#which-tasks-do-you-deal-with",
-    "href": "lectures/lec_04_presentation.html#which-tasks-do-you-deal-with",
-    "title": "Lecture IV: Scheduling",
-    "section": "Which tasks do you deal with?",
-    "text": "Which tasks do you deal with?\nQuestion: What types of tasks do you deal with most often?"
+    "section": "What do we know about a task?",
+    "text": "What do we know about a task?\n\nDuration: how long does it take?\nDeadline: when is it due?\nValue: how much is it worth?\nDependency: what must be done before?\n\n\nWhich of these we look at depends on our goal."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#one-person-instead-of-two-machines",
     "href": "lectures/lec_04_presentation.html#one-person-instead-of-two-machines",
     "title": "Lecture IV: Scheduling",
     "section": "One person instead of two machines",
-    "text": "One person instead of two machines\n\n\n\n\n\n\n\n\n\nQuestion: What is different from before?"
+    "text": "One person instead of two machines\n\n\n\n\n\n\n\n\n\nQuestion: What is different from before?\n\nAnswer: There is only one resource, so nothing runs in parallel and nothing waits for a second step. The total time is the sum of all durations, 180 minutes for A to D, whatever the order."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#for-total-time-alone-the-order-doesnt-matter",
-    "href": "lectures/lec_04_presentation.html#for-total-time-alone-the-order-doesnt-matter",
+    "objectID": "lectures/lec_04_presentation.html#one-person-does-the-order-matter",
+    "href": "lectures/lec_04_presentation.html#one-person-does-the-order-matter",
     "title": "Lecture IV: Scheduling",
-    "section": "For total time alone, the order doesn’t matter",
-    "text": "For total time alone, the order doesn’t matter\n\n\n\n\n\n\nWith one person and no deadlines, every order takes the same total time.\n\n\n\n\nQuestion: But is it that simple?\n\n\n\n\n\n\n\n\nOrder becomes crucial with deadlines, priorities and dependencies.\n\n\n\n\nUnder simple minimization of total processing time, order doesn’t matter: the total is the sum of all durations, whatever the order. As soon as we care about deadlines, waiting time, priorities or dependencies, the order matters a lot."
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#the-basics-when-order-matters-and-when-it-doesnt-1",
-    "href": "lectures/lec_04_presentation.html#the-basics-when-order-matters-and-when-it-doesnt-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "The basics: when order matters, and when it doesn’t",
-    "text": "The basics: when order matters, and when it doesn’t\n\nWhat we covered\nSometimes the order of tasks changes the result, sometimes it doesn’t. Knowing which saves time."
+    "section": "One person: does the order matter?",
+    "text": "One person: does the order matter?\nQuestion: Does the order change how long we need?\n\n\n\n\n\n\n\nWith one person and no deadlines, every order takes the same total time.\n\n\n\n\n\nQuestion: So the order is irrelevant?\n\n\n\n\n\n\n\n\nNo. Order becomes crucial with deadlines, priorities and dependencies.\n\n\n\n\n\nReordering your to-do list does not make it shorter. Order only matters once you say what you want.\n\nAnswer: First question: no, the total is always 180 minutes. Second question: no, the total is the same, but who waits how long, what is late and what is worth the most all depend on the order. Under simple minimization of total processing time, order doesn’t matter: the total is the sum of all durations, whatever the order. As soon as we care about deadlines, waiting time, priorities or dependencies, the order matters a lot."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#roadmap-1",
@@ -6645,11 +6440,18 @@
     "text": "Roadmap\n\n\nThe basics: when order matters, and when it doesn’t\nYour goal decides the rule: deadlines, waiting time, value\nReal life: dependencies, interruptions and thrashing"
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#goal-1-nobody-waits-too-long-past-the-deadline",
-    "href": "lectures/lec_04_presentation.html#goal-1-nobody-waits-too-long-past-the-deadline",
+    "objectID": "lectures/lec_04_presentation.html#what-do-you-want",
+    "href": "lectures/lec_04_presentation.html#what-do-you-want",
     "title": "Lecture IV: Scheduling",
-    "section": "Goal 1: nobody waits too long past the deadline",
-    "text": "Goal 1: nobody waits too long past the deadline\nTasks with individual deadlines:\nTask  Duration  Deadline\n  A    40min    110min\n  B    30min     90min\n  C    60min    150min\n  D    50min     70min\n  E    30min    210min\n\nGoal: Minimize maximum deadline violation\n\n\nQuestion: An idea how to solve this?"
+    "section": "What do you want?",
+    "text": "What do you want?\n\nNot be late\nWait as little as possible\nDeliver the most value\n\n\nEach goal has its own rule.\n\n\nCompanies know this conflict: sales wants every order on time, production wants as much output as possible."
+  },
+  {
+    "objectID": "lectures/lec_04_presentation.html#goal-1-dont-be-too-late",
+    "href": "lectures/lec_04_presentation.html#goal-1-dont-be-too-late",
+    "title": "Lecture IV: Scheduling",
+    "section": "Goal 1: don’t be too late",
+    "text": "Goal 1: don’t be too late\nTasks with individual deadlines:\nTask  Duration  Deadline\n  A    40min    110min\n  B    30min     90min\n  C    60min    150min\n  D    50min     70min\n  E    30min    210min\n\nAll times count from now: task D is due in 70 minutes.\n\n\nGoal: Keep the worst delay as small as possible\n\n\nQuestion: In which order would you work?\n\nAnswer: Sort the tasks by deadline and work through them in that order: D, B, A, C, E. This is the earliest due date rule, and for this goal it is the best possible order."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#earliest-due-date-sort-by-deadline",
@@ -6663,196 +6465,91 @@
     "href": "lectures/lec_04_presentation.html#the-edd-schedule",
     "title": "Lecture IV: Scheduling",
     "section": "The EDD schedule",
-    "text": "The EDD schedule\n\n\n\n\n\n\n\n\n\nRed marks: deadlines.\n\nQuestion: What’s the maximum delay here?"
+    "text": "The EDD schedule\n\n\n\n\n\n\n\n\n\nRed marks: deadlines.\n\nQuestion: What is the worst delay here?\n\n\n30 minutes, for task C. Task A is 10 minutes late.\n\n\nIn the order A to E, task D would be 110 minutes late.\n\nAnswer: 30 minutes, for task C, which finishes at 180 minutes with a deadline of 150. Task A finishes at 120 with a deadline of 110, so it is 10 minutes late. D, B and E are on time. No other order gets the worst delay below 30 minutes. Without the rule, in the order A to E, D would finish at 180 minutes with a deadline of 70, so 110 minutes late."
+  },
+  {
+    "objectID": "lectures/lec_04_presentation.html#earliest-due-date-in-real-life",
+    "href": "lectures/lec_04_presentation.html#earliest-due-date-in-real-life",
+    "title": "Lecture IV: Scheduling",
+    "section": "Earliest due date in real life",
+    "text": "Earliest due date in real life\n\nYou: work on assignments in the order they are due\nCompanies: produce customer orders in the order of the promised delivery date\nWatch out: the rule ignores how long a task takes and how important it is"
   },
   {
     "objectID": "lectures/lec_04_presentation.html#goal-2-as-little-waiting-as-possible",
     "href": "lectures/lec_04_presentation.html#goal-2-as-little-waiting-as-possible",
     "title": "Lecture IV: Scheduling",
     "section": "Goal 2: as little waiting as possible",
-    "text": "Goal 2: as little waiting as possible\n\n\n\n\n\n\n\n\n\n\n\n\nInstead of deadlines, we now have processing times.\nGoal: Min. total waiting time\nQuestion: Any ideas?\nRule: Always schedule the shortest remaining task"
+    "text": "Goal 2: as little waiting as possible\n\n\n\n\n\n\n\n\n\n\n\n\nNo deadlines this time. For each task, someone is waiting.\nGoal: Keep the total waiting time as small as possible\nQuestion: Which task first?\n\n\nAnswer: Shortest task first. Every task that is done early stops waiting, and everything behind it waits only a little. This is the shortest processing time rule, and it gives the smallest total waiting time."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#shortest-processing-time-shortest-task-first",
     "href": "lectures/lec_04_presentation.html#shortest-processing-time-shortest-task-first",
     "title": "Lecture IV: Scheduling",
     "section": "Shortest Processing Time: shortest task first",
-    "text": "Shortest Processing Time: shortest task first\nRule: Always schedule the shortest remaining task. Choose random if multiple tasks are tied.\nTask  Duration  Schedule\n  A    40min\n  B    30min\n  C    60min\n  D    50min\n  E    30min\n\nQuestion: What’s the order of scheduled tasks?"
+    "text": "Shortest Processing Time: shortest task first\nRule: Always do the shortest remaining task next (SPT). If two are equally short, pick either.\nTask  Duration  Schedule\n  A    40min\n  B    30min\n  C    60min\n  D    50min\n  E    30min\n\nQuestion: In which order do we work?\n\nAnswer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. Both orders give the same total waiting time."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#shortest-processing-time-shortest-task-first-1",
     "href": "lectures/lec_04_presentation.html#shortest-processing-time-shortest-task-first-1",
     "title": "Lecture IV: Scheduling",
     "section": "Shortest Processing Time: shortest task first",
-    "text": "Shortest Processing Time: shortest task first\nRule: Always schedule the shortest remaining task. Choose random if multiple tasks are tied.\nTask  Duration  Schedule\n  A    40min        3\n  B    30min        1\n  C    60min        5\n  D    50min        4\n  E    30min        2\n\nFinal sequence: B E A D C or E B A D C"
+    "text": "Shortest Processing Time: shortest task first\nRule: Always do the shortest remaining task next (SPT). If two are equally short, pick either.\nTask  Duration  Schedule\n  A    40min        3\n  B    30min        1\n  C    60min        5\n  D    50min        4\n  E    30min        2\n\nFinal sequence: B E A D C or E B A D C"
   },
   {
     "objectID": "lectures/lec_04_presentation.html#the-spt-schedule",
     "href": "lectures/lec_04_presentation.html#the-spt-schedule",
     "title": "Lecture IV: Scheduling",
     "section": "The SPT schedule",
-    "text": "The SPT schedule\n\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?"
+    "text": "The SPT schedule\n\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?\n\nAnswer: In the empty space before each bar. A task waits from the start until its bar begins, so B waits 0 minutes, E 30, A 60, D 100 and C 150 minutes. The later a bar starts, the longer that task has waited."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#waiting-time-adds-up-to-340-minutes",
     "href": "lectures/lec_04_presentation.html#waiting-time-adds-up-to-340-minutes",
     "title": "Lecture IV: Scheduling",
     "section": "Waiting time adds up to 340 minutes",
-    "text": "Waiting time adds up to 340 minutes\nTotal waiting time: 340 minutes\n\n\n\n\n\n\n\n\n\nGrey: time a task waits before it starts.\n\nQuestion: Would this be applicable for your work?"
+    "text": "Waiting time adds up to 340 minutes\nTotal waiting time: 340 minutes\n\n\n\n\n\n\n\n\n\nGrey: time a task waits before it starts.\n\nThe other way round, longest task first: 500 minutes."
+  },
+  {
+    "objectID": "lectures/lec_04_presentation.html#shortest-task-first-in-real-life",
+    "href": "lectures/lec_04_presentation.html#shortest-task-first-in-real-life",
+    "title": "Lecture IV: Scheduling",
+    "section": "Shortest task first in real life",
+    "text": "Shortest task first in real life\n\nYou: if it takes less than two minutes, do it now\nCompanies: a help desk that answers quick requests first makes the average customer wait less\nWhy it works: a short task makes everyone behind it wait only a little\nWatch out: the big task keeps getting pushed back"
   },
   {
     "objectID": "lectures/lec_04_presentation.html#goal-3-deliver-the-most-value",
     "href": "lectures/lec_04_presentation.html#goal-3-deliver-the-most-value",
     "title": "Lecture IV: Scheduling",
     "section": "Goal 3: deliver the most value",
-    "text": "Goal 3: deliver the most value\n\nChange: Tasks now have different values, e.g. revenue for a consultant\n\nTask  Duration  Revenue\n  A    20min    €240\n  B    30min    €200\n  C    60min    €120\n  D    50min    €70\n  E    30min    €130\n  F    40min    €120\n  G    20min    €100\n  H    70min    €110\n  I    50min    €90\n\nQuestion: Any ideas how to approach this?"
+    "text": "Goal 3: deliver the most value\n\nChange: Tasks now have different values, e.g. revenue for a consultant\n\nTask  Duration  Revenue\n  A    20min    €240\n  B    30min    €200\n  C    60min    €120\n  D    50min    €70\n  E    30min    €130\n  F    40min    €120\n  G    20min    €100\n  H    70min    €110\n  I    50min    €90\n\nQuestion: Which task first?\n\nAnswer: Neither the highest revenue nor the shortest task alone, but revenue per minute, highest first. A earns 12 euros per minute, D only 1.40. The order is A, B, G, E, F, C, I, H, D. Students often propose “highest revenue first”. That would move G, 20 minutes for 100 euros, from third to seventh place."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first",
     "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first",
     "title": "Lecture IV: Scheduling",
     "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8\n\nQuestion: What’s the order of scheduled tasks?"
+    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8\n\nRevenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes = 12 euros per minute.\n\n\nQuestion: In which order do we work?\n\nAnswer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-1",
     "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-1",
     "title": "Lecture IV: Scheduling",
     "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8"
+    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8"
   },
   {
     "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-2",
     "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-2",
     "title": "Lecture IV: Scheduling",
     "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8"
+    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4           9\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7"
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-3",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-3",
+    "objectID": "lectures/lec_04_presentation.html#value-per-minute-in-real-life",
+    "href": "lectures/lec_04_presentation.html#value-per-minute-in-real-life",
     "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-4",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-4",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-5",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-5",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-6",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-6",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-7",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-7",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8           7"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-8",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-8",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-9",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-9",
-    "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Schedule by revenue per minute (descending)\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4           9\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7\n\n\n\n\n\n\n\nMetric Priorities\n\n\nWithout revenues, we can use the same approach with metric priorities!"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#deadlines-with-dependencies",
-    "href": "lectures/lec_04_presentation.html#deadlines-with-dependencies",
-    "title": "Lecture IV: Scheduling",
-    "section": "Deadlines with dependencies",
-    "text": "Deadlines with dependencies\nQuestion: What was earliest due date again?\n\n\nSort the tasks by deadline\nNow some tasks must wait for a predecessor\n\n\n\nTask  Duration  Deadline  Predecessor\n  A    40min    110min    None\n  B    30min     90min    D\n  C    60min    150min    A\n  D    50min     70min    None\n  E    30min    210min    C\nQuestion: Any ideas how to solve this?"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#lawlers-algorithm-fill-the-schedule-from-the-back",
-    "href": "lectures/lec_04_presentation.html#lawlers-algorithm-fill-the-schedule-from-the-back",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s algorithm: fill the schedule from the back",
-    "text": "Lawler’s algorithm: fill the schedule from the back\nRule: We can use Lawler’s Algorithm (1968)\n\nConsider all tasks without successors\nChoose the one with latest deadline\nSchedule the task last\nRemove it from the network and start again"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#lawlers-applied",
-    "href": "lectures/lec_04_presentation.html#lawlers-applied",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None\n  B    30min     90min    D\n  C    60min    150min    A\n  D    50min     70min    None\n  E    30min    210min    C\n\nQuestion: What’s the schedule?"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#lawlers-applied-1",
-    "href": "lectures/lec_04_presentation.html#lawlers-applied-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None\n  B    30min     90min    D\n  C    60min    150min    A\n  D    50min     70min    None\n  E    30min    210min    C             5"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#lawlers-applied-2",
-    "href": "lectures/lec_04_presentation.html#lawlers-applied-2",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None\n  B    30min     90min    D\n  C    60min    150min    A             4\n  D    50min     70min    None\n  E    30min    210min    C             5"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#lawlers-applied-3",
-    "href": "lectures/lec_04_presentation.html#lawlers-applied-3",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None          3\n  B    30min     90min    D\n  C    60min    150min    A             4\n  D    50min     70min    None\n  E    30min    210min    C             5"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#lawlers-applied-4",
-    "href": "lectures/lec_04_presentation.html#lawlers-applied-4",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None          3\n  B    30min     90min    D             2\n  C    60min    150min    A             4\n  D    50min     70min    None\n  E    30min    210min    C             5"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#lawlers-applied-5",
-    "href": "lectures/lec_04_presentation.html#lawlers-applied-5",
-    "title": "Lecture IV: Scheduling",
-    "section": "Lawler’s Applied",
-    "text": "Lawler’s Applied\nTask  Duration  Deadline  Predecessor Schedule\n  A    40min    110min    None          3\n  B    30min     90min    D             2\n  C    60min    150min    A             4\n  D    50min     70min    None          1\n  E    30min    210min    C             5\n\n\n\n\n\n\n\nSuccessor Tasks\n\n\nNote, how all tasks become tasks without successors at some point."
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#the-lawler-schedule",
-    "href": "lectures/lec_04_presentation.html#the-lawler-schedule",
-    "title": "Lecture IV: Scheduling",
-    "section": "The Lawler schedule",
-    "text": "The Lawler schedule\n\n\n\n\n\n\n\n\n\nThe task in brackets must be finished first. Red marks: deadlines.\n\nQuestion: What’s the maximum delay?"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#waiting-time-with-dependencies-has-no-fast-exact-solution",
-    "href": "lectures/lec_04_presentation.html#waiting-time-with-dependencies-has-no-fast-exact-solution",
-    "title": "Lecture IV: Scheduling",
-    "section": "Waiting time with dependencies has no fast exact solution",
-    "text": "Waiting time with dependencies has no fast exact solution\n\nNP-hard: no known algorithm solves it efficiently\nTrue for most scheduling problems\nIn practice we use heuristics, good rules without a guarantee\n\n\nShortest processing time with predecessors cannot be solved in polynomial time, it is NP-hard. This is true for most scheduling problems. We can use heuristics, though: rules that give good, but not provably optimal schedules."
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#your-goal-decides-the-rule-deadlines-waiting-time-value-1",
-    "href": "lectures/lec_04_presentation.html#your-goal-decides-the-rule-deadlines-waiting-time-value-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "Your goal decides the rule: deadlines, waiting time, value",
-    "text": "Your goal decides the rule: deadlines, waiting time, value\n\nWhat we covered\nEach goal has its own simple rule: earliest deadline first to avoid being late, shortest task first to cut waiting, highest value per minute first to maximize what you deliver."
+    "section": "Value per minute in real life",
+    "text": "Value per minute in real life\n\nYou: before an exam, study first what brings the most points per hour\nCompanies: when machine time is scarce, produce the order that earns the most per machine hour\n\n\nYou may know this from cost accounting: contribution margin per unit of the bottleneck.\n\n\nNo money involved? Rate the importance from 1 to 10 instead."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#roadmap-2",
@@ -6862,116 +6559,95 @@
     "text": "Roadmap\n\n\nThe basics: when order matters, and when it doesn’t\nYour goal decides the rule: deadlines, waiting time, value\nReal life: dependencies, interruptions and thrashing"
   },
   {
+    "objectID": "lectures/lec_04_presentation.html#a-spacecraft-that-kept-restarting",
+    "href": "lectures/lec_04_presentation.html#a-spacecraft-that-kept-restarting",
+    "title": "Lecture IV: Scheduling",
+    "section": "A spacecraft that kept restarting",
+    "text": "A spacecraft that kept restarting\n\nIn July 1997, NASA’s Pathfinder landed on Mars\nThen its computer started to restart again and again\nThe cause: an important task was waiting for an unimportant one1\n\n\nQuestion: How can that happen?\n\nAnswer: The important task needed something that a low-priority task was holding. Medium-priority tasks kept the low-priority one from running, so the important task could not continue, and a safety timer restarted the computer. This is called priority inversion, and the next slide shows it with numbers. NASA fixed it from Earth by switching on priority inheritance.\n\n\nChristian & Griffiths (2016), ch. 5."
+  },
+  {
     "objectID": "lectures/lec_04_presentation.html#priority-inversion-an-important-task-waits-for-an-unimportant-one",
     "href": "lectures/lec_04_presentation.html#priority-inversion-an-important-task-waits-for-an-unimportant-one",
     "title": "Lecture IV: Scheduling",
     "section": "Priority inversion: an important task waits for an unimportant one",
-    "text": "Priority inversion: an important task waits for an unimportant one\n\n\nSetup (priority 1 = highest):\nTask  Duration  Priority\n  A    20min     3\n  B    30min     1\n  C    30min     2\n  D    30min     2\n  E    30min     2\n\n\n\n\n\n\n\n\n\nChallenge: High-priority tasks depend on low-priority tasks.\n\nRisk: Priority inversion can lead to significant delays!"
+    "text": "Priority inversion: an important task waits for an unimportant one\n\n\nSetup (priority 1 = highest):\nTask  Duration  Priority\n  A    20min     3\n  B    30min     1\n  C    30min     2\n  D    30min     2\n  E    30min     2\n\n\n\n\n\n\n\n\n\n\n\nB is the most important task, but it needs A first\nA has the lowest priority, so C, D and E go first\nB waits 110 minutes for its turn\n\n\n\n\nStrictly by priority, C, D and E run first (90 minutes), then A (20 minutes), and only then B can start, at minute 110. The challenge: high-priority tasks depend on low-priority tasks, and the priority order alone ignores that. Priority inversion can lead to significant delays."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#priority-inheritance-the-blocker-borrows-the-priority",
-    "href": "lectures/lec_04_presentation.html#priority-inheritance-the-blocker-borrows-the-priority",
+    "objectID": "lectures/lec_04_presentation.html#how-do-we-prevent-this",
+    "href": "lectures/lec_04_presentation.html#how-do-we-prevent-this",
     "title": "Lecture IV: Scheduling",
-    "section": "Priority inheritance: the blocker borrows the priority",
-    "text": "Priority inheritance: the blocker borrows the priority\nQuestion: How do we prevent the inversion?\n\nRule: Tasks inherit priority from their dependents.\nA inherits priority 1 from B and is done first\nB can start right after A, C to E follow\n\n\nTask  Duration  Priority\n  A    20min     1\n  B    30min     1\n  C    30min     2\n  D    30min     2\n  E    30min     2"
+    "section": "How do we prevent this?",
+    "text": "How do we prevent this?\nQuestion: What should happen with task A?\n\nRule: A task takes over the priority of the task that waits for it\n\n\nTask  Duration  Priority\n  A    20min     1\n  B    30min     1\n  C    30min     2\n  D    30min     2\n  E    30min     2\n\n\nB now starts after 20 minutes instead of 110\n\n\nThis is called priority inheritance. It is how NASA fixed Pathfinder, from Earth.\n\nAnswer: A should be treated as important as B, because B waits for it. A takes over priority 1, runs first, and B starts after 20 minutes instead of 110. C, D and E follow, nothing changes for them except that they come later."
+  },
+  {
+    "objectID": "lectures/lec_04_presentation.html#priority-inheritance-in-real-life",
+    "href": "lectures/lec_04_presentation.html#priority-inheritance-in-real-life",
+    "title": "Lecture IV: Scheduling",
+    "section": "Priority inheritance in real life",
+    "text": "Priority inheritance in real life\n\nYou: shopping has the priority of the dinner it is for\nCompanies: a 5 euro spare part that stops a machine has the priority of the machine\n\n\nA task is as important as what waits for it."
+  },
+  {
+    "objectID": "lectures/lec_04_presentation.html#with-dependencies-there-is-often-no-quick-recipe",
+    "href": "lectures/lec_04_presentation.html#with-dependencies-there-is-often-no-quick-recipe",
+    "title": "Lecture IV: Scheduling",
+    "section": "With dependencies, there is often no quick recipe",
+    "text": "With dependencies, there is often no quick recipe\n\nFor deadlines, waiting time and value, sorting is enough\nAdd dependencies, and for many goals nobody knows a fast way to find the best plan\nIn practice: good rules of thumb, or software that searches for a good plan\n\n\nA good plan now beats a perfect plan too late.\n\nIn computer science terms these problems are NP-hard: no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#interruptions-new-tasks-arrive-while-you-work",
     "href": "lectures/lec_04_presentation.html#interruptions-new-tasks-arrive-while-you-work",
     "title": "Lecture IV: Scheduling",
     "section": "Interruptions: new tasks arrive while you work",
-    "text": "Interruptions: new tasks arrive while you work\n\nIn reality we cannot predict the future\nNew tasks arrive while we work\nLet’s look at this for the earliest due date objective\n\n\nQuick reminder: an earliest due date is a specific point in time by which a task must be completed. Under this objective, we want to minimize the maximum delay. If we have a deadline, we might need to meet it even when new tasks come in."
+    "text": "Interruptions: new tasks arrive while you work\n\nIn reality we cannot predict the future\nNew tasks arrive while we work\nWe look at it with our first goal: don’t be too late\n\n\nQuick reminder: an earliest due date is a specific point in time by which a task must be completed. Under this goal, we want to keep the worst delay as small as possible. If we have a deadline, we might need to meet it even when new tasks come in."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#a-morning-with-seven-tasks",
     "href": "lectures/lec_04_presentation.html#a-morning-with-seven-tasks",
     "title": "Lecture IV: Scheduling",
     "section": "A morning with seven tasks",
-    "text": "A morning with seven tasks\n8:00-12:00 Schedule, tasks arrive during the morning:\nTask           Arrives  Duration  Deadline\nEmail A         8:00    20min      9:00\nCreate PPT      8:00    60min     10:50\nInvestor call   8:30    10min      9:00\nEmail B         8:40    30min     10:20\nLiquidity       9:00    40min     11:00\nEmail C         9:00    20min     11:20\nEmail D         9:20    40min     10:00\n\nQuestion: How would you start, if the goal is to avoid being late?"
+    "text": "A morning with seven tasks\nIt is 8:00. These tasks arrive during the morning:\nTask              Arrives  Duration  Deadline\nEmail A            8:00    20min      9:00\nPresentation       8:00    60min     10:50\nInvestor call      8:30    10min      9:00\nEmail B            8:40    30min     10:20\nLiquidity report   9:00    40min     11:00\nEmail C            9:00    20min     11:20\nEmail D            9:20    40min     10:00\n\nQuestion: How would you start, if the goal is to avoid being late?\n\nAnswer: With Email A. At 8:00 only Email A and the presentation are there, and Email A has the earlier deadline, 9:00. We cannot plan the whole morning in advance, because we do not know yet what arrives later."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#edd-in-real-time-switch-only-for-an-earlier-deadline",
     "href": "lectures/lec_04_presentation.html#edd-in-real-time-switch-only-for-an-earlier-deadline",
     "title": "Lecture IV: Scheduling",
     "section": "EDD in real time: switch only for an earlier deadline",
-    "text": "EDD in real time: switch only for an earlier deadline\nRule:\n\nAlways work on the task with the earliest deadline\nA new task with an earlier deadline interrupts the current one\nOtherwise, stick to the current task\n\n\nEqual deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task."
+    "text": "EDD in real time: switch only for an earlier deadline\nRule:\n\nAlways work on the task with the earliest deadline\nA new task with an earlier deadline interrupts the current one\nOtherwise, stick to the current task\n\n\nThis works for any goal: switch only if the new task beats the current one.\n\nEqual deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#the-real-time-edd-schedule",
     "href": "lectures/lec_04_presentation.html#the-real-time-edd-schedule",
     "title": "Lecture IV: Scheduling",
     "section": "The real-time EDD schedule",
-    "text": "The real-time EDD schedule\n\n\n\n\n\n\n\n\n\nGrey line: arrival, red mark: deadline.\n\nQuestion: What’s the maximum delay with this schedule?"
+    "text": "The real-time EDD schedule\n\n\n\n\n\n\n\n\n\nGrey line: arrival, red mark: deadline.\n\nQuestion: What is the worst delay with this plan?\n\n\n20 minutes, for the liquidity report and Email C.\n\n\nNo plan does better here: there is simply more work than time.\n\nAnswer: 20 minutes. The liquidity report finishes at 11:20 with a deadline of 11:00, and Email C finishes at 11:40 with a deadline of 11:20. Everything else is on time, Email D exactly at 10:00. The presentation is interrupted twice, so it is done in three pieces, and still finishes at 10:40, before its deadline."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#same-morning-new-goal-as-little-waiting-as-possible",
-    "href": "lectures/lec_04_presentation.html#same-morning-new-goal-as-little-waiting-as-possible",
+    "objectID": "lectures/lec_04_presentation.html#every-switch-costs",
+    "href": "lectures/lec_04_presentation.html#every-switch-costs",
     "title": "Lecture IV: Scheduling",
-    "section": "Same morning, new goal: as little waiting as possible",
-    "text": "Same morning, new goal: as little waiting as possible\nQuestion: How would you start here?\n\nQuick reminder: shortest processing time picks the task with the shortest duration. Under this objective, we want to minimize the total waiting time."
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#spt-in-real-time-switch-only-for-a-shorter-task",
-    "href": "lectures/lec_04_presentation.html#spt-in-real-time-switch-only-for-a-shorter-task",
-    "title": "Lecture IV: Scheduling",
-    "section": "SPT in real time: switch only for a shorter task",
-    "text": "SPT in real time: switch only for a shorter task\nRule:\n\nAlways work on the task with the shortest duration\nA new task that is shorter interrupts the current one\nOtherwise, stick to the current task\n\n\nEqual duration: if a new task has the same duration as the current task, you can choose either. But because of the cost of context switching, you should again stick with the current task."
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#the-real-time-spt-schedule",
-    "href": "lectures/lec_04_presentation.html#the-real-time-spt-schedule",
-    "title": "Lecture IV: Scheduling",
-    "section": "The real-time SPT schedule",
-    "text": "The real-time SPT schedule\n\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#the-real-time-spt-schedule-1",
-    "href": "lectures/lec_04_presentation.html#the-real-time-spt-schedule-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "The real-time SPT schedule",
-    "text": "The real-time SPT schedule\n\n\n\n\n\n\n\n\n\nTotal waiting time: 260 minutes"
+    "section": "Every switch costs",
+    "text": "Every switch costs\n\nEvery time you switch tasks, you clear your desk for three books and set it up again\nThe switch itself produces nothing\nSwitch often enough, and switching is all you do\n\n\nBack to the desk from Lecture III: the three books on the desk are what we have in mind for the current task. A switch means putting them back and fetching the books for the next task. The book calls this a context switch, and its cost is the time spent on the switch itself."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#thrashing-switching-so-much-that-nothing-gets-done",
     "href": "lectures/lec_04_presentation.html#thrashing-switching-so-much-that-nothing-gets-done",
     "title": "Lecture IV: Scheduling",
     "section": "Thrashing: switching so much that nothing gets done",
-    "text": "Thrashing: switching so much that nothing gets done\n\nExcessive context switching\nOrganization overhead exceeds productivity\nMaximum activity, minimum output\n\n\nQuestion: Have you ever experienced this?"
+    "text": "Thrashing: switching so much that nothing gets done\n\nYou switch tasks all the time\nNothing gets finished\nStress goes up, quality goes down\n\n\nQuestion: Have you ever experienced this?\n\nAnswer: Open question, most say yes. Typical examples: exam week with several group chats open, or a workday that is only answering messages. Thrashing is the state in which the overhead of organizing and switching exceeds the productive work: maximum activity, minimum output."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#warning-signs-of-thrashing",
-    "href": "lectures/lec_04_presentation.html#warning-signs-of-thrashing",
+    "objectID": "lectures/lec_04_presentation.html#bundle-your-interruptions",
+    "href": "lectures/lec_04_presentation.html#bundle-your-interruptions",
     "title": "Lecture IV: Scheduling",
-    "section": "Warning signs of thrashing",
-    "text": "Warning signs of thrashing\n\nConstant task switching\nNothing getting completed\nIncreasing stress levels\nDeclining quality\n\n\nQuestion: Any ideas how to prevent this?"
+    "section": "Bundle your interruptions",
+    "text": "Bundle your interruptions\n\nYou: check email and messages at set times, not as they arrive\nCompanies: one weekly approval round instead of requests at any time\nHow fast must you respond? It is rarely “immediately”\nToo much on the list? Say no or hand over\n\n\nCollecting interruptions and handling them in one go is called interrupt coalescing in computing. Long-term rules: a threshold for rejecting or delegating tasks, simplified organization systems, minimum work period rules, reduced reactivity requirements. Today’s tactics: time blocking, focus periods, task batching, priority freezes."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#preventing-thrashing-long-term-rules",
-    "href": "lectures/lec_04_presentation.html#preventing-thrashing-long-term-rules",
+    "objectID": "lectures/lec_04_presentation.html#which-rule-when",
+    "href": "lectures/lec_04_presentation.html#which-rule-when",
     "title": "Lecture IV: Scheduling",
-    "section": "Preventing thrashing: long-term rules",
-    "text": "Preventing thrashing: long-term rules\n\nTask rejection/delegation threshold\nSimplified organization systems\nMinimum work period rules\nReduced reactivity requirements"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#preventing-thrashing-todays-tactics",
-    "href": "lectures/lec_04_presentation.html#preventing-thrashing-todays-tactics",
-    "title": "Lecture IV: Scheduling",
-    "section": "Preventing thrashing: today’s tactics",
-    "text": "Preventing thrashing: today’s tactics\n\nTime blocking\nFocus periods\nTask batching\nPriority freezes\n\n\nQuestion: What strategies have worked for you?"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#how-to-use-this-starting-today",
-    "href": "lectures/lec_04_presentation.html#how-to-use-this-starting-today",
-    "title": "Lecture IV: Scheduling",
-    "section": "How to use this starting today",
-    "text": "How to use this starting today\n\nDaily planning: SPT for your to-do list, less waiting\nProject management: EDD when deadlines matter\nTeam coordination: Johnson’s rule for two-stage processes\nTime blocking: prevent thrashing"
-  },
-  {
-    "objectID": "lectures/lec_04_presentation.html#real-life-dependencies-interruptions-and-thrashing-1",
-    "href": "lectures/lec_04_presentation.html#real-life-dependencies-interruptions-and-thrashing-1",
-    "title": "Lecture IV: Scheduling",
-    "section": "Real life: dependencies, interruptions and thrashing",
-    "text": "Real life: dependencies, interruptions and thrashing\n\nWhat we covered\nDependencies make planning harder, and constant switching eats up your time. Protect blocks of focused work."
+    "section": "Which rule when?",
+    "text": "Which rule when?\n\n\n\nSituation\nRule\n\n\n\n\nWork in two steps\nJohnson: quick first step early, quick second step late\n\n\nDeadlines count\nEarliest due date first\n\n\nPeople are waiting\nShortest task first\n\n\nTasks differ in value\nHighest value per minute first\n\n\nOne task blocks another\nThe blocker gets the priority of what waits for it\n\n\nNew tasks keep arriving\nSwitch only for a better task, bundle the rest\n\n\n\n\nUrgent, quick or important? It depends on your goal."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#what-we-covered",
@@ -7002,11 +6678,11 @@
     "text": "Any questions\nso far?"
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#after-the-break-scheduling",
-    "href": "lectures/lec_04_presentation.html#after-the-break-scheduling",
+    "objectID": "lectures/lec_04_presentation.html#after-the-break-dictionaries-and-dataframes",
+    "href": "lectures/lec_04_presentation.html#after-the-break-dictionaries-and-dataframes",
     "title": "Lecture IV: Scheduling",
-    "section": "After the break: Scheduling",
-    "text": "After the break: Scheduling\n\nProgramming session in our new notebooks\nToday’s rules in code: dictionaries and DataFrames\nDifferent scheduling algorithms applied to problems\n\n\nKey takeaways: scheduling algorithms provide optimal solutions to time management problems; different objectives require different algorithms; dependencies and constraints add complexity but have algorithmic solutions; thrashing prevention is crucial for productivity; these principles directly translate to programming and system design.\nThat’s it for scheduling! Let’s have a short break and then continue with our fourth Python programming session."
+    "section": "After the break: dictionaries and DataFrames",
+    "text": "After the break: dictionaries and DataFrames\n\nProgramming session in our new notebooks\nToday’s rules in code: dictionaries and DataFrames\nDifferent scheduling algorithms applied to problems\n\n\nThat’s it for scheduling! Let’s have a short break and then continue with our fourth Python programming session."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#interesting-literature-to-start",

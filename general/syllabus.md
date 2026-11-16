@@ -43,7 +43,7 @@ We were rather ambitious in the design of the course in the course module, thus 
 
 <span class="entry-meta">Lecture IV</span>
 
-- Task scheduling algorithms (Johnson's rule, EDD, SPT, Lawler)
+- Task scheduling algorithms (Johnson's rule, EDD, SPT)
 - Different objectives: deadlines, waiting time, priorities and dependencies
 - Real-time scheduling and thrashing
 - Programming: Implementing scheduling algorithms with dictionaries and DataFrames

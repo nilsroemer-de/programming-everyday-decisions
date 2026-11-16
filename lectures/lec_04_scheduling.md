@@ -13,10 +13,6 @@ format:
 ---
 
 
-<script  src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script  src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link  href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet" />
-
 ## Today in one sentence
 
 <span class="statement">There is no single best order for your tasks: first decide what you want to achieve, and the right rule follows.</span>
@@ -33,95 +29,110 @@ Monday morning, ten tasks on your list: where do you start? Companies face the s
 
 # <span class="flow">The basics: when order matters, and when it doesn't</span>
 
+## Ten tasks, one day: where do you start?
+
+<span class="question">Question:</span> **How do you decide?**
+
+- With the most urgent one
+- With the quickest one
+- With the most important one
+
+Keep your answer in mind. We come back to it.
+
 ## Four loads of laundry, one washer, one dryer
 
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-3-output-1.png" width="1321" height="451" />
+Every load is washed first, then dried.
+
+Each machine handles one load at a time.
+
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-3-output-1.png" width="1321" height="361" />
 
 ## Goal: all laundry done as early as possible
 
 ``` python
-Task  Washing  Drying
+Load  Washing  Drying
   A    40min   60min
   B    30min   80min
   C    60min   20min
   D    50min   60min
 ```
 
-<span class="highlight">Goal:</span> **Minimize total time for washing and drying all loads**
+<span class="highlight">Goal:</span> **Finish all four loads as early as possible**
 
-<span class="question">Question:</span> **An idea how to solve this?**
+<span class="question">Question:</span> **In which order would you wash?**
 
-## Johnson's rule: shortest job first or last
+## Johnson's rule
 
-<span class="task">Rule:</span> To find the <span class="highlight">optimal solution</span>:
+<span class="task">Rule:</span>[^1]
 
-1.  Find the job with **shortest duration**:
-    - If on **Machine 1** → Schedule First
-    - If on **Machine 2** → Schedule Last
-    - If **equal** → Choose randomly
-2.  Remove job from list and **repeat**
+1.  Find the **shortest time** in the whole table
+2.  Is it a **wash**? Put that load as **early** as possible
+3.  Is it a **dry**? Put that load as **late** as possible
+4.  Cross out the load and **repeat**
 
-## Applying Johnson's Rule
+In words: short washes go first, so the dryer can start early. Short dries go last, so little is left to do once the washer has finished.
+
+## Applying Johnson's rule
 
 ``` python
-Task  Washing  Drying  Schedule
+Load  Washing  Drying  Schedule
   A    40min   60min
   B    30min   80min
   C    60min   20min
   D    50min   60min
 ```
 
-<span class="question">Question:</span> **What's the first scheduled task?**
+<span class="question">Question:</span> **Which load do we place first, and where?**
 
-## Applying Johnson's Rule
+## Applying Johnson's rule
 
 ``` python
-Task  Washing  Drying  Schedule
+Load  Washing  Drying  Schedule
   A    40min   60min
   B    30min   80min
   C    60min   20min        4
   D    50min   60min
 ```
 
-- **In Task C**, the dryer is the **shortest** task.
-- It is on **Machine 2** → **Schedule Last**
+- The shortest time is C's dry, 20 minutes
+- It is a dry, so C goes last
 
-<span class="question">Question:</span> **What's the next task?**
+<span class="question">Question:</span> **Which load is next?**
 
-## Applying Johnson's Rule
+## Applying Johnson's rule
 
 ``` python
-Task  Washing  Drying  Schedule
+Load  Washing  Drying  Schedule
   A    40min   60min
   B    30min   80min        1
   C    60min   20min        4
   D    50min   60min
 ```
 
-- **In Task B**, the washing machine is the **shortest** task.
-- It is on **Machine 1** → **Schedule First**
+- The shortest time is B's wash, 30 minutes
+- It is a wash, so B goes first
 
-<span class="question">Question:</span> **What's the next task?**
+<span class="question">Question:</span> **Which load is next?**
 
-## Applying Johnson's Rule
+## Applying Johnson's rule
 
 ``` python
-Task  Washing  Drying  Schedule
+Load  Washing  Drying  Schedule
   A    40min   60min        2
   B    30min   80min        1
   C    60min   20min        4
   D    50min   60min
 ```
 
-- **In Task A**, the washing machine is the **shortest** task.
-- It is on **Machine 1** → **Schedule Second**
+- The shortest time is A's wash, 40 minutes
+- It is a wash, so A goes second
 
-<span class="highlight">Now, we only have one task left!</span>
+<span class="highlight">Now, we only have one load left!</span>
 
-## Applying Johnson's Rule
+## Applying Johnson's rule
 
 ``` python
-Task  Washing  Drying  Schedule
+Load  Washing  Drying  Schedule
   A    40min   60min        2
   B    30min   80min        1
   C    60min   20min        4
@@ -130,102 +141,81 @@ Task  Washing  Drying  Schedule
 
 **Final sequence: <span class="highlight">B A D C</span>**
 
-## Optimal Solution
+## The best order takes 4 hours 10 minutes
 
-**Optimal Solution: <span class="highlight">B A D C</span>**
+**Best order: <span class="highlight">B A D C</span>**
 
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-4-output-1.png" width="1471" height="361" />
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-4-output-1.png" width="1471" height="243" />
 
-**Total time:** 4 hours 10 minutes
+## How to read this chart
 
-<span class="question">Question:</span> **Is there a worse solution?**
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-5-output-1.png" width="1471" height="176" />
 
-## Suboptimal Solution
+- One row per machine
+- One bar per load
+- Time runs from left to right
+- It is called a **Gantt chart**, after Henry Gantt, who drew such charts around 1910 for factory planning.
 
-**Suboptimal Solution: <span class="highlight">C D A B</span>**
+<span class="question">Question:</span> **How much worse can it get?**
 
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-5-output-1.png" width="1475" height="361" />
+## A bad order takes one hour longer
 
-**Total time:** 5 hours 10 minutes
+**A bad order: <span class="highlight">C D A B</span>**
 
-<span class="question">Question:</span> **What's the difference?**
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-6-output-1.png" width="1475" height="243" />
 
-## <span class="invert-font">Industrialization</span>
+<span class="question">Question:</span> **Why is this order worse?**
 
-- First systematic visualization by Frederick Taylor
-- Henry Gantt develops the Gantt Chart around 1910
-- Key tool of industrial production planning
-- But no scheduling theory yet!
+The dryer waits a full hour for the first wash, and the longest dry comes at the very end.
 
-<span class="highlight">Question:</span> **Who knows what a Gantt Chart is?**
+## Johnson's rule beyond laundry
 
-## <span class="invert-font">Modern Scheduling Theory</span>
+- Any work in two steps, where the second step waits for the first
+- **You:** when cooking, start with what is quick to prepare and long in the oven
+- **Companies:** a report goes from the analyst to the reviewer. Start with the report that is quick to write and long to review
 
-- RAND Corporation founded (1948)
-- Selmer Johnson publishes Johnson's Rule in 1954
-- Beginning of modern scheduling theory
-- Many more algorithms and methods developed since
+Order the work so that the second step never stands idle.
 
-## Scheduling is everywhere in professional practice
+## Scheduling is everywhere
 
-- **Project management:** task dependencies, resource allocation
-- **Software:** CPU, threads, job queues
-- **Operations:** production, supply chain
-- **Healthcare:** patients, surgeries, staff
-- **Transportation:** routes, crews, maintenance
+<span class="question">Question:</span> **Where do companies schedule?**
 
-## Tasks differ in time and in relationships
+- **Projects:** which task first, who works on what
+- **Production:** which order on the line
+- **Hospitals:** patients, surgeries, staff
+- **Transport:** routes, crews, maintenance
+- **Software:** which program gets the processor
 
-<span class="question">Question:</span> **What properties can scheduled tasks have?**
+## What do we know about a task?
 
-<figure class=''>
+- **Duration:** how long does it take?
+- **Deadline:** when is it due?
+- **Value:** how much is it worth?
+- **Dependency:** what must be done before?
 
-<pre class="mermaid mermaid-js">mindmap
-  root((Task Properties))
-    Time-Related
-      Time windows
-      Deadlines
-      Start constraints
-      Deterministic durations
-      Variable durations
-      Stochastic durations
-    Relationship-Based
-      Predecessor relationships
-      Successor relationships
-      Dependencies
-      Priority levels
-      Resource constraints
-</pre>
-
-</figure>
-
-## Which tasks do you deal with?
-
-<span class="question">Question:</span> **What types of tasks do you deal with most often?**
+Which of these we look at depends on our goal.
 
 ## One person instead of two machines
 
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-6-output-1.png" width="871" height="391" />
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-7-output-1.png" width="871" height="391" />
 
 <span class="question">Question:</span> **What is different from before?**
 
-## For total time alone, the order doesn't matter
+## One person: does the order matter?
+
+<span class="question">Question:</span> **Does the order change how long we need?**
 
 > **Note**
 >
 > With one person and no deadlines, every order takes the same **total time**.
 
-<span class="question">Question:</span> **But is it that simple?**
+<span class="question">Question:</span> **So the order is irrelevant?**
 
 > **Important**
 >
-> Order becomes crucial with **deadlines, priorities and dependencies**.
+> No. Order becomes crucial with **deadlines, priorities and dependencies**.
 
-## The basics: when order matters, and when it doesn't
-
-<span class="eyebrow">What we covered</span>
-
-<span class="statement">Sometimes the order of tasks changes the result, sometimes it doesn't. Knowing which saves time.</span>
+Reordering your to-do list does not make it shorter. Order only matters once you say what you want.
 
 # <span class="flow">Your goal decides the rule: deadlines, waiting time, value</span>
 
@@ -235,7 +225,17 @@ Task  Washing  Drying  Schedule
 2.  <span class="roadmap-item current">Your goal decides the rule: deadlines, waiting time, value</span>
 3.  <span class="roadmap-item future">Real life: dependencies, interruptions and thrashing</span>
 
-## Goal 1: nobody waits too long past the deadline
+## What do you want?
+
+1.  Not be late
+2.  Wait as little as possible
+3.  Deliver the most value
+
+Each goal has its own rule.
+
+Companies know this conflict: sales wants every order on time, production wants as much output as possible.
+
+## Goal 1: don't be too late
 
 Tasks with individual deadlines:
 
@@ -248,9 +248,11 @@ Task  Duration  Deadline
   E    30min    210min
 ```
 
-<span class="highlight">Goal:</span> **Minimize maximum deadline violation**
+All times count from now: task D is due in 70 minutes.
 
-<span class="question">Question:</span> **An idea how to solve this?**
+<span class="highlight">Goal:</span> **Keep the worst delay as small as possible**
+
+<span class="question">Question:</span> **In which order would you work?**
 
 ## Earliest Due Date: sort by deadline
 
@@ -278,27 +280,35 @@ Task  Duration  Deadline
 
 ## The EDD schedule
 
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-7-output-1.png" width="1471" height="421" />
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-8-output-1.png" width="1471" height="271" />
 
 Red marks: deadlines.
 
-<span class="question">Question:</span> **What's the maximum delay here?**
+<span class="question">Question:</span> **What is the worst delay here?**
+
+30 minutes, for task C. Task A is 10 minutes late.
+
+In the order A to E, task D would be 110 minutes late.
+
+## Earliest due date in real life
+
+- **You:** work on assignments in the order they are due
+- **Companies:** produce customer orders in the order of the promised delivery date
+- **Watch out:** the rule ignores how long a task takes and how important it is
 
 ## Goal 2: as little waiting as possible
 
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-8-output-1.png" width="721" height="481" />
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-9-output-1.png" width="721" height="481" />
 
-Instead of deadlines, we now have **processing times.**
+No deadlines this time. For each task, someone is waiting.
 
-<span class="fragment"><span class="highlight">Goal:</span> Min. total waiting time</span>
+<span class="fragment"><span class="highlight">Goal:</span> Keep the total waiting time as small as possible</span>
 
-<span class="fragment"><span class="question">Question:</span> **Any ideas?**</span>
-
-<span class="fragment"><span class="task">Rule:</span> Always schedule the shortest remaining task</span>
+<span class="fragment"><span class="question">Question:</span> **Which task first?**</span>
 
 ## Shortest Processing Time: shortest task first
 
-<span class="task">Rule:</span> Always schedule the **shortest remaining task**. Choose random if multiple tasks are tied.
+<span class="task">Rule:</span> Always do the **shortest remaining task** next (**SPT**). If two are equally short, pick either.
 
 ``` python
 Task  Duration  Schedule
@@ -309,11 +319,11 @@ Task  Duration  Schedule
   E    30min
 ```
 
-<span class="question">Question:</span> **What's the order of scheduled tasks?**
+<span class="question">Question:</span> **In which order do we work?**
 
 ## Shortest Processing Time: shortest task first
 
-<span class="task">Rule:</span> Always schedule the **shortest remaining task**. Choose random if multiple tasks are tied.
+<span class="task">Rule:</span> Always do the **shortest remaining task** next (**SPT**). If two are equally short, pick either.
 
 ``` python
 Task  Duration  Schedule
@@ -328,7 +338,7 @@ Task  Duration  Schedule
 
 ## The SPT schedule
 
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-9-output-1.png" width="1471" height="421" />
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-10-output-1.png" width="1471" height="421" />
 
 <span class="question">Question:</span> **Where can we see the waiting time?**
 
@@ -336,11 +346,18 @@ Task  Duration  Schedule
 
 <span class="highlight">Total waiting time:</span> 340 minutes
 
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-10-output-1.png" width="1471" height="421" />
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-11-output-1.png" width="1471" height="316" />
 
 Grey: time a task waits before it starts.
 
-<span class="question">Question:</span> **Would this be applicable for your work?**
+The other way round, longest task first: 500 minutes.
+
+## Shortest task first in real life
+
+- **You:** if it takes less than two minutes, do it now
+- **Companies:** a help desk that answers quick requests first makes the average customer wait less
+- **Why it works:** a short task makes everyone behind it wait only a little
+- **Watch out:** the big task keeps getting pushed back
 
 ## Goal 3: deliver the most value
 
@@ -359,11 +376,11 @@ Task  Duration  Revenue
   I    50min    €90
 ```
 
-<span class="question">Question:</span> **Any ideas how to approach this?**
+<span class="question">Question:</span> **Which task first?**
 
 ## Weighted SPT: highest value per minute first
 
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
+<span class="task">Rule:</span> Highest revenue per minute first
 
 ``` python
 Task  Duration  Revenue  Revenue/Min  Schedule
@@ -378,45 +395,13 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8
 ```
 
-<span class="question">Question:</span> **What's the order of scheduled tasks?**
+Revenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes = 12 euros per minute.
+
+<span class="question">Question:</span> **In which order do we work?**
 
 ## Weighted SPT: highest value per minute first
 
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
-
-``` python
-Task  Duration  Revenue  Revenue/Min  Schedule
-  A    20min    €240     12.0           1
-  B    30min    €200      6.7
-  C    60min    €120      2.0
-  D    50min    €70       1.4
-  E    30min    €130      4.3
-  F    40min    €120      3.0
-  G    20min    €100      5.0
-  H    70min    €110      1.6
-  I    50min    €90       1.8
-```
-
-## Weighted SPT: highest value per minute first
-
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
-
-``` python
-Task  Duration  Revenue  Revenue/Min  Schedule
-  A    20min    €240     12.0           1
-  B    30min    €200      6.7           2
-  C    60min    €120      2.0
-  D    50min    €70       1.4
-  E    30min    €130      4.3
-  F    40min    €120      3.0
-  G    20min    €100      5.0
-  H    70min    €110      1.6
-  I    50min    €90       1.8
-```
-
-## Weighted SPT: highest value per minute first
-
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
+<span class="task">Rule:</span> Highest revenue per minute first
 
 ``` python
 Task  Duration  Revenue  Revenue/Min  Schedule
@@ -433,92 +418,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
 
 ## Weighted SPT: highest value per minute first
 
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
-
-``` python
-Task  Duration  Revenue  Revenue/Min  Schedule
-  A    20min    €240     12.0           1
-  B    30min    €200      6.7           2
-  C    60min    €120      2.0
-  D    50min    €70       1.4
-  E    30min    €130      4.3           4
-  F    40min    €120      3.0
-  G    20min    €100      5.0           3
-  H    70min    €110      1.6
-  I    50min    €90       1.8
-```
-
-## Weighted SPT: highest value per minute first
-
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
-
-``` python
-Task  Duration  Revenue  Revenue/Min  Schedule
-  A    20min    €240     12.0           1
-  B    30min    €200      6.7           2
-  C    60min    €120      2.0
-  D    50min    €70       1.4
-  E    30min    €130      4.3           4
-  F    40min    €120      3.0           5
-  G    20min    €100      5.0           3
-  H    70min    €110      1.6
-  I    50min    €90       1.8
-```
-
-## Weighted SPT: highest value per minute first
-
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
-
-``` python
-Task  Duration  Revenue  Revenue/Min  Schedule
-  A    20min    €240     12.0           1
-  B    30min    €200      6.7           2
-  C    60min    €120      2.0           6
-  D    50min    €70       1.4
-  E    30min    €130      4.3           4
-  F    40min    €120      3.0           5
-  G    20min    €100      5.0           3
-  H    70min    €110      1.6
-  I    50min    €90       1.8
-```
-
-## Weighted SPT: highest value per minute first
-
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
-
-``` python
-Task  Duration  Revenue  Revenue/Min  Schedule
-  A    20min    €240     12.0           1
-  B    30min    €200      6.7           2
-  C    60min    €120      2.0           6
-  D    50min    €70       1.4
-  E    30min    €130      4.3           4
-  F    40min    €120      3.0           5
-  G    20min    €100      5.0           3
-  H    70min    €110      1.6
-  I    50min    €90       1.8           7
-```
-
-## Weighted SPT: highest value per minute first
-
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
-
-``` python
-Task  Duration  Revenue  Revenue/Min  Schedule
-  A    20min    €240     12.0           1
-  B    30min    €200      6.7           2
-  C    60min    €120      2.0           6
-  D    50min    €70       1.4
-  E    30min    €130      4.3           4
-  F    40min    €120      3.0           5
-  G    20min    €100      5.0           3
-  H    70min    €110      1.6           8
-  I    50min    €90       1.8           7
-```
-
-## Weighted SPT: highest value per minute first
-
-<span class="task">Rule:</span> Schedule by revenue per minute (descending)
+<span class="task">Rule:</span> Highest revenue per minute first
 
 ``` python
 Task  Duration  Revenue  Revenue/Min  Schedule
@@ -533,128 +433,14 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8           7
 ```
 
-> **Metric Priorities**
->
-> Without revenues, we can use the same approach with **metric priorities**!
+## Value per minute in real life
 
-## Deadlines with dependencies
+- **You:** before an exam, study first what brings the most points per hour
+- **Companies:** when machine time is scarce, produce the order that earns the most per machine hour
 
-<span class="question">Question:</span> **What was earliest due date again?**
+You may know this from cost accounting: contribution margin per unit of the bottleneck.
 
-- Sort the tasks by deadline
-- Now some tasks must **wait for a predecessor**
-
-``` python
-Task  Duration  Deadline  Predecessor
-  A    40min    110min    None
-  B    30min     90min    D
-  C    60min    150min    A
-  D    50min     70min    None
-  E    30min    210min    C
-```
-
-<span class="question">Question:</span> **Any ideas how to solve this?**
-
-## Lawler's algorithm: fill the schedule from the back
-
-<span class="task">Rule:</span> We can use **Lawler's Algorithm** (1968)
-
-1.  Consider all tasks <span class="highlight">without successors</span>
-2.  Choose the one with **latest deadline**
-3.  Schedule the task **last**
-4.  **Remove** it from the network and start again
-
-## Lawler's Applied
-
-``` python
-Task  Duration  Deadline  Predecessor Schedule
-  A    40min    110min    None
-  B    30min     90min    D
-  C    60min    150min    A
-  D    50min     70min    None
-  E    30min    210min    C
-```
-
-<span class="question">Question:</span> **What's the schedule?**
-
-## Lawler's Applied
-
-``` python
-Task  Duration  Deadline  Predecessor Schedule
-  A    40min    110min    None
-  B    30min     90min    D
-  C    60min    150min    A
-  D    50min     70min    None
-  E    30min    210min    C             5
-```
-
-## Lawler's Applied
-
-``` python
-Task  Duration  Deadline  Predecessor Schedule
-  A    40min    110min    None
-  B    30min     90min    D
-  C    60min    150min    A             4
-  D    50min     70min    None
-  E    30min    210min    C             5
-```
-
-## Lawler's Applied
-
-``` python
-Task  Duration  Deadline  Predecessor Schedule
-  A    40min    110min    None          3
-  B    30min     90min    D
-  C    60min    150min    A             4
-  D    50min     70min    None
-  E    30min    210min    C             5
-```
-
-## Lawler's Applied
-
-``` python
-Task  Duration  Deadline  Predecessor Schedule
-  A    40min    110min    None          3
-  B    30min     90min    D             2
-  C    60min    150min    A             4
-  D    50min     70min    None
-  E    30min    210min    C             5
-```
-
-## Lawler's Applied
-
-``` python
-Task  Duration  Deadline  Predecessor Schedule
-  A    40min    110min    None          3
-  B    30min     90min    D             2
-  C    60min    150min    A             4
-  D    50min     70min    None          1
-  E    30min    210min    C             5
-```
-
-> **Successor Tasks**
->
-> Note, how all tasks become tasks without successors at some point.
-
-## The Lawler schedule
-
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-11-output-1.png" width="1472" height="421" />
-
-The task in brackets must be finished first. Red marks: deadlines.
-
-<span class="question">Question:</span> **What's the maximum delay?**
-
-## Waiting time with dependencies has no fast exact solution
-
-- <span class="highlight">NP-hard</span>: no known algorithm solves it efficiently
-- True for **most scheduling problems**
-- In practice we use **heuristics**, good rules without a guarantee
-
-## Your goal decides the rule: deadlines, waiting time, value
-
-<span class="eyebrow">What we covered</span>
-
-<span class="statement">Each goal has its own simple rule: earliest deadline first to avoid being late, shortest task first to cut waiting, highest value per minute first to maximize what you deliver.</span>
+No money involved? Rate the importance from 1 to 10 instead.
 
 # <span class="flow">Real life: dependencies, interruptions and thrashing</span>
 
@@ -663,6 +449,14 @@ The task in brackets must be finished first. Red marks: deadlines.
 1.  <span class="roadmap-item done">The basics: when order matters, and when it doesn't</span>
 2.  <span class="roadmap-item done">Your goal decides the rule: deadlines, waiting time, value</span>
 3.  <span class="roadmap-item current">Real life: dependencies, interruptions and thrashing</span>
+
+## A spacecraft that kept restarting
+
+- In July 1997, NASA's Pathfinder landed on Mars
+- Then its computer started to restart again and again
+- The cause: an important task was waiting for an unimportant one[^2]
+
+<span class="question">Question:</span> **How can that happen?**
 
 ## Priority inversion: an important task waits for an unimportant one
 
@@ -679,20 +473,17 @@ Task  Duration  Priority
 
 <img src="lec_04_scheduling_files/figure-markdown_strict/cell-12-output-1.png" width="751" height="166" />
 
-<span class="fragment">**Challenge:**
-High-priority tasks depend on low-priority tasks.</span>
+- B is the most important task, but it needs A first
+- A has the lowest priority, so C, D and E go first
+- B waits 110 minutes for its turn
 
-<span class="fragment"><span class="highlight">Risk:</span> Priority inversion can lead to significant delays!</span>
+<span class="fragment center"><img src="../images/bg/lec04-priority-inversion.jpg" style="width:50.0%" /></span>
 
-<span class="fragment center"><img src="../images/bg/lec04-priority-inversion.jpg" style="width:90.0%" /></span>
+## How do we prevent this?
 
-## Priority inheritance: the blocker borrows the priority
+<span class="question">Question:</span> **What should happen with task A?**
 
-<span class="question">Question:</span> **How do we prevent the inversion?**
-
-- <span class="task">Rule:</span> Tasks inherit priority from their dependents.
-- A inherits priority 1 from B and is done first
-- B can start right after A, C to E follow
+<span class="task">Rule:</span> A task takes over the priority of the task that waits for it
 
 ``` python
 Task  Duration  Priority
@@ -703,25 +494,44 @@ Task  Duration  Priority
   E    30min     2
 ```
 
+B now starts after 20 minutes instead of 110
+
+This is called **priority inheritance**. It is how NASA fixed Pathfinder, from Earth.
+
+## Priority inheritance in real life
+
+- **You:** shopping has the priority of the dinner it is for
+- **Companies:** a 5 euro spare part that stops a machine has the priority of the machine
+
+A task is as important as what waits for it.
+
+## With dependencies, there is often no quick recipe
+
+- For deadlines, waiting time and value, sorting is enough
+- Add dependencies, and for many goals nobody knows a fast way to find the best plan
+- In practice: good rules of thumb, or software that searches for a good plan
+
+A good plan now beats a perfect plan too late.
+
 ## Interruptions: new tasks arrive while you work
 
 - In reality we **cannot predict the future**
 - New tasks arrive **while we work**
-- Let's look at this for the <span class="highlight">earliest due date objective</span>
+- We look at it with our first goal: <span class="highlight">don't be too late</span>
 
 ## A morning with seven tasks
 
-8:00-12:00 Schedule, tasks arrive during the morning:
+It is 8:00. These tasks arrive during the morning:
 
 ``` python
-Task           Arrives  Duration  Deadline
-Email A         8:00    20min      9:00
-Create PPT      8:00    60min     10:50
-Investor call   8:30    10min      9:00
-Email B         8:40    30min     10:20
-Liquidity       9:00    40min     11:00
-Email C         9:00    20min     11:20
-Email D         9:20    40min     10:00
+Task              Arrives  Duration  Deadline
+Email A            8:00    20min      9:00
+Presentation       8:00    60min     10:50
+Investor call      8:30    10min      9:00
+Email B            8:40    30min     10:20
+Liquidity report   9:00    40min     11:00
+Email C            9:00    20min     11:20
+Email D            9:20    40min     10:00
 ```
 
 <span class="question">Question:</span> **How would you start, if the goal is to avoid being late?**
@@ -734,83 +544,53 @@ Email D         9:20    40min     10:00
 - A new task with an **earlier** deadline interrupts the current one
 - Otherwise, stick to the current task
 
+This works for any goal: switch only if the new task beats the current one.
+
 ## The real-time EDD schedule
 
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-13-output-1.png" width="1546" height="511" />
+<img src="lec_04_scheduling_files/figure-markdown_strict/cell-13-output-1.png" width="1544" height="286" />
 
 Grey line: arrival, red mark: deadline.
 
-<span class="question">Question:</span> **What's the maximum delay with this schedule?**
+<span class="question">Question:</span> **What is the worst delay with this plan?**
 
-## Same morning, new goal: as little waiting as possible
+20 minutes, for the liquidity report and Email C.
 
-<span class="question">Question:</span> **How would you start here?**
+No plan does better here: there is simply more work than time.
 
-## SPT in real time: switch only for a shorter task
+## Every switch costs
 
-<span class="task">Rule:</span>
-
-- Always work on the task with the **shortest duration**
-- A new task that is **shorter** interrupts the current one
-- Otherwise, stick to the current task
-
-## The real-time SPT schedule
-
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-14-output-1.png" width="1546" height="511" />
-
-<span class="question">Question:</span> **Where can we see the waiting time?**
-
-## The real-time SPT schedule
-
-<img src="lec_04_scheduling_files/figure-markdown_strict/cell-15-output-1.png" width="1546" height="511" />
-
-<span class="highlight">Total waiting time:</span> 260 minutes
+- Every time you switch tasks, you clear your desk for three books and set it up again
+- The switch itself produces nothing
+- Switch often enough, and switching is all you do
 
 ## Thrashing: switching so much that nothing gets done
 
-- Excessive **context switching**
-- Organization <span class="highlight">overhead exceeds productivity</span>
-- Maximum activity, minimum output
+- You switch tasks all the time
+- Nothing gets finished
+- Stress goes up, quality goes down
 
 <span class="question">Question:</span> **Have you ever experienced this?**
 
-## Warning signs of thrashing
+## Bundle your interruptions
 
-- Constant **task switching**
-- **Nothing** getting completed
-- Increasing **stress levels**
-- Declining **quality**
+- **You:** check email and messages at set times, not as they arrive
+- **Companies:** one weekly approval round instead of requests at any time
+- **How fast must you respond?** It is rarely "immediately"
+- **Too much on the list?** Say no or hand over
 
-<span class="question">Question:</span> **Any ideas how to prevent this?**
+## Which rule when?
 
-## Preventing thrashing: long-term rules
+| Situation | Rule |
+|------------------------------------|------------------------------------|
+| Work in two steps | Johnson: quick first step early, quick second step late |
+| Deadlines count | Earliest due date first |
+| People are waiting | Shortest task first |
+| Tasks differ in value | Highest value per minute first |
+| One task blocks another | The blocker gets the priority of what waits for it |
+| New tasks keep arriving | Switch only for a better task, bundle the rest |
 
-1.  Task rejection/delegation threshold
-2.  Simplified organization systems
-3.  Minimum work period rules
-4.  Reduced reactivity requirements
-
-## Preventing thrashing: today's tactics
-
-1.  Time blocking
-2.  Focus periods
-3.  Task batching
-4.  Priority freezes
-
-<span class="question">Question:</span> **What strategies have worked for you?**
-
-## How to use this starting today
-
-- **Daily planning:** SPT for your to-do list, less waiting
-- **Project management:** EDD when deadlines matter
-- **Team coordination:** Johnson's rule for two-stage processes
-- **Time blocking:** prevent thrashing
-
-## Real life: dependencies, interruptions and thrashing
-
-<span class="eyebrow">What we covered</span>
-
-<span class="statement">Dependencies make planning harder, and constant switching eats up your time. Protect blocks of focused work.</span>
+Urgent, quick or important? It depends on your goal.
 
 ## What we covered
 
@@ -842,7 +622,7 @@ Any questions
 
 so far?
 
-## After the break: Scheduling
+## After the break: dictionaries and DataFrames
 
 - Programming session in our new notebooks
 - Today's rules in code: dictionaries and DataFrames
@@ -852,7 +632,7 @@ so far?
 
 ## Interesting literature to start
 
-- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^1]
+- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^3]
 
 ## Books on Programming
 
@@ -867,4 +647,8 @@ so far?
 
 For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.
 
-[^1]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
+[^1]: Johnson, S. M. (1954). Optimal two- and three-stage production schedules with setup times included. Naval Research Logistics Quarterly, 1(1). Johnson proved that this rule gives the best possible order.
+
+[^2]: Christian & Griffiths (2016), ch. 5.
+
+[^3]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
