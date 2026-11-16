@@ -6,6 +6,8 @@ Runde 1: Geprüft: alle Lectures, Tutorials, Website-Seiten (Startseite, Syllabu
 
 Prioritäten: **hoch** = fachlich falsch oder kaputt, **mittel** = veraltet oder inkonsistent, **niedrig** = Stil.
 
+Hinweis: Alle Einträge zu Lecture IV (`lec_04_scheduling.qmd`) beschreiben den Stand vor dem Rework vom 16.11.2026. Seitdem sind Lawler, Echtzeit-SPT und die Mindmap nicht mehr Teil der Lecture.
+
 ## 1. Direkte Korrekturen aus Runde 1 (committet)
 
 | Commit | Inhalt |
