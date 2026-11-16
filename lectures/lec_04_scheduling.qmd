@@ -127,7 +127,7 @@ Answer: Start with the loads that wash quickly, so the dryer can start early, an
 
 ## Johnson's rule
 
-[Rule:]{.task}
+[Rule:]{.task}[^johnson]
 
 1. Find the **shortest time** in the whole table
 2. Is it a **wash**? Put that load as **early** as possible
@@ -137,6 +137,8 @@ Answer: Start with the loads that wash quickly, so the dryer can start early, an
 . . .
 
 In words: short washes go first, so the dryer can start early. Short dries go last, so little is left to do once the washer has finished.
+
+[^johnson]: Johnson, S. M. (1954). Optimal two- and three-stage production schedules with setup times included. Naval Research Logistics Quarterly, 1(1). Johnson proved that this rule gives the best possible order.
 
 ## Applying Johnson's rule {auto-animate=true}
 
@@ -239,12 +241,29 @@ fig = johnson_gantt("BADC", wash, dry, end=330, height=1.8)
 plt.show()
 ```
 
+## How to read this chart
+
+```{python}
+#| echo: false
+fig = johnson_gantt("BADC", wash, dry, end=330, height=1.3)
+plt.show()
+```
+
+:::{.incremental}
+- One row per machine
+- One bar per load
+- Time runs from left to right
+- It is called a **Gantt chart**, after Henry Gantt, who drew such charts around 1910 for factory planning.
+:::
+
 . . .
 
 [Question:]{.question} **How much worse can it get?**
 
 ::: {.notes}
 Answer: One hour worse. The reverse order C, D, A, B takes 310 minutes instead of 250. Any order that starts with a long wash or ends with a long dry is worse.
+
+Frederick Taylor made the first systematic time studies, Gantt turned them into charts for factory planning. Gantt charts show who does what, and when. Johnson's rule from 1954, published at the RAND Corporation, was the first scheduling rule with a proof, and modern scheduling theory grew from there.
 :::
 
 ## A bad order takes one hour longer
@@ -280,34 +299,6 @@ Answer: The dryer idles for the first 60 minutes while C is washing, and B's 80-
 . . .
 
 Order the work so that the second step never stands idle.
-
-## [These charts are called Gantt charts]{.invert-font} {background-image="../images/bg/lec04-industrial.jpg"}
-
-::: {.invert-font}
-
-[Question:]{.question} **Who knows what a Gantt chart is?**
-
-:::
-
-. . .
-
-:::{.invert-font}
-
-:::{.incremental}
-- Henry Gantt developed them around 1910 for factory planning
-- They show who does what, and when
-- In 1954, Selmer Johnson proved that his laundry rule is the best possible
-- Modern scheduling theory starts here
-:::
-
-:::
-
-::: footer
-:::
-
-::: {.notes}
-Answer: A bar chart of tasks over time: one row per machine or person, one bar per task, so you can see who does what and when. The laundry charts we just saw are Gantt charts. Frederick Taylor made the first systematic time studies, Gantt turned them into charts for factory planning. Johnson's rule from 1954, published at the RAND Corporation, was the first scheduling rule with a proof, and modern scheduling theory grew from there.
-:::
 
 ## Scheduling is everywhere
 
@@ -529,7 +520,7 @@ Answer: Shortest task first. Every task that is done early stops waiting, and ev
 
 ## Shortest Processing Time: shortest task first {auto-animate=true}
 
-[Rule:]{.task} Always do the **shortest remaining task** next. If two are equally short, pick either.
+[Rule:]{.task} Always do the **shortest remaining task** next (**SPT**). If two are equally short, pick either.
 
 ```{.python}
 Task  Duration  Schedule
@@ -542,7 +533,7 @@ Task  Duration  Schedule
 
 . . .
 
-[Question:]{.question} **What's the order of scheduled tasks?**
+[Question:]{.question} **In which order do we work?**
 
 ::: {.notes}
 Answer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. Both orders give the same total waiting time.
@@ -550,7 +541,7 @@ Answer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. B
 
 ## Shortest Processing Time: shortest task first {auto-animate=true}
 
-[Rule:]{.task} Always do the **shortest remaining task** next. If two are equally short, pick either.
+[Rule:]{.task} Always do the **shortest remaining task** next (**SPT**). If two are equally short, pick either.
 
 ```{.python}
 Task  Duration  Schedule
@@ -655,7 +646,7 @@ Revenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes
 
 . . .
 
-[Question:]{.question} **What's the order of scheduled tasks?**
+[Question:]{.question} **In which order do we work?**
 
 ::: {.notes}
 Answer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down.
