@@ -254,9 +254,11 @@ All times count from now: task D is due in 70 minutes.
 
 <span class="question">Question:</span> **In which order would you work?**
 
-## Earliest Due Date: sort by deadline
+## Earliest deadline first
 
-<span class="task">Rule:</span> Sort the tasks by deadline (**EDD**).
+<span class="task">Rule:</span> Sort the tasks by deadline, earliest first.
+
+This rule is called **Earliest Due Date**, or EDD.
 
 ``` python
 Task  Duration  Deadline
@@ -278,7 +280,7 @@ Task  Duration  Deadline
 
 <span class="highlight">Let's visualize this!</span>
 
-## The EDD schedule
+## The plan: earliest deadline first
 
 <img src="lec_04_scheduling_files/figure-markdown_strict/cell-8-output-1.png" width="1471" height="271" />
 
@@ -306,9 +308,11 @@ No deadlines this time. For each task, someone is waiting.
 
 <span class="fragment"><span class="question">Question:</span> **Which task first?**</span>
 
-## Shortest Processing Time: shortest task first
+## Shortest task first
 
-<span class="task">Rule:</span> Always do the **shortest remaining task** next (**SPT**). If two are equally short, pick either.
+<span class="task">Rule:</span> Always do the **shortest remaining task** next. If two are equally short, pick either.
+
+This rule is called **Shortest Processing Time**, or SPT.
 
 ``` python
 Task  Duration  Schedule
@@ -321,9 +325,11 @@ Task  Duration  Schedule
 
 <span class="question">Question:</span> **In which order do we work?**
 
-## Shortest Processing Time: shortest task first
+## Shortest task first
 
-<span class="task">Rule:</span> Always do the **shortest remaining task** next (**SPT**). If two are equally short, pick either.
+<span class="task">Rule:</span> Always do the **shortest remaining task** next. If two are equally short, pick either.
+
+This rule is called **Shortest Processing Time**, or SPT.
 
 ``` python
 Task  Duration  Schedule
@@ -336,7 +342,7 @@ Task  Duration  Schedule
 
 **Final sequence: <span class="highlight">B E A D C</span> or <span class="highlight">E B A D C</span>**
 
-## The SPT schedule
+## The plan: shortest task first
 
 <img src="lec_04_scheduling_files/figure-markdown_strict/cell-10-output-1.png" width="1471" height="421" />
 
@@ -378,7 +384,7 @@ Task  Duration  Revenue
 
 <span class="question">Question:</span> **Which task first?**
 
-## Weighted SPT: highest value per minute first
+## Highest value per minute first
 
 <span class="task">Rule:</span> Highest revenue per minute first
 
@@ -399,7 +405,7 @@ Revenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes
 
 <span class="question">Question:</span> **In which order do we work?**
 
-## Weighted SPT: highest value per minute first
+## Highest value per minute first
 
 <span class="task">Rule:</span> Highest revenue per minute first
 
@@ -416,7 +422,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8
 ```
 
-## Weighted SPT: highest value per minute first
+## Highest value per minute first
 
 <span class="task">Rule:</span> Highest revenue per minute first
 
@@ -536,7 +542,7 @@ Email D            9:20    40min     10:00
 
 <span class="question">Question:</span> **How would you start, if the goal is to avoid being late?**
 
-## EDD in real time: switch only for an earlier deadline
+## In real time: switch only for an earlier deadline
 
 <span class="task">Rule:</span>
 
@@ -546,7 +552,7 @@ Email D            9:20    40min     10:00
 
 This works for any goal: switch only if the new task beats the current one.
 
-## The real-time EDD schedule
+## The morning, planned in real time
 
 <img src="lec_04_scheduling_files/figure-markdown_strict/cell-13-output-1.png" width="1544" height="286" />
 

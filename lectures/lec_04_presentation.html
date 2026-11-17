@@ -265,7 +265,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </div>
 <div class="fragment">
 <p>Each machine handles one load at a time.</p>
-<div id="2ab6c1ed" class="cell" data-execution_count="2">
+<div id="95abf7e0" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -440,7 +440,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <section id="the-best-order-takes-4-hours-10-minutes" class="slide level2">
 <h2>The best order takes 4 hours 10 minutes</h2>
 <p><strong>Best order: <span class="highlight">B A D C</span></strong></p>
-<div id="5974c9ca" class="cell" data-execution_count="3">
+<div id="356fe661" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -452,7 +452,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </section>
 <section id="how-to-read-this-chart" class="slide level2">
 <h2>How to read this chart</h2>
-<div id="3a72ce92" class="cell" data-execution_count="4">
+<div id="150b4823" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -488,7 +488,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <section id="a-bad-order-takes-one-hour-longer" class="slide level2">
 <h2>A bad order takes one hour longer</h2>
 <p><strong>A bad order: <span class="highlight">C D A B</span></strong></p>
-<div id="121274f6" class="cell" data-execution_count="5">
+<div id="3fa180bf" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -566,7 +566,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </section>
 <section id="one-person-instead-of-two-machines" class="slide level2">
 <h2>One person instead of two machines</h2>
-<div id="19776cdf" class="cell" data-execution_count="6">
+<div id="3c51f348" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -695,9 +695,10 @@ Dr.&nbsp;Nils Roemer, External Lecturer
       }</style></aside>
 </div>
 </section>
-<section id="earliest-due-date-sort-by-deadline" class="slide level2">
-<h2>Earliest Due Date: sort by deadline</h2>
-<p><span class="task">Rule:</span> Sort the tasks by deadline (<strong>EDD</strong>).</p>
+<section id="earliest-deadline-first" class="slide level2">
+<h2>Earliest deadline first</h2>
+<p><span class="task">Rule:</span> Sort the tasks by deadline, earliest first.</p>
+<p>This rule is called <strong>Earliest Due Date</strong>, or EDD.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>Task  Duration  Deadline</span>
 <span id="cb8-2"><a></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span></span>
 <span id="cb8-3"><a></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span></span>
@@ -716,9 +717,9 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <p><span class="highlight">Let’s visualize this!</span></p>
 </div>
 </section>
-<section id="the-edd-schedule" class="slide level2">
-<h2>The EDD schedule</h2>
-<div id="d0e06f02" class="cell" data-execution_count="7">
+<section id="the-plan-earliest-deadline-first" class="slide level2">
+<h2>The plan: earliest deadline first</h2>
+<div id="4c588a04" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -763,7 +764,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <h2>Goal 2: as little waiting as possible</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="9e6fd0c2" class="cell" data-execution_count="8">
+<div id="3273b8e7" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -791,9 +792,10 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </section>
-<section id="shortest-processing-time-shortest-task-first" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Shortest Processing Time: shortest task first</h2>
-<p><span class="task">Rule:</span> Always do the <strong>shortest remaining task</strong> next (<strong>SPT</strong>). If two are equally short, pick either.</p>
+<section id="shortest-task-first" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Shortest task first</h2>
+<p><span class="task">Rule:</span> Always do the <strong>shortest remaining task</strong> next. If two are equally short, pick either.</p>
+<p>This rule is called <strong>Shortest Processing Time</strong>, or SPT.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb10-1" class="hljs-ln-code"><a></a>Task  Duration  Schedule</span>
 <span id="cb10-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span></span>
 <span id="cb10-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span></span>
@@ -817,9 +819,10 @@ Dr.&nbsp;Nils Roemer, External Lecturer
       }</style></aside>
 </div>
 </section>
-<section id="shortest-processing-time-shortest-task-first-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Shortest Processing Time: shortest task first</h2>
-<p><span class="task">Rule:</span> Always do the <strong>shortest remaining task</strong> next (<strong>SPT</strong>). If two are equally short, pick either.</p>
+<section id="shortest-task-first-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Shortest task first</h2>
+<p><span class="task">Rule:</span> Always do the <strong>shortest remaining task</strong> next. If two are equally short, pick either.</p>
+<p>This rule is called <strong>Shortest Processing Time</strong>, or SPT.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb11-1" class="hljs-ln-code"><a></a>Task  Duration  Schedule</span>
 <span id="cb11-2" class="hljs-ln-code"><a></a>  A    <span class="dv">40</span><span class="er">min</span>        <span class="dv">3</span></span>
 <span id="cb11-3" class="hljs-ln-code"><a></a>  B    <span class="dv">30</span><span class="er">min</span>        <span class="dv">1</span></span>
@@ -830,9 +833,9 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <p><strong>Final sequence: <span class="highlight">B E A D C</span> or <span class="highlight">E B A D C</span></strong></p>
 </div>
 </section>
-<section id="the-spt-schedule" class="slide level2">
-<h2>The SPT schedule</h2>
-<div id="f5d070a5" class="cell" data-execution_count="9">
+<section id="the-plan-shortest-task-first" class="slide level2">
+<h2>The plan: shortest task first</h2>
+<div id="20ce15e6" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -861,7 +864,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <section id="waiting-time-adds-up-to-340-minutes" class="slide level2">
 <h2>Waiting time adds up to 340 minutes</h2>
 <p><span class="highlight">Total waiting time:</span> 340 minutes</p>
-<div id="d7c6f9bf" class="cell" data-execution_count="10">
+<div id="ef542410" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -916,8 +919,8 @@ Dr.&nbsp;Nils Roemer, External Lecturer
       }</style></aside>
 </div>
 </section>
-<section id="weighted-spt-highest-value-per-minute-first" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
+<section id="highest-value-per-minute-first" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Highest value per minute first</h2>
 <p><span class="task">Rule:</span> Highest revenue per minute first</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb13-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb13-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span></span>
@@ -935,7 +938,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>In which order do we work?</strong></p>
 <aside class="notes">
-<p>Answer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down.</p>
+<p>Answer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down. This rule is called Weighted Shortest Processing Time, or WSPT.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -949,8 +952,8 @@ Dr.&nbsp;Nils Roemer, External Lecturer
       }</style></aside>
 </div>
 </section>
-<section id="weighted-spt-highest-value-per-minute-first-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
+<section id="highest-value-per-minute-first-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Highest value per minute first</h2>
 <p><span class="task">Rule:</span> Highest revenue per minute first</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb14-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb14-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -963,8 +966,8 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <span id="cb14-9" class="hljs-ln-code"><a></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span></span>
 <span id="cb14-10" class="hljs-ln-code"><a></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="weighted-spt-highest-value-per-minute-first-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Weighted SPT: highest value per minute first</h2>
+<section id="highest-value-per-minute-first-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Highest value per minute first</h2>
 <p><span class="task">Rule:</span> Highest revenue per minute first</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb15-1" class="hljs-ln-code"><a></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb15-2" class="hljs-ln-code"><a></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -1037,7 +1040,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <span id="cb16-4"><a></a>  C    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
 <span id="cb16-5"><a></a>  D    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
 <span id="cb16-6"><a></a>  E    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="fc498726" class="cell" data-execution_count="11">
+<div id="38039a09" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1122,7 +1125,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <div class="fragment">
 <p>A good plan now beats a perfect plan too late.</p>
 <aside class="notes">
-<p>In computer science terms these problems are NP-hard: no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules.</p>
+<p>In computer science terms these problems are NP-hard (NP stands for nondeterministic polynomial time): no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1185,8 +1188,8 @@ Dr.&nbsp;Nils Roemer, External Lecturer
       }</style></aside>
 </div>
 </section>
-<section id="edd-in-real-time-switch-only-for-an-earlier-deadline" class="slide level2">
-<h2>EDD in real time: switch only for an earlier deadline</h2>
+<section id="in-real-time-switch-only-for-an-earlier-deadline" class="slide level2">
+<h2>In real time: switch only for an earlier deadline</h2>
 <p><span class="task">Rule:</span></p>
 <ul>
 <li>Always work on the task with the <strong>earliest deadline</strong></li>
@@ -1210,9 +1213,9 @@ Dr.&nbsp;Nils Roemer, External Lecturer
       }</style></aside>
 </div>
 </section>
-<section id="the-real-time-edd-schedule" class="slide level2">
-<h2>The real-time EDD schedule</h2>
-<div id="c3f6797c" class="cell" data-execution_count="12">
+<section id="the-morning-planned-in-real-time" class="slide level2">
+<h2>The morning, planned in real time</h2>
+<div id="bb02dea2" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure>

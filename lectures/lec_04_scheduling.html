@@ -428,19 +428,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#roadmap-1" id="toc-roadmap-1" class="nav-link" data-scroll-target="#roadmap-1">Roadmap</a></li>
   <li><a href="#what-do-you-want" id="toc-what-do-you-want" class="nav-link" data-scroll-target="#what-do-you-want">What do you want?</a></li>
   <li><a href="#goal-1-dont-be-too-late" id="toc-goal-1-dont-be-too-late" class="nav-link" data-scroll-target="#goal-1-dont-be-too-late">Goal 1: don’t be too late</a></li>
-  <li><a href="#earliest-due-date-sort-by-deadline" id="toc-earliest-due-date-sort-by-deadline" class="nav-link" data-scroll-target="#earliest-due-date-sort-by-deadline">Earliest Due Date: sort by deadline</a></li>
-  <li><a href="#the-edd-schedule" id="toc-the-edd-schedule" class="nav-link" data-scroll-target="#the-edd-schedule">The EDD schedule</a></li>
+  <li><a href="#earliest-deadline-first" id="toc-earliest-deadline-first" class="nav-link" data-scroll-target="#earliest-deadline-first">Earliest deadline first</a></li>
+  <li><a href="#the-plan-earliest-deadline-first" id="toc-the-plan-earliest-deadline-first" class="nav-link" data-scroll-target="#the-plan-earliest-deadline-first">The plan: earliest deadline first</a></li>
   <li><a href="#earliest-due-date-in-real-life" id="toc-earliest-due-date-in-real-life" class="nav-link" data-scroll-target="#earliest-due-date-in-real-life">Earliest due date in real life</a></li>
   <li><a href="#goal-2-as-little-waiting-as-possible" id="toc-goal-2-as-little-waiting-as-possible" class="nav-link" data-scroll-target="#goal-2-as-little-waiting-as-possible">Goal 2: as little waiting as possible</a></li>
-  <li><a href="#shortest-processing-time-shortest-task-first" id="toc-shortest-processing-time-shortest-task-first" class="nav-link" data-scroll-target="#shortest-processing-time-shortest-task-first">Shortest Processing Time: shortest task first</a></li>
-  <li><a href="#shortest-processing-time-shortest-task-first-1" id="toc-shortest-processing-time-shortest-task-first-1" class="nav-link" data-scroll-target="#shortest-processing-time-shortest-task-first-1">Shortest Processing Time: shortest task first</a></li>
-  <li><a href="#the-spt-schedule" id="toc-the-spt-schedule" class="nav-link" data-scroll-target="#the-spt-schedule">The SPT schedule</a></li>
+  <li><a href="#shortest-task-first" id="toc-shortest-task-first" class="nav-link" data-scroll-target="#shortest-task-first">Shortest task first</a></li>
+  <li><a href="#shortest-task-first-1" id="toc-shortest-task-first-1" class="nav-link" data-scroll-target="#shortest-task-first-1">Shortest task first</a></li>
+  <li><a href="#the-plan-shortest-task-first" id="toc-the-plan-shortest-task-first" class="nav-link" data-scroll-target="#the-plan-shortest-task-first">The plan: shortest task first</a></li>
   <li><a href="#waiting-time-adds-up-to-340-minutes" id="toc-waiting-time-adds-up-to-340-minutes" class="nav-link" data-scroll-target="#waiting-time-adds-up-to-340-minutes">Waiting time adds up to 340 minutes</a></li>
   <li><a href="#shortest-task-first-in-real-life" id="toc-shortest-task-first-in-real-life" class="nav-link" data-scroll-target="#shortest-task-first-in-real-life">Shortest task first in real life</a></li>
   <li><a href="#goal-3-deliver-the-most-value" id="toc-goal-3-deliver-the-most-value" class="nav-link" data-scroll-target="#goal-3-deliver-the-most-value">Goal 3: deliver the most value</a></li>
-  <li><a href="#weighted-spt-highest-value-per-minute-first" id="toc-weighted-spt-highest-value-per-minute-first" class="nav-link" data-scroll-target="#weighted-spt-highest-value-per-minute-first">Weighted SPT: highest value per minute first</a></li>
-  <li><a href="#weighted-spt-highest-value-per-minute-first-1" id="toc-weighted-spt-highest-value-per-minute-first-1" class="nav-link" data-scroll-target="#weighted-spt-highest-value-per-minute-first-1">Weighted SPT: highest value per minute first</a></li>
-  <li><a href="#weighted-spt-highest-value-per-minute-first-2" id="toc-weighted-spt-highest-value-per-minute-first-2" class="nav-link" data-scroll-target="#weighted-spt-highest-value-per-minute-first-2">Weighted SPT: highest value per minute first</a></li>
+  <li><a href="#highest-value-per-minute-first" id="toc-highest-value-per-minute-first" class="nav-link" data-scroll-target="#highest-value-per-minute-first">Highest value per minute first</a></li>
+  <li><a href="#highest-value-per-minute-first-1" id="toc-highest-value-per-minute-first-1" class="nav-link" data-scroll-target="#highest-value-per-minute-first-1">Highest value per minute first</a></li>
+  <li><a href="#highest-value-per-minute-first-2" id="toc-highest-value-per-minute-first-2" class="nav-link" data-scroll-target="#highest-value-per-minute-first-2">Highest value per minute first</a></li>
   <li><a href="#value-per-minute-in-real-life" id="toc-value-per-minute-in-real-life" class="nav-link" data-scroll-target="#value-per-minute-in-real-life">Value per minute in real life</a></li>
   </ul></li>
   <li><a href="#real-life-dependencies-interruptions-and-thrashing" id="toc-real-life-dependencies-interruptions-and-thrashing" class="nav-link" data-scroll-target="#real-life-dependencies-interruptions-and-thrashing"><span class="flow">Real life: dependencies, interruptions and thrashing</span></a>
@@ -453,8 +453,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#with-dependencies-there-is-often-no-quick-recipe" id="toc-with-dependencies-there-is-often-no-quick-recipe" class="nav-link" data-scroll-target="#with-dependencies-there-is-often-no-quick-recipe">With dependencies, there is often no quick recipe</a></li>
   <li><a href="#interruptions-new-tasks-arrive-while-you-work" id="toc-interruptions-new-tasks-arrive-while-you-work" class="nav-link" data-scroll-target="#interruptions-new-tasks-arrive-while-you-work">Interruptions: new tasks arrive while you work</a></li>
   <li><a href="#a-morning-with-seven-tasks" id="toc-a-morning-with-seven-tasks" class="nav-link" data-scroll-target="#a-morning-with-seven-tasks">A morning with seven tasks</a></li>
-  <li><a href="#edd-in-real-time-switch-only-for-an-earlier-deadline" id="toc-edd-in-real-time-switch-only-for-an-earlier-deadline" class="nav-link" data-scroll-target="#edd-in-real-time-switch-only-for-an-earlier-deadline">EDD in real time: switch only for an earlier deadline</a></li>
-  <li><a href="#the-real-time-edd-schedule" id="toc-the-real-time-edd-schedule" class="nav-link" data-scroll-target="#the-real-time-edd-schedule">The real-time EDD schedule</a></li>
+  <li><a href="#in-real-time-switch-only-for-an-earlier-deadline" id="toc-in-real-time-switch-only-for-an-earlier-deadline" class="nav-link" data-scroll-target="#in-real-time-switch-only-for-an-earlier-deadline">In real time: switch only for an earlier deadline</a></li>
+  <li><a href="#the-morning-planned-in-real-time" id="toc-the-morning-planned-in-real-time" class="nav-link" data-scroll-target="#the-morning-planned-in-real-time">The morning, planned in real time</a></li>
   <li><a href="#every-switch-costs" id="toc-every-switch-costs" class="nav-link" data-scroll-target="#every-switch-costs">Every switch costs</a></li>
   <li><a href="#thrashing-switching-so-much-that-nothing-gets-done" id="toc-thrashing-switching-so-much-that-nothing-gets-done" class="nav-link" data-scroll-target="#thrashing-switching-so-much-that-nothing-gets-done">Thrashing: switching so much that nothing gets done</a></li>
   <li><a href="#bundle-your-interruptions" id="toc-bundle-your-interruptions" class="nav-link" data-scroll-target="#bundle-your-interruptions">Bundle your interruptions</a></li>
@@ -552,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="four-loads-of-laundry-one-washer-one-dryer">Four loads of laundry, one washer, one dryer</h2>
 <p>Every load is washed first, then dried.</p>
 <p>Each machine handles one load at a time.</p>
-<div id="2ab6c1ed" class="cell" data-execution_count="2">
+<div id="95abf7e0" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -663,7 +663,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-best-order-takes-4-hours-10-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="the-best-order-takes-4-hours-10-minutes">The best order takes 4 hours 10 minutes</h2>
 <p><strong>Best order: <span class="highlight">B A D C</span></strong></p>
-<div id="5974c9ca" class="cell" data-execution_count="3">
+<div id="356fe661" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -675,7 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="how-to-read-this-chart" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-read-this-chart">How to read this chart</h2>
-<div id="3a72ce92" class="cell" data-execution_count="4">
+<div id="150b4823" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -702,7 +702,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a-bad-order-takes-one-hour-longer" class="level2">
 <h2 class="anchored" data-anchor-id="a-bad-order-takes-one-hour-longer">A bad order takes one hour longer</h2>
 <p><strong>A bad order: <span class="highlight">C D A B</span></strong></p>
-<div id="121274f6" class="cell" data-execution_count="5">
+<div id="3fa180bf" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -760,7 +760,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="one-person-instead-of-two-machines" class="level2">
 <h2 class="anchored" data-anchor-id="one-person-instead-of-two-machines">One person instead of two machines</h2>
-<div id="19776cdf" class="cell" data-execution_count="6">
+<div id="3c51f348" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -847,9 +847,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Answer: Sort the tasks by deadline and work through them in that order: D, B, A, C, E. This is the earliest due date rule, and for this goal it is the best possible order.</p>
 </div>
 </section>
-<section id="earliest-due-date-sort-by-deadline" class="level2">
-<h2 class="anchored" data-anchor-id="earliest-due-date-sort-by-deadline">Earliest Due Date: sort by deadline</h2>
-<p><span class="task">Rule:</span> Sort the tasks by deadline (<strong>EDD</strong>).</p>
+<section id="earliest-deadline-first" class="level2">
+<h2 class="anchored" data-anchor-id="earliest-deadline-first">Earliest deadline first</h2>
+<p><span class="task">Rule:</span> Sort the tasks by deadline, earliest first.</p>
+<p>This rule is called <strong>Earliest Due Date</strong>, or EDD.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Task  Duration  Deadline</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  A    <span class="dv">40</span><span class="er">min</span>    <span class="dv">110</span><span class="er">min</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  B    <span class="dv">30</span><span class="er">min</span>     <span class="dv">90</span><span class="er">min</span></span>
@@ -864,9 +865,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  E    <span class="dv">30</span><span class="er">min</span>    <span class="dv">210</span><span class="er">min</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><span class="highlight">Let’s visualize this!</span></p>
 </section>
-<section id="the-edd-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="the-edd-schedule">The EDD schedule</h2>
-<div id="d0e06f02" class="cell" data-execution_count="7">
+<section id="the-plan-earliest-deadline-first" class="level2">
+<h2 class="anchored" data-anchor-id="the-plan-earliest-deadline-first">The plan: earliest deadline first</h2>
+<div id="4c588a04" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -898,7 +899,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="goal-2-as-little-waiting-as-possible">Goal 2: as little waiting as possible</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="9e6fd0c2" class="cell" data-execution_count="8">
+<div id="3273b8e7" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -918,9 +919,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Answer: Shortest task first. Every task that is done early stops waiting, and everything behind it waits only a little. This is the shortest processing time rule, and it gives the smallest total waiting time.</p>
 </div>
 </section>
-<section id="shortest-processing-time-shortest-task-first" class="level2" data-auto-animate="true">
-<h2 data-auto-animate="true" class="anchored" data-anchor-id="shortest-processing-time-shortest-task-first">Shortest Processing Time: shortest task first</h2>
-<p><span class="task">Rule:</span> Always do the <strong>shortest remaining task</strong> next (<strong>SPT</strong>). If two are equally short, pick either.</p>
+<section id="shortest-task-first" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="shortest-task-first">Shortest task first</h2>
+<p><span class="task">Rule:</span> Always do the <strong>shortest remaining task</strong> next. If two are equally short, pick either.</p>
+<p>This rule is called <strong>Shortest Processing Time</strong>, or SPT.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Task  Duration  Schedule</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  A    <span class="dv">40</span><span class="er">min</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  B    <span class="dv">30</span><span class="er">min</span></span>
@@ -933,9 +935,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Answer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. Both orders give the same total waiting time.</p>
 </div>
 </section>
-<section id="shortest-processing-time-shortest-task-first-1" class="level2" data-auto-animate="true">
-<h2 data-auto-animate="true" class="anchored" data-anchor-id="shortest-processing-time-shortest-task-first-1">Shortest Processing Time: shortest task first</h2>
-<p><span class="task">Rule:</span> Always do the <strong>shortest remaining task</strong> next (<strong>SPT</strong>). If two are equally short, pick either.</p>
+<section id="shortest-task-first-1" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="shortest-task-first-1">Shortest task first</h2>
+<p><span class="task">Rule:</span> Always do the <strong>shortest remaining task</strong> next. If two are equally short, pick either.</p>
+<p>This rule is called <strong>Shortest Processing Time</strong>, or SPT.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Task  Duration  Schedule</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  A    <span class="dv">40</span><span class="er">min</span>        <span class="dv">3</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  B    <span class="dv">30</span><span class="er">min</span>        <span class="dv">1</span></span>
@@ -944,9 +947,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  E    <span class="dv">30</span><span class="er">min</span>        <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Final sequence: <span class="highlight">B E A D C</span> or <span class="highlight">E B A D C</span></strong></p>
 </section>
-<section id="the-spt-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="the-spt-schedule">The SPT schedule</h2>
-<div id="f5d070a5" class="cell" data-execution_count="9">
+<section id="the-plan-shortest-task-first" class="level2">
+<h2 class="anchored" data-anchor-id="the-plan-shortest-task-first">The plan: shortest task first</h2>
+<div id="20ce15e6" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -964,7 +967,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="waiting-time-adds-up-to-340-minutes" class="level2">
 <h2 class="anchored" data-anchor-id="waiting-time-adds-up-to-340-minutes">Waiting time adds up to 340 minutes</h2>
 <p><span class="highlight">Total waiting time:</span> 340 minutes</p>
-<div id="d7c6f9bf" class="cell" data-execution_count="10">
+<div id="ef542410" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1008,8 +1011,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Answer: Neither the highest revenue nor the shortest task alone, but revenue per minute, highest first. A earns 12 euros per minute, D only 1.40. The order is A, B, G, E, F, C, I, H, D. Students often propose “highest revenue first”. That would move G, 20 minutes for 100 euros, from third to seventh place.</p>
 </div>
 </section>
-<section id="weighted-spt-highest-value-per-minute-first" class="level2" data-auto-animate="true">
-<h2 data-auto-animate="true" class="anchored" data-anchor-id="weighted-spt-highest-value-per-minute-first">Weighted SPT: highest value per minute first</h2>
+<section id="highest-value-per-minute-first" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="highest-value-per-minute-first">Highest value per minute first</h2>
 <p><span class="task">Rule:</span> Highest revenue per minute first</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span></span>
@@ -1025,11 +1028,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><span class="question">Question:</span> <strong>In which order do we work?</strong></p>
 <div class="lecture-notes">
 <p><span class="eyebrow">Notes</span></p>
-<p>Answer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down.</p>
+<p>Answer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down. This rule is called Weighted Shortest Processing Time, or WSPT.</p>
 </div>
 </section>
-<section id="weighted-spt-highest-value-per-minute-first-1" class="level2" data-auto-animate="true">
-<h2 data-auto-animate="true" class="anchored" data-anchor-id="weighted-spt-highest-value-per-minute-first-1">Weighted SPT: highest value per minute first</h2>
+<section id="highest-value-per-minute-first-1" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="highest-value-per-minute-first-1">Highest value per minute first</h2>
 <p><span class="task">Rule:</span> Highest revenue per minute first</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -1042,8 +1045,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  H    <span class="dv">70</span><span class="er">min</span>    €<span class="dv">110</span>      <span class="fl">1.6</span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  I    <span class="dv">50</span><span class="er">min</span>    €<span class="dv">90</span>       <span class="fl">1.8</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="weighted-spt-highest-value-per-minute-first-2" class="level2" data-auto-animate="true">
-<h2 data-auto-animate="true" class="anchored" data-anchor-id="weighted-spt-highest-value-per-minute-first-2">Weighted SPT: highest value per minute first</h2>
+<section id="highest-value-per-minute-first-2" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="highest-value-per-minute-first-2">Highest value per minute first</h2>
 <p><span class="task">Rule:</span> Highest revenue per minute first</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Task  Duration  Revenue  Revenue<span class="op">/</span>Min  Schedule</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  A    <span class="dv">20</span><span class="er">min</span>    €<span class="dv">240</span>     <span class="fl">12.0</span>           <span class="dv">1</span></span>
@@ -1106,7 +1109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  C    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  D    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  E    <span class="dv">30</span><span class="er">min</span>     <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="fc498726" class="cell" data-execution_count="11">
+<div id="38039a09" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1170,7 +1173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A good plan now beats a perfect plan too late.</p>
 <div class="lecture-notes">
 <p><span class="eyebrow">Notes</span></p>
-<p>In computer science terms these problems are NP-hard: no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules.</p>
+<p>In computer science terms these problems are NP-hard (NP stands for nondeterministic polynomial time): no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules.</p>
 </div>
 </section>
 <section id="interruptions-new-tasks-arrive-while-you-work" class="level2">
@@ -1202,8 +1205,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Answer: With Email A. At 8:00 only Email A and the presentation are there, and Email A has the earlier deadline, 9:00. We cannot plan the whole morning in advance, because we do not know yet what arrives later.</p>
 </div>
 </section>
-<section id="edd-in-real-time-switch-only-for-an-earlier-deadline" class="level2">
-<h2 class="anchored" data-anchor-id="edd-in-real-time-switch-only-for-an-earlier-deadline">EDD in real time: switch only for an earlier deadline</h2>
+<section id="in-real-time-switch-only-for-an-earlier-deadline" class="level2">
+<h2 class="anchored" data-anchor-id="in-real-time-switch-only-for-an-earlier-deadline">In real time: switch only for an earlier deadline</h2>
 <p><span class="task">Rule:</span></p>
 <ul>
 <li>Always work on the task with the <strong>earliest deadline</strong></li>
@@ -1216,9 +1219,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Equal deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task.</p>
 </div>
 </section>
-<section id="the-real-time-edd-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="the-real-time-edd-schedule">The real-time EDD schedule</h2>
-<div id="c3f6797c" class="cell" data-execution_count="12">
+<section id="the-morning-planned-in-real-time" class="level2">
+<h2 class="anchored" data-anchor-id="the-morning-planned-in-real-time">The morning, planned in real time</h2>
+<div id="bb02dea2" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">

@@ -5893,22 +5893,22 @@
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#earliest-due-date-sort-by-deadline",
-    "href": "lectures/lec_04_scheduling.html#earliest-due-date-sort-by-deadline",
+    "objectID": "lectures/lec_04_scheduling.html#earliest-deadline-first",
+    "href": "lectures/lec_04_scheduling.html#earliest-deadline-first",
     "title": "Lecture IV: Scheduling",
-    "section": "Earliest Due Date: sort by deadline",
-    "text": "Earliest Due Date: sort by deadline\nRule: Sort the tasks by deadline (EDD).\nTask  Duration  Deadline\n  A    40min    110min\n  B    30min     90min\n  C    60min    150min\n  D    50min     70min\n  E    30min    210min\nTask  Duration  Deadline\n  D    50min     70min\n  B    30min     90min\n  A    40min    110min\n  C    60min    150min\n  E    30min    210min\nLet’s visualize this!",
+    "section": "Earliest deadline first",
+    "text": "Earliest deadline first\nRule: Sort the tasks by deadline, earliest first.\nThis rule is called Earliest Due Date, or EDD.\nTask  Duration  Deadline\n  A    40min    110min\n  B    30min     90min\n  C    60min    150min\n  D    50min     70min\n  E    30min    210min\nTask  Duration  Deadline\n  D    50min     70min\n  B    30min     90min\n  A    40min    110min\n  C    60min    150min\n  E    30min    210min\nLet’s visualize this!",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#the-edd-schedule",
-    "href": "lectures/lec_04_scheduling.html#the-edd-schedule",
+    "objectID": "lectures/lec_04_scheduling.html#the-plan-earliest-deadline-first",
+    "href": "lectures/lec_04_scheduling.html#the-plan-earliest-deadline-first",
     "title": "Lecture IV: Scheduling",
-    "section": "The EDD schedule",
-    "text": "The EDD schedule\n\n\n\n\n\n\n\n\n\nRed marks: deadlines.\nQuestion: What is the worst delay here?\n30 minutes, for task C. Task A is 10 minutes late.\nIn the order A to E, task D would be 110 minutes late.\n\nNotes\nAnswer: 30 minutes, for task C, which finishes at 180 minutes with a deadline of 150. Task A finishes at 120 with a deadline of 110, so it is 10 minutes late. D, B and E are on time. No other order gets the worst delay below 30 minutes. Without the rule, in the order A to E, D would finish at 180 minutes with a deadline of 70, so 110 minutes late.",
+    "section": "The plan: earliest deadline first",
+    "text": "The plan: earliest deadline first\n\n\n\n\n\n\n\n\n\nRed marks: deadlines.\nQuestion: What is the worst delay here?\n30 minutes, for task C. Task A is 10 minutes late.\nIn the order A to E, task D would be 110 minutes late.\n\nNotes\nAnswer: 30 minutes, for task C, which finishes at 180 minutes with a deadline of 150. Task A finishes at 120 with a deadline of 110, so it is 10 minutes late. D, B and E are on time. No other order gets the worst delay below 30 minutes. Without the rule, in the order A to E, D would finish at 180 minutes with a deadline of 70, so 110 minutes late.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -5937,33 +5937,33 @@
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#shortest-processing-time-shortest-task-first",
-    "href": "lectures/lec_04_scheduling.html#shortest-processing-time-shortest-task-first",
+    "objectID": "lectures/lec_04_scheduling.html#shortest-task-first",
+    "href": "lectures/lec_04_scheduling.html#shortest-task-first",
     "title": "Lecture IV: Scheduling",
-    "section": "Shortest Processing Time: shortest task first",
-    "text": "Shortest Processing Time: shortest task first\nRule: Always do the shortest remaining task next (SPT). If two are equally short, pick either.\nTask  Duration  Schedule\n  A    40min\n  B    30min\n  C    60min\n  D    50min\n  E    30min\nQuestion: In which order do we work?\n\nNotes\nAnswer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. Both orders give the same total waiting time.",
+    "section": "Shortest task first",
+    "text": "Shortest task first\nRule: Always do the shortest remaining task next. If two are equally short, pick either.\nThis rule is called Shortest Processing Time, or SPT.\nTask  Duration  Schedule\n  A    40min\n  B    30min\n  C    60min\n  D    50min\n  E    30min\nQuestion: In which order do we work?\n\nNotes\nAnswer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. Both orders give the same total waiting time.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#shortest-processing-time-shortest-task-first-1",
-    "href": "lectures/lec_04_scheduling.html#shortest-processing-time-shortest-task-first-1",
+    "objectID": "lectures/lec_04_scheduling.html#shortest-task-first-1",
+    "href": "lectures/lec_04_scheduling.html#shortest-task-first-1",
     "title": "Lecture IV: Scheduling",
-    "section": "Shortest Processing Time: shortest task first",
-    "text": "Shortest Processing Time: shortest task first\nRule: Always do the shortest remaining task next (SPT). If two are equally short, pick either.\nTask  Duration  Schedule\n  A    40min        3\n  B    30min        1\n  C    60min        5\n  D    50min        4\n  E    30min        2\nFinal sequence: B E A D C or E B A D C",
+    "section": "Shortest task first",
+    "text": "Shortest task first\nRule: Always do the shortest remaining task next. If two are equally short, pick either.\nThis rule is called Shortest Processing Time, or SPT.\nTask  Duration  Schedule\n  A    40min        3\n  B    30min        1\n  C    60min        5\n  D    50min        4\n  E    30min        2\nFinal sequence: B E A D C or E B A D C",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#the-spt-schedule",
-    "href": "lectures/lec_04_scheduling.html#the-spt-schedule",
+    "objectID": "lectures/lec_04_scheduling.html#the-plan-shortest-task-first",
+    "href": "lectures/lec_04_scheduling.html#the-plan-shortest-task-first",
     "title": "Lecture IV: Scheduling",
-    "section": "The SPT schedule",
-    "text": "The SPT schedule\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?\n\nNotes\nAnswer: In the empty space before each bar. A task waits from the start until its bar begins, so B waits 0 minutes, E 30, A 60, D 100 and C 150 minutes. The later a bar starts, the longer that task has waited.",
+    "section": "The plan: shortest task first",
+    "text": "The plan: shortest task first\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?\n\nNotes\nAnswer: In the empty space before each bar. A task waits from the start until its bar begins, so B waits 0 minutes, E 30, A 60, D 100 and C 150 minutes. The later a bar starts, the longer that task has waited.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6003,33 +6003,33 @@
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first",
+    "objectID": "lectures/lec_04_scheduling.html#highest-value-per-minute-first",
+    "href": "lectures/lec_04_scheduling.html#highest-value-per-minute-first",
     "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8\nRevenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes = 12 euros per minute.\nQuestion: In which order do we work?\n\nNotes\nAnswer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down.",
+    "section": "Highest value per minute first",
+    "text": "Highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8\nRevenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes = 12 euros per minute.\nQuestion: In which order do we work?\n\nNotes\nAnswer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down. This rule is called Weighted Shortest Processing Time, or WSPT.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-1",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-1",
+    "objectID": "lectures/lec_04_scheduling.html#highest-value-per-minute-first-1",
+    "href": "lectures/lec_04_scheduling.html#highest-value-per-minute-first-1",
     "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8",
+    "section": "Highest value per minute first",
+    "text": "Highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-2",
-    "href": "lectures/lec_04_scheduling.html#weighted-spt-highest-value-per-minute-first-2",
+    "objectID": "lectures/lec_04_scheduling.html#highest-value-per-minute-first-2",
+    "href": "lectures/lec_04_scheduling.html#highest-value-per-minute-first-2",
     "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4           9\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7",
+    "section": "Highest value per minute first",
+    "text": "Highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4           9\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6106,7 +6106,7 @@
     "href": "lectures/lec_04_scheduling.html#with-dependencies-there-is-often-no-quick-recipe",
     "title": "Lecture IV: Scheduling",
     "section": "With dependencies, there is often no quick recipe",
-    "text": "With dependencies, there is often no quick recipe\n\n\nFor deadlines, waiting time and value, sorting is enough\nAdd dependencies, and for many goals nobody knows a fast way to find the best plan\nIn practice: good rules of thumb, or software that searches for a good plan\n\n\nA good plan now beats a perfect plan too late.\n\nNotes\nIn computer science terms these problems are NP-hard: no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules.",
+    "text": "With dependencies, there is often no quick recipe\n\n\nFor deadlines, waiting time and value, sorting is enough\nAdd dependencies, and for many goals nobody knows a fast way to find the best plan\nIn practice: good rules of thumb, or software that searches for a good plan\n\n\nA good plan now beats a perfect plan too late.\n\nNotes\nIn computer science terms these problems are NP-hard (NP stands for nondeterministic polynomial time): no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6135,22 +6135,22 @@
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#edd-in-real-time-switch-only-for-an-earlier-deadline",
-    "href": "lectures/lec_04_scheduling.html#edd-in-real-time-switch-only-for-an-earlier-deadline",
+    "objectID": "lectures/lec_04_scheduling.html#in-real-time-switch-only-for-an-earlier-deadline",
+    "href": "lectures/lec_04_scheduling.html#in-real-time-switch-only-for-an-earlier-deadline",
     "title": "Lecture IV: Scheduling",
-    "section": "EDD in real time: switch only for an earlier deadline",
-    "text": "EDD in real time: switch only for an earlier deadline\nRule:\n\nAlways work on the task with the earliest deadline\nA new task with an earlier deadline interrupts the current one\nOtherwise, stick to the current task\n\nThis works for any goal: switch only if the new task beats the current one.\n\nNotes\nEqual deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task.",
+    "section": "In real time: switch only for an earlier deadline",
+    "text": "In real time: switch only for an earlier deadline\nRule:\n\nAlways work on the task with the earliest deadline\nA new task with an earlier deadline interrupts the current one\nOtherwise, stick to the current task\n\nThis works for any goal: switch only if the new task beats the current one.\n\nNotes\nEqual deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_04_scheduling.html#the-real-time-edd-schedule",
-    "href": "lectures/lec_04_scheduling.html#the-real-time-edd-schedule",
+    "objectID": "lectures/lec_04_scheduling.html#the-morning-planned-in-real-time",
+    "href": "lectures/lec_04_scheduling.html#the-morning-planned-in-real-time",
     "title": "Lecture IV: Scheduling",
-    "section": "The real-time EDD schedule",
-    "text": "The real-time EDD schedule\n\n\n\n\n\n\n\n\n\nGrey line: arrival, red mark: deadline.\nQuestion: What is the worst delay with this plan?\n20 minutes, for the liquidity report and Email C.\nNo plan does better here: there is simply more work than time.\n\nNotes\nAnswer: 20 minutes. The liquidity report finishes at 11:20 with a deadline of 11:00, and Email C finishes at 11:40 with a deadline of 11:20. Everything else is on time, Email D exactly at 10:00. The presentation is interrupted twice, so it is done in three pieces, and still finishes at 10:40, before its deadline.",
+    "section": "The morning, planned in real time",
+    "text": "The morning, planned in real time\n\n\n\n\n\n\n\n\n\nGrey line: arrival, red mark: deadline.\nQuestion: What is the worst delay with this plan?\n20 minutes, for the liquidity report and Email C.\nNo plan does better here: there is simply more work than time.\n\nNotes\nAnswer: 20 minutes. The liquidity report finishes at 11:20 with a deadline of 11:00, and Email C finishes at 11:40 with a deadline of 11:20. Everything else is on time, Email D exactly at 10:00. The presentation is interrupted twice, so it is done in three pieces, and still finishes at 10:40, before its deadline.",
     "crumbs": [
       "04 Scheduling",
       "Lecture"
@@ -6454,18 +6454,18 @@
     "text": "Goal 1: don’t be too late\nTasks with individual deadlines:\nTask  Duration  Deadline\n  A    40min    110min\n  B    30min     90min\n  C    60min    150min\n  D    50min     70min\n  E    30min    210min\n\nAll times count from now: task D is due in 70 minutes.\n\n\nGoal: Keep the worst delay as small as possible\n\n\nQuestion: In which order would you work?\n\nAnswer: Sort the tasks by deadline and work through them in that order: D, B, A, C, E. This is the earliest due date rule, and for this goal it is the best possible order."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#earliest-due-date-sort-by-deadline",
-    "href": "lectures/lec_04_presentation.html#earliest-due-date-sort-by-deadline",
+    "objectID": "lectures/lec_04_presentation.html#earliest-deadline-first",
+    "href": "lectures/lec_04_presentation.html#earliest-deadline-first",
     "title": "Lecture IV: Scheduling",
-    "section": "Earliest Due Date: sort by deadline",
-    "text": "Earliest Due Date: sort by deadline\nRule: Sort the tasks by deadline (EDD).\nTask  Duration  Deadline\n  A    40min    110min\n  B    30min     90min\n  C    60min    150min\n  D    50min     70min\n  E    30min    210min\n\nTask  Duration  Deadline\n  D    50min     70min\n  B    30min     90min\n  A    40min    110min\n  C    60min    150min\n  E    30min    210min\n\n\nLet’s visualize this!"
+    "section": "Earliest deadline first",
+    "text": "Earliest deadline first\nRule: Sort the tasks by deadline, earliest first.\nThis rule is called Earliest Due Date, or EDD.\nTask  Duration  Deadline\n  A    40min    110min\n  B    30min     90min\n  C    60min    150min\n  D    50min     70min\n  E    30min    210min\n\nTask  Duration  Deadline\n  D    50min     70min\n  B    30min     90min\n  A    40min    110min\n  C    60min    150min\n  E    30min    210min\n\n\nLet’s visualize this!"
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#the-edd-schedule",
-    "href": "lectures/lec_04_presentation.html#the-edd-schedule",
+    "objectID": "lectures/lec_04_presentation.html#the-plan-earliest-deadline-first",
+    "href": "lectures/lec_04_presentation.html#the-plan-earliest-deadline-first",
     "title": "Lecture IV: Scheduling",
-    "section": "The EDD schedule",
-    "text": "The EDD schedule\n\n\n\n\n\n\n\n\n\nRed marks: deadlines.\n\nQuestion: What is the worst delay here?\n\n\n30 minutes, for task C. Task A is 10 minutes late.\n\n\nIn the order A to E, task D would be 110 minutes late.\n\nAnswer: 30 minutes, for task C, which finishes at 180 minutes with a deadline of 150. Task A finishes at 120 with a deadline of 110, so it is 10 minutes late. D, B and E are on time. No other order gets the worst delay below 30 minutes. Without the rule, in the order A to E, D would finish at 180 minutes with a deadline of 70, so 110 minutes late."
+    "section": "The plan: earliest deadline first",
+    "text": "The plan: earliest deadline first\n\n\n\n\n\n\n\n\n\nRed marks: deadlines.\n\nQuestion: What is the worst delay here?\n\n\n30 minutes, for task C. Task A is 10 minutes late.\n\n\nIn the order A to E, task D would be 110 minutes late.\n\nAnswer: 30 minutes, for task C, which finishes at 180 minutes with a deadline of 150. Task A finishes at 120 with a deadline of 110, so it is 10 minutes late. D, B and E are on time. No other order gets the worst delay below 30 minutes. Without the rule, in the order A to E, D would finish at 180 minutes with a deadline of 70, so 110 minutes late."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#earliest-due-date-in-real-life",
@@ -6482,25 +6482,25 @@
     "text": "Goal 2: as little waiting as possible\n\n\n\n\n\n\n\n\n\n\n\n\nNo deadlines this time. For each task, someone is waiting.\nGoal: Keep the total waiting time as small as possible\nQuestion: Which task first?\n\n\nAnswer: Shortest task first. Every task that is done early stops waiting, and everything behind it waits only a little. This is the shortest processing time rule, and it gives the smallest total waiting time."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#shortest-processing-time-shortest-task-first",
-    "href": "lectures/lec_04_presentation.html#shortest-processing-time-shortest-task-first",
+    "objectID": "lectures/lec_04_presentation.html#shortest-task-first",
+    "href": "lectures/lec_04_presentation.html#shortest-task-first",
     "title": "Lecture IV: Scheduling",
-    "section": "Shortest Processing Time: shortest task first",
-    "text": "Shortest Processing Time: shortest task first\nRule: Always do the shortest remaining task next (SPT). If two are equally short, pick either.\nTask  Duration  Schedule\n  A    40min\n  B    30min\n  C    60min\n  D    50min\n  E    30min\n\nQuestion: In which order do we work?\n\nAnswer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. Both orders give the same total waiting time."
+    "section": "Shortest task first",
+    "text": "Shortest task first\nRule: Always do the shortest remaining task next. If two are equally short, pick either.\nThis rule is called Shortest Processing Time, or SPT.\nTask  Duration  Schedule\n  A    40min\n  B    30min\n  C    60min\n  D    50min\n  E    30min\n\nQuestion: In which order do we work?\n\nAnswer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. Both orders give the same total waiting time."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#shortest-processing-time-shortest-task-first-1",
-    "href": "lectures/lec_04_presentation.html#shortest-processing-time-shortest-task-first-1",
+    "objectID": "lectures/lec_04_presentation.html#shortest-task-first-1",
+    "href": "lectures/lec_04_presentation.html#shortest-task-first-1",
     "title": "Lecture IV: Scheduling",
-    "section": "Shortest Processing Time: shortest task first",
-    "text": "Shortest Processing Time: shortest task first\nRule: Always do the shortest remaining task next (SPT). If two are equally short, pick either.\nTask  Duration  Schedule\n  A    40min        3\n  B    30min        1\n  C    60min        5\n  D    50min        4\n  E    30min        2\n\nFinal sequence: B E A D C or E B A D C"
+    "section": "Shortest task first",
+    "text": "Shortest task first\nRule: Always do the shortest remaining task next. If two are equally short, pick either.\nThis rule is called Shortest Processing Time, or SPT.\nTask  Duration  Schedule\n  A    40min        3\n  B    30min        1\n  C    60min        5\n  D    50min        4\n  E    30min        2\n\nFinal sequence: B E A D C or E B A D C"
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#the-spt-schedule",
-    "href": "lectures/lec_04_presentation.html#the-spt-schedule",
+    "objectID": "lectures/lec_04_presentation.html#the-plan-shortest-task-first",
+    "href": "lectures/lec_04_presentation.html#the-plan-shortest-task-first",
     "title": "Lecture IV: Scheduling",
-    "section": "The SPT schedule",
-    "text": "The SPT schedule\n\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?\n\nAnswer: In the empty space before each bar. A task waits from the start until its bar begins, so B waits 0 minutes, E 30, A 60, D 100 and C 150 minutes. The later a bar starts, the longer that task has waited."
+    "section": "The plan: shortest task first",
+    "text": "The plan: shortest task first\n\n\n\n\n\n\n\n\n\n\nQuestion: Where can we see the waiting time?\n\nAnswer: In the empty space before each bar. A task waits from the start until its bar begins, so B waits 0 minutes, E 30, A 60, D 100 and C 150 minutes. The later a bar starts, the longer that task has waited."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#waiting-time-adds-up-to-340-minutes",
@@ -6524,25 +6524,25 @@
     "text": "Goal 3: deliver the most value\n\nChange: Tasks now have different values, e.g. revenue for a consultant\n\nTask  Duration  Revenue\n  A    20min    €240\n  B    30min    €200\n  C    60min    €120\n  D    50min    €70\n  E    30min    €130\n  F    40min    €120\n  G    20min    €100\n  H    70min    €110\n  I    50min    €90\n\nQuestion: Which task first?\n\nAnswer: Neither the highest revenue nor the shortest task alone, but revenue per minute, highest first. A earns 12 euros per minute, D only 1.40. The order is A, B, G, E, F, C, I, H, D. Students often propose “highest revenue first”. That would move G, 20 minutes for 100 euros, from third to seventh place."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first",
+    "objectID": "lectures/lec_04_presentation.html#highest-value-per-minute-first",
+    "href": "lectures/lec_04_presentation.html#highest-value-per-minute-first",
     "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8\n\nRevenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes = 12 euros per minute.\n\n\nQuestion: In which order do we work?\n\nAnswer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down."
+    "section": "Highest value per minute first",
+    "text": "Highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0\n  B    30min    €200      6.7\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0\n  H    70min    €110      1.6\n  I    50min    €90       1.8\n\nRevenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes = 12 euros per minute.\n\n\nQuestion: In which order do we work?\n\nAnswer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down. This rule is called Weighted Shortest Processing Time, or WSPT."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-1",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-1",
+    "objectID": "lectures/lec_04_presentation.html#highest-value-per-minute-first-1",
+    "href": "lectures/lec_04_presentation.html#highest-value-per-minute-first-1",
     "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8"
+    "section": "Highest value per minute first",
+    "text": "Highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0\n  D    50min    €70       1.4\n  E    30min    €130      4.3\n  F    40min    €120      3.0\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6\n  I    50min    €90       1.8"
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-2",
-    "href": "lectures/lec_04_presentation.html#weighted-spt-highest-value-per-minute-first-2",
+    "objectID": "lectures/lec_04_presentation.html#highest-value-per-minute-first-2",
+    "href": "lectures/lec_04_presentation.html#highest-value-per-minute-first-2",
     "title": "Lecture IV: Scheduling",
-    "section": "Weighted SPT: highest value per minute first",
-    "text": "Weighted SPT: highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4           9\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7"
+    "section": "Highest value per minute first",
+    "text": "Highest value per minute first\nRule: Highest revenue per minute first\nTask  Duration  Revenue  Revenue/Min  Schedule\n  A    20min    €240     12.0           1\n  B    30min    €200      6.7           2\n  C    60min    €120      2.0           6\n  D    50min    €70       1.4           9\n  E    30min    €130      4.3           4\n  F    40min    €120      3.0           5\n  G    20min    €100      5.0           3\n  H    70min    €110      1.6           8\n  I    50min    €90       1.8           7"
   },
   {
     "objectID": "lectures/lec_04_presentation.html#value-per-minute-in-real-life",
@@ -6591,7 +6591,7 @@
     "href": "lectures/lec_04_presentation.html#with-dependencies-there-is-often-no-quick-recipe",
     "title": "Lecture IV: Scheduling",
     "section": "With dependencies, there is often no quick recipe",
-    "text": "With dependencies, there is often no quick recipe\n\nFor deadlines, waiting time and value, sorting is enough\nAdd dependencies, and for many goals nobody knows a fast way to find the best plan\nIn practice: good rules of thumb, or software that searches for a good plan\n\n\nA good plan now beats a perfect plan too late.\n\nIn computer science terms these problems are NP-hard: no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules."
+    "text": "With dependencies, there is often no quick recipe\n\nFor deadlines, waiting time and value, sorting is enough\nAdd dependencies, and for many goals nobody knows a fast way to find the best plan\nIn practice: good rules of thumb, or software that searches for a good plan\n\n\nA good plan now beats a perfect plan too late.\n\nIn computer science terms these problems are NP-hard (NP stands for nondeterministic polynomial time): no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler’s algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#interruptions-new-tasks-arrive-while-you-work",
@@ -6608,18 +6608,18 @@
     "text": "A morning with seven tasks\nIt is 8:00. These tasks arrive during the morning:\nTask              Arrives  Duration  Deadline\nEmail A            8:00    20min      9:00\nPresentation       8:00    60min     10:50\nInvestor call      8:30    10min      9:00\nEmail B            8:40    30min     10:20\nLiquidity report   9:00    40min     11:00\nEmail C            9:00    20min     11:20\nEmail D            9:20    40min     10:00\n\nQuestion: How would you start, if the goal is to avoid being late?\n\nAnswer: With Email A. At 8:00 only Email A and the presentation are there, and Email A has the earlier deadline, 9:00. We cannot plan the whole morning in advance, because we do not know yet what arrives later."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#edd-in-real-time-switch-only-for-an-earlier-deadline",
-    "href": "lectures/lec_04_presentation.html#edd-in-real-time-switch-only-for-an-earlier-deadline",
+    "objectID": "lectures/lec_04_presentation.html#in-real-time-switch-only-for-an-earlier-deadline",
+    "href": "lectures/lec_04_presentation.html#in-real-time-switch-only-for-an-earlier-deadline",
     "title": "Lecture IV: Scheduling",
-    "section": "EDD in real time: switch only for an earlier deadline",
-    "text": "EDD in real time: switch only for an earlier deadline\nRule:\n\nAlways work on the task with the earliest deadline\nA new task with an earlier deadline interrupts the current one\nOtherwise, stick to the current task\n\n\nThis works for any goal: switch only if the new task beats the current one.\n\nEqual deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task."
+    "section": "In real time: switch only for an earlier deadline",
+    "text": "In real time: switch only for an earlier deadline\nRule:\n\nAlways work on the task with the earliest deadline\nA new task with an earlier deadline interrupts the current one\nOtherwise, stick to the current task\n\n\nThis works for any goal: switch only if the new task beats the current one.\n\nEqual deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task."
   },
   {
-    "objectID": "lectures/lec_04_presentation.html#the-real-time-edd-schedule",
-    "href": "lectures/lec_04_presentation.html#the-real-time-edd-schedule",
+    "objectID": "lectures/lec_04_presentation.html#the-morning-planned-in-real-time",
+    "href": "lectures/lec_04_presentation.html#the-morning-planned-in-real-time",
     "title": "Lecture IV: Scheduling",
-    "section": "The real-time EDD schedule",
-    "text": "The real-time EDD schedule\n\n\n\n\n\n\n\n\n\nGrey line: arrival, red mark: deadline.\n\nQuestion: What is the worst delay with this plan?\n\n\n20 minutes, for the liquidity report and Email C.\n\n\nNo plan does better here: there is simply more work than time.\n\nAnswer: 20 minutes. The liquidity report finishes at 11:20 with a deadline of 11:00, and Email C finishes at 11:40 with a deadline of 11:20. Everything else is on time, Email D exactly at 10:00. The presentation is interrupted twice, so it is done in three pieces, and still finishes at 10:40, before its deadline."
+    "section": "The morning, planned in real time",
+    "text": "The morning, planned in real time\n\n\n\n\n\n\n\n\n\nGrey line: arrival, red mark: deadline.\n\nQuestion: What is the worst delay with this plan?\n\n\n20 minutes, for the liquidity report and Email C.\n\n\nNo plan does better here: there is simply more work than time.\n\nAnswer: 20 minutes. The liquidity report finishes at 11:20 with a deadline of 11:00, and Email C finishes at 11:40 with a deadline of 11:20. Everything else is on time, Email D exactly at 10:00. The presentation is interrupted twice, so it is done in three pieces, and still finishes at 10:40, before its deadline."
   },
   {
     "objectID": "lectures/lec_04_presentation.html#every-switch-costs",
