@@ -426,9 +426,11 @@ All times count from now: task D is due in 70 minutes.
 Answer: Sort the tasks by deadline and work through them in that order: D, B, A, C, E. This is the earliest due date rule, and for this goal it is the best possible order.
 :::
 
-## Earliest Due Date: sort by deadline
+## Earliest deadline first
 
-[Rule:]{.task} Sort the tasks by deadline (**EDD**).
+[Rule:]{.task} Sort the tasks by deadline, earliest first.
+
+This rule is called **Earliest Due Date**, or EDD.
 
 ```{.python}
 Task  Duration  Deadline
@@ -454,7 +456,7 @@ Task  Duration  Deadline
 
 [Let's visualize this!]{.highlight}
 
-## The EDD schedule
+## The plan: earliest deadline first
 
 ```{python}
 #| echo: false
@@ -518,9 +520,11 @@ No deadlines this time. For each task, someone is waiting.
 Answer: Shortest task first. Every task that is done early stops waiting, and everything behind it waits only a little. This is the shortest processing time rule, and it gives the smallest total waiting time.
 :::
 
-## Shortest Processing Time: shortest task first {auto-animate=true}
+## Shortest task first {auto-animate=true}
 
-[Rule:]{.task} Always do the **shortest remaining task** next (**SPT**). If two are equally short, pick either.
+[Rule:]{.task} Always do the **shortest remaining task** next. If two are equally short, pick either.
+
+This rule is called **Shortest Processing Time**, or SPT.
 
 ```{.python}
 Task  Duration  Schedule
@@ -539,9 +543,11 @@ Task  Duration  Schedule
 Answer: B, E, A, D, C, or E, B, A, D, C, because B and E both take 30 minutes. Both orders give the same total waiting time.
 :::
 
-## Shortest Processing Time: shortest task first {auto-animate=true}
+## Shortest task first {auto-animate=true}
 
-[Rule:]{.task} Always do the **shortest remaining task** next (**SPT**). If two are equally short, pick either.
+[Rule:]{.task} Always do the **shortest remaining task** next. If two are equally short, pick either.
+
+This rule is called **Shortest Processing Time**, or SPT.
 
 ```{.python}
 Task  Duration  Schedule
@@ -556,7 +562,7 @@ Task  Duration  Schedule
 
 **Final sequence: [B E A D C]{.highlight} or [E B A D C]{.highlight}**
 
-## The SPT schedule
+## The plan: shortest task first
 
 ```{python}
 #| echo: false
@@ -623,7 +629,7 @@ Task  Duration  Revenue
 Answer: Neither the highest revenue nor the shortest task alone, but revenue per minute, highest first. A earns 12 euros per minute, D only 1.40. The order is A, B, G, E, F, C, I, H, D. Students often propose "highest revenue first". That would move G, 20 minutes for 100 euros, from third to seventh place.
 :::
 
-## Weighted SPT: highest value per minute first {auto-animate=true}
+## Highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Highest revenue per minute first
 
@@ -649,10 +655,10 @@ Revenue per minute = revenue divided by duration. Task A: 240 euros / 20 minutes
 [Question:]{.question} **In which order do we work?**
 
 ::: {.notes}
-Answer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down.
+Answer: A (12.0), B (6.7), G (5.0), E (4.3), F (3.0), C (2.0), I (1.8), H (1.6), D (1.4). Read the Revenue/Min column from the highest value down. This rule is called Weighted Shortest Processing Time, or WSPT.
 :::
 
-## Weighted SPT: highest value per minute first {auto-animate=true}
+## Highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Highest revenue per minute first
 
@@ -669,7 +675,7 @@ Task  Duration  Revenue  Revenue/Min  Schedule
   I    50min    €90       1.8
 ```
 
-## Weighted SPT: highest value per minute first {auto-animate=true}
+## Highest value per minute first {auto-animate=true}
 
 [Rule:]{.task} Highest revenue per minute first
 
@@ -826,7 +832,7 @@ A task is as important as what waits for it.
 A good plan now beats a perfect plan too late.
 
 ::: {.notes}
-In computer science terms these problems are NP-hard: no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler's algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules.
+In computer science terms these problems are NP-hard (NP stands for nondeterministic polynomial time): no known algorithm finds the best plan in reasonable time once the task list grows, and this is true for most scheduling problems. Waiting time with dependencies is one example. The exception with deadlines: Lawler's algorithm (1968) finds the best order for the worst delay with dependencies by filling the schedule from the back, always placing the task without successors that has the latest deadline last. It is no longer on the slides. Heuristics are rules that give good, but not provably optimal schedules.
 :::
 
 ## Interruptions: new tasks arrive while you work
@@ -862,7 +868,7 @@ Email D            9:20    40min     10:00
 Answer: With Email A. At 8:00 only Email A and the presentation are there, and Email A has the earlier deadline, 9:00. We cannot plan the whole morning in advance, because we do not know yet what arrives later.
 :::
 
-## EDD in real time: switch only for an earlier deadline
+## In real time: switch only for an earlier deadline
 
 [Rule:]{.task}
 
@@ -878,7 +884,7 @@ This works for any goal: switch only if the new task beats the current one.
 Equal deadline: if a new task has the same deadline as the current task, you can choose either. But because of the cost of context switching, you should stick with the current task.
 :::
 
-## The real-time EDD schedule
+## The morning, planned in real time
 
 ```{python}
 #| echo: false
