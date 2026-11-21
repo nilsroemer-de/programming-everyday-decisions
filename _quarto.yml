@@ -77,8 +77,6 @@ website:
             href: tutorials/tut_05_01_llm.qmd
           - text: "05-02: Recap"
             href: tutorials/tut_05_02_recap.qmd
-          - text: "05-03: Free Tasks"
-            href: tutorials/tut_05_03_free.qmd
       - section: "06 Kindness"
         contents:
           - text: "Lecture"
