@@ -3,10 +3,11 @@
 The frame slides are written out in each lecture. For each lectures/lec_0*.qmd the script
 reports, as hints only (exit code is always 0):
 - the frame slides: "Today in one sentence", the opening "Roadmap", a roadmap slide before
-  section 2 and 3, "What we covered", "Why it matters" and the key message slide
+  each further section (so one roadmap slide per section), "What we covered", "Why it
+  matters" and the key message slide
   (section covered slides are optional; if present, their titles must match the roadmap),
-- whether there are exactly three level-1 sections whose titles equal the points of the
-  opening roadmap, and whether every roadmap slide lists the same three points,
+- whether there are three or four level-1 sections whose titles equal the points of the
+  opening roadmap, and whether every roadmap slide lists the same points,
 - slides (level-2 headers) whose visible text has more than 40 words
   (code, speaker notes, footnote definitions, image credits and table rows do not count),
 - slides without a title; loud slides and photo slides are listed separately because they
@@ -22,6 +23,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MAX_WORDS = 40
+SECTION_COUNTS = (3, 4)  # a lecture has three or four sections
 
 
 def strip_front_matter(text: str) -> str:
@@ -78,22 +80,23 @@ def check(path: pathlib.Path) -> list[str]:
     if not any(".lecture-key" in h for h in headers):
         hints.append("frame slide missing: key message (## {.loud-slide .lecture-key})")
     roadmaps = [roadmap_points(b) for lvl, h, t, b in slides if lvl == 2 and t == "Roadmap"]
-    if len(roadmaps) != 3:
-        hints.append(f"{len(roadmaps)} roadmap slides, expected 3 (opening, before section 2 and 3)")
-    if roadmaps and any(r != roadmaps[0] for r in roadmaps):
-        hints.append("roadmap slides list different points")
     covered = [t for lvl, h, t, _ in slides if lvl == 2 and ".section-covered" in h]
     sections = [t for lvl, _, t, _ in slides if lvl == 1]
+    if len(sections) not in SECTION_COUNTS:
+        hints.append(f"{len(sections)} level-1 sections, expected 3 or 4")
+    if len(roadmaps) != len(sections):
+        hints.append(f"{len(roadmaps)} roadmap slides, expected {len(sections)} "
+                     "(one per section: the opening, then one before each further section)")
+    if roadmaps and any(r != roadmaps[0] for r in roadmaps):
+        hints.append("roadmap slides list different points")
     if roadmaps:
-        if len(roadmaps[0]) != 3:
-            hints.append(f"opening roadmap has {len(roadmaps[0])} points, expected 3")
+        if len(roadmaps[0]) not in SECTION_COUNTS:
+            hints.append(f"opening roadmap has {len(roadmaps[0])} points, expected 3 or 4")
         if [s.lower() for s in sections] != [p.lower() for p in roadmaps[0]]:
             hints.append(f"sections {sections} do not equal the roadmap {roadmaps[0]}")
         # section covered slides are optional (no longer part of the frame); if present they must match
         if covered and [c.lower() for c in covered] != [p.lower() for p in roadmaps[0]]:
             hints.append(f"covered slides {covered} do not match the roadmap (one per section, same title)")
-    elif len(sections) != 3:
-        hints.append(f"{len(sections)} level-1 sections, expected 3")
 
     # text per slide
     untitled, untitled_by_design, long = [], [], []

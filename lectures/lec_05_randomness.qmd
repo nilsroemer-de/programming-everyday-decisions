@@ -16,7 +16,7 @@ format:
 ::: {.lecture-why}
 [Why it matters]{.eyebrow}
 
-Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes, survey customers and allocate scarce places fairly.
+Will your project finish on time? Which route through 20 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes, survey customers and allocate scarce places fairly.
 :::
 
 ## Roadmap {.lecture-opening}
@@ -103,20 +103,19 @@ Answer: Determinism, predictability and consistency. Life without any chance wou
 
 ## Is this die fair?
 
-[Question:]{.question} **How would you test if a pair of dice is fair?**
+[Question:]{.question} **How would you test if a die is fair?**
 
 . . .
 
-- Send the dice **to a lab** to [check weight and balance]{.highlight}
-
-. . .
-
-- Roll the dice **many times**
-- Check if the outcomes are **uniformly distributed**
-- Compare **observed** frequencies to **expected** frequencies
+:::{.incremental}
+- Send it to a lab to check weight and balance
+- Or simply: roll it **many times**
+- Count how often each number comes up
+- A fair die shows each number about **one sixth** of the time
+:::
 
 ::: {.notes}
-Answer: Roll them many times and count. A fair die shows each number about one sixth of the time; a loaded die shows one number far more often. We do not need to look inside the die, we only need enough rolls.
+Answer: Roll it many times and count. A fair die shows each number about one sixth of the time; a loaded die shows one number far more often. We do not need to look inside the die, we only need enough rolls.
 :::
 
 ## A fair and a loaded die after 200 rolls
@@ -213,20 +212,6 @@ plt.close()
 
 ![](../animations/dice_fairness.gif)
 
-## Randomness is a tool, not just a gamble
-
-:::{.incremental}
-- **Testing:** random inputs find bugs
-- **Optimization:** random steps escape dead ends
-- **Simulation:** model systems with uncertainty
-- **Security:** stay unpredictable for attackers
-- **Fairness:** remove bias from selection
-:::
-
-::: {.notes}
-Randomness is a fundamental aspect of the world, and it is not just about generating random numbers. Testing: generate random inputs to find bugs. Optimization: escape local optima in complex problems. Simulation: model complex systems with uncertainty. Security: make systems unpredictable to attackers. Fairness: eliminate bias in selection processes.
-:::
-
 ## Where do you meet randomness every day?
 
 [Question:]{.question} **Where do you encounter randomness in daily life?**
@@ -235,13 +220,32 @@ Randomness is a fundamental aspect of the world, and it is not just about genera
 - **A/B tests:** visitors are assigned to versions at random
 - **Two-factor codes:** random numbers protect your login
 - **Surveys:** a random sample gives an unbiased picture
-- **Spotify shuffle:** made deliberately *less* random, because true randomness felt wrong to users
+- **Spotify shuffle:** made deliberately *less* random, because true randomness felt wrong to users[^spotify]
 - **Tax audits:** random checks keep everyone honest
-- **Lotteries:** scarce places such as study places or apartments, allocated fairly
+- **Lotteries:** some universities allocate study places by lottery
 :::
 
+[^spotify]: Spotify Engineering (2014). How to shuffle songs? https://engineering.atspotify.com/2014/02/how-to-shuffle-songs
+
 ::: {.notes}
-Answer: Almost everywhere: online shops test versions at random, login codes are random, surveys and tax audits pick people at random, and some cities allocate study places or apartments by lottery. Spotify is the surprise: with true shuffle, the same artist sometimes came twice in a row, and users thought the shuffle was broken.
+Answer: Almost everywhere: online shops test versions at random, login codes are random, surveys and tax audits pick people at random, and some universities allocate study places by lottery. Spotify is the surprise: with true shuffle, the same artist sometimes came twice in a row, and users thought the shuffle was broken.
+:::
+
+## Randomness is a tool, not just a gamble
+
+:::{.incremental}
+- **Fairness:** nobody can influence the outcome
+- **Security:** attackers cannot guess what comes next
+- **Estimating:** try many random cases instead of calculating every one
+- **Searching:** random steps lead out of dead ends
+:::
+
+. . .
+
+Estimating and searching are our topics today.
+
+::: {.notes}
+We use randomness on purpose, not only in games. Fairness: when nobody can influence the outcome, nobody is favored. Security: passwords, keys and login codes are random, so attackers cannot guess the next one. Estimating: instead of calculating every case, we try many random cases and count. Searching: random steps help a search escape dead ends and find better solutions.
 :::
 
 ## Can a computer roll a die?
@@ -251,22 +255,20 @@ Answer: Almost everywhere: online shops test versions at random, login codes are
 . . .
 
 ::: {.columns}
-::: {.column width="50%"}
-[True Randomness]{.highlight}
+::: {.column .fragment width="50%"}
+[True randomness]{.highlight}
 
-- Physical phenomena
-- Atmospheric noise
-- Radioactive decay
-- Quantum effects
+- comes from physics
+- for example radioactive decay or atmospheric noise
+- cannot be repeated
 :::
 
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 [Pseudo-randomness]{.highlight}
 
-- Deterministic algorithms
-- Seed-based generation
-- Repeatable sequences
-- Good enough for most uses
+- comes from a calculation
+- looks random, but follows a rule
+- can be repeated exactly
 :::
 :::
 
@@ -317,7 +319,7 @@ Computing and evaluating all possible combinations is not feasible!
 Answer: 52 factorial, about 8 times 10 to the 67. Earth has roughly 10 to the 50 atoms, so there are about a hundred million billion times more orders than atoms. Every well shuffled deck is very likely an order that has never existed before.
 :::
 
-## Play it instead of calculating it
+## A card game in 1946
 
 [Question:]{.question} **Anybody ever heard of Monte Carlo methods?**
 
@@ -338,16 +340,12 @@ Answer: Monte Carlo methods estimate a result by running many random trials and 
 Ulam then used the same idea at Los Alamos, together with John von Neumann and Nicholas Metropolis, for nuclear research: chain reactions in nuclear fission were too complex to calculate exactly, so they simulated them with random numbers and counted how often each outcome occurred.
 :::
 
-## How can random points find π?
-
-[Question:]{.question} **How could we estimate π?**
-
-. . .
+## How could we estimate π?
 
 :::{.incremental}
 - Throw random points into a square
 - A circle fits exactly inside the square
-- The share of points inside the circle is **π/4**
+- The circle covers **π/4** of the square, so that is the share of points that land inside it
 - So: π ≈ 4 × (points inside / all points)
 :::
 
@@ -497,7 +495,7 @@ with plt.rc_context():
 
 :::{.incremental}
 - Only **63 %** of the simulated projects finish by day 25
-- The most likely 21 days are reached in only **18 %** of the runs
+- Only **18 %** finish within the most likely 21 days
 - On average, the project takes **24 days**
 :::
 
@@ -575,7 +573,7 @@ Answer: It does not scale. Every additional city multiplies the number of routes
 :::{.incremental}
 - For 20 cities: 20! = **2.4 quintillion** routes
 - About **77 million years** at 1 ms per check
-- The effort grows [factorially]{.highlight}: not feasible for real problems
+- Every additional city multiplies the effort: hopeless for real problems
 :::
 
 ::: {.notes}
@@ -584,9 +582,9 @@ Time complexity grows factorially with the number of cities, and memory requirem
 
 ## Greedy: always take the nearest city
 
-- Make the **locally best** choice at each step
-- [Never backtrack or reconsider]{.highlight}
-- Fast and simple, but can perform **poorly on complex problems**
+- From each city, fly to the **nearest city** you have not visited yet
+- Never look back or change earlier choices
+- Fast and simple
 
 . . .
 
@@ -624,6 +622,7 @@ Hill climbing iteratively improves a solution by making small changes. Like clim
 - Make random changes and **accept improvements**
 - Sometimes accept a **worse** change
 - Over time, accept worse changes less and less
+- How often we accept a worse change is called the **temperature**: high at the start, low at the end
 :::
 
 . . .
@@ -633,6 +632,12 @@ Hill climbing iteratively improves a solution by making small changes. Like clim
 . . .
 
 A worse step can lead out of a dead end, towards a higher hill.
+
+. . .
+
+The name comes from metalworking: heat the metal, then let it cool slowly.[^kirkpatrick]
+
+[^kirkpatrick]: Kirkpatrick, S., Gelatt, C. D. & Vecchi, M. P. (1983). Optimization by simulated annealing. Science, 220(4598).
 
 ::: {.notes}
 Answer: Because a worse step can lead out of a dead end. Without it, we stay on the first small hill we find; with it, we can cross a valley and reach a higher one.
@@ -937,12 +942,14 @@ Randomness is not giving up. Often it is the only way through.
 
 ## Thought experiment: freedom or equality?
 
-**What's more important for a society?**
+So far, chance helped us with numbers and routes. Now a bigger question:
+
+[Question:]{.question} **What's more important for a society?**
 
 . . .
 
 ::: {.columns}
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 [Freedom]{.highlight}
 
 - Individual choice
@@ -950,7 +957,7 @@ Randomness is not giving up. Often it is the only way through.
 - Market-driven
 :::
 
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 [Equality]{.highlight}
 
 - Shared resources
@@ -969,7 +976,9 @@ Answer: Yes: our answer depends on where we stand. Someone rich and healthy may 
 
 ## The veil of ignorance
 
-You might [randomly]{.highlight} be:[^rawls]
+The philosopher John Rawls proposed a thought experiment: design a society **before you know who you will be in it**.[^rawls]
+
+You might [randomly]{.highlight} be:
 
 - Any gender identity and economic status
 - Any health condition and intelligence level
@@ -992,10 +1001,10 @@ Answer: Open question. Many students design a society with a safety net, because
 . . .
 
 :::{.incremental}
-- **Individual stories:** powerful but potentially misleading
-- **Statistics:** comprehensive but can miss nuance
-- **Hidden diversity:** important subgroups may be overlooked
-- **Small policy changes** [can have cascading effects]{.highlight}
+- To answer Rawls, we would have to imagine millions of different lives
+- Nobody can calculate that
+- **Individual stories** are powerful, but can mislead
+- **Statistics** cover everyone, but hide the single life
 :::
 
 ::: {.notes}
@@ -1006,10 +1015,10 @@ But that's not all: we also need to decide how to measure success and failure of
 
 ## Which measure of success?
 
-- **Mean happiness:** Average well-being
-- **Total happiness:** Utilitarian approach
-- **Median happiness:** Focus on the middle class
-- **Minimum happiness:** Protecting the most vulnerable
+- **Mean happiness:** the average
+- **Total happiness:** the sum over all people
+- **Median happiness:** the person in the middle
+- **Minimum happiness:** the person who is worst off
 
 . . .
 
@@ -1022,11 +1031,12 @@ Answer: Each measure hides something. The mean can rise while many people are wo
 ## Ask a random sample
 
 :::{.incremental}
-- This is Monte Carlo again: we cannot ask everyone, so we ask a random few.
-- Gather **diverse perspectives** from the sample
-- Better understand **needs** of population
-- **Reduce selection bias** and improve accuracy
+- This is Monte Carlo again: we cannot ask everyone, so we ask a random few
+- A random few show the whole range of lives, not only the loudest or the luckiest
+- The charity GiveDirectly publishes **randomly chosen** reports from the people it supports, not only the success stories[^givedirectly]
 :::
+
+[^givedirectly]: Christian & Griffiths (2016), ch. 9.
 
 ## Who is missing from your sample?
 
@@ -1052,16 +1062,29 @@ Answer: The people or cases we look at are not a fair picture of all of them, be
 The famous example of survivorship bias: engineers studied returning planes to decide where to add armor and initially focused on the areas with the most bullet holes. Abraham Wald pointed out that they should armor the areas without bullet holes, because planes hit there did not survive to return. The same happens when we study only successful companies: the failed ones with the same strategy are missing.
 :::
 
+## Sampling in real life
+
+:::{.incremental}
+- **You:** before a big decision, ask a few people at random, not only those who shout the loudest
+- **Companies:** random customer surveys and random quality checks show the real picture
+:::
+
+. . .
+
+A random few can tell us about the many.
+
 ## Can chance be fair?
 
 [Question:]{.question} **How can randomness promote fairness?**
 
 . . .
 
+:::{.incremental}
 - **Random allocation** of patients in clinical trials
 - **Random audits** for tax compliance
 - **Random assignment** of cases to judges
 - **Random order** of candidates on voting ballots
+:::
 
 ::: {.notes}
 Answer: When nobody can influence the outcome, nobody is favored. A coin does not care who you are, so random choices remove bias wherever people would otherwise pick.
@@ -1074,22 +1097,19 @@ Answer: When nobody can influence the outcome, nobody is favored. A coin does no
 . . .
 
 ::: {.columns}
-::: {.column width="50%"}
-[Embrace When]{.highlight}:
+::: {.column .fragment width="50%"}
+[Use chance to]{.highlight}
 
-- Exploring new solutions
-- Avoiding bias
-- Breaking deadlocks
-- Testing systems
+- explore new solutions
+- estimate what we cannot calculate
+- choose fairly
 :::
 
-::: {.column width="50%"}
-[Reduce When]{.highlight}:
+::: {.column .fragment width="50%"}
+[Avoid chance when]{.highlight}
 
-- Safety-critical systems
-- Financial transactions
-- Medical procedures
-- Legal proceedings
+- the same input must always give the same result
+- for example a bank transfer, the dose of a medicine or the brakes of a car
 :::
 :::
 
@@ -1098,7 +1118,7 @@ Answer: When nobody can influence the outcome, nobody is favored. A coin does no
 Good enough now often beats perfect too late.
 
 ::: {.notes}
-Answer: Embrace chance when we explore, want to avoid bias, are stuck or want to test a system. Reduce it where mistakes are expensive or people must be able to rely on the result: safety, money, health and law.
+Answer: Use chance to explore new solutions, to estimate what we cannot calculate and to choose fairly. Avoid it where the same input must always give the same result, for example a bank transfer, the dose of a medicine or the brakes of a car.
 
 Remember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration.
 :::
@@ -1135,7 +1155,7 @@ A random few can tell us about the many.
 ## Why it matters {.lecture-closing}
 
 ::: {.lecture-why .closing}
-Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes, survey customers and allocate scarce places fairly.
+Will your project finish on time? Which route through 20 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes, survey customers and allocate scarce places fairly.
 :::
 
 ## {.loud-slide .lecture-key}
