@@ -218,16 +218,17 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </div>
 <div class="lecture-why">
 <p><span class="eyebrow">Why it matters</span></p>
-<p>Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes and allocate scarce places fairly.</p>
+<p>Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.</p>
 </div>
 </section>
 <section id="roadmap" class="slide level2 lecture-opening">
 <h2>Roadmap</h2>
 <div class="roadmap">
 <ol type="1">
-<li><span class="roadmap-item future">Randomness everywhere: why chance is useful</span></li>
+<li><span class="roadmap-item future">Randomness is a tool</span></li>
 <li><span class="roadmap-item future">Simulate instead of calculate: Monte Carlo</span></li>
-<li><span class="roadmap-item future">Let chance help you decide: smarter searches, fairer choices</span></li>
+<li><span class="roadmap-item future">Search smarter with chance</span></li>
+<li><span class="roadmap-item future">Sample instead of guess</span></li>
 </ol>
 </div>
 </section>
@@ -237,8 +238,8 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <h2>What comes to your mind?</h2>
 <p><span class="question">Question:</span> <strong>What comes to your mind when you think of randomness?</strong></p>
 <aside class="notes">
-<p>Topic: understanding how randomness powers algorithms and decision-making in computer science and everyday life. Why this matters: randomness isn’t just about gambling. It is a powerful tool that makes computers faster, cryptography secure, and helps us solve problems. Today we learn how embracing uncertainty can lead to better solutions.</p>
-<p>Old agenda: understanding randomness (from casinos to algorithms), randomness in daily life, computer science applications (Monte Carlo, simulated annealing, cryptography), decision making with randomness.</p>
+<p>Answer: Open question. Typical answers are casinos, lotteries, dice and shuffled cards. Let us collect a few, then show that randomness is much more than gambling.</p>
+<p>Today we see how randomness helps computers and people: it makes systems fair and secure, it lets us estimate what we cannot calculate, and it helps us search for good solutions to problems that are too big to solve exactly.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -251,89 +252,69 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </section>
-<section id="casino" class="slide level2" data-background-image="../images/bg/lec05-casino.jpg">
-<h2><span class="invert-font">Casino</span></h2>
-<div class="footer">
-
+<section id="where-does-randomness-show-up" class="slide level2">
+<h2>Where does randomness show up?</h2>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 20px;">
+<figure style="margin: 0;"><img src="../images/bg/lec05-casino.jpg" alt="Casino" style="width: 100%; height: 190px; max-height: none; object-fit: cover; display: block;"><figcaption>Casino</figcaption></figure>
+<figure style="margin: 0;"><img src="../images/bg/lec05-lottery.jpg" alt="Lottery" style="width: 100%; height: 190px; max-height: none; object-fit: cover; display: block;"><figcaption>Lottery</figcaption></figure>
+<figure style="margin: 0;"><img src="../images/bg/lec05-cards.jpg" alt="Shuffling cards" style="width: 100%; height: 190px; max-height: none; object-fit: cover; display: block;"><figcaption>Shuffling cards</figcaption></figure>
+<figure style="margin: 0;"><img src="../images/bg/lec05-algorithms.jpg" alt="Algorithms" style="width: 100%; height: 190px; max-height: none; object-fit: cover; display: block;"><figcaption>Algorithms</figcaption></figure>
+<figure style="margin: 0;"><img src="../images/bg/lec05-crypto.jpg" alt="Cryptography" style="width: 100%; height: 190px; max-height: none; object-fit: cover; display: block;"><figcaption>Cryptography</figcaption></figure>
+<figure style="margin: 0;"><img src="../images/bg/lec05-mutations.jpg" alt="Genetic mutations" style="width: 100%; height: 190px; max-height: none; object-fit: cover; display: block;"><figcaption>Genetic mutations</figcaption></figure>
 </div>
+<aside class="notes">
+<p>Some of these are pure chance (casino, lottery, cards), some use chance on purpose (algorithms, cryptography), and nature has used it all along (genetic mutations).</p>
+<p>Photos: Unsplash (photo IDs 1517232115160, 1593453917923, 1691213426024, 1717501220725, 1640161704729, 1465146344425), stored locally.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="lottery" class="slide level2" data-background-image="../images/bg/lec05-lottery.jpg">
-<h2><span class="invert-font">Lottery</span></h2>
-<div class="footer">
-
-</div>
-</section>
-<section id="shuffling-cards" class="slide level2" data-background-image="../images/bg/lec05-cards.jpg">
-<h2><span class="invert-font">Shuffling cards</span></h2>
-<div class="footer">
-
-</div>
-</section>
-<section id="algorithms" class="slide level2" data-background-image="../images/bg/lec05-algorithms.jpg">
-<h2><span class="invert-font">Algorithms</span></h2>
-<div class="footer">
-
-</div>
-</section>
-<section id="cryptography" class="slide level2" data-background-image="../images/bg/lec05-crypto.jpg">
-<h2><span class="invert-font">Cryptography</span></h2>
-<div class="footer">
-
-</div>
-</section>
-<section id="genetic-mutations" class="slide level2" data-background-image="../images/bg/lec05-mutations.jpg">
-<h2><span class="invert-font">Genetic mutations</span></h2>
-<div class="footer">
-
-</div>
-</section>
-<section id="the-opposite-of-randomness-is-predictability" class="slide level2">
-<h2>The opposite of randomness is predictability</h2>
+<section id="what-is-the-opposite-of-randomness" class="slide level2">
+<h2>What is the opposite of randomness?</h2>
 <p><span class="question">Question:</span> <strong>What’s the opposite of randomness?</strong></p>
-<div class="fragment">
 <ul>
-<li class="fragment"><strong>Determinism</strong> - same input, same output</li>
-<li class="fragment"><strong>Predictability</strong> - knowing the outcome in advance</li>
-<li class="fragment"><strong>Consistency</strong> - reliable patterns</li>
+<li class="fragment"><strong>Determinism:</strong> same input, same output</li>
+<li class="fragment"><strong>Predictability:</strong> knowing the outcome in advance</li>
+<li class="fragment"><strong>Consistency:</strong> reliable patterns</li>
 </ul>
-</div>
 <div class="fragment">
 <ul>
 <li><span class="highlight">Boredom?</span></li>
 </ul>
+<aside class="notes">
+<p>Answer: Determinism, predictability and consistency. Life without any chance would be reliable, but also a little boring.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="is-the-die-fair-roll-it-many-times" class="slide level2">
-<h2>Is the die fair? Roll it many times</h2>
-<p><span class="question">Question:</span> <strong>How would you test if a pair of dice is fair?</strong></p>
-<div class="fragment">
+<section id="are-these-dice-fair" class="slide level2">
+<h2>Are these dice fair?</h2>
+<p><span class="question">Question:</span> <strong>How would you test if dice are fair?</strong></p>
 <ul>
-<li>Send the dice <strong>to a lab</strong> to <span class="highlight">check weight and balance</span></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Roll the dice <strong>many times</strong></li>
-<li>Check if the outcomes are <strong>uniformly distributed</strong></li>
-<li>Compare <strong>observed</strong> frequencies to <strong>expected</strong> frequencies</li>
-</ul>
-</div>
-</section>
-<section id="a-fair-and-a-loaded-die-after-200-rolls" class="slide level2">
-<h2>A fair and a loaded die after 200 rolls</h2>
-
-<img data-src="../animations/dice_fairness.gif" class="r-stretch"></section>
-<section id="randomness-is-a-tool-not-just-a-gamble" class="slide level2">
-<h2>Randomness is a tool, not just a gamble</h2>
-<ul>
-<li class="fragment"><strong>Testing:</strong> random inputs find bugs</li>
-<li class="fragment"><strong>Optimization:</strong> random steps escape dead ends</li>
-<li class="fragment"><strong>Simulation:</strong> model systems with uncertainty</li>
-<li class="fragment"><strong>Security:</strong> stay unpredictable for attackers</li>
-<li class="fragment"><strong>Fairness:</strong> remove bias from selection</li>
+<li class="fragment">Send them to a lab to check weight and balance</li>
+<li class="fragment">Or simply: roll them <strong>many times</strong></li>
+<li class="fragment">Count how often each number comes up</li>
+<li class="fragment">Fair dice show each number about <strong>one sixth</strong> of the time</li>
 </ul>
 <aside class="notes">
-<p>Randomness is a fundamental aspect of the world, and it is not just about generating random numbers. Testing: generate random inputs to find bugs. Optimization: escape local optima in complex problems. Simulation: model complex systems with uncertainty. Security: make systems unpredictable to attackers. Fairness: eliminate bias in selection processes.</p>
+<p>Answer: Roll them many times and count. Fair dice show each number about one sixth of the time; loaded dice show one number far more often. We do not need to look inside the dice, we only need enough rolls.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -346,60 +327,23 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </section>
+<section id="fair-and-loaded-dice-after-200-rolls" class="slide level2">
+<h2>Fair and loaded dice after 200 rolls</h2>
+
+<img data-src="../animations/dice_fairness.gif" class="r-stretch"></section>
 <section id="where-do-you-meet-randomness-every-day" class="slide level2">
 <h2>Where do you meet randomness every day?</h2>
 <p><span class="question">Question:</span> <strong>Where do you encounter randomness in daily life?</strong></p>
-</section>
-<section id="social-life-chance-brings-people-together" class="slide level2">
-<h2>Social life: chance brings people together</h2>
 <ul>
-<li class="fragment"><strong>Dating apps:</strong> Randomized matching within preferences</li>
-<li class="fragment"><strong>Random encounters</strong> that lead to friendships</li>
-<li class="fragment"><strong>Career opportunities</strong> from unexpected connections</li>
-<li class="fragment"><strong>Breaking ties</strong> through coin tosses</li>
-<li class="fragment"><strong>Netflix recommendations:</strong> Controlled randomness for discovery</li>
-</ul>
-</section>
-<section id="entertainment-controlled-randomness-keeps-us-playing" class="slide level2">
-<h2>Entertainment: controlled randomness keeps us playing</h2>
-<ul>
-<li class="fragment"><strong>Pokémon:</strong> “Random” encounters weighted by rarity</li>
-<li class="fragment"><strong>Loot systems:</strong> Rare items have controlled drop rates</li>
-<li class="fragment"><strong>Chess AI:</strong> Introduces randomness to feel more human-like</li>
-<li class="fragment"><strong>Spotify shuffle:</strong> Deliberately less random to feel natural</li>
-<li class="fragment"><strong>TikTok:</strong> Controlled randomization for content discovery</li>
-</ul>
-</section>
-<section id="security-unpredictability-protects-us" class="slide level2">
-<h2>Security: unpredictability protects us</h2>
-<ul>
-<li class="fragment"><strong>Cryptocurrency mining:</strong> Solving cryptographic puzzles through guessing</li>
-<li class="fragment"><strong>Password generators:</strong> Balance randomness and memorability</li>
-<li class="fragment"><strong><code>correct-horse-battery-staple</code></strong> is more secure than <strong><code>Tr0ub4dor&amp;3</code></strong></li>
-<li class="fragment"><strong>Modern encryption</strong> relies on random number generation</li>
-<li class="fragment"><strong>Two-factor authentication</strong> uses random codes</li>
-</ul>
-</section>
-<section id="research-random-samples-give-unbiased-answers" class="slide level2">
-<h2>Research: random samples give unbiased answers</h2>
-<ul>
-<li class="fragment"><strong>Weather forecasting:</strong> randomness models uncertainty</li>
-<li class="fragment"><strong>Stock algorithms:</strong> randomness avoids predictable patterns</li>
-<li class="fragment"><strong>Self-driving cars:</strong> random elements feel natural</li>
-<li class="fragment"><strong>Random sampling:</strong> unbiased research results</li>
-<li class="fragment"><strong>A/B testing:</strong> random assignment to groups</li>
-</ul>
-</section>
-<section id="why-computer-scientists-love-randomness" class="slide level2">
-<h2>Why computer scientists love randomness</h2>
-<ul>
-<li class="fragment"><strong>Efficiency:</strong> often faster than deterministic approaches</li>
-<li class="fragment"><strong>Simplicity:</strong> complex problems, simple code</li>
-<li class="fragment"><strong>Robustness:</strong> avoids worst-case scenarios</li>
-<li class="fragment"><strong>Approximation:</strong> “good enough” solutions in reasonable time</li>
+<li class="fragment"><strong>A/B tests:</strong> visitors are assigned to versions at random</li>
+<li class="fragment"><strong>Two-factor codes:</strong> random numbers protect your login</li>
+<li class="fragment"><strong>Surveys:</strong> a random sample gives an unbiased picture</li>
+<li class="fragment"><strong>Spotify shuffle:</strong> made deliberately <em>less</em> random, because true randomness felt wrong to users<sup>1</sup></li>
+<li class="fragment"><strong>Tax audits:</strong> random checks keep everyone honest</li>
+<li class="fragment"><strong>Lotteries:</strong> some universities allocate study places by lottery</li>
 </ul>
 <aside class="notes">
-<p>The key trade-off of this lecture: perfect vs.&nbsp;“good enough” solutions. Randomness is everywhere around us, and computer scientists use it on purpose.</p>
+<p>Answer: Almost everywhere: online shops test versions at random, login codes are random, surveys and tax audits pick people at random, and some universities allocate study places by lottery. Spotify is the surprise: with true shuffle, the same artist sometimes came twice in a row, and users thought the shuffle was broken.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -411,36 +355,66 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="true-randomness-comes-from-physics-pseudo-randomness-from-a-seed" class="slide level2">
-<h2>True randomness comes from physics, pseudo-randomness from a seed</h2>
-<p><span class="question">Question:</span> <strong>Difference between true and pseudo-randomness?</strong></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Spotify Engineering (2014). How to shuffle songs? <a href="https://engineering.atspotify.com/2014/02/how-to-shuffle-songs" class="uri">https://engineering.atspotify.com/2014/02/how-to-shuffle-songs</a></p></li></ol></aside></section>
+<section id="randomness-is-a-tool-not-just-a-gamble" class="slide level2">
+<h2>Randomness is a tool, not just a gamble</h2>
+<ul>
+<li class="fragment"><strong>Fairness:</strong> nobody can influence the outcome</li>
+<li class="fragment"><strong>Security:</strong> attackers cannot guess what comes next</li>
+<li class="fragment"><strong>Estimating:</strong> try many random cases instead of calculating every one</li>
+<li class="fragment"><strong>Searching:</strong> random steps lead out of dead ends</li>
+</ul>
 <div class="fragment">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><span class="highlight">True Randomness</span></p>
-<ul>
-<li>Physical phenomena</li>
-<li>Atmospheric noise</li>
-<li>Radioactive decay</li>
-<li>Quantum effects</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><span class="highlight">Pseudo-randomness</span></p>
-<ul>
-<li>Deterministic algorithms</li>
-<li>Seed-based generation</li>
-<li>Repeatable sequences</li>
-<li>Good enough for most uses</li>
-</ul>
-</div></div>
+<p>Estimating and searching are our topics today.</p>
+<aside class="notes">
+<p>We use randomness on purpose, not only in games. Fairness: when nobody can influence the outcome, nobody is favored. Security: passwords, keys and login codes are random, so attackers cannot guess the next one. Estimating: instead of calculating every case, we try many random cases and count. Searching: random steps help a search escape dead ends and find better solutions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="randomness-everywhere-why-chance-is-useful-1" class="slide level2 section-covered">
-<h2>Randomness everywhere: why chance is useful</h2>
-<div class="section-covered">
-<p><span class="eyebrow">What we covered</span></p>
-<p><span class="statement">Randomness is more than gambling: it makes algorithms faster, systems secure and discoveries possible.</span></p>
+<section id="can-a-computer-roll-dice" class="slide level2">
+<h2>Can a computer roll dice?</h2>
+<p><span class="question">Question:</span> <strong>How can a machine that only calculates produce randomness?</strong></p>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<p><span class="highlight">True randomness</span></p>
+<ul>
+<li>comes from physics</li>
+<li>for example radioactive decay or atmospheric noise</li>
+<li>cannot be repeated</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<p><span class="highlight">Pseudo-randomness</span></p>
+<ul>
+<li>comes from a calculation</li>
+<li>looks random, but follows a rule</li>
+<li>can be repeated exactly</li>
+</ul>
+</div></div>
+<div class="fragment">
+<p>Computers do not roll dice, they calculate. The starting value is called the <strong>seed</strong>. Same seed, same numbers: that is why your tutorial results are reproducible.</p>
+<aside class="notes">
+<p>Answer: It cannot, not really. It calculates numbers that only look random, starting from a seed. For real randomness it needs a physical source, such as noise in its hardware. For simulations, pseudo-randomness is good enough, and the seed makes our results repeatable.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section></section>
 <section>
@@ -449,16 +423,17 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <h2>Roadmap</h2>
 <div class="roadmap">
 <ol type="1">
-<li><span class="roadmap-item done">Randomness everywhere: why chance is useful</span></li>
+<li><span class="roadmap-item done">Randomness is a tool</span></li>
 <li><span class="roadmap-item current">Simulate instead of calculate: Monte Carlo</span></li>
-<li><span class="roadmap-item future">Let chance help you decide: smarter searches, fairer choices</span></li>
+<li><span class="roadmap-item future">Search smarter with chance</span></li>
+<li><span class="roadmap-item future">Sample instead of guess</span></li>
 </ol>
 </div>
 </section>
 <section id="some-things-are-too-big-to-count" class="slide level2">
 <h2>Some things are too big to count</h2>
 <p><span class="question">Question:</span> <strong>How many possible orders exist for a shuffled deck of cards?</strong></p>
-<div id="efeda4e6" class="cell" data-execution_count="2">
+<div id="3067dee6" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> math</span>
 <span id="cb1-2"><a></a><span class="bu">print</span>(math.factorial(<span class="dv">52</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -468,29 +443,25 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </div>
 </div>
 <div class="fragment">
+<p>That is more than the number of atoms on Earth.<sup>1</sup></p>
+</div>
+<div class="fragment">
 <div class="callout callout-important callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Computing and evaluating all possible combinations is not feasible!</p>
+<p>No computer can ever go through all of these orders one by one.</p>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="monte-carlo-estimate-by-running-many-random-trials" class="slide level2">
-<h2>Monte Carlo: estimate by running many random trials</h2>
-<p><span class="question">Question:</span> <strong>Anybody ever heard of “Monte Carlo methods”?</strong></p>
 <div class="fragment">
-<ul>
-<li>1940s nuclear research: chain reactions were too complex to calculate</li>
-<li>Idea: draw random cases many times and <span class="highlight">count the outcomes</span></li>
-<li>Named after <strong>Monaco’s famous casino</strong></li>
-</ul>
+<p><span class="question">Question:</span> <strong>So how do we answer questions about card games?</strong></p>
 <aside class="notes">
-<p>Monte Carlo methods were developed in the 1940s for nuclear weapons research. Nuclear fission chain reactions were too complex to calculate exactly, so the researchers simulated them with random numbers to evaluate the probabilities of different outcomes.</p>
+<p>Answer: 52 factorial, about 8 times 10 to the 67. Earth has roughly 10 to the 50 atoms, so there are about a hundred million billion times more orders than atoms. Every well shuffled deck is very likely an order that has never existed before.</p>
+<p>Answer: By playing many games and counting. That is the story on the next slide.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -503,12 +474,71 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </div>
-<div class="fragment">
-<p><span class="question">Question:</span> <strong>How could we estimate π?</strong></p>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>52! ≈ 8 × 10<sup>67</sup>. Earth has roughly 10<sup>50</sup> atoms (order of magnitude).</p></li></ol></aside></section>
+<section id="a-card-game-in-1946" class="slide level2">
+<h2>A card game in 1946</h2>
+<p><span class="question">Question:</span> <strong>Anybody ever heard of Monte Carlo methods?</strong></p>
+<ul>
+<li class="fragment">In 1946, the mathematician Stanislaw Ulam was recovering from an illness and played solitaire</li>
+<li class="fragment">He wondered: what is the chance of winning?</li>
+<li class="fragment">Calculating it was hopeless. So he thought: just play many games and count the wins</li>
+<li class="fragment">The idea became the <strong>Monte Carlo method</strong>, named after the casino in Monaco<sup>1</sup></li>
+</ul>
+<aside class="notes">
+<p>Answer: Monte Carlo methods estimate a result by running many random trials and counting the outcomes. Ulam’s question about solitaire is the classic origin story.</p>
+<p>Ulam then used the same idea at Los Alamos, together with John von Neumann and Nicholas Metropolis, for nuclear research: chain reactions in nuclear fission were too complex to calculate exactly, so they simulated them with random numbers and counted how often each outcome occurred.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Christian &amp; Griffiths (2016), ch.&nbsp;9.</p></li></ol></aside></section>
+<section id="how-could-we-estimate-π" class="slide level2">
+<h2>How could we estimate π?</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div id="e30f2e5f" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec_05_randomness_files/figure-html/cell-4-output-1.png" width="646" height="646"></p>
+</figure>
 </div>
-</section>
-<section id="estimating-π-by-throwing-random-points" class="slide level2">
-<h2>Estimating π by throwing random points</h2>
+</div>
+</div>
+</div><div class="column" style="width:55%;">
+<ul>
+<li class="fragment">Throw random points into the square</li>
+<li class="fragment">Count how many land inside the circle</li>
+<li class="fragment">The more points we throw, the closer we get to π</li>
+</ul>
+<div class="fragment">
+<p>The idea goes back to Buffon, who in 1777 dropped needles on lined paper.<sup>1</sup></p>
+</div>
+</div></div>
+<aside class="notes">
+<p>Answer: By throwing random points. A circle fits exactly inside the square. The circle covers <strong>π/4</strong> of the square, so that is the share of points that land inside it: about 79 %, so about 79 of 100 random points. So: π ≈ 4 × (points inside / all points). Count them, multiply the share by 4, and we have an estimate of π that gets better the more points we throw.</p>
+<p>Buffon asked how likely a needle dropped on lined paper crosses a line. The answer contains π, so dropping many needles and counting estimates π. Laplace later pointed out exactly that.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><ol class="aside-footnotes"><li id="fn4"><p>Christian &amp; Griffiths (2016), ch.&nbsp;9.</p></li></ol></aside></section>
+<section id="lets-throw-points" class="slide level2">
+<h2>Let’s throw points</h2>
 
 <img data-src="../animations/pi.gif" class="r-stretch"></section>
 <section id="monte-carlo-in-business-a-range-instead-of-a-single-forecast" class="slide level2">
@@ -517,8 +547,9 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <li class="fragment"><strong>Project planning:</strong> how likely do we finish before the deadline?</li>
 <li class="fragment"><strong>Finance:</strong> how much could a portfolio lose in a bad month?</li>
 <li class="fragment"><strong>Inventory:</strong> how much stock covers an uncertain demand?</li>
-<li class="fragment"><strong>Recipe:</strong> model the uncertain inputs, draw random values many times</li>
 </ul>
+<div class="fragment">
+<p>The recipe: describe each uncertain input as a range, draw random values, repeat thousands of times, count.</p>
 <aside class="notes">
 <p>Instead of a single forecast, Monte Carlo gives a range of outcomes with probabilities. The recipe is always the same: describe each uncertain input by a range or distribution, draw random values for all inputs, compute the result, repeat thousands of times, and look at the distribution of results.</p>
 <style type="text/css">
@@ -532,25 +563,47 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</div>
 </section>
-<section id="most-likely-21-days-but-only-63-finish-by-day-25" class="slide level2">
-<h2>Most likely 21 days, but only 63 % finish by day 25</h2>
+<section id="will-we-finish-in-25-days" class="slide level2">
+<h2>Will we finish in 25 days?</h2>
 <p>Three uncertain tasks, most likely <strong>21 days</strong> in total, deadline <strong>25 days</strong>:</p>
-<div id="5d5bdcb6" class="cell" data-execution_count="4">
+<div id="f3753511" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="lec_05_randomness_files/figure-html/cell-5-output-1.png" width="1471" height="511"></p>
+<p><img data-src="lec_05_randomness_files/figure-html/cell-6-output-1.png" width="1096" height="268"></p>
 </figure>
 </div>
 </div>
 </div>
+<ul>
+<li class="fragment">Only <strong>63 %</strong> of the simulated projects finish by day 25</li>
+<li class="fragment">Only <strong>18 %</strong> finish within the most likely 21 days</li>
+<li class="fragment">On average, the project takes <strong>24 days</strong></li>
+</ul>
+<aside class="notes">
+<p>Each task has a minimum, a most likely and a maximum duration: requirements 3, 5 and 10 days, build 8, 12 and 20 days, test 2, 4 and 8 days. Things can go much worse than planned, but rarely much better, so the delays add up. The most likely total of 21 days is the optimistic end of the range, not the middle.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="simulate-instead-of-calculate-monte-carlo-1" class="slide level2 section-covered">
-<h2>Simulate instead of calculate: Monte Carlo</h2>
-<div class="section-covered">
-<p><span class="eyebrow">What we covered</span></p>
-<p><span class="statement">Running many random simulations gives reliable estimates where exact calculation is out of reach.</span></p>
+<section id="monte-carlo-in-real-life" class="slide level2">
+<h2>Monte Carlo in real life</h2>
+<ul>
+<li class="fragment"><strong>You:</strong> plan with a buffer. The most likely duration is too optimistic</li>
+<li class="fragment"><strong>Companies:</strong> plan projects and budgets as a range with probabilities, not as a single number</li>
+</ul>
+<div class="fragment">
+<p>When you can’t calculate it, simulate it.</p>
 </div>
 </section></section>
 <section>
@@ -559,46 +612,82 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <h2>Roadmap</h2>
 <div class="roadmap">
 <ol type="1">
-<li><span class="roadmap-item done">Randomness everywhere: why chance is useful</span></li>
+<li><span class="roadmap-item done">Randomness is a tool</span></li>
 <li><span class="roadmap-item done">Simulate instead of calculate: Monte Carlo</span></li>
-<li><span class="roadmap-item current">Let chance help you decide: smarter searches, fairer choices</span></li>
+<li><span class="roadmap-item current">Search smarter with chance</span></li>
+<li><span class="roadmap-item future">Sample instead of guess</span></li>
 </ol>
 </div>
+</section>
+<section id="remember-lecture-iv" class="slide level2">
+<h2>Remember Lecture IV?</h2>
+<ul>
+<li class="fragment">With dependencies, there is often no quick recipe for the best plan</li>
+<li class="fragment">We said: companies use software that <strong>searches</strong> for a good plan</li>
+<li class="fragment">Today: how such a search works, and why chance helps</li>
+</ul>
 </section>
 <section id="ten-cities-one-trip-which-order-is-shortest" class="slide level2">
 <h2>Ten cities, one trip: which order is shortest?</h2>
 <p><span class="question">Question:</span> <strong>In which order would you visit 10 cities by plane with minimal total distance?</strong></p>
-<div id="05c08898" class="cell" data-execution_count="5">
+<div id="88490008" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> math</span>
 <span id="cb3-2"><a></a><span class="bu">print</span>(math.factorial(<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="cell fragment" data-execution_count="5">
+<div class="cell fragment" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>3628800</code></pre>
 </div>
 </div>
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>What could be a strategy?</strong></p>
+<aside class="notes">
+<p>Answer: We cannot see it at a glance: there are 3,628,800 possible orders. Strategies students usually suggest: try all orders, always fly to the nearest city next, or start with any tour and improve it step by step. We look at all three now.</p>
+<p>This problem has a name: the <strong>travelling salesman problem</strong>. We look for the shortest round trip through all cities. It is not the same as the shortest way between two places, which a navigation app finds in a split second.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="brute-force-try-every-route" class="slide level2">
-<h2>Brute force: try every route</h2>
+<section id="brute-force-try-every-tour" class="slide level2">
+<h2>Brute force: try every tour</h2>
 <ul>
 <li>Try <span class="highlight">every possibility</span></li>
-<li>Total possible routes: 10! = <strong>3,628,800</strong></li>
+<li>Total possible tours: 10! = <strong>3,628,800</strong></li>
 <li><strong>Guaranteed</strong> to find best solution</li>
-<li>If each check takes 1ms: <strong>1 hour</strong> to check all routes</li>
+<li>If each check takes 1ms: <strong>1 hour</strong> to check all tours</li>
 </ul>
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>What could be the problem with this approach?</strong></p>
+<aside class="notes">
+<p>Answer: It does not scale. Every additional city multiplies the number of tours, so one hour for ten cities quickly becomes years. The next slide shows how fast.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="twenty-cities-would-take-77-million-years" class="slide level2">
-<h2>Twenty cities would take 77 million years</h2>
+<section id="what-about-twenty-cities" class="slide level2">
+<h2>What about twenty cities?</h2>
 <ul>
-<li class="fragment">For 20 cities: 20! = <strong>2.4 quintillion</strong> routes</li>
+<li class="fragment">For 20 cities: 20! = <strong>2.4 quintillion</strong> tours</li>
 <li class="fragment">About <strong>77 million years</strong> at 1 ms per check</li>
-<li class="fragment">The effort grows <span class="highlight">factorially</span>: not feasible for real problems</li>
+<li class="fragment">Every additional city multiplies the effort: hopeless for real problems</li>
 </ul>
 <aside class="notes">
 <p>Time complexity grows factorially with the number of cities, and memory requirements increase with the problem size as well. Brute force is not feasible for real-world problems.</p>
@@ -614,22 +703,28 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           display:block!important;
       }</style></aside>
 </section>
-<section id="greedy-always-take-the-shortest-next-flight" class="slide level2">
-<h2>Greedy: always take the shortest next flight</h2>
+<section id="greedy-always-take-the-nearest-city" class="slide level2">
+<h2>Greedy: always take the nearest city</h2>
 <ul>
-<li>Make the <strong>locally best</strong> choice at each step</li>
-<li><span class="highlight">Never backtrack or reconsider</span></li>
-<li>Fast and simple, but can perform <strong>poorly on complex problems</strong></li>
+<li>From each city, fly to the <strong>nearest city</strong> you have not visited yet</li>
+<li>Never look back or change earlier choices</li>
+<li>Fast and simple</li>
 </ul>
+<div class="fragment">
+<p>Problem: the last flights are often very long, because the near cities are already used up.</p>
+</div>
 </section>
-<section id="hill-climbing-improve-step-by-step-until-you-are-stuck" class="slide level2">
-<h2>Hill climbing: improve step by step, until you are stuck</h2>
+<section id="hill-climbing-improve-step-by-step" class="slide level2">
+<h2>Hill climbing: improve step by step</h2>
 <ul>
 <li><span class="highlight">Improve the solution</span> by small changes, keep the better one</li>
 <li>Like <strong>climbing in fog</strong>: you only see your immediate surroundings</li>
 <li>You get stuck on a <strong>local optimum</strong>, a small hill, and never see the mountain</li>
 </ul>
+<div class="fragment">
+<p><span class="question">Question:</span> <strong>How would you escape a local optimum?</strong></p>
 <aside class="notes">
+<p>Answer: Jump somewhere else and climb again, or sometimes accept a step down. Both ideas use chance, and both come next.</p>
 <p>Hill climbing iteratively improves a solution by making small changes. Like climbing in fog, it can only see the immediate surroundings and does not know whether higher peaks exist elsewhere. It can get stuck in local optima and gives no guarantee of finding the global optimum.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -642,48 +737,100 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<div class="fragment">
-<p><span class="question">Question:</span> <strong>How would you escape a local optimum?</strong></p>
 </div>
 </section>
-<section id="simulated-annealing-sometimes-accept-a-worse-step" class="slide level2">
-<h2>Simulated annealing: sometimes accept a worse step</h2>
+<section id="shake-it-up-start-again-somewhere-random" class="slide level2">
+<h2>Shake it up: start again somewhere random</h2>
 <ul>
-<li>Make random changes and <strong>accept improvements</strong></li>
-<li>Sometimes accept <strong>worse solutions</strong></li>
-<li>Gradually become <strong>more selective</strong></li>
+<li class="fragment">When you are stuck, jump to a <strong>random</strong> new starting point and climb again</li>
+<li class="fragment">Repeat a few times, keep the best result</li>
+<li class="fragment">Computer scientists call this <strong>random-restart hill climbing</strong><sup>1</sup></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn5"><p>Christian &amp; Griffiths (2016), ch.&nbsp;9.</p></li></ol></aside></section>
+<section id="simulated-annealing" class="slide level2">
+<h2>Simulated annealing</h2>
+<ul>
+<li class="fragment">Make random changes and <strong>accept improvements</strong></li>
+<li class="fragment">Sometimes accept a <strong>worse</strong> change</li>
+<li class="fragment">Over time, accept worse changes less and less</li>
+<li class="fragment">How often we accept a worse change is called the <strong>temperature</strong>: high at the start, low at the end</li>
 </ul>
 <div class="fragment">
-<p><span class="question">Question:</span> <strong>Why accept worse solutions sometimes?</strong></p>
+<p><span class="question">Question:</span> <strong>Why accept a worse change at all?</strong></p>
 </div>
 <div class="fragment">
-<ul>
-<li>Randomness helps to escape <strong>local optima</strong></li>
-<li>Balances <span class="highlight">exploration vs.&nbsp;exploitation</span></li>
-</ul>
+<p>A worse step can lead out of a dead end, towards a higher hill.</p>
 </div>
-</section>
+<div class="fragment">
+<p>The name comes from metalworking: heat the metal, then let it cool slowly.<sup>1</sup></p>
+<aside class="notes">
+<p>Answer: Because a worse step can lead out of a dead end. Without it, we stay on the first small hill we find; with it, we can cross a valley and reach a higher one.</p>
+<p>The name comes from metalworking: annealing means heating metal and cooling it slowly, so the atoms settle into a strong structure. Scott Kirkpatrick and colleagues at IBM used this idea for optimization in 1983. The “temperature” says how often a worse change is accepted, and it drops over time.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn6"><p>Kirkpatrick, S., Gelatt, C. D. &amp; Vecchi, M. P. (1983). Optimization by simulated annealing. Science, 220(4598).</p></li></ol></aside></section>
 <section id="annealing-on-a-simple-curve" class="slide level2">
 <h2>Annealing on a simple curve</h2>
 
 <img data-src="../animations/simulated_annealing.gif" class="r-stretch"></section>
-<section id="annealing-finds-a-short-route-through-ten-cities" class="slide level2">
-<h2>Annealing finds a short route through ten cities</h2>
+<section id="annealing-finds-a-short-tour-through-ten-cities" class="slide level2">
+<h2>Annealing finds a short tour through ten cities</h2>
 
 <img data-src="../animations/tsp_annealing.gif" class="r-stretch"></section>
+<section id="explore-early-exploit-late-again" class="slide level2">
+<h2>Explore early, exploit late, again</h2>
+<ul>
+<li class="fragment">Annealing starts with a lot of randomness and gets more careful over time</li>
+<li class="fragment">That is exactly the idea from <strong>Lecture II</strong>: explore while you have time, exploit when the end is near</li>
+<li class="fragment">The book’s advice for life: try a lot early, then settle down<sup>1</sup></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn7"><p>Christian &amp; Griffiths (2016), ch.&nbsp;2 and ch.&nbsp;9.</p></li></ol></aside></section>
+<section id="random-search-in-real-life" class="slide level2">
+<h2>Random search in real life</h2>
+<ul>
+<li class="fragment"><strong>You:</strong> stuck on a problem? Change something at random: another place, another order, another person to ask</li>
+<li class="fragment"><strong>Companies:</strong> delivery tours and production plans that nobody can calculate exactly are found by software that searches with chance</li>
+</ul>
+<div class="fragment">
+<p>Randomness is not giving up. Often it is the only way through.</p>
+</div>
+</section></section>
+<section>
+
+<section id="roadmap-3" class="slide level2 section-roadmap">
+<h2>Roadmap</h2>
+<div class="roadmap">
+<ol type="1">
+<li><span class="roadmap-item done">Randomness is a tool</span></li>
+<li><span class="roadmap-item done">Simulate instead of calculate: Monte Carlo</span></li>
+<li><span class="roadmap-item done">Search smarter with chance</span></li>
+<li><span class="roadmap-item current">Sample instead of guess</span></li>
+</ol>
+</div>
+</section>
 <section id="thought-experiment-freedom-or-equality" class="slide level2">
 <h2>Thought experiment: freedom or equality?</h2>
-<p><strong>What’s more important for a society?</strong></p>
-<div class="fragment">
+<p>So far, chance helped us with numbers and tours. Now a bigger question:</p>
+<p><span class="question">Question:</span> <strong>What’s more important for a society?</strong></p>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column fragment" style="width:50%;">
 <p><span class="highlight">Freedom</span></p>
 <ul>
 <li>Individual choice</li>
 <li>Personal responsibility</li>
 <li>Market-driven</li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column fragment" style="width:50%;">
 <p><span class="highlight">Equality</span></p>
 <ul>
 <li>Shared resources</li>
@@ -691,13 +838,26 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <li>Regulated systems</li>
 </ul>
 </div></div>
-</div>
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>Any problem with this question?</strong></p>
+<aside class="notes">
+<p>Answer: Yes: our answer depends on where we stand. Someone rich and healthy may prefer freedom, someone poor or ill may prefer equality. To judge fairly, we would have to forget our own place in society. That is the idea on the next slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="veil-of-ignorance-design-a-society-without-knowing-your-place-in-it" class="slide level2">
-<h2>Veil of ignorance: design a society without knowing your place in it</h2>
+<section id="the-veil-of-ignorance" class="slide level2">
+<h2>The veil of ignorance</h2>
+<p>The philosopher John Rawls proposed a thought experiment: design a society <strong>before you know who you will be in it</strong>.<sup>1</sup></p>
 <p>You might <span class="highlight">randomly</span> be:</p>
 <ul>
 <li>Any gender identity and economic status</li>
@@ -706,17 +866,32 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </ul>
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>If you didn’t know who you’d be born as, what kind of society would you design?</strong></p>
+<aside class="notes">
+<p>Answer: Open question. Many students design a society with a safety net, because they could end up at the bottom. The philosopher John Rawls called this the veil of ignorance: we decide as if our place in society were assigned at random.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
-</section>
-<section id="stories-mislead-statistics-miss-nuance" class="slide level2">
-<h2>Stories mislead, statistics miss nuance</h2>
+<aside><ol class="aside-footnotes"><li id="fn8"><p>Rawls, J. (1971). A Theory of Justice. See Christian &amp; Griffiths (2016), ch.&nbsp;9.</p></li></ol></aside></section>
+<section id="how-do-we-judge-a-whole-society" class="slide level2">
+<h2>How do we judge a whole society?</h2>
+<p><span class="question">Question:</span> <strong>How can we know what a policy does to millions of people?</strong></p>
 <ul>
-<li><strong>Individual stories:</strong> powerful but potentially misleading</li>
-<li><strong>Statistics:</strong> comprehensive but can miss nuance</li>
-<li><strong>Hidden diversity:</strong> important subgroups may be overlooked</li>
-<li><strong>Small policy changes</strong> <span class="highlight">can have cascading effects</span></li>
+<li class="fragment">To answer Rawls, we would have to imagine millions of different lives</li>
+<li class="fragment">Nobody can calculate that</li>
+<li class="fragment"><strong>Individual stories</strong> are powerful, but can mislead</li>
+<li class="fragment"><strong>Statistics</strong> cover everyone, but hide the single life</li>
 </ul>
 <aside class="notes">
+<p>Answer: Not from single stories, and not from one average either. We need many cases, and a fair way to pick them. That is where chance comes in.</p>
 <p>But that’s not all: we also need to decide how to measure success and failure of a policy.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -733,30 +908,42 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <section id="which-measure-of-success" class="slide level2">
 <h2>Which measure of success?</h2>
 <ul>
-<li><strong>Mean happiness:</strong> Average well-being</li>
-<li><strong>Total happiness:</strong> Utilitarian approach</li>
-<li><strong>Median happiness:</strong> Focus on the middle class</li>
-<li><strong>Minimum happiness:</strong> Protecting the most vulnerable</li>
+<li><strong>Mean happiness:</strong> the average</li>
+<li><strong>Total happiness:</strong> the sum over all people</li>
+<li><strong>Median happiness:</strong> the person in the middle</li>
+<li><strong>Minimum happiness:</strong> the person who is worst off</li>
 </ul>
 <div class="fragment">
 <p><span class="question">Question:</span> <strong>What could be the problem with these measures?</strong></p>
+<aside class="notes">
+<p>Answer: Each measure hides something. The mean can rise while many people are worse off, the total rewards simply having more people, the median ignores both ends, and the minimum ignores everyone except the worst-off. There is no neutral choice: picking the measure is already a value judgment.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div>
 </section>
-<section id="idea-ask-a-random-sample" class="slide level2">
-<h2>Idea: ask a random sample</h2>
+<section id="ask-a-random-sample" class="slide level2">
+<h2>Ask a random sample</h2>
 <ul>
-<li>Randomly <span class="highlight">select a subset of the population</span></li>
-<li>Gather <strong>diverse perspectives</strong> from the sample</li>
-<li>Better understand <strong>needs</strong> of population</li>
-<li><strong>Reduce selection bias</strong> and improve accuracy</li>
+<li class="fragment">This is Monte Carlo again: we cannot ask everyone, so we ask a random few</li>
+<li class="fragment">A random few show the whole range of lives, not only the loudest or the luckiest</li>
+<li class="fragment">The charity GiveDirectly publishes <strong>randomly chosen</strong> reports from the people it supports, not only the success stories<sup>1</sup></li>
 </ul>
-<div class="fragment">
+<aside><ol class="aside-footnotes"><li id="fn9"><p>Christian &amp; Griffiths (2016), ch.&nbsp;9.</p></li></ol></aside></section>
+<section id="who-is-missing-from-your-sample" class="slide level2">
+<h2>Who is missing from your sample?</h2>
 <p><span class="question">Question:</span> <strong>What is a selection bias?</strong></p>
-</div>
-</section>
-<section id="selection-bias-the-sample-is-not-the-population" class="slide level2">
-<h2>Selection bias: the sample is not the population</h2>
+<div class="fragment">
 <p><strong>Definition</strong>: The sample you analyze <span class="highlight">is not representative of the population</span> you want to study.</p>
+</div>
 <div class="fragment">
 <div class="callout callout-warning callout-style-simple">
 <div class="callout-body">
@@ -768,8 +955,12 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </div>
 </div>
 </div>
+</div>
+<div class="fragment">
+<p>Learning only from successful companies is the same mistake.</p>
 <aside class="notes">
-<p>The famous example of survivorship bias: engineers studied returning planes to decide where to add armor and initially focused on the areas with the most bullet holes. Abraham Wald pointed out that they should armor the areas without bullet holes, because planes hit there did not survive to return.</p>
+<p>Answer: The people or cases we look at are not a fair picture of all of them, because the way we picked them leaves some out.</p>
+<p>The famous example of survivorship bias: engineers studied returning planes to decide where to add armor and initially focused on the areas with the most bullet holes. Abraham Wald pointed out that they should armor the areas without bullet holes, because planes hit there did not survive to return. The same happens when we study only successful companies: the failed ones with the same strategy are missing.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -783,71 +974,61 @@ Dr.&nbsp;Nils Roemer, External Lecturer
       }</style></aside>
 </div>
 </section>
-<section id="random-choices-can-be-the-fairest-choices" class="slide level2">
-<h2>Random choices can be the fairest choices</h2>
+<section id="sampling-in-real-life" class="slide level2">
+<h2>Sampling in real life</h2>
+<ul>
+<li class="fragment"><strong>You:</strong> before a big decision, ask a few people at random, not only those who shout the loudest</li>
+<li class="fragment"><strong>Companies:</strong> random customer surveys and random quality checks show the real picture</li>
+</ul>
+<div class="fragment">
+<p>A random few can tell us about the many.</p>
+</div>
+</section>
+<section id="can-chance-be-fair" class="slide level2">
+<h2>Can chance be fair?</h2>
 <p><span class="question">Question:</span> <strong>How can randomness promote fairness?</strong></p>
-<div class="fragment">
 <ul>
-<li><strong>Random allocation</strong> of patients in clinical trials</li>
-<li><strong>Random audits</strong> for tax compliance</li>
-<li><strong>Random assignment</strong> of cases to judges</li>
-<li><strong>Random order</strong> of candidates on voting ballots</li>
+<li class="fragment"><strong>Random allocation</strong> of patients in clinical trials</li>
+<li class="fragment"><strong>Random audits</strong> for tax compliance</li>
+<li class="fragment"><strong>Random assignment</strong> of cases to judges</li>
+<li class="fragment"><strong>Random order</strong> of candidates on voting ballots</li>
 </ul>
-</div>
+<aside class="notes">
+<p>Answer: When nobody can influence the outcome, nobody is favored. A coin does not care who you are, so random choices remove bias wherever people would otherwise pick.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="quick-poll-sure-50-or-maybe-120" class="slide level2">
-<h2>Quick poll: sure 50 or maybe 120?</h2>
-<p><span class="question">Question:</span> <strong>Which would you prefer?</strong></p>
-<ul>
-<li><strong>100% chance of winning 50 EUR</strong></li>
-<li><strong>50% chance of winning 120 EUR</strong></li>
-</ul>
-<div class="fragment">
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Answer depends on your <strong>risk aversion</strong>!</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="when-to-embrace-randomness-when-to-reduce-it" class="slide level2">
-<h2>When to embrace randomness, when to reduce it</h2>
-<p><span class="question">Question:</span> <strong>When should we embrace vs.&nbsp;reduce randomness?</strong></p>
-<div class="fragment">
+<section id="when-should-we-use-chance" class="slide level2">
+<h2>When should we use chance?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><span class="highlight">Embrace When</span>:</p>
+<p><span class="highlight">Use chance to</span></p>
 <ul>
-<li>Exploring new solutions</li>
-<li>Avoiding bias</li>
-<li>Breaking deadlocks</li>
-<li>Testing systems</li>
+<li>explore new solutions</li>
+<li>estimate what we cannot calculate</li>
+<li>choose fairly</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><span class="highlight">Reduce When</span>:</p>
+</div><div class="column fragment" style="width:50%;">
+<p><span class="highlight">Avoid chance when</span></p>
 <ul>
-<li>Safety-critical systems</li>
-<li>Financial transactions</li>
-<li>Medical procedures</li>
-<li>Legal proceedings</li>
+<li>the same input must always give the same result</li>
+<li>for example a bank transfer, the dose of a medicine or the brakes of a car</li>
 </ul>
 </div></div>
-</div>
-</section>
-<section id="good-enough-beats-perfect" class="slide level2">
-<h2>Good enough beats perfect</h2>
-<ul>
-<li><strong>Perfect is the enemy of good:</strong> approximations work, complete analysis is often impossible</li>
-<li><span class="highlight">Perfect information is rare</span></li>
-<li>Quick approximations enable <strong>faster decisions</strong>: balance accuracy against time</li>
-</ul>
+<div class="fragment">
+<p>Good enough now often beats perfect too late.</p>
 <aside class="notes">
-<p>Remember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Consider the opportunity costs: quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration. Many problems benefit from fast, good-enough solutions rather than perfect ones.</p>
+<p>Answer: Use chance to explore new solutions, to estimate what we cannot calculate and to choose fairly. Avoid it where the same input must always give the same result, for example a bank transfer, the dose of a medicine or the brakes of a car.</p>
+<p>Remember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -859,35 +1040,33 @@ Dr.&nbsp;Nils Roemer, External Lecturer
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="let-chance-help-you-decide-smarter-searches-fairer-choices-1" class="slide level2 section-covered">
-<h2>Let chance help you decide: smarter searches, fairer choices</h2>
-<div class="section-covered">
-<p><span class="eyebrow">What we covered</span></p>
-<p><span class="statement">Random steps help a search escape bad solutions, and random choices can make decisions fairer.</span></p>
 </div>
 </section>
 <section id="what-we-covered" class="slide level2 lecture-closing">
 <h2>What we covered</h2>
 <div class="covered-list">
 <div class="covered-item">
-<p><span class="eyebrow">Randomness everywhere: why chance is useful</span></p>
-<p>Randomness is more than gambling: it makes algorithms faster, systems secure and discoveries possible.</p>
+<p><span class="eyebrow">Randomness is a tool</span></p>
+<p>Chance makes systems fair, secure and unpredictable.</p>
 </div>
 <div class="covered-item">
 <p><span class="eyebrow">Simulate instead of calculate: Monte Carlo</span></p>
-<p>Running many random simulations gives reliable estimates where exact calculation is out of reach.</p>
+<p>Many random trials give an honest range instead of a single guess.</p>
 </div>
 <div class="covered-item">
-<p><span class="eyebrow">Let chance help you decide: smarter searches, fairer choices</span></p>
-<p>Random steps help a search escape bad solutions, and random choices can make decisions fairer.</p>
+<p><span class="eyebrow">Search smarter with chance</span></p>
+<p>Random steps lead out of dead ends.</p>
+</div>
+<div class="covered-item">
+<p><span class="eyebrow">Sample instead of guess</span></p>
+<p>A random few can tell us about the many.</p>
 </div>
 </div>
 </section>
 <section id="why-it-matters" class="slide level2 lecture-closing">
 <h2>Why it matters</h2>
 <div class="lecture-why closing">
-<p>Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes and allocate scarce places fairly.</p>
+<p>Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.</p>
 </div>
 </section>
 <section id="section" class="slide level2 loud-slide lecture-key">
@@ -903,15 +1082,14 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <p>so far?</p>
 </div>
 </section>
-<section id="after-the-break-randomness" class="slide level2">
-<h2>After the break: Randomness</h2>
+<section id="after-the-break-ai-and-a-recap" class="slide level2">
+<h2>After the break: AI and a recap</h2>
 <ul>
-<li>Tutorial V.I: Programming with AI coding assistants</li>
-<li>Tutorial V.II: Recap of the course topics with randomness</li>
-<li>Monte Carlo simulation of a travel problem in code</li>
+<li>Tutorial V.I: How AI writes code</li>
+<li>Tutorial V.II: Recap of the course with randomness</li>
 </ul>
 <aside class="notes">
-<p>That’s it for today’s lecture! We’ve covered the basics of randomness and its applications. In the upcoming tutorials, we’ll learn how to use AI assistants to generate code with randomness.</p>
+<p>That’s it for today’s lecture! After the break we look at how AI tools write code, and why there is a bit of randomness in that too. Then we recap the course, each topic with a bit of randomness.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -934,7 +1112,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <ul>
 <li>Christian, B., &amp; Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.<sup>1</sup></li>
 </ul>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn10"><p>The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.</p></li></ol></aside></section>
 <section id="books-on-programming" class="slide level2">
 <h2>Books on Programming</h2>
 <ul>

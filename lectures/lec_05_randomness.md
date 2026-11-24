@@ -14,140 +14,152 @@ format:
 
 <span class="eyebrow">Why it matters</span>
 
-Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes and allocate scarce places fairly.
+Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.
 
 ## Roadmap
 
-1.  <span class="roadmap-item future">Randomness everywhere: why chance is useful</span>
+1.  <span class="roadmap-item future">Randomness is a tool</span>
 2.  <span class="roadmap-item future">Simulate instead of calculate: Monte Carlo</span>
-3.  <span class="roadmap-item future">Let chance help you decide: smarter searches, fairer choices</span>
+3.  <span class="roadmap-item future">Search smarter with chance</span>
+4.  <span class="roadmap-item future">Sample instead of guess</span>
 
-# <span class="flow">Randomness everywhere: why chance is useful</span>
+# <span class="flow">Randomness is a tool</span>
 
 ## What comes to your mind?
 
 <span class="question">Question:</span> **What comes to your mind when you think of randomness?**
 
-## <span class="invert-font">Casino</span>
+## Where does randomness show up?
 
-## <span class="invert-font">Lottery</span>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
+<figure>
+<img src="../images/bg/lec05-casino.jpg" alt="Casino" />
+<figcaption aria-hidden="true">Casino</figcaption>
+</figure>
+</div></td>
+<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
+<figure>
+<img src="../images/bg/lec05-lottery.jpg" alt="Lottery" />
+<figcaption aria-hidden="true">Lottery</figcaption>
+</figure>
+</div></td>
+<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
+<figure>
+<img src="../images/bg/lec05-cards.jpg" alt="Shuffling cards" />
+<figcaption aria-hidden="true">Shuffling cards</figcaption>
+</figure>
+</div></td>
+</tr>
+</tbody>
+</table>
 
-## <span class="invert-font">Shuffling cards</span>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
+<figure>
+<img src="../images/bg/lec05-algorithms.jpg" alt="Algorithms" />
+<figcaption aria-hidden="true">Algorithms</figcaption>
+</figure>
+</div></td>
+<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
+<figure>
+<img src="../images/bg/lec05-crypto.jpg" alt="Cryptography" />
+<figcaption aria-hidden="true">Cryptography</figcaption>
+</figure>
+</div></td>
+<td style="text-align: left;"><div width="33.3%" data-layout-align="left">
+<figure>
+<img src="../images/bg/lec05-mutations.jpg" alt="Genetic mutations" />
+<figcaption aria-hidden="true">Genetic mutations</figcaption>
+</figure>
+</div></td>
+</tr>
+</tbody>
+</table>
 
-## <span class="invert-font">Algorithms</span>
-
-## <span class="invert-font">Cryptography</span>
-
-## <span class="invert-font">Genetic mutations</span>
-
-## The opposite of randomness is predictability
+## What is the opposite of randomness?
 
 <span class="question">Question:</span> **What's the opposite of randomness?**
 
-- **Determinism** - same input, same output
-- **Predictability** - knowing the outcome in advance
-- **Consistency** - reliable patterns
+- **Determinism:** same input, same output
+- **Predictability:** knowing the outcome in advance
+- **Consistency:** reliable patterns
 
 - <span class="highlight">Boredom?</span>
 
-## Is the die fair? Roll it many times
+## Are these dice fair?
 
-<span class="question">Question:</span> **How would you test if a pair of dice is fair?**
+<span class="question">Question:</span> **How would you test if dice are fair?**
 
-- Send the dice **to a lab** to <span class="highlight">check weight and balance</span>
+- Send them to a lab to check weight and balance
+- Or simply: roll them **many times**
+- Count how often each number comes up
+- Fair dice show each number about **one sixth** of the time
 
-<!-- -->
-
-- Roll the dice **many times**
-- Check if the outcomes are **uniformly distributed**
-- Compare **observed** frequencies to **expected** frequencies
-
-## A fair and a loaded die after 200 rolls
+## Fair and loaded dice after 200 rolls
 
 ![](../animations/dice_fairness.gif)
-
-## Randomness is a tool, not just a gamble
-
-- **Testing:** random inputs find bugs
-- **Optimization:** random steps escape dead ends
-- **Simulation:** model systems with uncertainty
-- **Security:** stay unpredictable for attackers
-- **Fairness:** remove bias from selection
 
 ## Where do you meet randomness every day?
 
 <span class="question">Question:</span> **Where do you encounter randomness in daily life?**
 
-## Social life: chance brings people together
+- **A/B tests:** visitors are assigned to versions at random
+- **Two-factor codes:** random numbers protect your login
+- **Surveys:** a random sample gives an unbiased picture
+- **Spotify shuffle:** made deliberately *less* random, because true randomness felt wrong to users[^1]
+- **Tax audits:** random checks keep everyone honest
+- **Lotteries:** some universities allocate study places by lottery
 
-- **Dating apps:** Randomized matching within preferences
-- **Random encounters** that lead to friendships
-- **Career opportunities** from unexpected connections
-- **Breaking ties** through coin tosses
-- **Netflix recommendations:** Controlled randomness for discovery
+## Randomness is a tool, not just a gamble
 
-## Entertainment: controlled randomness keeps us playing
+- **Fairness:** nobody can influence the outcome
+- **Security:** attackers cannot guess what comes next
+- **Estimating:** try many random cases instead of calculating every one
+- **Searching:** random steps lead out of dead ends
 
-- **Pokémon:** "Random" encounters weighted by rarity
-- **Loot systems:** Rare items have controlled drop rates
-- **Chess AI:** Introduces randomness to feel more human-like
-- **Spotify shuffle:** Deliberately less random to feel natural
-- **TikTok:** Controlled randomization for content discovery
+Estimating and searching are our topics today.
 
-## Security: unpredictability protects us
+## Can a computer roll dice?
 
-- **Cryptocurrency mining:** Solving cryptographic puzzles through guessing
-- **Password generators:** Balance randomness and memorability
-- **`correct-horse-battery-staple`** is more secure than **`Tr0ub4dor&3`**
-- **Modern encryption** relies on random number generation
-- **Two-factor authentication** uses random codes
+<span class="question">Question:</span> **How can a machine that only calculates produce randomness?**
 
-## Research: random samples give unbiased answers
+<span class="highlight">True randomness</span>
 
-- **Weather forecasting:** randomness models uncertainty
-- **Stock algorithms:** randomness avoids predictable patterns
-- **Self-driving cars:** random elements feel natural
-- **Random sampling:** unbiased research results
-- **A/B testing:** random assignment to groups
-
-## Why computer scientists love randomness
-
-- **Efficiency:** often faster than deterministic approaches
-- **Simplicity:** complex problems, simple code
-- **Robustness:** avoids worst-case scenarios
-- **Approximation:** "good enough" solutions in reasonable time
-
-## True randomness comes from physics, pseudo-randomness from a seed
-
-<span class="question">Question:</span> **Difference between true and pseudo-randomness?**
-
-<span class="highlight">True Randomness</span>
-
-- Physical phenomena
-- Atmospheric noise
-- Radioactive decay
-- Quantum effects
+- comes from physics
+- for example radioactive decay or atmospheric noise
+- cannot be repeated
 
 <span class="highlight">Pseudo-randomness</span>
 
-- Deterministic algorithms
-- Seed-based generation
-- Repeatable sequences
-- Good enough for most uses
+- comes from a calculation
+- looks random, but follows a rule
+- can be repeated exactly
 
-## Randomness everywhere: why chance is useful
-
-<span class="eyebrow">What we covered</span>
-
-<span class="statement">Randomness is more than gambling: it makes algorithms faster, systems secure and discoveries possible.</span>
+Computers do not roll dice, they calculate. The starting value is called the **seed**. Same seed, same numbers: that is why your tutorial results are reproducible.
 
 # <span class="flow">Simulate instead of calculate: Monte Carlo</span>
 
 ## Roadmap
 
-1.  <span class="roadmap-item done">Randomness everywhere: why chance is useful</span>
+1.  <span class="roadmap-item done">Randomness is a tool</span>
 2.  <span class="roadmap-item current">Simulate instead of calculate: Monte Carlo</span>
-3.  <span class="roadmap-item future">Let chance help you decide: smarter searches, fairer choices</span>
+3.  <span class="roadmap-item future">Search smarter with chance</span>
+4.  <span class="roadmap-item future">Sample instead of guess</span>
 
 ## Some things are too big to count
 
@@ -160,21 +172,34 @@ print(math.factorial(52))
 
     80658175170943878571660636856403766975289505440883277824000000000000
 
+That is more than the number of atoms on Earth.[^2]
+
 > **Important**
 >
-> Computing and evaluating all possible combinations is not feasible!
+> No computer can ever go through all of these orders one by one.
 
-## Monte Carlo: estimate by running many random trials
+<span class="question">Question:</span> **So how do we answer questions about card games?**
 
-<span class="question">Question:</span> **Anybody ever heard of "Monte Carlo methods"?**
+## A card game in 1946
 
-- 1940s nuclear research: chain reactions were too complex to calculate
-- Idea: draw random cases many times and <span class="highlight">count the outcomes</span>
-- Named after **Monaco's famous casino**
+<span class="question">Question:</span> **Anybody ever heard of Monte Carlo methods?**
 
-<span class="question">Question:</span> **How could we estimate π?**
+- In 1946, the mathematician Stanislaw Ulam was recovering from an illness and played solitaire
+- He wondered: what is the chance of winning?
+- Calculating it was hopeless. So he thought: just play many games and count the wins
+- The idea became the **Monte Carlo method**, named after the casino in Monaco[^3]
 
-## Estimating π by throwing random points
+## How could we estimate π?
+
+<img src="lec_05_randomness_files/figure-markdown_strict/cell-4-output-1.png" width="646" height="646" />
+
+- Throw random points into the square
+- Count how many land inside the circle
+- The more points we throw, the closer we get to π
+
+The idea goes back to Buffon, who in 1777 dropped needles on lined paper.[^4]
+
+## Let's throw points
 
 ![](../animations/pi.gif)
 
@@ -183,27 +208,40 @@ print(math.factorial(52))
 - **Project planning:** how likely do we finish before the deadline?
 - **Finance:** how much could a portfolio lose in a bad month?
 - **Inventory:** how much stock covers an uncertain demand?
-- **Recipe:** model the uncertain inputs, draw random values many times
 
-## Most likely 21 days, but only 63 % finish by day 25
+The recipe: describe each uncertain input as a range, draw random values, repeat thousands of times, count.
+
+## Will we finish in 25 days?
 
 Three uncertain tasks, most likely **21 days** in total, deadline **25 days**:
 
-<img src="lec_05_randomness_files/figure-markdown_strict/cell-5-output-1.png" width="1471" height="511" />
+<img src="lec_05_randomness_files/figure-markdown_strict/cell-6-output-1.png" width="1096" height="268" />
 
-## Simulate instead of calculate: Monte Carlo
+- Only **63 %** of the simulated projects finish by day 25
+- Only **18 %** finish within the most likely 21 days
+- On average, the project takes **24 days**
 
-<span class="eyebrow">What we covered</span>
+## Monte Carlo in real life
 
-<span class="statement">Running many random simulations gives reliable estimates where exact calculation is out of reach.</span>
+- **You:** plan with a buffer. The most likely duration is too optimistic
+- **Companies:** plan projects and budgets as a range with probabilities, not as a single number
 
-# <span class="flow">Let chance help you decide: smarter searches, fairer choices</span>
+When you can't calculate it, simulate it.
+
+# <span class="flow">Search smarter with chance</span>
 
 ## Roadmap
 
-1.  <span class="roadmap-item done">Randomness everywhere: why chance is useful</span>
+1.  <span class="roadmap-item done">Randomness is a tool</span>
 2.  <span class="roadmap-item done">Simulate instead of calculate: Monte Carlo</span>
-3.  <span class="roadmap-item current">Let chance help you decide: smarter searches, fairer choices</span>
+3.  <span class="roadmap-item current">Search smarter with chance</span>
+4.  <span class="roadmap-item future">Sample instead of guess</span>
+
+## Remember Lecture IV?
+
+- With dependencies, there is often no quick recipe for the best plan
+- We said: companies use software that **searches** for a good plan
+- Today: how such a search works, and why chance helps
 
 ## Ten cities, one trip: which order is shortest?
 
@@ -218,28 +256,30 @@ print(math.factorial(10))
 
 <span class="question">Question:</span> **What could be a strategy?**
 
-## Brute force: try every route
+## Brute force: try every tour
 
 - Try <span class="highlight">every possibility</span>
-- Total possible routes: 10! = **3,628,800**
+- Total possible tours: 10! = **3,628,800**
 - **Guaranteed** to find best solution
-- If each check takes 1ms: **1 hour** to check all routes
+- If each check takes 1ms: **1 hour** to check all tours
 
 <span class="question">Question:</span> **What could be the problem with this approach?**
 
-## Twenty cities would take 77 million years
+## What about twenty cities?
 
-- For 20 cities: 20! = **2.4 quintillion** routes
+- For 20 cities: 20! = **2.4 quintillion** tours
 - About **77 million years** at 1 ms per check
-- The effort grows <span class="highlight">factorially</span>: not feasible for real problems
+- Every additional city multiplies the effort: hopeless for real problems
 
-## Greedy: always take the shortest next flight
+## Greedy: always take the nearest city
 
-- Make the **locally best** choice at each step
-- <span class="highlight">Never backtrack or reconsider</span>
-- Fast and simple, but can perform **poorly on complex problems**
+- From each city, fly to the **nearest city** you have not visited yet
+- Never look back or change earlier choices
+- Fast and simple
 
-## Hill climbing: improve step by step, until you are stuck
+Problem: the last flights are often very long, because the near cities are already used up.
+
+## Hill climbing: improve step by step
 
 - <span class="highlight">Improve the solution</span> by small changes, keep the better one
 - Like **climbing in fog**: you only see your immediate surroundings
@@ -247,28 +287,60 @@ print(math.factorial(10))
 
 <span class="question">Question:</span> **How would you escape a local optimum?**
 
-## Simulated annealing: sometimes accept a worse step
+## Shake it up: start again somewhere random
+
+- When you are stuck, jump to a **random** new starting point and climb again
+- Repeat a few times, keep the best result
+- Computer scientists call this **random-restart hill climbing**[^5]
+
+## Simulated annealing
 
 - Make random changes and **accept improvements**
-- Sometimes accept **worse solutions**
-- Gradually become **more selective**
+- Sometimes accept a **worse** change
+- Over time, accept worse changes less and less
+- How often we accept a worse change is called the **temperature**: high at the start, low at the end
 
-<span class="question">Question:</span> **Why accept worse solutions sometimes?**
+<span class="question">Question:</span> **Why accept a worse change at all?**
 
-- Randomness helps to escape **local optima**
-- Balances <span class="highlight">exploration vs. exploitation</span>
+A worse step can lead out of a dead end, towards a higher hill.
+
+The name comes from metalworking: heat the metal, then let it cool slowly.[^6]
 
 ## Annealing on a simple curve
 
 ![](../animations/simulated_annealing.gif)
 
-## Annealing finds a short route through ten cities
+## Annealing finds a short tour through ten cities
 
 ![](../animations/tsp_annealing.gif)
 
+## Explore early, exploit late, again
+
+- Annealing starts with a lot of randomness and gets more careful over time
+- That is exactly the idea from **Lecture II**: explore while you have time, exploit when the end is near
+- The book's advice for life: try a lot early, then settle down[^7]
+
+## Random search in real life
+
+- **You:** stuck on a problem? Change something at random: another place, another order, another person to ask
+- **Companies:** delivery tours and production plans that nobody can calculate exactly are found by software that searches with chance
+
+Randomness is not giving up. Often it is the only way through.
+
+# <span class="flow">Sample instead of guess</span>
+
+## Roadmap
+
+1.  <span class="roadmap-item done">Randomness is a tool</span>
+2.  <span class="roadmap-item done">Simulate instead of calculate: Monte Carlo</span>
+3.  <span class="roadmap-item done">Search smarter with chance</span>
+4.  <span class="roadmap-item current">Sample instead of guess</span>
+
 ## Thought experiment: freedom or equality?
 
-**What's more important for a society?**
+So far, chance helped us with numbers and tours. Now a bigger question:
+
+<span class="question">Question:</span> **What's more important for a society?**
 
 <span class="highlight">Freedom</span>
 
@@ -284,7 +356,9 @@ print(math.factorial(10))
 
 <span class="question">Question:</span> **Any problem with this question?**
 
-## Veil of ignorance: design a society without knowing your place in it
+## The veil of ignorance
+
+The philosopher John Rawls proposed a thought experiment: design a society **before you know who you will be in it**.[^8]
 
 You might <span class="highlight">randomly</span> be:
 
@@ -294,32 +368,33 @@ You might <span class="highlight">randomly</span> be:
 
 <span class="question">Question:</span> **If you didn't know who you'd be born as, what kind of society would you design?**
 
-## Stories mislead, statistics miss nuance
+## How do we judge a whole society?
 
-- **Individual stories:** powerful but potentially misleading
-- **Statistics:** comprehensive but can miss nuance
-- **Hidden diversity:** important subgroups may be overlooked
-- **Small policy changes** <span class="highlight">can have cascading effects</span>
+<span class="question">Question:</span> **How can we know what a policy does to millions of people?**
+
+- To answer Rawls, we would have to imagine millions of different lives
+- Nobody can calculate that
+- **Individual stories** are powerful, but can mislead
+- **Statistics** cover everyone, but hide the single life
 
 ## Which measure of success?
 
-- **Mean happiness:** Average well-being
-- **Total happiness:** Utilitarian approach
-- **Median happiness:** Focus on the middle class
-- **Minimum happiness:** Protecting the most vulnerable
+- **Mean happiness:** the average
+- **Total happiness:** the sum over all people
+- **Median happiness:** the person in the middle
+- **Minimum happiness:** the person who is worst off
 
 <span class="question">Question:</span> **What could be the problem with these measures?**
 
-## Idea: ask a random sample
+## Ask a random sample
 
-- Randomly <span class="highlight">select a subset of the population</span>
-- Gather **diverse perspectives** from the sample
-- Better understand **needs** of population
-- **Reduce selection bias** and improve accuracy
+- This is Monte Carlo again: we cannot ask everyone, so we ask a random few
+- A random few show the whole range of lives, not only the loudest or the luckiest
+- The charity GiveDirectly publishes **randomly chosen** reports from the people it supports, not only the success stories[^9]
+
+## Who is missing from your sample?
 
 <span class="question">Question:</span> **What is a selection bias?**
-
-## Selection bias: the sample is not the population
 
 **Definition**: The sample you analyze <span class="highlight">is not representative of the population</span> you want to study.
 
@@ -327,7 +402,16 @@ You might <span class="highlight">randomly</span> be:
 >
 > WWII: engineers wanted to armor returning planes where the bullet holes were. Abraham Wald: armor where there are **no** holes, those planes never returned.
 
-## Random choices can be the fairest choices
+Learning only from successful companies is the same mistake.
+
+## Sampling in real life
+
+- **You:** before a big decision, ask a few people at random, not only those who shout the loudest
+- **Companies:** random customer surveys and random quality checks show the real picture
+
+A random few can tell us about the many.
+
+## Can chance be fair?
 
 <span class="question">Question:</span> **How can randomness promote fairness?**
 
@@ -336,64 +420,42 @@ You might <span class="highlight">randomly</span> be:
 - **Random assignment** of cases to judges
 - **Random order** of candidates on voting ballots
 
-## Quick poll: sure 50 or maybe 120?
+## When should we use chance?
 
-<span class="question">Question:</span> **Which would you prefer?**
+<span class="highlight">Use chance to</span>
 
-- **100% chance of winning 50 EUR**
-- **50% chance of winning 120 EUR**
+- explore new solutions
+- estimate what we cannot calculate
+- choose fairly
 
-> **Tip**
->
-> Answer depends on your **risk aversion**!
+<span class="highlight">Avoid chance when</span>
 
-## When to embrace randomness, when to reduce it
+- the same input must always give the same result
+- for example a bank transfer, the dose of a medicine or the brakes of a car
 
-<span class="question">Question:</span> **When should we embrace vs. reduce randomness?**
-
-<span class="highlight">Embrace When</span>:
-
-- Exploring new solutions
-- Avoiding bias
-- Breaking deadlocks
-- Testing systems
-
-<span class="highlight">Reduce When</span>:
-
-- Safety-critical systems
-- Financial transactions
-- Medical procedures
-- Legal proceedings
-
-## Good enough beats perfect
-
-- **Perfect is the enemy of good:** approximations work, complete analysis is often impossible
-- <span class="highlight">Perfect information is rare</span>
-- Quick approximations enable **faster decisions**: balance accuracy against time
-
-## Let chance help you decide: smarter searches, fairer choices
-
-<span class="eyebrow">What we covered</span>
-
-<span class="statement">Random steps help a search escape bad solutions, and random choices can make decisions fairer.</span>
+Good enough now often beats perfect too late.
 
 ## What we covered
 
-<span class="eyebrow">Randomness everywhere: why chance is useful</span>
+<span class="eyebrow">Randomness is a tool</span>
 
-Randomness is more than gambling: it makes algorithms faster, systems secure and discoveries possible.
+Chance makes systems fair, secure and unpredictable.
 
 <span class="eyebrow">Simulate instead of calculate: Monte Carlo</span>
 
-Running many random simulations gives reliable estimates where exact calculation is out of reach.
+Many random trials give an honest range instead of a single guess.
 
-<span class="eyebrow">Let chance help you decide: smarter searches, fairer choices</span>
+<span class="eyebrow">Search smarter with chance</span>
 
-Random steps help a search escape bad solutions, and random choices can make decisions fairer.
+Random steps lead out of dead ends.
+
+<span class="eyebrow">Sample instead of guess</span>
+
+A random few can tell us about the many.
 
 ## Why it matters
 
-Will your project finish on time? Which route through 15 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes and allocate scarce places fairly.
+Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.
 
 ## 
 
@@ -405,17 +467,16 @@ Any questions
 
 so far?
 
-## After the break: Randomness
+## After the break: AI and a recap
 
-- Tutorial V.I: Programming with AI coding assistants
-- Tutorial V.II: Recap of the course topics with randomness
-- Monte Carlo simulation of a travel problem in code
+- Tutorial V.I: How AI writes code
+- Tutorial V.II: Recap of the course with randomness
 
 # <span class="flow">Literature</span>
 
 ## Interesting literature to start
 
-- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^1]
+- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^10]
 
 ## Books on Programming
 
@@ -430,4 +491,22 @@ so far?
 
 For more interesting literature, take a look at the [literature list](../general/literature.qmd) of this course.
 
-[^1]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
+[^1]: Spotify Engineering (2014). How to shuffle songs? <https://engineering.atspotify.com/2014/02/how-to-shuffle-songs>
+
+[^2]: 52! ≈ 8 × 10<sup>67</sup>. Earth has roughly 10<sup>50</sup> atoms (order of magnitude).
+
+[^3]: Christian & Griffiths (2016), ch. 9.
+
+[^4]: Christian & Griffiths (2016), ch. 9.
+
+[^5]: Christian & Griffiths (2016), ch. 9.
+
+[^6]: Kirkpatrick, S., Gelatt, C. D. & Vecchi, M. P. (1983). Optimization by simulated annealing. Science, 220(4598).
+
+[^7]: Christian & Griffiths (2016), ch. 2 and ch. 9.
+
+[^8]: Rawls, J. (1971). A Theory of Justice. See Christian & Griffiths (2016), ch. 9.
+
+[^9]: Christian & Griffiths (2016), ch. 9.
+
+[^10]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.

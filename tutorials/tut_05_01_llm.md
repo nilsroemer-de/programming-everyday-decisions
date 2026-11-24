@@ -86,8 +86,16 @@ Models work?
 
 - After each written token, it predicts <span class="highlight">"what should come next?"</span>
 - Like an advanced version of the **word prediction** on your phone
-- Chooses the **most likely next token** based on training
+- Picks one of the **likely** next tokens, not always the most likely one
 - <span class="highlight">But can't actually "think" or "understand" like humans</span>
+
+## A little randomness: temperature
+
+- A setting called **temperature** controls how much chance is involved
+- Low temperature: predictable, repetitive answers
+- High temperature: more creative answers, and more mistakes
+
+<span class="highlight">The same word as in simulated annealing, and the same idea.</span>
 
 ## Limitations
 
@@ -117,31 +125,26 @@ Models work?
 
 # <span class="flow">AI Coding Partner</span>
 
-## What is GitHub Copilot?
+## AI coding assistants
 
-<span class="highlight">GitHub Copilot</span> is an *AI pair programmer* inside your editor:
+- Tools like GitHub Copilot, Cursor or Claude Code work inside your editor
+- They complete lines and blocks of code and answer questions about your code
 
-- Autocomplete for entire lines or blocks of code
-- A chat that knows your code
-- A tool to learn common coding patterns
-
-> **Tip**
->
-> Alternatives are Cursor, Zed or Claude Code. Copilot is free for students.
+<span class="highlight">Whether you use one, which one and under which license is your own decision.</span>
 
 ## Used autocomplete before?
 
 When you type on your phone, it suggests the next word.
 
-**GitHub Copilot does the same for code:**
+**An AI assistant does the same for code:**
 
 - You write a comment describing what you want
-- Copilot suggests the code to do it
+- The AI assistant suggests the code to do it
 - You accept, modify, or reject the suggestion
 
 <span class="highlight">It's autocomplete but much better than what you are used to</span>
 
-## Why Use Copilot?
+## Why use an AI assistant?
 
 <span class="highlight">Benefits you while learning and working with Python:</span>
 
@@ -154,31 +157,31 @@ When you type on your phone, it suggests the next word.
 >
 > Especially helpful when you know **WHAT** you want to do but forget **HOW** to do it.
 
-## When should you use Copilot?
+## When should you use an AI assistant?
 
-<span class="highlight">Good uses of Copilot</span>
+<span class="highlight">Good uses of an AI assistant</span>
 
 - Understanding Python syntax you forgot
 - Writing repetitive or boilerplate code
 - Getting unstuck on simple problems
 - Exploring different approaches
 
-## What shouldn't you do with Copilot?
+## What shouldn't you do with an AI assistant?
 
-<span class="highlight">Not so good uses of Copilot</span>
+<span class="highlight">Not so good uses of an AI assistant</span>
 
 - Replacing learning fundamentals
 - Accepting code you don't understand
 - Skipping practice exercises
 - Copy-pasting without reading
 
-<span class="highlight">Always understand what Copilot suggests before accepting!</span>
+<span class="highlight">Always understand what an AI assistant suggests before accepting!</span>
 
 **But of course I know you will not do that ;)**
 
 ## Accept without reading?
 
-<span class="highlight">Copilot might suggest code that:</span>
+<span class="highlight">An AI assistant might suggest code that:</span>
 
 - Uses concepts you haven't learned yet
 - Contains subtle bugs or misses edge cases
@@ -198,46 +201,14 @@ When you type on your phone, it suggests the next word.
 >
 > Don't accept code blindly, especially later if things are more complicated.
 
-# <span class="flow">Getting Started with Copilot</span>
-
-## Get Free Access
-
-**GitHub Student Developer Pack** gives you free Copilot access!
-
-1.  Go to [education.github.com/pack](https://education.github.com/pack)
-2.  Sign up with your university email
-3.  Verify your student status
-4.  Wait for approval (usually 1-2 days)
-5.  Log in to your account in VS Code
-
-> **Note**
->
-> You'll need a GitHub account. Create one at [github.com](https://github.com) if you don't have one.
-
-## Verifying Copilot is Working
-
-1.  Create a new Python file (`.py`) and type something
-2.  Wait 1-2 seconds
-
-**If working, you'll see:**
-
-- Gray "ghost text" suggesting code
-- Press `Tab` to accept
-- Press `Esc` to reject
-
-> **Tip**
->
-> Try to get Copilot running on your own until next session.
-
 # <span class="flow">Summary</span>
 
 ## Key Takeaways
 
-1.  **GitHub Copilot is a tool:** You still need to learn fundamentals
+1.  **An AI assistant is a tool:** You still need to learn fundamentals
 2.  **Understand before accepting:** Read every suggestion carefully
 3.  **Use it strategically:** Syntax help yes, thinking replacement no
-4.  **Get free access:** GitHub Student Developer Pack
-5.  **Practice:** The more you use it, the more helpful it becomes
+4.  **Practice:** The more you use it, the more helpful it becomes
 
 [^1]: <https://www.anthropic.com/research/tracing-thoughts-language-model>
 

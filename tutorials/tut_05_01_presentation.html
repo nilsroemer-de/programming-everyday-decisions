@@ -232,9 +232,33 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <ul>
 <li>After each written token, it predicts <span class="highlight">“what should come next?”</span></li>
 <li>Like an advanced version of the <strong>word prediction</strong> on your phone</li>
-<li>Chooses the <strong>most likely next token</strong> based on training</li>
+<li>Picks one of the <strong>likely</strong> next tokens, not always the most likely one</li>
 <li><span class="highlight">But can’t actually “think” or “understand” like humans</span></li>
 </ul>
+</section>
+<section id="a-little-randomness-temperature" class="slide level2">
+<h2>A little randomness: temperature</h2>
+<ul>
+<li class="fragment">A setting called <strong>temperature</strong> controls how much chance is involved</li>
+<li class="fragment">Low temperature: predictable, repetitive answers</li>
+<li class="fragment">High temperature: more creative answers, and more mistakes</li>
+</ul>
+<div class="fragment">
+<p><span class="highlight">The same word as in simulated annealing, and the same idea.</span></p>
+<aside class="notes">
+<p>In simulated annealing from the lecture, a high temperature allows many random moves and a low temperature allows only small, safe ones. In a language model, a higher temperature means that less likely tokens are picked more often.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
 <section id="limitations" class="slide level2">
 <h2>Limitations</h2>
@@ -280,25 +304,14 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <h1><span class="flow">AI Coding Partner</span></h1>
 
 </section>
-<section id="what-is-github-copilot" class="slide level2">
-<h2>What is GitHub Copilot?</h2>
-<p><span class="highlight">GitHub Copilot</span> is an <em>AI pair programmer</em> inside your editor:</p>
+<section id="ai-coding-assistants" class="slide level2">
+<h2>AI coding assistants</h2>
 <ul>
-<li>Autocomplete for entire lines or blocks of code</li>
-<li>A chat that knows your code</li>
-<li>A tool to learn common coding patterns</li>
+<li>Tools like GitHub Copilot, Cursor or Claude Code work inside your editor</li>
+<li>They complete lines and blocks of code and answer questions about your code</li>
 </ul>
 <div class="fragment">
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Alternatives are Cursor, Zed or Claude Code. Copilot is free for students.</p>
-</div>
-</div>
-</div>
+<p><span class="highlight">Whether you use one, which one and under which license is your own decision.</span></p>
 </div>
 </section>
 <section id="used-autocomplete-before" class="slide level2">
@@ -307,10 +320,10 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <p>When you type on your phone, it suggests the next word.</p>
 </div>
 <div class="fragment">
-<p><strong>GitHub Copilot does the same for code:</strong></p>
+<p><strong>An AI assistant does the same for code:</strong></p>
 <ul>
 <li>You write a comment describing what you want</li>
-<li>Copilot suggests the code to do it</li>
+<li>The AI assistant suggests the code to do it</li>
 <li>You accept, modify, or reject the suggestion</li>
 </ul>
 </div>
@@ -318,8 +331,8 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <p><span class="highlight">It’s autocomplete but much better than what you are used to</span></p>
 </div>
 </section>
-<section id="why-use-copilot" class="slide level2">
-<h2>Why Use Copilot?</h2>
+<section id="why-use-an-ai-assistant" class="slide level2">
+<h2>Why use an AI assistant?</h2>
 <p><span class="highlight">Benefits you while learning and working with Python:</span></p>
 <ul>
 <li><strong>Faster coding:</strong> Less time typing boilerplate code</li>
@@ -340,10 +353,10 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </div>
 </div>
 </section>
-<section id="when-should-you-use-copilot" class="slide level2">
-<h2>When should you use Copilot?</h2>
+<section id="when-should-you-use-an-ai-assistant" class="slide level2">
+<h2>When should you use an AI assistant?</h2>
 <div class="fragment">
-<p><span class="highlight">Good uses of Copilot</span></p>
+<p><span class="highlight">Good uses of an AI assistant</span></p>
 <ul>
 <li>Understanding Python syntax you forgot</li>
 <li>Writing repetitive or boilerplate code</li>
@@ -352,10 +365,10 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </ul>
 </div>
 </section>
-<section id="what-shouldnt-you-do-with-copilot" class="slide level2">
-<h2>What shouldn’t you do with Copilot?</h2>
+<section id="what-shouldnt-you-do-with-an-ai-assistant" class="slide level2">
+<h2>What shouldn’t you do with an AI assistant?</h2>
 <div class="fragment">
-<p><span class="highlight">Not so good uses of Copilot</span></p>
+<p><span class="highlight">Not so good uses of an AI assistant</span></p>
 <ul>
 <li>Replacing learning fundamentals</li>
 <li>Accepting code you don’t understand</li>
@@ -364,7 +377,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </ul>
 </div>
 <div class="fragment">
-<p><span class="highlight">Always understand what Copilot suggests before accepting!</span></p>
+<p><span class="highlight">Always understand what an AI assistant suggests before accepting!</span></p>
 </div>
 <div class="fragment">
 <p><strong>But of course I know you will not do that ;)</strong></p>
@@ -373,7 +386,7 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <section id="accept-without-reading" class="slide level2">
 <h2>Accept without reading?</h2>
 <div class="fragment">
-<p><span class="highlight">Copilot might suggest code that:</span></p>
+<p><span class="highlight">An AI assistant might suggest code that:</span></p>
 <ul>
 <li>Uses concepts you haven’t learned yet</li>
 <li>Contains subtle bugs or misses edge cases</li>
@@ -405,63 +418,6 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 </div>
 </section></section>
 <section>
-<section id="getting-started-with-copilot" class="title-slide slide level1 title center">
-<h1><span class="flow">Getting Started with Copilot</span></h1>
-
-</section>
-<section id="get-free-access" class="slide level2">
-<h2>Get Free Access</h2>
-<p><strong>GitHub Student Developer Pack</strong> gives you free Copilot access!</p>
-<div class="fragment">
-<ol type="1">
-<li>Go to <a href="https://education.github.com/pack">education.github.com/pack</a></li>
-<li>Sign up with your university email</li>
-<li>Verify your student status</li>
-<li>Wait for approval (usually 1-2 days)</li>
-<li>Log in to your account in VS Code</li>
-</ol>
-</div>
-<div class="fragment">
-<div class="callout callout-note callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>You’ll need a GitHub account. Create one at <a href="https://github.com">github.com</a> if you don’t have one.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="verifying-copilot-is-working" class="slide level2">
-<h2>Verifying Copilot is Working</h2>
-<ol type="1">
-<li>Create a new Python file (<code>.py</code>) and type something</li>
-<li>Wait 1-2 seconds</li>
-</ol>
-<div class="fragment">
-<p><strong>If working, you’ll see:</strong></p>
-<ul>
-<li>Gray “ghost text” suggesting code</li>
-<li>Press <code>Tab</code> to accept</li>
-<li>Press <code>Esc</code> to reject</li>
-</ul>
-</div>
-<div class="fragment">
-<div class="callout callout-tip callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p>Try to get Copilot running on your own until next session.</p>
-</div>
-</div>
-</div>
-</div>
-</section></section>
-<section>
 <section id="summary" class="title-slide slide level1 title center">
 <h1><span class="flow">Summary</span></h1>
 
@@ -469,10 +425,9 @@ Dr.&nbsp;Nils Roemer, External Lecturer
 <section id="key-takeaways" class="slide level2">
 <h2>Key Takeaways</h2>
 <ol type="1">
-<li><strong>GitHub Copilot is a tool:</strong> You still need to learn fundamentals</li>
+<li><strong>An AI assistant is a tool:</strong> You still need to learn fundamentals</li>
 <li><strong>Understand before accepting:</strong> Read every suggestion carefully</li>
 <li><strong>Use it strategically:</strong> Syntax help yes, thinking replacement no</li>
-<li><strong>Get free access:</strong> GitHub Student Developer Pack</li>
 <li><strong>Practice:</strong> The more you use it, the more helpful it becomes</li>
 </ol>
 

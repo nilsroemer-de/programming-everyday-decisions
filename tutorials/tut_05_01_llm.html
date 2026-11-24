@@ -300,12 +300,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">05-02: Recap</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../tutorials/tut_05_03_free.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">05-03: Free Tasks</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -374,24 +368,20 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#training-llms" id="toc-training-llms" class="nav-link" data-scroll-target="#training-llms">Training LLMs</a></li>
   <li><a href="#pattern-recognition" id="toc-pattern-recognition" class="nav-link" data-scroll-target="#pattern-recognition">Pattern Recognition</a></li>
   <li><a href="#probability-based-responses" id="toc-probability-based-responses" class="nav-link" data-scroll-target="#probability-based-responses">Probability based responses</a></li>
+  <li><a href="#a-little-randomness-temperature" id="toc-a-little-randomness-temperature" class="nav-link" data-scroll-target="#a-little-randomness-temperature">A little randomness: temperature</a></li>
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#impact-on-jobs" id="toc-impact-on-jobs" class="nav-link" data-scroll-target="#impact-on-jobs">Impact on Jobs</a></li>
   <li><a href="#a-great-overview-by-3blue1brown" id="toc-a-great-overview-by-3blue1brown" class="nav-link" data-scroll-target="#a-great-overview-by-3blue1brown">A Great Overview by 3Blue1Brown</a></li>
   </ul></li>
   <li><a href="#ai-coding-partner" id="toc-ai-coding-partner" class="nav-link" data-scroll-target="#ai-coding-partner"><span class="flow">AI Coding Partner</span></a>
   <ul class="collapse">
-  <li><a href="#what-is-github-copilot" id="toc-what-is-github-copilot" class="nav-link" data-scroll-target="#what-is-github-copilot">What is GitHub Copilot?</a></li>
+  <li><a href="#ai-coding-assistants" id="toc-ai-coding-assistants" class="nav-link" data-scroll-target="#ai-coding-assistants">AI coding assistants</a></li>
   <li><a href="#used-autocomplete-before" id="toc-used-autocomplete-before" class="nav-link" data-scroll-target="#used-autocomplete-before">Used autocomplete before?</a></li>
-  <li><a href="#why-use-copilot" id="toc-why-use-copilot" class="nav-link" data-scroll-target="#why-use-copilot">Why Use Copilot?</a></li>
-  <li><a href="#when-should-you-use-copilot" id="toc-when-should-you-use-copilot" class="nav-link" data-scroll-target="#when-should-you-use-copilot">When should you use Copilot?</a></li>
-  <li><a href="#what-shouldnt-you-do-with-copilot" id="toc-what-shouldnt-you-do-with-copilot" class="nav-link" data-scroll-target="#what-shouldnt-you-do-with-copilot">What shouldn’t you do with Copilot?</a></li>
+  <li><a href="#why-use-an-ai-assistant" id="toc-why-use-an-ai-assistant" class="nav-link" data-scroll-target="#why-use-an-ai-assistant">Why use an AI assistant?</a></li>
+  <li><a href="#when-should-you-use-an-ai-assistant" id="toc-when-should-you-use-an-ai-assistant" class="nav-link" data-scroll-target="#when-should-you-use-an-ai-assistant">When should you use an AI assistant?</a></li>
+  <li><a href="#what-shouldnt-you-do-with-an-ai-assistant" id="toc-what-shouldnt-you-do-with-an-ai-assistant" class="nav-link" data-scroll-target="#what-shouldnt-you-do-with-an-ai-assistant">What shouldn’t you do with an AI assistant?</a></li>
   <li><a href="#accept-without-reading" id="toc-accept-without-reading" class="nav-link" data-scroll-target="#accept-without-reading">Accept without reading?</a></li>
   <li><a href="#my-take-just-be-careful-ok" id="toc-my-take-just-be-careful-ok" class="nav-link" data-scroll-target="#my-take-just-be-careful-ok">My take: Just be careful, ok?</a></li>
-  </ul></li>
-  <li><a href="#getting-started-with-copilot" id="toc-getting-started-with-copilot" class="nav-link" data-scroll-target="#getting-started-with-copilot"><span class="flow">Getting Started with Copilot</span></a>
-  <ul class="collapse">
-  <li><a href="#get-free-access" id="toc-get-free-access" class="nav-link" data-scroll-target="#get-free-access">Get Free Access</a></li>
-  <li><a href="#verifying-copilot-is-working" id="toc-verifying-copilot-is-working" class="nav-link" data-scroll-target="#verifying-copilot-is-working">Verifying Copilot is Working</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="flow">Summary</span></a>
   <ul class="collapse">
@@ -514,9 +504,24 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>After each written token, it predicts <span class="highlight">“what should come next?”</span></li>
 <li>Like an advanced version of the <strong>word prediction</strong> on your phone</li>
-<li>Chooses the <strong>most likely next token</strong> based on training</li>
+<li>Picks one of the <strong>likely</strong> next tokens, not always the most likely one</li>
 <li><span class="highlight">But can’t actually “think” or “understand” like humans</span></li>
 </ul>
+</section>
+<section id="a-little-randomness-temperature" class="level2">
+<h2 class="anchored" data-anchor-id="a-little-randomness-temperature">A little randomness: temperature</h2>
+<div class="incremental">
+<ul class="incremental">
+<li>A setting called <strong>temperature</strong> controls how much chance is involved</li>
+<li>Low temperature: predictable, repetitive answers</li>
+<li>High temperature: more creative answers, and more mistakes</li>
+</ul>
+</div>
+<p><span class="highlight">The same word as in simulated annealing, and the same idea.</span></p>
+<div class="lecture-notes">
+<p><span class="eyebrow">Notes</span></p>
+<p>In simulated annealing from the lecture, a high temperature allows many random moves and a low temperature allows only small, safe ones. In a language model, a higher temperature means that less likely tokens are picked more often.</p>
+</div>
 </section>
 <section id="limitations" class="level2">
 <h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
@@ -560,38 +565,27 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="ai-coding-partner" class="level1 title">
 <h1 class="title"><span class="flow">AI Coding Partner</span></h1>
-<section id="what-is-github-copilot" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-github-copilot">What is GitHub Copilot?</h2>
-<p><span class="highlight">GitHub Copilot</span> is an <em>AI pair programmer</em> inside your editor:</p>
+<section id="ai-coding-assistants" class="level2">
+<h2 class="anchored" data-anchor-id="ai-coding-assistants">AI coding assistants</h2>
 <ul>
-<li>Autocomplete for entire lines or blocks of code</li>
-<li>A chat that knows your code</li>
-<li>A tool to learn common coding patterns</li>
+<li>Tools like GitHub Copilot, Cursor or Claude Code work inside your editor</li>
+<li>They complete lines and blocks of code and answer questions about your code</li>
 </ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Alternatives are Cursor, Zed or Claude Code. Copilot is free for students.</p>
-</div>
-</div>
-</div>
+<p><span class="highlight">Whether you use one, which one and under which license is your own decision.</span></p>
 </section>
 <section id="used-autocomplete-before" class="level2">
 <h2 class="anchored" data-anchor-id="used-autocomplete-before">Used autocomplete before?</h2>
 <p>When you type on your phone, it suggests the next word.</p>
-<p><strong>GitHub Copilot does the same for code:</strong></p>
+<p><strong>An AI assistant does the same for code:</strong></p>
 <ul>
 <li>You write a comment describing what you want</li>
-<li>Copilot suggests the code to do it</li>
+<li>The AI assistant suggests the code to do it</li>
 <li>You accept, modify, or reject the suggestion</li>
 </ul>
 <p><span class="highlight">It’s autocomplete but much better than what you are used to</span></p>
 </section>
-<section id="why-use-copilot" class="level2">
-<h2 class="anchored" data-anchor-id="why-use-copilot">Why Use Copilot?</h2>
+<section id="why-use-an-ai-assistant" class="level2">
+<h2 class="anchored" data-anchor-id="why-use-an-ai-assistant">Why use an AI assistant?</h2>
 <p><span class="highlight">Benefits you while learning and working with Python:</span></p>
 <ul>
 <li><strong>Faster coding:</strong> Less time typing boilerplate code</li>
@@ -610,9 +604,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="when-should-you-use-copilot" class="level2">
-<h2 class="anchored" data-anchor-id="when-should-you-use-copilot">When should you use Copilot?</h2>
-<p><span class="highlight">Good uses of Copilot</span></p>
+<section id="when-should-you-use-an-ai-assistant" class="level2">
+<h2 class="anchored" data-anchor-id="when-should-you-use-an-ai-assistant">When should you use an AI assistant?</h2>
+<p><span class="highlight">Good uses of an AI assistant</span></p>
 <ul>
 <li>Understanding Python syntax you forgot</li>
 <li>Writing repetitive or boilerplate code</li>
@@ -620,21 +614,21 @@ ul.task-list li input[type="checkbox"] {
 <li>Exploring different approaches</li>
 </ul>
 </section>
-<section id="what-shouldnt-you-do-with-copilot" class="level2">
-<h2 class="anchored" data-anchor-id="what-shouldnt-you-do-with-copilot">What shouldn’t you do with Copilot?</h2>
-<p><span class="highlight">Not so good uses of Copilot</span></p>
+<section id="what-shouldnt-you-do-with-an-ai-assistant" class="level2">
+<h2 class="anchored" data-anchor-id="what-shouldnt-you-do-with-an-ai-assistant">What shouldn’t you do with an AI assistant?</h2>
+<p><span class="highlight">Not so good uses of an AI assistant</span></p>
 <ul>
 <li>Replacing learning fundamentals</li>
 <li>Accepting code you don’t understand</li>
 <li>Skipping practice exercises</li>
 <li>Copy-pasting without reading</li>
 </ul>
-<p><span class="highlight">Always understand what Copilot suggests before accepting!</span></p>
+<p><span class="highlight">Always understand what an AI assistant suggests before accepting!</span></p>
 <p><strong>But of course I know you will not do that ;)</strong></p>
 </section>
 <section id="accept-without-reading" class="level2">
 <h2 class="anchored" data-anchor-id="accept-without-reading">Accept without reading?</h2>
-<p><span class="highlight">Copilot might suggest code that:</span></p>
+<p><span class="highlight">An AI assistant might suggest code that:</span></p>
 <ul>
 <li>Uses concepts you haven’t learned yet</li>
 <li>Contains subtle bugs or misses edge cases</li>
@@ -663,62 +657,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="getting-started-with-copilot" class="level1 title">
-<h1 class="title"><span class="flow">Getting Started with Copilot</span></h1>
-<section id="get-free-access" class="level2">
-<h2 class="anchored" data-anchor-id="get-free-access">Get Free Access</h2>
-<p><strong>GitHub Student Developer Pack</strong> gives you free Copilot access!</p>
-<ol type="1">
-<li>Go to <a href="https://education.github.com/pack">education.github.com/pack</a></li>
-<li>Sign up with your university email</li>
-<li>Verify your student status</li>
-<li>Wait for approval (usually 1-2 days)</li>
-<li>Log in to your account in VS Code</li>
-</ol>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>You’ll need a GitHub account. Create one at <a href="https://github.com">github.com</a> if you don’t have one.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="verifying-copilot-is-working" class="level2">
-<h2 class="anchored" data-anchor-id="verifying-copilot-is-working">Verifying Copilot is Working</h2>
-<ol type="1">
-<li>Create a new Python file (<code>.py</code>) and type something</li>
-<li>Wait 1-2 seconds</li>
-</ol>
-<p><strong>If working, you’ll see:</strong></p>
-<ul>
-<li>Gray “ghost text” suggesting code</li>
-<li>Press <code>Tab</code> to accept</li>
-<li>Press <code>Esc</code> to reject</li>
-</ul>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Try to get Copilot running on your own until next session.</p>
-</div>
-</div>
-</div>
-</section>
-</section>
 <section id="summary" class="level1 title">
 <h1 class="title"><span class="flow">Summary</span></h1>
 <section id="key-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
 <ol type="1">
-<li><strong>GitHub Copilot is a tool:</strong> You still need to learn fundamentals</li>
+<li><strong>An AI assistant is a tool:</strong> You still need to learn fundamentals</li>
 <li><strong>Understand before accepting:</strong> Read every suggestion carefully</li>
 <li><strong>Use it strategically:</strong> Syntax help yes, thinking replacement no</li>
-<li><strong>Get free access:</strong> GitHub Student Developer Pack</li>
 <li><strong>Practice:</strong> The more you use it, the more helpful it becomes</li>
 </ol>
 

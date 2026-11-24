@@ -6,7 +6,7 @@ subtitle: 'Programming: Everyday Decision-Making Algorithms'
 
 # Introduction
 
-<span class="highlight">From now on, it is rather difficult to give you tasks that you cannot solve within minutes by yourself with the help of AI</span>. Therefore, today's tutorial will be more open-ended than usual. All tasks are designed to be solved together with AI, but you are nonetheless the human in the loop. Thus, your responsibilities are to control the AI and to learn how to use it by doing. Instructions and explanations will only be given sparsely, as you are encouraged to use AI to ask for help and explanations to explore the tasks on your own.
+<span class="highlight">This tutorial brings together the topics of the course, each with a bit of randomness.</span> Today's tutorial will be more open-ended than usual. All tasks are designed to be solved together with AI, but you are nonetheless the human in the loop. Thus, your responsibilities are to control the AI and to learn how to use it by doing. Instructions and explanations will only be given sparsely, as you are encouraged to use AI to ask for help and explanations to explore the tasks on your own.
 
 Let's explore how randomness affects our daily decision-making. As always, we will use Python and simulate various scenarios where randomness plays a crucial role.
 
@@ -28,7 +28,7 @@ In total, you have 32 candidates. Screen the candidates one by one and store the
 
 > **How to work with AI coding assistants and agents**
 >
-> You can use any current AI coding assistant or agent, for example GitHub Copilot (free for students, see Tutorial V.I), Cursor or Claude Code.
+> You can use any current AI coding assistant or agent, for example GitHub Copilot, Cursor or Claude Code.
 >
 > 1.  Select the task or the code and ask the assistant in its chat to explain the task, the code or a concept.
 > 2.  Let it suggest code directly in your notebook and read every suggestion before you accept it.
@@ -92,7 +92,9 @@ Caching is a technique that can be used to speed up computations by storing the 
 
 ## Exercise 3.1 - Random Menu Generator
 
-Create a function `generate_daily_menu()` that generates a daily menu by randomly selecting items from different categories. As our "cache" - the daily menu - is rather small, we only want to receive one menu for each day as a list from the function.
+Think of the daily menu as a small cache: the kitchen can cook nine dishes, but keeps only one per course ready for today. Choosing them at random is like a cache that decides at random what to keep, as with random eviction in Tutorial III.III: simple, but it ignores what guests ordered recently, which is exactly what LRU would use.
+
+Create a function `generate_daily_menu()` that generates a daily menu by randomly selecting items from different categories. The function returns the menu for one day as a list with one appetizer, one main course and one dessert.
 
 ``` python
 appetizers = ["Sorted Salad", "Binary Bruschetta", "Array of Antipasti"]
@@ -126,7 +128,7 @@ Scheduling is a classic problem in operations research and in daily life. Let's 
 
 ## Exercise 4.1 - Scheduling Tasks
 
-Let's create a task scheduler that handles tasks with different due dates. The scheduler should sort tasks by their due date (Earliest Due Date First - EDD strategy) to minimize potential delays.
+Let's create a task scheduler that handles tasks with different due dates. The scheduler should sort tasks by their due date (Earliest Due Date First, EDD strategy) to minimize potential delays.
 
 Your task is to create a function `schedule_tasks(tasks)` that:
 
@@ -261,8 +263,4 @@ We've explored how randomness affects decision-making through:
 - Scheduling tasks with due dates
 - Monte Carlo simulation of a travel problem
 
-Remember that randomness isn't always bad - sometimes it's the best strategy we have!
-
-------------------------------------------------------------------------
-
-*In the next tutorial, we'll dive deeper into some free-form tasks!*
+Remember that randomness isn't always bad: sometimes it's the best strategy we have!
