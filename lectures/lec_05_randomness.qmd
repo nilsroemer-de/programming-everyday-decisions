@@ -16,7 +16,7 @@ format:
 ::: {.lecture-why}
 [Why it matters]{.eyebrow}
 
-Will your project finish on time? Which route through 20 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes, survey customers and allocate scarce places fairly.
+Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.
 :::
 
 ## Roadmap {.lecture-opening}
@@ -85,8 +85,6 @@ Photos: Unsplash (photo IDs 1517232115160, 1593453917923, 1691213426024, 1717501
 
 [Question:]{.question} **What's the opposite of randomness?**
 
-. . .
-
 :::{.incremental}
 - **Determinism:** same input, same output
 - **Predictability:** knowing the outcome in advance
@@ -101,113 +99,94 @@ Photos: Unsplash (photo IDs 1517232115160, 1593453917923, 1691213426024, 1717501
 Answer: Determinism, predictability and consistency. Life without any chance would be reliable, but also a little boring.
 :::
 
-## Is this die fair?
+## Are these dice fair?
 
-[Question:]{.question} **How would you test if a die is fair?**
-
-. . .
+[Question:]{.question} **How would you test if dice are fair?**
 
 :::{.incremental}
-- Send it to a lab to check weight and balance
-- Or simply: roll it **many times**
+- Send them to a lab to check weight and balance
+- Or simply: roll them **many times**
 - Count how often each number comes up
-- A fair die shows each number about **one sixth** of the time
+- Fair dice show each number about **one sixth** of the time
 :::
 
 ::: {.notes}
-Answer: Roll it many times and count. A fair die shows each number about one sixth of the time; a loaded die shows one number far more often. We do not need to look inside the die, we only need enough rolls.
+Answer: Roll them many times and count. Fair dice show each number about one sixth of the time; loaded dice show one number far more often. We do not need to look inside the dice, we only need enough rolls.
 :::
 
-## A fair and a loaded die after 200 rolls
+## Fair and loaded dice after 200 rolls
 
 
 ```{python}
 #| echo: false
+import sys
+sys.path.insert(0, "../helpers")
+import pathlib
 import numpy as np
-np.random.seed(42)  # fixed seed: identical GIFs in animations/ on every run
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-import pathlib
+from course_plots import use_course_style, PRIMARY, AMBER, INK
 
 DIR = pathlib.Path(".").resolve()
+np.random.seed(42)  # fixed seed: identical GIFs in animations/ on every run
 
-# Setup the figure
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8), dpi=150)
-plt.style.use('fivethirtyeight')
+N_ROLLS = 200
+ROLLS_PER_FRAME = 2  # 100 frames at 0.1 s: about 10 seconds
+faces = np.arange(1, 7)
+fair_p = np.full(6, 1 / 6)
+loaded_p = np.array([0.1, 0.1, 0.1, 0.1, 0.1, 0.5])
+rows = [
+    ("Fair dice", PRIMARY, np.random.choice(faces, N_ROLLS, p=fair_p), fair_p, "One sixth"),
+    ("Loaded dice", AMBER, np.random.choice(faces, N_ROLLS, p=loaded_p), loaded_p, "True chance"),
+]
 
-# Setup first subplot for rolling history
-ax1.set_xlim(0, 200)
-ax1.set_ylim(0.5, 6.5)
-ax1.set_title('Dice Roll History')
-ax1.set_xlabel('Roll Number')
-ax1.set_ylabel('Roll Value')
-ax1.grid(True, alpha=0.3)
+with plt.rc_context():
+    plt.style.use("default")
+    use_course_style()
+    plt.rcParams.update({"axes.titlesize": 24, "axes.labelsize": 22,
+                         "xtick.labelsize": 20, "ytick.labelsize": 20, "legend.fontsize": 20})
+    # same axes in both rows, so fair and loaded can be compared directly
+    fig, axes = plt.subplots(2, 2, figsize=(14, 8), dpi=80, sharex="col", sharey="col",
+                             width_ratios=[1, 1.25])
+    panels = []
+    for (name, color, rolls, p, ref), (ax_rolls, ax_share) in zip(rows, axes):
+        ax_rolls.set_title(f"{name}: the rolls", fontfamily="Poppins")
+        ax_rolls.set_xlim(0, N_ROLLS)
+        ax_rolls.set_ylim(0.5, 6.5)
+        ax_rolls.set_yticks(faces)
+        ax_rolls.set_ylabel("Number rolled")
+        trace, = ax_rolls.plot([], [], color=color, linewidth=1, alpha=0.3)
+        dots, = ax_rolls.plot([], [], "o", color=color, markersize=6)
+        ax_share.set_title(f"{name}: share of each number", fontfamily="Poppins")
+        ax_share.set_xlim(0.4, 6.6)
+        ax_share.set_ylim(0, 0.6)
+        ax_share.set_xticks(faces)
+        ax_share.set_ylabel("Share of rolls")
+        bars = ax_share.bar(faces, np.zeros(6), width=0.7, color=color)
+        ax_share.hlines(p, faces - 0.45, faces + 0.45, colors=INK, linestyles="--",
+                        linewidth=2.5, label=ref)
+        ax_share.legend(loc="upper left")
+        panels.append((rolls, trace, dots, bars))
+    axes[1, 0].set_xlabel("Roll number")
+    axes[1, 1].set_xlabel("Number rolled")
+    fig.tight_layout(h_pad=1.5, w_pad=3)
 
-# Setup second subplot for distribution
-x = np.arange(1, 7)
-expected_prob = [1/6] * 6  # Fair die probabilities
-biased_prob = [0.1, 0.1, 0.1, 0.1, 0.1, 0.5]  # Biased die probabilities
-ax2.set_xlim(0.5, 6.5)
-ax2.set_ylim(0, 0.6)
-ax2.set_title('Distribution of Outcomes')
-ax2.set_xlabel('Roll Value')
-ax2.set_ylabel('Probability')
-ax2.grid(True, alpha=0.3)
+    def update(frame):
+        n = (frame + 1) * ROLLS_PER_FRAME
+        x = np.arange(1, n + 1)
+        changed = []
+        for rolls, trace, dots, bars in panels:
+            trace.set_data(x, rolls[:n])
+            dots.set_data(x, rolls[:n])
+            shares = np.bincount(rolls[:n], minlength=7)[1:] / n
+            for bar, share in zip(bars, shares):
+                bar.set_height(share)
+            changed += [trace, dots, *bars]
+        return changed
 
-# Plot expected probability lines
-ax2.plot(x, expected_prob, 'g--', label='Fair Die (Expected)', alpha=0.7)
-ax2.plot(x, biased_prob, 'r--', label='Biased Die (Expected)', alpha=0.7)
-ax2.legend()
-
-# Initialize data
-fair_rolls = []
-biased_rolls = []
-fair_line, = ax1.plot([], [], 'g-', alpha=0.5, label='Fair Die')
-biased_line, = ax1.plot([], [], 'r-', alpha=0.5, label='Biased Die')
-fair_scatter = ax1.scatter([], [], c='green', alpha=0.6)
-biased_scatter = ax1.scatter([], [], c='red', alpha=0.6)
-fair_bars = ax2.bar(x - 0.2, np.zeros_like(x), width=0.4, alpha=0.5, color='green', label='Fair Die (Observed)')
-biased_bars = ax2.bar(x + 0.2, np.zeros_like(x), width=0.4, alpha=0.5, color='red', label='Biased Die (Observed)')
-
-ax1.legend()
-ax2.legend()
-
-def biased_roll():
-    # Returns 6 with 50% probability, others equally likely
-    return np.random.choice(range(1, 7), p=biased_prob)
-
-def update(frame):
-    # Generate new rolls
-    fair_roll = np.random.randint(1, 7)
-    unfair_roll = biased_roll()
-
-    fair_rolls.append(fair_roll)
-    biased_rolls.append(unfair_roll)
-
-    # Update rolling history
-    fair_line.set_data(range(len(fair_rolls)), fair_rolls)
-    biased_line.set_data(range(len(biased_rolls)), biased_rolls)
-    fair_scatter.set_offsets(np.c_[range(len(fair_rolls)), fair_rolls])
-    biased_scatter.set_offsets(np.c_[range(len(biased_rolls)), biased_rolls])
-
-    # Update distributions
-    if fair_rolls:
-        fair_counts = np.bincount(fair_rolls)[1:]
-        fair_probs = fair_counts / len(fair_rolls)
-        biased_counts = np.bincount(biased_rolls)[1:]
-        biased_probs = biased_counts / len(biased_rolls)
-
-        for bar, prob in zip(fair_bars, fair_probs):
-            bar.set_height(prob)
-        for bar, prob in zip(biased_bars, biased_probs):
-            bar.set_height(prob)
-
-    return (fair_line, biased_line, fair_scatter, biased_scatter, *fair_bars, *biased_bars)
-
-# Create and save animation
-anim = FuncAnimation(fig, update, frames=200, interval=50, blit=True)
-anim.save(DIR / '../animations/dice_fairness.gif', writer='pillow')
-plt.close()
+    anim = FuncAnimation(fig, update, frames=N_ROLLS // ROLLS_PER_FRAME, interval=100, blit=True)
+    anim.save(DIR / "../animations/dice_fairness.gif", writer="pillow")
+    plt.close(fig)
 ```
 
 ![](../animations/dice_fairness.gif)
@@ -225,7 +204,7 @@ plt.close()
 - **Lotteries:** some universities allocate study places by lottery
 :::
 
-[^spotify]: Spotify Engineering (2014). How to shuffle songs? https://engineering.atspotify.com/2014/02/how-to-shuffle-songs
+[^spotify]: Spotify Engineering (2014). How to shuffle songs? <https://engineering.atspotify.com/2014/02/how-to-shuffle-songs>
 
 ::: {.notes}
 Answer: Almost everywhere: online shops test versions at random, login codes are random, surveys and tax audits pick people at random, and some universities allocate study places by lottery. Spotify is the surprise: with true shuffle, the same artist sometimes came twice in a row, and users thought the shuffle was broken.
@@ -248,11 +227,9 @@ Estimating and searching are our topics today.
 We use randomness on purpose, not only in games. Fairness: when nobody can influence the outcome, nobody is favored. Security: passwords, keys and login codes are random, so attackers cannot guess the next one. Estimating: instead of calculating every case, we try many random cases and count. Searching: random steps help a search escape dead ends and find better solutions.
 :::
 
-## Can a computer roll a die?
+## Can a computer roll dice?
 
 [Question:]{.question} **How can a machine that only calculates produce randomness?**
-
-. . .
 
 ::: {.columns}
 ::: {.column .fragment width="50%"}
@@ -310,20 +287,24 @@ That is more than the number of atoms on Earth.[^atoms]
 . . .
 
 ::: {.callout-important}
-Computing and evaluating all possible combinations is not feasible!
+No computer can ever go through all of these orders one by one.
 :::
+
+. . .
+
+[Question:]{.question} **So how do we answer questions about card games?**
 
 [^atoms]: 52! ≈ 8 × 10^67^. Earth has roughly 10^50^ atoms (order of magnitude).
 
 ::: {.notes}
 Answer: 52 factorial, about 8 times 10 to the 67. Earth has roughly 10 to the 50 atoms, so there are about a hundred million billion times more orders than atoms. Every well shuffled deck is very likely an order that has never existed before.
+
+Answer: By playing many games and counting. That is the story on the next slide.
 :::
 
 ## A card game in 1946
 
 [Question:]{.question} **Anybody ever heard of Monte Carlo methods?**
-
-. . .
 
 :::{.incremental}
 - In 1946, the mathematician Stanislaw Ulam was recovering from an illness and played solitaire
@@ -342,21 +323,53 @@ Ulam then used the same idea at Los Alamos, together with John von Neumann and N
 
 ## How could we estimate π?
 
-:::{.incremental}
-- Throw random points into a square
-- A circle fits exactly inside the square
-- The circle covers **π/4** of the square, so that is the share of points that land inside it
-- So: π ≈ 4 × (points inside / all points)
+:::: {.columns}
+::: {.column width="45%"}
+```{python}
+#| echo: false
+import sys
+sys.path.insert(0, "../helpers")
+import numpy as np
+import matplotlib.pyplot as plt
+from course_plots import use_course_style, PRIMARY, AMBER, INK
+
+with plt.rc_context():
+    plt.style.use("default")
+    use_course_style()
+    rng = np.random.default_rng(42)  # fixed seed: same picture on every run
+    pts = rng.uniform(-1, 1, (40, 2))
+    inside = (pts ** 2).sum(axis=1) <= 1
+    fig, ax = plt.subplots(figsize=(4.5, 4.5))
+    ax.add_patch(plt.Rectangle((-1, -1), 2, 2, fill=False, edgecolor=INK, linewidth=2))
+    ax.add_patch(plt.Circle((0, 0), 1, fill=False, edgecolor=INK, linewidth=2))
+    ax.scatter(*pts[inside].T, s=70, color=PRIMARY, zorder=3)
+    ax.scatter(*pts[~inside].T, s=70, color=AMBER, zorder=3)
+    ax.set_xlim(-1.05, 1.05)
+    ax.set_ylim(-1.05, 1.05)
+    ax.set_aspect("equal")
+    ax.axis("off")
+    fig.tight_layout()
+    plt.show()
+```
 :::
 
-. . .
+::: {.column width="55%"}
+:::{.incremental}
+- Throw random points into the square
+- Count how many land inside the circle
+- The more points we throw, the closer we get to π
+:::
 
+::: {.fragment}
 The idea goes back to Buffon, who in 1777 dropped needles on lined paper.[^buffon]
+:::
+:::
+::::
 
 [^buffon]: Christian & Griffiths (2016), ch. 9.
 
 ::: {.notes}
-Answer: By throwing random points. The circle covers π/4 of the square, about 79 %, so about 79 of 100 random points land inside it. Count them, multiply the share by 4, and we have an estimate of π that gets better the more points we throw.
+Answer: By throwing random points. A circle fits exactly inside the square. The circle covers **π/4** of the square, so that is the share of points that land inside it: about 79 %, so about 79 of 100 random points. So: π ≈ 4 × (points inside / all points). Count them, multiply the share by 4, and we have an estimate of π that gets better the more points we throw.
 
 Buffon asked how likely a needle dropped on lined paper crosses a line. The answer contains π, so dropping many needles and counting estimates π. Laplace later pointed out exactly that.
 :::
@@ -365,77 +378,60 @@ Buffon asked how likely a needle dropped on lined paper crosses a line. The answ
 
 ```{python}
 #| echo: false
+import sys
+sys.path.insert(0, "../helpers")
+import pathlib
 import numpy as np
-np.random.seed(42)  # fixed seed: identical GIFs in animations/ on every run
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-import pathlib
+from course_plots import use_course_style, PRIMARY, AMBER, INK
 
 DIR = pathlib.Path(".").resolve()
+np.random.seed(42)  # fixed seed: identical GIFs in animations/ on every run
 
-# Setup
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8), dpi=150)
+N_POINTS = 500
+POINTS_PER_FRAME = 5  # 100 frames at 0.1 s: about 10 seconds
+points = np.random.uniform(-1, 1, (N_POINTS, 2))
+inside = (points ** 2).sum(axis=1) <= 1
+estimates = 4 * np.cumsum(inside) / np.arange(1, N_POINTS + 1)  # estimate after each point
 
-# Draw circle and square boundaries
-circle = plt.Circle((0, 0), 1, fill=False, color='black')
-ax1.add_artist(circle)
-ax1.set_xlim(-1.1, 1.1)
-ax1.set_ylim(-1.1, 1.1)
-ax1.set_aspect('equal')
-ax1.grid(True)
-ax1.set_title('Monte Carlo Simulation')
+with plt.rc_context():
+    plt.style.use("default")
+    use_course_style()
+    plt.rcParams.update({"axes.titlesize": 24, "axes.labelsize": 22,
+                         "xtick.labelsize": 20, "ytick.labelsize": 20})
+    # same shape as before (18 x 8), smaller canvas so the text appears larger on the slide
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13.5, 6), dpi=80, width_ratios=[1, 1.6])
 
-# Setup pi estimation plot
-ax2.set_xlim(0, 200)  # Reduced number of frames
-ax2.set_ylim(2.8, 3.4)
-ax2.axhline(y=np.pi, color='r', linestyle='--', label='π')
-ax2.grid(True)
-ax2.set_title('π Estimation')
-ax2.legend()
+    ax1.add_patch(plt.Rectangle((-1, -1), 2, 2, fill=False, edgecolor=INK, linewidth=2))
+    ax1.add_patch(plt.Circle((0, 0), 1, fill=False, edgecolor=INK, linewidth=2))
+    ax1.set_xlim(-1.05, 1.05)
+    ax1.set_ylim(-1.05, 1.05)
+    ax1.set_aspect("equal")
+    ax1.axis("off")
+    ax1.set_title("Random points", fontfamily="Poppins")
+    dots_in = ax1.scatter([], [], s=22, color=PRIMARY)
+    dots_out = ax1.scatter([], [], s=22, color=AMBER)
 
-# Pre-allocate points and create scatter plots once
-points_per_frame = 10  # Process multiple points per frame
-scatter_inside = ax1.scatter([], [], c='blue', alpha=0.6, s=20)
-scatter_outside = ax1.scatter([], [], c='red', alpha=0.6, s=20)
-line_estimate, = ax2.plot([], [], 'g-', alpha=0.5)
+    ax2.set_xlim(0, N_POINTS)
+    ax2.set_ylim(2.6, 3.8)
+    ax2.axhline(np.pi, color=INK, linestyle="--", linewidth=2)
+    ax2.text(N_POINTS, np.pi + 0.03, "π", color=INK, fontsize=24, ha="right", va="bottom")
+    ax2.set_title("Estimate of π", fontfamily="Poppins")
+    ax2.set_xlabel("Number of points")
+    estimate_line, = ax2.plot([], [], color=PRIMARY, linewidth=2.5)
+    fig.tight_layout(w_pad=3)
 
-# Initialize arrays
-inside_points = np.empty((0, 2))
-outside_points = np.empty((0, 2))
-estimates = np.empty(0)
+    def update(frame):
+        n = (frame + 1) * POINTS_PER_FRAME
+        dots_in.set_offsets(points[:n][inside[:n]])
+        dots_out.set_offsets(points[:n][~inside[:n]])
+        estimate_line.set_data(np.arange(1, n + 1), estimates[:n])
+        return dots_in, dots_out, estimate_line
 
-def update(frame):
-    global inside_points, outside_points, estimates
-
-    # Generate batch of points
-    points = np.random.uniform(-1, 1, (points_per_frame, 2))
-    distances = np.sum(points**2, axis=1)
-
-    # Split into inside/outside points
-    new_inside = points[distances <= 1]
-    new_outside = points[distances > 1]
-
-    # Update arrays
-    inside_points = np.vstack([inside_points, new_inside])
-    outside_points = np.vstack([outside_points, new_outside])
-
-    # Update scatter plots
-    scatter_inside.set_offsets(inside_points)
-    scatter_outside.set_offsets(outside_points)
-
-    # Calculate and update pi estimation
-    total_points = len(inside_points) + len(outside_points)
-    if total_points > 0:
-        pi_estimate = 4 * len(inside_points) / total_points
-        estimates = np.append(estimates, pi_estimate)
-        line_estimate.set_data(range(len(estimates)), estimates)
-
-    return scatter_inside, scatter_outside, line_estimate
-
-# Create and save animation
-anim = FuncAnimation(fig, update, frames=200, interval=50, blit=True)
-anim.save(DIR / "../animations/pi.gif", writer="pillow")
-plt.close()
+    anim = FuncAnimation(fig, update, frames=N_POINTS // POINTS_PER_FRAME, interval=100, blit=True)
+    anim.save(DIR / "../animations/pi.gif", writer="pillow")
+    plt.close(fig)
 ```
 
 ![](../animations/pi.gif)
@@ -550,28 +546,30 @@ print(math.factorial(10))
 [Question:]{.question} **What could be a strategy?**
 
 ::: {.notes}
-Answer: We cannot see it at a glance: there are 3,628,800 possible orders. Strategies students usually suggest: try all orders, always fly to the nearest city next, or start with any route and improve it step by step. We look at all three now.
+Answer: We cannot see it at a glance: there are 3,628,800 possible orders. Strategies students usually suggest: try all orders, always fly to the nearest city next, or start with any tour and improve it step by step. We look at all three now.
+
+This problem has a name: the **travelling salesman problem**. We look for the shortest round trip through all cities. It is not the same as the shortest way between two places, which a navigation app finds in a split second.
 :::
 
-## Brute force: try every route
+## Brute force: try every tour
 
 - Try [every possibility]{.highlight}
-- Total possible routes: 10! = **3,628,800**
+- Total possible tours: 10! = **3,628,800**
 - **Guaranteed** to find best solution
-- If each check takes 1ms: **1 hour** to check all routes
+- If each check takes 1ms: **1 hour** to check all tours
 
 . . .
 
 [Question:]{.question} **What could be the problem with this approach?**
 
 ::: {.notes}
-Answer: It does not scale. Every additional city multiplies the number of routes, so one hour for ten cities quickly becomes years. The next slide shows how fast.
+Answer: It does not scale. Every additional city multiplies the number of tours, so one hour for ten cities quickly becomes years. The next slide shows how fast.
 :::
 
 ## What about twenty cities?
 
 :::{.incremental}
-- For 20 cities: 20! = **2.4 quintillion** routes
+- For 20 cities: 20! = **2.4 quintillion** tours
 - About **77 million years** at 1 ms per check
 - Every additional city multiplies the effort: hopeless for real problems
 :::
@@ -649,6 +647,7 @@ The name comes from metalworking: annealing means heating metal and cooling it s
 
 ```{python}
 #| echo: false
+plt.style.use('fivethirtyeight')  # style of both annealing GIFs, keeps them unchanged
 np.random.seed(42)  # fixed seed: identical GIFs in animations/ on every run
 # Setup the figure with two subplots: main visualization and temperature
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(18, 8), height_ratios=[3, 1], dpi=150)
@@ -741,7 +740,7 @@ plt.close()
 
 ![](../animations/simulated_annealing.gif)
 
-## Annealing finds a short route through ten cities
+## Annealing finds a short tour through ten cities
 
 ```{python}
 #| echo: false
@@ -922,7 +921,7 @@ plt.close()
 
 :::{.incremental}
 - **You:** stuck on a problem? Change something at random: another place, another order, another person to ask
-- **Companies:** delivery routes and production plans that nobody can calculate exactly are found by software that searches with chance
+- **Companies:** delivery tours and production plans that nobody can calculate exactly are found by software that searches with chance
 :::
 
 . . .
@@ -942,11 +941,9 @@ Randomness is not giving up. Often it is the only way through.
 
 ## Thought experiment: freedom or equality?
 
-So far, chance helped us with numbers and routes. Now a bigger question:
+So far, chance helped us with numbers and tours. Now a bigger question:
 
 [Question:]{.question} **What's more important for a society?**
-
-. . .
 
 ::: {.columns}
 ::: {.column .fragment width="50%"}
@@ -997,8 +994,6 @@ Answer: Open question. Many students design a society with a safety net, because
 ## How do we judge a whole society?
 
 [Question:]{.question} **How can we know what a policy does to millions of people?**
-
-. . .
 
 :::{.incremental}
 - To answer Rawls, we would have to imagine millions of different lives
@@ -1077,8 +1072,6 @@ A random few can tell us about the many.
 
 [Question:]{.question} **How can randomness promote fairness?**
 
-. . .
-
 :::{.incremental}
 - **Random allocation** of patients in clinical trials
 - **Random audits** for tax compliance
@@ -1092,12 +1085,8 @@ Answer: When nobody can influence the outcome, nobody is favored. A coin does no
 
 ## When should we use chance?
 
-[Question:]{.question} **When should we embrace vs. reduce randomness?**
-
-. . .
-
 ::: {.columns}
-::: {.column .fragment width="50%"}
+::: {.column width="50%"}
 [Use chance to]{.highlight}
 
 - explore new solutions
@@ -1155,7 +1144,7 @@ A random few can tell us about the many.
 ## Why it matters {.lecture-closing}
 
 ::: {.lecture-why .closing}
-Will your project finish on time? Which route through 20 cities is shortest? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan routes, survey customers and allocate scarce places fairly.
+Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.
 :::
 
 ## {.loud-slide .lecture-key}
