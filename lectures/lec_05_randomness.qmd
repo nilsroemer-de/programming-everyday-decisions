@@ -939,50 +939,6 @@ Randomness is not giving up. Often it is the only way through.
 4. [Sample instead of guess]{.roadmap-item .current}
 :::
 
-## Can eight of you speak for all of us?
-
-[Question:]{.question} **Did you have coffee this morning?**
-
-These eight numbers decide who answers:
-
-```{python}
-#| echo: false
-#| output: asis
-import random
-
-random.seed(0)  # smallest seed with numbers spread over 1 to 20 and at most two adjacent pairs
-chosen = sorted(random.sample(range(1, 21), 8))  # eight different numbers from 1 to 20
-numbers = " ".join(str(n) for n in chosen)
-print('::: {.sample-numbers style="text-align: center; font-family: \'Space Mono\'; '
-      'font-size: 2.2em; word-spacing: 0.4em;"}')
-print(numbers)
-print(":::")
-```
-
-. . .
-
-**Step 1:** eight of you answer. We estimate the share.
-
-. . .
-
-**Step 2:** everybody answers. How close were we?
-
-. . .
-
-Few answers wobble, more answers get closer, just like the points for π.
-
-. . .
-
-[Question:]{.question} **What if I had only asked the first row?**
-
-::: {.notes}
-Procedure: everybody counts off row by row from 1 to 20 and starts again at 1 after 20. The students with the eight numbers on the slide answer the coffee question. From their answers we estimate the share of coffee drinkers in the room. Then everybody answers by show of hands, and we compare the estimate with the true share.
-
-If the estimate is off, that is the same wobble we saw at the start of the π animation: with few points, the estimate jumps around.
-
-Answer: The first row is not a random choice. Who sits in front may differ from the rest. We can say: the early birds in the first row may also be the coffee drinkers, so asking only them would tell us about the first row, not about the room.
-:::
-
 ## The 1936 election: two polls
 
 In 1936, the United States elected a president: Roosevelt or Landon.
@@ -1098,10 +1054,6 @@ We can say: before we trust any data, we ask who never had a chance to end up in
 - for example a bank transfer, the dose of a medicine or the brakes of a car
 :::
 :::
-
-. . .
-
-Good enough now often beats perfect too late.
 
 ::: {.notes}
 Answer: Use chance to explore new solutions, to estimate what we cannot calculate and to learn about the many from a random few. Avoid it where the same input must always give the same result, for example a bank transfer, the dose of a medicine or the brakes of a car.
