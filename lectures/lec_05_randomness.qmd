@@ -454,34 +454,70 @@ Instead of a single forecast, Monte Carlo gives a range of outcomes with probabi
 
 ## Will we finish in 25 days?
 
-Three uncertain tasks, most likely **21 days** in total, deadline **25 days**:
+A project with three tasks. Each one can take longer than planned:
+
+```{python}
+#| echo: false
+#| output: asis
+# (best case, most likely, worst case) duration in days: single source for both slides
+tasks = {"Requirements": (3, 5, 10), "Build": (8, 12, 20), "Test": (2, 4, 8)}
+deadline = 25
+plan = sum(mode for _, mode, _ in tasks.values())  # the plan adds up the most likely values
+# the sentence "5 + 12 + 4 = 21 days" below is written on the slide, so check it here
+assert [mode for _, mode, _ in tasks.values()] == [5, 12, 4] and plan == 21 and deadline == 25
+
+rows = ["| Task | Best case | Most likely | Worst case |", "|:--|--:|--:|--:|"]
+rows += [f"| {name} | {low} | {mode} | {high} |" for name, (low, mode, high) in tasks.items()]
+print("\n".join(rows))
+print("\n: All durations in days")
+```
+
+. . .
+
+The plan adds up the most likely values: 5 + 12 + 4 = **21 days**. The deadline is **25 days**.
+
+. . .
+
+[Question:]{.question} **How sure are you that we finish on time?**
+
+::: {.notes}
+Answer: Less sure than it looks. Only 63 % of the simulated projects make the deadline. We can say: four days of buffer sound like a lot, so let us simulate the project and see how often it is really enough.
+:::
+
+## We simulate the project 10,000 times
 
 ```{python}
 #| echo: false
 import sys
 sys.path.insert(0, "../helpers")
-from course_plots import use_course_style, PRIMARY, RED, INK
+import numpy as np
+import matplotlib.pyplot as plt
+from course_plots import use_course_style, PRIMARY, RED, AMBER
 
 rng = np.random.default_rng(42)
 runs = 10_000
-# (minimum, most likely, maximum) duration in days
-tasks = {"Requirements": (3, 5, 10), "Build": (8, 12, 20), "Test": (2, 4, 8)}
+# tasks, deadline and plan come from the table cell on the previous slide
 total = sum(rng.triangular(low, mode, high, runs) for low, mode, high in tasks.values())
-deadline = 25
-most_likely = sum(mode for _, mode, _ in tasks.values())  # 21 days
-on_time = (total <= deadline).mean()         # share finished by the deadline
-within_mode = (total <= most_likely).mean()  # share finished within the most likely 21 days
-average = total.mean()                       # mean duration in days
-# the numbers written on the slide below come from this simulation
-assert (round(on_time * 100), round(within_mode * 100), round(average)) == (63, 18, 24)
+on_time = (total <= deadline).mean()   # share finished by the deadline
+within_plan = (total <= plan).mean()   # share finished within the planned 21 days
+average = total.mean()                 # mean duration in days
+# the numbers written on the slides come from this simulation
+assert (round(on_time * 100), round(within_plan * 100), round(average)) == (63, 18, 24)
+# mean of a triangular distribution: (best + most likely + worst) / 3, used in the notes
+means = {name: (low + mode + high) / 3 for name, (low, mode, high) in tasks.items()}
+assert [round(m, 1) for m in means.values()] == [6.0, 13.3, 4.7] and round(sum(means.values())) == 24
 
 with plt.rc_context():
     plt.style.use("default")
     use_course_style()
     fig, ax = plt.subplots(figsize=(7.5, 1.95))  # fits the slide width without scaling
-    ax.hist(total, bins=60, color=PRIMARY, alpha=0.75)
+    counts, _, _ = ax.hist(total, bins=60, color=PRIMARY, alpha=0.75)
+    ax.set_ylim(0, counts.max() * 1.35)  # headroom for the two labels above the bars
+    label_y = counts.max() * 1.18
+    ax.axvline(plan, color=AMBER, linewidth=2, linestyle="--")
+    ax.text(plan - 0.3, label_y, f"Plan: {plan} days", color=AMBER, ha="right", va="center")
     ax.axvline(deadline, color=RED, linewidth=2)
-    ax.text(deadline + 0.3, ax.get_ylim()[1] * 0.85, f"Deadline: {deadline} days", color=RED)
+    ax.text(deadline + 0.3, label_y, f"Deadline: {deadline} days", color=RED, ha="left", va="center")
     ax.set_xlabel(f"Total duration in days ({runs:,} simulated projects)")
     ax.set_yticks([])
     ax.spines["left"].set_visible(False)
@@ -490,19 +526,20 @@ with plt.rc_context():
 ```
 
 :::{.incremental}
-- Only **63 %** of the simulated projects finish by day 25
-- Only **18 %** finish within the most likely 21 days
+- Only **18 %** finish within the planned 21 days
+- Only **63 %** finish by the deadline
 - On average, the project takes **24 days**
+- Why? Each task can run over by more than it can come in early.
 :::
 
 ::: {.notes}
-Each task has a minimum, a most likely and a maximum duration: requirements 3, 5 and 10 days, build 8, 12 and 20 days, test 2, 4 and 8 days. Things can go much worse than planned, but rarely much better, so the delays add up. The most likely total of 21 days is the optimistic end of the range, not the middle.
+On average, requirements take 6 days, build 13.3 days and test 4.7 days, together 24 days. The mean of each task is larger than its most likely value, because the worst case is further away than the best case. So adding up the most likely values gives 21 days, which is too optimistic. We can say: the plan is not wrong because someone was lazy, it is wrong because delays are bigger than lucky surprises, and they add up.
 :::
 
 ## Monte Carlo in real life
 
 :::{.incremental}
-- **You:** plan with a buffer. The most likely duration is too optimistic
+- **You:** plan with a buffer. Adding up the most likely values is too optimistic.
 - **Companies:** plan projects and budgets as a range with probabilities, not as a single number
 :::
 
