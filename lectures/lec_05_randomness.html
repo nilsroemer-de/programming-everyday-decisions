@@ -417,6 +417,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#lets-throw-points" id="toc-lets-throw-points" class="nav-link" data-scroll-target="#lets-throw-points">Let’s throw points</a></li>
   <li><a href="#monte-carlo-in-business-a-range-instead-of-a-single-forecast" id="toc-monte-carlo-in-business-a-range-instead-of-a-single-forecast" class="nav-link" data-scroll-target="#monte-carlo-in-business-a-range-instead-of-a-single-forecast">Monte Carlo in business: a range instead of a single forecast</a></li>
   <li><a href="#will-we-finish-in-25-days" id="toc-will-we-finish-in-25-days" class="nav-link" data-scroll-target="#will-we-finish-in-25-days">Will we finish in 25 days?</a></li>
+  <li><a href="#we-simulate-the-project-10000-times" id="toc-we-simulate-the-project-10000-times" class="nav-link" data-scroll-target="#we-simulate-the-project-10000-times">We simulate the project 10,000 times</a></li>
   <li><a href="#monte-carlo-in-real-life" id="toc-monte-carlo-in-real-life" class="nav-link" data-scroll-target="#monte-carlo-in-real-life">Monte Carlo in real life</a></li>
   </ul></li>
   <li><a href="#search-smarter-with-chance" id="toc-search-smarter-with-chance" class="nav-link" data-scroll-target="#search-smarter-with-chance"><span class="flow">Search smarter with chance</span></a>
@@ -658,7 +659,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="some-things-are-too-big-to-count" class="level2">
 <h2 class="anchored" data-anchor-id="some-things-are-too-big-to-count">Some things are too big to count</h2>
 <p><span class="question">Question:</span> <strong>How many possible orders exist for a shuffled deck of cards?</strong></p>
-<div id="aa448b79" class="cell" data-output-location="fragment" data-execution_count="2">
+<div id="5391c0d1" class="cell" data-output-location="fragment" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math.factorial(<span class="dv">52</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -704,7 +705,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="how-could-we-estimate-π">How could we estimate π?</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
-<div id="28b80eaa" class="cell" data-execution_count="3">
+<div id="8ef26f4e" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -753,33 +754,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="will-we-finish-in-25-days" class="level2">
 <h2 class="anchored" data-anchor-id="will-we-finish-in-25-days">Will we finish in 25 days?</h2>
-<p>Three uncertain tasks, most likely <strong>21 days</strong> in total, deadline <strong>25 days</strong>:</p>
-<div id="40a42d03" class="cell" data-execution_count="5">
+<p>A project with three tasks. Each one can take longer than planned:</p>
+<table class="caption-top table">
+<caption>All durations in days</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Task</th>
+<th style="text-align: right;">Best case</th>
+<th style="text-align: right;">Most likely</th>
+<th style="text-align: right;">Worst case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Requirements</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Build</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Test</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">8</td>
+</tr>
+</tbody>
+</table>
+<p>The plan adds up the most likely values: 5 + 12 + 4 = <strong>21 days</strong>. The deadline is <strong>25 days</strong>.</p>
+<p><span class="question">Question:</span> <strong>How sure are you that we finish on time?</strong></p>
+<div class="lecture-notes">
+<p><span class="eyebrow">Notes</span></p>
+<p>Answer: Less sure than it looks. Only 63 % of the simulated projects make the deadline. We can say: four days of buffer sound like a lot, so let us simulate the project and see how often it is really enough.</p>
+</div>
+</section>
+<section id="we-simulate-the-project-10000-times" class="level2">
+<h2 class="anchored" data-anchor-id="we-simulate-the-project-10000-times">We simulate the project 10,000 times</h2>
+<div id="0cd79658" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lec_05_randomness_files/figure-html/cell-6-output-1.png" width="1096" height="268" class="figure-img"></p>
+<p><img src="lec_05_randomness_files/figure-html/cell-7-output-1.png" width="1096" height="264" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="incremental">
 <ul class="incremental">
-<li>Only <strong>63 %</strong> of the simulated projects finish by day 25</li>
-<li>Only <strong>18 %</strong> finish within the most likely 21 days</li>
+<li>Only <strong>18 %</strong> finish within the planned 21 days</li>
+<li>Only <strong>63 %</strong> finish by the deadline</li>
 <li>On average, the project takes <strong>24 days</strong></li>
+<li>Why? Each task can run over by more than it can come in early.</li>
 </ul>
 </div>
 <div class="lecture-notes">
 <p><span class="eyebrow">Notes</span></p>
-<p>Each task has a minimum, a most likely and a maximum duration: requirements 3, 5 and 10 days, build 8, 12 and 20 days, test 2, 4 and 8 days. Things can go much worse than planned, but rarely much better, so the delays add up. The most likely total of 21 days is the optimistic end of the range, not the middle.</p>
+<p>On average, requirements take 6 days, build 13.3 days and test 4.7 days, together 24 days. The mean of each task is larger than its most likely value, because the worst case is further away than the best case. So adding up the most likely values gives 21 days, which is too optimistic. We can say: the plan is not wrong because someone was lazy, it is wrong because delays are bigger than lucky surprises, and they add up.</p>
 </div>
 </section>
 <section id="monte-carlo-in-real-life" class="level2">
 <h2 class="anchored" data-anchor-id="monte-carlo-in-real-life">Monte Carlo in real life</h2>
 <div class="incremental">
 <ul class="incremental">
-<li><strong>You:</strong> plan with a buffer. The most likely duration is too optimistic</li>
+<li><strong>You:</strong> plan with a buffer. Adding up the most likely values is too optimistic.</li>
 <li><strong>Companies:</strong> plan projects and budgets as a range with probabilities, not as a single number</li>
 </ul>
 </div>
@@ -812,7 +854,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ten-cities-one-trip-which-order-is-shortest" class="level2">
 <h2 class="anchored" data-anchor-id="ten-cities-one-trip-which-order-is-shortest">Ten cities, one trip: which order is shortest?</h2>
 <p><span class="question">Question:</span> <strong>In which order would you visit 10 cities by plane with minimal total distance?</strong></p>
-<div id="20f04511" class="cell" data-output-location="fragment" data-execution_count="6">
+<div id="6033126b" class="cell" data-output-location="fragment" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(math.factorial(<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">

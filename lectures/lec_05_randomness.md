@@ -213,17 +213,32 @@ The recipe: describe each uncertain input as a range, draw random values, repeat
 
 ## Will we finish in 25 days?
 
-Three uncertain tasks, most likely **21 days** in total, deadline **25 days**:
+A project with three tasks. Each one can take longer than planned:
 
-<img src="lec_05_randomness_files/figure-markdown_strict/cell-6-output-1.png" width="1096" height="268" />
+| Task         | Best case | Most likely | Worst case |
+|:-------------|----------:|------------:|-----------:|
+| Requirements |         3 |           5 |         10 |
+| Build        |         8 |          12 |         20 |
+| Test         |         2 |           4 |          8 |
 
-- Only **63 %** of the simulated projects finish by day 25
-- Only **18 %** finish within the most likely 21 days
+All durations in days
+
+The plan adds up the most likely values: 5 + 12 + 4 = **21 days**. The deadline is **25 days**.
+
+<span class="question">Question:</span> **How sure are you that we finish on time?**
+
+## We simulate the project 10,000 times
+
+<img src="lec_05_randomness_files/figure-markdown_strict/cell-7-output-1.png" width="1096" height="264" />
+
+- Only **18 %** finish within the planned 21 days
+- Only **63 %** finish by the deadline
 - On average, the project takes **24 days**
+- Why? Each task can run over by more than it can come in early.
 
 ## Monte Carlo in real life
 
-- **You:** plan with a buffer. The most likely duration is too optimistic
+- **You:** plan with a buffer. Adding up the most likely values is too optimistic.
 - **Companies:** plan projects and budgets as a range with probabilities, not as a single number
 
 When you can't calculate it, simulate it.

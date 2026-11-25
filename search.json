@@ -6046,7 +6046,18 @@
     "href": "lectures/lec_05_randomness.html#will-we-finish-in-25-days",
     "title": "Lecture V: Randomness",
     "section": "Will we finish in 25 days?",
-    "text": "Will we finish in 25 days?\nThree uncertain tasks, most likely 21 days in total, deadline 25 days:\n\n\n\n\n\n\n\n\n\n\n\nOnly 63 % of the simulated projects finish by day 25\nOnly 18 % finish within the most likely 21 days\nOn average, the project takes 24 days\n\n\n\nNotes\nEach task has a minimum, a most likely and a maximum duration: requirements 3, 5 and 10 days, build 8, 12 and 20 days, test 2, 4 and 8 days. Things can go much worse than planned, but rarely much better, so the delays add up. The most likely total of 21 days is the optimistic end of the range, not the middle.",
+    "text": "Will we finish in 25 days?\nA project with three tasks. Each one can take longer than planned:\n\nAll durations in days\n\n\nTask\nBest case\nMost likely\nWorst case\n\n\n\n\nRequirements\n3\n5\n10\n\n\nBuild\n8\n12\n20\n\n\nTest\n2\n4\n8\n\n\n\nThe plan adds up the most likely values: 5 + 12 + 4 = 21 days. The deadline is 25 days.\nQuestion: How sure are you that we finish on time?\n\nNotes\nAnswer: Less sure than it looks. Only 63 % of the simulated projects make the deadline. We can say: four days of buffer sound like a lot, so let us simulate the project and see how often it is really enough.",
+    "crumbs": [
+      "05 Randomness",
+      "Lecture"
+    ]
+  },
+  {
+    "objectID": "lectures/lec_05_randomness.html#we-simulate-the-project-10000-times",
+    "href": "lectures/lec_05_randomness.html#we-simulate-the-project-10000-times",
+    "title": "Lecture V: Randomness",
+    "section": "We simulate the project 10,000 times",
+    "text": "We simulate the project 10,000 times\n\n\n\n\n\n\n\n\n\n\n\nOnly 18 % finish within the planned 21 days\nOnly 63 % finish by the deadline\nOn average, the project takes 24 days\nWhy? Each task can run over by more than it can come in early.\n\n\n\nNotes\nOn average, requirements take 6 days, build 13.3 days and test 4.7 days, together 24 days. The mean of each task is larger than its most likely value, because the worst case is further away than the best case. So adding up the most likely values gives 21 days, which is too optimistic. We can say: the plan is not wrong because someone was lazy, it is wrong because delays are bigger than lucky surprises, and they add up.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -6057,7 +6068,7 @@
     "href": "lectures/lec_05_randomness.html#monte-carlo-in-real-life",
     "title": "Lecture V: Randomness",
     "section": "Monte Carlo in real life",
-    "text": "Monte Carlo in real life\n\n\nYou: plan with a buffer. The most likely duration is too optimistic\nCompanies: plan projects and budgets as a range with probabilities, not as a single number\n\n\nWhen you can’t calculate it, simulate it.",
+    "text": "Monte Carlo in real life\n\n\nYou: plan with a buffer. Adding up the most likely values is too optimistic.\nCompanies: plan projects and budgets as a range with probabilities, not as a single number\n\n\nWhen you can’t calculate it, simulate it.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -6499,14 +6510,21 @@
     "href": "lectures/lec_05_presentation.html#will-we-finish-in-25-days",
     "title": "Lecture V: Randomness",
     "section": "Will we finish in 25 days?",
-    "text": "Will we finish in 25 days?\nThree uncertain tasks, most likely 21 days in total, deadline 25 days:\n\n\n\n\n\n\n\n\n\n\nOnly 63 % of the simulated projects finish by day 25\nOnly 18 % finish within the most likely 21 days\nOn average, the project takes 24 days\n\n\nEach task has a minimum, a most likely and a maximum duration: requirements 3, 5 and 10 days, build 8, 12 and 20 days, test 2, 4 and 8 days. Things can go much worse than planned, but rarely much better, so the delays add up. The most likely total of 21 days is the optimistic end of the range, not the middle."
+    "text": "Will we finish in 25 days?\nA project with three tasks. Each one can take longer than planned:\n\nAll durations in days\n\n\nTask\nBest case\nMost likely\nWorst case\n\n\n\n\nRequirements\n3\n5\n10\n\n\nBuild\n8\n12\n20\n\n\nTest\n2\n4\n8\n\n\n\n\nThe plan adds up the most likely values: 5 + 12 + 4 = 21 days. The deadline is 25 days.\n\n\nQuestion: How sure are you that we finish on time?\n\nAnswer: Less sure than it looks. Only 63 % of the simulated projects make the deadline. We can say: four days of buffer sound like a lot, so let us simulate the project and see how often it is really enough."
+  },
+  {
+    "objectID": "lectures/lec_05_presentation.html#we-simulate-the-project-10000-times",
+    "href": "lectures/lec_05_presentation.html#we-simulate-the-project-10000-times",
+    "title": "Lecture V: Randomness",
+    "section": "We simulate the project 10,000 times",
+    "text": "We simulate the project 10,000 times\n\n\n\n\n\n\n\n\n\n\nOnly 18 % finish within the planned 21 days\nOnly 63 % finish by the deadline\nOn average, the project takes 24 days\nWhy? Each task can run over by more than it can come in early.\n\n\nOn average, requirements take 6 days, build 13.3 days and test 4.7 days, together 24 days. The mean of each task is larger than its most likely value, because the worst case is further away than the best case. So adding up the most likely values gives 21 days, which is too optimistic. We can say: the plan is not wrong because someone was lazy, it is wrong because delays are bigger than lucky surprises, and they add up."
   },
   {
     "objectID": "lectures/lec_05_presentation.html#monte-carlo-in-real-life",
     "href": "lectures/lec_05_presentation.html#monte-carlo-in-real-life",
     "title": "Lecture V: Randomness",
     "section": "Monte Carlo in real life",
-    "text": "Monte Carlo in real life\n\nYou: plan with a buffer. The most likely duration is too optimistic\nCompanies: plan projects and budgets as a range with probabilities, not as a single number\n\n\nWhen you can’t calculate it, simulate it."
+    "text": "Monte Carlo in real life\n\nYou: plan with a buffer. Adding up the most likely values is too optimistic.\nCompanies: plan projects and budgets as a range with probabilities, not as a single number\n\n\nWhen you can’t calculate it, simulate it."
   },
   {
     "objectID": "lectures/lec_05_presentation.html#roadmap-2",
