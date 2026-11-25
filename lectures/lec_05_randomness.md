@@ -14,7 +14,7 @@ format:
 
 <span class="eyebrow">Why it matters</span>
 
-Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.
+Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and learn from a few what is true for the many.
 
 ## Roadmap
 
@@ -336,89 +336,52 @@ Randomness is not giving up. Often it is the only way through.
 3.  <span class="roadmap-item done">Search smarter with chance</span>
 4.  <span class="roadmap-item current">Sample instead of guess</span>
 
-## Thought experiment: freedom or equality?
+## The 1936 election: two polls
 
-So far, chance helped us with numbers and tours. Now a bigger question:
+In 1936, the United States elected a president: Roosevelt or Landon.
 
-<span class="question">Question:</span> **What's more important for a society?**
+- **Poll A:** 10 million ballots mailed, **2.4 million** answers[^8]
+- **Poll B:** about **50,000** people, chosen to represent all voters
 
-<span class="highlight">Freedom</span>
+<span class="question">Question:</span> **Which poll would you trust?**
 
-- Individual choice
-- Personal responsibility
-- Market-driven
+## The smaller poll was right
 
-<span class="highlight">Equality</span>
+- Poll A, by the magazine *Literary Digest*, predicted a clear win for Landon[^9]
+- Roosevelt won with about **61 %** of the votes and 46 of 48 states
+- Poll B, by George Gallup, got the winner right
 
-- Shared resources
-- Social safety nets
-- Regulated systems
+**Why?** The magazine took its addresses from phone books and car registrations. In the Great Depression, those were the wealthy.
 
-<span class="question">Question:</span> **Any problem with this question?**
+**How you choose matters more than how many you ask.**
 
-## The veil of ignorance
+## Where would you add armor?
 
-The philosopher John Rawls proposed a thought experiment: design a society **before you know who you will be in it**.[^8]
+<img src="../images/randomness/wald_plane.svg" data-fig-align="center" height="260" />
 
-You might <span class="highlight">randomly</span> be:
+- In World War II, the US military examined the planes that came back from their missions
+- Most bullet holes were in the wings and the fuselage
 
-- Any gender identity and economic status
-- Any health condition and intelligence level
-- Any cultural background and religious belief
+<span class="question">Question:</span> **Where would you add armor?**
 
-<span class="question">Question:</span> **If you didn't know who you'd be born as, what kind of society would you design?**
+## Where there are no holes
 
-## How do we judge a whole society?
+The statistician Abraham Wald said: where there are **no** holes[^10]
 
-<span class="question">Question:</span> **How can we know what a policy does to millions of people?**
+Planes hit in the engines never came back. They are missing from the sample.
 
-- To answer Rawls, we would have to imagine millions of different lives
-- Nobody can calculate that
-- **Individual stories** are powerful, but can mislead
-- **Statistics** cover everyone, but hide the single life
+This is called **selection bias**: what we see is not a fair picture of the whole.
 
-## Which measure of success?
+<img src="../images/randomness/wald_plane.svg" style="width:100.0%" data-fig-align="center" />
 
-- **Mean happiness:** the average
-- **Total happiness:** the sum over all people
-- **Median happiness:** the person in the middle
-- **Minimum happiness:** the person who is worst off
+## Who is missing from your data?
 
-<span class="question">Question:</span> **What could be the problem with these measures?**
+- **You:** online reviews are written mostly by the very happy and the very angry
+- **You:** social media shows the highlights, not the ordinary days
+- **Companies:** studying only successful companies teaches the wrong lessons
+- **Companies:** customer surveys are answered mostly by fans
 
-## Ask a random sample
-
-- This is Monte Carlo again: we cannot ask everyone, so we ask a random few
-- A random few show the whole range of lives, not only the loudest or the luckiest
-- The charity GiveDirectly publishes **randomly chosen** reports from the people it supports, not only the success stories[^9]
-
-## Who is missing from your sample?
-
-<span class="question">Question:</span> **What is a selection bias?**
-
-**Definition**: The sample you analyze <span class="highlight">is not representative of the population</span> you want to study.
-
-> **Warning**
->
-> WWII: engineers wanted to armor returning planes where the bullet holes were. Abraham Wald: armor where there are **no** holes, those planes never returned.
-
-Learning only from successful companies is the same mistake.
-
-## Sampling in real life
-
-- **You:** before a big decision, ask a few people at random, not only those who shout the loudest
-- **Companies:** random customer surveys and random quality checks show the real picture
-
-A random few can tell us about the many.
-
-## Can chance be fair?
-
-<span class="question">Question:</span> **How can randomness promote fairness?**
-
-- **Random allocation** of patients in clinical trials
-- **Random audits** for tax compliance
-- **Random assignment** of cases to judges
-- **Random order** of candidates on voting ballots
+A random few can tell us about the many. But only if nobody is missing.
 
 ## When should we use chance?
 
@@ -426,14 +389,12 @@ A random few can tell us about the many.
 
 - explore new solutions
 - estimate what we cannot calculate
-- choose fairly
+- learn about the many from a random few
 
 <span class="highlight">Avoid chance when</span>
 
 - the same input must always give the same result
 - for example a bank transfer, the dose of a medicine or the brakes of a car
-
-Good enough now often beats perfect too late.
 
 ## What we covered
 
@@ -451,11 +412,11 @@ Random steps lead out of dead ends.
 
 <span class="eyebrow">Sample instead of guess</span>
 
-A random few can tell us about the many.
+A few can tell us about the many, if nobody is missing.
 
 ## Why it matters
 
-Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.
+Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and learn from a few what is true for the many.
 
 ## 
 
@@ -476,7 +437,7 @@ so far?
 
 ## Interesting literature to start
 
-- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^10]
+- Christian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.[^11]
 
 ## Books on Programming
 
@@ -505,8 +466,10 @@ For more interesting literature, take a look at the [literature list](../general
 
 [^7]: Christian & Griffiths (2016), ch. 2 and ch. 9.
 
-[^8]: Rawls, J. (1971). A Theory of Justice. See Christian & Griffiths (2016), ch. 9.
+[^8]: Squire, P. (1988). Why the 1936 Literary Digest poll failed. Public Opinion Quarterly, 52(1).
 
-[^9]: Christian & Griffiths (2016), ch. 9.
+[^9]: Squire, P. (1988). Why the 1936 Literary Digest poll failed. Public Opinion Quarterly, 52(1).
 
-[^10]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.
+[^10]: Mangel, M. & Samaniego, F. J. (1984). Abraham Wald's work on aircraft survivability. Journal of the American Statistical Association, 79(386).
+
+[^11]: The main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.

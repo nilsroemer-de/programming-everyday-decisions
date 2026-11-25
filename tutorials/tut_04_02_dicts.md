@@ -157,11 +157,11 @@ print("Tasks as list:", list(task_names)) # Convert to a list
 To get all the values from a dictionary, you can use the `values()` method to get a dictionary view object. Again, you can convert it to a list using the `list()` function.
 
 ``` python
-all_deadlines = tasks.values()
-print("All deadlines:", list(all_deadlines))
+all_priorities = tasks.values()
+print("All priorities:", list(all_priorities))
 ```
 
-    All deadlines: [1, 2, 4]
+    All priorities: [1, 2, 4]
 
 We can also loop through the dictionary using a `for` loop. To do so, we can use the `items()` method which returns a dictionary view object containing the individual key-value pairs of the dictionary.
 

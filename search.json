@@ -5859,7 +5859,7 @@
     "href": "lectures/lec_05_randomness.html",
     "title": "Lecture V: Randomness",
     "section": "",
-    "text": "When a problem is too big to solve exactly, a bit of randomness often gets you a good answer fast.\n\n\nWhy it matters\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.",
+    "text": "When a problem is too big to solve exactly, a bit of randomness often gets you a good answer fast.\n\n\nWhy it matters\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and learn from a few what is true for the many.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -5870,7 +5870,7 @@
     "href": "lectures/lec_05_randomness.html#today-in-one-sentence",
     "title": "Lecture V: Randomness",
     "section": "",
-    "text": "When a problem is too big to solve exactly, a bit of randomness often gets you a good answer fast.\n\n\nWhy it matters\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.",
+    "text": "When a problem is too big to solve exactly, a bit of randomness often gets you a good answer fast.\n\n\nWhy it matters\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and learn from a few what is true for the many.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -6218,88 +6218,55 @@
     ]
   },
   {
-    "objectID": "lectures/lec_05_randomness.html#thought-experiment-freedom-or-equality",
-    "href": "lectures/lec_05_randomness.html#thought-experiment-freedom-or-equality",
+    "objectID": "lectures/lec_05_randomness.html#the-1936-election-two-polls",
+    "href": "lectures/lec_05_randomness.html#the-1936-election-two-polls",
     "title": "Lecture V: Randomness",
-    "section": "Thought experiment: freedom or equality?",
-    "text": "Thought experiment: freedom or equality?\nSo far, chance helped us with numbers and tours. Now a bigger question:\nQuestion: What’s more important for a society?\n\n\nFreedom\n\nIndividual choice\nPersonal responsibility\nMarket-driven\n\n\nEquality\n\nShared resources\nSocial safety nets\nRegulated systems\n\n\n\nQuestion: Any problem with this question?\n\nNotes\nAnswer: Yes: our answer depends on where we stand. Someone rich and healthy may prefer freedom, someone poor or ill may prefer equality. To judge fairly, we would have to forget our own place in society. That is the idea on the next slide.",
+    "section": "The 1936 election: two polls",
+    "text": "The 1936 election: two polls\nIn 1936, the United States elected a president: Roosevelt or Landon.\n\nPoll A: 10 million ballots mailed, 2.4 million answers8\nPoll B: about 50,000 people, chosen to represent all voters\n\nQuestion: Which poll would you trust?\n\nNotes\nAnswer: Most people pick Poll A, because 2.4 million answers sound much safer than 50,000. The next slide shows that the smaller poll was right. We can say: let us vote by show of hands first, and then see what happened.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_05_randomness.html#the-veil-of-ignorance",
-    "href": "lectures/lec_05_randomness.html#the-veil-of-ignorance",
+    "objectID": "lectures/lec_05_randomness.html#the-smaller-poll-was-right",
+    "href": "lectures/lec_05_randomness.html#the-smaller-poll-was-right",
     "title": "Lecture V: Randomness",
-    "section": "The veil of ignorance",
-    "text": "The veil of ignorance\nThe philosopher John Rawls proposed a thought experiment: design a society before you know who you will be in it.8\nYou might randomly be:\n\nAny gender identity and economic status\nAny health condition and intelligence level\nAny cultural background and religious belief\n\nQuestion: If you didn’t know who you’d be born as, what kind of society would you design?\n\nNotes\nAnswer: Open question. Many students design a society with a safety net, because they could end up at the bottom. The philosopher John Rawls called this the veil of ignorance: we decide as if our place in society were assigned at random.",
+    "section": "The smaller poll was right",
+    "text": "The smaller poll was right\n\nPoll A, by the magazine Literary Digest, predicted a clear win for Landon9\nRoosevelt won with about 61 % of the votes and 46 of 48 states\nPoll B, by George Gallup, got the winner right\n\nWhy? The magazine took its addresses from phone books and car registrations. In the Great Depression, those were the wealthy.\nHow you choose matters more than how many you ask.\n\nNotes\nWe can say: 2.4 million answers did not help, because they came from the wrong people, and more of the wrong people only makes the wrong answer look more certain.\nSquire also shows a second problem: Landon supporters were more likely to send the ballot back. So both the choice of addresses and who answered pushed the result in the same direction.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_05_randomness.html#how-do-we-judge-a-whole-society",
-    "href": "lectures/lec_05_randomness.html#how-do-we-judge-a-whole-society",
+    "objectID": "lectures/lec_05_randomness.html#where-would-you-add-armor",
+    "href": "lectures/lec_05_randomness.html#where-would-you-add-armor",
     "title": "Lecture V: Randomness",
-    "section": "How do we judge a whole society?",
-    "text": "How do we judge a whole society?\nQuestion: How can we know what a policy does to millions of people?\n\n\nTo answer Rawls, we would have to imagine millions of different lives\nNobody can calculate that\nIndividual stories are powerful, but can mislead\nStatistics cover everyone, but hide the single life\n\n\n\nNotes\nAnswer: Not from single stories, and not from one average either. We need many cases, and a fair way to pick them. That is where chance comes in.\nBut that’s not all: we also need to decide how to measure success and failure of a policy.",
+    "section": "Where would you add armor?",
+    "text": "Where would you add armor?\n\n\n\n\n\n\nIn World War II, the US military examined the planes that came back from their missions\nMost bullet holes were in the wings and the fuselage\n\nQuestion: Where would you add armor?\n\nNotes\nAnswer: Where there are no holes. We can say: most people want to armor the wings and the fuselage, because that is where the damage is, so let us look at which planes we never got to see.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_05_randomness.html#which-measure-of-success",
-    "href": "lectures/lec_05_randomness.html#which-measure-of-success",
+    "objectID": "lectures/lec_05_randomness.html#where-there-are-no-holes",
+    "href": "lectures/lec_05_randomness.html#where-there-are-no-holes",
     "title": "Lecture V: Randomness",
-    "section": "Which measure of success?",
-    "text": "Which measure of success?\n\nMean happiness: the average\nTotal happiness: the sum over all people\nMedian happiness: the person in the middle\nMinimum happiness: the person who is worst off\n\nQuestion: What could be the problem with these measures?\n\nNotes\nAnswer: Each measure hides something. The mean can rise while many people are worse off, the total rewards simply having more people, the median ignores both ends, and the minimum ignores everyone except the worst-off. There is no neutral choice: picking the measure is already a value judgment.",
+    "section": "Where there are no holes",
+    "text": "Where there are no holes\n\n\n\nThe statistician Abraham Wald said: where there are no holes10\n\n\nPlanes hit in the engines never came back. They are missing from the sample.\n\n\nThis is called selection bias: what we see is not a fair picture of the whole.\n\n\n\n\n\n\n\n\n\n\nNotes\nThe planes we can look at are the ones that survived, so their holes show where a plane can be hit and still come home. We can say: the holes we do not see, on the engines and the cockpit, are the ones that brought planes down.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
     ]
   },
   {
-    "objectID": "lectures/lec_05_randomness.html#ask-a-random-sample",
-    "href": "lectures/lec_05_randomness.html#ask-a-random-sample",
+    "objectID": "lectures/lec_05_randomness.html#who-is-missing-from-your-data",
+    "href": "lectures/lec_05_randomness.html#who-is-missing-from-your-data",
     "title": "Lecture V: Randomness",
-    "section": "Ask a random sample",
-    "text": "Ask a random sample\n\n\nThis is Monte Carlo again: we cannot ask everyone, so we ask a random few\nA random few show the whole range of lives, not only the loudest or the luckiest\nThe charity GiveDirectly publishes randomly chosen reports from the people it supports, not only the success stories9",
-    "crumbs": [
-      "05 Randomness",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_05_randomness.html#who-is-missing-from-your-sample",
-    "href": "lectures/lec_05_randomness.html#who-is-missing-from-your-sample",
-    "title": "Lecture V: Randomness",
-    "section": "Who is missing from your sample?",
-    "text": "Who is missing from your sample?\nQuestion: What is a selection bias?\nDefinition: The sample you analyze is not representative of the population you want to study.\n\n\n\n\n\n\nWWII: engineers wanted to armor returning planes where the bullet holes were. Abraham Wald: armor where there are no holes, those planes never returned.\n\n\n\nLearning only from successful companies is the same mistake.\n\nNotes\nAnswer: The people or cases we look at are not a fair picture of all of them, because the way we picked them leaves some out.\nThe famous example of survivorship bias: engineers studied returning planes to decide where to add armor and initially focused on the areas with the most bullet holes. Abraham Wald pointed out that they should armor the areas without bullet holes, because planes hit there did not survive to return. The same happens when we study only successful companies: the failed ones with the same strategy are missing.",
-    "crumbs": [
-      "05 Randomness",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_05_randomness.html#sampling-in-real-life",
-    "href": "lectures/lec_05_randomness.html#sampling-in-real-life",
-    "title": "Lecture V: Randomness",
-    "section": "Sampling in real life",
-    "text": "Sampling in real life\n\n\nYou: before a big decision, ask a few people at random, not only those who shout the loudest\nCompanies: random customer surveys and random quality checks show the real picture\n\n\nA random few can tell us about the many.",
-    "crumbs": [
-      "05 Randomness",
-      "Lecture"
-    ]
-  },
-  {
-    "objectID": "lectures/lec_05_randomness.html#can-chance-be-fair",
-    "href": "lectures/lec_05_randomness.html#can-chance-be-fair",
-    "title": "Lecture V: Randomness",
-    "section": "Can chance be fair?",
-    "text": "Can chance be fair?\nQuestion: How can randomness promote fairness?\n\n\nRandom allocation of patients in clinical trials\nRandom audits for tax compliance\nRandom assignment of cases to judges\nRandom order of candidates on voting ballots\n\n\n\nNotes\nAnswer: When nobody can influence the outcome, nobody is favored. A coin does not care who you are, so random choices remove bias wherever people would otherwise pick.",
+    "section": "Who is missing from your data?",
+    "text": "Who is missing from your data?\n\n\nYou: online reviews are written mostly by the very happy and the very angry\nYou: social media shows the highlights, not the ordinary days\nCompanies: studying only successful companies teaches the wrong lessons\nCompanies: customer surveys are answered mostly by fans\n\n\nA random few can tell us about the many. But only if nobody is missing.\n\nNotes\nWe can say: before we trust any data, we ask who never had a chance to end up in it, like the planes that never came back or the companies that failed with the same strategy.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -6310,7 +6277,7 @@
     "href": "lectures/lec_05_randomness.html#when-should-we-use-chance",
     "title": "Lecture V: Randomness",
     "section": "When should we use chance?",
-    "text": "When should we use chance?\n\n\nUse chance to\n\nexplore new solutions\nestimate what we cannot calculate\nchoose fairly\n\n\nAvoid chance when\n\nthe same input must always give the same result\nfor example a bank transfer, the dose of a medicine or the brakes of a car\n\n\n\nGood enough now often beats perfect too late.\n\nNotes\nAnswer: Use chance to explore new solutions, to estimate what we cannot calculate and to choose fairly. Avoid it where the same input must always give the same result, for example a bank transfer, the dose of a medicine or the brakes of a car.\nRemember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration.",
+    "text": "When should we use chance?\n\n\nUse chance to\n\nexplore new solutions\nestimate what we cannot calculate\nlearn about the many from a random few\n\n\nAvoid chance when\n\nthe same input must always give the same result\nfor example a bank transfer, the dose of a medicine or the brakes of a car\n\n\n\n\nNotes\nAnswer: Use chance to explore new solutions, to estimate what we cannot calculate and to learn about the many from a random few. Avoid it where the same input must always give the same result, for example a bank transfer, the dose of a medicine or the brakes of a car.\nRemember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -6321,7 +6288,7 @@
     "href": "lectures/lec_05_randomness.html#what-we-covered",
     "title": "Lecture V: Randomness",
     "section": "What we covered",
-    "text": "What we covered\n\n\nRandomness is a tool\nChance makes systems fair, secure and unpredictable.\n\n\nSimulate instead of calculate: Monte Carlo\nMany random trials give an honest range instead of a single guess.\n\n\nSearch smarter with chance\nRandom steps lead out of dead ends.\n\n\nSample instead of guess\nA random few can tell us about the many.",
+    "text": "What we covered\n\n\nRandomness is a tool\nChance makes systems fair, secure and unpredictable.\n\n\nSimulate instead of calculate: Monte Carlo\nMany random trials give an honest range instead of a single guess.\n\n\nSearch smarter with chance\nRandom steps lead out of dead ends.\n\n\nSample instead of guess\nA few can tell us about the many, if nobody is missing.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -6332,7 +6299,7 @@
     "href": "lectures/lec_05_randomness.html#why-it-matters",
     "title": "Lecture V: Randomness",
     "section": "Why it matters",
-    "text": "Why it matters\n\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.",
+    "text": "Why it matters\n\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and learn from a few what is true for the many.",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -6376,7 +6343,7 @@
     "href": "lectures/lec_05_randomness.html#interesting-literature-to-start",
     "title": "Lecture V: Randomness",
     "section": "Interesting literature to start",
-    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.10",
+    "text": "Interesting literature to start\n\nChristian, B., & Griffiths, T. (2016). Algorithms to live by: the computer science of human decisions. First international edition. New York, Henry Holt and Company.11",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -6409,7 +6376,7 @@
     "href": "lectures/lec_05_randomness.html#footnotes",
     "title": "Lecture V: Randomness",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nSpotify Engineering (2014). How to shuffle songs? https://engineering.atspotify.com/2014/02/how-to-shuffle-songs↩︎\n52! ≈ 8 × 1067. Earth has roughly 1050 atoms (order of magnitude).↩︎\nChristian & Griffiths (2016), ch. 9.↩︎\nChristian & Griffiths (2016), ch. 9.↩︎\nChristian & Griffiths (2016), ch. 9.↩︎\nKirkpatrick, S., Gelatt, C. D. & Vecchi, M. P. (1983). Optimization by simulated annealing. Science, 220(4598).↩︎\nChristian & Griffiths (2016), ch. 2 and ch. 9.↩︎\nRawls, J. (1971). A Theory of Justice. See Christian & Griffiths (2016), ch. 9.↩︎\nChristian & Griffiths (2016), ch. 9.↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
+    "text": "Footnotes\n\n\nSpotify Engineering (2014). How to shuffle songs? https://engineering.atspotify.com/2014/02/how-to-shuffle-songs↩︎\n52! ≈ 8 × 1067. Earth has roughly 1050 atoms (order of magnitude).↩︎\nChristian & Griffiths (2016), ch. 9.↩︎\nChristian & Griffiths (2016), ch. 9.↩︎\nChristian & Griffiths (2016), ch. 9.↩︎\nKirkpatrick, S., Gelatt, C. D. & Vecchi, M. P. (1983). Optimization by simulated annealing. Science, 220(4598).↩︎\nChristian & Griffiths (2016), ch. 2 and ch. 9.↩︎\nSquire, P. (1988). Why the 1936 Literary Digest poll failed. Public Opinion Quarterly, 52(1).↩︎\nSquire, P. (1988). Why the 1936 Literary Digest poll failed. Public Opinion Quarterly, 52(1).↩︎\nMangel, M. & Samaniego, F. J. (1984). Abraham Wald’s work on aircraft survivability. Journal of the American Statistical Association, 79(386).↩︎\nThe main inspiration for this lecture. We have read it and discussed it in depth, always wanting to translate it into a course.↩︎",
     "crumbs": [
       "05 Randomness",
       "Lecture"
@@ -6420,7 +6387,7 @@
     "href": "lectures/lec_05_presentation.html#today-in-one-sentence",
     "title": "Lecture V: Randomness",
     "section": "Today in one sentence",
-    "text": "Today in one sentence\n\nWhen a problem is too big to solve exactly, a bit of randomness often gets you a good answer fast.\n\n\nWhy it matters\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly."
+    "text": "Today in one sentence\n\nWhen a problem is too big to solve exactly, a bit of randomness often gets you a good answer fast.\n\n\nWhy it matters\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and learn from a few what is true for the many."
   },
   {
     "objectID": "lectures/lec_05_presentation.html#roadmap",
@@ -6640,81 +6607,60 @@
     "text": "Roadmap\n\n\nRandomness is a tool\nSimulate instead of calculate: Monte Carlo\nSearch smarter with chance\nSample instead of guess"
   },
   {
-    "objectID": "lectures/lec_05_presentation.html#thought-experiment-freedom-or-equality",
-    "href": "lectures/lec_05_presentation.html#thought-experiment-freedom-or-equality",
+    "objectID": "lectures/lec_05_presentation.html#the-1936-election-two-polls",
+    "href": "lectures/lec_05_presentation.html#the-1936-election-two-polls",
     "title": "Lecture V: Randomness",
-    "section": "Thought experiment: freedom or equality?",
-    "text": "Thought experiment: freedom or equality?\nSo far, chance helped us with numbers and tours. Now a bigger question:\nQuestion: What’s more important for a society?\n\n\nFreedom\n\nIndividual choice\nPersonal responsibility\nMarket-driven\n\n\nEquality\n\nShared resources\nSocial safety nets\nRegulated systems\n\n\n\nQuestion: Any problem with this question?\n\nAnswer: Yes: our answer depends on where we stand. Someone rich and healthy may prefer freedom, someone poor or ill may prefer equality. To judge fairly, we would have to forget our own place in society. That is the idea on the next slide."
+    "section": "The 1936 election: two polls",
+    "text": "The 1936 election: two polls\nIn 1936, the United States elected a president: Roosevelt or Landon.\n\nPoll A: 10 million ballots mailed, 2.4 million answers1\nPoll B: about 50,000 people, chosen to represent all voters\n\n\nQuestion: Which poll would you trust?\n\nAnswer: Most people pick Poll A, because 2.4 million answers sound much safer than 50,000. The next slide shows that the smaller poll was right. We can say: let us vote by show of hands first, and then see what happened.\n\n\nSquire, P. (1988). Why the 1936 Literary Digest poll failed. Public Opinion Quarterly, 52(1)."
   },
   {
-    "objectID": "lectures/lec_05_presentation.html#the-veil-of-ignorance",
-    "href": "lectures/lec_05_presentation.html#the-veil-of-ignorance",
+    "objectID": "lectures/lec_05_presentation.html#the-smaller-poll-was-right",
+    "href": "lectures/lec_05_presentation.html#the-smaller-poll-was-right",
     "title": "Lecture V: Randomness",
-    "section": "The veil of ignorance",
-    "text": "The veil of ignorance\nThe philosopher John Rawls proposed a thought experiment: design a society before you know who you will be in it.1\nYou might randomly be:\n\nAny gender identity and economic status\nAny health condition and intelligence level\nAny cultural background and religious belief\n\n\nQuestion: If you didn’t know who you’d be born as, what kind of society would you design?\n\nAnswer: Open question. Many students design a society with a safety net, because they could end up at the bottom. The philosopher John Rawls called this the veil of ignorance: we decide as if our place in society were assigned at random.\n\n\nRawls, J. (1971). A Theory of Justice. See Christian & Griffiths (2016), ch. 9."
+    "section": "The smaller poll was right",
+    "text": "The smaller poll was right\n\nPoll A, by the magazine Literary Digest, predicted a clear win for Landon1\nRoosevelt won with about 61 % of the votes and 46 of 48 states\nPoll B, by George Gallup, got the winner right\n\n\nWhy? The magazine took its addresses from phone books and car registrations. In the Great Depression, those were the wealthy.\n\n\nHow you choose matters more than how many you ask.\n\nWe can say: 2.4 million answers did not help, because they came from the wrong people, and more of the wrong people only makes the wrong answer look more certain.\nSquire also shows a second problem: Landon supporters were more likely to send the ballot back. So both the choice of addresses and who answered pushed the result in the same direction.\n\n\nSquire, P. (1988). Why the 1936 Literary Digest poll failed. Public Opinion Quarterly, 52(1)."
   },
   {
-    "objectID": "lectures/lec_05_presentation.html#how-do-we-judge-a-whole-society",
-    "href": "lectures/lec_05_presentation.html#how-do-we-judge-a-whole-society",
+    "objectID": "lectures/lec_05_presentation.html#where-would-you-add-armor",
+    "href": "lectures/lec_05_presentation.html#where-would-you-add-armor",
     "title": "Lecture V: Randomness",
-    "section": "How do we judge a whole society?",
-    "text": "How do we judge a whole society?\nQuestion: How can we know what a policy does to millions of people?\n\nTo answer Rawls, we would have to imagine millions of different lives\nNobody can calculate that\nIndividual stories are powerful, but can mislead\nStatistics cover everyone, but hide the single life\n\n\nAnswer: Not from single stories, and not from one average either. We need many cases, and a fair way to pick them. That is where chance comes in.\nBut that’s not all: we also need to decide how to measure success and failure of a policy."
+    "section": "Where would you add armor?",
+    "text": "Where would you add armor?\n\n\n\n\n\n\nIn World War II, the US military examined the planes that came back from their missions\nMost bullet holes were in the wings and the fuselage\n\nQuestion: Where would you add armor?\n\nAnswer: Where there are no holes. We can say: most people want to armor the wings and the fuselage, because that is where the damage is, so let us look at which planes we never got to see."
   },
   {
-    "objectID": "lectures/lec_05_presentation.html#which-measure-of-success",
-    "href": "lectures/lec_05_presentation.html#which-measure-of-success",
+    "objectID": "lectures/lec_05_presentation.html#where-there-are-no-holes",
+    "href": "lectures/lec_05_presentation.html#where-there-are-no-holes",
     "title": "Lecture V: Randomness",
-    "section": "Which measure of success?",
-    "text": "Which measure of success?\n\nMean happiness: the average\nTotal happiness: the sum over all people\nMedian happiness: the person in the middle\nMinimum happiness: the person who is worst off\n\n\nQuestion: What could be the problem with these measures?\n\nAnswer: Each measure hides something. The mean can rise while many people are worse off, the total rewards simply having more people, the median ignores both ends, and the minimum ignores everyone except the worst-off. There is no neutral choice: picking the measure is already a value judgment."
+    "section": "Where there are no holes",
+    "text": "Where there are no holes\n\n\n\nThe statistician Abraham Wald said: where there are no holes1\n\n\nPlanes hit in the engines never came back. They are missing from the sample.\n\n\nThis is called selection bias: what we see is not a fair picture of the whole.\n\n\n\n\n\n\n\n\n\nThe planes we can look at are the ones that survived, so their holes show where a plane can be hit and still come home. We can say: the holes we do not see, on the engines and the cockpit, are the ones that brought planes down.\n\nMangel, M. & Samaniego, F. J. (1984). Abraham Wald’s work on aircraft survivability. Journal of the American Statistical Association, 79(386)."
   },
   {
-    "objectID": "lectures/lec_05_presentation.html#ask-a-random-sample",
-    "href": "lectures/lec_05_presentation.html#ask-a-random-sample",
+    "objectID": "lectures/lec_05_presentation.html#who-is-missing-from-your-data",
+    "href": "lectures/lec_05_presentation.html#who-is-missing-from-your-data",
     "title": "Lecture V: Randomness",
-    "section": "Ask a random sample",
-    "text": "Ask a random sample\n\nThis is Monte Carlo again: we cannot ask everyone, so we ask a random few\nA random few show the whole range of lives, not only the loudest or the luckiest\nThe charity GiveDirectly publishes randomly chosen reports from the people it supports, not only the success stories1\n\nChristian & Griffiths (2016), ch. 9."
-  },
-  {
-    "objectID": "lectures/lec_05_presentation.html#who-is-missing-from-your-sample",
-    "href": "lectures/lec_05_presentation.html#who-is-missing-from-your-sample",
-    "title": "Lecture V: Randomness",
-    "section": "Who is missing from your sample?",
-    "text": "Who is missing from your sample?\nQuestion: What is a selection bias?\n\nDefinition: The sample you analyze is not representative of the population you want to study.\n\n\n\n\n\n\n\n\nWWII: engineers wanted to armor returning planes where the bullet holes were. Abraham Wald: armor where there are no holes, those planes never returned.\n\n\n\n\n\nLearning only from successful companies is the same mistake.\n\nAnswer: The people or cases we look at are not a fair picture of all of them, because the way we picked them leaves some out.\nThe famous example of survivorship bias: engineers studied returning planes to decide where to add armor and initially focused on the areas with the most bullet holes. Abraham Wald pointed out that they should armor the areas without bullet holes, because planes hit there did not survive to return. The same happens when we study only successful companies: the failed ones with the same strategy are missing."
-  },
-  {
-    "objectID": "lectures/lec_05_presentation.html#sampling-in-real-life",
-    "href": "lectures/lec_05_presentation.html#sampling-in-real-life",
-    "title": "Lecture V: Randomness",
-    "section": "Sampling in real life",
-    "text": "Sampling in real life\n\nYou: before a big decision, ask a few people at random, not only those who shout the loudest\nCompanies: random customer surveys and random quality checks show the real picture\n\n\nA random few can tell us about the many."
-  },
-  {
-    "objectID": "lectures/lec_05_presentation.html#can-chance-be-fair",
-    "href": "lectures/lec_05_presentation.html#can-chance-be-fair",
-    "title": "Lecture V: Randomness",
-    "section": "Can chance be fair?",
-    "text": "Can chance be fair?\nQuestion: How can randomness promote fairness?\n\nRandom allocation of patients in clinical trials\nRandom audits for tax compliance\nRandom assignment of cases to judges\nRandom order of candidates on voting ballots\n\n\nAnswer: When nobody can influence the outcome, nobody is favored. A coin does not care who you are, so random choices remove bias wherever people would otherwise pick."
+    "section": "Who is missing from your data?",
+    "text": "Who is missing from your data?\n\nYou: online reviews are written mostly by the very happy and the very angry\nYou: social media shows the highlights, not the ordinary days\nCompanies: studying only successful companies teaches the wrong lessons\nCompanies: customer surveys are answered mostly by fans\n\n\nA random few can tell us about the many. But only if nobody is missing.\n\nWe can say: before we trust any data, we ask who never had a chance to end up in it, like the planes that never came back or the companies that failed with the same strategy."
   },
   {
     "objectID": "lectures/lec_05_presentation.html#when-should-we-use-chance",
     "href": "lectures/lec_05_presentation.html#when-should-we-use-chance",
     "title": "Lecture V: Randomness",
     "section": "When should we use chance?",
-    "text": "When should we use chance?\n\n\nUse chance to\n\nexplore new solutions\nestimate what we cannot calculate\nchoose fairly\n\n\nAvoid chance when\n\nthe same input must always give the same result\nfor example a bank transfer, the dose of a medicine or the brakes of a car\n\n\n\nGood enough now often beats perfect too late.\n\nAnswer: Use chance to explore new solutions, to estimate what we cannot calculate and to choose fairly. Avoid it where the same input must always give the same result, for example a bank transfer, the dose of a medicine or the brakes of a car.\nRemember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration."
+    "text": "When should we use chance?\n\n\nUse chance to\n\nexplore new solutions\nestimate what we cannot calculate\nlearn about the many from a random few\n\n\nAvoid chance when\n\nthe same input must always give the same result\nfor example a bank transfer, the dose of a medicine or the brakes of a car\n\n\n\nAnswer: Use chance to explore new solutions, to estimate what we cannot calculate and to learn about the many from a random few. Avoid it where the same input must always give the same result, for example a bank transfer, the dose of a medicine or the brakes of a car.\nRemember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration."
   },
   {
     "objectID": "lectures/lec_05_presentation.html#what-we-covered",
     "href": "lectures/lec_05_presentation.html#what-we-covered",
     "title": "Lecture V: Randomness",
     "section": "What we covered",
-    "text": "What we covered\n\n\nRandomness is a tool\nChance makes systems fair, secure and unpredictable.\n\n\nSimulate instead of calculate: Monte Carlo\nMany random trials give an honest range instead of a single guess.\n\n\nSearch smarter with chance\nRandom steps lead out of dead ends.\n\n\nSample instead of guess\nA random few can tell us about the many."
+    "text": "What we covered\n\n\nRandomness is a tool\nChance makes systems fair, secure and unpredictable.\n\n\nSimulate instead of calculate: Monte Carlo\nMany random trials give an honest range instead of a single guess.\n\n\nSearch smarter with chance\nRandom steps lead out of dead ends.\n\n\nSample instead of guess\nA few can tell us about the many, if nobody is missing."
   },
   {
     "objectID": "lectures/lec_05_presentation.html#why-it-matters",
     "href": "lectures/lec_05_presentation.html#why-it-matters",
     "title": "Lecture V: Randomness",
     "section": "Why it matters",
-    "text": "Why it matters\n\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly."
+    "text": "Why it matters\n\nWill your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and learn from a few what is true for the many."
   },
   {
     "objectID": "lectures/lec_05_presentation.html#section",
