@@ -16,7 +16,7 @@ format:
 ::: {.lecture-why}
 [Why it matters]{.eyebrow}
 
-Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.
+Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and learn from a few what is true for the many.
 :::
 
 ## Roadmap {.lecture-opening}
@@ -939,148 +939,145 @@ Randomness is not giving up. Often it is the only way through.
 4. [Sample instead of guess]{.roadmap-item .current}
 :::
 
-## Thought experiment: freedom or equality?
+## Can eight of you speak for all of us?
 
-So far, chance helped us with numbers and tours. Now a bigger question:
+[Question:]{.question} **Did you have coffee this morning?**
 
-[Question:]{.question} **What's more important for a society?**
+These eight numbers decide who answers:
+
+```{python}
+#| echo: false
+#| output: asis
+import random
+
+random.seed(0)  # smallest seed with numbers spread over 1 to 20 and at most two adjacent pairs
+chosen = sorted(random.sample(range(1, 21), 8))  # eight different numbers from 1 to 20
+numbers = " ".join(str(n) for n in chosen)
+print('::: {.sample-numbers style="text-align: center; font-family: \'Space Mono\'; '
+      'font-size: 2.2em; word-spacing: 0.4em;"}')
+print(numbers)
+print(":::")
+```
+
+. . .
+
+**Step 1:** eight of you answer. We estimate the share.
+
+. . .
+
+**Step 2:** everybody answers. How close were we?
+
+. . .
+
+Few answers wobble, more answers get closer, just like the points for π.
+
+. . .
+
+[Question:]{.question} **What if I had only asked the first row?**
+
+::: {.notes}
+Procedure: everybody counts off row by row from 1 to 20 and starts again at 1 after 20. The students with the eight numbers on the slide answer the coffee question. From their answers we estimate the share of coffee drinkers in the room. Then everybody answers by show of hands, and we compare the estimate with the true share.
+
+If the estimate is off, that is the same wobble we saw at the start of the π animation: with few points, the estimate jumps around.
+
+Answer: The first row is not a random choice. Who sits in front may differ from the rest. We can say: the early birds in the first row may also be the coffee drinkers, so asking only them would tell us about the first row, not about the room.
+:::
+
+## The 1936 election: two polls
+
+In 1936, the United States elected a president: Roosevelt or Landon.
+
+- **Poll A:** 10 million ballots mailed, **2.4 million** answers[^squire-polls]
+- **Poll B:** about **50,000** people, chosen to represent all voters
+
+. . .
+
+[Question:]{.question} **Which poll would you trust?**
+
+[^squire-polls]: Squire, P. (1988). Why the 1936 Literary Digest poll failed. Public Opinion Quarterly, 52(1).
+
+::: {.notes}
+Answer: Most people pick Poll A, because 2.4 million answers sound much safer than 50,000. The next slide shows that the smaller poll was right. We can say: let us vote by show of hands first, and then see what happened.
+:::
+
+## The smaller poll was right
+
+- Poll A, by the magazine *Literary Digest*, predicted a clear win for Landon[^squire]
+- Roosevelt won with about **61 %** of the votes and 46 of 48 states
+- Poll B, by George Gallup, got the winner right
+
+. . .
+
+**Why?** The magazine took its addresses from phone books and car registrations. In the Great Depression, those were the wealthy.
+
+. . .
+
+**How you choose matters more than how many you ask.**
+
+[^squire]: Squire, P. (1988). Why the 1936 Literary Digest poll failed. Public Opinion Quarterly, 52(1).
+
+::: {.notes}
+We can say: 2.4 million answers did not help, because they came from the wrong people, and more of the wrong people only makes the wrong answer look more certain.
+
+Squire also shows a second problem: Landon supporters were more likely to send the ballot back. So both the choice of addresses and who answered pushed the result in the same direction.
+:::
+
+## Where would you add armor?
+
+![](../images/randomness/wald_plane.svg){fig-align="center" height="260"}
+
+- In World War II, the US military examined the planes that came back from their missions
+- Most bullet holes were in the wings and the fuselage
+
+[Question:]{.question} **Where would you add armor?**
+
+::: {.notes}
+Answer: Where there are no holes. We can say: most people want to armor the wings and the fuselage, because that is where the damage is, so let us look at which planes we never got to see.
+:::
+
+## Where there are no holes
 
 ::: {.columns}
-::: {.column .fragment width="50%"}
-[Freedom]{.highlight}
-
-- Individual choice
-- Personal responsibility
-- Market-driven
+::: {.column width="58%"}
+::: {.fragment}
+The statistician Abraham Wald said: where there are **no** holes[^wald]
 :::
 
-::: {.column .fragment width="50%"}
-[Equality]{.highlight}
+::: {.fragment}
+Planes hit in the engines never came back. They are missing from the sample.
+:::
 
-- Shared resources
-- Social safety nets
-- Regulated systems
+::: {.fragment}
+This is called **selection bias**: what we see is not a fair picture of the whole.
 :::
 :::
 
-. . .
+::: {.column width="42%"}
+![](../images/randomness/wald_plane.svg){fig-align="center" width="100%"}
+:::
+:::
 
-[Question:]{.question} **Any problem with this question?**
+[^wald]: Mangel, M. & Samaniego, F. J. (1984). Abraham Wald's work on aircraft survivability. Journal of the American Statistical Association, 79(386).
 
 ::: {.notes}
-Answer: Yes: our answer depends on where we stand. Someone rich and healthy may prefer freedom, someone poor or ill may prefer equality. To judge fairly, we would have to forget our own place in society. That is the idea on the next slide.
+The planes we can look at are the ones that survived, so their holes show where a plane can be hit and still come home. We can say: the holes we do not see, on the engines and the cockpit, are the ones that brought planes down.
 :::
 
-## The veil of ignorance
+## Who is missing from your data?
 
-The philosopher John Rawls proposed a thought experiment: design a society **before you know who you will be in it**.[^rawls]
-
-You might [randomly]{.highlight} be:
-
-- Any gender identity and economic status
-- Any health condition and intelligence level
-- Any cultural background and religious belief
+::: {.incremental}
+- **You:** online reviews are written mostly by the very happy and the very angry
+- **You:** social media shows the highlights, not the ordinary days
+- **Companies:** studying only successful companies teaches the wrong lessons
+- **Companies:** customer surveys are answered mostly by fans
+:::
 
 . . .
 
-[Question:]{.question} **If you didn't know who you'd be born as, what kind of society would you design?**
-
-[^rawls]: Rawls, J. (1971). A Theory of Justice. See Christian & Griffiths (2016), ch. 9.
+A random few can tell us about the many. But only if nobody is missing.
 
 ::: {.notes}
-Answer: Open question. Many students design a society with a safety net, because they could end up at the bottom. The philosopher John Rawls called this the veil of ignorance: we decide as if our place in society were assigned at random.
-:::
-
-## How do we judge a whole society?
-
-[Question:]{.question} **How can we know what a policy does to millions of people?**
-
-:::{.incremental}
-- To answer Rawls, we would have to imagine millions of different lives
-- Nobody can calculate that
-- **Individual stories** are powerful, but can mislead
-- **Statistics** cover everyone, but hide the single life
-:::
-
-::: {.notes}
-Answer: Not from single stories, and not from one average either. We need many cases, and a fair way to pick them. That is where chance comes in.
-
-But that's not all: we also need to decide how to measure success and failure of a policy.
-:::
-
-## Which measure of success?
-
-- **Mean happiness:** the average
-- **Total happiness:** the sum over all people
-- **Median happiness:** the person in the middle
-- **Minimum happiness:** the person who is worst off
-
-. . .
-
-[Question:]{.question} **What could be the problem with these measures?**
-
-::: {.notes}
-Answer: Each measure hides something. The mean can rise while many people are worse off, the total rewards simply having more people, the median ignores both ends, and the minimum ignores everyone except the worst-off. There is no neutral choice: picking the measure is already a value judgment.
-:::
-
-## Ask a random sample
-
-:::{.incremental}
-- This is Monte Carlo again: we cannot ask everyone, so we ask a random few
-- A random few show the whole range of lives, not only the loudest or the luckiest
-- The charity GiveDirectly publishes **randomly chosen** reports from the people it supports, not only the success stories[^givedirectly]
-:::
-
-[^givedirectly]: Christian & Griffiths (2016), ch. 9.
-
-## Who is missing from your sample?
-
-[Question:]{.question} **What is a selection bias?**
-
-. . .
-
-**Definition**: The sample you analyze [is not representative of the population]{.highlight} you want to study.
-
-. . .
-
-::: {.callout-warning}
-WWII: engineers wanted to armor returning planes where the bullet holes were. Abraham Wald: armor where there are **no** holes, those planes never returned.
-:::
-
-. . .
-
-Learning only from successful companies is the same mistake.
-
-::: {.notes}
-Answer: The people or cases we look at are not a fair picture of all of them, because the way we picked them leaves some out.
-
-The famous example of survivorship bias: engineers studied returning planes to decide where to add armor and initially focused on the areas with the most bullet holes. Abraham Wald pointed out that they should armor the areas without bullet holes, because planes hit there did not survive to return. The same happens when we study only successful companies: the failed ones with the same strategy are missing.
-:::
-
-## Sampling in real life
-
-:::{.incremental}
-- **You:** before a big decision, ask a few people at random, not only those who shout the loudest
-- **Companies:** random customer surveys and random quality checks show the real picture
-:::
-
-. . .
-
-A random few can tell us about the many.
-
-## Can chance be fair?
-
-[Question:]{.question} **How can randomness promote fairness?**
-
-:::{.incremental}
-- **Random allocation** of patients in clinical trials
-- **Random audits** for tax compliance
-- **Random assignment** of cases to judges
-- **Random order** of candidates on voting ballots
-:::
-
-::: {.notes}
-Answer: When nobody can influence the outcome, nobody is favored. A coin does not care who you are, so random choices remove bias wherever people would otherwise pick.
+We can say: before we trust any data, we ask who never had a chance to end up in it, like the planes that never came back or the companies that failed with the same strategy.
 :::
 
 ## When should we use chance?
@@ -1091,7 +1088,7 @@ Answer: When nobody can influence the outcome, nobody is favored. A coin does no
 
 - explore new solutions
 - estimate what we cannot calculate
-- choose fairly
+- learn about the many from a random few
 :::
 
 ::: {.column .fragment width="50%"}
@@ -1107,7 +1104,7 @@ Answer: When nobody can influence the outcome, nobody is favored. A coin does no
 Good enough now often beats perfect too late.
 
 ::: {.notes}
-Answer: Use chance to explore new solutions, to estimate what we cannot calculate and to choose fairly. Avoid it where the same input must always give the same result, for example a bank transfer, the dose of a medicine or the brakes of a car.
+Answer: Use chance to explore new solutions, to estimate what we cannot calculate and to learn about the many from a random few. Avoid it where the same input must always give the same result, for example a bank transfer, the dose of a medicine or the brakes of a car.
 
 Remember the Monte Carlo methods: approximations work. Many real-world problems benefit from embracing uncertainty rather than fighting it. Quick approximations enable faster decisions, balance accuracy against computation time, random sampling against complete enumeration.
 :::
@@ -1136,7 +1133,7 @@ Random steps lead out of dead ends.
 ::: {.covered-item}
 [Sample instead of guess]{.eyebrow}
 
-A random few can tell us about the many.
+A few can tell us about the many, if nobody is missing.
 :::
 
 :::
@@ -1144,7 +1141,7 @@ A random few can tell us about the many.
 ## Why it matters {.lecture-closing}
 
 ::: {.lecture-why .closing}
-Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and allocate scarce places fairly.
+Will your project finish on time? In which order should a driver visit 20 customers so that the tour is as short as possible? Questions like these are too complex to calculate exactly. Companies use randomness every day to estimate risks, plan delivery tours, survey customers and learn from a few what is true for the many.
 :::
 
 ## {.loud-slide .lecture-key}

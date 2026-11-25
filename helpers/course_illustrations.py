@@ -1,4 +1,4 @@
-"""Simple SVG illustrations in the course style (Lecture III).
+"""Simple SVG illustrations in the course style (Lecture III and V).
 
 Drawn with matplotlib patches and saved as SVG with text converted to paths,
 so the illustrations use Inter/Poppins without embedding fonts and render the
@@ -7,7 +7,8 @@ design tokens in course_plots.py (_brand.yml).
 
 Usage (from the repo root):
 
-    uv run python helpers/course_illustrations.py          # writes images/caching/*.svg
+    uv run python helpers/course_illustrations.py              # writes all illustrations
+    uv run python helpers/course_illustrations.py wald_plane   # writes only the named ones
 """
 from __future__ import annotations
 
@@ -20,7 +21,7 @@ from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch, Polygon,
 from course_plots import (AMBER, BORDER, BORDER_STRONG, FG_2, FG_3, GREEN, INK, PRIMARY,
                           PRIMARY_LIGHT, RED, SKY_300, SKY_500, TASK_COLORS, use_course_style)
 
-OUT_DIR = Path(__file__).resolve().parent.parent / "images" / "caching"
+IMAGES_DIR = Path(__file__).resolve().parent.parent / "images"
 WOOD = "#e9d9c1"
 WOOD_DARK = "#cdb594"
 WALL = "#f3f8fd"
@@ -260,24 +261,100 @@ def warehouse_top(path: Path):
     plt.close(fig)
 
 
+# --- Lecture V: plane with bullet holes (Abraham Wald) ---------------------------------
+def wald_plane(path: Path):
+    """A plane seen from above, nose up. Bullet holes on wings, fuselage and tail,
+    none on the engines and the cockpit (those planes did not come back)."""
+    import numpy as np
+    from matplotlib.path import Path as MplPath
+
+    fig, ax = _canvas(7.0, 4.6, (0, 7.0), (0, 4.6))
+    body = SKY_300
+    cx = 3.5
+    # wings (swept back slightly) and horizontal stabilisers as polygons
+    wing = [(cx - 0.3, 3.05), (0.2, 2.35), (0.2, 2.0), (cx - 0.3, 2.3),
+            (cx + 0.3, 2.3), (6.8, 2.0), (6.8, 2.35), (cx + 0.3, 3.05)]
+    tail = [(cx - 0.2, 1.0), (2.3, 0.6), (2.3, 0.35), (cx - 0.2, 0.55),
+            (cx + 0.2, 0.55), (4.7, 0.35), (4.7, 0.6), (cx + 0.2, 1.0)]
+    ax.add_patch(Polygon(wing, closed=True, facecolor=body, edgecolor=INK, linewidth=1.3))
+    ax.add_patch(Polygon(tail, closed=True, facecolor=body, edgecolor=INK, linewidth=1.3))
+    # fuselage: long rounded body from tail to nose
+    fus = (cx - 0.32, 0.2, 0.64, 4.2)
+    ax.add_patch(FancyBboxPatch(fus[:2], fus[2], fus[3], boxstyle="round,pad=0,rounding_size=0.32",
+                                facecolor=body, edgecolor=INK, linewidth=1.3))
+    # engines: one on each wing, sticking out over the leading edge
+    engines = [(1.55, 2.0, 0.36, 1.05), (5.09, 2.0, 0.36, 1.05)]
+    for ex, ey, ew, eh in engines:
+        ax.add_patch(FancyBboxPatch((ex, ey), ew, eh, boxstyle="round,pad=0,rounding_size=0.16",
+                                    facecolor=SKY_500, edgecolor=INK, linewidth=1.2))
+        # propeller in front of the engine
+        ax.add_patch(Rectangle((ex + ew / 2 - 0.4, ey + eh + 0.02), 0.8, 0.07, facecolor=INK, edgecolor="none"))
+    # cockpit at the nose
+    cockpit = (cx - 0.2, 3.75, 0.4, 0.5)
+    ax.add_patch(FancyBboxPatch(cockpit[:2], cockpit[2], cockpit[3], boxstyle="round,pad=0,rounding_size=0.18",
+                                facecolor=PRIMARY_LIGHT, edgecolor=INK, linewidth=1.1))
+
+    # bullet holes: random points inside wings, fuselage and tail, never on engines or cockpit
+    rng = np.random.default_rng(42)  # fixed seed: identical SVG on every run
+    wing_path, tail_path = MplPath(wing), MplPath(tail)
+
+    def in_box(x, y, box, margin=0.1):
+        bx, by, bw, bh = box
+        return bx - margin <= x <= bx + bw + margin and by - margin <= y <= by + bh + margin
+
+    def keep(x, y, region):
+        if any(in_box(x, y, e) for e in engines) or in_box(x, y, cockpit, 0.12):
+            return False
+        if any((x - hx) ** 2 + (y - hy) ** 2 < 0.2 ** 2 for hx, hy in holes):
+            return False  # spread the holes evenly, no clumps
+        if region != "fuselage" and abs(x - cx) < 0.42:
+            return False  # wing and tail holes only outside the fuselage
+        if region == "wing":
+            return wing_path.contains_point((x, y), radius=-0.16)
+        if region == "tail":
+            return tail_path.contains_point((x, y), radius=-0.12)
+        return in_box(x, y, (fus[0] + 0.12, fus[1] + 0.3, fus[2] - 0.24, fus[3] - 0.6), 0)
+
+    plan = [("wing", 30, (0.2, 6.8, 2.0, 3.05)), ("fuselage", 12, (cx - 0.3, cx + 0.3, 0.4, 4.2)),
+            ("tail", 8, (2.3, 4.7, 0.35, 1.0))]
+    holes: list[tuple[float, float]] = []
+    for region, count, (x0, x1, y0, y1) in plan:
+        found = 0
+        while found < count:
+            x, y = rng.uniform(x0, x1), rng.uniform(y0, y1)
+            if keep(x, y, region):
+                holes.append((x, y))
+                found += 1
+    hx, hy = zip(*holes)
+    ax.scatter(hx, hy, s=48, color=INK, linewidths=0)  # one shared marker: small SVG
+    with matplotlib.rc_context({"svg.hashsalt": "wald_plane"}):
+        fig.savefig(path, metadata={"Date": None})  # no timestamp: stable file
+    plt.close(fig)
+
+
 ILLUSTRATIONS = {
-    "cupboard_messy.svg": cupboard_messy,
-    "cupboard_full.svg": cupboard_full,
-    "desk_three_books.svg": desk_three_books,
-    "noguchi_row.svg": noguchi_row,
-    "warehouse_top.svg": warehouse_top,
-    "attention_desk.svg": attention_desk,
+    "caching/cupboard_messy.svg": cupboard_messy,
+    "caching/cupboard_full.svg": cupboard_full,
+    "caching/desk_three_books.svg": desk_three_books,
+    "caching/noguchi_row.svg": noguchi_row,
+    "caching/warehouse_top.svg": warehouse_top,
+    "caching/attention_desk.svg": attention_desk,
+    "randomness/wald_plane.svg": wald_plane,
 }
 
 
-def main() -> None:
+def main(only: list[str] | None = None) -> None:
     use_course_style()
     matplotlib.rcParams["svg.fonttype"] = "path"  # text as outlines: no font dependency
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
     for name, draw in ILLUSTRATIONS.items():
-        draw(OUT_DIR / name)
-        print("wrote", OUT_DIR / name)
+        if only and draw.__name__ not in only:
+            continue
+        path = IMAGES_DIR / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        draw(path)
+        print("wrote", path)
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(sys.argv[1:] or None)
